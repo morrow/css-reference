@@ -11,7 +11,8 @@ class App
     if window.location.hash
       query = window.location.hash.replace('#/', '')
       query = '' if query and query.toLowerCase() is 'css-reference'
-      app.load(query)
+      window.history.re
+      app.load(query, true, 'replace')
 
   bindEvents:->
     app = @
@@ -53,11 +54,11 @@ class App
       query = query[query.length-1]
       app.load(query, false)
 
-  load:(path, commit=true)->
+  load:(path, commit=true, mode='push')->
     query = path.replace('/', '')
     $('input[type=search]').val(query)
     @preview query
-    @commit query if commit
+    @commit(query, mode) if commit
     arr = []
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     app.index = arr.indexOf(query)
@@ -93,20 +94,21 @@ class App
         beforeSend:(r)=> $(body).addClass('loading')
         complete:(r)=> $(body).removeClass('loading')
         success:(r)=> 
-          html = @tagify('h1', attribute) + r
+          html = @tagify('h1', @htmlify('a(href="/CSS-Reference/#/#{attribute}")',attribute)) + r
           html = html.replace 'https://developer.mozilla.org/en/CSS/', ''
           html += '<hr />'
           $(".results .exact").html(html)
     else
       $(".results .exact").html('')
   
-  commit:(input, mode=false)->
+  commit:(input, mode=false, mode='push')->
     if @history.indexOf(input) < 0
       @history.push input
       @index = @history.length-1
       title = input[0].toUpperCase() + input[1..]
       url = "/CSS-Reference/#{input}"
-      window.history.pushState({query:input},title, url)
+      window.history.pushState({query:input},title, url) if mode is 'push'
+      window.history.replaceState({query:input},title, url) if mode is 'replace'
       $('.search .history').html(app.htmlify(app.history)) if input
     else
       app.load(input, false)

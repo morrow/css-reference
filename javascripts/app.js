@@ -15,7 +15,8 @@ App = (function() {
       if (query && query.toLowerCase() === 'css-reference') {
         query = '';
       }
-      app.load(query);
+      window.history.re;
+      app.load(query, true, 'replace');
     }
   }
   App.prototype.bindEvents = function() {
@@ -74,16 +75,19 @@ App = (function() {
       return app.load(query, false);
     };
   };
-  App.prototype.load = function(path, commit) {
+  App.prototype.load = function(path, commit, mode) {
     var arr, query;
     if (commit == null) {
       commit = true;
+    }
+    if (mode == null) {
+      mode = 'push';
     }
     query = path.replace('/', '');
     $('input[type=search]').val(query);
     this.preview(query);
     if (commit) {
-      this.commit(query);
+      this.commit(query, mode);
     }
     arr = [];
     $.map($(".history li").toArray(), function(val, i) {
@@ -140,7 +144,7 @@ App = (function() {
           return $(body).removeClass('loading');
         }, this),
         success: __bind(function(r) {
-          html = this.tagify('h1', attribute) + r;
+          html = this.tagify('h1', this.htmlify('a(href="/CSS-Reference/#/#{attribute}")', attribute)) + r;
           html = html.replace('https://developer.mozilla.org/en/CSS/', '');
           html += '<hr />';
           return $(".results .exact").html(html);
@@ -150,19 +154,29 @@ App = (function() {
       return $(".results .exact").html('');
     }
   };
-  App.prototype.commit = function(input, mode) {
+  App.prototype.commit = function(input, mode, mode) {
     var title, url;
     if (mode == null) {
       mode = false;
+    }
+    if (mode == null) {
+      mode = 'push';
     }
     if (this.history.indexOf(input) < 0) {
       this.history.push(input);
       this.index = this.history.length - 1;
       title = input[0].toUpperCase() + input.slice(1);
       url = "/CSS-Reference/" + input;
-      window.history.pushState({
-        query: input
-      }, title, url);
+      if (mode === 'push') {
+        window.history.pushState({
+          query: input
+        }, title, url);
+      }
+      if (mode === 'replace') {
+        window.history.replaceState({
+          query: input
+        }, title, url);
+      }
       if (input) {
         return $('.search .history').html(app.htmlify(app.history));
       }
