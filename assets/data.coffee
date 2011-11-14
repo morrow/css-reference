@@ -7,7 +7,7 @@ data =
         links:
           github:"https://github.com/morrow/instacss"
           mdn:"https://developer.mozilla.org/en/CSS"
-          'a(href="/html/partial/all.html" class="source")':'Full HTML'
+          'a(href="/html/partial.html" class="source")':'Full HTML'
       sidepane:
         search:
           history:''
