@@ -5,13 +5,8 @@ App = (function() {
     var query;
     this.index = -1;
     this.history = [];
-    $.ajax({
-      url: "json/paths.json",
-      success: __bind(function(r) {
-        return this.paths = JSON.parse(r);
-      }, this)
-    });
     this.document = data.document;
+    this.paths = window.paths;
     this.write(this.root);
     this.bindEvents();
     window.app = this;

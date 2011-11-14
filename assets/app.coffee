@@ -3,10 +3,8 @@ class App
   constructor:(element)->
     @index = -1
     @history = [] 
-    $.ajax
-      url:"json/paths.json"
-      success:(r)=> @paths = JSON.parse(r)
     @document = data.document
+    @paths = window.paths
     @write(@root)
     @bindEvents()
     window.app = @
