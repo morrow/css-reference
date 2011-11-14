@@ -144,8 +144,8 @@ App = (function() {
         }, this),
         success: __bind(function(r) {
           html = this.htmlify({
-            h1: {
-              'a(href="/CSS-Reference/#/#{attribute}")': attribute
+            h1: 'a(href="/CSS-Reference/#/' + attribute + {
+              '")': attribute
             }
           });
           html += r + '<hr />';

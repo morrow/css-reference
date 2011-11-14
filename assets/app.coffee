@@ -95,7 +95,7 @@ class App
         success:(r)=> 
           html = @htmlify
             h1:
-              'a(href="/CSS-Reference/#/#{attribute}")':attribute
+              'a(href="/CSS-Reference/#/'+attribute+'")':attribute
           html += r + '<hr />'
           $(".results .exact").html(html)
     else
