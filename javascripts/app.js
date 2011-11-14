@@ -65,7 +65,10 @@ App = (function() {
       return app.commit($(this).text());
     });
     return window.onpopstate = function(e) {
-      return app.load(window.location.pathname, false);
+      var query;
+      query = window.location.pathname.split('/');
+      query = query[query.length];
+      return app.load(query, false);
     };
   };
   App.prototype.load = function(path, commit) {

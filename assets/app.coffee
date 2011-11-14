@@ -46,7 +46,10 @@ class App
       app.preview($(@).text())
       app.commit($(@).text())
     # html5 history
-    window.onpopstate = (e)-> app.load(window.location.pathname, false)
+    window.onpopstate = (e)-> 
+      query = window.location.pathname.split('/')
+      query = query[query.length]
+      app.load(query, false)
 
   load:(path, commit=true)->
     try
