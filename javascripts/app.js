@@ -8,19 +8,15 @@ App = (function() {
     $.ajax({
       url: "json/paths.json",
       success: __bind(function(r) {
-        try {
-          return this.paths = JSON.parse(r);
-        } catch (e) {
-          return console.log(e);
-        }
+        return this.paths = JSON.parse(r);
       }, this)
     });
     this.document = data.document;
     this.write(this.root);
     this.bindEvents();
     window.app = this;
-    if (window.location.hash && window.location.hash.length > 0) {
-      query = window.location.hash;
+    if (window.location.hash) {
+      query = window.location.hash.replace('#/', '');
       app.load(query);
     }
   }

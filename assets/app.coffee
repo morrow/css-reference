@@ -5,17 +5,13 @@ class App
     @history = [] 
     $.ajax
       url:"json/paths.json"
-      success:(r)=>
-        try
-          @paths = JSON.parse(r)
-        catch e
-          console.log e
+      success:(r)=> @paths = JSON.parse(r)
     @document = data.document
     @write(@root)
     @bindEvents()
     window.app = @
-    if window.location.hash and window.location.hash.length > 0
-      query = window.location.hash
+    if window.location.hash
+      query = window.location.hash.replace('#/', '')
       app.load(query)
 
   bindEvents:->
