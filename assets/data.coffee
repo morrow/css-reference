@@ -13,6 +13,5 @@ data =
           history:''
           "input(type='search')":"search"
       results:
-        query:''
         exact: "&larr; Type your search query to begin"
         approximate: ""
