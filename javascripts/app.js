@@ -2,18 +2,27 @@ var App;
 var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 App = (function() {
   function App(element) {
+    var query;
     this.index = -1;
     this.history = [];
     $.ajax({
       url: "json/paths.json",
       success: __bind(function(r) {
-        return this.paths = JSON.parse(r);
+        try {
+          return this.paths = JSON.parse(r);
+        } catch (e) {
+          return console.log(e);
+        }
       }, this)
     });
     this.document = data.document;
     this.write(this.root);
     this.bindEvents();
     window.app = this;
+    if (window.location.hash && window.location.hash.length > 0) {
+      query = window.location.hash;
+      app.load(query);
+    }
   }
   App.prototype.bindEvents = function() {
     var app;
