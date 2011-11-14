@@ -138,10 +138,10 @@ App = (function() {
         dataType: 'html',
         url: this.paths[attribute],
         beforeSend: __bind(function(r) {
-          return $(body).addClass('loading');
+          return $('body').addClass('loading');
         }, this),
         complete: __bind(function(r) {
-          return $(body).removeClass('loading');
+          return $('body').removeClass('loading');
         }, this),
         success: __bind(function(r) {
           html = this.tagify('h1', this.htmlify('a(href="/CSS-Reference/#/#{attribute}")', attribute)) + r;

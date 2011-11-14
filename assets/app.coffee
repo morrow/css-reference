@@ -91,8 +91,8 @@ class App
         type:'GET'
         dataType:'html'
         url:@paths[attribute] 
-        beforeSend:(r)=> $(body).addClass('loading')
-        complete:(r)=> $(body).removeClass('loading')
+        beforeSend:(r)=> $('body').addClass('loading')
+        complete:(r)=> $('body').removeClass('loading')
         success:(r)=> 
           html = @tagify('h1', @htmlify('a(href="/CSS-Reference/#/#{attribute}")',attribute)) + r
           html = html.replace 'https://developer.mozilla.org/en/CSS/', ''
