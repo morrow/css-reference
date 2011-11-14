@@ -31,7 +31,7 @@ class App
     # commit on blur
     $("body").live 'click', (e)->
       target = $(e.target)
-      if target.attr('type') != 'search' and not target.parents('.results').length > 0
+      if target.attr('type') is 'search' or (target.parents('.approximate').length > 0 and target.nodeName == 'li')
         app.commit($("input[type=search]").val()) if $("input[type=search]").val().length > 0
     # navigation of search history
     $(".history li").live "click", (e)->

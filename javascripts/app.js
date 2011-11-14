@@ -42,7 +42,7 @@ App = (function() {
     $("body").live('click', function(e) {
       var target;
       target = $(e.target);
-      if (target.attr('type') !== 'search' && !target.parents('.results').length > 0) {
+      if (target.attr('type') === 'search' || (target.parents('.approximate').length > 0 && target.nodeName === 'li')) {
         if ($("input[type=search]").val().length > 0) {
           return app.commit($("input[type=search]").val());
         }
