@@ -1,0 +1,168 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> font </code>CSS property has two different use cases:</p>
+<ol>
+<li>
+<code>font </code>is a shorthand property for setting 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code> in a single CSS declaration.</li> <li>The<code> font </code>property stets the element's font to a system font.</li>
+</ol>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: see individual properties</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: see individual properties</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: see individual properties</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+font:   [ 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>|| 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>|| 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>]? 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>[ / 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code>]? 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code></pre>
+<pre class="eval">
+font:   caption | icon | menu | message-box | small-caption | status-bar | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>|
+
+       -moz-window | -moz-document | -moz-workspace | -moz-desktop | -moz-info | 
+       -moz-dialog | -moz-button | -moz-pull-down-menu | -moz-list | -moz-field
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Using the<code> font </code>shorthand property sets the longhand properties as specified, and sets all other font-related properties to their initial values. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code> for legal values of each property.</p>
+<div id="section_4">
+<span id="System_Fonts"></span><h4 class="editable">System Fonts</h4>
+<p>System fonts can also be specified using the<code> font </code>property, <em>instead of</em> specifying individual longhand properties:</p>
+<dl>
+<dt>caption</dt> <dd>The font used for captioned controls (e.g., buttons, drop-downs, etc.).</dd> <dt>icon</dt> <dd>The font used to label icons.</dd> <dt>menu</dt> <dd>The font used in menus (e.g., dropdown menus and menu lists).</dd> <dt>message-box</dt> <dd>The font used in dialog boxes.</dd> <dt>small-caption</dt> <dd>The font used for labeling small controls.</dd> <dt>status-bar</dt> <dd>The font used in window status bars.</dd>
+</dl>
+</div>
+<div id="section_5">
+<span id="Mozilla_Extensions"></span><h4 class="editable">Mozilla Extensions</h4>
+<dl>
+<dt>-moz-window</dt> <dd>The default system font used in windows.</dd> <dt>-moz-document</dt> <dd></dd> <dt>-moz-workspace</dt> <dd></dd> <dt>-moz-desktop</dt> <dd></dd> <dt>-moz-info</dt> <dd></dd> <dt>-moz-dialog</dt> <dd></dd> <dt>-moz-button</dt> <dd></dd> <dt>-moz-pull-down-menu</dt> <dd></dd> <dt>-moz-list</dt> <dd></dd> <dt>-moz-field</dt> <dd></dd>
+</dl>
+</div>
+</div>
+<div id="section_6">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/font.html">View Live Examples</a></p>
+<pre>
+/* Set the font size to 12px and the line height to 14px. Set the font family to sans-serif */
+p { font: 12px/14px sans-serif }
+</pre>
+<pre>
+/* Set the font size to 80% of the parent element or default value (if no parent element present) 
+and set the font family to sans-serif */ 
+p { font: 80% sans-serif }
+</pre>
+<pre>
+/* Set the font weight to bold, the font-style to italic, the font size to large, 
+and the font family to serif. */
+p { font: bold italic large serif }
+</pre>
+<pre>
+/* Use the same font as the status bar of the window */
+p { font: status-bar }</pre>
+</div>
+<div id="section_7">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<div class="warning">The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code> parts of the shorthand are mandatory. Omitting them is a syntax error, and causes the entire declaration to be ignored.</div>
+<p>Properties for which no values are given are set to their initial value, which is <code>normal</code> for all properties that can be omitted (
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code>).</p>
+<p>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code> property is also set to its initial value (<code>none</code>) when the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code> shorthand property is specified.</p>
+</div>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Shorthand</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0-4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>System fonts</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0-5.5</td> <td>6.0</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/fonts.html#font-shorthand" rel="external" href="http://www.w3.org/TR/CSS21/fonts.html#font-shorthand" target="_blank">CSS 2.1 Fonts #font</a></li> <li>
+<a class="external" title="http://www.w3.org/TR/css3-ui/#system0" rel="external" href="http://www.w3.org/TR/css3-ui/#system0" target="_blank">CSS 3 User interface #system-fonts</a> Candidate recommendation, not yet implemented</li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span></p>
+<p></p>
+</div>

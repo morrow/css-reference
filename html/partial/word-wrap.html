@@ -1,0 +1,137 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> 
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 1.9.1</p>
+(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> word-wrap </code>CSS property is used to to specify whether or not the browser is allowed to break lines within words in order to prevent overflow when an otherwise unbreakable string is too long to fit.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+word-wrap:  normal | break-word
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>normal</dt> <dd>Lines may only break at normal word break points.</dd> <dt>break-word</dt> <dd>Unbreakable words may be broken at arbitrary points if there are no otherwise acceptable break points in the line.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+p { width:13em; background:gold; }
+</pre>
+<p style="width:13em; background:gold">FStrPrivFinÄndG (Gesetz zur Änderung des Fernstraßenbauprivatfinanzierungsgesetzes und straßenverkehrsrechtlicher Vorschriften)</p>
+<pre>
+p { width:13em; background:gold; word-wrap:break-word; }
+</pre>
+<p style="word-wrap:break-word; width:13em; background:gold">FStrPrivFinÄndG (Gesetz zur Änderung des Fernstraßenbauprivatfinanzierungsgesetzes und straßenverkehrsrechtlicher Vorschriften)</p>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/css3-text/#word-wrap" class="external" rel="external" href="http://www.w3.org/TR/css3-text/#word-wrap" target="_blank">CSS 3 Text</a> Working draft</li> <li><a title="http://msdn.microsoft.com/en-us/library/ms531186(VS.85,loband).aspx" class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms531186(VS.85,loband).aspx" target="_blank">MSDN Microsoft library word-wrap</a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td><code>word-wrap</code></td> <td>3.5 (1.9.1)
+</td> <td>1.0</td> <td>5.5</td> <td>10.5</td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td><code>word-wrap</code></td> <td>1.0 (1.9.1)
+</td> <td>1.0</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+<ul>
+<li>
+<code>word-wrap:break-word </code>can be used to work around lack of<code> pre{white-space:pre-wrap} </code>support in IE 5.5-7. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code> for an example.</li> <li>IE8 introduced<code> -ms-word-wrap </code>as a synonym for<code> word-wrap</code>. Don't use the <code>-ms-</code> prefix.</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+</p>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-align">text-align</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-indent">text-indent</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-color">text-decoration-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-style">text-decoration-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/letter-spacing">letter-spacing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/word-spacing">word-spacing</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-transform">text-transform</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-rendering">text-rendering</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>
+</li>
+</ul>
+</div>

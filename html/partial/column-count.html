@@ -1,0 +1,112 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>column-count </code>CSS property describes the number of columns of the element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: non-replaced block-level elements (except table elements), table cells, and inline-blocks elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: <a title="specified value" rel="internal" href="https://developer.mozilla.org/en/CSS/specified_value">specified value</a>
+</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">column-count: <em>integer</em>     or
+column-count: auto
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin-left: 40px;">auto</dt> <dd style="margin-left: 40px;">Is a keyword indicating that the number of columns should be determined by other CSS properties, like 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-width">column-width</a></code>.</dd> <dt style="margin-left: 40px;"><em>integer</em></dt> <dd style="margin-left: 40px;">Is a strictly positive <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> describing the ideal number of columns into which the content of the element will be flowed. If the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-width">column-width</a></code> is also set to a non-<strong>auto</strong> value, it merely indicates the maximum allowed number of columns.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre class="eval">.content-box {
+  border: 10px solid #000000;
+  column-count:3;
+}
+</pre>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-multicol/#cc" rel="external" href="http://www.w3.org/TR/css3-multicol/#cc" target="_blank">CSS Multi-column Layout Module Level 3</a></td> <td>Candidate Recommandation
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span>
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>1.5 (1.8)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>10</td> <td>11.1</td> <td>3.0 (522)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a></li> <li>The <a title="en/CSS/CSS3_Columns" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS3_Columns">column-related</a> CSS properties: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-width">column-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-count">column-count</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-gap">column-gap</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-rule">column-rule</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-rule-width">column-rule-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-rule-style">column-rule-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/column-rule-color">column-rule-color</a></code>, 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/column-span" class="new">column-span</a></code>, 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/column-fill" class="new">column-fill</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/columns">columns</a></code>
+</li>
+</ul>
+<p></p>
+</div>

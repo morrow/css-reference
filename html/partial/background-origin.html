@@ -1,0 +1,131 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> background-origin </code>CSS property determines the background positioning area (the origin of a background-image).<br><code>background-origin </code>does not apply when 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-attachment">background-attachment</a></code> is<code> <code>fixed</code></code>.</p>
+<p>This property is reset to its initial value by the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code> shorthand property.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/padding">padding</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified<br><code> </code>
+</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+/* since Gecko 2.0 (Firefox 4.0) */
+background-origin: [<code>padding-box | border-box | conten</code><code>t-box</code>][, [<code>border-box | padding-box | conten</code><code>t-box</code>]]*
+
+/* older versions (multiple backgrounds since Gecko 1.9.2 / Firefox 3.6) */
+-moz-background-origin: [<code>padding | border | conten</code><code>t</code>][, [<code>border | padding | conten</code><code>t</code>]]*
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt></dt> <dt>padding-box 
+<span style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding:0px 2px;">New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_4_for_developers">Firefox 4</a></span>
+<br> padding <small>(Firefox 1.0-3.6)</small>
+</dt> <dd>Default value. The background position is relative to the padding. (For single boxes "<code>0 0</code>" is the upper left corner of the padding edge, "<code>100% 100%</code>" is the lower right corner.)</dd> <dt>border-box 
+<span style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding:0px 2px;">New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_4_for_developers">Firefox 4</a></span>
+<br> border <small>(Firefox 1.0-3.6)</small>
+</dt> <dd>The background position is relative to the border, so the image can go behind the border.</dd> <dt>content-box 
+<span style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding:0px 2px;">New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_4_for_developers">Firefox 4</a></span>
+<br> content <small>(Firefox 1.0-3.6)</small>
+</dt> <dd>The background position is relative to the content.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+ .example {
+   border: 10px double;
+   padding: 10px;
+   background: url('image.jpg');
+   background-position: center left;
+   /* The background will be inside the padding */       
+   -moz-background-origin: content;          /* Firefox 1.0-3.6 */
+   -webkit-background-origin: content-box;   /* Safari, Chrome */
+           background-origin: content-box;   /* Firefox 4.0+ */
+}
+</pre>
+<pre>
+div {
+  background-image: url('mainback.png'), url('logo.jpg');
+  background-position: 0px 0px, top right;
+  -moz-background-origin: padding, content;
+  -webkit-background-origin: padding-box, content;
+          background-origin: padding-box, content-box;
+}</pre>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> <th>Support of</th> </tr>
+<tr>
+<td rowspan="2">Chrome</td> <td>1.0</td> <td>
+<code>-webkit-background-origin: padding | border | content </code><br><code>-webkit-background-origin: padding-box | border-box | content-box</code>
+</td> </tr>
+<tr>
+<td>1.0</td> <td>
+<code>background-origin: padding | border | content </code><br><code>background-origin: padding-box | border-box | content-box</code>
+</td> </tr>
+<tr>
+<td rowspan="2">Firefox (Gecko)</td> <td>1.0-3.6 (1.2-1.9.2)</td> <td><code>-moz-background-origin: padding | border | content</code></td> </tr>
+<tr>
+<td>4.0 (2.0)</td> <td><code>background-origin: padding-box | border-box | content-box</code></td> </tr>
+<tr>
+<td>Internet Explorer</td> <td>9.0 [*]</td> <td><code>background-origin: padding-box | border-box | content-box</code></td> </tr>
+<tr>
+<td>Opera</td> <td>10.5</td> <td><code>background-origin: padding-box | border-box | content-box</code></td> </tr>
+<tr>
+<td rowspan="3">Safari (WebKit)</td> <td>3.0 (522)</td> <td><code>-webkit-background-origin: padding | border | content </code></td> </tr>
+<tr>
+<td>4.0</td> <td><code>-webkit-background-origin: padding-box | border-box | content-box</code></td> </tr>
+<tr>
+<td>5.0</td> <td><code>background-origin: padding-box | border-box | content-box</code></td> </tr>
+</tbody></table>
+<ul>
+<li>[*] IE up to version 7 behaves as if it were <code>background-origin: border-box;</code>
+</li> <li>[**] IE 8 behaves as if it were <code>background-origin: padding-box;</code><br><code> </code>
+</li> <li>Konqueror 3.5.4 supports <code>-khtml-background-origin</code>.</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/css3-background/#background-origin" class="external" rel="external" href="http://www.w3.org/TR/css3-background/#background-origin" target="_blank">CSS 3 Background and borders #background-origin</a><br> Specifies the values<code> border-box | padding-box | content-box.</code>
+</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-background-size">-moz-background-size</a></code>
+</li> <li><span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-attachment">background-attachment</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-clip">background-clip</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-color">background-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-origin">background-origin</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-position">background-position</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-repeat">background-repeat</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-size">background-size</a></code></span></li>
+</ul>
+<p></p>
+</div>

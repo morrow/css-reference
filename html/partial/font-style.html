@@ -1,0 +1,118 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> font-style </code>CSS property allows<code> italic </code>or<code> oblique </code>faces to be selected within a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>. <strong><br></strong></p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: specified value</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+font-style:  normal | italic | oblique | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p><strong>Italic</strong> forms are generally cursive in nature while <strong>oblique</strong> faces are typically sloped versions of the regular face. Oblique faces can be simulated by artificially sloping the glyphs of the regular face.</p>
+<dl>
+<dt>normal</dt> <dd>selects a font that is classified as<code> normal </code>within a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>
+</dd> <dt>italic</dt> <dd>selects a font that is labeled<code> italic</code>, if that is not available, one labeled<code> oblique </code>
+</dd> <dt>oblique</dt> <dd>selects a font that is labeled<code> oblique </code>
+</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Example"></span><h3 class="editable">Example<strong><span style="font-style: italic;"><br></span></strong>
+</h3>
+<p><em>This paragraph is italic.</em></p>
+<p style="font-style:oblique;">This paragraph is oblique.</p>
+<p>The above example shows the two <code>font-style</code> values. The CSS looks like this:</p>
+
+          <pre name="code" class="css">p.italic { font-style:italic } 
+p.oblique { font-style: oblique }</pre>
+        
+<p>And the HTML looks like this:</p>
+
+          <pre name="code" class="xml">&lt;p class="italic"&gt;This paragraph is italic.&lt;/p&gt;
+&lt;p class="oblique"&gt;This paragraph is oblique.&lt;/p&gt;</pre>
+        
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.7 or earlier)
+</td> <td>1.0</td> <td>1.0</td> <td>3.5</td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.9.2)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a title="http://www.w3.org/TR/CSS21/fonts.html#font-styling" class="external" rel="external" href="http://www.w3.org/TR/CSS21/fonts.html#font-styling" target="_blank">CSS 2.1 Fonts #font-style</a></li> <li>
+<a title="http://www.w3.org/TR/css3-fonts/#font-style-the-font-style-property" class="external" rel="external" href="http://www.w3.org/TR/css3-fonts/#font-style-the-font-style-property" target="_blank">CSS 3 Fonts #font-style</a> Working draft</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span></p>
+<p></p>
+</div>

@@ -1,0 +1,97 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;url&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes a pointer to a resource. It has no proper syntax and can only be expressed through the <code>url()</code> functional notation.</p>
+<div class="note">
+<strong>URI or URL?</strong><br><br> There is a difference between a <a class="external" title="http://en.wikipedia.org/wiki/Uniform_Resource_Identifier" rel="external" href="http://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">URI</a> and a <a class="external" title="http://en.wikipedia.org/wiki/Uniform_Resource_Locator" rel="external" href="http://en.wikipedia.org/wiki/Uniform_Resource_Locator" target="_blank">URL</a>. A URL describes the location of the resource, the URI describes an id of the resource . A URI may be a location, a URL, or a name, a <a class="external" title="http://en.wikipedia.org/wiki/Uniform_Resource_Name" rel="external" href="http://en.wikipedia.org/wiki/Uniform_Resource_Name" target="_blank">URN</a>, of a resource.<br><br> In CSS Level 1, the <code>url()</code> functional notation was introduced to describe... URL, i.e. locations (a <code>&lt;url&gt;</code> CSS data type, though it wasn't explicitly defined that way).<br><br> In CSS Level 2, the same functional notation was extended to describe any URI, being a URL or URN. This led to the confusing fact that <code>url()</code> was used to create a <code>&lt;uri&gt;</code> CSS data type. Not only was this confusing, but URN are almost never used in the CSS usual case.<br><br> To fix this, CSS Level 3 came back to the initial definition, this time explicitly defined. The functional notation <code>url() </code>denotes a <code>&lt;url&gt;</code> CSS data type and no more the more generic <code>&lt;uri&gt;</code> CSS data type.<br><br> Remark that these semantic details doesn't change much for a web author, or the implementation details of the data type.</div>
+<p>Many <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS properties</a> take a URL as value, such as 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/cursor">cursor</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/list-style">list-style</a></code> etc.  </p>
+</div>
+<div id="section_2">
+<span id="The_url()_functional_notation"></span><h2 class="editable">The url() functional notation</h2>
+<p>The URI may be quoted by simple quotes or double quotes.  Relative URIs are allowed and are relative to the URL of stylesheet (and not to the URL of the web page).</p>
+</div>
+<div id="section_3">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+ &lt;a_css_property&gt;:  url("http://mysite.example.com/mycursor.png")
+
+ &lt;a_css_property&gt;:  url(http://mysite.example.com/mycursor.png)
+</pre>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>
+.topbanner { background: url("topbanner.png") #00D no-repeat fixed; }
+</pre>
+<pre>
+ul { list-style: square url(http://www.example.com/redball.png) }
+</pre>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#urls" rel="external" href="http://www.w3.org/TR/css3-values/#urls" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#uri" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#uri" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">No significant change fromm CSS Level 1</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/#url" rel="external" href="http://www.w3.org/TR/CSS1/#url" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (3.5)</td> <td>yes</td> <td>yes</td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+<p></p>
+</div>

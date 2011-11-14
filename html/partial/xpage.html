@@ -1,0 +1,77 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The @page rule is used to modify some CSS properties when printing a document.</p>
+<div class="note">
+<strong>Note:</strong> you can not change all CSS properties. You can only change the margins, orphans, widows, and page breaks of the document. All other CSS properties will be ignored.</div>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+@page :pseudo-class {
+  margin:2in;
+}
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>Please refer to the various <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-classes</a> of @page for examples.</p>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Afirst">:first</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aleft">:left</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aright">:right</a></code>
+</li>
+</ul>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/page.html#page-selectors" rel="external" href="http://www.w3.org/TR/CSS21/page.html#page-selectors" target="_blank">CSS 2.1 Paged media #page-selectors</a></li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>8.0</td> <td>6.0</td> <td>5.0</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a></li> <li>CSS at-rules: <a title="en/CSS/@charset" rel="internal" href="https://developer.mozilla.org/en/CSS/@charset">@charset</a>, <a title="@font-face" rel="internal" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a>, <a title="@import" rel="internal" href="https://developer.mozilla.org/en/CSS/@import">@import</a>, <a title="@keyframes" rel="internal" href="https://developer.mozilla.org/en/CSS/@keyframes">@keyframes</a>, <a title="@media" rel="internal" href="https://developer.mozilla.org/en/CSS/@media">@media</a>, <strong>@page</strong>.</li>
+</ul>
+</div>

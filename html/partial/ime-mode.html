@@ -1,0 +1,109 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>ime-mode</code> CSS property controls the state of the input method editor for text fields.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: text fields</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: ?</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+ime-mode:  auto | normal | active | inactive | disabled</pre>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>auto</dt> <dd>No change is made to the current input method editor state. This is the default.</dd> <dt>normal</dt> <dd>The IME state should be normal; this value can be used in a user style sheet to override the page setting. <em>This value is not supported by Internet Explorer.</em>
+</dd> <dt>active</dt> <dd>The input method editor is initially active; text entry is performed using it unless the user specifically dismisses it. <em>Not supported on Linux.</em>
+</dd> <dt>inactive</dt> <dd>The input method editor is initially inactive, but the user may activate it if they wish. <em>Not supported on Linux.</em>
+</dd> <dt>disabled</dt> <dd>The input method editor is disabled and may not be activated by the user.</dd>
+</dl>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>
+&lt;input type="text" name="name" value="initial value" style="ime-mode: disabled"&gt;</pre>
+<p>This example disables input method support for a field; this might be necessary for fields that enter data into a database that doesn't support extended character sets, for example.</p>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<p>Unlike in Internet Explorer, the Firefox implementation of <code>ime-mode</code> allows this property to apply to password editing fields. However, this does not make for an ideal user experience, and password fields should disable the IME. Users may correct the inappropriate behavior of sites that don't follow this recommendation by placing the following CSS into their user CSS file:</p>
+<pre>
+input[type=password] {
+    ime-mode: auto !important;
+}</pre>
+<p></p>
+<div class="note">
+<strong>Note:</strong> In general, it's not appropriate for a public web site to manipulate the IME mode setting. This property should be used for web applications and the like.</div>
+
+<p>The Macintosh version of Gecko 1.9 (Firefox 3) can't recover the previous state of the IME when a field for which it is disabled loses focus, so Mac users may get grumpy when you use the <code>disabled</code> value.</p>
+<p></p>
+<div class="note">
+<strong>Note:</strong> Don't rely on disabling IME to prevent extended characters from passing through your form. Even with IME disabled, users can still paste extended characters into your form's fields.</div>
+
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a rel="custom" href="http://dev.w3.org/csswg/css3-ui/#input-method-editor">CSS Basic User Interface Module Level 3: ime-mode</a><span title="Editor's Draft (unofficial)" style="color:#fff; background-color:#e61919; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">ED</span>
+</li> <li>
+<a rel="custom" href="http://msdn.microsoft.com/library/ms530767(VS.85).aspx">-ms-ime-mode Attribute | imeMode Property</a>
+</li>
+</ul>
+<p>It was introduced by Microsoft with IE5 as a proprietary extension.</p>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>3.0 (1.9)</td> <td>5.0</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p>IE8 introduced<code> -ms-ime-mode </code>as a synonym for <code>ime-mode</code>. Don't use the <code>-ms-</code> prefix.</p>
+<p></p>
+</div>

@@ -1,0 +1,92 @@
+<p>The <code>&lt;string&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type represents a string. It is formed by a <a class="external" title="http://en.wikipedia.org/wiki/Unicode" rel="external" href="http://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode</a> characters delimited by either double (") or single (') quotes. A double quoted string cannot contain double quotes unless escaped using a backslash (\). The same practice applies for single quoted strings, they cannot contain single quotes unless escaped using a backslash (\). The backslash character must be escaped to be part of the string.</p>
+<p>New lines are not accepted unless escaped by using a line feed character such as \A or \00000a. However, strings can span over several lines. In that case, the new line must be escaped using a \ as the last character of the line.</p>
+<p>Characters can be described using their <a class="external" title="http://en.wikipedia.org/wiki/Unicode#Code_point_planes_and_blocks" rel="external" href="http://en.wikipedia.org/wiki/Unicode#Code_point_planes_and_blocks" target="_blank">Unicode code point</a> in hexadecimal, when escaped using \. \27 represents the single quote (').</p>
+<div id="section_1">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>
+/* Simple quote escaping */
+"Awesome string with double quotes"
+"Awesome string with \" escaped double quotes"
+'Awesome string with single quotes'
+"Awesome string with \' escaped single quotes"
+
+/* New line in a string */
+"Awesome string with \Aline break"
+
+/* String spanning over two lines (these two strings are exactly the same) */
+"A really long \
+awesome string"
+"A really long awesome string"
+</pre>
+<div class="note">
+<strong>Note:</strong> Double quoted strings can also be escaped using \22 and single quoted strings can be escaped using \27.</div>
+</div>
+<div id="section_2">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#strings" rel="external" href="http://www.w3.org/TR/css3-values/#strings" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#strings" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#strings" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Explicitly defined; allows 6-digit Unicode escaped characters</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/" rel="external" href="http://www.w3.org/TR/CSS1/" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Implicitly defined; allows 4-digit Unicode escaped characters</td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_3">
+<span id="Browser_Compatibility"></span><h2 class="editable">Browser Compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>basic</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>&lt;=5.0</td> <td>yes</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>\xx</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>6.0 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx#values" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx#values" target="_blank">[1]</a>
+</td> <td>yes</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> </tr>
+<tr>
+<td>\xx</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_4">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>

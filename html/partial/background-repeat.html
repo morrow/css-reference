@@ -1,0 +1,92 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>background-repeat</code> specifies whether the image is repeated (tiled), and how.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: repeat</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">background-repeat: &lt;repeat-style&gt;[, &lt;repeat-style&gt;]*
+</pre>
+<p>Where:</p>
+<dl>
+<dt>&lt;repeat-style&gt;</dt> <dd><code>repeat | repeat-x | repeat-y | no-repeat | inherit | round | space </code></dd>
+</dl>
+<p>
+
+</p>
+<div style="border: 0px none ; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); text-align: center;">
+<p style="margin: 4px 0px; font-weight: bold;">Gecko 1.9.2 note</p>
+<p style="margin: 4px 0px;">Gecko 1.9.2 added support for multiple background repeat values.</p>
+</div>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>repeat</dt> <dd>The image is repeated both horizontally and vertically.</dd> <dt>repeat-x</dt> <dd>The image is repeated horizontally only.</dd> <dt>repeat-y</dt> <dd>The image is repeated vertically only.</dd> <dt>no-repeat</dt> <dd>The image is not repeated; only one copy of the image is drawn.</dd> <dt style="font-style: normal; font-weight: bold; ">space</dt> <dd>The image is repeated as many times as can fully fit, separated by white space if repeating does not create an exact fit.</dd> <dt>round</dt> <dd> The image is repeated as often as will fit. If it doesn't fit a whole number of times, the background images are rescaled so they do.</dd>
+</dl>
+<div> <p>If a <code>&lt;repeat-style&gt;</code> value specifies two keywords, the first is for the horizontal direction and the second is for the vertical direction.</p> <div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3> <p>
+<a rel="internal" href="https://developer.mozilla.org/samples/cssref/background-repeat" title="samples/cssref/background-repeat" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a>
+</p> <pre>.exampleone {
+	background-image: url("logo.png");
+	background-repeat: repeat-x;
+}
+
+.exampletwo {
+	background-image: url("logo.png");
+	background-repeat: no-repeat;
+}
+</pre> <div id="section_5">
+<span id="Multiple_background_image_support"></span><h4 class="editable">Multiple background image support</h4> <p>Gecko 1.9.2 supports multiple background images. You can specify a different <code>&lt;repeat-style&gt;</code> for each background, separated by commas:</p> <pre>.examplethree {
+  background-image: url("img1.png"), url("img2.png");
+  background-repeat: repeat-x, repeat-y;
+} 
+</pre> <p>Each image is matched with the corresponding repeat style, from first specified to last.</p> </div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3> <ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS1#background-repeat" title="http://www.w3.org/TR/CSS1#background-repeat" target="_blank">CSS 1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/colors.html#propdef-background-repeat" title="http://www.w3.org/TR/CSS21/colors.html#propdef-background-repeat" target="_blank">CSS 2.1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/2005/WD-css3-background-20050216/#background-repeat" title="http://www.w3.org/TR/2005/WD-css3-background-20050216/#background-repeat" target="_blank">CSS 3</a></li> </ul>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3> <table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> <th>Space | Round</th> <th>Multiple Backgrounds</th> <th>Different Values for X &amp; Y</th> </tr>
+<tr>
+<td>Chrome</td> <td>1.0</td> <td>--</td> <td>1.0</td> <td>√</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0 (1.0)</td> <td>--</td> <td>3.6 (1.9.2)</td> <td>--</td> </tr>
+<tr>
+<td>Internet Explorer</td> <td>4.0</td> <td>9.0</td> <td>9.0</td> <td>9.0</td> </tr>
+<tr>
+<td>Opera</td> <td>3.5</td> <td>10.5</td> <td>10.5</td> <td>√</td> </tr>
+<tr>
+<td>Safari (Webkit)</td> <td>1.0 (85)</td> <td>--</td> <td>1.3 (312)</td> <td>√</td> </tr>
+</tbody></table>
+<p>Round / Space values are supported in IE9+ and Opera 11+</p> </div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3> <ul>
+<li><span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-attachment">background-attachment</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-clip">background-clip</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-color">background-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-origin">background-origin</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-position">background-position</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-repeat">background-repeat</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-size">background-size</a></code></span></li> <li><a title="en/CSS/Multiple backgrounds" rel="internal" href="https://developer.mozilla.org/en/CSS/Multiple_backgrounds">Multiple backgrounds</a></li> </ul>
+<p></p>
+</div>
+</div>
+</div>

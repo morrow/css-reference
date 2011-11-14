@@ -1,0 +1,88 @@
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:only-child</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any element which is the only child of its parent.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+parent child:only-child {
+    property:value;
+} 
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+
+          <pre name="code" class="css">div span:only-child {
+    color:red;
+}</pre>
+        
+
+          <pre name="code" class="xml">&lt;div&gt;
+    &lt;span&gt;Some red text&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;span&gt;Some regular text&lt;/span&gt;
+    &lt;span&gt;Some regular text&lt;/span&gt;
+&lt;/div&gt;</pre>
+        
+<div id="section_4">
+<span id="Result"></span><h4 class="editable">Result</h4>
+<pre class="eval"><div><span style="color:red;">Some red text</span></div><div>
+<span>Some regular text</span> <span>Some regular text</span>
+</div></pre>
+</div>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">
+<span><span>Specifications</span><a href="../../../../en/CSS/%3afirst-child#" rel="internal" style="visibility: hidden;"><span class="icon"><img alt="Edit section" class="sectionedit" src="../../../../skins/common/icons/icon-trans.gif"></span></a></span>
+<div class="editIcon"><a title="Edit section" style="visibility: hidden;" rel="internal" href="https://developer.mozilla.org/../../../../en/CSS/%3Anth-child#"><span class="icon"><img alt="Edit section" class="sectionedit" src="../../../../skins/common/icons/icon-trans.gif"></span></a></div>
+</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/css3-selectors/#only-child-pseudo" title="http://www.w3.org/TR/css3-selectors/#only-child-pseudo" target="_blank">CSS3</a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>2</td> <td>1.5 (1.8)
+</td> <td>9</td> <td>9.5</td> <td>3.1</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.1</td> <td>1.0 (1.8)
+</td> <td>9</td> <td>10.0</td> <td>3.1</td> </tr>
+</tbody></table>
+</div>
+</div>

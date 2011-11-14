@@ -1,0 +1,48 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 1.9.1</p>
+(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:nth-of-type</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> matches an element that has <code><em>a</em>n+<em>b</em>-1</code> siblings with the same element name before it in the document tree, for a given positive or zero value for <code>n</code>, and has a parent element. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Anth-child">:nth-child</a></code> for a more thorough description of the syntax of its argument.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">element:nth-of-type(<em>a</em>n + <em>b</em>) { <em>style properties</em> }
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<div id="section_4">
+<span id="Example"></span><h4 class="editable">Example</h4>
+<p>This example causes the positions of floated images to alternate between right and left.</p>
+
+          <pre name="code" class="css">img:nth-of-type(2n+1) { float: right; }
+img:nth-of-type(2n) { float: left; }</pre>
+        
+</div>
+</div>
+<div id="section_5">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Anth-child">:nth-child</a></code>
+</li> <li><a class="external" rel="external" href="http://www.w3.org/TR/css3-selectors/#nth-of-type-pseudo" title="http://www.w3.org/TR/css3-selectors/#nth-of-type-pseudo" target="_blank">CSS3 Reference</a></li>
+</ul>
+</div>

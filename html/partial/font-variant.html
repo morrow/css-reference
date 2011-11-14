@@ -1,0 +1,103 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> font-variant </code>CSS property selects a<code> normal</code>, or<code> small-caps </code>face from a font family. Setting<code> font-variant </code>is also possible by using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code> shorthand.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: Yes</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: specified value</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+font-variant:  normal | small-caps | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>normal</dt> <dd>Specifies a normal font face.</dd> <dt>small-caps</dt> <dd>Specifies a font that is labeled as a small-caps font. If a small-caps font is not available, Mozilla (Firefox) and other browsers will simulate a small-caps font, i.e. by taking a normal font and replacing the lowercase letters by scaled uppercase characters.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+p { font-variant: small-caps }</pre>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/fonts.html#small-caps" rel="external" href="http://www.w3.org/TR/CSS21/fonts.html#small-caps" target="_blank">CSS 2.1 Fonts #font-variant</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-transform">text-transform</a></code>
+</li> <li>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span>
+</li>
+</ul>
+<p></p>
+</div>

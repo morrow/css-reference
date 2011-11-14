@@ -1,0 +1,153 @@
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> image-rendering </code>property provides a hint to the user agent about how to handle its image rendering.<br><code>image-rendering </code>applies to scaled images (and other elements, see below). For example, if the natural size of the image is<em> 100×100px </em>but the page author specifies the dimensions to <em>200×200px </em>(or<em> 50×50px</em>), then the image will be upscaled (or downscaled) to the new dimensions using the specified algorithm. Scaling may also apply due to user interaction (zooming).</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: <ul>
+<li>images</li> <li>background-images of any element</li> <li>HTML5  
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/video">&lt;video&gt;</a></code> Element</li> <li>HTML5 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/canvas">&lt;canvas&gt;</a></code> Element</li> </ul>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+
+
+
+image-rendering:  auto | inherit | optimizeSpeed | optimizeQuality | -moz-crisp-edges | -o-crisp-edges </pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><strong>auto</strong></dt> <dd>Default value, depends on the user agent. Since version 1.9 (Firefox 3.0), Gecko uses<em> bilinear </em>resampling (high quality).</dd> <dt><strong>optimizeQuality</strong></dt> <dd>Indicates that the user agent shall emphasize quality over rendering speed. Gecko uses<em> bilinear </em>resampling (high quality).</dd> <dt><strong>optimizeSpeed</strong></dt> <dd>The user agent should use a resampling algorithm which achieves the goal of fast rendering. Currently Gecko (Firefox) uses<em> nearest neighbor </em>resampling (low quality).</dd> <dt>
+<strong>-moz-crisp-edges</strong> | <strong>-o-crisp-edges</strong>
+</dt> <dd>
+<a class="internal" title="en/CSS Reference/Mozilla Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference/Mozilla_Extensions">Mozilla extension</a>. Gecko (Firefox) always uses <em>nearest neighbor</em> resampling (low quality). Use this value to avoid upscaled images with sharp edges getting blurry. 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=423756" class="external" title="RESOLVED FIXED - Request: Switch for authors to turn on/off bilinear filtering when enlarging images">
+bug 423756</a>
+.</dd> <dt><strong>-webkit-optimize-contrast</strong></dt> <dd>WebKit extension (
+<a rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=56627" class="external" title="RESOLVED FIXED - implement image-rendering: optimize-contrast (with a vendor prefix) as defined in CSS3 image values">
+WebKit bug 56627</a>). WebKit uses a pixelation-generating resampling. The algorithm for now seems to be nearest-neighbor, but this can be WebKit-port specific, and there are other algorithms that can be used as well. Use this value to avoid upscaled images with sharp edges getting blurry.</dd>
+</dl>
+<div class="note"> <ul style="margin:0;padding:0 0 0 1em;">
+<li>Currently<code> auto </code>and<code> optimizeQuality </code>are equal by default, both result in <em>bilinear</em> resampling.</li> <li>Currently<code> optimizeSpeed </code>and<code> -moz-crisp-edges </code>are equal, both result in <em>nearest neighbor</em> resampling.</li> <li> <p>Warning: Unlike the gecko rendering engine, <code>optimizeSpeed </code>and <code>-webkit-optimize-contrast<strong> do not mean the same thing </strong> in WebKit.</code></p> </li> </ul>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+
+
+
+img  { 
+       image-rendering: optimizeQuality;  /* Firefox 3.6+; default behavior is identical, no need to specify */
+       -ms-interpolation-mode: bicubic;   /* Internet Explorer 7.0; default in IE8+ */
+     }</pre>
+<pre>
+
+
+
+/* applies to GIF and PNG images; avoids blurry edges */
+
+img[src$=".gif"], img[src$=".png"] {
+
+                   image-rendering: -moz-crisp-edges;         /* Firefox */
+                   -ms-interpolation-mode: <code>nearest-neighbor</code>;  /* IE */
+                 }</pre>
+<pre>
+
+
+
+html  { image-rendering: -moz-crisp-edges; }        /* all images, videos, background-images */
+img   { -ms-interpolation-mode: <code>nearest-neighbor</code>; } /* all images, IE */
+</pre>
+<pre>
+
+
+
+div { 
+        background: url(chessboard.gif) no-repeat 50% 50%;
+        image-rendering: -moz-crisp-edges;
+}</pre>
+<pre>
+
+
+
+video { image-rendering: optimizeSpeed; }</pre>
+<div id="section_5">
+<span id="Live_Examples"></span><h4 class="editable">Live Examples</h4>
+<p style="image-rendering: optimizequality;"><code>image-rendering:optimizeQuality; -ms-interpolation-mode:bicubic;</code><br> 78%<img alt="squares.gif" style="width: 39px; height: 39px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif"> 100%<img alt="squares.gif" style="width: 50px; height: 50px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif"> 138%<img alt="squares.gif" style="width: 69px; height: 69px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif"> downsized<img alt="hut.jpg" style="width: 89px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg"> upsized<img alt="blumen.jpg" style="width: 77px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg"></p>
+<p style="image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; -ms-interpolation-mode: nearest-neighbor"><code>image-rendering:-moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering:-webkit-optimize-contrast; -ms-interpolation-mode:nearest-neighbor;</code><br> 78%<img alt="squares.gif" style="width: 39px; height: 39px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif"> 100%<img alt="squares.gif" style="width: 50px; height: 50px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif"> 138%<img alt="squares.gif" style="width: 69px; height: 69px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif"> downsized<img alt="hut.jpg" style="width: 89px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg"> upsized<img alt="blumen.jpg" style="width: 77px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg"></p>
+</div>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=486918" class="external" title="NEW - Awful image quality in image scaling">
+bug 486918</a>
+ (Awful image quality in downscaling)</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td> <p><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></p> <p><em><strong>Note</strong>: Should get the landed -webkit-optimize-contrast WebKit patch soon.<br></em></p> </td> <td>3.6 (1.9.2)<br><code>image-rendering</code>
+</td> <td>7.0<br><code>-ms-interpolation-mode: bicubic | nearest-neighbor</code> <ul style="margin-top:1em;margin-bottom:0">
+<li>applies only to images (JPG, GIF, PNG, ...)</li> <li>in IE7 only for images without transparency</li> <li>does not inherit</li> <li>default value IE7:<code> nearest-neighbor </code>(low quality)</li> <li>default value IE8+:<code> bicubic    </code>(high quality)</li> </ul>
+</td> <td> <p>11.60</p> <p><code>image-rendering: auto | -o-crisp-edges | optimizeSpeed | optimizeQuality</code></p> </td> <td> <p>6533.21.1, r86920</p> <p><code>image-rendering: auto | optimizeSpeed | optimizeQuality | -webkit-optimize-contrast</code></p> <ul>
+<li>-webkit-optimize-contrast is similar to -moz-crisp-edges, in that it selects the pixelation algorithm over the blurry algorithm for scaling. Pixelated scaling algorithm for now seems to be nearest-neighbor.</li> <li>-webkit-optimize-contrast implemented in the WebKit nightlies as of May 20th, 2011.</li> </ul>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p>See also  <a class="external" title="http://msdn.microsoft.com/en-us/library/ff521095(VS.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/ff521095(VS.85).aspx" target="_blank">Microsoft MSDN<code> -ms-interpolation-mode </code>property</a></p>
+<p>Canvas can provide a <a class="external" title="http://phrogz.net/tmp/canvas_image_zoom.html" rel="external" href="http://phrogz.net/tmp/canvas_image_zoom.html" target="_blank">fallback solution for crisp-edge/optimize-contrast</a> through manual imageData manipulation.</p>
+</div>
+<div id="section_8">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><code>image-rendering </code>is an SVG property, it is not defined in any CSS standard. Gecko (Firefox)and Presto (Opera) apply it also to HTML and XML content.</p>
+<p><a class="external" title="http://www.w3.org/TR/SVG/painting.html#ImageRenderingProperty" rel="external" href="http://www.w3.org/TR/SVG/painting.html#ImageRenderingProperty" target="_blank">SVG 1.1 Painting #image-rendering</a></p>
+<p></p>
+</div>

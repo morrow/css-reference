@@ -1,0 +1,231 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>hyphens</code> property tells the browser how to go about splitting words to improve the layout of text when line-wrapping.</p>
+<div class="note">
+<strong>Note:</strong> The rules defining how hyphenation is performed are not explicitly defined by the specification, so the exact hyphenation may vary from browser to browser.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>manual</code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+hyphens:  none | manual | auto
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><code>none</code></dt> <dd>Words are not broken at line breaks, even if characters inside the words suggest line break points. Lines will only wrap at whitespace.</dd> <dt><code>manual</code></dt> <dd>Words are broken for line-wrapping only where characters inside the word suggest line break opportunities. See <a rel="custom" href="https://developer.mozilla.org/en/CSS/hyphens#Suggesting_line_break_opportunities">Suggesting line break opportunities</a> for details.</dd> <dt><code>auto</code></dt> <dd>The browser is free to automatically break words at appropriate hyphenation points, following whatever rules it chooses to use. Suggested line break opportunities, as covered in <a rel="custom" href="https://developer.mozilla.org/en/CSS/hyphens#Suggesting_line_break_opportunities">Suggesting line break opportunities</a>, should be preferred over automatically selecting break points whenever possible.</dd>
+</dl>
+<div class="note">
+<strong>Note:</strong> The <code>auto</code> setting's behavior depends on the language being properly tagged so that the appropriate hyphenation rules can be selected. You must specify a language using the <code>lang</code> HTML attribute in order to have automatic hyphenation applied.</div>
+<dl></dl>
+</div>
+<div id="section_4">
+<span id="Suggesting_line_break_opportunities"></span><h3 class="editable">Suggesting line break opportunities</h3>
+<p>There are two Unicode character that can be used to manually specify potential line break points within text:</p>
+<dl>
+<dt>U+2010 (HYPHEN)</dt> <dd>The "hard" hyphen character indicates a visible line break opportunity. Even if the line is not actually broken at that point, the hyphen is still rendered.</dd> <dt>U+00AD (SHY)</dt> <dd>An invisible, "soft" hyphen. This character is not rendered visibly; instead, it suggests a place where the browser might choose to break the word if necessary. In HTML, you can use <code>&amp;shy;</code> to insert a soft hyphen.</dd>
+</dl>
+</div>
+<div id="section_5">
+<span id="Examples"></span><span id="Example"></span><h3 class="editable">Example</h3>
+<p>This CSS snippet creates three classes, one for each possible configuration of the <code>hyphens</code> property.</p>
+
+          <pre name="code" class="dekiscript">p.none {
+  -moz-hyphens: none;
+  hyphens: none;
+}
+p.manual {
+  -moz-hyphens: manual;
+  hyphens: manual;
+}
+p.auto {
+  -moz-hyphens: auto;
+  hyphens: auto;
+}</pre>
+        
+<p>Take a look at the live example to see these configurations in action; resize the window while looking at them to see them in action.</p>
+<p>
+<a rel="internal" href="https://developer.mozilla.org/samples/cssref/hyphens.html" title="samples/cssref/hyphens.html" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a>
+</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/2011/WD-css3-text-20110412/#hyphens" rel="external" href="http://www.w3.org/TR/2011/WD-css3-text-20110412/#hyphens" target="_blank">CSS 3 Text: hyphens</a></li> <li><a class="external" title="http://www.w3.org/TR/css3-gcpm/#hyphenation" rel="external" href="http://www.w3.org/TR/css3-gcpm/#hyphenation" target="_blank">CSS 3 Generated content: hyphens</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td> <p>6.0 (6.0)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span></p> <p>Automatic hyphenation only works for languages whose hyphenation dictionaries are integrated in Gecko. See <a title="https://developer.mozilla.org/en/CSS/hyphens#Gecko_notes" rel="internal" href="https://developer.mozilla.org/en/CSS/hyphens#Gecko_notes">this note</a> for a complete list of such languages.</p> </td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td> <p>5.1
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span><br><code> </code></p> </td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td> <p>6.0 (6.0)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span></p> <p>Automatic hyphenation only works for languages whose hyphenation dictionaries are integrated in Gecko. See <a title="https://developer.mozilla.org/en/CSS/hyphens#Gecko_notes" rel="internal" href="https://developer.mozilla.org/en/CSS/hyphens#Gecko_notes">this note</a> for a complete list of such languages.</p> </td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_8">
+<span id="Gecko_notes"></span><h4 class="editable">Gecko notes</h4>
+<p>Gecko (Firefox) supplies hyphenation dictionaries for the following languages:</p>
+<div class="threecolumns"> <ul>
+<li>Afrikaans (af) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Bulgarian (bg) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Catalan (ca) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Swiss German, Traditional Orthography (de-CH) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Danish (da) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Dutch (nl) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>English, United States (en-US) 
+<span title="(Firefox 6.0 / Thunderbird 6.0 / SeaMonkey 2.3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 6.0</span>
+</li> <li>Esperanto (eo) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Estonian (et) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Finnish (fi) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>French (fr) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Galician (gl) 
+<span title="(Firefox 9.0 / Thunderbird 9.0 / SeaMonkey 2.6)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 9.0</span>
+</li> <li>German, Traditional Orthography (de-1901) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>German, Reformed Orthography (de-1996) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Hungarian (hu) 
+<span title="(Firefox 9.0 / Thunderbird 9.0 / SeaMonkey 2.6)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 9.0</span>
+</li> <li>Icelandic (is) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Interlingua (ia) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Italian (it) 
+<span title="(Firefox 9.0 / Thunderbird 9.0 / SeaMonkey 2.6)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 9.0</span>
+</li> <li>Kurmanji (kmr) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Latin (la) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Lithuanian (lt) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Mongolian (mn) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Norwegian Bokmål (nb) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Norwegian Nynorsk (nn) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Portuguese (pt) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Russian (ru) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Serbo-Croatian (sh) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Slovenian (sl) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Spanish (es) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Swedish (sv) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Turkish (tr) 
+<span title="(Firefox 9.0 / Thunderbird 9.0 / SeaMonkey 2.6)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 9.0</span>
+</li> <li>Ukrainian (uk) 
+<span title="(Firefox 9.0 / Thunderbird 9.0 / SeaMonkey 2.6)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 9.0</span>
+</li> <li>Upper Sorbian (hsb) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> <li>Welsh (cy) 
+<span title="(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 8.0</span>
+</li> </ul>
+</div>
+</div>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/content">content</a></code></p>
+<p></p>
+</div>

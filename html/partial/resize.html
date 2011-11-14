@@ -1,0 +1,106 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>resize</code> CSS property lets you control the resizability of an element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: none</li> <li>Applies to: block-level and replaced elements, table cells, and inline blocks</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+resize: none | both | horizontal | vertical | inherit
+</pre>
+</div>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>none</dt> <dd>The element offers no user-controllable method for resizing the element.</dd> <dt>both</dt> <dd>The element displays a mechanism for allowing the user to resize the element, which may be resized both horizontally and vertically.</dd> <dt>horizontal</dt> <dd>The element displays a mechanism for allowing the user to resize the element, which may only be resized horizontally.</dd> <dt>vertical</dt> <dd>The element displays a mechanism for allowing the user to resize the element, which may only be resized vertically.</dd>
+</dl>
+<div class="note">
+<strong>Note:</strong> <code>resize</code> does not apply to blocks for which the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code> property is set to <code>visible</code>.</div>
+<dl></dl>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3> <div id="section_5">
+<span id="Disabling_resizability_of_textareas"></span><h4 class="editable">Disabling resizability of textareas</h4> <p>By default, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/textarea">&lt;textarea&gt;</a></code> elements are resizable in <span title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+">Gecko 2.0</span> (Firefox 4). You may override this behavior with the CSS shown below:</p> 
+          <pre name="code" class="css">textarea.example {
+  resize: none; /* disables resizability */
+}</pre>
+         </div>
+<div id="section_6">
+<span id="Using_resize_with_arbitrary_elements"></span><h4 class="editable">Using resize with arbitrary elements</h4> <p>You can use the resize property to make any element resizable. In the example below, a resizable 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/div">&lt;div&gt;</a></code> box contains a resizable paragraph (
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/p">&lt;p&gt;</a></code> element:</p> 
+          <pre name="code" class="xml">&lt;div style="resize:both; overflow:scroll; width:300px; height:300px; border:1px solid black"&gt;
+  &lt;p style="resize:both; overflow:scroll; width:200px; height:200px; border:1px solid black"&gt;
+    This paragraph is resizable, because the CSS resize property is set to 'both' on this
+    element.
+  &lt;/p&gt;
+&lt;/div&gt;</pre>
+         <p><img class="internal default" alt="arbitrary.png" src="https://developer.mozilla.org/@api/deki/files/4966/=arbitrary.png"></p> <p> </p> <p>
+<a rel="internal" href="https://developer.mozilla.org/samples/cssref/resize.html" title="samples/cssref/resize.html" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a>
+</p> </div>
+</div>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2> <p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div> <div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>3.0 (522)</td> </tr>
+<tr>
+<td>Applies to</td> <td> &lt;textarea&gt;</td> <td>block-level and replaced elements, table cells, and inline blocks (unless 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code> is <code>visible</code>)</td> <td> </td> <td> </td> <td><code>&lt;textarea&gt;</code></td> </tr>
+</tbody></table>
+</div> <div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div> </div>
+<div id="section_8">
+<span id="Specification"></span><h2 class="editable">Specification</h2> <ul>
+<li>
+<a rel="custom" href="http://www.w3.org/TR/2004/CR-css3-ui-20040511/#resize">CSS3-UI: resize</a><span title="Candidate Recommendation" style="color:#333; background-color:#cfd510; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">CR</span>
+</li> </ul>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h2 class="editable">See also</h2> <ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/textarea">&lt;textarea&gt;</a></code>
+</li> </ul>
+<p></p>
+</div>

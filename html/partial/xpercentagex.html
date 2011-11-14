@@ -1,0 +1,106 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;percentage&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data types represent a percentage value. Many <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS properties</a> can take percentage values, often to define sizes in terms of parent objects. Percentages are formed by a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> immediately followed by the percentage sign <code>%</code>. Like for all unit in CSS, there is no space between the '%' and the number.</p>
+<p>Many length properties use percentages, such as 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/width">width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin">margin</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/padding">padding</a></code>. Percentages can also be seen in 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, where the size of the text is directly related to the size of its parent.</p>
+<div class="note">
+<strong>Note:</strong> only calculated values are inherited. So, even if a percentage value is used on the parent property, a real value, like a width in pixel for a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> value, will be accessible on the inherited property, not the percentage value.</div>
+</div>
+<div id="section_2">
+<span id="Interpolation"></span><h2 class="editable">Interpolation</h2>
+<p>Values of the <code>&lt;percentage&gt;</code> CSS data type can be interpolated in order to allow animations. In that case they are interpolated as real, floating-point, numbers. <a class="external" title="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" target="_blank">[1]</a> The speed of the interpolation is determined by the <a title="timing-function" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function">timing function</a> associated with the animation.</p>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+
+          <pre name="code" class="xml">&lt;div style="background-color:#0000FF;"&gt;
+  &lt;div style="width:50%;margin-left:20%;background-color:#00FF00;"&gt;Width: 50%, Left margin: 20%&lt;/div&gt;
+  &lt;div style="width:30%;margin-left:60%;background-color:#FF0000;"&gt;Width: 30%, Left margin: 60%&lt;/div&gt;
+&lt;/div&gt;</pre>
+        
+<p>The above HTML will output:</p>
+<div style="background-color:#0000FF;"> <div style="width:50%;margin-left:20%;background-color:#00FF00;">Width: 50%, Left margin: 20%</div> <div style="width:30%;margin-left:60%;background-color:#FF0000;">Width: 30%, Left margin: 60%</div>
+</div>
+<p> </p>
+
+          <pre name="code" class="xml">&lt;div style="font-size:18px;"&gt;
+  Full size text (18px)
+  &lt;span style="font-size:50%;"&gt;50%&lt;/span&gt;
+  &lt;span style="font-size:200%;"&gt;200%&lt;/span&gt;
+&lt;/div&gt;</pre>
+        
+<p>The above HTML will output:</p>
+<div style="font-size:18px;">Full size text (18px) <span style="font-size:50%">50%</span> <span style="font-size:200%">200%</span>
+</div>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#percentages" rel="external" href="http://www.w3.org/TR/css3-values/#percentages" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS2/syndata.html#percentage-units" rel="external" href="http://www.w3.org/TR/CSS2/syndata.html#percentage-units" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">No change from CSS Level 1</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/#percentage-units" rel="external" href="http://www.w3.org/TR/CSS1/#percentage-units" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><h2 class="editable">Browser Compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>basic</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>&lt;=5.0</td> <td>yes</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+<p></p>
+</div>

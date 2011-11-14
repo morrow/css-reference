@@ -1,0 +1,95 @@
+
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span>
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> -moz-transition-delay </code>CSS property specifies the amount of time to wait between a change being requested to a property that is to be transitioned and the start of the <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">transition effect</a>.</p>
+<p>A value of 0s (or 0ms) indicates that the property will begin to animate its transition immediately when the value changes; positive values will delay the start of the transition effect for the corresponding number of seconds. Negative values cause the transition to begin immediately, but to cause the transition to seem to begin partway through the animation effect.</p>
+<p>You may specify multiple delays; each delay will be applied to the corresponding property as specified by the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-property">-moz-transition-property</a></code> property.</p>
+<div class="note">
+<strong>Note:</strong> This implementation of the CSS <code>transition-<span style="font-family: Verdana,Tahoma,sans-serif;">delay</span></code> property is based on a draft specification; the syntax is subject to change.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 0s</li> <li>Applies to: all elements, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Abefore">:before</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aafter">:after</a></code> pseudo elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>:no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Interactive">interactive</a></code>
+</span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+-moz-transition-delay: &lt;time&gt;[, &lt;time&gt;]*
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>time</dt> <dd>The time (in seconds or milliseconds) to wait between a property's value changing and the start of the animation effect. A time in seconds is represented by a number followed by "s", while a time in milliseconds is a number followed by "ms".</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>There are several examples of CSS transitions included in the main <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a> article.</p>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/css3-transitions" class=" external" rel="external" href="http://www.w3.org/TR/css3-transitions" target="_blank">CSS Transitions Module Level 3</a> (Working Draft)</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>4.0 (2.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>---</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td><em>nightly, don't know version<br></em></td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition">-moz-transition</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-property">-moz-transition-property</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-duration">-moz-transition-duration</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-timing-function">-moz-transition-timing-function</a></code>
+</li>
+</ul>
+<p></p>
+</div>

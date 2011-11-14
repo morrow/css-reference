@@ -1,0 +1,94 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> text-align </code>CSS property describes how inline content like text is aligned in its parent block element.<code> text-align </code>does not control the alignment of block elements itself, only their inline content.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: a nameless value that acts as<code> left </code>if 'direction' is 'ltr',<code> right </code>if 'direction' is 'rtl'</li> <li>Applies to: block level elements, table cells and inline-blocks</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+ text-align:  left | center | right | justify | start | end | -moz-left | -moz-center | -moz-right | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>left</dt> <dd>The inline contents are aligned to the left edge of the line box.</dd> <dt>right</dt> <dd>The inline contents are aligned to the right edge of the line box.</dd> <dt>center</dt> <dd>The inline contents are centered within the line box.</dd> <dt>justify</dt> <dd>The text is justified. Text should line up their left and right edges to the left and right content edges of the paragraph.</dd> <dt>start</dt> <dd>The same as<code> left </code>if direction is left-to-right and<code> right </code>if direction is right-to-left.</dd> <dt>end 
+<span title="(Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.2</span>
+</dt> <dd>The same as<code> right </code>if direction is left-to-right and<code> left </code>if direction is right-to-left.</dd>
+</dl>
+<div id="section_4">
+<span id="Mozilla_Extensions"></span><h4 class="editable">Mozilla Extensions</h4>
+<dl>
+<dt>-moz-center</dt> <dd>Centers inline and also block content.</dd> <dt>-moz-left</dt> <dd>Aligns inline and also block content.</dd> <dt>-moz-right</dt> <dd>Aligns inline and also block content.</dd>
+</dl>
+</div>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/text-align.html">View Live Examples</a></p>
+<div id="section_6">
+<span id="Live_Examples"></span><h4 class="editable">Live Examples</h4>
+<div style="text-align:center; border:solid; margin:1em 0">div { <strong>text-align: center</strong>; border:solid; }
+<p style="background:gold; width:22em; margin:1em 0">p { background:gold; width:22em; }</p>
+some more inline content...</div>
+<div style="text-align:center; border:solid; margin:1em 0">div { <strong>text-align: center</strong>; border:solid; }
+<p style="background:gold; width:22em; margin:1em auto">p { background:gold; width:22em; <strong>margin: 1em auto</strong>; }</p>
+some more inline content...</div>
+<div style="text-align:-moz-center; text-align:-webkit-center; border:solid;  margin:1em 0">div { <strong>text-align:-moz-center</strong>; text-align:-webkit-center; border:solid; }
+<p style="background:gold; width:22em; margin:1em 0">p { background:gold; width:22em; }</p>
+some more inline content...</div>
+</div>
+</div>
+<div id="section_7">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>The standard-compatible way to center a block itself without centering its inline content is setting the left and right<code> margin </code>to auto, e.g.:<br><code>margin:auto;  </code>or<code>  margin:0 auto;  </code>or <code> margin-left:auto; margin-right:auto;</code></p>
+</div>
+<div id="section_8">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Basic support</th> <th colspan="2">Block alignment values</th> <th>
+<code>start </code>value</th> <th>
+<code>end </code>value</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>3.0</td> <td colspan="2">---</td> <td>---</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0 (1.0)</td> <td>1.0 (1.0)</td> <td><code>-moz-left | -moz-center | -moz-right</code></td> <td>1.0 (1.0)</td> <td>3.6 (1.9.2)</td> </tr>
+<tr>
+<td>Opera</td> <td>3.5</td> <td colspan="2">---</td> <td>---</td> <td>---</td> </tr>
+<tr>
+<td rowspan="2">Safari (WebKit)</td> <td rowspan="2">1.0 (85)</td> <td>1.0 (85)</td> <td><code>-khtml-left | -khtml-center | -khtml-right</code></td> <td rowspan="2">3.1 (525)</td> <td rowspan="2">3.1 (525)</td> </tr>
+<tr>
+<td>1.3 (312)</td> <td><code>-khtml-left | -khtml-center | -khtml-right |<br> -webkit-left | -webkit-center | -webkit-right</code></td> </tr>
+</tbody></table>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/text.html#alignment-prop" title="http://www.w3.org/TR/CSS21/text.html#alignment-prop" target="_blank">CSS 2.1 Text #text-align </a></li> <li>
+<a title="http://www.w3.org/TR/css3-text/#text-align" class="external" rel="external" href="http://www.w3.org/TR/css3-text/#text-align" target="_blank">CSS 3 Text #text-align</a> Working draft</li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin">margin:auto</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-left">margin-left:auto</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/vertical-align">vertical-align</a></code></p>
+<p></p>
+</div>

@@ -1,0 +1,212 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>box-shadow</code> CSS property accepts one or more shadow effects as a comma-separated list. It allows casting a drop shadow from the frame of almost any element. If a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-radius">border-radius</a></code> is specified on the element with a box shadow, the box shadow takes on the same rounded corners. The z-ordering of multiple box shadows is the same as multiple <a title="text-shadow" rel="internal" href="https://developer.mozilla.org/en/CSS/text-shadow">text shadows</a> (the first specified shadow is on top).</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified (any 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> made absolute; any <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> computed)</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+box-shadow:  none | &lt;shadow&gt; [,&lt;shadow&gt;]*
+
+  where &lt;shadow&gt; is defined as:
+
+inset? &amp;&amp; [ &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur-radius&gt;? &lt;spread-radius&gt;? &lt;color&gt;? ]</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>inset <small>(optional)</small>
+</dt> <dd>If not specified (default), the shadow is assumed to be a drop shadow (as if the box were raised above the content).<br> The presence of the <code>inset</code> keyword changes the shadow to one inside the frame (as if the content was depressed inside the box). Inset shadows are drawn above background, but below border and content.</dd> <dt>&lt;offset-x&gt; &lt;offset-y&gt; <small>(required)</small>
+</dt> <dd>This are two 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> values to set the shadow offset. <code>&lt;offset-x&gt;</code> specifies the horizontal distance. Negative values place the shadow to the left of the element. <code>&lt;offset-y&gt;</code> specifies the vertical distance. Negative values place the shadow above the element. See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> for possible units.<br> If both values are <code>0</code>, the shadow is placed behind the element (and may generate a blur effect if <code>&lt;blur-radius&gt;</code> and/or <code>&lt;spread-radius&gt;</code> is set).</dd> <dt>&lt;blur-radius&gt; <small>(optional)</small>
+</dt> <dd>This is a third 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> value. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be <code>0</code> (the shadow's edge is sharp).</dd> <dt>&lt;spread-radius&gt; <small>(optional)</small>
+</dt> <dd>This is a fourth 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> value. Positive values will cause the shadow to expand and grow bigger, negative values will cause the shadow to shrink. If not specified, it will be <code>0</code> (the shadow will be the same size as the element).</dd> <dt>&lt;color&gt; <small>(optional)</small>
+</dt> <dd>See <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> values for possible keywords and notations.<br> If not specified, the color depends on the browser. In Gecko (Firefox), Presto (Opera) and Trident (Internet Explorer), the value of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property is used. On the other hand, WebKit's shadow is transparent and therefore useless if <code>&lt;color&gt;</code> is omitted.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Live_examples"></span><h2 class="editable">Live examples</h2>
+<ul>
+<li><a class="external" title="http://www.elektronotdienst-nuernberg.de/bugs/box-shadow_inset.html" rel="external" href="http://www.elektronotdienst-nuernberg.de/bugs/box-shadow_inset.html" target="_blank">box-shadow test</a></li> <li><a class="external" title="http://markusstange.wordpress.com/2009/02/15/fun-with-box-shadows/" rel="external" href="http://markusstange.wordpress.com/2009/02/15/fun-with-box-shadows/" target="_blank">box-shadow tutorial and examples</a></li>
+</ul>
+<pre style="-moz-box-shadow: 60px -16px teal; -webkit-box-shadow: 60px -16px teal; box-shadow: 60px -16px teal; float: left; margin: 1em;">
+   -moz-box-shadow: 60px -16px teal;
+-webkit-box-shadow: 60px -16px teal;
+        box-shadow: 60px -16px teal;
+</pre>
+<pre style="-moz-box-shadow: 10px 5px 5px black; -webkit-box-shadow: 10px 5px 5px black; box-shadow: 10px 5px 5px black; float: left; margin: 1em;">
+   -moz-box-shadow: 10px 5px 5px black;
+-webkit-box-shadow: 10px 5px 5px black;
+        box-shadow: 10px 5px 5px black;
+</pre>
+<pre style="-moz-box-shadow: 3px 3px red, -1em 0pt 0.4em olive; -webkit-box-shadow: 3px 3px red, -1em 0 0.4em olive; box-shadow: 3px 3px red, -1em 0 0.4em olive; float: left; margin: 1em;">
+   -moz-box-shadow: 3px 3px red, -1em 0 0.4em olive;
+-webkit-box-shadow: 3px 3px red, -1em 0 0.4em olive;
+        box-shadow: 3px 3px red, -1em 0 0.4em olive;
+</pre>
+<pre style="-moz-box-shadow: 5em 1em gold inset; -webkit-box-shadow: inset 5em 1em gold; box-shadow: inset 5em 1em gold; float: left; margin: 1em;">
+   -moz-box-shadow: inset 5em 1em gold;
+-webkit-box-shadow: inset 5em 1em gold;
+        box-shadow: inset 5em 1em gold; 
+</pre>
+<pre style="-moz-box-shadow: 0pt 0pt 1em gold; -webkit-box-shadow: 0 0 1em gold; box-shadow: 0 0 1em gold; float: left; margin: 1em;">
+   -moz-box-shadow: 0 0 1em gold;
+-webkit-box-shadow: 0 0 1em gold;
+        box-shadow: 0 0 1em gold; 
+</pre>
+<pre style="-moz-box-shadow: 0pt 0pt 1em gold inset; -webkit-box-shadow: inset 0 0 1em gold; box-shadow: inset 0 0 1em gold; float: left; margin: 1em;">
+   -moz-box-shadow: inset 0 0 1em gold;
+-webkit-box-shadow: inset 0 0 1em gold;
+        box-shadow: inset 0 0 1em gold;
+</pre>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 style="clear: both" class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>10.0<br> 1.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>4.0 (2.0)
+<br> 3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>9.0</td> <td>10.5</td> <td>5.1 (WebKit 534)<br> 3.0 (WebKit 522)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>Multiple shadows</td> <td>10.0<br> 1.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>4.0 (2.0)
+<br> 3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>9.0</td> <td>10.5</td> <td>5.1 (WebKit 534)<br> 3.0 (WebKit 522)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>
+<code>inset</code> keyword</td> <td>10.0<br> 4.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>4.0 (2.0)
+<br> 3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>9.0</td> <td>10.5</td> <td>5.1 (WebKit 534)<br> 5.0 (WebKit 533)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>Spread radius</td> <td>10.0<br> 4.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>4.0 (2.0)
+<br> 3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>9.0</td> <td>10.5</td> <td>5.1 (WebKit 534)<br> 5.0 (WebKit 533)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>iOS Safari</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Android Browser</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>Multiple shadows</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>
+<code>inset</code> keyword</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>Spread radius</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>Since version 5.5, Internet Explorer supports Microsoft's <a title="http://msdn.microsoft.com/en-us/library/ms532985(VS.85,loband).aspx" class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms532985%28VS.85,loband%29.aspx" target="_blank">DropShadow</a> and <a title="http://msdn.microsoft.com/en-us/library/ms533086(VS.85,loband).aspx" class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms533086%28VS.85,loband%29.aspx" target="_blank">Shadow</a> Filter. You can use this proprietary extension to cast a drop shadow (though the syntax and the effect are different from CSS3).</li> <li>Shadows affect layout in older Gecko, Presto, and WebKit; e.g. if you cast an outer shadow to a box with a <code>width</code> of <code>100%</code>, you'll see a scrollbar.</li>
+</ul>
+</div>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a rel="custom" href="http://www.w3.org/TR/css3-background/#the-box-shadow">CSS3 Backgrounds and Borders Module: box-shadow</a><span title="Candidate Recommendation" style="color:#333; background-color:#cfd510; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">CR</span>
+</li>
+</ul>
+<p></p>
+<table style="border: 1px solid rgb(204, 204, 204); margin: 0px 0px 10px 10px; padding: 0px 10px; background: rgb(238, 238, 238) none repeat scroll 0% 50%; clear: both; width: 100%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody>
+<tr><td colspan="2"><strong>HTML5 Documentation</strong></td></tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#HTML" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#HTML">HTML</a></td>
+<td>
+<a title="en/Using audio and video in Firefox" rel="internal" href="https://developer.mozilla.org/en/Using_HTML5_audio_and_video">Audio/Video</a> <a title="en/HTML/Canvas" rel="internal" href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</a> <a title="https://developer.mozilla.org/en/WebGL" rel="internal" href="https://developer.mozilla.org/en/WebGL">WebGL</a> <a title="en/SVG" rel="internal" href="https://developer.mozilla.org/en/SVG">SVG</a> <a title="en/MathML" rel="internal" href="https://developer.mozilla.org/en/MathML">MathML</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#WebForms" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#WebForms">WebForms</a> <a title="en/Using Application Cache" rel="internal" href="https://developer.mozilla.org/en/Using_Application_Cache">AppCache</a> <a title="en/Using microformats" rel="internal" href="https://developer.mozilla.org/en/Using_microformats">Microformats</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Semantic tags" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Semantic_tags">SemanticTags</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#Javascript" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Javascript">Javascript</a></td>
+<td>
+<a title="en/HTML/HTML5/HTML5 Thematic Classification#Client-Side Storage" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Client-Side_Storage">Storage</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#IndexDB" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#IndexDB">IndexDB</a> <a title="en/WebSockets" rel="internal" href="https://developer.mozilla.org/en/WebSockets">WebSockets</a> <a title="en/Using web workers" rel="internal" href="https://developer.mozilla.org/en/Using_web_workers">WebWorkers</a> <a title="en/Online and offline events" rel="internal" href="https://developer.mozilla.org/en/Online_and_offline_events">Events</a> <a title="en/DragDrop/Drag and Drop" rel="internal" href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag/Drop</a> <a title="en/Web-based protocol handlers" rel="internal" href="https://developer.mozilla.org/en/Web-based_protocol_handlers">ProtocolHandler</a> <a title="en/Using geolocation" rel="internal" href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</a> <a title="en/Focus management in HTML" rel="internal" href="https://developer.mozilla.org/en/Focus_management_in_HTML">Focus</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#CSS" rel="external" href="mks://localhost/en/HTML/HTML5/HTML5_Thematic_Classification#CSS" target="_blank" class=" external">CSS</a></td>
+<td>
+<a title="en/Mozilla CSS support chart" rel="internal" href="https://developer.mozilla.org/en/Mozilla_CSS_support_chart">NewSelectors</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Typography" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Typography">Typography</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Visual" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Visual">Visual</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Effects" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Effects">Effects</a>
+</td>
+</tr>
+</tbody></table>
+<p></p>
+</div>

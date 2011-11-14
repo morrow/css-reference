@@ -1,0 +1,125 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> color </code>CSS property sets the foreground color of an element's text content.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: depends on user agent</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+color:  &lt;color&gt; | inherit</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;color&gt;</dt> <dd>The color property accepts various keywords and numeric notations. <strong>See <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> values</strong> for much details.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>The following are all ways to make the element's text red:</p>
+
+          <pre name="code" class="css">element { color: red }
+element { color: #f00 }
+element { color: #ff0000 }
+element { color: rgb(255,0,0) }
+element { color: rgb(100%, 0%, 0%) }
+element { color: hsl(0, 100%, 50%) }
+
+/* 50% translucent, support since Firefox 3 */
+element { color: rgba(255, 0, 0, 0.5) } 
+element { color: hsla(0, 100%, 50%, 0.5) }</pre>
+        
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/colors.html#propdef-color" title="http://www.w3.org/TR/CSS21/colors.html#propdef-color" target="_blank">CSS 2.1</a></li> <li>
+<a class="external" rel="external" href="http://www.w3.org/TR/css3-color/#color" title="http://www.w3.org/TR/css3-color/#color" target="_blank">CSS 3 Color #color</a> Working draft</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p>For the browser compatibility table for the various values, see <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span>.</p>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> values</li> <li><a class="external" rel="external" href="http://html-color-codes.com/" title="http://html-color-codes.com/" target="_blank">Color Chart by VisiBone</a></li>
+</ul>
+<p></p>
+<table style="border: 1px solid rgb(204, 204, 204); margin: 0px 0px 10px 10px; padding: 0px 10px; background: rgb(238, 238, 238) none repeat scroll 0% 50%; clear: both; width: 100%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody>
+<tr><td colspan="2"><strong>HTML5 Documentation</strong></td></tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#HTML" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#HTML">HTML</a></td>
+<td>
+<a title="en/Using audio and video in Firefox" rel="internal" href="https://developer.mozilla.org/en/Using_HTML5_audio_and_video">Audio/Video</a> <a title="en/HTML/Canvas" rel="internal" href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</a> <a title="https://developer.mozilla.org/en/WebGL" rel="internal" href="https://developer.mozilla.org/en/WebGL">WebGL</a> <a title="en/SVG" rel="internal" href="https://developer.mozilla.org/en/SVG">SVG</a> <a title="en/MathML" rel="internal" href="https://developer.mozilla.org/en/MathML">MathML</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#WebForms" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#WebForms">WebForms</a> <a title="en/Using Application Cache" rel="internal" href="https://developer.mozilla.org/en/Using_Application_Cache">AppCache</a> <a title="en/Using microformats" rel="internal" href="https://developer.mozilla.org/en/Using_microformats">Microformats</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Semantic tags" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Semantic_tags">SemanticTags</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#Javascript" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Javascript">Javascript</a></td>
+<td>
+<a title="en/HTML/HTML5/HTML5 Thematic Classification#Client-Side Storage" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Client-Side_Storage">Storage</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#IndexDB" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#IndexDB">IndexDB</a> <a title="en/WebSockets" rel="internal" href="https://developer.mozilla.org/en/WebSockets">WebSockets</a> <a title="en/Using web workers" rel="internal" href="https://developer.mozilla.org/en/Using_web_workers">WebWorkers</a> <a title="en/Online and offline events" rel="internal" href="https://developer.mozilla.org/en/Online_and_offline_events">Events</a> <a title="en/DragDrop/Drag and Drop" rel="internal" href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag/Drop</a> <a title="en/Web-based protocol handlers" rel="internal" href="https://developer.mozilla.org/en/Web-based_protocol_handlers">ProtocolHandler</a> <a title="en/Using geolocation" rel="internal" href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</a> <a title="en/Focus management in HTML" rel="internal" href="https://developer.mozilla.org/en/Focus_management_in_HTML">Focus</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#CSS" rel="external" href="mks://localhost/en/HTML/HTML5/HTML5_Thematic_Classification#CSS" target="_blank" class=" external">CSS</a></td>
+<td>
+<a title="en/Mozilla CSS support chart" rel="internal" href="https://developer.mozilla.org/en/Mozilla_CSS_support_chart">NewSelectors</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Typography" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Typography">Typography</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Visual" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Visual">Visual</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Effects" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Effects">Effects</a>
+</td>
+</tr>
+</tbody></table>
+<p></p>
+</div>

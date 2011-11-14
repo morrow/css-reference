@@ -1,0 +1,296 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> cursor </code>CSS property specifies the mouse cursor displayed when the mouse pointer is over an element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: Yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>, <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Interactive">interactive</a></code>
+</span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified (if a keyword)</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre style="white-space:pre-wrap" class="eval">
+CSS 2.1
+
+cursor:
+[ [ <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span> ,]* 
+  [ auto | crosshair | default | help | move | pointer  | progress | text | wait | e-resize | 
+    ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize ] ]
+] | inherit
+</pre>
+<pre style="white-space:pre-wrap" class="eval">
+CSS 3
+
+cursor:
+[ [ <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span> [&lt;x&gt; &lt;y&gt;]?,]* 
+  [ auto | default | none | context-menu | help | pointer | progress | wait | cell | 
+    crosshair | text | vertical-text | alias | copy | move | no-drop | not-allowed | 
+    e-resize | n-resize | ne-resize | nw-resize | s-resize | se-resize |
+    sw-resize | w-resize | ew-resize | ns-resize | nesw-resize | nwse-resize |
+    col-resize | row-resize | all-scroll ]
+] | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;uri&gt;</dt> <dd>Optional.<br> A<code> url(…) </code>or a comma separated list<code> url(…), url(…), … </code>, pointing to an image file. More than one <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span> may be provided as fallback, in case some cursor image types are not supported. A non-URL fallback (one ore more of the other values) <strong>must</strong> be at the end of the fallback list. See <a title="en/Using_URL_values_for_the_cursor_property" rel="internal" href="https://developer.mozilla.org/en/Using_URL_values_for_the_cursor_property">Using URL values for the cursor property</a> for more details.</dd> <dt>&lt;x&gt; &lt;y&gt;</dt> <dd>Optional x- and y-coordinates (not supported by Internet Explorer). Two unit-less numbers.</dd>
+</dl>
+<div id="section_4">
+<span id="Supported_CSS_standard_values"></span><h4 class="editable">Supported CSS standard values</h4>
+<table class="standard-table"><tbody>
+<tr>
+<th>Category</th> <th>CSS value<br><span style="font-size: x-small;">move mouse<br> over for testing</span>
+</th> <th> </th> <th>Description</th> </tr>
+<tr style="cursor:auto">
+<td rowspan="3">General</td> <td><code>auto</code></td> <td> </td> <td>The browser determines the cursor to display based on the current context.<br> E.g. equivalent to<code> text </code>when hovering text.</td> </tr>
+<tr style="cursor:default">
+<td><code>default</code></td> <td><img style="width: 26px; height: 26px;" alt="default.gif" src="https://developer.mozilla.org/@api/deki/files/3438/=default.gif"></td> <td>Default cursor, typically an arrow.</td> </tr>
+<tr style="cursor:none">
+<td><code>none</code></td> <td> </td> <td>No cursor is rendered 
+<span style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding:0px 2px;">New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a></span>
+</td> </tr>
+<tr style="cursor:context-menu">
+<td rowspan="5" style="cursor:auto">Links &amp; status</td> <td><code>context-menu</code></td> <td><img alt="context-menu.png" style="width: 26px; height: 26px;" src="https://developer.mozilla.org/@api/deki/files/3461/=context-menu.png"></td> <td>A context menu is available under the cursor.<br> In Gecko/Firefox not implemented on Windows, 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=258960" class="external" title="RESOLVED WONTFIX - 'context-menu' cursor glyph missing for Windows">
+bug 258960</a>
+ WONTFIX.</td> </tr>
+<tr style="cursor:help">
+<td><code>help</code></td> <td><img style="width: 26px; height: 26px;" alt="help.gif" src="https://developer.mozilla.org/@api/deki/files/3442/=help.gif"></td> <td>Indicating help is available.</td> </tr>
+<tr style="cursor:pointer">
+<td><code>pointer</code></td> <td><img style="width: 26px; height: 26px;" alt="pointer.gif" src="https://developer.mozilla.org/@api/deki/files/3449/=pointer.gif"></td> <td>E.g. used when hovering over links, typically a hand.</td> </tr>
+<tr style="cursor:progress">
+<td><code>progress</code></td> <td><img style="width: 26px; height: 26px;" alt="progress.gif" src="https://developer.mozilla.org/@api/deki/files/3450/=progress.gif"></td> <td>The program is busy in the background but the user can still interact with the interface (unlike for <code>wait</code>).</td> </tr>
+<tr style="cursor:wait">
+<td><code>wait</code></td> <td><img style="width: 26px; height: 26px;" alt="wait.gif" src="https://developer.mozilla.org/@api/deki/files/3457/=wait.gif"></td> <td>The program is busy (sometimes an hourglass or a watch).</td> </tr>
+<tr style="cursor:cell">
+<td style="cursor:auto" rowspan="4">Selection</td> <td><code>cell</code></td> <td><img style="width: 26px; height: 26px;" alt="cell.gif" src="https://developer.mozilla.org/@api/deki/files/3434/=cell.gif"></td> <td>Indicating that cells can be selected.</td> </tr>
+<tr style="cursor:crosshair">
+<td><code>crosshair</code></td> <td><img style="width: 26px; height: 26px;" alt="crosshair.gif" src="https://developer.mozilla.org/@api/deki/files/3437/=crosshair.gif"></td> <td>Cross cursor, often used to indicate selection in a bitmap.</td> </tr>
+<tr style="cursor:text">
+<td><code>text</code></td> <td><img style="width: 26px; height: 26px;" alt="text.gif" src="https://developer.mozilla.org/@api/deki/files/3455/=text.gif"></td> <td>Indicating text can be selected, typically an I-beam.</td> </tr>
+<tr style="cursor:vertical-text">
+<td><code>vertical-text</code></td> <td><img style="width: 26px; height: 26px;" alt="vertical-text.gif" src="https://developer.mozilla.org/@api/deki/files/3456/=vertical-text.gif"></td> <td>Indicating that vertical text can be selected, typically a sideways I-beam.</td> </tr>
+<tr style="cursor:alias">
+<td style="cursor:auto" rowspan="5">Drag and drop</td> <td><code>alias</code></td> <td><img style="width: 26px; height: 26px;" alt="alias.gif" src="https://developer.mozilla.org/@api/deki/files/3432/=alias.gif"></td> <td>Indicating an alias or shortcut is to be created.</td> </tr>
+<tr style="cursor:copy">
+<td><code>copy</code></td> <td><img style="width: 26px; height: 26px;" alt="copy.gif" class="internal default" src="https://developer.mozilla.org/@api/deki/files/3436/=copy.gif"></td> <td>Indicating that something can be copied.</td> </tr>
+<tr style="cursor:move">
+<td><code>move</code></td> <td><img style="width: 26px; height: 26px;" alt="move.gif" src="https://developer.mozilla.org/@api/deki/files/3443/=move.gif"></td> <td>The hovered object may be moved.</td> </tr>
+<tr style="cursor:no-drop">
+<td><code>no-drop</code></td> <td colspan="2">
+<img align="left" style="width: 33px; height: 26px;" alt="no-drop.gif" class="internal lwrap" src="https://developer.mozilla.org/@api/deki/files/3445/=no-drop.gif">Cursor showing that a drop is not allowed at the current location.<br><a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=275173" class="external" title="NEW - Cursor glyph for CSS3 'no-drop' is the same as for 'not-allowed'">
+bug 275173</a>
+ on Windows, "<em>no-drop</em> is the same as <em>not-allowed</em>".</td> </tr>
+<tr style="cursor:not-allowed">
+<td><code>not-allowed</code></td> <td><img style="width: 26px; height: 26px;" alt="not-allowed.gif" src="https://developer.mozilla.org/@api/deki/files/3446/=not-allowed.gif"></td> <td>Cursor showing that something cannot be done.</td> </tr>
+<tr style="cursor:all-scroll">
+<td style="cursor:auto" rowspan="15">Resize &amp; scrolling</td> <td><code>all-scroll</code></td> <td><img style="width: 26px; height: 26px;" alt="all-scroll.gif" src="https://developer.mozilla.org/@api/deki/files/3433/=all-scroll.gif"></td> <td>Cursor showing that something can be scrolled in any direction (panned).<br><a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=275174" class="external" title="NEW - Cursor glyph for CSS3 'all-scroll' is the same as for 'move'">
+bug 275174</a>
+ on Windows, "<em>all-scroll</em> is the same as <em>move</em>".</td> </tr>
+<tr style="cursor:col-resize">
+<td><code>col-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="col-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3435/=col-resize.gif"></td> <td>The item/column can be resized horizontally. Often rendered as arrows pointing left and right with a vertical bar separating.</td> </tr>
+<tr style="cursor:row-resize">
+<td><code>row-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="row-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3451/=row-resize.gif"></td> <td>The item/row can be resized vertically. Often rendered as arrows pointing up and down with a horizontal bar separating them.</td> </tr>
+<tr style="cursor:n-resize">
+<td><code>n-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="n-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3447/=n-resize.gif"></td> <td rowspan="8">Some edge is to be moved. For example, the<code> se-resize </code>cursor is used when the movement starts from the <em>south-east</em> corner of the box.</td> </tr>
+<tr style="cursor:e-resize">
+<td><code>e-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="e-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3439/=e-resize.gif"></td> </tr>
+<tr style="cursor:s-resize">
+<td><code>s-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="s-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3453/=s-resize.gif"></td> </tr>
+<tr style="cursor:w-resize">
+<td><code>w-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="w-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3458/=w-resize.gif"></td> </tr>
+<tr style="cursor:ne-resize">
+<td><code>ne-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="ne-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3444/=ne-resize.gif"></td> </tr>
+<tr style="cursor:nw-resize">
+<td><code>nw-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="nw-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3448/=nw-resize.gif"></td> </tr>
+<tr style="cursor:se-resize">
+<td><code>se-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="se-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3452/=se-resize.gif"></td> </tr>
+<tr style="cursor:sw-resize">
+<td><code>sw-resize</code></td> <td><img style="width: 26px; height: 26px;" alt="sw-resize.gif" src="https://developer.mozilla.org/@api/deki/files/3454/=sw-resize.gif"></td> </tr>
+<tr style="cursor:ew-resize">
+<td><code>ew-resize</code></td> <td> </td> <td rowspan="4">Indicates a bidirectional resize cursor.</td> </tr>
+<tr style="cursor:ns-resize">
+<td><code>ns-resize</code></td> <td> </td> </tr>
+<tr style="cursor: nesw-resize;">
+<td><code>nesw-resize</code></td> <td> </td> </tr>
+<tr style="cursor: nwse-resize;">
+<td><code>nwse-resize</code></td> <td> </td> </tr>
+</tbody></table>
+</div>
+<div id="section_5">
+<span id="Mozilla_extensions"></span><h4 class="editable">Mozilla extensions</h4>
+<table class="standard-table"><tbody>
+<tr>
+<th>CSS value</th> <th>Description</th> <th>dropped</th> <th>deprecated since</th> </tr>
+<tr>
+<td><code>-moz-cell</code></td> <td>
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>, use<code> cell</code>.</td> <td>Gecko 1.9.2 (Firefox 3.6)</td> <td rowspan="4">Gecko 1.8 (Firefox 1.5)</td> </tr>
+<tr>
+<td><code>-moz-alias</code></td> <td>
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>, use<code> alias.</code>
+</td> <td rowspan="4">Gecko 2 (Firefox 4)</td> </tr>
+<tr>
+<td><code>-moz-context-menu</code></td> <td>
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>, use<code> context-menu.</code>
+</td> </tr>
+<tr>
+<td><code>-moz-copy</code></td> <td>
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>, use<code> copy.</code>
+</td> </tr>
+<tr>
+<td><code>-moz-spinning</code></td> <td>
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>, use<code> progress.</code>
+</td> <td>Gecko 1.7.1 (Firefox 1.0)</td> </tr>
+</tbody></table>
+<table class="standard-table"><tbody>
+<tr style="cursor:-moz-grab">
+<td><code><a title="en/CSS/-moz-grab" style="cursor:-moz-grab!important" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-grab">-moz-grab</a></code></td> <td>
+<img align="left" style="width: 26px; height: 26px;" alt="grab.gif" src="https://developer.mozilla.org/@api/deki/files/3440/=grab.gif">  An element can be grabbed.</td> <td style="cursor:auto" colspan="2" rowspan="4"> <p>This cursors are not recommended for use on public web pages.</p> <p>Use of <a title="en/Using URL values for the cursor property" class="internal" rel="internal" href="https://developer.mozilla.org/en/Using_URL_values_for_the_cursor_property">custom image cursors</a> may provide better cross browser compatibility.</p> </td> </tr>
+<tr style="cursor:-moz-grabbing">
+<td><code><a title="en/CSS/-moz-grabbing" style="cursor:-moz-grabbing!important" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-grabbing">-moz-grabbing</a></code></td> <td>
+<img align="left" style="width: 26px; height: 26px;" alt="grabbing.gif" src="https://developer.mozilla.org/@api/deki/files/3441/=grabbing.gif">  An element is currently being grabbed.</td> </tr>
+<tr style="cursor:-moz-zoom-in">
+<td><code><a title="en/CSS/-moz-zoom-in" style="cursor:-moz-zoom-in!important" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-zoom-in">-moz-zoom-in</a></code></td> <td>
+<img align="left" style="width: 26px; height: 26px;" alt="zoom-in.gif" src="https://developer.mozilla.org/@api/deki/files/3459/=zoom-in.gif">  An element is actually being resized, enlarged or is actually being magnified. 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=204841" class="external" title="NEW - -moz-zoom-in and -moz-zoom-out cursors hard to see on dark-colored images">
+bug 204841</a>
+</td> </tr>
+<tr style="cursor:-moz-zoom-out">
+<td><code><a title="en/CSS/-moz-zoom-out" style="cursor:-moz-zoom-out!important" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-zoom-out">-moz-zoom-out</a></code></td> <td>
+<img align="left" style="width: 26px; height: 26px;" alt="zoom-out.gif" src="https://developer.mozilla.org/@api/deki/files/3460/=zoom-out.gif">  An element is actually being resized, reduced or is actually being zoomed out. 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=204841" class="external" title="NEW - -moz-zoom-in and -moz-zoom-out cursors hard to see on dark-colored images">
+bug 204841</a>
+</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<div class="geckoVersionNote">
+<p>
+</p>
+<div class="geckoVersionHeading">Gecko 2.0 note<div style="font-size:9px; position:relative; top:-5px; font-style:italic;">(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+</div>
+
+<p>Support for loading a cursor from a URI was added for Mac OS X in Gecko 2.0; prior to that it was not supported on OS X.</p>
+</div>
+</div>
+<div id="section_7">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<ul>
+<li>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/cursor.html">View Live Examples</a>
+</li> <li><a class="external" title="http://www.elektronotdienst-nuernberg.de/bugs/cursor.html" rel="external" href="http://www.elektronotdienst-nuernberg.de/bugs/cursor.html" target="_blank">CSS 2.1 and CSS 3 cursor propery test</a></li>
+</ul>
+<pre>
+.foo { cursor: crosshair; }
+
+.bar { cursor: move;  cursor: cell; }  /* use move if cell isn't supported */ 
+
+.baz { url(hyper.cur), auto }  /* standard cursor value as fallback <u>must</u> be provided */
+</pre>
+</div>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>
+<code>auto | crosshair | default | move</code><code> | text | wait | help</code><code> | n-resize</code><code> | e-resize</code><code> | s-resize</code><code> |w-resize</code><code> | ne-resize</code><code> | nw-resize | se-resize | sw-resize</code>
+</td> <td> 1.0</td> <td> 1.0 (1.0)</td> <td> 4.0</td> <td> 7.0</td> <td>1.2 (125)</td> </tr>
+<tr>
+<td> <code>hand</code> <span style="font-weight: normal;"><span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     (use <code>pointer</code>)</span>
+</td> <td> <span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span>
+</td> <td> <span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span>
+</td> <td> 4.0</td> <td> 7.0</td> <td><span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> </span></span></td> </tr>
+<tr>
+<td> <code>pointer</code>
+</td> <td> 1.0</td> <td> 1.0 (1.0)</td> <td> 6.0</td> <td> 7.0</td> <td> 1.2 (125)</td> </tr>
+<tr>
+<td> <code>progress</code>
+</td> <td> 1.0</td> <td> 1.0 (1.7.1)</td> <td> 6.0</td> <td> 7.2</td> <td> 3.0 (522)</td> </tr>
+<tr>
+<td>
+<code>url()<br></code>See <a title="en/Using URL values for the cursor property" class="internal" rel="internal" href="https://developer.mozilla.org/en/Using_URL_values_for_the_cursor_property">Using URL values</a><code><br></code>
+</td> <td> 1.0</td> <td> 1.5 (1.8)</td> <td> 6.0</td> <td> <span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span>
+</td> <td> 3.0 (522-523)</td> </tr>
+<tr>
+<td><code>not-allowed | no-drop | vertical-text | all-scroll | col-resize | row-resize</code></td> <td> 1.0</td> <td> 1.5 (1.8)</td> <td><span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span></td> <td> <span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span>
+</td> <td> 3.0 (522)</td> </tr>
+<tr>
+<td><code>none</code></td> <td> 5.0</td> <td> 3.0 (1.9)</td> <td><span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span></td> <td> <span style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;" class="Apple-style-span"><span style="border-collapse: collapse; font-family: Verdana,Helvetica,Arial,sans-serif; font-size: 13px; line-height: 16px; text-align: left;" class="Apple-style-span"><span style="font-family: 'courier new',monospace; border-collapse: separate;"><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></span> <br></span></span>
+</td> <td> 5.0 (533)</td> </tr>
+<tr>
+<td><code>inherit</code></td> <td>1.0</td> <td>1.0</td> <td>8.0</td> <td>9.0</td> <td>1.2</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a title="http://www.w3.org/TR/CSS21/ui.html#cursor-props" class="external" rel="external" href="http://www.w3.org/TR/CSS21/ui.html#cursor-props" target="_blank">CSS 2.1 User Interface #cursor</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/css3-ui/#cursor" title="http://www.w3.org/TR/css3-ui/#cursor" target="_blank">CSS 3 User Interface #cursor</a></li> <li><a class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/aa358795.aspx" title="http://msdn.microsoft.com/en-us/library/aa358795.aspx" target="_blank">Cursor Property (MSDN)</a></li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a class="internal" title="en/Using URL values for the cursor property" rel="internal" href="https://developer.mozilla.org/en/CSS/Using_URL_values_for_the_cursor_property">Using URL values for the cursor property</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/pointer-events">pointer-events</a></code>
+</li> <li>
+<a class="external" title="http://trac.webkit.org/export/37902/trunk/WebCore/manual-tests/cursor.html" rel="external" href="http://trac.webkit.org/export/37902/trunk/WebCore/manual-tests/cursor.html" target="_blank">Webkit's cursor demos</a> (including the extended ones: <code>zoom</code>, <code>zoom-out</code>, <code>grab</code>, <code>grabbing</code>)</li>
+</ul>
+<p></p>
+</div>

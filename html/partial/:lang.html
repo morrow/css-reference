@@ -1,0 +1,61 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:lang(language-code</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> matches elements based on the langauge the element is determined to be in. In HTML, the language is determined by a combination of the <code>lang</code> attribute, the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/meta">&lt;meta&gt;</a></code> element, and possibly by information from the protocol (such as HTTP headers). For other document types there may be other document methods for determining the language.</p>
+<p>Acceptable <code>language-code</code> strings are specified in in <a title="en/HTML" rel="internal" href="https://developer.mozilla.org/en/HTML">HTML 4.0</a> specification.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+element:lang(language-code) { <em>style properties</em> }
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>In this example, the <code>lang</code> selector is used to match on the parent of a quote element using <a title="en/CSS/Child_selectors" rel="internal" href="https://developer.mozilla.org/en/CSS/Child_selectors">child selectors</a>. Its not meant to demonstrate the only way to do this, or even the correct way (which would depend on the type of document). Note, Unicode values are used to specify special quote characters.</p>
+
+          <pre name="code" class="css">:lang(en) &gt; Q { quotes: '\201C' '\201D' '\2018' '\2019'; }
+:lang(fr) &gt; Q { quotes: '« ' ' »'; }
+:lang(de) &gt; Q { quotes: '»' '«' '\2039' '\203A'; }</pre>
+        
+<p>...where...</p>
+
+          <pre name="code" class="xml">&lt;div lang="fr"&gt;&lt;q&gt;This French quote has a &lt;q&gt;nested&lt;/q&gt; quote.&lt;/q&gt;&lt;/div&gt;
+  &lt;div lang="de"&gt;&lt;q&gt;This German quote has a &lt;q&gt;nested&lt;/q&gt; quote.&lt;/q&gt;&lt;/div&gt;
+  &lt;div lang="en"&gt;&lt;q&gt;This English quote has a &lt;q&gt;nested&lt;/q&gt; quote.&lt;/q&gt;&lt;/div&gt;</pre>
+        
+<p>... should look like ... <br>
+«This French quote has a «nested» quote.»<br>
+»This German quote has a ‹nested› quote.«<br>
+“This English quote has a ‘nested’ quote.”</p>
+</div>
+<div id="section_4">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>lowest version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>8.0</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0 (1.2)</td> </tr>
+<tr>
+<td>Opera</td> <td>8.0</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>3.1 (525)</td> </tr>
+</tbody></table>
+</div>
+<div id="section_5">
+<span id="Related_Pages"></span><h3 class="editable">Related Pages</h3>
+<ul>
+<li><a title="en/DOM/element.lang" rel="internal" href="https://developer.mozilla.org/en/DOM/element.lang">Language Property</a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="External_References"></span><h3 class="editable">External References</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/REC-CSS2/selector.html#lang" title="http://www.w3.org/TR/REC-CSS2/selector.html#lang" target="_blank">W3C CSS2: lang</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/REC-html40/struct/dirlang.html#h-8.1.1" title="http://www.w3.org/TR/REC-html40/struct/dirlang.html#h-8.1.1" target="_blank">W3C HTML4: Language codes</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-59132807" title="http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-59132807" target="_blank">W3C DOM Level 2 HTML: lang</a></li>
+</ul>
+<p></p>
+</div>

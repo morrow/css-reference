@@ -1,0 +1,120 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> border-color </code>CSS property is a shorthand property for setting the color of the four sides of an element's border: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-color">border-top-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-right-color">border-right-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-color">border-bottom-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-left-color">border-left-color</a></code></p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the computed value of <code>color</code> by default, or as specified.</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+border-color:  [ &lt;color&gt; || transparent ]{1,4} | inherit</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Accepts one, two, tree or four values.</p>
+<dl>
+<dt>&lt;color&gt;</dt> <dd>See <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> value for possible keywords and units.</dd> <dt>transparent</dt> <dd>The border is not drawn but it still takes up space on the page.</dd>
+</dl>
+<p>If <strong>one</strong> color value is given, it applies to <strong>all four</strong> borders.<br><strong>Two</strong> values apply <strong>first</strong> to the <strong>top and bottom</strong> border and <strong>second</strong> to the <strong>left and right</strong> border.<br><strong>Three</strong> values apply <strong>first</strong> to the <strong>top</strong>, <strong>second</strong> to the <strong>left and right</strong> and <strong>third</strong> to the <strong>bottom</strong> border.<br><strong>Four</strong> values apply to top, right, bottom and left border in that order.</p>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/border.html">View Live Examples</a></p>
+<pre style="border-style: ridge dashed solid; border-color: orange blue; border-width: medium;">
+pre { 
+  border-style: ridge dashed solid;
+  border-color: orange blue;
+}</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>In order to see the border you must at least set the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code> to something visible.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/box.html#border-color-properties" title="http://www.w3.org/TR/CSS21/box.html#border-color-properties" target="_blank">CSS 2.1 #border-color</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.7 or earlier)
+</td> <td>1.0</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.9.2)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_8">
+<span id="Mozilla_Extensions"></span><h3 class="editable">Mozilla Extensions</h3>
+<p>The following Mozilla extensions set the border sides to <strong>multiple</strong> colors for Gecko based browsers like Firefox.</p>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-top-colors">-moz-border-top-colors</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-right-colors">-moz-border-right-colors</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-bottom-colors">-moz-border-bottom-colors</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-left-colors">-moz-border-left-colors</a></code></p>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-color">border-top-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-right-color">border-right-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-color">border-bottom-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-left-color">border-left-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code></p>
+<p></p>
+</div>

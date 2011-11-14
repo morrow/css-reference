@@ -1,0 +1,76 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>table-layout </code>property defines the algorithm to be used to layout the table cells, rows, and columns.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: 'table' and 'inline-table' elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">table-layout: inherit | auto | fixed 
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>
+</dt> <dt>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</dt> <dd>An automatic table layout algorithm is commonly used by most browsers for table layout. The width of the table and its cells depends on the content thereof. </dd> <dt>fixed</dt> <dd>Table and column widths are set by the widths of<code> table </code>and<code> col </code>elements or by the width of the first row of cells. Cells in subsequent rows do not affect column widths.<br><br> Under the "fixed" layout method, the entire table can be rendered once the first table row has been downloaded and analyzed. This can speed up rendering time over the "automatic" layout method, but subsequent cell content may not fit in the column widths provided. Any cell that has content that overflows uses the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code> property to determine whether to clip the overflow content.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/table-layout.html">View Live Examples</a></p>
+<pre class="eval">.contentbox {
+  table-layout: fixed;
+}
+</pre>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/tables.html#width-layout" title="http://www.w3.org/TR/CSS21/tables.html#width-layout" target="_blank">CSS 2.1 #table-layout</a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>5.0</td> </tr>
+<tr>
+<td>Firefox</td> <td>1.0</td> </tr>
+<tr>
+<td>Opera</td> <td>7.0</td> </tr>
+<tr>
+<td>Safari</td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/caption-side">caption-side</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/table-layout">table-layout</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-collapse">border-collapse</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-spacing">border-spacing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/empty-cells">empty-cells</a></code></span></p>
+</div>

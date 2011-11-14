@@ -1,0 +1,99 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>counter-reset</code> is used to reset <a title="en/CSS_Counters" rel="internal" href="https://developer.mozilla.org/en/CSS_Counters">CSS Counters</a> to a given value.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>:</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>:</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+counter-reset: [&lt;identifier&gt; &lt;integer&gt;?]+ | inherit | none
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>identifier</dt> <dd>The name of the counter to reset.</dd> <dt>integer</dt> <dd>The value to reset the counter to on each occurrence of the element. Defaults to 0 if not given.</dd>
+</dl>
+<p>You may specify as many counters to reset as you want, each separated by a space.</p>
+</div>
+<div id="section_4">
+<span id="Related_properties"></span><h3 class="editable">Related properties</h3>
+<ul>
+<li>
+<a title="en/CSS/counter-increment" rel="internal" href="https://developer.mozilla.org/en/CSS/counter-increment">counter-increment</a> increases the value of specified <a title="en/CSS_Counters" rel="internal" href="https://developer.mozilla.org/en/CSS_Counters">CSS Counters</a> by a given amount.</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+h1 {
+  counter-reset: chapter section 1 page;
+  /* Sets the chapter and page counters to 0
+     and the section counter to 1. */
+}
+</pre>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/generate.html#propdef-counter-reset" title="http://www.w3.org/TR/CSS21/generate.html#propdef-counter-reset" target="_blank">CSS 2.1</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td>1.0 (?)</td> <td>8.0</td> <td>9.2</td> <td>3.1 (?)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p><a title="en/CSS_Counters" rel="internal" href="https://developer.mozilla.org/en/CSS_Counters">CSS Counters</a>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/counter-increment">counter-increment</a></code></p>
+<p></p>
+</div>

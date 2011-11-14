@@ -1,0 +1,119 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> 
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> -moz-transition </code>CSS property is a shorthand property for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-property">-moz-transition-property</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-duration">-moz-transition-duration</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-timing-function">-moz-transition-timing-function</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-delay">-moz-transition-delay</a></code>.</p>
+<div class="note">
+<strong>Note:</strong> This implementation of the CSS <code>transition-duration</code> property is based on a draft specification; the syntax is subject to change.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: -moz-transition is a shorthand property, so it does not technically have an initial value, but the properties for which it is shorthand have the following initial values: <ul>
+<li>-moz-transition-property: all;</li> <li>-moz-transition-duration: 0s;</li> <li>-moz-transition-timing-function: ease;</li> <li>-moz-transition-delay: 0s;</li> </ul>
+</li> <li>Applies to: all elements, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Abefore">:before</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aafter">:after</a></code> pseudo elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>:no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Interactive">interactive</a></code>
+</span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-transition:  [ &lt;transition-property&gt; || &lt;transition-duration&gt; || &lt;transition-timing-function&gt; || &lt;transition-delay&gt; ]
+</pre>
+<p>See <a title="en/CSS/CSS transitions#When property value lists are of different lengths" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions#When_property_value_lists_are_of_different_lengths">When property value lists are of different lengths</a> for details on how things are handled when lists of property values aren't the same length. In short, extra transition descriptions beyond the number of properties actually being animated are ignored.</p>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>There are several more examples of CSS transitions included in the main <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a> article.</p>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/css3-transitions" class=" external" rel="external" href="http://www.w3.org/TR/css3-transitions" target="_blank">CSS Transitions Module Level 3</a> (Working Draft)</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (-webkit-)</td> <td>4.0 (2.0)
+ (-moz-)</td> <td>-</td> <td>10.5</td> <td>3.0 (-webkit-)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-property">-moz-transition-property</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-duration">-moz-transition-duration</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-timing-function">-moz-transition-timing-function</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-delay">-moz-transition-delay</a></code>
+</li>
+</ul>
+<p></p>
+</div>

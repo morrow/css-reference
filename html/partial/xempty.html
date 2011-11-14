@@ -1,0 +1,47 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> :empty </code><a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any element that has no children at all. Only element nodes and text (including whitespace) are considered. Comments or processing instructions do not affect whether an element is considered empty or not.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+span:empty { <em>style properties</em> }
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+
+          <pre name="code" class="css">span:empty::before  { background-color: lime; }</pre>
+        
+<p>...where...</p>
+
+          <pre name="code" class="xml">&lt;span&gt;&lt;/span&gt;</pre>
+        
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/css3-selectors/#empty-pseudo" class="external" rel="external" href="http://www.w3.org/TR/css3-selectors/#empty-pseudo" target="_blank">CSS3 Selectors #empty-pseudo</a> </li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>
+<strong>1.5</strong> (1.8)</td> </tr>
+<tr>
+<td>Opera</td> <td><strong>9.5</strong></td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>
+<strong>3.1</strong> (525), very buggy before</td> </tr>
+</tbody></table>
+<p></p>
+</div>

@@ -1,0 +1,149 @@
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>Provides information to the rendering engine about what to optimize for when rendering text. The browser makes trade-offs among speed, legibility, and geometric precision. The text-rendering property is an SVG property that is not defined in any CSS standard. However, Gecko and WebKit browsers let you apply this property to HTML and XML content on Windows and Linux. </p>
+<div class="note">
+<strong>Note:</strong> This property has no effect on Mac OS X.</div>
+<p>One very visible effect is:<code> optimizeLegibility </code>enables ligatures (ff, fi, fl etc.) in text smaller than 20px for some fonts (for example, Microsoft's<em> Calibri, Candara, Constantia and Corbel</em> or the <em>DejaVu</em> font family).</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: auto</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: ?</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+text-rendering:  auto | optimizeSpeed | optimizeLegibility | geometricPrecision | inherit</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><code>auto</code></dt> <dd>The browser makes educated guesses about when to optimize for speed, legibility, and geometric precision while drawing text. For differences in how this value is interpreted by the browser, see the compatibility table.</dd> <dt><code>optimizeSpeed</code></dt> <dd>The browser emphasizes rendering speed over legibility and geometric precision when drawing text. It disables kerning and ligatures.</dd> <dt><code>optimizeLegibility</code></dt> <dd>The browser emphasizes legibility over rendering speed and geometric precision. This enables kerning and optional ligatures.</dd> <dt><code>geometricPrecision</code></dt> <dd> <p>The browser emphasizes geometric precision over rendering speed and legibility. Certain aspects of fonts—such as kerning—don't scale linearly, so geometricPrecision can make text using those fonts look good.</p> <p>In SVG, when text is scaled up or down, browsers calculate the final size of the text (which is the specified font size and the applied scale) and request a font of that computed size from the platform's font system. But if you request a font size of, say, 9 with a scale of 140%, the resulting font size of 12.6 doesn't explicitly exist in the font system, so the browser rounds the font size to 12 instead. This results in stair-step scaling of text.</p> <p>But the <code>geometricPrecision</code> property—when fully supported by the rendering engine—lets you scale your text fluidly. For large scale factors, you might see less-than-beautiful text rendering, but the size is what you would expect—neither rounded up nor down to the nearest font size supported by Windows or Linux.</p> <p>WebKit precisely applies the specified value, but Gecko treats the value the same as <code>optimizeLegibility</code>.</p> </dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+/* make sure all fonts in the HTML document display in all its glory,
+   but avoid inadequate ligatures in class foo elements */
+
+body  { text-rendering: optimizeLegibility; }
+.foo  { text-rendering: optimizeSpeed; }</pre>
+<div id="section_5">
+<span id="Live_Example"></span><h4 class="editable">Live Example</h4>
+<table class="standard-table"><tbody>
+<tr>
+<th>CSS code</th> <th>Kerning</th> <th>Ligatures</th> </tr>
+<tr style="font: 19.9px 'DejaVu Serif',Constantia">
+<td style="font:medium monospace">font: 19.9px 'DejaVu Serif',Constantia;</td> <td>LYoWAT</td> <td>ff fi fl ffl</td> </tr>
+<tr style="font: 20px 'DejaVu Serif',Constantia">
+<td style="font:medium monospace">font: 20px 'DejaVu Serif',Constantia;</td> <td>LYoWAT</td> <td>ff fi fl ffl</td> </tr>
+<tr style="font: 3em 'DejaVu Serif',Constantia; text-rendering:optimizeSpeed;">
+<td style="font:medium monospace">font: 3em 'DejaVu Serif',Constantia;<br> text-rendering: optimizeSpeed;</td> <td>LYoWAT</td> <td>ff fi fl ffl</td> </tr>
+<tr style="font: 3em 'Dejavu Serif',Constantia; text-rendering:optimizeLegibility;">
+<td style="font:medium monospace">font: 3em 'Dejavu Serif',Constantia;<br> text-rendering: optimizeLegibility;</td> <td>LYoWAT</td> <td>ff fi fl ffl</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Gecko_Notes"></span><h3 class="editable">Gecko Notes</h3>
+<p>The 20px threshold value of the<code> auto </code>keyword can be changed by changing the <code>browser.display.auto_quality_min_font_size</code> preference.</p>
+<p>The <code>optimizeSpeed</code> option has no effect on Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+, because the standard code for text rendering is already very fast and there is not a faster code path at this time. See 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=595688" class="external" title="RESOLVED INVALID - text-rendering: optimizeSpeed; doesn't work">
+bug 595688</a>
+ for details.</p>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support for Windows and Linux</td> <td> <p>4.0 </p> <p> </p> </td> <td>
+<strong>3.0</strong> (1.9)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>5.0 (532.5)</td> </tr>
+<tr>
+<td>Basic support for other operating systems</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td><code>auto</code></td> <td> <p>Chrome treats this as <code>optimizeSpeed</code>. </p> <p>Work is continuing on
+<a rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=41363" class="external" title="ASSIGNED - text-rendering:auto should enable optimizeLegibility &gt;= 20px">
+WebKit bug 41363</a></p> </td> <td>If the font size is 20 px or higher, Gecko browsers use <code>optimizeLegibility</code>; for smaller text, they use <code>optimizeSpeed</code>.</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>Safari treats this as <code>optimizeSpeed</code>. <p>Work is continuing on
+<a rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=41363" class="external" title="ASSIGNED - text-rendering:auto should enable optimizeLegibility &gt;= 20px">
+WebKit bug 41363</a></p> </td> </tr>
+<tr>
+<td><code>geometricPrecision</code></td> <td> <p>13 supports true geometric precision, without rounding up or down to the nearest supported font size in the operating system.</p> <p>Introduced in WebKit 535.1   
+<a rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=60317" class="external" title="RESOLVED FIXED - Text is scaled in a stair-step pattern">
+WebKit bug 60317</a></p> </td> <td>Gecko treats the value the same as <code>optimizeLegibility</code>.</td> <td> <span style="color: rgb(255, 0, 0);" title="Not supported.">--</span>
+</td> <td> <span style="color: rgb(255, 0, 0);" title="Not supported.">--</span>
+</td> <td> </td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_8">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p>This is an SVG property, it is not defined in any CSS standard. Gecko (Firefox) and WebKit apply<code> text-rendering </code>also to HTML and XML content.</p>
+<ul>
+<li><a title="http://www.w3.org/TR/SVG11/painting.html#TextRenderingProperty" class="external" rel="external" href="http://www.w3.org/TR/SVG11/painting.html#TextRenderingProperty" target="_blank">SVG 1.1 Painting #text-rendering</a></li>
+</ul>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+</p>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-align">text-align</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-indent">text-indent</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-color">text-decoration-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-style">text-decoration-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/letter-spacing">letter-spacing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/word-spacing">word-spacing</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-transform">text-transform</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-rendering">text-rendering</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>
+</li>
+</ul>
+</div>

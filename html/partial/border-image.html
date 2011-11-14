@@ -1,0 +1,142 @@
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> border-image </code>CSS property allows drawing an image on the borders of elements. This makes drawing complex looking widgets much simpler than it has been and removes the need for nine boxes in some cases.</p>
+<div class="warning">
+<strong>Warning:</strong> The official CSS 3 specification for the border-image property changed significantly between the time this feature was frozen for Gecko 1.9.1 and its release. As such, both the syntax and semantics of this feature will probably change in future releases of Gecko. In particular, the optional<code> border-width </code>override has been removed from the specification and will almost certainly be removed in a future version of Gecko.</div>
+<p>The<code> border-image </code>is used instead of the border styles given by the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code> properties.  If the value is<code> none </code>or if the image cannot be displayed, the border styles will be used. An additional background image for the element is drawn on top of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements, except table elements when 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-collapse">border-collapse</a></code> is<code> <code class="css">collapse</code></code>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: any URI made absolute, any &lt;length&gt; made absolute, other parts as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">none | 
+  [ &lt;image&gt; [ &lt;number&gt; | &lt;percentage&gt; ]{1,4} [/ &lt;border-width&gt;{1,4}]? ] &amp;&amp; [ stretch | repeat | round ]{0,2} </pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>none</dt> <dd>No image displayed, other border styles are used.</dd> <dt>&lt;image&gt; <small>(required)</small>
+</dt> <dd>The image value is a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span>, e.g.<code class="plain"> url(http://example.org/image.png)</code>
+</dd> <dt>&lt;number&gt; | &lt;percentage&gt; <small>(required)</small>
+</dt> <dd>One, two, three or four values represent inward offsets from the top, right, bottom, and left edges of the image (respectively), dividing it into nine regions: four corners, four edges and a middle.<br><img alt="" style="float:right" src="https://developer.mozilla.org/@api/deki/files/3683/=slice.png"><br> One value belongs to all four sides of the image.<br> Two values belong 1. to top and bottom and 2. to right and left side.<br> Three values belong 1. to top, 2. to the right and left side and 3. to bottom.<br> Four values belong to the top, right, bottom and left edge of the image in that order.<br><br> In Gecko 1.9.1 (Firefox 3.5) the middle part of the image is drawn like a background-image of the element. This may change in future versions.<br><br><strong>Percentages </strong>are relative to the width/height of the image.<br><strong>Numbers</strong> represent pixels in the image (if the image is a raster image) or vector coordinates (if the image is an SVG image).</dd> <dt>&lt;border-width&gt; <small>(optional)</small>
+</dt> <dd>If the slash <strong>/</strong> is present in the property value, the one, two, three or four values after it are used for the width of the border instead of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code> properties. The order of the values is the same as for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>.</dd> <dt>stretch | round | repeat <small>(optional)</small>
+</dt> <dd>One or two keywords, that specify how the images for the sides and the middle part are scaled and tiled.<br><strong><code>stretch  </code></strong>(default value) will cause images to be scaled to fit their box.<br><strong><code>round    </code></strong>will tile the images, but also scale them so that a whole number fit in the box.<br><strong><code>repeat   </code></strong>simply tiles the images inside the box.<br> The first keyword describes how to draw the top, middle, and bottom images, while the second describes the left and right borders. If the second is absent, it is assumed to be the same as the first. If both are absent, the default value<code> stretch </code>is used.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>[needs some instructive live examples]</p>
+<pre>#header  { -moz-border-image: url(border.png) 27 27 27 27 round round; } 
+
+.button  { -moz-border-image: url(button.png) 0 5 0 5; }
+
+.example { -moz-border-image: url(example.jpg) 3 4 6 8 / 10px 12px 14px 22px; }
+</pre>
+<pre>/* Edge case, acts like a full scaled background-image in Firefox 3.5 */
+
+ div     { -moz-border-image: url(bgimage.png) 0; } 
+</pre>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<div class="note">
+<strong>Note:</strong>  Features beyond basic support are not yet documented in above sections. Please read the spec if you are interested.</div>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>7.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.5 / 11.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-o</span>
+</td> <td>3.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>optional <code>&lt;border-image-slice&gt;</code>
+</td> <td>
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span><br><span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented (see
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=497995" class="external" title="NEW - Implement border-image revisions in latest css3-background">
+bug 497995</a>
+)</span>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>
+<code>fill</code> keyword</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>iOS Safari</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Android Browser</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.2
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>11.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-o</span>
+</td> <td>2.1
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>optional <code>&lt;border-image-slice&gt;</code>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>
+<code>fill</code> keyword</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h4 class="editable">Notes</h4>
+<ul>
+<li>Unusually, for Opera, the prefixed property was added <em>after</em> the non-prefixed.</li>
+</ul>
+</div>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/css3-background/#border-images" rel="external" href="http://www.w3.org/TR/css3-background/#border-images" target="_blank">CSS 3 Backgrounds and borders #border-image</a></li>
+</ul>
+<p></p>
+</div>

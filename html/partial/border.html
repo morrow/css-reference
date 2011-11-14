@@ -1,0 +1,117 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>border</code> property is a shorthand property for setting the individual border property values in a single place in the style sheet. <code>border</code> can be used to set the values for one or more of: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: see individual properties for details</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: see individual properties</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+border:  [ &lt;border-width&gt; || &lt;border-style&gt; || &lt;border-color&gt; ] | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>border-width</dt> <dd>
+<em>Optional</em>, default value<code> medium </code>is used if absent. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>.</dd> <dt>border-style </dt> <dd>
+<em>Required</em>, default value<code> none </code>is used if absent. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code>.</dd> <dt>border-color </dt> <dd>
+<em>Optional</em>, default value if absent: The value of the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property (foreground color). See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code>.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/border.html">View Live Examples</a></p>
+<pre>
+element { border: dashed }          /* dashed border of medium thickness, the same color as the text */
+element { border: dotted 1.5em }    /* dotted, 1.5em thick border, the same color as the text */
+element { border: solid red }       /* solid, red border of medium thickness */
+element { border: solid blue 10px } /* solid, blue border of 10px thickness */
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>While the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code> properties accept up to four values, this property only accepts one value for each property.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS1#border" title="http://www.w3.org/TR/CSS1#border" target="_blank">CSS 1</a></li> <li><a class="external" title="http://www.w3.org/TR/CSS21/box.html#border-shorthand-properties" rel="external" href="http://www.w3.org/TR/CSS21/box.html#border-shorthand-properties" target="_blank">CSS 2.1 Box #border-shorthand</a></li> <li><a class="external" title="http://www.w3.org/TR/css3-background/#the-border-shorthands" rel="external" href="http://www.w3.org/TR/css3-background/#the-border-shorthands" target="_blank">CSS 3 Backgrounds and Borders #border-shorthand</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.7 or earlier)
+</td> <td>1.0</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85) <a title="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-BoxModel" class=" external" rel="external" href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-BoxModel" target="_blank">[1]</a>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.9.2)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0 <a title="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-BoxModel" class=" external" rel="external" href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-BoxModel" target="_blank">[2]</a>
+</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin">margin</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/padding">padding</a></code></span></p>
+<p></p>
+</div>

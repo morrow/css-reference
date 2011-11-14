@@ -1,0 +1,95 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:disabled</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any disabled element. An element is disabled if it can't be activated (e.g. selected, clicked on or accept text input) or accept focus. The element also has an enabled state, in which it can be activated or accept focus.</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<div id="section_3">
+<span id="Example_selectors"></span><h4 class="editable">Example selectors</h4>
+<dl>
+<dt>input:disabled</dt> <dd>Selects all disabled inputs</dd> <dt>select.country:disabled</dt> <dd>Targets a select element with class country that is disabled</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Usage_example"></span><h4 class="editable">Usage example</h4>
+<p>The following CSS:</p>
+<pre><code>.input[type="text"]:disabled {background:#ccc}</code>
+</pre>
+<p>applied to this HTML5 fragment:</p>
+<pre>
+&lt;form action="#"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Shipping address&lt;/legend&gt;
+    &lt;input type="text" name="shipping_firstName" disabled&gt;
+    &lt;input type="text" name="shipping_lastName" disabled&gt;
+    &lt;input type="text" name="shipping_address1" disabled&gt;
+    &lt;input type="text" name="shipping_address2" disabled&gt;
+    &lt;input type="text" name="shipping_zipCode" disabled&gt;
+    &lt;input type="text" name="shipping_town" disabled&gt;
+  &lt;/fieldset&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Billing address&lt;/legend&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox" name="billing_is_shipping" value="true" checked&gt; 
+      Billing address is the same as shipping address
+    &lt;/label&gt;
+    &lt;input type="text" name="billing_firstName" disabled&gt;
+    &lt;input type="text" name="billing_lastName" disabled&gt;
+    &lt;input type="text" name="billing_address1" disabled&gt;
+    &lt;input type="text" name="billing_address2" disabled&gt;
+    &lt;input type="text" name="billing_zipCode" disabled&gt;
+    &lt;input type="text" name="billing_town" disabled&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;<br></pre>
+<p>Will result in all text elements in the billing fieldset having a light grey background.</p>
+</div>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable"><span>Specifications</span></h3>
+<ul>
+<li>
+<a class="external" title="http://www.w3.org/TR/css3-selectors/#enableddisabled" rel="external nofollow" target="_blank" href="http://www.w3.org/TR/css3-selectors/#enableddisabled">CSS3 Selectors :enabled :disabled</a> Proposed Recommendation</li> <li><a class="external" title="http://www.whatwg.org/specs/web-forms/current-work/#relation" rel="external nofollow" target="_blank" href="http://www.whatwg.org/specs/web-forms/current-work/#relation">WHATWG web-forms</a></li>
+</ul>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0 (1.7 or earlier)
+</td> <td>9</td> <td>9.0</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+</div>

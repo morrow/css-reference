@@ -1,0 +1,101 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;integer&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes an integer number, positive or negative. There isn't any associated unit with the value. An integer consists of one or several decimal digit, 0 to 9, eventually preceded by one single + or - sign.</p>
+<p>Integers are used in numerous CSS properties, e. g. 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/z-index">z-index</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/counter-increment">counter-increment</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-column-count">-moz-column-count</a></code>.</p>
+<p>Also any <code>&lt;integer&gt;</code> CSS value is also a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> CSS value, though the converse is not true.</p>
+</div>
+<div id="section_2">
+<span id="Interpolation"></span><h2 class="editable">Interpolation</h2>
+<p>Values of the <code>&lt;integer&gt;</code> CSS data type can be interpolated in order to allow animations. In that case they are interpolated via integer discrete steps. The calculationis done as if they were real, floating-point, numbers and the discrete value is obtained using the <a title="http://en.wikipedia.org/wiki/Floor_function" class=" external" rel="external" href="http://en.wikipedia.org/wiki/Floor_function" target="_blank">floor function</a>. <a class="external" title="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" target="_blank">[1]</a> The speed of the interpolation is determined by the <a title="timing-function" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function">timing function</a> associated with the animation.</p>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>These are valid integer values:</p>
+<pre>12          Positive integer (without a leading + sign)
++123        Positive integer (with a leading + sign)
+-456        Negative integer
+0           Zero
++0          Zero, with a leading +
+-0          Zero, with a leading - (Though strange, this is an allowed value)
+</pre>
+<p>These are invalid integer values:</p>
+<pre>12.0        This is a <a href="mks://localhost/en/CSS/number" title="en/CSS/number">&lt;number&gt;</a>, not an &lt;integer&gt;, though it represents an integer
+12.         The dot should not be part of an &lt;integer&gt;
++---12      Only one leading +/- is allowed
+ten         Letters are not allowed
+_5          Special characters are not allowed
+\35         Escaped Unicode characters are not allowed, even if they are an integer (here: 5)
+\4E94       Non-arabic numerals are not allowed, even escaped (here: the Japanese 5, 四)
+</pre>
+<p></p>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#integers" rel="external" href="http://www.w3.org/TR/css3-values/#integers" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#numbers" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Explicitly defined</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/" rel="external" href="http://www.w3.org/TR/CSS1/" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Implicitly defined</td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><h2 class="editable">Browser Compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>basic</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0</td> <td>yes</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>

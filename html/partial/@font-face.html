@@ -1,0 +1,161 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p><code>@font-face </code>allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts,<code> @font-face </code>eliminates the need to depend on the limited number of fonts users have installed on their computers.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+@font-face {
+  font-family: &lt;a-remote-font-name&gt;;
+  src: &lt;source&gt; [,&lt;source&gt;]*;
+  [font-weight: &lt;weight&gt;];
+  [font-style: &lt;style&gt;];
+}
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>&lt;a-remote-font-name&gt; </dt> <dd>Specifies a font name that will be used as font face value for font properties.</dd> <dt>&lt;source&gt; </dt> <dd>URL for the remote font file location, or the name of a font on the user's computer in the form <code>local("Font Name")</code>.</dd> <dt>&lt;weight&gt; </dt> <dd>A <a class="internal" title="en/CSS/font-weight" rel="internal" href="https://developer.mozilla.org/en/CSS/font-weight">font weight</a> value.</dd> <dt>&lt;style&gt; </dt> <dd>A <a class="internal" title="en/CSS/font-style" rel="internal" href="https://developer.mozilla.org/en/CSS/font-style">font style</a> value.</dd>
+</dl>
+<p>You can specify a font on the user's local computer by name using the <code>local()</code> syntax. If that font isn't found, other sources will be tried until one is found.</p>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>This example simply specifies a downloadable font to use, applying it to the entire body of the document.</p>
+<p><a title="/@api/deki/files/2935/=webfont-sample.html" rel="internal" href="https://developer.mozilla.org/@api/deki/files/2935/=webfont-sample.html" class="iconitext-16 ext-html internal">View live sample</a></p>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Web Font Sample&lt;/title&gt;
+  &lt;style type="text/css" media="screen, print"&gt;
+    @font-face {
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("http://developer.mozilla.org/@api/deki/files/2934/=VeraSeBd.ttf");
+    }
+    
+    body { font-family: "Bitstream Vera Serif Bold", serif }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  This is Bitstream Vera Serif Bold.
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>In this example, the user's local copy of "Helvetica Neue Bold" is used; if the user doesn't have that font installed (two different names are tried), then the downloadable font named "MgOpenModernaBold.ttf" is used instead:</p>
+
+          <pre name="code" class="css">@font-face {
+  font-family: MyHelvetica;
+  src: local("Helvetica Neue Bold"),
+  local("HelveticaNeue-Bold"),
+  url(MgOpenModernaBold.ttf);
+  font-weight: bold;
+}</pre>
+        
+</div>
+<div id="section_5">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<ul>
+<li>In Gecko, web fonts are subject to the same domain restriction (font files must be on the same domain as the page using them), unless <a class="internal" title="En/HTTP access control" rel="internal" href="https://developer.mozilla.org/En/HTTP_access_control">HTTP access controls</a> are used to relax this restriction.</li> <li> <div class="note">
+<strong>Note:</strong> Because there are no defined MIME types for TrueType, OpenType, and WOFF fonts, the MIME type of the file specified is not considered.</div> </li> <li>When Gecko displays a page that uses web fonts, it initially displays text using the best CSS fallback font available on the user's computer while it waits for the web font to finish downloading.  As each web font finishes downloading, Gecko updates the text that uses that font.  This allows the user to read the text on the page more quickly.</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.5 (1.9.1)
+</td> <td>4.0</td> <td>4.0</td> <td>10.0</td> <td>3.1</td> </tr>
+<tr>
+<td><a title="en/About_WOFF" rel="internal" href="https://developer.mozilla.org/en/About_WOFF">WOFF</a></td> <td>3.5 (1.9.1)
+</td> <td>6.0</td> <td>9.0</td> <td>
+<em><a rel="custom" href="http://snapshot.opera.com/">Nightly build</a></em>
+</td> <td>
+<em><a rel="custom" href="http://nightly.webkit.org/">Nightly build</a></em>
+</td> </tr>
+<tr>
+<td>SVG Font</td> <td>
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span><br><span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented (see
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=119490" class="external" title="NEW - Implement SVG fonts">
+bug 119490</a>
+)</span>
+</td> <td>yes</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>yes</td> <td>yes</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td>1.0 (1.9.1)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> </tr>
+<tr>
+<td>WOFF</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>5.0 (5.0)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>11.0</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td>SVG fonts</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span><br><span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented (see
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=119490" class="external" title="NEW - Implement SVG fonts">
+bug 119490</a>
+)</span>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.0</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="Notes_2"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>Support of the Embedded OpenType font format is not included in the compatibility table because it is a proprietary feature. Prior to IE 9.0, IE supported only this format.</li> <li>TrueType and OpenType are not included because they are superseded by WOFF.</li>
+</ul>
+</div>
+</div>
+<div id="section_8">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a class="external" rel="external" href="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#font-descriptions" title="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#font-descriptions" target="_blank">CSS 2 Fonts</a> 1998-05-12 Obsolete</li> <li>
+<a class="external" rel="external" href="http://www.w3.org/TR/css3-fonts/#font-resources" title="http://www.w3.org/TR/css3-fonts/#font-resources" target="_blank">CSS Fonts Module Level 3</a> 2011 Working draft</li> <li>
+<a class="external" rel="external" href="http://www.w3.org/TR/WOFF/" title="http://www.w3.org/TR/WOFF/" target="_blank">WOFF File Format 1.0</a> 2011 Candidate Recommendation</li>
+</ul>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a></li> <li>CSS at-rules: <a title="en/CSS/@charset" rel="internal" href="https://developer.mozilla.org/en/CSS/@charset">@charset</a>, <strong>@font-face</strong>, <a title="@import" rel="internal" href="https://developer.mozilla.org/en/CSS/@import">@import</a>, <a title="@keyframes" rel="internal" href="https://developer.mozilla.org/en/CSS/@keyframes">@keyframes</a>, <a title="@media" rel="internal" href="https://developer.mozilla.org/en/CSS/@media">@media</a>, <a title="@page" rel="internal" href="https://developer.mozilla.org/en/CSS/@page">@page</a>.</li> <li>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span>
+</li> <li><a class="external" title="http://www.fontsquirrel.com/fontface/generator" rel="external" href="http://www.fontsquirrel.com/fontface/generator" target="_blank">FontSquirrel @font-face generator</a></li> <li><a title="en/About WOFF" rel="internal" href="https://developer.mozilla.org/en/About_WOFF">About WOFF</a></li> <li><a class="external" title="http://hacks.mozilla.org/2009/06/beautiful-fonts-with-font-face/" rel="external" href="http://hacks.mozilla.org/2009/06/beautiful-fonts-with-font-face/" target="_blank">Beautiful fonts with @font-face</a></li> <li><a class="external" title="http://openfontlibrary.org/" rel="external" href="http://openfontlibrary.org/" target="_blank">Open Font Library</a></li> <li><a class="external" title="http://msdn.microsoft.com/en-us/library/ms530757(VS.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/ms530757(VS.85).aspx" target="_blank">MSDN Microsoft library @font-face</a></li> <li>
+<a class="external" title="http://caniuse.com/woff" rel="external" href="http://caniuse.com/woff" target="_blank">When can I use WOFF?</a><a class="external" title="http://caniuse.com/svg-fonts" rel="external" href="http://caniuse.com/svg-fonts" target="_blank">When can I use SVG Fonts?</a>
+</li>
+</ul>
+<p></p>
+</div>

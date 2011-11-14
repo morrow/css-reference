@@ -1,0 +1,123 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> border-style </code>CSS property is a shorthand property for setting the line style for all four sides of the elements border.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code> or as individual Properties.</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as individual properties</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+border-style: [ &lt;border-style&gt; ]{1,4} | <em>inherit</em>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;border-style&gt; </dt> <dd>The Border Style can be any of the following values.</dd>
+</dl>
+<ul>
+<li>
+<strong>none</strong> : No border, sets width to 0. This is the default value.</li> <li>
+<strong>hidden</strong> : Same as 'none', except in terms of border conflict resolution for table elements.</li> <li>
+<strong>dashed</strong> : Series of short dashes or line segments.</li> <li>
+<strong>dotted</strong> : Series of dots.</li> <li>
+<strong>double</strong> : Two straight lines that add up to the pixel amount defined as <code>border-width</code>.</li> <li>
+<strong>groove</strong> : Carved effect.</li> <li>
+<strong>inset</strong> : Makes the box appear embedded.</li> <li>
+<strong>outset</strong> : Opposite of 'inset'. Makes the box appear 3D (embossed).</li> <li>
+<strong>ridge</strong> : Opposite of 'groove'. The border appears 3D (coming out).</li> <li>
+<strong>solid</strong> : Single, straight, solid line.</li>
+</ul>
+<p>Up to four values can be given;<br>
+The first value sets all four borders.<br>
+The second sets the left and right.<br>
+The third sets the bottom.<br>
+The fourth sets the left.</p>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/border.html">View Live Examples</a></p>
+<pre>
+element { 
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>The default value of<code> border-style </code>is<code> none</code>. This meant that if you change the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code> and the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code> you will not see the border unless you change this property to something other than<code> none </code>or<code> hidden</code>.</p>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.7 or earlier)
+</td> <td>1.0</td> <td>4.0</td> <td>3.5</td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (1.9.2)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/box.html#border-style-properties" title="http://www.w3.org/TR/CSS21/box.html#border-style-properties" target="_blank">CSS 2.1 Box model #border-style</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-radius">border-radius</a></code></p>
+<p></p>
+</div>

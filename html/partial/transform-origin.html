@@ -1,0 +1,152 @@
+
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>transform-origin</code> CSS property lets you modify the origin for transformations of an element. For example, the transform-origin of the <code>rotate()</code> function is the centre of rotation. (This property is applied by first translating the element by the negated value of the property, then applying the element's transform, then translating by the property value.)</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>50% 50%</code>
+</li> <li>Applies to: all block level and inline level elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: refer to the size of the box itself</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: for <code>&lt;length&gt;</code> the absolute value, otherwise a percentage</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">
+transform-origin:  [ &lt;percentage&gt; | &lt;length&gt; | left | center | right ]
+                   [ &lt;percentage&gt; | &lt;length&gt; | top | center | bottom ] ?
+</pre>
+<pre>
+transform-origin:  [ left | center | right ] || [ top | center | bottom ]
+</pre>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Accepts one or two values.</p>
+<ul>
+<li>One single value sets the horizontal position, the vertical position is set to <code>50%</code>.</li> <li>Two values apply first to the horizontal and second to the vertical position.</li>
+</ul>
+<p>Combinations are allowed of keyword, 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, or <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> values, but if keywords are mixed with other values, <code>left</code> and <code>right</code> may only be used as the first value, and <code>top</code> and <code>bottom</code> may only be used as the second value. Negative positions are allowed.</p>
+<dl>
+<dt>&lt;percentage&gt;</dt> <dd>With a value pair of <code>0% 0%</code>, (or just <code>0 0</code>) the transform-origin is the upper left corner of the box. A value pair of <code>100% 100%</code> places the transform-origin to the lower right corner. With a value pair of <code>14% 84%</code>, the point 14% across and 84% down the box is the transform-origin.</dd> <dt>&lt;length&gt;</dt> <dd>With a value pair of e.g. <code>2cm 1cm</code>, the transform-origin is placed 2cm to the right and 1cm below the upper left corner of the element.</dd> <dt>top left | left top</dt> <dd>Same as <code>0 0</code>
+</dd> <dt>top | top center | center top</dt> <dd>Same as <code>50% 0</code>
+</dd> <dt>right top | top right</dt> <dd>Same as <code>100% 0</code>
+</dd> <dt>left | left center | center left</dt> <dd>Same as <code>0 50%</code>
+</dd> <dt>center | center center</dt> <dd>Same as <code>50% 50%</code> (default value)</dd> <dt>right | right center | center right</dt> <dd>Same as <code>100% 50%</code>
+</dd> <dt>bottom left | left bottom</dt> <dd>Same as <code>0 100%</code>
+</dd> <dt>bottom | bottom center | center bottom</dt> <dd>Same as <code>50% 100%</code>
+</dd> <dt>bottom right | right bottom</dt> <dd>Same as <code>100% 100%</code>
+</dd>
+</dl>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>See <a class="internal" title="en/CSS/Using CSS transforms" rel="internal" href="https://developer.mozilla.org/En/CSS/Using_CSS_transforms">Using CSS transforms</a> for examples.</p>
+<div id="section_5">
+<span id="Live_Examples"></span><h3 class="editable">Live Examples</h3>
+<table class="standard-table"><tbody>
+<tr>
+<td style="width:22em"><code>transform: none;</code></td> <td> <div style="background:black;width:3em;height:2em; -moz-transform:none; -webkit-transform:none; -ms-transform:none; -o-transform:none; transform:none;"> </div> </td> </tr>
+<tr>
+<td><code>transform: rotate(30deg);</code></td> <td> <div style="background:gold;width:3em;height:2em; -moz-transform:rotate(30deg); -webkit-transform:rotate(30deg); -ms-transform:rotate(30deg); -o-transform:rotate(30deg); transform:rotate(30deg);"> </div> </td> </tr>
+<tr>
+<td><code>transform: rotate(30deg);<br> transform-origin: 0 0;</code></td> <td> <div style="background:gold;width:3em;height:2em; -moz-transform:rotate(30deg);-moz-transform-origin:0 0; -webkit-transform:rotate(30deg);-webkit-transform-origin:0 0; -ms-transform:rotate(30deg);-ms-transform-origin:0 0; -o-transform:rotate(30deg);-o-transform-origin:0 0; transform:rotate(30deg);transform-origin:0 0;"> </div> </td> </tr>
+<tr>
+<td><code>transform: rotate(30deg);<br> transform-origin: 100% 100%;</code></td> <td> <div style="background:gold;width:3em;height:2em; -moz-transform:rotate(30deg);-moz-transform-origin:100% 100%; -webkit-transform:rotate(30deg);-webkit-transform-origin:100% 100%; -ms-transform:rotate(30deg);-ms-transform-origin:100% 100%; -o-transform:rotate(30deg);-o-transform-origin:100% 100%; transform:rotate(30deg);transform-origin:100% 100%;"> </div> </td> </tr>
+<tr>
+<td><code>transform: rotate(30deg);<br> transform-origin: -10em -30em;</code></td> <td> <div style="background:gold;width:3em;height:2em; -moz-transform: rotate(30deg);-moz-transform-origin:-10em -30em; -webkit-transform: rotate(30deg);-webkit-transform-origin:-10em -30em; -ms-transform: rotate(30deg);-ms-transform-origin:-10em -30em; -o-transform: rotate(30deg);-o-transform-origin:-10em -30em; transform: rotate(30deg);transform-origin:-10em -30em;"> </div> </td> </tr>
+<tr style="height:5em">
+<td><code>transform: scale(1.9);</code></td> <td> <div style="background:coral;width:3em;height:2em; -moz-transform:scale(1.9); -webkit-transform:scale(1.9); -ms-transform:scale(1.9); -o-transform:scale(1.9); transform:scale(1.9);"> </div> </td> </tr>
+<tr style="height:5em">
+<td><code>transform: scale(1.9);<br> transform-origin: 0 0;</code></td> <td> <div style="background:coral;width:3em;height:2em; -moz-transform:scale(1.9);-moz-transform-origin:0 0; -webkit-transform:scale(1.9);-webkit-transform-origin:0 0; -ms-transform:scale(1.9);-ms-transform-origin:0 0; -o-transform:scale(1.9);-o-transform-origin:0 0; transform:scale(1.9);transform-origin:0 0;"> </div> </td> </tr>
+<tr style="height:5em">
+<td><code>transform: scale(1.9);<br> transform-origin: 100% -30%;</code></td> <td> <div style="background:coral;width:3em;height:2em; -moz-transform:scale(1.9);-moz-transform-origin:100% -30%; -webkit-transform:scale(1.9);-webkit-transform-origin:100% -30%; "> </div> </td> </tr>
+<tr>
+<td><code>transform: skew(50deg);</code></td> <td> <div style="background:olive;width:3em;height:2em; -moz-transform:skew(50deg); -webkit-transform:skew(50deg); -ms-transform:skew(50deg); -o-transform:skew(50deg); transform:skew(50deg);"> </div> </td> </tr>
+<tr>
+<td><code>transform: skew(50deg);<br> transform-origin: 0 0;</code></td> <td> <div style="background:olive;width:3em;height:2em; -moz-transform:skew(50deg);-moz-transform-origin:0 0; -webkit-transform:skew(50deg);-webkit-transform-origin:0 0; -ms-transform:skew(50deg);-ms-transform-origin:0 0; -o-transform:skew(50deg);-o-transform-origin:0 0; transform:skew(50deg);transform-origin:0 0;"> </div> </td> </tr>
+<tr>
+<td><code>transform: skew(50deg);<br> transform-origin: 100% 100%;</code></td> <td> <div style="background:olive;width:3em;height:2em; -moz-transform:skew(50deg);-moz-transform-origin:100% 100%; -webkit-transform:skew(50deg);-webkit-transform-origin:100% 100%; -ms-transform:skew(50deg);-ms-transform-origin:100% 100%; -o-transform:skew(50deg);-o-transform-origin:100% 100%; transform:skew(50deg);transform-origin:100% 100%;"> </div> </td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>yes 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>9.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-ms</span>
+</td> <td>10.5
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-o</span>
+</td> <td>3.1
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>iOS Safari</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Android Browser</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Internet Explorer 5.5 or later supports a proprietary <a title="http://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx" class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms533014%28VS.85,loband%29.aspx" target="_blank">Matrix Filter</a> which can be used to achieve the similar effect.</p>
+</div>
+</div>
+<div id="section_8">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a rel="custom" href="http://www.w3.org/TR/css3-2d-transforms/#transform-origin-property">CSS 2D Transforms Module Level 3: transform-origin</a><span title="Working Draft" style="color:#fff; background-color:#e66e33; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">WD</span>
+</li>
+</ul>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transform">transform</a></code>
+</li> <li><a title="en/CSS/Using CSS transforms" class="internal" rel="internal" href="https://developer.mozilla.org/En/CSS/Using_CSS_transforms">Using CSS transforms</a></li>
+</ul>
+<p></p>
+</div>

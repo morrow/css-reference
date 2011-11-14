@@ -1,0 +1,126 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> font-size-adjust </code>CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters.</p>
+<p>This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters. This can cause problems when the first-choice 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code> is unavailable and its replacement has a significantly different aspect ratio (the ratio of the size of lowercase letters to the size of the font).</p>
+<p>To do this in a way that is compatible with browsers that do not support<code> font-size-adjust</code>, it is specified as a number that the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> property is multiplied by. This means the value specified for the property should generally be the aspect ratio of the first choice font. For example, a style sheet that specifies</p>
+<pre>
+font-size: 16px;  font-size-adjust: 0.5;</pre>
+<p>is really specifying that the lowercase letters of the font should be<code> 8px </code>high (0.5 × 16px).</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+font-size-adjust:  &lt;number&gt; | none | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>none</dt> <dd>Choose the size of the font based only on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> property.</dd> <dt>&lt;number&gt;</dt> <dd> <p>Choose the size of the font so that its lowercase letters (as determined by the x-height metric of the font) are the specified number times the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>.</p> <p>The number specified should generally be the aspect ratio (ratio of x-height to font size) of the first choice 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>. This will mean that the first choice font, when available, will appear the same size in browsers, whether or not they<code> support font-size-adjust</code>.</p> </dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/font-size-adjust.html">View Live Examples</a></p>
+
+          <pre name="code" class="css">p {
+   font: 12px Verdana, "DejaVu Sans", sans-serif;
+   font-size-adjust: 0.58;
+}</pre>
+        </div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td rowspan="2">Basic support</td> <td rowspan="2">
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> </td> <td>1.0 (1.0)<br> Windows only</td> <td rowspan="2">
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> </td> <td rowspan="2">
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> </td> <td rowspan="2">
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> </td> </tr>
+<tr>
+<td>3.0 (1.9)
+<br> All platforms</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0 (1.9.2)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p>This property was specified in CSS 2, but removed from CSS 2.1. It may come back in CSS 3.</p>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#propdef-font-size-adjust" class="external" rel="external" href="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#propdef-font-size-adjust" target="_blank">CSS 2 Fonts #font-size-adjust</a> May 1998, obsolete</li> <li>
+<a class="external" title="http://www.w3.org/TR/css3-fonts/#relative-sizing-the-font-size-adjust-pro" rel="external" href="http://www.w3.org/TR/css3-fonts/#relative-sizing-the-font-size-adjust-pro" target="_blank">CSS 3 Fonts #font-size-adjust</a> Working draft</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a class="external" title="http://dbaron.org/log/20080613-firefox3-css#font-size-adjust" rel="external" href="http://dbaron.org/log/20080613-firefox3-css#font-size-adjust" target="_blank">David Baron about font-size-adjust</a></li> <li>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span>
+</li>
+</ul>
+<p></p>
+</div>

@@ -1,0 +1,133 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> letter-spacing </code>CSS property specifies spacing behavior between text characters.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: <code>normal </code>or absolute length</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+letter-spacing:  normal | &lt;length&gt;
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>normal</dt> <dd>The spacing is the normal spacing for the current font. This value allows the user agent to alter the space between characters in order to justify text. That's the difference to the length value<code> 0</code>.</dd> <dt>&lt;length&gt;</dt> <dd>Indicates inter-character space <strong><em>in addition to</em></strong> the default space between characters. Values may be negative, but there may be implementation-specific limits. User agents may not further increase or decrease the inter-character space in order to justify text.<br> See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> values for possible units.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>Having a css style of:</p>
+
+          <pre name="code" class="css">p { letter-spacing: 0.4em }</pre>
+        
+<p>and a webpage with the code:</p>
+
+          <pre name="code" class="xml">&lt;p&gt; letter spacing &lt;/p&gt;</pre>
+        
+<p>will produce the following:</p>
+<pre><span style="letter-spacing: 0.4em;">letter spacing</span>
+</pre>
+<p><br> Here are some more letter spacing examples:</p>
+<pre><span style="letter-spacing: 0.1em;">letter-spacing: <strong>0.1em</strong></span>
+<span style="letter-spacing: 0.5em;">letter-spacing: <strong>0.5em</strong></span>
+<span style="letter-spacing: 0.8em;">letter-spacing: <strong>0.8em</strong></span>
+<span style="letter-spacing: 1em;">letter-spacing: <strong>1em</strong></span>
+<span style="letter-spacing: -0.05em;">letter-spacing: <strong>-0.05em</strong></span>
+<span style="letter-spacing: 6px;">letter-spacing: <strong>6px</strong></span>
+</pre>
+<p> </p>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/text.html#propdef-letter-spacing" rel="external" href="http://www.w3.org/TR/CSS21/text.html#propdef-letter-spacing" target="_blank">CSS 2.1 Text #letter-spacing</a></li> <li><a class="external" title="http://www.w3.org/TR/SVG11/text.html#LetterSpacingProperty" rel="external" href="http://www.w3.org/TR/SVG11/text.html#LetterSpacingProperty" target="_blank">SVG 1.1 Text #letter-spacing</a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>HTML support</td> <td>1.0</td> <td>1.0 (1.7 or earlier)
+</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>SVG support</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td>
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> (
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=371787" class="external" title="NEW - Support the 'letter-spacing' and 'word-spacing' properties in SVG">
+bug 371787</a>
+)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>HTML support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>SVG support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+</p>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-align">text-align</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-indent">text-indent</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-color">text-decoration-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-style">text-decoration-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/letter-spacing">letter-spacing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/word-spacing">word-spacing</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-transform">text-transform</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-rendering">text-rendering</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>
+</li>
+</ul>
+<p></p>
+</div>

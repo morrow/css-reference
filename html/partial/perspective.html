@@ -1,0 +1,118 @@
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>perspective</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> property determines the distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective. Each 3D element that is placed between the z=0 and the user is enlarged, each 3D-element with z&lt;0 is shrinked. How much deformation is defined by the value of this property.</p>
+<p>Part of the 3D-elements that are behind the user, i.e. that their z-axis coordinate is greater than the value of the <code>perspective</code> CSS property are not drawn.</p>
+<p>The <em>vanishing point</em> is by default placed at the center of the element, but its position can be changed using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/perspective-origin">perspective-origin</a></code> property.</p>
+<p>Using this property with a value different than <code>0</code> and <code>none</code> creates a new <a title="The stacking context" rel="internal" href="https://developer.mozilla.org/en/Understanding_CSS_z-index/The_stacking_context">stacking context</a>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span> : <code>none</code>
+</li> <li>Applies to : block and inline elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: same as <a title="specified value" rel="internal" href="https://developer.mozilla.org/en/CSS/specified_value">specified value</a>.</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">perspective: none     <em>or</em>
+perspective: <span style="font-style: italic;">depth</span>
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin-left: 40px;"><code>none</code></dt> <dd style="margin-left: 40px;">Is a keyword indicating that no perspective transform has to be applied.</dd> <dt style="margin-left: 40px;"><em>depth</em></dt> <dd style="margin-left: 40px;">Is a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> giving the distance from the user to the z=0 plane. It used to apply a perspective transform to the element and its content. If it <code>0</code> or a negative value, no perspective transform is applied.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<div> <table class="standard-table"><tbody>
+<tr>
+<td><code>perspective:150px;</code></td> <td><code>perspective:300px;</code></td> <td><code>perspective:600px;</code></td> </tr>
+<tr>
+<td> <div class="container" style="width:200px;height:200px;margin:75px 0 0 75px;border:none;"> <div class="cube" style="width:100%;height:100%;-moz-perspective:150px;-moz-transform-style:preserve-3d;-moz-perspective-origin:150% 150%;"> <div class="middle" style="display: block;position: absolute;width: 100px;height: 100px;border: 1px dashed black;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: transparent;">   </div> <div class="front" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0, 0, 0, 0.3 );-moz-transform: translateZ( 50px );">1</div> <div class="back" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0, 255,   0, 1 ); color: black;-moz-transform: translateZ( -50px );">2</div> <div class="right" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196,   0,   0, 0.7 );-moz-transform: rotateY( 90deg) translateZ( 50px );">3</div> <div class="left" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0,   0, 196, 0.7 );-moz-transform: rotateY(-90deg) translateZ( 50px ); } ">4</div> <div class="top" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196, 196,   0, 0.7 );-moz-transform: rotateX( 90deg) translateZ( 50px );">5</div> <div class="bottom" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196,   0, 196, 0.7);-moz-transform: rotateX(-90deg) translateZ( 50px );">6</div> </div> </div> </td> <td> <div class="container" style="width:200px;height:200px;margin:75px 0 0 75px;border:none;"> <div class="cube" style="width:100%;height:100%;-moz-perspective:300px;-moz-transform-style:preserve-3d;-moz-perspective-origin:150% 150%;"> <div class="middle" style="display: block;position: absolute;width: 100px;height: 100px;border: 1px dashed black;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: transparent;">   </div> <div class="front" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0, 0, 0, 0.3 );-moz-transform: translateZ( 50px );">1</div> <div class="back" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0, 255,   0, 1 ); color: black;-moz-transform: translateZ( -50px );">2</div> <div class="right" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196,   0,   0, 0.7 );-moz-transform: rotateY( 90deg) translateZ( 50px );">3</div> <div class="left" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0,   0, 196, 0.7 );-moz-transform: rotateY(-90deg) translateZ( 50px ); } ">4</div> <div class="top" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196, 196,   0, 0.7 );-moz-transform: rotateX( 90deg) translateZ( 50px );">5</div> <div class="bottom" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196,   0, 196, 0.7);-moz-transform: rotateX(-90deg) translateZ( 50px );">6</div> </div> </div> </td> <td> <div class="container" style="width:200px;height:200px;margin:75px 0 0 75px;border:none;"> <div class="cube" style="width:100%;height:100%;-moz-perspective:600px;-moz-transform-style:preserve-3d;-moz-perspective-origin:150% 150%;"> <div class="middle" style="display: block;position: absolute;width: 100px;height: 100px;border: 1px dashed black;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: transparent;">   </div> <div class="front" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0, 0, 0, 0.3 );-moz-transform: translateZ( 50px );">1</div> <div class="back" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0, 255,   0, 1 ); color: black;-moz-transform: translateZ( -50px );">2</div> <div class="right" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196,   0,   0, 0.7 );-moz-transform: rotateY( 90deg) translateZ( 50px );">3</div> <div class="left" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba(   0,   0, 196, 0.7 );-moz-transform: rotateY(-90deg) translateZ( 50px ); } ">4</div> <div class="top" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196, 196,   0, 0.7 );-moz-transform: rotateX( 90deg) translateZ( 50px );">5</div> <div class="bottom" style="display: block;position: absolute;width: 100px;height: 100px;border: none;line-height: 100px;font-family: arial, sans-serif;font-size: 60px;color: white;text-align: center;background: rgba( 196,   0, 196, 0.7);-moz-transform: rotateX(-90deg) translateZ( 50px );">6</div> </div> </div> </td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-3d-transforms/#perspective-property" rel="external" href="http://dev.w3.org/csswg/css3-3d-transforms/#perspective-property" target="_blank">CSS 3D Transforms Level 3</a></td> <td>Working Draft
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>12
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>10.0 (10)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>10
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-ms</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span>
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>10.0 (10)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>
+<span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span>
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a></li>
+</ul>
+</div>

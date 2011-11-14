@@ -1,0 +1,142 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> float </code>CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container, where text and inline elements will wrap around it.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+<p>A <strong>floating element</strong> is one where the <span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span> of<code> float </code>is not<code> none</code>.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+float:  left | right | none | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>left</dt> <dd>The element floats on the left side of its containing block.</dd> <dt>right</dt> <dd>The element floats on the right side of its containing block.</dd> <dt>none</dt> <dd>The element does not float.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/float.html">View Live Examples</a></p>
+
+          <pre name="code" class="xml">&lt;style type="text/css"&gt;
+  div { border: solid red;  max-width: 70ex; }
+  h4  { float: left;  margin: 0; }
+&lt;/style&gt;
+ 
+&lt;div&gt;
+  &lt;h4&gt;HELLO!&lt;/h4&gt;
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+  This is some text. This is some text. This is some text.
+&lt;/div&gt;</pre>
+        
+<div style="border:solid red;max-width:70ex;">
+<div id="section_5">
+<span id="HELLO!"></span><h4 style="float:left;margin:0;" class="editable">HELLO!</h4>
+This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</div>
+</div>
+<p> </p>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Note that if you're referring to this property from JavaScript as a member of the <a title="en/DOM/element.style" rel="internal" href="https://developer.mozilla.org/en/DOM/element.style">element.style</a> object, you must spell it at<code> cssFloat </code>(see the list at <a title="en/DOM/CSS" rel="internal" href="https://developer.mozilla.org/en/DOM/CSS">DOM:CSS</a>). Also note that IE spells this<code> styleFloat</code>.</p>
+<div id="section_7">
+<span id="How_floats_are_positioned"></span><h4 class="editable">How floats are positioned</h4>
+<p>As mentioned above, when an element is floated it is taken out of the normal flow of the document.  It is shifted to the left or right until it touches the edge of it's containing box <em>or another floated element</em>.</p>
+<p>In the image below, there are three red squares.  Two are floated left and one is floated right.  Note that the second "left" red square is placed to the right of the first.  Additional squares  would continue to stack to the right until they filled the containing box, after which they would wrap to the next line.</p>
+<p><img style="width: 729px; height: 248px;" alt="" class="internal" src="https://developer.mozilla.org/@api/deki/files/4927/=floats.png"></p>
+</div>
+<div id="section_8">
+<span id="Clearing_floats"></span><h4 class="editable">Clearing floats</h4>
+<p>In the example above, the floated elements are shorter vertically than the block of text they're floated within. However, if the text was not long enough to wrap below the bottom of all the floats, we might see unanticipated effects. If the paragraph above, for instance, only read "Lorem ipsum dolor sit amet," and was followed by another heading of the same style as the "Floats Example" heading, the second heading would appear between the red boxes. Most likely, we want the next heading to be aligned all the way to the left. To accomplish that, we'd need to clear the floats.</p>
+<p>The simplest way to clear the floats in this example is to add the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/clear">clear</a></code> property to the new heading we want to be sure is aligned left:</p>
+<pre>
+h2.secondHeading { clear: both; }
+</pre>
+<p>However, this method only works if there are no other elements within the same <a href="../../../../en/CSS/block_formatting_context" rel="internal">block formatting context</a> that we <em>do</em> want the heading to continue to appear next to horizontally. If our <code>H2</code> has siblings which are a sidebars floated to the left and right, using <code>clear</code> will force it to appear below both sidebars, which is probably not what we want.</p>
+<p>If clearing floats on an element below them is not an option, another approach is to limit the block formatting context of the floats' container. Referring to the example above again, it appears that all three red boxes are within a <code>P</code> element. We can set the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code> property on that P to <code>hidden</code> or <code>auto</code> to cause it to expand to contain them, but not allow them to drop out the bottom of it:</p>
+<pre>
+p.withRedBoxes { overflow: hidden; height: auto; }
+</pre>
+<div class="note">
+<strong>Note:</strong> Setting <code>overflow</code> to <code>scroll</code> will also contain any floated child elements, but will show scrollbars no matter the height of the content. Here we're setting <code>height</code> to <code>auto</code> even though that's the default to indicate that the container should grow to accommodate its content.</div>
+</div>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/visuren.html#float-position" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#float-position" target="_blank">CSS 2.1 Visual formatting #float</a></li>
+</ul>
+</div>
+<div id="section_10">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_11">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/clear">clear</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/position">position</a></code>
+</li> <li><a title="en/CSS/block_formatting_context" rel="internal" href="https://developer.mozilla.org/en/CSS/block_formatting_context">Block formatting context</a></li>
+</ul>
+<p></p>
+</div>

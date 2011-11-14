@@ -1,0 +1,116 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>border-bottom-style</code> sets the line style of the bottom border of a box.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+border-bottom-style: &lt;border-style&gt; | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id=".3Cborder-style.3E_Values"></span><h3 class="editable">&lt;border-style&gt; Values</h3>
+<dl>
+<dt>none </dt> <dd>No border.</dd> <dt>hidden </dt> <dd>Same as 'none', except in terms of border conflict resolution for table elements.</dd> <dt>dotted </dt> <dd>Series of dots.</dd> <dt>dashed </dt> <dd>Series of short dashes or line segments.</dd> <dt>solid </dt> <dd>Single, straight, solid line.</dd> <dt>double </dt> <dd>Two straight lines that add up to the pixel amount defined as <code>border-width</code>.</dd> <dt>groove </dt> <dd>Carved effect.</dd> <dt>ridge </dt> <dd>Opposite of 'groove'. The border appears 3D (coming out).</dd> <dt>inset </dt> <dd>Makes the box appear embedded.</dd> <dt>outset </dt> <dd>Opposite of 'inset'. Makes the box appear 3D (embossed).</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Related_properties"></span><h3 class="editable">Related properties</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-left-style">border-left-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-right-style">border-right-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-style">border-top-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code>
+</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/border.html">View Live Examples</a></p>
+<pre>
+element {
+        border-bottom-size: 1px;
+        border-bottom-style: dotted;
+        border-bottom-color: #000;
+}
+</pre>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Unless a border-style value is set, your border will not appear because the default value is set to 'none.'</p>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/box.html#propdef-border-bottom-style" title="http://www.w3.org/TR/CSS21/box.html#propdef-border-bottom-style" target="_blank">CSS 2.1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/css3-background/#border-style" title="http://www.w3.org/TR/css3-background/#border-style" target="_blank">CSS 3</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><h3 class="editable">Browser Compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0</td> <td>5.5</td> <td>9.2</td> <td>1.0</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="See_Also"></span><h3 class="editable">See Also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom">border-bottom</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-color">border-bottom-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-width">border-bottom-width</a></code>,</p>
+<p></p>
+</div>

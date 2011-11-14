@@ -1,0 +1,235 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> list-style-type </code>CSS property specifies appearance of a list item element. This is usually a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/li">&lt;li&gt;</a></code> element as it is the only one who defaults to <code>display:list-item</code> but can be any element with this 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code> value.</p>
+<ul style="display:table;padding: 0;border-left: 2px solid;margin-left:0.5em;">
+<li style="display:table-row;padding: 3px;margin:0;">
+<dfn style="display:table-cell;padding: 0 5px;border-bottom: none;cursor:inherit;"><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span> :</dfn><code> disc</code>
+</li> <li style="display:table-row;padding: 3px;margin:0;">
+<dfn style="display:table-cell;padding: 0 5px;border-bottom: none;cursor:inherit;">Applies to :</dfn> elements with<code> display:list-item</code>
+</li> <li style="display:table-row;padding: 3px;margin:0;">
+<dfn style="display:table-cell;padding: 0 5px;border-bottom: none;cursor:inherit;"><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span> :</dfn> yes</li> <li style="display:table-row;padding: 3px;margin:0;">
+<dfn style="display:table-cell;padding: 0 5px;border-bottom: none;cursor:inherit;">Media :</dfn> <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li style="display:table-row;padding: 3px;margin:0;">
+<dfn style="display:table-cell;padding: 0 5px;border-bottom: none;cursor:inherit;"><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span> :</dfn> as specified</li>
+</ul>
+<p>The <a title="color" rel="internal" href="https://developer.mozilla.org/en/CSS/color_value">color</a> of the marker will be the same as the computed color of the element it applies to.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval" style="border-radius:1em;background-color:#D0D0D0;">list-style-type:  &lt;list-style-type&gt; | <a title="en/CSS/none" rel="internal" href="https://developer.mozilla.org/en/CSS/none">none</a> | <a title="inherit" rel="internal" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>none</dt> <dd>No item marker is shown.</dd>
+</dl>
+<p><strong>&lt;list-style-type&gt;</strong> is one of the following:</p>
+<dl style=" font-size:90%; background-color:#eee; border:1px solid powderblue; padding:0.5em 0 0.5em 0.5em; -moz-column-width:20em; -moz-column-rule:1px solid powderblue; -webkit-columns:20em; -webkit-column-rule:1px solid powderblue;">
+<dt>disc</dt> <dd> <ul style="list-style-type: disc;">
+<li>A filled circle (default value)</li> </ul>
+</dd> <dt>circle</dt> <dd> <ul style="list-style-type: circle;">
+<li>A hollow circle</li> </ul>
+</dd> <dt>square</dt> <dd> <ul style="list-style-type: square;">
+<li>A filled square</li> </ul>
+</dd> <dt>decimal</dt> <dd> <ul style="list-style-type: decimal;">
+<li>Decimal numbers</li> <li>Beginning with 1.</li> </ul>
+</dd> <dt>decimal-leading-zero</dt> <dd> <ul style="list-style-type: decimal-leading-zero;">
+<li>Decimal numbers</li> <li>Padded by initial zeros</li> <li>(e.g., 01, 02, 03, ... 98, 99)</li> </ul>
+</dd> <dt>lower-roman</dt> <dd> <ul style="list-style-type: lower-roman;">
+<li>Lowercase roman numerals</li> <li>(i, ii, iii, iv, v, etc.)</li> </ul>
+</dd> <dt>upper-roman</dt> <dd> <ul style="list-style-type: upper-roman;">
+<li>Uppercase roman numerals</li> <li>(I, II, III, IV, V, etc.)</li> </ul>
+</dd> <dt>lower-greek</dt> <dd> <ul style="list-style-type: lower-greek;">
+<li>Lowercase classical Greek</li> <li>alpha, beta, gamma, ...</li> <li>(α, β, γ, ...)</li> </ul>
+</dd> <dt>lower-alpha | lower-latin</dt> <dd> <ul style="list-style-type: lower-alpha;">
+<li>Lowercase ASCII letters</li> <li>(a, b, c, ... z)</li> <li>
+<code>lower-latin </code>is unsupported in IE7</li> <li>See <a rel="custom" href="https://developer.mozilla.org/en/CSS/list-style-type#Browser_compatibility">Browser compatibility</a> section</li> </ul>
+</dd> <dt>upper-alpha | upper-latin</dt> <dd> <ul style="list-style-type: upper-alpha;">
+<li>Uppercase ASCII letters</li> <li>(A, B, C, ... Z)</li> <li>
+<code>upper-latin </code>is unsupported in IE7</li> </ul>
+</dd> <dt>armenian</dt> <dd> <ul style="list-style-type: armenian;">
+<li>Traditional Armenian numbering</li> <li>(ayb/ayp, ben/pen, gim/keem, ...)</li> </ul>
+</dd> <dt>georgian</dt> <dd> <ul style="list-style-type: georgian;">
+<li>Traditional Georgian numbering</li> <li>(an, ban, gan, ... he, tan, in ...)</li> </ul>
+</dd>
+</dl>
+<div id="section_4">
+<span id="CSS2_values.2C_dropped_in_CSS_2.1.2C_but_supported_in_Gecko.2FFirefox_and_other_browsers"></span><h4 class="editable">CSS2 values, dropped in CSS 2.1, but supported in Gecko/Firefox and other browsers</h4>
+<dl style="font-size:90%; background-color:#eee; border:1px solid powderblue; padding:0.5em 0 0.5em 0.5em; -moz-column-width:20em; -moz-column-rule:1px solid powderblue; -webkit-columns:20em; -webkit-column-rule:1px solid powderblue;">
+<dt>hebrew</dt> <dd> <ul style="list-style-type: hebrew;">
+<li>Traditional Hebrew numbering</li> </ul>
+</dd> <dt>cjk-ideographic</dt> <dd> <ul style="list-style-type: cjk-ideographic;">
+<li>Plain ideographic numbers</li> <li>(Chinese-Japanese-Korean)</li> </ul>
+</dd> <dt>hiragana</dt> <dd> <ul style="list-style-type: hiragana;">
+<li>a, i, u, e, o, ka, ki, ...</li> <li>(Japanese)</li> </ul>
+</dd> <dt>katakana</dt> <dd> <ul style="list-style-type: katakana;">
+<li>A, I, U, E, O, KA, KI, ...</li> <li>(Japanese)</li> </ul>
+</dd> <dt>hiragana-iroha</dt> <dd> <ul style="list-style-type: hiragana-iroha;">
+<li>i, ro, ha, ni, ho, he, to, ...</li> </ul>
+</dd> <dt>katakana-iroha</dt> <dd> <ul style="list-style-type: katakana-iroha;">
+<li>I, RO, HA, NI, HO, HE, TO, ...</li> </ul>
+</dd>
+</dl>
+</div>
+<div id="section_5">
+<span id="Mozilla_extensions"></span><h4 class="editable">Mozilla extensions</h4>
+<p>Extended set of values provided by Mozilla (Firefox) to support list types in other languages.</p>
+<dl style="font-size:90%; background-color:#eee; border:1px solid powderblue; padding: 0.5em 0 0.5em 0.5em; -moz-column-width:16em; -moz-column-rule:1px solid powderblue; -webkit-columns:16em; -webkit-column-rule:1px solid powderblue;">
+<dt>-moz-arabic-indic</dt> <dd> <ul style="list-style-type: -moz-arabic-indic;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-bengali</dt> <dd> <ul style="list-style-type: -moz-bengali;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-cjk-earthly-branch</dt> <dd> <ul style="list-style-type: -moz-cjk-earthly-branch;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-cjk-heavenly-stem</dt> <dd> <ul style="list-style-type: -moz-cjk-heavenly-stem;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-devanagari</dt> <dd> <ul style="list-style-type: -moz-devanagari;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-ethiopic-halehame</dt> <dd> <ul style="list-style-type: -moz-ethiopic-halehame;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-ethiopic-halehame-am</dt> <dd> <ul style="list-style-type: -moz-ethiopic-halehame-am;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-ethiopic-halehame-ti-er</dt> <dd> <ul style="list-style-type: -moz-ethiopic-halehame-ti-er;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-ethiopic-halehame-ti-et</dt> <dd> <ul style="list-style-type: -moz-ethiopic-halehame-ti-et;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-ethiopic-numeric</dt> <dd> <ul style="list-style-type: -moz-ethiopic-numeric;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-gujarati</dt> <dd> <ul style="list-style-type: -moz-gujarati;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-gurmukhi</dt> <dd> <ul style="list-style-type: -moz-gurmukhi;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-hangul</dt> <dd> <ul style="list-style-type: -moz-hangul;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-hangul-consonant</dt> <dd> <ul style="list-style-type: -moz-hangul-consonant;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-japanese-formal</dt> <dd> <ul style="list-style-type: -moz-japanese-formal;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-japanese-informal</dt> <dd> <ul style="list-style-type: -moz-japanese-informal;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-kannada</dt> <dd> <ul style="list-style-type: -moz-kannada;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-khmer</dt> <dd> <ul style="list-style-type: -moz-khmer;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-lao</dt> <dd> <ul style="list-style-type: -moz-lao;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-malayalam</dt> <dd> <ul style="list-style-type: -moz-malayalam;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-myanmar</dt> <dd> <ul style="list-style-type: -moz-myanmar;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-oriya</dt> <dd> <ul style="list-style-type: -moz-oriya;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-persian</dt> <dd> <ul style="list-style-type: -moz-persian;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-simp-chinese-formal</dt> <dd> <ul style="list-style-type: -moz-simp-chinese-formal;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-simp-chinese-informal</dt> <dd> <ul style="list-style-type: -moz-simp-chinese-informal;">
+<li style="list-style-type: -moz-simp-chinese-informal;">Example</li> </ul>
+</dd> <dt>-moz-tamil</dt> <dd> <ul style="list-style-type: -moz-tamil;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-telugu</dt> <dd> <ul style="list-style-type: -moz-telugu;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-thai</dt> <dd> <ul style="list-style-type: -moz-thai;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-trad-chinese-formal</dt> <dd> <ul style="list-style-type: -moz-trad-chinese-formal;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-trad-chinese-informal</dt> <dd> <ul style="list-style-type: -moz-trad-chinese-informal;">
+<li>Example</li> </ul>
+</dd> <dt>-moz-urdu</dt> <dd> <ul style="list-style-type: -moz-urdu;">
+<li>Example</li> </ul>
+</dd>
+</dl>
+</div>
+</div>
+<div id="section_6">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="internal" href="https://developer.mozilla.org/samples/cssref/list-style" title="samples/cssref/list-style" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a>
+</p>
+<pre>
+ol { list-style-type: upper-alpha; }
+
+/* or use the shortcut "list-style": */
+ol { list-style: upper-alpha; }</pre>
+</div>
+<div id="section_7">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>Some list-style-types require a suitable font installed to display as expected.</li> <li>The CSS specification does not define how alphabetic systems wrap at the end of the alphabet. For instance, after 26 list items,<code> upper-alpha </code>rendering is undefined. Firefox and other browsers will continue as AA, AB, AC,... For long lists, it is recommended that authors specify true numbers.</li> <li>The list styles<code> hebrew, cjk-ideographs, hiragana, katakana, hiragana-iroha </code>and<code> katakana-iroha </code>are specified in CSS2 and removed from CSS 2.1 due to lack of implementation experience. They are expected to return in the CSS3 Lists module.</li>
+</ul>
+</div>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support including :<br><code>none</code>, <code>disc</code>, <code>circle</code>, <code>square</code>, <code>decimal</code>, <code>lower-alpha</code>, <code>upper-alpha</code>, <code>lower-roman</code>, <code>upper-roman </code>
+</td> <td> 1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>
+<code>lower-latin</code>, <code>upper-latin</code>, <code>lower-greek</code>, <code>armenian</code>, <code>georgian</code>
+</td> <td> 1.0</td> <td>1.0 (1.0)</td> <td>8.0</td> <td>6.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td><code>decimal-leading-zero</code></td> <td> 1.0</td> <td>1.0 (1.0)</td> <td>8.0</td> <td>8.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>
+<code>hebrew</code>, <code>cjk-ideographic</code>, <code>hiragana</code>, <code>hiragana-iroha</code>, <code>katakana</code>, <code>katakana-iroha </code>
+</td> <td> 1.0</td> <td>1.0 (1.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>7.0 (displays decimal numbers)</td> <td>1.0-1.2 (85-125)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p>For compatibility with Internet Explorer 7 (and lower) avoid<code> lower-latin </code>and<code> upper-latin<span style="font-family: Verdana,Tahoma,sans-serif;">. </span></code>Instead, u<code><span style="font-family: Verdana,Tahoma,sans-serif;">se</span></code><code> lower-alpha </code>and<code> upper-alpha</code>.</p>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/1998/REC-CSS2-19980512/generate.html#lists" class="external" rel="external" href="http://www.w3.org/TR/1998/REC-CSS2-19980512/generate.html#lists" target="_blank">CSS 2 #lists</a> Recommendation from May 1998, superseded by CSS 2.1</li> <li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/generate.html#propdef-list-style-type" title="http://www.w3.org/TR/CSS21/generate.html#propdef-list-style-type" target="_blank">CSS 2.1 #list-style-type</a></li> <li>
+<a class="external" rel="external" href="http://www.w3.org/TR/css3-lists/#list-style-type" title="http://www.w3.org/TR/css3-lists/#list-style-type" target="_blank">CSS 3 Lists #list-style-type</a> Early working draft</li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/list-style">list-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/list-style-image">list-style-image</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/list-style-position">list-style-position</a></code></p>
+<p></p>
+</div>

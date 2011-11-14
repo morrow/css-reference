@@ -1,0 +1,155 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> 
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 1.9.1</p>
+(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> text-shadow </code>CSS property accepts a comma-separated list of shadow effects to be applied to the text and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decorations</a></code> of the element.</p>
+<p>Multiple shadow effects are applied front-to-back: the first shadow is on top.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: a color and three lengths</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>text-shadow: none | [&lt;shadow&gt;,]* &lt;shadow&gt;
+
+  where &lt;shadow&gt; is:
+
+[ &lt;color&gt;? &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur-radius&gt;? | &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur-radius&gt;? &lt;color&gt;? ]
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;color&gt;</dt> <dd>Optional, allowed before or after the 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> values. If the <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> is not specified, a UA-chosen color will be used. Gecko/Firefox uses the value of the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property. Other browsers may differ. <div class="note">
+<strong>Note:</strong> Specify a color for browser interoperability.</div>
+</dd> <dt>&lt;offset-x&gt; &lt;offset-y&gt;</dt> <dd>Required. These<code> &lt;length&gt; </code>values set the shadow offset.<code> &lt;offset-x&gt; </code>specifies the horizontal distance. Negative values place the shadow to the left of the text.<code> &lt;offset-y&gt; </code>specifies the vertical distance. Negative values place the shadow above the text. If both values are<code> 0</code>, the shadow is placed behind the text (and may generate a blur effect when<code> &lt;blur-radius&gt; </code>is set).<br> See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> for possible units.</dd> <dt>&lt;blur-radius&gt;</dt> <dd>Optional. This is a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> value. If not specified, it will be<code> 0</code>. The higher this value, the bigger the blur, so the shadow becomes wider and lighter.</dd>
+</dl>
+<div class="geckoVersionNote"> <p>
+</p>
+<div class="geckoVersionHeading">Gecko 2 note<div style="font-size:9px; position:relative; top:-5px; font-style:italic;">(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+</div>
+ <p>Starting in Gecko 2, the blur radius is capped at 300 for performance reasons. Also, let's face it, blur radii that big are just crazy.</p>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>text-shadow: orange 0 -2px;
+</pre>
+<p style="text-shadow:orange 0 -2px">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+<pre>text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+color: white;
+font: 1.5em Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
+</pre>
+<p style="text-shadow:1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; color:white; font:1.5em Georgia,'Bitstream Charter','URW Bookman L','Century Schoolbook L', serif">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <u>totam rem aperiam</u>, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+<pre style="text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px, rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px, rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; color:gold; background:gold">text-shadow: rgba(0,0,0,0.1) -1px 0, rgba(0,0,0,0.1) 0 -1px,
+             rgba(255,255,255,0.1) 1px 0, rgba(255,255,255,0.1) 0 1px,
+             rgba(0,0,0,0.1) -1px -1px, rgba(255,255,255,0.1) 1px 1px; 
+color: gold;
+background: gold;
+</pre>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> </tr>
+<tr>
+<td rowspan="2">Internet Explorer</td> <td>10 <a title="http://blogs.msdn.com/b/ie/archive/2011/09/29/css3-text-shadow-in-ie10.aspx" class=" external" rel="external" href="http://blogs.msdn.com/b/ie/archive/2011/09/29/css3-text-shadow-in-ie10.aspx" target="_blank">[1]</a>
+</td> </tr>
+<tr>
+<td>5.5  supports Microsoft's <a class="external" title="http://msdn.microsoft.com/en-us/library/ms673539(loband).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/ms673539(loband).aspx" target="_blank"><em>Shadow</em> and <em>DropShadow</em> Filter</a>
+</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>
+<strong>3.5</strong> (1.9.1)</td> </tr>
+<tr>
+<td>Opera</td> <td><strong>9.5</strong></td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>1.1 (100), multiple text-shadows since <strong>4.0</strong> (528)</td> </tr>
+<tr>
+<td>Konqueror</td> <td><strong>3.4</strong></td> </tr>
+<tr>
+<td>Chromium</td> <td>2.0.158.0</td> </tr>
+</tbody></table>
+<ul>
+<li>
+<strong>Gecko</strong> (Firefox) theoretically supports infinite text-shadows (don't try it).</li> <li>
+<strong>Opera </strong>supports a maximum of 6-9 text-shadows for performance reasons. The blur radius is limited to 100px.<br><strong>Opera 9.5-10.1</strong> adheres to the old, reverse painting order (CSS2, the first specified shadow is on the <em>bottom</em>).</li> <li>
+<strong>Safari: </strong>Any shadows that do not explicitly specify a color are transparent.<br><strong>Safari 1.1-3.2</strong> only supports one text-shadow (displays the first shadow of a comma-separated list and ignores the rest).</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><code>text-shadow </code>was improperly defined in CSS2 and dropped in CSS2.1. The<em> CSS3 Text </em>spec improved the syntax.</p>
+<ul>
+<li>
+<a class="external" rel="external" href="http://www.w3.org/TR/css3-text/#text-shadow" title="http://www.w3.org/TR/css3-text/#text-shadow" target="_blank">CSS 3 Text #text-shadow</a> Working draft, some changes are proposed.</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-shadow">box-shadow</a></code>
+</li>
+</ul>
+<p></p>
+<table style="border: 1px solid rgb(204, 204, 204); margin: 0px 0px 10px 10px; padding: 0px 10px; background: rgb(238, 238, 238) none repeat scroll 0% 50%; clear: both; width: 100%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody>
+<tr><td colspan="2"><strong>HTML5 Documentation</strong></td></tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#HTML" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#HTML">HTML</a></td>
+<td>
+<a title="en/Using audio and video in Firefox" rel="internal" href="https://developer.mozilla.org/en/Using_HTML5_audio_and_video">Audio/Video</a> <a title="en/HTML/Canvas" rel="internal" href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</a> <a title="https://developer.mozilla.org/en/WebGL" rel="internal" href="https://developer.mozilla.org/en/WebGL">WebGL</a> <a title="en/SVG" rel="internal" href="https://developer.mozilla.org/en/SVG">SVG</a> <a title="en/MathML" rel="internal" href="https://developer.mozilla.org/en/MathML">MathML</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#WebForms" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#WebForms">WebForms</a> <a title="en/Using Application Cache" rel="internal" href="https://developer.mozilla.org/en/Using_Application_Cache">AppCache</a> <a title="en/Using microformats" rel="internal" href="https://developer.mozilla.org/en/Using_microformats">Microformats</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Semantic tags" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Semantic_tags">SemanticTags</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#Javascript" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Javascript">Javascript</a></td>
+<td>
+<a title="en/HTML/HTML5/HTML5 Thematic Classification#Client-Side Storage" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Client-Side_Storage">Storage</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#IndexDB" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#IndexDB">IndexDB</a> <a title="en/WebSockets" rel="internal" href="https://developer.mozilla.org/en/WebSockets">WebSockets</a> <a title="en/Using web workers" rel="internal" href="https://developer.mozilla.org/en/Using_web_workers">WebWorkers</a> <a title="en/Online and offline events" rel="internal" href="https://developer.mozilla.org/en/Online_and_offline_events">Events</a> <a title="en/DragDrop/Drag and Drop" rel="internal" href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag/Drop</a> <a title="en/Web-based protocol handlers" rel="internal" href="https://developer.mozilla.org/en/Web-based_protocol_handlers">ProtocolHandler</a> <a title="en/Using geolocation" rel="internal" href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</a> <a title="en/Focus management in HTML" rel="internal" href="https://developer.mozilla.org/en/Focus_management_in_HTML">Focus</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#CSS" rel="external" href="mks://localhost/en/HTML/HTML5/HTML5_Thematic_Classification#CSS" target="_blank" class=" external">CSS</a></td>
+<td>
+<a title="en/Mozilla CSS support chart" rel="internal" href="https://developer.mozilla.org/en/Mozilla_CSS_support_chart">NewSelectors</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Typography" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Typography">Typography</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Visual" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Visual">Visual</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Effects" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Effects">Effects</a>
+</td>
+</tr>
+</tbody></table>
+<p></p>
+</div>

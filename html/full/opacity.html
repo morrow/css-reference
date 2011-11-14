@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="developer-mozilla-org">
+<head>
+  <title>opacity - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=4379" />
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=4379" />
+<meta name="generator" content="MindTouch" />
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
+<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<link type="text/css" rel="stylesheet" href="https://developer.mozilla.org/deki/scripts/res/syntax/SyntaxHighlighter.css" /><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shCore.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushXml.js"></script><script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 4379;
+Deki.PageTitle = 'en/CSS/opacity';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '11 Nov 2011';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '750f0d21';
+Deki.EditorStylesToken = '1d867c07';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fopacity">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
+ 
+</head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCSSopacity" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+    </div>
+
+    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
+      <p>
+        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+      <div id="site-search-gg"></div>
+    </form>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="/web">Web</a></li>
+            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML">HTML</a></li>
+                  <li><a href="/en/DOM">DOM</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="/en/SVG">SVG</a></li>
+                  <li><a href="/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="/en/WebSockets">WebSockets</a></li>
+                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/CSS">CSS</a></li>
+                  <li><a href="/en/Using_gradients">Gradients</a></li>
+                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/JavaScript">JavaScript</a></li>
+                  <li><a href="/en/Ajax">Ajax</a></li>
+                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="/docs">More docs&hellip;</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="/events">Events</a></li>
+            <li><a href="/discussions">Discussions</a></li>
+            <li><a href="/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+      <ul class="user-state">
+              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+</li>
+        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fopacity" class="user-login">Log in</a></li>
+            </ul>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="/index.php?title=en/CSS/opacity&action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="/Talk:en/CSS/opacity" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=4379">Pages that link here</a></li>      </ul>
+    </li>
+      <li class="menu">
+      <a href="#" class="toggle">Languages</a>
+      <ul><li><a rel="internal" href="https://developer.mozilla.org/de/CSS/opacity" title="de/CSS/opacity">Deutsch</a></li><li><a rel="internal" href="https://developer.mozilla.org/fr/CSS/-moz-opacity" title="fr/CSS/-moz-opacity">Fran&ccedil;ais</a></li><li><a rel="internal" href="https://developer.mozilla.org/pl/CSS/-moz-opacity" title="pl/CSS/-moz-opacity">Polski</a></li></ul>    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="/">MDN</a></li>
+      <li class="crumb-two"><a href="/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
+<li class="last"><a href="https://developer.mozilla.org/en/CSS/opacity" class="deki-ns current">opacity</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-enCSSopacity" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">opacity</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fopacity" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fopacity" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Syntax" rel="internal">Syntax</a></li><li><span>3.</span> <a href="#Values" rel="internal">Values</a></li><li><span>4.</span> <a href="#Examples" rel="internal">Examples</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>4.1.</span> <a href="#Cross_Browser_compatible_Live_Example" rel="internal">Cross Browser compatible Live Example</a></li><li><span>4.2.</span> <a href="#Different_opacity_with_:hover" rel="internal">Different opacity with :hover</a></li></ol></li><li><span>5.</span> <a href="#Notes" rel="internal">Notes</a></li><li><span>6.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><span>7.</span> <a href="#Specifications" rel="internal">Specifications</a></li><li><span>8.</span> <a href="#See_also" rel="internal">See also</a></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Syntax" rel="internal">Syntax</a></li><li><span>3.</span> <a href="#Values" rel="internal">Values</a></li><li><span>4.</span> <a href="#Examples" rel="internal">Examples</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>4.1.</span> <a href="#Cross_Browser_compatible_Live_Example" rel="internal">Cross Browser compatible Live Example</a></li><li><span>4.2.</span> <a href="#Different_opacity_with_:hover" rel="internal">Different opacity with :hover</a></li></ol></li><li><span>5.</span> <a href="#Notes" rel="internal">Notes</a></li><li><span>6.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><span>7.</span> <a href="#Specifications" rel="internal">Specifications</a></li><li><span>8.</span> <a href="#See_also" rel="internal">See also</a></li></ol></div></div><div class="pageText" id="pageText">
+<p><span class="lang lang-en">&laquo; <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> &laquo; <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1"><span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>opacity</code> CSS property specifies the transparency of an element, that is, the degree to which the background behind the element is overlaid.</p>
+<p>Using this property with a value different than <code>1</code> places the element in a new <a title="The stacking context" rel="internal" href="https://developer.mozilla.org/en/Understanding_CSS_z-index/The_stacking_context">stacking context</a>.</p>
+<ul> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>1.0</code> (opaque)</li> <li>Applies to: all elements</li> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span></li> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the specified number (clipped to the range [<code>0.0</code>, <code>1.0</code>])</li>
+</ul></div><div id="section_2"><span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+opacity:  &lt;number&gt; | inherit</pre>
+</div><div id="section_3"><span id="Values"></span><h3 class="editable">Values</h3>
+<p>A <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> in the range<code> 0.0 </code>to<code> 1.0</code>. Any value smaller or larger is clamped to this range.</p>
+<dl> <dt>0</dt> <dd>The element is fully transparent (that is, invisible).</dd> <dt><em>number </em>between 0 and 1</dt> <dd>The element is translucent (that is, background can be seen).</dd> <dt>1</dt> <dd>The element is fully opaque (solid).</dd>
+</dl>
+</div><div id="section_4"><span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+hbox.example {
+  opacity: 0.5; /* see the background through the hbox */
+}</pre>
+<div id="section_5"><span id="Cross_Browser_compatible_Live_Example"></span><h4 class="editable">Cross Browser compatible Live Example</h4>
+<pre style="border:solid red; opacity:0.2; filter:alpha(opacity=20); zoom:1">
+pre {                               /* make the box translucent (20% opaque) */
+   border: solid red;
+   opacity: 0.2;
+   filter: alpha(opacity=20);       /* IE8 and lower */
+   zoom: 1;       /* set &quot;zoom&quot;, &quot;width&quot; or &quot;height&quot; to trigger &quot;hasLayout&quot; in IE 7 and lower */ 
+}</pre>
+<pre style="border:solid red; opacity:0.5; filter:alpha(opacity=50); zoom:1">
+pre {                               /* make the box translucent (50% opaque) */
+   border: solid red;
+   opacity: 0.5;
+   filter: alpha(opacity=50);       /* IE8 and lower */
+   zoom: 1;       /* set &quot;zoom&quot;, &quot;width&quot; or &quot;height&quot; to trigger &quot;hasLayout&quot; in IE 7 and lower */ 
+}</pre>
+<pre style="border:solid red; opacity:0.8; filter:alpha(opacity=80); zoom:1">
+pre {                               /* make the box translucent (80% opaque) */
+   border: solid red;
+   opacity: 0.8;
+   filter: alpha(opacity=80);       /* IE8 and lower */
+   zoom: 1;       /* set &quot;zoom&quot;, &quot;width&quot; or &quot;height&quot; to trigger &quot;hasLayout&quot; in IE 7 and lower */ 
+}</pre></div><div id="section_6"><span id="Different_opacity_with_:hover"></span><h4 class="editable">Different opacity with :hover</h4>
+
+          <pre name="code" class="xml">&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+img.opacity {
+   opacity: 1;
+   filter: alpha(opacity=50);
+   zoom: 1;
+ }  
+ 
+img.opacity:hover {
+   opacity: 0.5;
+   filter: alpha(opacity=100);
+   zoom: 1;
+ }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;img src=&quot;//developer.mozilla.org/media/img/mdn-logo.png&quot; alt=&quot;MDN logo&quot; width=&quot;128&quot; height=&quot;146&quot; class=&quot;opacity&quot; /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        
+</div></div><div id="section_7"><span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul> <li><strong>History:</strong>&nbsp; Prior to Mozilla 1.7 (Firefox 0.9) the<code> -moz-opacity </code>property was implemented in a non-standard (inherited) way. With Firefox 0.9 the behavior changed and the property was renamed to<code> opacity</code>.&nbsp; Since then<code> -moz-opacity </code>was supported just as an alias for<code> opacity</code>.</li> <li> <p>Gecko 1.9.1 (Firefox 3.5) and later do not support<code> -moz-opacity</code>. &nbsp;By now, you should be using simply<code> opacity</code>.</p> </li>
+</ul>
+</div><div id="section_8"><span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script>
+<div class="htab"><a name="AutoCompatibilityTable"></a>
+<ul> <li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div></p>
+<div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td rowspan="3">Basic support</td> <td rowspan="3">1.0</td> <td rowspan="3">1.0 (1.7)
+</td> <td>9.0</td> <td rowspan="3">9.0</td> <td rowspan="3">1.2 (125)</td> </tr> <tr> <td>8.0<br /> <code>filter: alpha(opacity=xx)<br /> filter: &quot;alpha(opacity=xx)&quot; </code><br /> (both are synonymous)</td> </tr> <tr> <td>4.0<br /> <code>filter: alpha(opacity=xx)</code></td> </tr> </tbody> </table>
+</div>
+<div id="compat-mobile"> <table class="compat-table" style="width: 827px; height: 156px;"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE&nbsp;Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td rowspan="3">Basic support</td> <td rowspan="3">1.0</td> <td rowspan="3">1.0 (1.7)
+</td> <td>9.0</td> <td rowspan="3">9.0</td> <td rowspan="3">3.2</td> </tr> <tr> <td>8.0<br /> <code>filter: alpha(opacity=xx)<br /> filter: &quot;alpha(opacity=xx)&quot; </code><br /> (both are synonymous)</td> </tr> <tr> <td>4.0<br /> <code>filter: alpha(opacity=xx)</code></td> </tr> </tbody> </table>
+</div>
+<ul> <li>Prior to version 9, Internet Explorer does not support <code>opacity</code>, rather it supports <code>filter</code> instead.</li> <li>IE supports also the extended form <code>progid:DXImageTransform.Microsoft.Alpha(Opacity=xx)</code>. This is needless, so don't use it.</li> <li>IE8 introduced <code>-ms-filter</code>, which is synonymous with <code>filter</code>. Don't use the prefix.</li> <li>Similar to <code>-moz-opacity</code>, <code>-khtml-opacity</code> has been dead since early 2004 (release of Safari 1.2).<br /> Konqueror never had support for <code>-khtml-opacity</code> and had been supporting <code>opacity</code> since version 4.0.<br /> Don't use <code>-khtml-opacity</code> nor <code>-moz-opacity</code> anymore.</li>
+</ul></div><div id="section_9"><span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul> <li>
+<a rel="custom" href="http://www.w3.org/TR/css3-color/#transparency">CSS 3 Color: opacity</a><span title="Recommendation" style="color:#fff; background-color:#309c40; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">REC</span></li>
+</ul></div><div id="section_10"><span id="See_also"></span><h3 class="editable">See also</h3>
+<p><a title="http://msdn.microsoft.com/en-us/library/ms532910(VS.85).aspx" class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms532910%28VS.85%29.aspx" target="_blank">MSDN Microsoft's filter:alpha(opacity=xx)</a></p>
+<p><table style="border: 1px solid rgb(204, 204, 204); margin: 0px 0px 10px 10px; padding: 0px 10px; background: rgb(238, 238, 238) none repeat scroll 0% 50%; clear: both; width: 100%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody><tr><td colspan="2"><strong>HTML5 Documentation</strong></td></tr><tr><td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#HTML" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#HTML">HTML</a></td><td><a title="en/Using audio and video in Firefox" rel="internal" href="https://developer.mozilla.org/en/Using_HTML5_audio_and_video">Audio/Video</a> <a title="en/HTML/Canvas" rel="internal" href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</a> <a title="https://developer.mozilla.org/en/WebGL" rel="internal" href="https://developer.mozilla.org/en/WebGL">WebGL</a> <a title="en/SVG" rel="internal" href="https://developer.mozilla.org/en/SVG">SVG</a> <a title="en/MathML" rel="internal" href="https://developer.mozilla.org/en/MathML">MathML</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#WebForms" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#WebForms">WebForms</a> <a title="en/Using Application Cache" rel="internal" href="https://developer.mozilla.org/en/Using_Application_Cache">AppCache</a> <a title="en/Using microformats" rel="internal" href="https://developer.mozilla.org/en/Using_microformats">Microformats</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Semantic tags" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Semantic_tags">SemanticTags</a></td></tr><tr><td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#Javascript" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Javascript">Javascript</a></td><td><a title="en/HTML/HTML5/HTML5 Thematic Classification#Client-Side Storage" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Client-Side_Storage">Storage</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#IndexDB" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#IndexDB">IndexDB</a> <a title="en/WebSockets" rel="internal" href="https://developer.mozilla.org/en/WebSockets">WebSockets</a> <a title="en/Using web workers" rel="internal" href="https://developer.mozilla.org/en/Using_web_workers">WebWorkers</a> <a title="en/Online and offline events" rel="internal" href="https://developer.mozilla.org/en/Online_and_offline_events">Events</a> <a title="en/DragDrop/Drag and Drop" rel="internal" href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag/Drop</a> <a title="en/Web-based protocol handlers" rel="internal" href="https://developer.mozilla.org/en/Web-based_protocol_handlers">ProtocolHandler</a> <a title="en/Using geolocation" rel="internal" href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</a> <a title="en/Focus management in HTML" rel="internal" href="https://developer.mozilla.org/en/Focus_management_in_HTML">Focus</a></td></tr><tr><td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#CSS" rel="external" href="mks://localhost/en/HTML/HTML5/HTML5_Thematic_Classification#CSS" target="_blank" class=" external">CSS</a></td><td><a title="en/Mozilla CSS support chart" rel="internal" href="https://developer.mozilla.org/en/Mozilla_CSS_support_chart">NewSelectors</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Typography" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Typography">Typography</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Visual" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Visual">Visual</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Effects" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Effects">Effects</a></td></tr></tbody></table>
+
+</p>
+<p></p></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(3)</span></h2>
+              <a href="/index.php?title=Special:Tags&pageId=4379" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS3" title="CSS3" tagid="1949" class="text">CSS3</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(0)</span></h2>
+            <div id="pageFiles"><div class="nofiles">&nbsp;</div></div>            <div id="deki-image-gallery-lite"><table class="table empty" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 0</th></tr><tr class="bg2"><td class="col1 empty" colspan="3">No images to display in the gallery.</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="/index.php?title=en/CSS/opacity&action=history" title="08:38, 31 Oct 2011">08:38, 31 Oct 2011</a> by <a href="/User:teoli" class="link-user" rel="internal">teoli</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
+    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <p class="user-state">
+          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fopacity" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+      
+  </p>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki03.mozilla.org in 0.59 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   5.55       request-time-ms=2; mysql-queries=1; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                7.26       request-time-ms=5; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         7.29       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/4379/contents                           158.11       request-time-ms=156; mysql-queries=84; mysql-time-ms=79; cache-ratio=2.08; cache-hit=166; cache-miss=-86; cache-del=0; cache-ins=86;
+	GET       /deki/pages/4379                                     44.20       request-time-ms=40; mysql-queries=21; mysql-time-ms=28; cache-ratio=25.00; cache-hit=25; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/4379/info                                 5.82       request-time-ms=4; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/4379/tags                                 8.12       request-time-ms=6; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                10.21       request-time-ms=8; mysql-queries=4; mysql-time-ms=5; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/nav/=en%252FCSS%252Fopacity/full         280.07       request-time-ms=277; mysql-queries=6; mysql-time-ms=236; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/4379/tags                                 7.97       request-time-ms=6; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total:   534.60      
+	                                                     Ideal:   526.63      
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+<script type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</script> 
+</body>
+</html>

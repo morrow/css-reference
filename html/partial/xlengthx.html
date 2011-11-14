@@ -1,0 +1,164 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;length&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes distance measurements. It is a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> immediately followed by a length unit (<code>px</code>, <code>em</code>, <code>pc</code>, <code>in</code>, <code>mm</code>, ...). Like for any CSS dimension, there is no space between the unit literal and the number.</p>
+<p>Many CSS properties take<code> &lt;length&gt; </code>values, such as 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/width">width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin">margin</a></code>,  
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/padding">padding</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>, ...</p>
+<p>For some properties, using negative lengths is a syntax error, but for some properties, negative lengths are allowed. Note also that some CSS properties accepted <code>&lt;length&gt;</code> values also accepts <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> values; though also CSS dimensions, these are not <code>&lt;length&gt;</code> values.</p>
+</div>
+<div id="section_2">
+<span id="Interpolation"></span><h2 class="editable">Interpolation</h2>
+<p>Values of the <code>&lt;length&gt;</code> CSS data type can be interpolated in order to allow animations. In that case they are interpolated as real, floating-point, numbers. <a class="external" title="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" target="_blank">[1]</a> The interpolation happens on the calculated value. The speed of the interpolation is determined by the <a title="timing-function" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function">timing function</a> associated with the animation.</p>
+</div>
+<div id="section_3">
+<span id="Units"></span><h2 class="editable">Units</h2>
+<div id="section_4">
+<span id="Relative_length_units"></span><h3 class="editable">Relative length units</h3>
+<div id="section_5">
+<span id="Font-relative_length"></span><h4 class="editable">Font-relative length</h4>
+<dl>
+<dt>em</dt> <dd>This unit represents the calculated 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> of the element. If used on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> property itself, it represents the <em>inherited</em> font-size of the element.<br><div class="note">This unit is often used to create scalable layouts, which keep the <a class="external" title="http://24ways.org/2006/compose-to-a-vertical-rhythm" rel="external" href="http://24ways.org/2006/compose-to-a-vertical-rhythm" target="_blank">vertical rhythm of the page</a>, even when the user changes the size of the fonts. The CSS properties 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-bottom">margin-bottom</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-top">margin-top</a></code> often has a value expressend in <strong>em</strong>.</div> </dd> <dt>ex</dt> <dd>This unit represents the <a class="external" title="http://en.wikipedia.org/wiki/X-height" rel="external" href="http://en.wikipedia.org/wiki/X-height" target="_blank">x-height</a> of the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>. On fonts with the 'x' letter, this is generally the height of lowercase letters in the font;<code style="white-space: nowrap;"> 1ex ≈ 0.5em </code>in many fonts.</dd> <dt>ch <span class="lang lang-en"><span class="ExperimentalInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Experimental</span></span>  </dt> <dd>This unit represents the width, or more precisely the advance measure, of the glyph '0' (zero, the Unicode character U+0030) in the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>.</dd> <dt>rem <span class="lang lang-en"><span class="ExperimentalInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Experimental</span></span>  </dt> <dd>This unit represents the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> of the root element (e.g. the font-size of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/html">&lt;html&gt;</a></code> element). When used on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> on this root element, it represents its initial value. <div class="note">This unit is practical in creating perfectly scalable layout. If not supported by the targeted browsers, such layout can be achieved using the <strong>em</strong> unit, though this is slightly more complex.</div> </dd>
+</dl>
+</div>
+<div id="section_6">
+<span id="Viewport-relative_length_Experimental"></span><h4 class="editable">Viewport-relative length <span class="lang lang-en"><span class="ExperimentalInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Experimental</span></span>  </h4>
+<dl>
+<dt>vh</dt> <dd>1/100th of the height of the viewport.</dd> <dt>vw</dt> <dd>1/100th of the width of the viewport.</dd> <dt>vm</dt> <dd>1/100th of the minimum value between the height and the width of the viewport.</dd>
+</dl>
+</div>
+</div>
+<div id="section_7">
+<span id="Absolute_length_units"></span><h3 class="editable">Absolute length units</h3>
+<p>Absolute length units represents a physical measurement and when the physical properties of the output medium are known, such as for print layout. This is done by anchored one of the unit to a physical unit and to defined the other relatively to it. The anchor is done differently for low-resolution devices, like screens, and high-resolution devices, like printers.</p>
+<p>For low-dpi devices, the unit <strong>px</strong> represents the physical <em>reference pixel</em> and the other are defined relative to it. In that case, <code>1in</code> is defined as <code>96px</code> and <code>1pt</code> as <code>72px</code>. The consequence of this definition is that on such devices, length described in inches (<code>in</code>), centimeters (<code>cm</code>), millimeters (<code>mm</code>) doesn't necessary match the length of the physical unit with the same name.</p>
+<p>For high-dpi devices, inches (<code>in</code>), centimeters (<code>cm</code>), millimeters (<code>mm</code>) are defined as their physical counterparts. Therefore the <strong>px</strong> unit is defined relative to them (1/96 of 1 inch).</p>
+<dl>
+<dt>px</dt> <dd>Relative to the viewing device.<br> For screen display, typically one device pixel (dot) of the display.<br> For <em>printers</em> and very <em>high resolution screens</em> one CSS pixel implies multiple device pixels, so that the number of pixel per inch stays around 96.</dd> <dt></dt> <dt>mm</dt> <dd>One millimeter.</dd> <dt>cm</dt> <dd>One centimeter (10 millimeters).</dd> <dt>in</dt> <dd>One inch (2.54 centimeters).</dd> <dt>pt</dt> <dd>One point (which is 1/72 of an inch).</dd> <dt>pc</dt> <dd>One pica (which is 12 points).</dd> <dt>mozmm 
+<span title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 2.0</span>
+ <span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     </dt> <dd>An experimental unit which attempts to render at exactly one millimeter regardless of the size or resolution of the display. This is rarely actually what you want, but may be useful in particular for mobile devices.</dd>
+</dl>
+<p>
+</p>
+<div>
+<span class="lang lang-en"><span style="border: 1px solid rgb(129, 129, 81); padding: 1px; background-color: rgb(255, 255, 225); font-size: small; font-weight: bold; float: right; text-align: right; vertical-align: middle; white-space: nowrap;">Requires Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</span></span>
+<span id="CSS_units_and_dots-per-inch"></span><h2>CSS units and dots-per-inch</h2>
+</div>
+<p class="note">Prior to Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+, Gecko attempted (often incorrectly) to actually compute the real size to render for these, even though most other rendering engines assumed 96 DPI. Now Gecko is consistent with the other browsers.</p>
+<p>Starting in Gecko 2.0, changes to how CSS units translate to dots-per-inch (DPI) have been made to become consistent with the behavior of other popular browsers including Safari, Internet Explorer, and Google Chrome.</p>
+<p>Some specific examples:</p>
+<ul>
+<li>1in is now always 96px</li> <li>3pt is now always 4px</li> <li>25.4mm is now always 96px</li>
+</ul>
+<p>In addition, Gecko has improved ability to correctly scale absolute lengths to the actual resolution of the rendering medium, whether that's the screen or paper.</p>
+</div>
+</div>
+<div id="section_8">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#lengths" rel="external" href="http://www.w3.org/TR/css3-values/#lengths" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>Added <code>ch</code>, <code>rem</code>, <code>vw</code>, <code>vh</code>, <code>vm</code>
+</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#length-units" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">
+<code>pt</code>, <code>pc</code>, <code>px</code> are explicitly defined (were implicitly defined in CSS1)</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/#length-units" rel="external" href="http://www.w3.org/TR/CSS1/#length-units" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_9">
+<span id="Browser_Compatibility"></span><h2 class="editable">Browser Compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1</td> <td>1.0 (1.0)</td> <td>3.0 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" target="_blank">[2]</a>
+</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>ch</td> <td>no</td> <td>1.0 (width of 'M') [*]<br> 3.5 (correct)</td> <td>9 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" target="_blank">[3]</a>
+</td> <td>no</td> <td>no</td> </tr>
+<tr>
+<td>rem</td> <td>1 (528) <a class="link-https" title="https://bugs.webkit.org/show_bug.cgi?id=27283" rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=27283" target="_blank">[4]</a>
+</td> <td>3.6 (1.9.2)</td> <td>9 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" target="_blank">[5]</a>
+</td> <td>no</td> <td>5.0 (533.17.8)</td> </tr>
+<tr>
+<td>vh, vw, vm</td> <td>no <a class="link-https" title="https://bugs.webkit.org/show_bug.cgi?id=27160" rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=27160" target="_blank">[6]</a>
+</td> <td>no <a class="link-https" title="https://bugzilla.mozilla.org/show_bug.cgi?id=503720" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=503720" target="_blank">[7]</a>
+</td> <td>9 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" target="_blank">[8]</a>
+</td> <td>no</td> <td>no <a class="link-https" title="https://bugs.webkit.org/show_bug.cgi?id=27160" rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=27160" target="_blank">[9]</a>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> </tr>
+<tr>
+<td>ch</td> <td>no</td> <td>yes</td> <td>?</td> <td>no</td> <td>no</td> </tr>
+<tr>
+<td>rem</td> <td>2.1</td> <td>yes</td> <td>?</td> <td>no</td> <td>4.0</td> </tr>
+<tr>
+<td>vh, vw, vm</td> <td>no</td> <td>no</td> <td>?</td> <td>no</td> <td>no</td> </tr>
+</tbody></table>
+</div>
+<p>[*] Also, didn't work for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-width">border-width</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code> CSS properties.</p>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+<p></p>
+</div>

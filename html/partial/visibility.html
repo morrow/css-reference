@@ -1,0 +1,76 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> visibility </code>CSS property is used for two things:</p>
+<ol>
+<li>The<code> hidden </code>value hides an element but leaves space where it would have been.</li> <li>The<code> collapse </code>value hides rows or columns of a table. It also collapses XUL elements.</li>
+</ol>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/visible">visible</a></code>
+</li> <li>Applies to: All elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: Yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: As specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+visibility:  visible | hidden | collapse | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>visible</dt> <dd>Default value, the box is visible.</dd> <dt>hidden</dt> <dd>The box is invisible (fully transparent, nothing is drawn), but still affects layout.  Descendants of the element will be visible if they have<code> visibility:visible </code>(this doesn't work in IE up to version 7).</dd> <dt>collapse</dt> <dd>For table rows, columns, column groups, and row groups the row(s) or column(s) are hidden and the space they would have occupied is (as if <code>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code>: none</code> were applied to the column/row of the table). However, the size of other rows and columns is still calculated as though the cells in the collapsed row(s) or column(s) are present. This was designed for fast removal of a row/column from a table without having to recalculate widths and heights for every portion of the table. For XUL elements, the computed size of the element is always zero, regardless of other styles that would normally affect the size, although margins still take effect. For other elements, <code>collapse</code> is treated the same as <code>hidden</code>.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+p        { visibility: hidden; }    /* paragraphs won't be visible */
+p.showme { visibility: visible; }   /* except of these with class showme */
+tr.col   { visibility: collapse; }  /* table rows with class col will collapse */
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>The support for<code> visibility:collapse </code>is missing or partially incorrect in some modern browsers. In many cases it may not be correctly treated like<code> visibility:hidden </code>on elements other than table rows and columns.</p>
+<p><code>visibility:collapse </code>may change the layout of a table if the table has nested tables within the cells that are collapsed, unless<code> visibility:visible </code>is specified explicitly on nested tables.</p>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>4.0</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0 (1.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>4.0</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visufx.html#visibility" title="http://www.w3.org/TR/CSS21/visufx.html#visibility" target="_blank">CSS 2.1 Visual effects #visibility</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code></p>
+<p></p>
+</div>

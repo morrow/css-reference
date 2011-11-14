@@ -1,0 +1,68 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code> value is allowed on every CSS property. It causes the element for which it is specified to take the <span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span> of the property from its parent element.</p>
+<div id="section_2">
+<span id="For_inherited_properties"></span><h4 class="editable">For inherited properties</h4>
+<p>For <a title="en/CSS/inheritance" rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance">inherited properties</a>, this reinforces the default behavior, and is only needed to override another rule. For example:</p>
+<pre> /* make second-level headers green */
+ h2 { color: green; }
+
+ /* ...but leave those in the sidebar alone so they use their parent's color */
+ #sidebar h2 { color: inherit; }
+</pre>
+<p>Note that in this example the<code> h2 </code>elements inside the sidebar might be different colors. For example, if one of them were the child of a div matched by the rule</p>
+<pre class="eval"> div#current { color: blue; }
+</pre>
+<p>it would be blue.</p>
+</div>
+<div id="section_3">
+<span id="For_non-inherited_properties"></span><h4 class="editable">For non-inherited properties</h4>
+<p>For <a title="en/CSS/inheritance" rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance">non-inherited properties</a>, this specifies a behavior that typically makes relatively little sense.</p>
+</div>
+</div>
+<div id="section_4">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Inheritance is always from the parent element in the document tree, even when the parent element is not the containing block.</p>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 1053px; border-style: solid; border-width: 1px; height: 75px; border-color: rgb(0,0,0);">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#common-keywords" rel="external" href="http://www.w3.org/TR/css3-values/#common-keywords" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit" rel="external" href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><h3 class="editable">Browser Compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td><strong>8.0</strong></td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>
+<strong>1.0</strong> (1.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>4.0-7.0</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>
+<strong>1.0</strong> (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="See_Also"></span><h3 class="editable">See Also</h3>
+<p><a title="es/CSS/inheritance" class="internal" rel="internal" href="https://developer.mozilla.org/es/CSS/inheritance">Inheritance</a>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/initial">initial</a></code></p>
+<p></p>
+</div>

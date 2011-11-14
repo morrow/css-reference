@@ -1,0 +1,121 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>text-decoration-line</code> CSS property sets what kind of line decorations are added to an element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>none</code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">
+text-decoration-line: none | underline || overline || line-through
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<p>Accepts <strong>one or more</strong> whitespace separated values:</p>
+<dl>
+<dt>none</dt> <dd>Produces no text decoration.</dd> <dt>underline</dt> <dd>Each line of text is underlined.</dd> <dt>overline</dt> <dd>Each line of text has a line above it.</dd> <dt>line-through</dt> <dd>Each line of text has a line through the middle.</dd> <dt>-moz-anchor-decoration</dt> <dd>
+<a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">Mozilla CSS Extension</a>, not suitable for web content.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<p>In contrast to 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></code>, the <code>-moz-text-decoration-line</code> property does <strong>not</strong> accept the <code>blink</code> value. You might use 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-text-blink">-moz-text-blink</a></code> instead.</p>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>
+.example { 
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+}
+</pre>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>6.0 (6.0)
+ <br> (prefixed with <code>-moz-</code>)</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a class="external" rel="external" href="http://dev.w3.org/csswg/css3-text/#text-decoration-line" title="http://dev.w3.org/csswg/css3-text/#text-decoration-line" target="_blank">CSS 3 Text #text-decoration-line</a> (Editor's Draft)</li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<p>
+</p>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-align">text-align</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-indent">text-indent</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-color">text-decoration-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-style">text-decoration-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/letter-spacing">letter-spacing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/word-spacing">word-spacing</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-transform">text-transform</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-rendering">text-rendering</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>
+</li>
+</ul>
+<p></p>
+</div>

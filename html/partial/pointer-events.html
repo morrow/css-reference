@@ -1,0 +1,99 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The CSS property<code> pointer-events </code>allows authors to control whether or when an element may be the <a class="internal" title="en/DOM/event.target" rel="internal" href="https://developer.mozilla.org/en/DOM/event.target">target</a> of a mouse event. This property is used to specify under which circumstance (if any) a mouse event should go "through" an element and target whatever is "underneath" that element instead.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: auto</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the specified value, or else the inherited value</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre style="white-space:pre-wrap">
+pointer-events:  <em>auto</em> | none | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><code>auto</code></dt> <dd>The element behaves as it would if the<code> pointer-events </code>property was not specified. In SVG content this value and the value<code> visiblePainted </code>have the same effect.</dd> <dt><code>none</code></dt> <dd>The element is never the <a class="internal" title="en/DOM/event.target" rel="internal" href="https://developer.mozilla.org/en/DOM/event.target">target</a> of mouse events, although mouse events may target its descendant elements if those descendants have<code> pointer-events </code>set to some other value, in which case mouse events will trigger event listeners on this element as appropriate on their way to/from the descendant during the event capture/<a class="internal" title="en/DOM/event.bubbles" rel="internal" href="https://developer.mozilla.org/en/DOM/event.bubbles">bubble</a> phases.</dd> <dt><code>visiblePainted</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the<code> visibility </code>property is set to<code> visible </code>and when the mouse cursor is over the interior (i.e., 'fill') of the element and the<code> fill </code>property is set to a value other than <code>none</code>, or when the mouse cursor is over the perimeter (i.e., 'stroke') of the element and the<code> stroke </code>property is set to a value other than<code> none</code>.</dd> <dt><code>visibleFill</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the<code> visibility </code>property is set to<code> visible </code>and when the mouse cursor is over the interior (i.e., fill) of the element. The value of the<code> fill </code>property does not effect event processing.</dd> <dt><code>visibleStroke</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the<code> visibility </code>property is set to<code> visible </code>and when the mouse cursor is over the perimeter (i.e., stroke) of the element. The value of the<code> stroke </code>property does not effect event processing.</dd> <dt><code>visible</code></dt> <dd>SVG only. The element can be the target of a mouse event when the<code> visibility </code>property is set to<code> visible </code>and the mouse cursor is over either the interior (i.e., fill) or the perimeter (i.e., stroke) of the element. The values of the<code> fill </code>and<code> stroke </code>do not effect event processing.</dd> <dt><code>painted</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the mouse cursor is over the interior (i.e., 'fill') of the element and the<code> fill </code>property is set to a value other than <code>none</code>, or when the mouse cursor is over the perimeter (i.e., 'stroke') of the element and the<code> stroke </code>property is set to a value other than<code> none</code>. The value of the<code> visibility </code>property does not effect event processing.</dd> <dt><code>fill</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the pointer is over the interior (i.e., fill) of the element. The values of the<code> fill </code>and<code> visibility </code>properties do not effect event processing.</dd> <dt><code>stroke</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the pointer is over the perimeter (i.e., stroke) of the element. The values of the<code> stroke </code>and<code> visibility </code>properties do not effect event processing.</dd> <dt><code>all</code></dt> <dd>SVG only. The element can only be the target of a mouse event when the pointer is over the interior (i.e., fill) or the perimeter (i.e., stroke) of the element. The values of the<code> fill</code>,<code> stroke </code>and<code> visibility </code>properties do not effect event processing.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/pointer-events.html">View Live Examples</a> <span class="lang lang-en">(not available, please check later) </span></p>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Note that preventing an element from being the target of mouse events by using<code> pointer-events </code>does <em>not</em> necessarily mean that mouse event listeners on that element <em>cannot</em> or <em>will not</em> be triggered. If one of the element's children has<code> pointer-events </code>explicitly set to <em>allow</em> that child to be the target of mouse events, then any events targeting that child will pass through the parent as the event travels along the parent chain, and trigger event listeners on the parent as appropriate. Of course any mouse activity at a point on the screen that is covered by the parent but not by the child will not be caught by either the child or the parent (it will go "through" the parent and target whatever is underneath).</p>
+<p>Mozilla and other W3C members would like to provide finer grained control (than just<code> auto </code>and<code> none</code>) in HTML for which parts of an element will cause it to "catch" mouse events, and when. To help us in deciding how<code> pointer-events </code>should be further extended for HTML, if you have any particular things that you would like to be able to do with this property, then please add them to the Use Cases section of <a class="link-https" rel="external" href="https://wiki.mozilla.org/SVG:pointer-events" title="https://wiki.mozilla.org/SVG:pointer-events" target="_blank">this wiki page</a> (don't worry about keeping it tidy), or else send them to <a class="link-mailto" rel="external" href="mailto:jwatt@jwatt.org" title="mailto:jwatt@jwatt.org" target="_blank">Jonathan Watt</a>.</p>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>SVG support</td> <td>1.0</td> <td>1.5 (1.8)
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>9.0 (2.0)</td> <td>3.0 (522)</td> </tr>
+<tr>
+<td>HTML/XML content</td> <td>2.0</td> <td>3.6 (1.9.2)
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>4.0 (530)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/SVG11/interact.html#PointerEventsProperty" title="http://www.w3.org/TR/SVG11/interact.html#PointerEventsProperty" target="_blank">SVG 1.1 Interactivity #PointerEvents</a></li> <li>
+<a class="external" title="http://dev.w3.org/csswg/css3-ui/#pointer-events" rel="external" href="http://dev.w3.org/csswg/css3-ui/#pointer-events" target="_blank">CSS 3 Basic User Interface #pointer-events</a>  Editor's draft (work in progress)</li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>The SVG attribute 
+<code><a rel="custom" href="https://developer.mozilla.org/en/SVG/Attribute/pointer-events">pointer-events</a></code>
+</li> <li>
+<a class="external" title="http://webkit.org/specs/PointerEventsProperty.html" rel="external" href="http://webkit.org/specs/PointerEventsProperty.html" target="_blank">WebKit Specs PointerEventsProperty</a> extended for use in (X)HTML content</li>
+</ul>
+</div>

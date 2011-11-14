@@ -1,0 +1,28 @@
+
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> ::-moz-progress-bar</code> pseudo-element applies to the area of an HTML 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/progress">&lt;progress&gt;</a></code> element that represents the amount of progress that has happened so far. This lets you, for example, change the color of progress bars.</p>
+<p>You have pretty broad capabilities to style the bar. This can be especially useful with indeterminate bars (via the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aindeterminate">:indeterminate</a></code> pseudo-class), where you may wish to substantially change the default appearance; you can change the width and positioning of the bar, for example. (By which we probably mean the whole element's dimensions and position, not just the painted part of the element, as featured in the screen shot below.)</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>This example styles the progress meter portion of the progress bar with ID <code>redbar</code> with the color red.</p>
+
+          <pre name="code" class="css">#redbar::-moz-progress-bar {
+  background-color: red;
+}</pre>
+        
+<p>A bar using this style might look something like this:</p>
+<p><img alt="redbar.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png"></p>
+<div id="section_3">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/progress">&lt;progress&gt;</a></code>
+</li>
+</ul>
+</div>
+</div>

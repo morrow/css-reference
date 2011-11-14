@@ -1,0 +1,105 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The clear property specifies whether an element can be next to <a title="en/CSS/float" rel="internal" href="https://developer.mozilla.org/en/CSS/float">floating</a> elements that precede it or must be moved down (cleared) below them.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: block-level elements (including floats)</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: No</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+clear: none | left | right | both | <a title="en/CSS/inherit" rel="internal" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>none</dt> <dd>Element is <em>not</em> moved down to clear past floating elements.</dd> <dt>left</dt> <dd>Element is moved down to clear past <em>left</em> floats.</dd> <dt>right</dt> <dd>Element is moved down to clear past <em>right</em> floats.</dd> <dt>both</dt> <dd>Element is moved down to clear past <em>both</em> left and right floats.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/clear.html">View Live Examples</a></p>
+<pre>
+h1 { clear: none }
+h2 { clear: right }</pre>
+<p>If you want an element to contain all floating elements inside it, you can either float the container as well, or use clear</p>
+<pre>
+#container:after { content: "."; line-height: 0; height: 0; display: block; visibility: hidden; clear: both; }
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>The clear property applies to both floating and non-floating elements.</p>
+<p>When it applies to non-floating blocks, it moves the <a title="en/CSS/box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">border edge</a> of the element down until it is below the <a title="en/CSS/box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">margin edge</a> of all relevant floats. This movement (when it happens) causes <a title="en/CSS/margin_collapsing" rel="internal" href="https://developer.mozilla.org/en/CSS/margin_collapsing">margin collapsing</a> not to occur.</p>
+<p>When it applies to floating elements, it moves the <a title="en/CSS/box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">margin edge</a> of the element below the <a title="en/CSS/box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">margin edge</a> of all relevant floats. This affects the position of later floats, since later floats cannot be positioned higher than earlier ones.</p>
+<p>The floats that are relevant to be cleared are the earlier floats within the same <a title="en/CSS/block_formatting_context" rel="internal" href="https://developer.mozilla.org/en/CSS/block_formatting_context">block formatting context</a>.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/REC-CSS1#clear" title="http://www.w3.org/TR/REC-CSS1#clear" target="_blank">CSS 1 Box properties #clear</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#propdef-clear" title="http://www.w3.org/TR/CSS21/visuren.html#propdef-clear" target="_blank">CSS 2.1 Visual formatting model #clear</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><h3 class="editable">Browser Compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/float">float</a></code>
+</li> <li><a title="en/CSS/box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">Box model</a></li>
+</ul>
+<p></p>
+</div>

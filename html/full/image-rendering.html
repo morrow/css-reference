@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="developer-mozilla-org">
+<head>
+  <title>image-rendering - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=41836" />
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=41836" />
+<meta name="generator" content="MindTouch" />
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
+<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 41836;
+Deki.PageTitle = 'En/CSS/Image-rendering';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '11 Nov 2011';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '750f0d21';
+Deki.EditorStylesToken = '1d867c07';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=En%2FCSS%2FImage-rendering">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
+ 
+</head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-EnCSSImagerendering" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+    </div>
+
+    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
+      <p>
+        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+      <div id="site-search-gg"></div>
+    </form>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="/web">Web</a></li>
+            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML">HTML</a></li>
+                  <li><a href="/en/DOM">DOM</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="/en/SVG">SVG</a></li>
+                  <li><a href="/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="/en/WebSockets">WebSockets</a></li>
+                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/CSS">CSS</a></li>
+                  <li><a href="/en/Using_gradients">Gradients</a></li>
+                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/JavaScript">JavaScript</a></li>
+                  <li><a href="/en/Ajax">Ajax</a></li>
+                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="/docs">More docs&hellip;</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="/events">Events</a></li>
+            <li><a href="/discussions">Discussions</a></li>
+            <li><a href="/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+      <ul class="user-state">
+              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+</li>
+        <li><a href="/index.php?title=Special:Userlogin&returntotitle=En%2FCSS%2FImage-rendering" class="user-login">Log in</a></li>
+            </ul>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="/index.php?title=En/CSS/Image-rendering&action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="/Talk:En/CSS/Image-rendering" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=41836">Pages that link here</a></li>      </ul>
+    </li>
+      <li class="menu">
+      <a href="#" class="toggle">Languages</a>
+      <ul><li><a rel="internal" href="https://developer.mozilla.org/ja/CSS/image-rendering" title="ja/CSS/image-rendering">&#26085;&#26412;&#35486;</a></li></ul>    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="/">MDN</a></li>
+      <li class="crumb-two"><a href="/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
+<li class="last"><a href="https://developer.mozilla.org/En/CSS/Image-rendering" class="deki-ns current">image-rendering</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-EnCSSImagerendering" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">image-rendering</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=En%2FCSS%2FImage-rendering" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=En%2FCSS%2FImage-rendering" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Syntax" rel="internal">Syntax</a></li><li><span>3.</span> <a href="#Values" rel="internal">Values</a></li><li><span>4.</span> <a href="#Examples" rel="internal">Examples</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>4.1.</span> <a href="#Live_Examples" rel="internal">Live Examples</a></li></ol></li><li><span>5.</span> <a href="#Notes" rel="internal">Notes</a></li><li><span>6.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><span>7.</span> <a href="#Specifications" rel="internal">Specifications</a></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Syntax" rel="internal">Syntax</a></li><li><span>3.</span> <a href="#Values" rel="internal">Values</a></li><li><span>4.</span> <a href="#Examples" rel="internal">Examples</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>4.1.</span> <a href="#Live_Examples" rel="internal">Live Examples</a></li></ol></li><li><span>5.</span> <a href="#Notes" rel="internal">Notes</a></li><li><span>6.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><span>7.</span> <a href="#Specifications" rel="internal">Specifications</a></li></ol></div></div><div class="pageText" id="pageText"><div id="section_1"><span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> image-rendering </code>property provides a hint to the user agent about how to handle its image rendering.<br /> <code>image-rendering </code>applies to scaled images (and other elements, see below). For example, if the natural size of the image is<em> 100&times;100px </em>but the page author specifies the dimensions to <em>200&times;200px </em>(or<em> 50&times;50px</em>), then the image will be upscaled (or downscaled) to the new dimensions using the specified algorithm. Scaling may also apply due to user interaction (zooming).</p>
+<ul> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code></li> <li>Applies to: <ul> <li>images</li> <li>background-images of any element</li> <li>HTML5&nbsp; 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/video">&lt;video&gt;</a></code> Element</li> <li>HTML5 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/canvas">&lt;canvas&gt;</a></code> Element</li> </ul> </li> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span></li> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div><div id="section_2"><span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+
+
+
+image-rendering:  auto | inherit | optimizeSpeed | optimizeQuality | -moz-crisp-edges | -o-crisp-edges </pre>
+</div><div id="section_3"><span id="Values"></span><h3 class="editable">Values</h3>
+<dl> <dt><strong>auto</strong></dt> <dd>Default value, depends on the user agent. Since version 1.9 (Firefox 3.0), Gecko uses<em> bilinear </em>resampling (high quality).</dd> <dt><strong>optimizeQuality</strong></dt> <dd>Indicates that the user agent shall emphasize quality over rendering speed. Gecko uses<em> bilinear </em>resampling (high quality).</dd> <dt><strong>optimizeSpeed</strong></dt> <dd>The user agent should use a resampling algorithm which achieves the goal of fast rendering. Currently Gecko (Firefox) uses<em> nearest neighbor </em>resampling (low quality).</dd> <dt><strong>-moz-crisp-edges</strong> | <strong>-o-crisp-edges</strong></dt> <dd><a class="internal" title="en/CSS Reference/Mozilla Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference/Mozilla_Extensions">Mozilla extension</a>. Gecko (Firefox) always uses <em>nearest neighbor</em> resampling (low quality). Use this value to avoid upscaled images with sharp edges getting blurry. 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=423756" class="external" title="RESOLVED FIXED - Request: Switch for authors to turn on/off bilinear filtering when enlarging images">
+bug 423756</a>
+.</dd> <dt><strong>-webkit-optimize-contrast</strong></dt> <dd>WebKit extension (
+<a rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=56627" class="external" title="RESOLVED FIXED - implement image-rendering: optimize-contrast (with a vendor prefix) as defined in CSS3 image values">
+WebKit bug 56627</a>). WebKit uses a pixelation-generating resampling. The algorithm for now seems to be nearest-neighbor, but this can be WebKit-port specific, and there are other algorithms that can be used as well. Use this value to avoid upscaled images with sharp edges getting blurry.</dd>
+</dl>
+<div class="note"> <ul style="margin:0;padding:0 0 0 1em;"> <li>Currently<code> auto </code>and<code> optimizeQuality </code>are equal by default, both result in <em>bilinear</em> resampling.</li> <li>Currently<code> optimizeSpeed </code>and<code> -moz-crisp-edges </code>are equal, both result in <em>nearest neighbor</em> resampling.</li> <li> <p>Warning: Unlike the gecko rendering engine, <code>optimizeSpeed&nbsp;</code>and <code>-webkit-optimize-contrast<strong> do not mean the same thing </strong> in WebKit.</code></p> </li> </ul>
+</div>
+</div><div id="section_4"><span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+
+
+
+img  { 
+       image-rendering: optimizeQuality;  /* Firefox 3.6+; default behavior is identical, no need to specify */
+       -ms-interpolation-mode: bicubic;   /* Internet Explorer 7.0; default in IE8+ */
+     }</pre>
+<pre>
+
+
+
+/* applies to GIF and PNG images; avoids blurry edges */
+
+img[src$=&quot;.gif&quot;], img[src$=&quot;.png&quot;] {
+
+                  &nbsp;image-rendering: -moz-crisp-edges;         /* Firefox */
+                   -ms-interpolation-mode: <code>nearest-neighbor</code>;  /* IE */
+                 }</pre>
+<pre>
+
+
+
+html  { image-rendering: -moz-crisp-edges; }        /* all images, videos, background-images */
+img   { -ms-interpolation-mode: <code>nearest-neighbor</code>; } /* all images, IE */
+</pre>
+<pre>
+
+
+
+div { 
+        background: url(chessboard.gif) no-repeat 50% 50%;
+        image-rendering: -moz-crisp-edges;
+}</pre>
+<pre>
+
+
+
+video { image-rendering: optimizeSpeed; }</pre>
+<div id="section_5"><span id="Live_Examples"></span><h4 class="editable">Live Examples</h4>
+<p style="image-rendering: optimizequality;"><code>image-rendering:optimizeQuality; -ms-interpolation-mode:bicubic;</code><br /> 78%<img alt="squares.gif" style="width: 39px; height: 39px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" /> 100%<img alt="squares.gif" style="width: 50px; height: 50px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" /> 138%<img alt="squares.gif" style="width: 69px; height: 69px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" /> downsized<img alt="hut.jpg" style="width: 89px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg" /> upsized<img alt="blumen.jpg" style="width: 77px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg" /></p>
+<p style="image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; -ms-interpolation-mode: nearest-neighbor"><code>image-rendering:-moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering:-webkit-optimize-contrast; -ms-interpolation-mode:nearest-neighbor;</code><br /> 78%<img alt="squares.gif" style="width: 39px; height: 39px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" /> 100%<img alt="squares.gif" style="width: 50px; height: 50px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" /> 138%<img alt="squares.gif" style="width: 69px; height: 69px;" src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" /> downsized<img alt="hut.jpg" style="width: 89px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg" /> upsized<img alt="blumen.jpg" style="width: 77px; height: 89px;" src="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg" /></p>
+</div></div><div id="section_6"><span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul> <li>
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=486918" class="external" title="NEW - Awful image quality in image scaling">
+bug 486918</a>
+ (Awful image quality in downscaling)</li>
+</ul>
+</div><div id="section_7"><span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script>
+<div class="htab"><a name="AutoCompatibilityTable"></a>
+<ul> <li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div></p>
+<div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr> <tr> <td>Basic support</td> <td> <p><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></p> <p><em><strong>Note</strong>: Should get the landed -webkit-optimize-contrast WebKit patch soon.<br /> </em></p> </td> <td>3.6 (1.9.2)<br /> <code>image-rendering</code></td> <td>7.0<br /> <code>-ms-interpolation-mode: bicubic | nearest-neighbor</code> <ul style="margin-top:1em;margin-bottom:0"> <li>applies only to images (JPG, GIF, PNG, ...)</li> <li>in IE7 only for images without transparency</li> <li>does not inherit</li> <li>default value IE7:<code> nearest-neighbor </code>(low quality)</li> <li>default value IE8+:<code> bicubic&nbsp;&nbsp;&nbsp; </code>(high quality)</li> </ul> </td> <td> <p>11.60</p> <p><code>image-rendering: auto | -o-crisp-edges | optimizeSpeed | optimizeQuality</code></p> </td> <td> <p>6533.21.1, r86920</p> <p><code>image-rendering: auto | optimizeSpeed | optimizeQuality | -webkit-optimize-contrast</code></p> <ul> <li>-webkit-optimize-contrast is similar to -moz-crisp-edges, in that it selects the pixelation algorithm over the blurry algorithm for scaling. Pixelated scaling algorithm for now seems to be nearest-neighbor.</li> <li>-webkit-optimize-contrast implemented in the WebKit nightlies as of May 20th, 2011.</li> </ul> </td> </tr> </tbody> </table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE&nbsp;Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr> </tbody> </table>
+</div>
+<p>See also&nbsp; <a class="external" title="http://msdn.microsoft.com/en-us/library/ff521095(VS.85).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/ff521095(VS.85).aspx" target="_blank">Microsoft MSDN<code> -ms-interpolation-mode </code>property</a></p>
+<p>Canvas can provide a <a class="external" title="http://phrogz.net/tmp/canvas_image_zoom.html" rel="external" href="http://phrogz.net/tmp/canvas_image_zoom.html" target="_blank">fallback solution for crisp-edge/optimize-contrast</a> through manual imageData manipulation.</p>
+</div><div id="section_8"><span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><code>image-rendering </code>is an SVG property, it is not defined in any CSS standard. Gecko (Firefox)and Presto (Opera) apply it also to HTML and XML content.</p>
+<p><a class="external" title="http://www.w3.org/TR/SVG/painting.html#ImageRenderingProperty" rel="external" href="http://www.w3.org/TR/SVG/painting.html#ImageRenderingProperty" target="_blank">SVG 1.1 Painting #image-rendering</a></p>
+<p></p></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(6)</span></h2>
+              <a href="/index.php?title=Special:Tags&pageId=41836" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=Fixit" title="Fixit" tagid="2524" class="text">Fixit</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=MakeBrowserAgnostic" title="MakeBrowserAgnostic" tagid="2525" class="text">MakeBrowserAgnostic</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=NeedsMobileBrowserCompatibility" title="NeedsMobileBrowserCompatibility" tagid="2494" class="text">NeedsMobileBrowserCompatibility</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=SVG" title="SVG" tagid="12" class="text">SVG</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(3)</span></h2>
+            <div id="pageFiles"><div class="filescontent" id="attachFiles"><div class="table" id="attachTable"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="16"></col><col width="16"></col><col width=""></col><col width="80"></col><col width="145"></col><col width="115"></col><col width="75"></col></colgroup><tbody><tr><th class="col1" colspan="3">File</th><th class="col4">Size</th><th class="col5">Date</th><th class="col6">Attached by</th><th class="col7">&nbsp;</th></tr><tr class="bg1" id="deki-file-row-3611"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg" class="filelink" title="blumen.jpg"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-jpg" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg" class="filelink" title="blumen.jpg">blumen.jpg</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">2.23 kB</td><td class="col5">14:19, 5 Jun 2009</td><td class="col6"><a href="/index.php?title=User:J%C3%BCrgen_Jeka" class="link-user" rel="internal">Jürgen Jeka</a></td><td class="col7"><a href="#" id="deki-file-actions-3611" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=3611" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2 groupparent" id="deki-file-row-3613"><td class="col1"><a href="#" id="deki-file-revisions-3613" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg" class="filelink" title="hut.jpg"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-jpg" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg" class="filelink" title="hut.jpg">hut.jpg</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">6.58 kB</td><td class="col5">18:47, 5 Jun 2009</td><td class="col6"><a href="/index.php?title=User:J%C3%BCrgen_Jeka" class="link-user" rel="internal">Jürgen Jeka</a></td><td class="col7"><a href="#" id="deki-file-actions-3613" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=3613" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1" id="deki-file-row-3612"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" class="filelink" title="squares.gif"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-gif" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" class="filelink" title="squares.gif">squares.gif</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">232 bytes</td><td class="col5">14:19, 5 Jun 2009</td><td class="col6"><a href="/index.php?title=User:J%C3%BCrgen_Jeka" class="link-user" rel="internal">Jürgen Jeka</a></td><td class="col7"><a href="#" id="deki-file-actions-3612" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=3612" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr></tbody></table></div></div></div>            <div id="deki-image-gallery-lite"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 3</th></tr><tr class="bg2"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg?size=webview" title="blumen.jpg"><img src="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg?size=thumb" title="blumen.jpg" alt="blumen.jpg" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/3611/=blumen.jpg" title="View fullsize version">blumen.jpg</a></div></td><td class="col2 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg?size=webview" title="hut.jpg"><img src="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg?size=thumb" title="hut.jpg" alt="hut.jpg" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg" title="View fullsize version">hut.jpg</a></div></td><td class="col3 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif?size=webview" title="squares.gif"><img src="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif?size=thumb" title="squares.gif" alt="squares.gif" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/3612/=squares.gif" title="View fullsize version">squares.gif</a></div></td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="/index.php?title=En/CSS/Image-rendering&action=history" title="22:31, 10 Nov 2011">22:31, 10 Nov 2011</a> by <a href="/User:nimbu" class="link-user" rel="internal">nimbu</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
+    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <p class="user-state">
+          <a href="/index.php?title=Special:Userlogin&returntotitle=En%2FCSS%2FImage-rendering" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+      
+  </p>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki03.mozilla.org in 10.57 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   5.92       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                7.16       request-time-ms=5; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         7.39       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/41836/contents                        10,091.85      request-time-ms=10089; mysql-queries=82; mysql-time-ms=91; cache-ratio=1.48; cache-hit=252; cache-miss=-82; cache-del=0; cache-ins=82;
+	GET       /deki/pages/41836                                    58.19       request-time-ms=52; mysql-queries=25; mysql-time-ms=38; cache-ratio=4.00; cache-hit=32; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/41836/info                                6.10       request-time-ms=4; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/41836/tags                                8.43       request-time-ms=6; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                11.11       request-time-ms=8; mysql-queries=4; mysql-time-ms=5; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/nav/=En%252FCSS%252FImage-rendering/full   297.00       request-time-ms=293; mysql-queries=6; mysql-time-ms=251; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/41836/tags                                8.61       request-time-ms=6; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total: 10,501.75     
+	                                                     Ideal: 10,493.14     
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+ 
+</body>
+</html>

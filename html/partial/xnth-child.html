@@ -1,0 +1,104 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:nth-child</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> matches an element that has <code><em>a</em>n+<em>b</em>-1</code> siblings before it in the document tree, for a given positive or zero value for <code>n</code>, and has a parent element.</p>
+<p>This can more clearly be described this way: the matching element is the <code><em>b</em>th</code> child of an element after all its children have been split into groups of <code><em>a</em></code> elements each.</p>
+<p>The values <code><em>a</em></code> and <code><em>b</em></code> must both be integers, and the index of an element's first child is 1.</p>
+<p>Among other things, this allows selectors to match every other row in a table.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+element:nth-child(<em>a</em>n + <em>b</em>) { <em>style properties</em> }
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<div id="section_4">
+<span id="Example_selectors"></span><h4 class="editable">Example selectors</h4>
+<dl>
+<dt><code>tr:nth-child(2n+1)</code></dt> <dd>Represents the odd rows of an HTML table.</dd> <dt><code>tr:nth-child(odd)</code></dt> <dd>Represents the odd rows of an HTML table.</dd> <dt><code>tr:nth-child(2n)</code></dt> <dd>Represents the even rows of an HTML table.</dd> <dt><code>tr:nth-child(even)</code></dt> <dd>Represents the even rows of an HTML table.</dd> <dt><code>span:nth-child(0n+1)</code></dt> <dd>Represents a span element which is the first child of its parent; this is the same as the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Afirst-child">:first-child</a></code> selector.</dd> <dt><code>span:nth-child(1)</code></dt> <dd>Equivalent to the above.</dd>
+</dl>
+<dl>
+<dt><code>span:nth-child(-n+3)</code></dt> <dd>Three first span elements.</dd>
+</dl>
+<p>Usage example</p>
+
+          <pre name="code" class="css">span:nth-child(2n+1)
+{
+    background-color: lime;
+}</pre>
+        
+<p>...where...</p>
+
+          <pre name="code" class="xml">&lt;div&gt;
+    &lt;span&gt;This span is limed!&lt;/span&gt;
+    &lt;span&gt;This span is not. :(&lt;/span&gt;
+    &lt;span&gt;But this one is!&lt;/span&gt;
+    &lt;span&gt;Sadly, this one is not...&lt;/span&gt;
+  &lt;/div&gt;</pre>
+        
+<p>... should look like ...</p>
+<div> <pre class="eval">
+   <span style="background-color: lime;">This span is limed!</span>
+   <span>This span is not. :(</span>
+   <span style="background-color: lime;">But this one is!</span>
+   <span>Sadly, this one is not...</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">
+<span>Specifications</span><a style="visibility: hidden;" title="Edit section" rel="internal" href="https://developer.mozilla.org/../../../../en/CSS/%3Afirst-child#"><span class="icon"><img alt="Edit section" class="sectionedit" src="../../../../skins/common/icons/icon-trans.gif"></span></a>
+</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/css3-selectors/#nth-child-pseudo" title="http://www.w3.org/TR/css3-selectors/#nth-child-pseudo" target="_blank">CSS3 </a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable"><span><span>Browser compatibility</span></span></h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0</td> <td>3.5 (1.9.1)
+</td> <td>9</td> <td>10.10</td> <td>4</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>Opera can't handle dynamic insertion of elements.</li>
+</ul>
+</div>

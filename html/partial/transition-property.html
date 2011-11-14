@@ -1,0 +1,97 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> 
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> -moz-transition-property </code>CSS property is used to specify the names of CSS properties to which a <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">transition effect</a> should be applied.</p>
+<div class="note">
+<strong>Note:</strong> The set of properties that can be animated is subject to change; as such, you should avoid including any properties in the list that don't currently animate, because someday they might, causing unexpected results.</div>
+<p>If you specify a shorthand property (for example, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>, all of its longhand sub-properties that can be animated will be.</p>
+<div class="note">
+<strong>Note:</strong> This implementation of the CSS <code>transition-property</code> property is based on a draft specification; the syntax is subject to change.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/all" class="new">all</a></code>
+</li> <li>Applies to: all elements, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Abefore">:before</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aafter">:after</a></code> pseudo elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>:no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+-moz-transition-property: none | all | [&lt;property-name&gt;][, &lt;property-name&gt;]*
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>none</dt> <dd>No properties will transition.</dd> <dt>all</dt> <dd>All properties that can have an animated transition will do so.</dd> <dt>property-name</dt> <dd>A property to which a transition effect should be applied when its value changes.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>There are several examples of CSS transitions included in the main <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a> article.</p>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a title="http://www.w3.org/TR/css3-transitions" class=" external" rel="external" href="http://www.w3.org/TR/css3-transitions" target="_blank">CSS Transitions Module Level 3</a> (Working Draft)</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>4.0 (2.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>---</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td><em>nightly, don't know version</em></td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition">-moz-transition</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-duration">-moz-transition-duration</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-timing-function">-moz-transition-timing-function</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transition-delay">-moz-transition-delay</a></code>
+</li>
+</ul>
+<p></p>
+</div>

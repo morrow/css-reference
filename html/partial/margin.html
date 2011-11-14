@@ -1,0 +1,145 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> margin </code>CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties:<br><code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-top">margin-top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-right">margin-right</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-bottom">margin-bottom</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-left">margin-left</a></code>.<br>
+Negative value are also allowed.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>:<code> 0</code>
+</li> <li>Applies to: all elements except those with table display types other than <code>table-caption</code>, <code>table</code>, and <code>inline-table</code>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: refer always to the <strong>width</strong> of the containing block</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the percentage as specified or the absolute length</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+margin:  
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>{1,4} | <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span>{1,4} | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>| 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Accepts one, two, three or four values of the following:</p>
+<dl>
+<dt>&lt;length&gt;</dt> <dd>Specifies a fixed width. Negative Values are allowed. See for 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> possible units.</dd> <dt>&lt;percentage&gt;</dt> <dd>A <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> relative to the <strong>width</strong> of the containing block. Negative values are allowed.</dd> <dt>auto</dt> <dd>
+<code>auto </code>is replaced by some suitable value, e.g. it can be used for centering of blocks.<br><code>div { width:50%;  margin:0 auto; }</code> centers the div container horizontally.</dd>
+</dl>
+<ul>
+<li>
+<strong>One</strong> single value applies to all <strong>four sides</strong>.</li> <li>
+<strong>Two</strong> values apply first to <strong>top and bottom</strong>, the second one to <strong>left and right</strong>.</li> <li>
+<strong>Three</strong> values apply first to <strong>top</strong>, second to <strong>left and right</strong> and third to <strong>bottom</strong>.</li> <li>
+<strong>Four</strong> values apply to <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> and <strong>left</strong> in that order (clockwise).</li>
+</ul>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+margin: 5%;                /* all sides 5% margin */
+
+margin: 10px;              /* all sides 10px margin */
+
+margin: 1.6em 20px;        /* top and bottom 1.6em, left and right 20px margin */
+
+margin: 10px 3% 1em;       /* top 10px, left and right 3%, bottom 1em margin */
+
+margin: 10px 3px 30px 5px; /* top 10px, right 3px, bottom 30px, left 5px margin */
+
+margin: 1em auto;          /* 1em margin on top and bottom, box is horizontally centered */
+
+margin: auto;              /* box is horizontally centered, 0 margin on top and bottom */
+</pre>
+<pre style="margin:auto; background:gold; width:66%">
+margin:     auto;
+background: gold;
+width:      66%;</pre>
+<pre style="margin:-1em 0 100px -40px; background:plum; width:20em">
+margin:     -1em 0 100px -40px;
+background: plum;
+width:      20em</pre>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td> 1.0</td> <td>1.0 (1.0)</td> <td>3.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>
+<code>auto</code> value</td> <td> 1.0</td> <td>1.0 (1.0)</td> <td>6.0 (strict mode)</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/box.html#margin-properties" title="http://www.w3.org/TR/CSS21/box.html#margin-properties" target="_blank">CSS 2.1 Visual formatting #margin</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin">margin</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-top">margin-top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-right">margin-right</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-bottom">margin-bottom</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-left">margin-left</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-margin-start">-moz-margin-start</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-margin-end">-moz-margin-end</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/padding">padding</a></code></span>
+</li> <li><a title="en/CSS/margin collapsing" class="internal" rel="internal" href="https://developer.mozilla.org/en/CSS/margin_collapsing">Margin collapsing</a></li>
+</ul>
+<p></p>
+</div>

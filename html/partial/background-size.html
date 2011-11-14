@@ -1,0 +1,188 @@
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> background-size </code>CSS property specifies the size of the background images.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>:<code> auto</code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: see below</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: for &lt;length&gt; the absolute value, otherwise a percentage</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>background-size:  &lt;bg-size&gt;[, &lt;bg-size&gt;]*        /* Gecko 2.0 (Firefox 4.0) and later */
+</pre>
+<p>Where <strong>&lt;bg-size&gt;</strong> is one of:</p>
+<ul>
+<li><code>[ <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span>| 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>| auto ]<br> [ <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span>| 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>| auto ] ?</code></li> <li><code>contain<br></code></li> <li><code>cover</code></li>
+</ul>
+<p>Multiple values apply to individual background layers, from front to back, in the same manner as for all other background properties.</p>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;percentage&gt;</dt> <dd>Scales the background image in the desired dimension to the specified percentage of the background positioning area, which is determined by the value of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-origin">background-origin</a></code>. The background positioning area is, by default, the area containing the content of the box and its padding; the area may also be changed to just the content or to the area containing borders, padding, and content. If the background's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-attachment">attachment</a></code> is <code>fixed</code>, the background positioning area is instead the entire area of the browser window, not including the area covered by scrollbars if they are present.</dd> <dt>&lt;length&gt;</dt> <dd>Scales the background image to the specified length in the desired dimension.</dd> <dt>auto</dt> <dd>Scales the background image in the relevant direction such that its intrinsic proportion is maintained.</dd>
+</dl>
+<p>The first value determines how the image is scaled horizontally, the second how it is scaled vertically. If only one value is specified, the second value is implicitly<code> auto</code>.  Negative sizes are not allowed.</p>
+<dl>
+<dt>contain</dt> <dd>Specifies that the background image should be scaled to be as large as possible while ensuring both its dimensions are less than or equal to the corresponding dimensions of the background positioning area.</dd> <dt>cover</dt> <dd>Specifies that the background image should be scaled to be as small as possible while ensuring both its dimensions are greater than or equal to the corresponding dimensions of the background positioning area.</dd>
+</dl>
+<p>Interpretation of possible values depends on the image's intrinsic dimensions (width and height) and intrinsic proportion (ratio of width and height).  A bitmap image always has intrinsic dimensions and an intrinsic proportion.  A vector image may have both intrinsic dimensions (and thus must have an intrinsic proportion).  It also may have one or no intrinsic dimension, and in either case it might or might not have an intrinsic proportion.  Gradients are treated as images with no intrinsic dimensions or intrinsic proportion.</p>
+<div class="geckoVersionNote" style="undefined"> <p>
+</p>
+<div class="geckoVersionHeading">Gecko 8.0 note<div style="font-size:9px; position:relative; top:-5px; font-style:italic;">(Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+</div>
+</div>
+ <p>This behavior changed in Gecko 8.0 (Firefox 8.0 / Thunderbird 8.0 / SeaMonkey 2.5)
+. Before this, gradients were treated as images with no intrinsic dimensions, with an intrinsic proportion identical to that of the background positioning area.</p>
+</div>
+<p>Background images generated from elements using 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-element">-moz-element</a></code> (which actually match an element) are currently treated as images with the dimensions of the element, or of the background positioning area if the element is SVG, with the corresponding intrinsic proportion.</p>
+<div class="note">
+<strong>Note:</strong> This is not the currently-specified behavior, which is that the intrinsic dimensions and proportion should be those of the element in all cases.</div>
+<p>The rendered size of the background image is then computed as follows:</p>
+<dl>
+<dt>If both components of <code>background-size</code> are specified and are not <code>auto</code>:</dt> <dd>The background image renders at the specified size.</dd> <dt>If the <code>background-size</code> is <code>contain</code> or <code>cover</code>:</dt> <dd>The image is rendered, preserving its intrinsic proportion, at the largest size contained within, or covering, the background positioning area.  If the image has no intrinsic proportion, then it is rendered at the size of the background positioning area.</dd> <dt>If the <code>background-size</code> is <code>auto</code> or <code>auto auto</code>:</dt> <dd>If the image has both intrinsic dimensions, it is rendered at that size.  If it has no intrinsic dimensions and no intrinsic proportion, it is rendered at the size of the background positioning area.  If it has no dimensions but has a proportion, it's rendered as if <code>contain</code> had been specified instead.  If the image has one intrinsic dimension and a proportion, it's rendered at the size determined by that one dimension and the proportion.  If the image has one intrinsic dimension but no proportion, it's rendered using the intrinsic dimension and the corresponding dimension of the background positioning area.</dd> <dt>If the background-size has one <code>auto</code> component and one non-<code>auto</code> component:</dt> <dd>If the image has an intrinsic proportion, then render it using the specified dimension, and compute the other dimension from the specified dimension and the intrinsic proportion.  If the image has no intrinsic proportion, use the specified dimension for that dimension.  For the other dimension, use the image's corresponding intrinsic dimension if there is one.  If there is no such intrinsic dimension, use the corresponding dimension of the background positioning area.</dd>
+</dl>
+<p>Note that background sizing for vector images that lack intrinsic dimensions or proportion is not yet fully implemented in all browsers.  Be careful about relying on the behavior described above, and test in multiple browsers (specifically including versions of Firefox 7 or earlier and Firefox 8 or greater) to be sure different renderings are acceptable.</p>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p><a class="external" target="_blank" rel="external" href="http://whereswalden.com/files/mozilla/background-size/page-cover.html" title="http://whereswalden.com/files/mozilla/background-size/page-cover.html">This demonstration of <code>background-size: cover</code></a> and <a class="external" target="_blank" rel="external" href="http://whereswalden.com/files/mozilla/background-size/page-contain.html" title="http://whereswalden.com/files/mozilla/background-size/page-contain.html">this demonstration of <code>background-size: contain</code></a> are meant to be opened in new windows so that you can see how <code>contain</code> and <code>cover</code> behave when the background positioning area's dimensions vary. <a class="external" rel="external" href="http://whereswalden.com/files/mozilla/background-size/more-examples.html" title="http://whereswalden.com/files/mozilla/background-size/more-examples.html" target="_blank">This series of demos of how <code>background-size</code> works and interacts with other <code>background-*</code> properties</a> should pretty much cover the remaining ground in how to use <code>background-size</code> alone and in conjunction with other properties.</p>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>While this property is new in Gecko 1.9.2 (Firefox 3.6), it is possible to stretch a image fully over the background in Firefox 3.5 by using 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-image">-moz-border-image</a></code>.</p>
+
+          <pre name="code" class="css">.foo {
+        background-image: url(bg-image.png);
+
+       -moz-background-size: 100% 100%;           /* Gecko 1.9.2 (Firefox 3.6) */
+         -o-background-size: 100% 100%;           /* Opera 9.5 */
+    -webkit-background-size: 100% 100%;           /* Safari 3.0 */
+            background-size: 100% 100%;           /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
+ 
+       -moz-border-image: url(bg-image.png) 0;    /* Gecko 1.9.1 (Firefox 3.5) */
+}</pre>
+        
+<p>If you are specifying a gradient as background and have specified a <code>background-size</code> to go with it, it's best not to specify a size that uses a single auto component, or is specified using only a width value (for example, <code>background-size: 50%</code>).  Rendering of gradients in such cases changed in Firefox 8, and at present it is generally inconsistent across browsers, which do not all implement rendering in full accordance with <a class="external" title="http://www.w3.org/TR/css3-background/#the-background-size" rel="external" href="http://www.w3.org/TR/css3-background/#the-background-size" target="_blank">the CSS3 <code>background-size</code> specification</a> and with <a class="external" title="http://dev.w3.org/csswg/css3-images/#gradients" rel="external" href="http://dev.w3.org/csswg/css3-images/#gradients" target="_blank">the CSS3 Image Values gradient specification</a>.</p>
+
+          <pre name="code" class="css">.bar {
+       width: 50px; height: 100px;
+       background-image: gradient(...);
+
+       /* NOT RECOMMENDED */
+       background-size: 25px;
+       background-size: 50%;
+       background-size: auto 50px;
+       background-size: auto 50%;
+
+       /* OKAY */
+       background-size: 25px 50px;
+       background-size: 50% 50%;
+}</pre>
+        
+<p>Note that it's particularly not recommended to use a pixel dimension and an <code>auto</code> dimension with a gradient, because it's impossible to replicate rendering in versions of Firefox prior to 8, and in browsers not implementing Firefox 8's rendering, without knowing the exact size of the element whose background is being specified.</p>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td rowspan="2">Basic support</td> <td>1.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>3.6 (1.9.2)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td rowspan="2">9.0</td> <td>9.5
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-o</span><br> with some bugs (see below)</td> <td rowspan="2">3.0 (522)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span><br> but from an older CSS3 draft (see below)</td> </tr>
+<tr>
+<td>3.0</td> <td>4.0 (2.0)
+</td> <td>10.0</td> </tr>
+<tr>
+<td>Support for<br><code>contain | cover</code>
+</td> <td>3.0</td> <td>3.6 (1.9.2)
+</td> <td>9.0</td> <td>10.0</td> <td>4.1 (532)</td> </tr>
+<tr>
+<td>Support for SVG backgrounds</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>8.0 (8.0)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>Windows Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>Support for SVG backgrounds</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>8.0 (8.0)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<ul>
+<li>As of July 2009, Opera 9.5's computation of the background positioning area is incorrect for fixed backgrounds.  Opera 9.5 also interprets the two-value form as a horizontal scaling factor and, from appearances, a vertical <em>clipping</em> dimension.</li> <li>WebKit-based browsers as of July 2009 implement an older draft of CSS3<code> background-size </code>in which an omitted second value is treated as <em>duplicating</em> the first value; this draft does not include the<code> contain </code>or<code> cover </code>keywords.</li> <li>Konqueror 3.5.4 supports<code> -khtml-background-size</code>.</li> <li>
+<code>-moz-background-size</code> is no longer supported in Gecko 2.0; you must use <code>background-size</code> instead.</li> <li>See <a title="en/CSS/Scaling of SVG backgrounds" rel="internal" href="https://developer.mozilla.org/en/CSS/Scaling_of_SVG_backgrounds">Scaling of SVG backgrounds</a> for details on how SVG images are scaled when used for <code>background-size</code>.</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/css3-background/#the-background-size" rel="external" href="http://www.w3.org/TR/css3-background/#the-background-size" target="_blank">CSS 3 Backgrounds and borders #background-size</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-attachment">background-attachment</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-clip">background-clip</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-color">background-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-origin">background-origin</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-position">background-position</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-repeat">background-repeat</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-size">background-size</a></code></span></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-background-origin">-moz-background-origin</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-background-clip">-moz-background-clip</a></code>
+</li> <li><a title="en/CSS/Multiple backgrounds" rel="internal" href="https://developer.mozilla.org/en/CSS/Multiple_backgrounds">Multiple backgrounds</a></li>
+</ul>
+<p></p>
+</div>

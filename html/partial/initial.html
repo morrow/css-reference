@@ -1,0 +1,69 @@
+
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> -moz-initial </code>CSS keyword is a Mozilla implementation of CSS3<code> initial</code>. Applies the initial value of a property to an element.</p>
+<p><code>-moz-initial </code>(<code>initial</code>) is allowed on every CSS property. It causes the element for which it is specified to use the <a title="en/CSS/initial_value" rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value">initial value</a> of the property.</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+ /* give headers a green border */
+ h2 { border: medium solid green }
+
+ /* but make those in the sidebar use the value of the "color" property */
+ #sidebar h2 { border-color: -moz-initial; border-color: initial; }
+</pre>
+<pre>
+ &lt;p style="color:red"&gt; 
+    this text is red 
+       &lt;em style="color:-moz-initial; color:initial"&gt; 
+          this text is in the initial color (e.g. black)
+       &lt;/em&gt;
+    this is red again
+ &lt;/p&gt;
+</pre>
+</div>
+<div id="section_3">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> <th>Support of</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0-<strong>3.0</strong> (1.0-1.9) [*]</td> <td><code>-moz-initial</code></td> </tr>
+<tr>
+<td>Opera</td> <td>---</td> <td>---</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>
+<strong>1.2</strong> (125)</td> <td><code>initial</code></td> </tr>
+</tbody></table>
+<p>[*] Increasing support in each version, almost complete in Firefox 3.0</p>
+<ul>
+<li>Support for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/quotes">quotes</a></code> since Firefox 3.5 (Gecko 1.9.1)</li> <li>Support for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-top-colors">-moz-border-*-colors</a></code> since Firefox 3.6 (Gecko 1.9.2)</li>
+</ul>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<table class="table-standard">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#keywords" rel="external" href="http://www.w3.org/TR/css3-values/#keywords" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>Defines the keyword</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" href="http://www.w3.org/TR/css3-cascade/#initial0" rel="external" target="_blank" title="http://www.w3.org/TR/css3-cascade/#initial0">CSS Cascade And Inheritance Level 3</a></td> <td style="vertical-align: top;">Working Draft
+</td> <td style="vertical-align: top;">Defines what an initial value is</td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p><a class="internal" title="en/CSS/initial value" rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value">Initial value</a>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></p>
+<p></p>
+</div>

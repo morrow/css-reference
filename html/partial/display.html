@@ -1,0 +1,158 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> display </code>CSS property specifies the type of rendering box used for an element. In HTML, default<code> display </code>property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is<code> inline</code>.</p>
+<p>In addition to the many different display box types, the value<code> none </code>allows the display of an element to be turned off; all child elements also have their display turned off. The document is rendered as though the element did not exist in the document tree.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>:<code> inline</code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified, except for root element, <a title="en/CSS/float" rel="internal" href="https://developer.mozilla.org/en/CSS/float">floated</a> elements, and <a title="en/CSS/position" rel="internal" href="https://developer.mozilla.org/en/CSS/position">absolutely positioned</a> elements</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">display:  &lt;display-value&gt; | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p><strong>&lt;display-value&gt;</strong> can be any of the following values:</p>
+<dl>
+<dt>none</dt> <dd>Turns off the display of an element (it has no effect on layout); all child elements also have their display turned off. The document is rendered as though the element did not exist.<br> To render an element box's dimensions, yet have its contents be invisible, see the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/visibility">visibility</a></code> property.</dd> <dt>inline</dt> <dd>The element generates one or more inline element boxes.</dd> <dt>block</dt> <dd>The element generates a block element box.</dd> <dt>inline-block 
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+</dt> <dd>Introduced in CSS 2.1. The element generates a block element box that will be flowed with surrounding content as if it were a single inline box (behaving much like a replaced element would).</dd> <dt>list-item</dt> <dd>The element generates a block box for the content and a separate list-item inline box.</dd> <dt>compact</dt> <dd>Unsupported, dropped from the CSS 2.1 standard.</dd> <dt>run-in</dt> <dd>Dropped from the final CSS 2.1 standard (but may be in CSS 3), but supported by other browsers.<br><span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented (see
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=2056" class="external" title="NEW - display: run-in not implemented">
+bug 2056</a>
+)</span>
+ in Gecko/Firefox <ol>
+<li>If the<code> run-in </code>box contains a block box, same as<code> block</code>.</li> <li>If a block box follows the<code> run-in </code>box, the<code> run-in </code>box becomes the first inline box of the block box.</li> <li>If a inline box follows, the<code> run-in </code>box becomes a<code> block </code>box.</li> </ol>
+</dd> <dt>table</dt> <dd>Behaves like the<code> &lt;table&gt; </code>HTML element.</dd> <dt>inline-table 
+<span style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding:0px 2px;">New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a></span>
+</dt> <dd>The<code> inline-table </code>value does not have a direct mapping in HTML.</dd> <dt>table-caption</dt> <dd>Behaves like the<code> &lt;caption&gt; </code>HTML element.</dd> <dt>table-column | table-column-group</dt> <dd>These elements behave like the corresponding<code> &lt;col&gt; </code>and<code> &lt;colgroup&gt; </code>HTML elements.</dd> <dt>table-header-group | table-row-group | table-footer-group</dt> <dd>These elements behave like the corresponding<code> &lt;thead&gt; | &lt;tbody&gt; | &lt;tfoot&gt; </code>HTML elements.</dd> <dt>table-row</dt> <dd>Behaves like the<code> &lt;tr&gt; </code>HTML element.</dd> <dt>table-cell</dt> <dd>Behaves like the<code> &lt;td&gt; </code>HTML element.</dd>
+</dl>
+<div id="section_4">
+<span id="Mozilla_Extensions"></span><h4 class="editable">Mozilla Extensions</h4>
+<p>These<code> display </code>values are not intended for use in web content. [fixme: needs update]</p>
+<dl>
+<dt>-moz-inline-block 
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>
+</dt> <dd>Never supported reliably.</dd> <dt>-moz-inline-table 
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span>
+</dt> <dd>Never supported.</dd> <dt>-moz-box</dt> <dd>Child elements are laid out horizontally or vertically (based on the value of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-box-orient">-moz-box-orient</a></code> property).</dd> <dt>-moz-inline-box</dt> <dd></dd> <dt>-moz-groupbox</dt> <dd></dd> <dt>-moz-grid</dt> <dd></dd> <dt>-moz-inline-grid</dt> <dd>Child elements are laid out as a XUL 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/grid">grid</a></code>.</dd> <dt>-moz-grid-group</dt> <dd>Child elements are laid out as a group of grid columns or rows. This is the layout used by the rows and columns elements. You can use the orientation (<code>-moz-box-orient</code>) to set which direction. Rows would normally have vertical orientation and columns would have a horizontal orientation.</dd> <dt>-moz-grid-line</dt> <dd>Child elements are laid out as a single column or row of a grid. You can use the orientation (<code>-moz-box-orient</code>) to set which direction.</dd> <dt>-moz-stack</dt> <dd>Child elements are laid out one on top of each other like the XUL 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/stack">stack</a></code> element.</dd> <dt>-moz-inline-stack</dt> <dd>Child elements, including<code> inline-block, block</code>, and<code> -moz-inline-stack </code>are laid out atop one another.</dd> <dt>-moz-deck</dt> <dd>Child elements are laid out one on top of each other like the XUL 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/deck">deck</a></code> element. Unlike a stack, only the top element is displayed.</dd> <dt>-moz-popup</dt> <dd></dd> <dt>-moz-marker</dt> <dd></dd>
+</dl>
+</div>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/display.html">View Live Examples</a></p>
+<pre>p.secret  { display: none }
+&lt;p style="display:none"&gt; invisible text &lt;/p&gt;
+</pre>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<div id="section_7">
+<span id=".22Block.22_versus_.22in-line.22_elements"></span><h4 style="margin: 1ex 0pt;" class="editable">"Block" versus "in-line" elements</h4>
+<ul>
+<li>
+<strong>Block-level elements</strong> create vertically distinct blocks of content - generally using a line-break before and after the content. Only this value for the<code> display </code>is allowed to generate a positioned element. Block behavior is exhibited by such HTML elements as <code>&lt;p&gt;</code>, <code>&lt;div&gt;,</code> <code>&lt;blockquote&gt;</code> or <code>&lt;h1&gt;</code>.<code> display </code>property values creating a block element type:<code> block</code>,<code> list-item</code>,<code> table</code>,<code> compact </code>and<code> run-in</code>.</li>
+</ul>
+<ul>
+<li>
+<strong>In-line elements</strong> do not create distinct blocks of content; element content is rendered using a line box (content is distributed line by line within a containing physical or virtual block element.) In-line behavior is exhibited by such HTML elements as physical and virtual character formatting, non-floated images and unmarked content.<code> display </code>property values creating an in-line element type:<code> inline</code>,<code> inline-block, inline-table</code><code> </code>and<code> run-in</code>. An inline element's height is fixed to height of line which contains this element, so its height cannot be changed by CSS properties such as "padding" or "margin" except  "line-height".</li>
+</ul>
+<p>
+</p>
+<div>
+<span class="lang lang-en"><span style="border: 1px solid rgb(129, 129, 81); padding: 1px; background-color: rgb(255, 255, 225); font-size: small; font-weight: bold; float: right; text-align: right; vertical-align: middle; white-space: nowrap;">Requires Gecko 2.0 (Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</span></span>
+<span id="XBL_bindings_and_display:none"></span><h4>XBL bindings and display:none</h4>
+</div>
+<p>Starting in Gecko 2.0, XBL bindings are no longer attached to elements when in subtrees of the DOM styled with<code> display: none </code>when they're first accessed from JavaScript, unless the elements in question are <a title="en/XUL" rel="internal" href="https://developer.mozilla.org/en/XUL">XUL</a>.</p>
+</div>
+</div>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td><code>none | inline | block</code></td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>7.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td><code>inline-block</code></td> <td>1.0</td> <td>3.0 (1.9)</td> <td>5.5 (-7.0)<br> natural inline elements only</td> <td>7.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td><code>list-item</code></td> <td>1.0</td> <td>1.0 (1.0)</td> <td>6.0</td> <td>7.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td rowspan="2">
+<code>run-in</code> <span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     </td> <td>1.0<br> Not before inline-elements</td> <td rowspan="2">
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> </td> <td rowspan="2">8.0</td> <td rowspan="2">7.0</td> <td>1.0 (85)<br> Not before inline-elements</td> </tr>
+<tr>
+<td>4.0</td> <td>5.0 (532.5)</td> </tr>
+<tr>
+<td><code>inline-table</code></td> <td>1.0</td> <td>3.0 (1.9)</td> <td>8.0</td> <td>7.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td rowspan="2">CSS 2.1 values</td> <td rowspan="2">1.0</td> <td>1.0 (1.0)<br> except <code>run-in</code>, <code>inline block</code>, and <code>inline-table</code>
+</td> <td rowspan="2">8.0</td> <td rowspan="2">7.0</td> <td rowspan="2">1.0 (85)</td> </tr>
+<tr>
+<td>3.0 (1.9)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#display-prop" title="http://www.w3.org/TR/CSS21/visuren.html#display-prop" target="_blank">CSS 2.1 Visual formatting #display</a></li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/visibility">visibility</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/float">float</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/position">position</a></code></p>
+<p></p>
+</div>

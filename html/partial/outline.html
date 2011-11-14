@@ -1,0 +1,119 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> outline </code>CSS property is a shorthand property for setting one or more of the individual outline properties 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-style">outline-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-color">outline-color</a></code> in a single rule. In most cases the use of this shortcut is preferable and more convenient.</p>
+<p>Outlines differ from borders in the following ways:</p>
+<ul>
+<li>Outlines do not take up space, they are drawn above the content.</li> <li>Outlines may be non-rectangular. They are rectangular in Gecko/Firefox. But e.g. Opera draws a non-rectangular shape around a construct like this:<br><strong style="color: orange; outline: 1px dotted;">TEXT<span style="font-size: xx-large;">TEXT</span>TEXT</strong>
+</li>
+</ul>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: see individual properties for details</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>, <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Interactive">interactive</a></code>
+</span>
+</li> <li>Computed value: see individual properties</li>
+</ul>
+<p>In browsers previous to <a title="en/Gecko" rel="internal" href="https://developer.mozilla.org/en/Gecko">Gecko</a> 1.8 (<a title="en/Firefox_1.5_for_developers" rel="internal" href="https://developer.mozilla.org/en/Firefox_1.5_for_developers">Firefox 1.5</a>) a similar effect can be achieved using <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">Mozilla CSS Extension</a> 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline">-moz-outline</a></code>.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+outline:  [ &lt;outline-width&gt; || &lt;outline-style&gt; || &lt;outline-color&gt; ] | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>One, two or three values, given in arbitrary order:</p>
+<dl>
+<dt>outline-width</dt> <dd>
+<em>Optional</em>, default value<code> medium </code>is used if absent. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code>.</dd> <dt>outline-style</dt> <dd>
+<em>Required</em>, default value<code> none </code>is used if absent. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-style">outline-style</a></code>.</dd> <dt>outline-color</dt> <dd>
+<em>Optional</em>, default value if absent:<code> invert</code>. Since Gecko 1.9 (Firefox 3), the value of the element's <span class="lang lang-en"><code><a href="../../../../en/CSS/color" rel="internal">color</a></code> </span> property (foreground color) is used. See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-color">outline-color</a></code>.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+ <span style="outline:solid">outline: solid;</span> | <span style="outline:dashed red">outline: dashed red;</span> | <span style="outline:dotted 1px">outline: dotted 1px;</span> | <span style="outline:ridge thick violet">outline: ridge thick violet;</span> | <span style="outline:ridge 5px yellow;">outline: custom 5px;</span>
+</pre>
+
+          <pre name="code" class="css">/* two identical declarations */
+
+:link:hover { outline: 1px solid #000 }
+:link:hover { outline: solid black 1px }</pre>
+        
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/ui.html#dynamic-outlines" rel="external" href="http://www.w3.org/TR/CSS21/ui.html#dynamic-outlines" target="_blank">CSS 2.1 User Interface #outline</a></li> <li><a title="http://www.w3.org/TR/css3-ui/#outline1" class="external" rel="external" href="http://www.w3.org/TR/css3-ui/#outline1" target="_blank">CSS 3 Basic User Interface Module #outline</a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.5 (1.8)</td> <td>8.0</td> <td>7.0</td> <td>1.2 (125)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.8)
+</td> <td>8.0</td> <td>6.0</td> <td>3.1</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline">outline</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-style">outline-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-color">outline-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-offset">outline-offset</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius">-moz-outline-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-topleft">-moz-outline-radius-topleft</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-topright">-moz-outline-radius-topright</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-bottomright">-moz-outline-radius-bottomright</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-bottomleft">-moz-outline-radius-bottomleft</a></code></span></p>
+</div>

@@ -1,0 +1,136 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>On inline elements, the<code> line-height </code>CSS property specifies the height that is used in the calculation of the line box height.<br>
+On block level elements,<code> line-height </code>specifies the minimal height of line boxes within the element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: refer to the font size of the element itself</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: for <code>&lt;length&gt;</code> and <code>&lt;percentage&gt;</code> the absolute value; otherwise as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval" style="white-space:normal">
+line-height:  normal | <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> | 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> | <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>normal</dt> <dd>Depends on the user agent. Desktop browsers (including Firefox) use a default value of roughly<strong><code> 1.2</code></strong>, depending on the element's<code> font-family</code>.</dd> <dt>&lt;number&gt;</dt> <dd>The used value is this unitless <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> multiplied by the element's font size. The computed value is the same as the specified<code> &lt;number&gt;</code>. In most cases <strong>this is is the preferred way</strong> to set<code> line-height </code>with no unexpected results in case of inheritance.</dd> <dt>&lt;length&gt;</dt> <dd>The specified 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> is used in the calculation of the line box height. See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> values for possible units.</dd> <dt>&lt;percentage&gt;</dt> <dd>Relative to the font size of the element itself. The computed value is this percentage multiplied by the element's computed font size. <br><strong>Percentage</strong> and <strong>em</strong> values may have unexpected results, see "Notes" section.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+/* All rules below have the same resultant line height */
+
+div { line-height: 1.2;   font-size: 10pt }   /* number */ 
+div { line-height: 1.2em; font-size: 10pt }   /* length */ 
+div { line-height: 120%;  font-size: 10pt }   /* percentage */
+div { line-height: 12pt;  font-size: 10pt }   /* length */
+div { font: 10pt/1.2  Georgia,"Bitstream Charter",serif }</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>It is often more convenient to set<code> line-height </code>by using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code> shortcut as stated in the "Examples" section above.</li> <li>Prefer a unitless number: <pre>
+&lt;style&gt;
+      .green { font-size: 15px;  line-height: 1.1;  border: solid limegreen; }
+      .red   { font-size: 15px;  line-height: 1.1em;  border: solid red; }
+      h1     { font-size: 30px; }
+      div    { width: 19em;  display: inline-block; }
+&lt;/style&gt;
+
+&lt;div class=green&gt;
+ &lt;h1&gt;Avoid unexpected results by using unitless line-height&lt;/h1&gt;
+  length and percentage line-heights have poor inheritance behavior ...
+&lt;/div&gt;
+
+&lt;div class=red&gt;
+ &lt;h1&gt;Avoid unexpected results by using unitless line-height&lt;/h1&gt;
+  length and percentage line-heights have poor inheritance behavior ...
+&lt;/div&gt;
+
+&lt;!-- The first &lt;h1&gt; line-height is calculated from its own font-size   (30px × 1.1) = <strong>33px</strong>  --&gt; 
+&lt;!-- The second &lt;h1&gt; line-height results from the red div's font-size  (15px × 1.1) = <strong>16.5px</strong>,  probably not what you want --&gt;
+</pre> <div style="display:inline-block; width:19em; font-size:15px; line-height:1.1; padding:0.2em; border:solid limegreen;"> <div id="section_6">
+<span id="Avoid_unexpected_results.2C_use_unitless_line-height!"></span><h3 style="font-size:30px; border:none; margin:0.6em 0" class="editable">Avoid unexpected results, use unitless <strong>line-height</strong>!</h3> <code>em</code> values and <code>&lt;percentage&gt;</code> line-heights have poor inheritance behavior, and should almost never be used in practice. Stick to unitless line-heights (such as "<code>1.1</code>").</div>
+</div> <div style="display:inline-block; width:19em; font-size:15px; line-height:110%; padding:0.2em; border:solid red"> <div id="section_7">
+<span id="Avoid_unexpected_results.2C_use_unitless_line-height!_2"></span><h3 style="font-size:30px; border:none; margin:0.6em 0" class="editable">Avoid unexpected results, use unitless <strong>line-height</strong>!</h3> <code>em</code> values and <code>&lt;percentage&gt;</code> line-heights have poor inheritance behavior, and should almost never be used in practice. Stick to unitless line-heights (such as "<code>1.1</code>").</div>
+</div> </li>
+</ul>
+<div id="section_8">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height" title="http://www.w3.org/TR/CSS21/visudet.html#propdef-line-height" target="_blank">CSS 2.1 Visual formatting #line-height</a></li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code></p>
+<p></p>
+</div>
+</div>

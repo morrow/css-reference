@@ -1,0 +1,86 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The vertical-align property specifies the vertical alignment of an inline or table-cell element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/baseline" class="new">baseline</a></code>
+</li> <li>Applies to: inline elements and table cells</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: No</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>:</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<p><code>vertical-align:</code> <code>baseline</code> | <code>sub</code> | <code>super</code> | <code>text-top</code> | <code>text-bottom</code> | <code>middle</code> | <code>top</code> | <code>bottom</code> | &lt;percentage&gt; | <a title="en/CSS/length" rel="internal" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a> | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></p>
+</div>
+<div id="section_3">
+<span id="Values_.28for_inline_elements.29"></span><span id="Values_(for_inline_elements)"></span><h3 class="editable">Values (for inline elements)</h3>
+<p>Most of the values vertically align the element relative to its parent element:</p>
+<dl>
+<dt>baseline </dt> <dd>Align the baseline of the element with the baseline of its parent.</dd> <dt>sub </dt> <dd>Align the baseline of the element with the subscript-baseline of its parent.</dd> <dt>super </dt> <dd>Align the baseline of the element with the superscript-baseline of its parent.</dd> <dt>text-top </dt> <dd>Align the top of the element with the top of the parent element's font.</dd> <dt>text-bottom </dt> <dd>Align the bottom of the element with the bottom of the parent element's font.</dd> <dt>middle </dt> <dd>Align the middle of the element with the middle of lowercase letters in the parent.</dd> <dt>
+<a title="en/CSS/length" rel="internal" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a> </dt> <dd>Align the baseline of the element at the given length above the baseline of its parent.</dd> <dt>&lt;percentage&gt; </dt> <dd>like &lt;length&gt; values, with the percentage being a percent of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code> property</dd>
+</dl>
+<p>For elements that do not have a baseline, the bottom margin edge is used instead.</p>
+<p>However, two values vertically align the element relative to the entire line rather than relative to its parent:</p>
+<dl>
+<dt>top </dt> <dd>Align the top of the element and its descendants with the top of the entire line.</dd> <dt>bottom </dt> <dd>Align the bottom of the element and its descendants with the bottom of the entire line.</dd>
+</dl>
+<p>Negative values are allowed.</p>
+</div>
+<div id="section_4">
+<span id="Values_.28for_table_cells.29"></span><span id="Values_(for_table_cells)"></span><h3 class="editable">Values (for table cells)</h3>
+<dl>
+<dt>baseline (and sub, super, text-top, text-bottom, &lt;length&gt;, and &lt;percentage&gt;) </dt> <dd>Align the baseline of the cell with the baseline of all other cells in the row that are baseline-aligned.</dd> <dt>top</dt> <dd>Align the top padding edge of the cell with the top of the row.</dd> <dt>middle</dt> <dd>Center the padding box of the cell within the row.</dd> <dt>bottom</dt> <dd>Align the bottom padding edge of the cell with the bottom of the row.</dd>
+</dl>
+<p>Negative values are allowed.</p>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+img {
+	vertical-align: bottom;
+}
+</pre>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS1#vertical-align" title="http://www.w3.org/TR/CSS1#vertical-align" target="_blank">CSS 1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align" title="http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align" target="_blank">CSS 2.1</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>lowest version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>4.0</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0 (1.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>4.0</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/line-height">line-height</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-align">text-align</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin">margin</a></code> (<code>auto</code>)</p>
+<p></p>
+</div>

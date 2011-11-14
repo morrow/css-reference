@@ -1,0 +1,71 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:checked</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> selector represents any radio (<code>&lt;input type="radio"&gt;</code>) or checkbox (
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/option">&lt;option&gt;</a></code> in a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/select">&lt;select&gt;</a></code>) element that is checked or toggled to an <code>on</code> state. The user can change this state by clicking on the element, or selecting a different value, in which case the <code>:checked</code> pseudo-class no longer applies to this element, but will to the relevant one.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax </h3>
+<pre>
+element:checked { style properties }</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<div id="section_4">
+<span id="Example_selectors"></span><h4 class="editable">Example selectors</h4>
+<dl>
+<dt>
+<code>input[type="radio"]:checked</code><code><br></code>
+</dt> <dd>Represents all radio buttons on the page that are checked</dd> <dt>input[type="checkbox"]:checked</dt> <dd>Represents all checkboxes on the page that are checked</dd>
+</dl>
+</div>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable"><span>Specifications</span></h3>
+<ul>
+<li>
+<a href="http://www.w3.org/TR/css3-selectors/#checked" class="external" title="http://www.w3.org/TR/css3-selectors/#enableddisabled" rel="external nofollow" target="_blank">CSS3 Selectors :checked</a> Proposed Recommendation</li> <li><a href="http://www.whatwg.org/specs/web-forms/current-work/#relation" class="external" title="http://www.whatwg.org/specs/web-forms/current-work/#relation" rel="external nofollow" target="_blank">WHATWG web-forms</a></li>
+</ul>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0 (1.7 or earlier)
+</td> <td>9</td> <td>9.0</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+</div>

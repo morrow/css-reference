@@ -1,0 +1,87 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;time&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes time dimensions expressed in seconds or milliseconds. They consists of a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> immediately followed by the unit. Like for any CSS dimension, there is no space between the unit literal and the number.</p>
+<p>The following units may be used :</p>
+<ul>
+<li>
+<code>s</code> which represents a time in seconds. E.g. <code>0s</code>, <code>1.5s</code>, <code>-60s</code>.</li> <li>
+<code>ms</code> which represents a time in milliseconds. E.g. <code>0ms</code>, <code>1500ms</code>, <code>-60000ms</code>.</li>
+</ul>
+<p>Conversion between <code>s</code> and <code>ms</code> follows the logical <code>1s</code> = <code>1000ms</code>.</p>
+<p>As all units represents the same time for the value 0, the unit may be omitted in that case: <code>0</code> represents <code>0s</code>, <code>0ms</code>.</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>These are valid time values:</p>
+<pre>12s         Positive integer
+-456ms      Negative integer
+4.3ms       Non-integer
+14mS        The unit is case-insensitive, though capital letters are not recommended for s and ms.
+0           Zero (without the unit)
++0s         Zero, with a leading + and the unit
+-0ms        Zero, with a leading - and the unt(Though strange, this is an allowed value)
+</pre>
+<p>These are invalid time values:</p>
+<pre>12.0        This is a <a href="mks://localhost/en/CSS/number" title="en/CSS/number">&lt;number&gt;</a>, not an &lt;time&gt;, it must have a unit
+7 ms        No space is allowed between the <a href="mks://localhost/en/CSS/number" title="en/CSS/number">&lt;number&gt;</a> and the unit
+</pre>
+</div>
+<div id="section_3">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#time" rel="external" href="http://www.w3.org/TR/css3-values/#time" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_4">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome (Webkit)</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera (Presto)</th> <th>Safari (Webkit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>&lt;=11 (?)</td> <td>4.0 (2.0)</td> <td>9.0 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx#values" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx#values" target="_blank">[1]</a>
+</td> <td>10.5 (2.3) <a class="external" title="http://www.opera.com/docs/specs/presto23/" rel="external" href="http://www.opera.com/docs/specs/presto23/" target="_blank">[2]</a>
+</td> <td>&lt;=3.2 (?)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>no</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_5">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>

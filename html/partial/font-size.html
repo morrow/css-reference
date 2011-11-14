@@ -1,0 +1,152 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The font-size property specifies the size of the font. The font size may, in turn, change the size of other items, since it is used to compute the value of <code>em</code> and <code>ex</code> length units.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/medium" class="new">medium</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: Yes</li> <li>Percentages: relative to parent element's font size</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: absolute length</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">
+font-size: xx-small | x-small | small | medium | large | x-large | xx-large
+font-size: smaller | larger
+font-size: &lt;length&gt; | &lt;percentage&gt; | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+<br>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>
+<code>xx-small</code>, <code>x-small</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>x-large</code>, <code>xx-large</code> </dt> <dd>A set of absolute size keywords based on the user's default font size (which is <code>medium</code>). Similar to presentational HTML's <code>&lt;font size="1"&gt;</code> through <code>&lt;font size="7"&gt;</code> where the user's default font size is <code>&lt;font size="3"&gt;</code>.</dd> <dt>
+<code>larger</code>, <code>smaller</code> </dt> <dd>Larger or smaller than the parent element's font size, by roughly the ratio used to separate the absolute size keywords above.</dd> <dt><em><a title="en/CSS/length" rel="internal" href="https://developer.mozilla.org/en/CSS/length">length</a> </em></dt> <dd>A positive <a title="en/CSS/length" rel="internal" href="https://developer.mozilla.org/en/CSS/length">length</a>. When the units are specified in <code>em</code> or <code>ex</code>,  the size is defined relative to the size of the font on the parent element of the element in question. For example, 0.5em is half the font size of the parent of the current element.</dd> <dt><em>percentage</em></dt> <dd>A positive percentage of the parent element's font size.</dd>
+</dl>
+<p>It is best to avoid using values that are not relative to the user's default font size, such as lengths with units other than <code>em</code> or <code>ex</code>. However, if such values must be used, <code>px</code> are preferred over other units because their meaning does not vary depending on what the operating system thinks (generally incorrectly) the resolution of the monitor is.</p>
+</div>
+<div id="section_4">
+<span id="Possible_approaches"></span><h2 class="editable">Possible approaches</h2>
+<p>There are several ways to specify the font size, with keywords or numerical values for pixels or ems. Choose the appropriate method based on the needs for the particular web page.</p>
+<div id="section_5">
+<span id="Keywords"></span><h3 class="editable">Keywords</h3>
+<p>Keywords are a good way to set the size of fonts on the web. By setting a keyword font size on the body element, you can set relative font-sizing everywhere else on the page, giving you the ability to easily scale the font up or down on the entire page accordingly.</p>
+</div>
+<div id="section_6">
+<span id="Pixels"></span><h3 class="editable">Pixels</h3>
+<p>Setting the font size in pixel values (<code>px</code>) is a good choice when you need pixel accuracy. A px value is static. This is an OS-independent and cross-browser way of literally telling the browsers to render the letters at exactly the number of pixels in height that you specified. The results may vary slightly across browsers, as they may use different algorithms to achieve a similar effect.</p>
+<p>Font sizing settings can also be used in combination. For example, if a parent element is set to <code>16px</code> and its child element is set to <code>larger</code>, the child element displays larger than the parent element in the page.</p>
+<div class="note">
+<strong>Note:</strong> Defining font sizes in pixel is <em>not accessible</em>, because the user cannot change the font size from the browser. (For example, users with limited vision may wish to set the font size much larger than the size chosen by a web designer.) Therefore, avoid using pixels for font sizes if you wish to create an inclusive design.</div>
+</div>
+<div id="section_7">
+<span id="Ems"></span><h3 class="editable">Ems</h3>
+<p>Another way of setting the font size is with <code>em</code> values. The size of an <code>em</code> value is dynamic. When defining the <code>font-size</code> property, an em is equal to the size of the font that applies to the parent of the element in question. If you haven't set the font size anywhere on the page, then it is the browser default, which is probably 16px. So, by default 1em = 16px, and 2em = 32px. If you set a <code>font-size</code> of 20px on the body element, then 1em = 20px and 2em = 40px. Note that the value 2 is essentially a multiplier of the current em size.</p>
+<p>In order to calculate the em equivalent for any pixel value required, you can use this formula:</p>
+<pre>
+em = desired element pixel value / parent element font-size in pixels</pre>
+<p>For example, suppose the font-size of the body of the page is set to 1em, with the browser standard of 1em = 16px; if the font-size you want is 12px, then you should specify 0.75em (because 12/16 = 0.75). Similarly, if you want a font size of 10px, then specify 0.625em (10/16 = 0.625); for 22px, specify 1.375em (22/16).</p>
+<p>A popular technique to use throughout the document is to set the the font-size of the body to 62.5% (that is 62.5% of the default of 16px), which equates to 10px, or 0.625em. Now you can set the font-size for any elements using em units, with an easy-to-remember conversion, by dividing the px value by 10. This way 6px = 0.6em, 8px = 0.8em, 12px = 1.2em, 14px = 1.4em, 16px = 1.6em. For example:</p>
+<pre class="deki-transform">
+body {
+  font-size: 62.5%; /* font-size 1em = 10px */
+}
+p {
+  font-size: 1.6em; /* 1.6em = 16px */
+}</pre>
+<p> The em is a very useful unit in CSS, since it can adapt automatically to the font that the reader chooses to use.</p>
+</div>
+</div>
+<div id="section_8">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/font-size.html">View Live Examples</a></p>
+
+          <pre name="code" class="css">/* Set paragraph text to be very large. */
+p { font-size: xx-large }
+
+/* Set h1 (level 1 heading) text to be 2.5 times the size
+ * of the text around it. */
+h1 { font-size: 250% }
+
+/* Sets text enclosed within span tag to be 16px */
+span { font-size: 16px; }</pre>
+        
+</div>
+<div id="section_9">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<p><code>em</code> and <code>ex</code> units on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code> property are relative to the parent element's font size (unlike all other properties, where they're relative to the font size on the element). This means <code>em</code> units and percentages do the same thing for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>.</p>
+</div>
+<div id="section_10">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/fonts.html#propdef-font-size" title="http://www.w3.org/TR/CSS21/fonts.html#propdef-font-size" target="_blank">CSS 2.1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/css3-fonts/#font-size-prop" title="http://www.w3.org/TR/css3-fonts/#font-size-prop" target="_blank">CSS3 Fonts</a></li>
+</ul>
+</div>
+<div id="section_11">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td>1.0</td> <td>5.5</td> <td>9.2</td> <td>1.3</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_12">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<p>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span></p>
+<p></p>
+</div>

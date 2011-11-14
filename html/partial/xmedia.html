@@ -1,0 +1,118 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p><code>@media</code> specifies the target media types (separated by commas) of a set of rules (delimited by curly braces).</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">
+@media <em>&lt;media types&gt;</em> {
+  /* media-specific rules */
+}
+</pre>
+</div>
+<div id="section_3">
+<span id="Media_types"></span><h2 class="editable">Media types</h2>
+<div class="note">
+<strong>Note:</strong> Firefox currently only implements the <code>print</code> and <code>screen</code> media types.  The <a class="link-https" title="https://addons.mozilla.org/en-US/firefox/addon/4650" rel="external" href="https://addons.mozilla.org/en-US/firefox/addon/4650" target="_blank">FullerScreen</a> extension enables support for the <code>projection</code> media type.</div>
+<dl>
+<dt>all</dt> <dd>Suitable for all devices.</dd> <dt>braille</dt> <dd>Intended for braille tactile feedback devices.</dd> <dt>embossed</dt> <dd>Intended for paged braille printers.</dd> <dt>handheld</dt> <dd>Intended for handheld devices (typically small screen, limited bandwidth).</dd> <dt>print</dt> <dd>Intended for paged material and for documents viewed on screen in print preview mode. Please consult the section on <a title="https://developer.mozilla.org/en/CSS/Paged_Media" rel="internal" href="https://developer.mozilla.org/en/CSS/Paged_Media">paged media</a>, and the <a title="https://developer.mozilla.org/en/CSS/Getting_Started/Media" rel="internal" href="https://developer.mozilla.org/en/CSS/Getting_Started/Media">media section of the Getting Started tutorial</a> for information about formatting issues that are specific to paged media.</dd> <dt>projection</dt> <dd>Intended for projected presentations, for example projectors. Please consult the section on paged media for information about formatting issues that are specific to paged media.</dd> <dt>screen</dt> <dd>Intended primarily for color computer screens.</dd> <dt>speech</dt> <dd>Intended for speech synthesizers. Note: CSS2 had a similar media type called 'aural' for this purpose. See the appendix on aural style sheets for details.</dd> <dt>tty</dt> <dd>Intended for media using a fixed-pitch character grid (such as teletypes, terminals, or portable devices with limited display capabilities). Authors should not use pixel units with the "tty" media type.</dd> <dt>tv</dt> <dd>Intended for television-type devices (low resolution, color, limited-scrollability screens, sound available).</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Media_groups"></span><h2 class="editable">Media groups</h2>
+<p>Media types are also part of different Media Groups. The following table indicates which types are in which group.</p>
+<table class="standard-table"><tbody>
+<tr>
+<td> </td> <td class="header" colspan="10" style="text-align:center">Groups</td> </tr>
+<tr>
+<td class="header">Type</td> <td class="header">continuous</td> <td class="header">paged</td> <td class="header">visual</td> <td class="header">audio</td> <td class="header">speech</td> <td class="header">tactile</td> <td class="header">grid</td> <td class="header">bitmap</td> <td class="header">interactive</td> <td class="header">static</td> </tr>
+<tr>
+<td class="header">braille</td> <td>X</td> <td> </td> <td> </td> <td> </td> <td> </td> <td>X</td> <td>X</td> <td> </td> <td>X</td> <td>X</td> </tr>
+<tr>
+<td class="header">embossed</td> <td> </td> <td>X</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td>X</td> <td> </td> <td> </td> <td>X</td> </tr>
+<tr>
+<td class="header">handheld</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td> </td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> </tr>
+<tr>
+<td class="header">print</td> <td> </td> <td>X</td> <td>X</td> <td> </td> <td> </td> <td> </td> <td> </td> <td>X</td> <td> </td> <td>X</td> </tr>
+<tr>
+<td class="header">projection</td> <td> </td> <td>X</td> <td>X</td> <td> </td> <td> </td> <td> </td> <td> </td> <td>X</td> <td>X</td> <td> </td> </tr>
+<tr>
+<td class="header">screen</td> <td>X</td> <td> </td> <td>X</td> <td>X</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td>X</td> <td>X</td> </tr>
+<tr>
+<td class="header">speech</td> <td>X</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td>X</td> </tr>
+<tr>
+<td class="header">tty</td> <td>X</td> <td> </td> <td>X</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td> </td> <td>X</td> <td>X</td> </tr>
+<tr>
+<td class="header">tv</td> <td>X</td> <td>X</td> <td>X</td> <td>X</td> <td> </td> <td> </td> <td> </td> <td>X</td> <td>X</td> <td>X</td> </tr>
+</tbody></table>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre class="eval">@media print {
+  body { font-size: 10pt }
+}
+@media screen {
+  body { font-size: 13px }
+}
+@media screen, print {
+  body { line-height: 1.2 }
+}
+</pre>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<p>A multimodal media type is still only one media type. The 'tv' media type, for example, is a multimodal media type that renders both visually and aurally to a single canvas.</p>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/media.html#at-media-rule" title="http://www.w3.org/TR/CSS21/media.html#at-media-rule" target="_blank">CSS 2.1</a></li>
+</ul>
+</div>
+<div id="section_8">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.7)
+</td> <td>9.0</td> <td>9.2</td> <td>1.3</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.7)
+</td> <td>9.0</td> <td>9.0</td> <td>3.1</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a class="internal" title="En/CSS/Media queries" rel="internal" href="https://developer.mozilla.org/en/CSS/Using_CSS_media_queries">Media queries</a></li> <li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a></li> <li>CSS at-rules: <a title="en/CSS/@charset" rel="internal" href="https://developer.mozilla.org/en/CSS/@charset">@charset</a>, <a title="@font-face" rel="internal" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a>, <a title="@import" rel="internal" href="https://developer.mozilla.org/en/CSS/@import">@import</a>, <a title="@keyframes" rel="internal" href="https://developer.mozilla.org/en/CSS/@keyframes">@keyframes</a>, <strong>@media</strong>, <a title="@page" rel="internal" href="https://developer.mozilla.org/en/CSS/@page">@page</a>.</li>
+</ul>
+<p></p>
+</div>

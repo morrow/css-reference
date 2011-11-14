@@ -1,0 +1,139 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>bottom</code> property specifies part of the position of positioned elements.</p>
+<p>For absolutely positioned elements (those with <code>position: absolute</code> or <code>position: fixed</code>), it specifies the distance between the bottom margin edge of the element and the bottom edge of its containing block.</p>
+<p>For relatively positioned elements (those with <code>position: relative</code>), it specifies the amount the element is moved above its normal position. However, the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> property overrides the bottom property, so if <code>top</code> is not <code>auto</code>, the computed value of <code>bottom</code> is the negative of the computed value of <code>top</code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: <a title="en/CSS/position" rel="internal" href="https://developer.mozilla.org/en/CSS/position">positioned elements</a>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: refer to height of containing block</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: absolute length, percentage, or auto</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+   bottom: &lt;length&gt; | &lt;percentage&gt; | auto | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;length&gt; </dt> <dd>A length, used as described in the <a href="#Summary">summary</a>. Can be negative, zero, or positive.</dd> <dt>&lt;percentage&gt; </dt> <dd>A percentage of the containing block's height, used as described in the <a href="#Summary">summary</a>.</dd> <dt>
+<code>auto</code> </dt> <dd>For absolutely positioned elements, position the element based on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> property and treat <code>height: auto</code> as a height based on the content. For relatively positioned elements, offset the element from its original position based on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> property, or if <code>top</code> is also <code>auto</code>, do not offset it at all.</dd> <dt>
+<code>inherit</code> </dt> <dd>Inherits the computed value from its parent element (which may not be its containing block). This computed value is then handled like it was a &lt;length&gt;, a &lt;percentage&gt;, or <code>auto</code>
+</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+element { 
+    position: absolute;
+    bottom: 20px; 
+    height: 200px;
+    border: 1px solid #000;
+}
+</pre>
+<p>The following sample page contrasts <code>position:absolute</code> and <code>position:fixed</code>. When the regular text becomes taller than the viewable portion of the page (the browser window's viewport), blocks positioned with <code>position:absolute</code> will scroll with the page, while blocks positioned with <code>position:fixed</code> will not. Note that IE6 does not support <code>position:fixed</code>.</p>
+<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=iso-8859-1"&gt;
+&lt;title&gt;Position at bottom, absolute or fixed&lt;/title&gt;
+&lt;style type="text/css"&gt;
+p {font-size:30px; line-height:3em;}
+div.pos {width:49%; text-align:center; border:2px solid #00f;}
+div#abs {position:absolute; bottom:0; left:0;}
+div#fix {position:fixed; bottom:0; right:0;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;This&lt;br&gt;is&lt;br&gt;some&lt;br&gt;tall,&lt;br&gt;tall,
+    &lt;br&gt;tall,&lt;br&gt;tall,&lt;br&gt;tall&lt;br&gt;content.&lt;/p&gt;
+  &lt;div id="fix" class="pos"&gt;&lt;p&gt;Fixed&lt;/p&gt;&lt;/div&gt;
+  &lt;div id="abs" class="pos"&gt;&lt;p&gt;Absolute&lt;/p&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>For absolutely positioned elements whose containing block is based on a block-level element, this property is an offset from the padding edge of that element.</p>
+<p>For absolutely positioned elements, the <code>bottom</code> property has no visible effect when all of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/height">height</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/margin-top">margin-top</a></code> are <em>not</em> <code>auto</code> (which is the default value for <code>top</code> and <code>height</code>).</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom" title="http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom" target="_blank">CSS 2.1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/Style/CSS/current-work#positioning" title="http://www.w3.org/Style/CSS/current-work#positioning" target="_blank">CSS 3</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><h3 class="editable">Browser Compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.7 or earlier)
+</td> <td>5</td> <td>6</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td>1.0 (1.9.2)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p></p>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/position">position</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code></p>
+<p></p>
+</div>

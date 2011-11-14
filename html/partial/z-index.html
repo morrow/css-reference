@@ -1,0 +1,75 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> z-index </code>CSS property specifies the z-order of an element and its descendants. When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one.</p>
+<p>For a positioned box, the<code> z-index </code>property specifies:</p>
+<ol>
+<li>The stack level of the box in the current stacking context.</li> <li>Whether the box establishes a local stacking context.</li>
+</ol>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/position">positioned elements</a></code>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+z-index:  auto | &lt;integer&gt; | inherit</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>auto</dt> <dd>The box does not establish a new local stacking context. The stack level of the generated box in the current stacking context is the same as its parent's box.</dd> <dt>&lt;integer&gt;</dt> <dd>This integer is the stack level of the generated box in the current stacking context. The box also establishes a local stacking context in which its stack level is<code> 0</code>. This means that the z-indexes of descendants are not compared to the z-indexes of elements outside this element. </dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<div style="border:dashed; position:relative; z-index:1; height:8em; margin-bottom:1em">position:relative; z-index:1; <span style="background:lightgreen; position:absolute; z-index:3; left:20em; top:-25px; height:7em; opacity:0.9">position:absolute; z-index:3;<br>
+left:20em; top:-25px; opacity:0.9</span> <span style="background:gold; position:absolute; z-index:2; left:60px; top:3em; ">position:absolute; z-index:2; left:60px; top:3em;</span>
+</div>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Negative<code> z-index </code>values are supported correctly starting in <a title="en/Gecko" rel="internal" href="https://developer.mozilla.org/en/Gecko">Gecko</a> 1.9 / <a title="en/Firefox_3_for_developers" rel="internal" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a>. Previous versions implemented the CSS 2 behavior, not the CSS 2.1 behavior that is compatible with other browsers.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a title="http://www.w3.org/TR/CSS21/visuren.html#z-index" class="external" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#z-index" target="_blank">CSS 2.1 Visual formatting #z-index</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>4.0</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>1.0 (1.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>4.0</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>CSS 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/position">position</a></code> property</li> <li><a title="https://developer.mozilla.org/en/Understanding_CSS_z-index" rel="internal" href="https://developer.mozilla.org/en/Understanding_CSS_z-index">Understanding CSS z-indexes</a></li>
+</ul>
+<p></p>
+</div>

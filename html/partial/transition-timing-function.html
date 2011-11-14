@@ -1,0 +1,81 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> transition-timing-function </code>CSS property is used to describe how the intermediate values of the CSS properties being affected by a <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">transition effect</a> are calculated. This in essence lets you establish an acceleration curve, so that the speed of the transition can vary over its duration.</p>
+<p>This acceleration curve is defined using one <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code> </span> for each property to be transitioned. </p>
+<div class="note">
+<strong>Note:</strong> This implementation of the CSS <code>transition-timing-function</code> is based on a draft specification and is therefore <em>experimental</em> : the syntax is subject to change.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <a title="https://developer.mozilla.org/en/CSS/timing-function#ease" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease"><code>ease</code></a>
+</li> <li>Applies to: all elements, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Abefore">:before</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aafter">:after</a></code> pseudo elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>:no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Interactive">interactive</a></code>
+</span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+-moz-transition-timing-function: <a href="mks://localhost/en/CSS/timing-function" title="en/CSS/timing-function">&lt;timing-function&gt;</a> [, <a href="mks://localhost/en/CSS/timing-function" title="en/CSS/timing-function">&lt;timing-function&gt;</a>]*
+</pre>
+<p>where:</p>
+<dl>
+<dd>Each <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code> </span> represents the timing function to link to the corresponding property to transition, as defined in 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition-property">transition-property</a></code>.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>There are several examples of CSS transitions included in the main <a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a> article.</p>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a class="external" title="http://www.w3.org/TR/css3-transitions" rel="external" href="http://www.w3.org/TR/css3-transitions" target="_blank">CSS Transitions Module Level 3</a> (Working Draft)</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>4.0 (2.0) 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> </tr>
+<tr>
+<td>Opera</td> <td>---</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>3.1 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a title="en/CSS/CSS transitions" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS transitions</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition">transition</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition-property">transition-property</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition-duration">transition-duration</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition-delay">transition-delay</a></code>
+</li>
+</ul>
+<p></p>
+</div>

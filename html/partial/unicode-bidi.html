@@ -1,0 +1,117 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<p>The <code>unicode-bidi</code> property together with the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code> property relates to the handling of bidirectional text in a document. For example, if a block of text contains both left-to-right and right-to-left text then the user-agent uses a complex Unicode algorithm to decide how to display the text. This property overrides this algorithm and allows the developer to control the text embedding.</p>
+<div class="note">
+<strong>Note:</strong> This property is intended for DTD designers. Web designers and similar authors should not override it.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+<div id="section_1">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>unicode-bidi: [ normal | embed | [ isolate || bidi-override ] | plaintext | inherit ] ;
+</pre>
+</div>
+<div id="section_2">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt><code>normal </code></dt> <dd>The element does not offer a additional level of embedding with respect to the bidirectional algorithm. For inline elements implicit reordering works across element boundaries.</dd> <dt><code>embed</code></dt> <dd>If the element is inline, this value opens an additional level of embedding with respect to the bidirectional algorithm. The direction of this embedding level is given by the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code> property.</dd> <dt><code>bidi-override </code></dt> <dd>For inline elements this creates an override. For block container elements this creates an override for inline-level descendants not within another block container element. This means that inside the element, reordering is strictly in sequence according to the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code> property; the implicit part of the bidirectional algorithm is ignored.</dd> <dt><code>isolate</code></dt> <dd>This keyword indicates that the element's container directionality should be calculated without considering the content of this element. The element is therefore <em>isolated</em> from its siblings. When applying its bidirectional-resolution algorithm, its container element treats it as one or several <code>U+FFFC Object Replacement Character</code>, i.e. like an image. This keyword can be combined with <code>bidi-override<em>.</em></code>
+</dd> <dt><code>plaintext</code></dt> <dd>This keyword makes the elements directionality calculated without considering its parent bidirectional state or the value of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code> property. The directionality is calculated using the P2 and P3 rules of the Unicode Bidirectional Algorithm.<br> This value allows to display data which has already formatted using a tool following the Unicode Bidirectional Algorithm.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>
+.bible-quote {
+<code class="css">  direction: rtl;   unicode-bidi: embed;</code>
+} 
+</pre>
+</div>
+<div id="section_4">
+<span id="Specification"></span><h2 class="editable">Specification</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-writing-modes/#unicode-bidi" rel="external" href="http://dev.w3.org/csswg/css3-writing-modes/#unicode-bidi" target="_blank">CSS Writing Modes Level 3</a></td> <td>Working Draft
+</td> <td>Added <code>plaintext</code> and <code>isolate</code> keywords</td> </tr>
+<tr>
+<td><a title="http://www.w3.org/TR/CSS21/visuren.html#direction" class=" external" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#direction" target="_blank">CSS 2 Level 1</a></td> <td>Recommendation
+</td> <td> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td>1.0 (1.7 or earlier)
+</td> <td>5.5</td> <td>9.2</td> <td>1.3</td> </tr>
+<tr>
+<td><code>isolate</code></td> <td>16</td> <td>10.0 (10)
+ <a title="https://bugzilla.mozilla.org/show_bug.cgi?id=613149" class=" link-https" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=613149" target="_blank">[1]</a>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td><code>plaintext</code></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.0 (10)
+ <a title="https://bugzilla.mozilla.org/show_bug.cgi?id=662288" class=" link-https" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=662288" target="_blank">[2]</a>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)
+</td> <td>6</td> <td>8</td> <td>3.1</td> </tr>
+<tr>
+<td><code>isolate</code></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.0 (10)
+ <a title="https://bugzilla.mozilla.org/show_bug.cgi?id=613149" class=" link-https" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=613149" target="_blank">[3]</a>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td><code>plaintext</code></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.0 (10)
+ <a title="https://bugzilla.mozilla.org/show_bug.cgi?id=662288" class=" link-https" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=662288" target="_blank">[4]</a>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code></p>
+</div>

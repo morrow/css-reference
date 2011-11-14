@@ -1,0 +1,94 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>@import</code> CSS at-rule allows to import style rules from other style sheets. These rules must precede all other types of rules, except 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@charset">@charset</a></code> rules.</p>
+<p>So that user agents can avoid retrieving resources for unsupported media types, authors may specify media-dependent <code>@import</code> rules. These conditional imports specify comma-separated <a title="Using CSS media queries" rel="internal" href="https://developer.mozilla.org/en/CSS/Using_CSS_media_queries">media queries</a> after the URI. In the absence of any media query, the import is unconditional. Specifying <code>all</code> for the medium has the same effect.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">@import <em>url</em>;                      <em>or</em>
+@import <em>url</em> <em>list-of-media-queries</em>;
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin: 0 40px"><em>url</em></dt> <dd style="margin: 0 40px">Is a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code> </span> or a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span> representing the location of the resource to import. The url may be an absolute or relative url.</dd> <dt style="margin: 0 40px"><em>list-of-media-queries</em></dt> <dd style="margin: 0 40px">Is a comma-separated list of <a href="/en/CSS/Using_CSS_media_queries" rel="internal" title="en/CSS/Using_CSS_media_queries">media queries</a> conditioning the application of the css rules defined in the linked url. If the browser doesn't support any of these media types, it won't even load the linked resource.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre class="eval">
+@import url("fineprint.css") print;
+@import url("bluish.css") projection, tv;
+@import 'custom.css';
+@import "common.css" screen, projection;
+@import url('landscape.css') screen and (orientation:landscape);
+</pre>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/#media0" rel="external" href="http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/#media0" target="_blank">Media Queries</a></td> <td>Candidate Recommandation
+</td> <td>Extended the syntax to support any media query and not only simple <a title="en/CSS/@media#Media_types" rel="internal" href="https://developer.mozilla.org/en/CSS/@media#Media_types">media types</a>.</td> </tr>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/CSS21/cascade.html#at-import" rel="external" href="http://www.w3.org/TR/CSS21/cascade.html#at-import" target="_blank">CSS Level 2 (Revision 1)</a></td> <td>Recommendation
+</td> <td>Added support for <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code> </span> to denote the url of a stylesheet,<br> and requirement to insert the <code>@import</code> rule at the beginning of the CSS document.</td> </tr>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/REC-CSS1#the-cascade" rel="external" href="http://www.w3.org/TR/REC-CSS1#the-cascade" target="_blank">CSS Level 1</a></td> <td>Recommendation
+</td> <td> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td>5.5 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" target="_blank">[1]</a>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td>5.5 <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" target="_blank">[2]</a>
+</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a></li> <li>CSS at-rules: <a title="en/CSS/@charset" rel="internal" href="https://developer.mozilla.org/en/CSS/@charset">@charset</a>, <a title="@font-face" rel="internal" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a>, <strong>@import</strong>, <a title="@keyframes" rel="internal" href="https://developer.mozilla.org/en/CSS/@keyframes">@keyframes</a>, <a title="@media" rel="internal" href="https://developer.mozilla.org/en/CSS/@media">@media</a>, <a title="@page" rel="internal" href="https://developer.mozilla.org/en/CSS/@page">@page</a>.</li>
+</ul>
+<p></p>
+</div>

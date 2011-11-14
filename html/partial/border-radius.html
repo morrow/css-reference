@@ -1,0 +1,207 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>border-radius</code> CSS property can be used to give borders rounded corners. The radius applies also to the <code>background</code> even if the element has no border.</p>
+<p><code>border-radius</code> is a shortcut to set the four properties 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-left-radius">border-top-left-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-right-radius">border-top-right-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-right-radius">border-bottom-right-radius</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-left-radius">border-bottom-left-radius</a></code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 0</li> <li>Applies to: all elements, except the <code>table</code> element when <code>border-collapse</code> is <code>collapse</code>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li><span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span></li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+border-radius:   &lt;border-radius&gt;{1,4} [ / &lt;border-radius&gt;{1,4}]?</pre>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Accepts one, two, three or four <code>&lt;border-radius&gt; </code> values, optional followed by a slash <code>/</code> and a second set of values. <code>&lt;border-radius&gt;</code> represents one of:</p>
+<dl>
+<dt>&lt;length&gt;</dt> <dd>See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> for possible units.</dd> <dt>&lt;percentage&gt;</dt> <dd>Percentages for the horizontal radius are relative to the width of the border box, whereas percentages for the vertical radius are relative to the height of the border box.</dd>
+</dl>
+<p>If<strong> one </strong>value is set, this radius applies to<strong> all 4 corners</strong>.<br>
+If<strong> two </strong>values are set, the<strong> first </strong>applies to <code>top-left </code>and <code>bottom-right </code>corner, the <strong>second</strong> applies to <code>top-right </code>and <code>bottom-left </code>corner.<br><strong>Four</strong> values apply to the <code>top-left</code>, <code>top-right</code>, <code>bottom-right</code>, <code>bottom-left</code> corner in that order.<br><strong>Three</strong> values: The second value applies to <code>top-right</code> and also <code>bottom-left</code>.</p>
+<p>If the slash followed by a second set of radii is specified, the values before the slash are used to specify the horizontal radius, while the values after the slash specify the vertical radius.  If the slash is omitted, then the same values are used to set both horizontal and vertical radii.</p>
+<p>For example:</p>
+
+          <pre name="code" class="css">border-radius: 1em/5em;
+
+/* is equivalent to */
+
+border-top-left-radius:     1em 5em;
+border-top-right-radius:    1em 5em;
+border-bottom-right-radius: 1em 5em;
+border-bottom-left-radius:  1em 5em;</pre>
+        
+
+          <pre name="code" class="css">border-radius: 4px 3px 6px / 2px 4px;
+
+/* is equivalent to: */
+
+border-top-left-radius:     4px 2px;
+border-top-right-radius:    3px 4px;
+border-bottom-right-radius: 6px 2px;
+border-bottom-left-radius:  3px 4px;</pre>
+        
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre style="float:left; margin:10px; border:solid 10px; border-radius:0 50px 50px 0;">
+ border: solid 10px;
+ 
+ /* the border will curve into a 'D' */
+ border-radius: 0 50px 50px 0;
+</pre>
+<pre style="float:left; margin:10px; border: groove 1em red; border-radius:2em;">
+ border: groove 1em red;
+ border-radius: 2em;
+</pre>
+<pre style="float:left; margin:10px; background:gold; border:ridge gold; border-radius:13em/3em;">
+  background: gold;
+  border: ridge gold;
+  border-radius: 13em/3em;
+</pre>
+<pre style="float:left; border:none; margin:10px; background:gold; border-radius: 40px 10px;">
+   background: gold;
+   border-radius: 40px 10px; 
+</pre>
+<pre style="float:left; border:none; margin:10px; background:black; color:gray; border-radius:50%">
+background: black;
+color: gray;
+border-radius: 50%;
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h2 style="clear:both" class="editable">Notes</h2>
+<ul>
+<li>Dotted and dashed rounded border corners are rendered as solid in Gecko; see 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=382721" class="external" title="NEW - Dotted/dashed border-radiused corners are rendered as solid">
+bug 382721</a>
+.</li> <li>
+<code>border-radius</code> does not apply to table elements when 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-collapse">border-collapse</a></code> is <code>collapse</code>.</li> <li>Old WebKit handles multiple values different, see below.</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0 (2.0)
+<br> 1.0 (1.7 or earlier)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>4.0<br> 0.2
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>9.0</td> <td>10.5</td> <td>5.0<br> 3.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>Elliptical borders</td> <td>3.5 (1.9.1)
+</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes, but see below</td> </tr>
+<tr>
+<td>4 values for 4 corners</td> <td>yes</td> <td>4.0</td> <td>yes</td> <td>yes</td> <td>5.0</td> </tr>
+<tr>
+<td>Percentages</td> <td>yes<br> was <span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>      (see below) </td> <td>yes</td> <td>yes</td> <td>11.5</td> <td>5.1</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>iOS Safari</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Android Browser</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.2
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>2.1
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>Elliptical borders</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>4 values for 4 corners</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+<tr>
+<td>Percentages</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id=".3Cpercentage.3E_values"></span><h3 class="editable">
+<code>&lt;percentage&gt;</code> values</h3>
+<ul>
+<li>are not supported in older Chrome and Safari versions (it was <a class=" external" rel="external" href="http://trac.webkit.org/changeset/66615" title="http://trac.webkit.org/changeset/66615" target="_blank">fixed in Sepember 2010</a>)</li> <li>are buggy in Opera prior to 11.50</li> <li>are implemented in a non-standard way prior to Gecko 2.0 (Firefox 4). <strong>Both</strong> horizontal and vertical radii were relative to the width of the border box.</li>
+</ul>
+</div>
+<div id="section_8">
+<span id="Notes_2"></span><h3 class="editable">Notes</h3>
+<p>Older Safari and Chrome versions (prior to WebKit 532.5)</p>
+<ul>
+<li>support only <strong>one</strong> value for all 4 corners. For different radii the <a title="en/CSS/border-top-left-radius#Examples" rel="internal" href="https://developer.mozilla.org/en/CSS/border-top-left-radius#Examples">long form properties</a> must be used</li> <li>don't support the slash <code>/</code> notation. If two values are specified, an elliptical border is drawn on all 4 corners 
+          <pre name="code" class="css">/* this is equivalent: */
+
+-webkit-border-radius: 40px 10px;
+        border-radius: 40px/10px;</pre>
+         </li>
+</ul>
+<p>In Gecko 2.0 <code>-moz-border-radius</code> is renamed to <code>border-radius</code>. <code>-moz-border-radius</code> is supported as an alias for a transitional period (at least until the next version of Gecko). In order to conform to the CSS3 standard, Gecko 2.0</p>
+<ul>
+<li>changes the handling of <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> values to match the specification. You can specify an ellipse as border on an arbitrary sized element just with <code>border-radius: 50%;</code>
+</li> <li>makes rounded corners clip content and images (if 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code><code>: visible</code> is not set)</li>
+</ul>
+<p>In Opera (prior to Opera 12), applying <code>border-radius</code> to replaced elements will not have rounded corners.</p>
+</div>
+</div>
+<div id="section_9">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a rel="custom" href="http://www.w3.org/TR/css3-background/#the-border-radius">CSS3 Backgrounds and Borders Module: border-radius</a><span title="Candidate Recommendation" style="color:#333; background-color:#cfd510; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">CR</span>
+</li>
+</ul>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-left-radius">border-top-left-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-top-right-radius">border-top-right-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-right-radius">border-bottom-right-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-left-radius">border-bottom-left-radius</a></code></p>
+<p></p>
+</div>

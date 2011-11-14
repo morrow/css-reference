@@ -1,0 +1,199 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;timing-function&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes a mathematical function that describes how fast one-dimensional values change during transitions or animations. This in essence lets you establish an acceleration curve, so that the speed of the animation can vary over its duration.</p>
+<p>It is a function linking the time with a ratio of the output value (expressed as a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span>, with <code>0.0</code> representing the initial state, <code>1.0</code> the final state.</p>
+<p><a title="TF_with_output_gt_than_1.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png"><img align="left" alt="TF_with_output_gt_than_1.png" class="internal lwrap" style="width: 120px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png?size=thumb"></a><a title="TF_with_output_gt_than_1_clipped.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png"><img align="left" alt="TF_with_output_gt_than_1_clipped.png" class="internal lwrap" style="width: 120px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png?size=thumb"></a>The output ratio can be greater than 1.0 (or smaller than 0.0). This causes the animation to go farther than the final state, then come back, in a kind of <em>bouncing</em> effect.</p>
+<p>Nevertheless, if the output value goes outside of its possible range, such as a component of a color going greater than <code>255</code> or smaller than <code>0</code>, the value is clipped to its closest allowed value (in the case of a color-component <code>255</code> and <code>0</code> respectively. Some <code>cubic-bezier()</code> curves exhibit this property.</p>
+</div>
+<div id="section_2">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<div style="width:100%"> <p>CSS supports two kinds of timing functions: the subset of the cubic Bézier curves that are functions and staircase functions. The most useful of these functions are given a <em>keyword</em> that allows to easily describe them.</p> <div id="section_3">
+<span id="The_cubic-bezier()_class_of_timing-functions"></span><h3 class="editable">The <code>cubic-bezier()</code> class of timing-functions</h3>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr>
+<td> <p><img align="left" alt="cubic-bezier, example.png" class="internal lwrap" style="" src="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%25252C_example.png"></p> </td> <td> <p>The <code>cubic-bezier()</code> functional notation defines a <a class="external" title="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" rel="external" href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" target="_blank">cubic Bézier curve</a>. As these curves are continuous, they are often used to smooth down the start and end of the animation and are therefore sometimes called <em>easing functions</em>.</p> <p>A cubic Bézier curve is defined by four points P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, and P<sub>3</sub>. P<sub>0</sub> and P<sub>3</sub> are the start and the end of the curve and, in CSS these points are fixed as the coordinates are ratios (the abscissa the ratio of time, the ordinate the ratio of the output range). P<sub>0</sub> is <code>(0, 0)</code> and represents the initial time and the initial state, P<sub>3</sub> is <code>(1, 1)</code> and represents the final time and the final state.</p> <p>Not all cubic Bézier curves are suitable as timing functions as not all are <a class="external" title="http://en.wikipedia.org/wiki/Function_%28mathematics%29" rel="external" href="http://en.wikipedia.org/wiki/Function_%28mathematics%29" target="_blank">mathematical functions</a>, i.e. curves that for a given abscissa have zero or one value. With P<sub>0</sub> and P<sub>3</sub> fixed as defined by CSS, a cubic Bézier curve is a function, and is therefore valid, if and only if the abscissas of P<sub>1</sub> and P<sub>2</sub> are both in the <code>[0, 1]</code> range.</p> <p>Cubic Bézier curves with the P<sub>1</sub> or P<sub>2</sub> ordinate outside the <code>[0, 1]</code> range may generate <em>bouncing</em> effects.</p> <p>When you specify an invalid <code>cubic-bezier</code> curve, CSS ignores the whole property.</p> </td> </tr></tbody></table>
+</div>
+</div>
+<div id="section_4">
+<span id="Syntax"></span><h4 class="editable">Syntax</h4>
+<pre><code>cubic-bezier(<em>x<sub>1</sub></em>, <em>y<sub>1</sub></em>, <em>x<sub>2</sub></em>, <em>y<sub>2</sub></em>)</code>
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin-left: 40px;"><strong><em>x<sub>1</sub></em>, <em>y<sub>1</sub></em>, <em>x<sub>2</sub></em>, <em>y<sub>2</sub></em></strong></dt> <dd style="margin-left: 40px;">Are <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> values representing the abscissas and ordinates of the P<sub>1</sub> and P<sub>2</sub> points defining the cubic Bézier curve. x<sub>1</sub> and x<sub>2</sub> must be in the range [0, 1] or the value is invalid.</dd>
+</dl>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h4 class="editable">Examples</h4>
+<p>These cubic Bézier curves are valid for use in CSS :</p>
+<pre><code>cubic-bezier(0.1, 0.7, 1.0, 0.1)   </code>The canonical Bézier curve with four &lt;number&gt; in the [0,1] range.
+cubic-bezier(0, 0, 1, 1)           Using &lt;integer&gt; is valid as any &lt;integer&gt; is also a &lt;number&gt;.
+cubic-bezier(-0.2, 0.6, -0.1, 0)   Negative values for abscissas are valid, leading to bouncing effects.
+cubic-bezier(1.1, 0, 4, 0)         Values &gt; 1.0 for abscissas are also valid.
+</pre>
+<p>These cubic Bézier curves definitions are invalid :</p>
+<pre>cubic-bezier(0.1, red, 1.0, green) Though the animated output type may be a color, Bézier curves work w/ numerical ratios.
+cubic-bezier(0.1, 4,   0.6, 2.45)  Ordinates must be in the [0, 1] range or the curve is not a function of time.
+cubic-bezier(0.3, 2.1)             The two points must be defined, there is no default value.
+cubic-bezier(0.3, -1.9, 2.1, -0.2) Ordinates must be in the [0, 1] range or the curve is not a function of time.
+</pre>
+<div id="section_6">
+<span id="The_steps()_class_of_timing-functions"></span><h3 class="editable">The <code>steps()</code> class of timing-functions</h3>
+<br><table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody>
+<tr>
+<td><a title="steps(2,start).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5786/=steps%2525282%25252Cstart%252529.png"><img alt="steps(2,start).png" class="internal default" style="width: 119px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5786/=steps%2525282%25252Cstart%252529.png?size=thumb"></a></td> <td><a title="steps(4,end).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5787/=steps%2525284%25252Cend%252529.png"><img alt="steps(4,end).png" class="internal default" style="width: 119px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5787/=steps%2525284%25252Cend%252529.png?size=thumb"></a></td> <td rowspan="2">The <code>steps()</code> functional notation defines a <a class="external" title="http://en.wikipedia.org/wiki/Step_function" rel="external" href="http://en.wikipedia.org/wiki/Step_function" target="_blank">step function</a> dividing the domain of output values in equidistant steps. This subclass of step functions are sometimes also called staircase functions.</td> </tr>
+<tr style="text-align: center;">
+<td style="white-space: nowrap;"><code>steps(2, start)</code></td> <td><code>steps(4, end)</code></td> </tr>
+</tbody></table>
+<p> </p>
+<div id="section_7">
+<span id="Syntax_2"></span><h4 class="editable">Syntax</h4>
+<pre><code>steps(<em>number_of_steps</em>, <em>direction</em>)</code>
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin-left: 40px;"><strong><em>number_of_steps</em></strong></dt> <dd style="margin-left: 40px;">Is a strictly positive <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> representing the amount of equidistant treads composing the stepping function.</dd> <dt style="margin-left: 40px;"><strong><em>direction</em></strong></dt> <dd style="margin-left: 40px;">Is a keyword indicating if it the function is <a class="external" title="http://en.wikipedia.org/wiki/Left-continuous#Directional_and_semi-continuity" rel="external" href="http://en.wikipedia.org/wiki/Left-continuous#Directional_and_semi-continuity" target="_blank">left- or right-continuous</a>: <ul>
+<li style="margin-left: 40px;">
+<code>start</code> denotes a left-continuous function, so that the first step happens when the animation begins;</li> <li style="margin-left: 40px;">
+<code>end</code> denotes a right-continuous function, so that the last step happens when the animation ends.</li> </ul>
+</dd>
+</dl>
+</div>
+<div id="section_8">
+<span id="Examples_2"></span><h4 class="editable">Examples</h4>
+<p>These timing functions are valid :</p>
+<pre>steps(5, end)          There is 5 treads, the last one happens right before the end of the animation.
+steps(2, start)        A two-step staircase, the first one happening at the start of the animation.
+</pre>
+<p>These timing function are invalid :</p>
+<pre>steps(2.0, end)        The first parameter must be an <a href="mks://localhost/en/CSS/integer" title="integer">&lt;integer&gt;</a> and cannot be a real value, even if it is equal to one.
+steps(-3, start)       The amount of steps must be non-negative.
+steps(0, end)          There must be at least one step.
+steps(2)               The second parameter is not optional.
+steps(start, 3)        Though of different types, the order of parameter is important.
+step(1, end)           Even if there is one step, the function name is steps, with the plural 's'
+steps(3 end)           The two parameters must be separated with a comma; one or several spaces is not enough.
+</pre>
+</div>
+</div>
+<div id="section_9">
+<span id="Keywords_for_common_timing-functions"></span><h3 class="editable">Keywords for common timing-functions</h3>
+<div id="section_10">
+<span id="linear"></span><h4 class="editable"><code>linear</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr style="vertical-align: top;">
+<td><a title="cubic-bezier,linear.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%25252Clinear.png"><img alt="cubic-bezier,linear.png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%25252Clinear.png?size=thumb"></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.0, 0.0, 1.0, 1.0</code><code>)</code>. Using this timing function, the animation goes from its initial state to its final one regularly, with a constant speed.</p> </td> </tr></tbody></table>
+</div>
+<div id="section_11">
+<span id="ease"></span><h4 class="editable"><code>ease</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr style="vertical-align: top;">
+<td><a title="cubic-bezier,ease.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%25252Cease.png"><img alt="cubic-bezier,ease.png" class="internal default" style="width: 117px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%25252Cease.png?size=thumb"></a></td> <td>This keyword represents the timing function <code>cubic-bezier(0.25, 0.1, 0.25, 1.0)</code>. This function is similar to <a title="https://developer.mozilla.org/en/CSS/timing-function#ease-in-out" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease-in-out"><code>ease-in-out</code></a>, though it accelerates more sharply at the beginning and the acceleration and already starts to slow down near the medium of it.</td> </tr></tbody></table>
+</div>
+<div id="section_12">
+<span id="ease-in"></span><h4 class="editable"><code>ease-in</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr style="vertical-align: top;">
+<td><a title="cubic-bezier,ease-in.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%25252Cease-in.png"><img alt="cubic-bezier,ease-in.png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%25252Cease-in.png?size=thumb"></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.42, 0.0, 1.0, 1.0</code><code>)</code>. The animation begins slowly, then progressively accelerates until the final state is reached and the animation stops abruptly.</p> </td> </tr></tbody></table>
+</div>
+<div id="section_13">
+<span id="ease-in-out"></span><h4 class="editable"><code>ease-in-out</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr style="vertical-align: top;">
+<td><a title="cubic-bezier,ease-in-out.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%25252Cease-in-out.png"><img alt="cubic-bezier,ease-in-out.png" class="internal default" style="width: 121px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%25252Cease-in-out.png?size=thumb"></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.42, 0.0, 0.58, 1.0</code><code>)</code>. With this timing function, the animation starts slowly, accelerates than slows down when approaching to its final state. At the begin, it behaves similarly to the <a title="https://developer.mozilla.org/en/CSS/timing-function#ease-in" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease-in"><code>ease-in</code></a> function, at the end, it is similar to the <a title="https://developer.mozilla.org/en/CSS/timing-function#ease-out" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease-out"><code>ease-out</code></a> function.</p> </td> </tr></tbody></table>
+</div>
+<div id="section_14">
+<span id="ease-out"></span><h4 class="editable"><code>ease-out</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr style="vertical-align: top;">
+<td><a title="cubic-bezer,ease-out.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%25252Cease-out.png"><img alt="cubic-bezer,ease-out.png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%25252Cease-out.png?size=thumb"></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.0, 0.0, 0.58, 1.0</code><code>)</code>. The animation starts quickly then slow progressively down when approaching to its final state.</p> </td> </tr></tbody></table>
+</div>
+<div id="section_15">
+<span id="step-start"></span><h4 class="editable"><code>step-start</code></h4>
+<br><table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr>
+<td>
+<a title="steps(1,start).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5763/=steps%2525281%25252Cstart%252529.png"><img align="left" alt="steps(1,start).png" class="internal lwrap" style="width: 119px; height: 159px;" src="https://developer.mozilla.org/@api/deki/files/5763/=steps%2525281%25252Cstart%252529.png?size=webview"></a>This keyword represents the timing function <code>steps(1, start)</code>. Using this timing function, the animation jumps immediately to the end state and stay in that position until the end of the animation.</td> <td> </td> </tr></tbody></table>
+</div>
+<div id="section_16">
+<span id="step-end"></span><h4 class="editable"><code>step-end</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody><tr style="vertical-align: top;">
+<td><a title="steps(1,end).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5764/=steps%2525281%25252Cend%252529.png"><img alt="steps(1,end).png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5764/=steps%2525281%25252Cend%252529.png?size=thumb"></a></td> <td> <p>This keyword represents the timing function <code>steps(1, end)</code>. Using this timing function, the animation stays in its initial state until the end, where it directly jumps to its final position.</p> </td> </tr></tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div id="section_17">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-transitions/#transition-timing-function" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#transition-timing-function" target="_blank">CSS Transitions Level 3</a></td> <td>Working Draft
+</td> <td>Defined anonymously</td> </tr>
+<tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-animations/#animation-timing-function_tag" rel="external" href="http://dev.w3.org/csswg/css3-animations/#animation-timing-function_tag" target="_blank">CSS Animations Level 3</a></td> <td>Working Draft
+</td> <td>Defined anonymously, says to see definition in the CSS Transitions Module</td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_18">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0 (2.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.5 <a class="external" title="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" rel="external" href="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" target="_blank">[1]</a>
+</td> <td>3.1</td> </tr>
+<tr>
+<td>
+<code>cubic-bezier()</code> w/ ordinate ∉ [0,1]</td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>Nightly <a class="link-https" title="https://bugs.webkit.org/show_bug.cgi?id=45761" rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=45761" target="_blank">[2]</a>
+</td> </tr>
+<tr>
+<td><code>steps()</code></td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0 (2.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10 <a class="external" title="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" rel="external" href="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" target="_blank">[3]</a>
+</td> <td>2.0 <a title="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" class=" external" rel="external" href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" target="_blank">[4]</a>
+</td> </tr>
+<tr>
+<td>
+<code>cubic-bezier()</code> w/ ordinate ∉ [0,1]</td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td><code>steps()</code></td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>5.0 <a title="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" class=" external" rel="external" href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" target="_blank">[5]</a>
+</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_19">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition-timing-function">transition-timing-function</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/animation-timing-function">animation-timing-function</a></code> needing a <code>&lt;timing-function&gt;</code> value.</li> <li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>

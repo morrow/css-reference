@@ -1,0 +1,117 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> border-top-left-radius </code>CSS property sets the rounding of the top-left corner of the element.</p>
+<p>Previous to Gecko 2.0 (Firefox 4.0) it was named<code> -moz-border-radius-topleft</code>. This is supported as an alias for a short transitional period.</p>
+<p>See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-radius">border-radius</a></code> for more information.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>:<code> 0 </code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: two absolute 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>s</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-border-radius-topleft:  &lt;border-radius&gt; &lt;border-radius&gt;?
+border-top-left-radius:      &lt;border-radius&gt; &lt;border-radius&gt;? 
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Accepts one<code> &lt;border-radius&gt; </code>value.<br><span style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding:0px 2px;">New in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3.5_for_developers">Firefox 3.5</a></span>
+ An optional second value for elliptical corners. The two values define the radii of a quarter ellipse that defines the shape of the corner. The first value is the horizontal radius. The optional second value is the vertical radius, if omitted it's equal to the first. <br><code>&lt;border-radius&gt; </code>represents one of:</p>
+<dl>
+<dt>&lt;length&gt;</dt> <dd>See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> for possible units.</dd> <dt>&lt;percentage&gt;</dt> <dd>
+<strong>Since Gecko 2.0 (Firefox 4.0):</strong> Percentages for the horizontal radius refer to the width of the box, whereas percentages for the vertical radius refer to the height of the box.<br><strong>In previous Gecko/Firefox versions <span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     :</strong> Relative to the width of the box (the percentage is relative to the width even when specifying the radius for a height).</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+div { -moz-border-radius-topleft:  20px;  /* Firefox up to version 3.6 */
+   -webkit-border-top-left-radius: 20px;  /* Safari, Chrome (before WebKit version 533) */
+           border-top-left-radius: 20px;  /* Firefox 4; browsers with CSS3 support */
+}
+</pre>
+<pre>
+/* elliptical corners supported since Firefox 3.5 (Gecko 1.9.1) */
+  
+div { -moz-border-radius-topleft:   20px;       /* round corner, fallback for Firefox 1-3.0 */
+      -moz-border-radius-topleft:   20px 10px;  /* elliptical border, Firefox 3.5-3.6 */
+    -webkit-border-top-left-radius: 20px 10px;  /* Safari, Chrome (before WebKit version 532.5) */
+            border-top-left-radius: 20px 10px;  /* Firefox 4; browsers with CSS3 support */
+}</pre>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table width="1804" class="compat-table"><tbody>
+<tr>
+<th width="160">Feature</th> <th colspan="2">Chrome</th> <th colspan="2">Firefox (Gecko)</th> <th colspan="2">Internet Explorer</th> <th colspan="2">Opera</th> <th colspan="2">Safari (WebKit)</th> </tr>
+<tr>
+<td rowspan="2">Basic support</td> <td width="40"> <p>0.2</p> </td> <td width="269"><code>-webkit-border-top-left-radius<br> -webkit-border-top-right-radius<br> -webkit-border-bottom-right-radius<br> -webkit-border-bottom-left-radius</code></td> <td width="168"> <p>1.0 (1.0)</p> </td> <td width="275"><code>-moz-border-radius-topleft<br> -moz-border-radius-topright<br> -moz-border-radius-bottomright<br> -moz-border-radius-bottomleft</code></td> <td width="35" rowspan="2"> <p>9.0</p> <p> </p> </td> <td width="180" rowspan="2"><code>border-top-left-radius<br> border-top-right-radius<br> border-bottom-right-radius<br> border-bottom-left-radius</code></td> <td width="40" rowspan="2">10.5</td> <td width="181" rowspan="2"><code>border-top-left-radius<br> border-top-right-radius<br> border-bottom-right-radius<br> border-bottom-left-radius</code></td> <td width="177">3.0 (522)</td> <td width="248"><code>-webkit-border-top-left-radius<br> -webkit-border-top-right-radius<br> -webkit-border-bottom-right-radius<br> -webkit-border-bottom-left-radius</code></td> </tr>
+<tr>
+<td> <p>4.0</p> <p> </p> </td> <td>
+<code>border-top-left-radius<br> border-top-right-radius<br> border-bottom-right-radius<br></code>border-bottom-left-radius</td> <td>4.0 (2.0)</td> <td><code>border-top-left-radius<br> border-top-right-radius<br> border-bottom-right-radius<br> border-bottom-left-radius</code></td> <td>5.0 (532.5)</td> <td><code>border-top-left-radius<br> border-top-right-radius<br> border-bottom-right-radius<br> border-bottom-left-radius</code></td> </tr>
+<tr>
+<td rowspan="2">Percentages</td> <td colspan="2" rowspan="2">4.0</td> <td colspan="2">1.0 (1.0) <span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     </td> <td colspan="2" rowspan="2">9.0</td> <td colspan="2" rowspan="2">10.5</td> <td colspan="2" rowspan="2">5.0 (532.5)</td> </tr>
+<tr>
+<td colspan="2">4.0 (2.0)</td> </tr>
+<tr>
+<td rowspan="2">Elliptical corners</td> <td colspan="2" rowspan="2">0.2</td> <td colspan="2" rowspan="2">3.5 (1.9.1)</td> <td colspan="2" rowspan="2">9.0</td> <td colspan="2" rowspan="2">10.5</td> <td colspan="2">3.0 (522 )</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><a title="http://www.w3.org/TR/css3-background/#the-border-radius" class="external" rel="external" href="http://www.w3.org/TR/css3-background/#the-border-radius" target="_blank">CSS 3 Backgrounds and Borders #border-radius</a></p>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-radius">border-radius</a></code></p>
+<p></p>
+</div>

@@ -1,0 +1,108 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> outline-style </code>CSS property is used to set the style of the outline of an element. An outline is a line that is drawn around elements, outside the border edge, to make the element stand out.</p>
+<p>It is often more convenient to use the shortcut property 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline">outline</a></code> instead of<code> outline-style</code>,<code> outline-width </code>and<code> outline-color</code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: specified value</li>
+</ul>
+<p>In browsers prior to <a title="en/Gecko" rel="internal" href="https://developer.mozilla.org/en/Gecko">Gecko</a> 1.8 (<a title="en/Firefox_1.5_for_developers" rel="internal" href="https://developer.mozilla.org/en/Firefox_1.5_for_developers">Firefox 1.5</a>) this effect can be achieved using <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">Mozilla CSS Extension</a> 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-style">-moz-outline-style</a></code>.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+outline-style:  auto | &lt;border-style&gt; | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p><code>&lt;border-style&gt; </code>can be any of the following:</p>
+<dl>
+<dt>none</dt> <dd>No outline (
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code> is<code> 0</code>).</dd> <dt>dotted</dt> <dd style="outline:dotted">The outline is a series of dots.</dd> <dt>dashed</dt> <dd style="outline:dashed">The outline is a series of short line segments.</dd> <dt>solid</dt> <dd style="outline:solid">The outline is a single line.</dd> <dt>double</dt> <dd style="outline:double">The outline is two single lines. The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code> is the sum of the two lines and the space between them.</dd> <dt>groove</dt> <dd style="outline:groove">The outline looks as though it were carved into the canvas.</dd> <dt>ridge</dt> <dd style="outline:ridge">The opposite of<code> groove</code>: the outline looks as though it were coming out of the canvas.</dd> <dt>inset</dt> <dd style="outline:inset">The outline makes the box look as though it were embeded in the canvas.</dd> <dt>outset</dt> <dd style="outline:outset">The opposite of<code> inset</code>: the outline makes the box look as though it were coming out of the canvas.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+.example {  /* make the outline a 3D groove style */
+ 
+            outline-style: groove;        /* same result as "outline: groove" */ 
+}
+</pre>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td> 1.0</td> <td>1.5 (1.8)</td> <td>8.0</td> <td>7.0</td> <td>1.2 (125)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p>See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline">outline</a></code> property</p>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline">outline</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-width">outline-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-style">outline-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-color">outline-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-offset">outline-offset</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius">-moz-outline-radius</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-topleft">-moz-outline-radius-topleft</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-topright">-moz-outline-radius-topright</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-bottomright">-moz-outline-radius-bottomright</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-outline-radius-bottomleft">-moz-outline-radius-bottomleft</a></code></span></p>
+</div>

@@ -1,0 +1,132 @@
+body {
+  background:#eee;
+  font-family:arial;
+  font-size:12px;
+  overflow-y:scroll;
+}
+
+ul, ul li {
+  margin:.25em;
+  padding:.25em;
+}
+
+h1 {
+  display:inline-block;
+}
+
+.root {
+  width:98%;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.sidepane {
+  width:20%;
+}
+
+.results {
+  width:74%;
+}
+
+.root > * {
+  min-height:2em;
+  padding:.5em 1em;
+  margin:5px; 
+  vertical-align:top;
+}
+
+a, a:visited {
+  color:inherit;
+  text-decoration:none;
+  opacity:.8;
+}
+
+a:hover {
+  opacity:10;
+}
+
+.root {
+  padding:2em;
+}
+
+.root > *{
+  display:inline-block;
+}
+
+.results .exact {
+  margin:0.5em;
+  background:white;
+}
+
+
+li {
+  display:block;
+  margin:1em;
+}
+
+.links a {
+  text-align:right;
+  margin:1em;
+  background-repeat:no-repeat;
+  background-position-left:0px;
+  background-position-top:0px;
+  background-size:14px;
+  padding-left:1.7em;
+}
+
+.history li, .approximate li {
+  cursor:pointer;
+}
+
+.history li:hover, .approximate li:hover {
+  background:#ccc;
+}
+
+.history li.selected {
+  color:green;
+}
+
+.header {
+  border-bottom:1px solid #ccc;
+  display:block;
+  vertical-align:middle;
+}
+
+.header > * {
+  margin:0em .5em;
+}
+
+.header .links {
+  float:right;
+  margin:.5em;
+}
+
+table {
+  width:100%;
+  text-align:center;
+}
+
+table th {
+  background:#ccc;
+  padding:.3em;
+}
+
+table tr td {
+  background:#eee;
+  padding:.5em;
+}
+
+input[type=search] {
+  padding:.2em;
+  border:2px solid transparent;
+  border-bottom-color:#ccc;
+  width:100%;
+}
+
+.results {
+  background:white;
+}
+
+.links .github { background-image:url(/images/github.png); }
+.links .mdn { background-image:url(/images/mdn.jpg); }
+.links .source { background-image:url(/images/page.png); }

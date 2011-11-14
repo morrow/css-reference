@@ -1,0 +1,94 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>border-bottom</code> property is a shorthand property that sets the values of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-color">border-bottom-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-width">border-bottom-width</a></code>. These properties describe the bottom border of elements.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: see individual properties for details</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: see individual properties</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+border-bottom: [ &lt;border-width&gt; || &lt;border-style&gt; || &lt;border-color&gt; ] | <em>inherit</em>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;border-width&gt; </dt> <dd>See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-width">border-bottom-width</a></code>.</dd> <dt>&lt;border-style&gt; </dt> <dd>See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code>.</dd> <dt>&lt;border-color&gt; </dt> <dd>See 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-color">border-bottom-color</a></code>.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/border.html">View Live Examples</a></p>
+<pre>
+element { 
+    border-bottom: 1px solid #000;
+}
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>The three values of the shorthand property can be specified in any order, and one or two of them may be omitted.</p>
+<p>As with all shorthand properties, <code>border-bottom</code> always sets the values of all of the properties that it can set, even if they are not specified. It sets those that are not specified to their default values. This means that:</p>
+<pre>
+  border-bottom-style: dotted;
+  border-bottom: thick green;</pre>
+<p>is actually the same as</p>
+<pre>
+  border-bottom-style: dotted;
+  border-bottom: none thick green;</pre>
+<p>and the value of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code> given before <code>border-bottom</code> is ignored.</p>
+<p>Since the default value of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code> is <code>none</code>, not specifying the &lt;border-style&gt; part of the value means that the property specifies no border.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS1#border-bottom" title="http://www.w3.org/TR/CSS1#border-bottom" target="_blank">CSS 1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/box.html#border-shorthand-properties" title="http://www.w3.org/TR/CSS21/box.html#border-shorthand-properties" target="_blank">CSS 2.1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/css3-background/#the-border-shorthands" title="http://www.w3.org/TR/css3-background/#the-border-shorthands" target="_blank">CSS 3</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> </tr>
+<tr>
+<td>Chrome</td> <td>1.0</td> </tr>
+<tr>
+<td>Firefox</td> <td>1</td> </tr>
+<tr>
+<td>Internet Explorer</td> <td>4</td> </tr>
+<tr>
+<td>Netscape</td> <td>4</td> </tr>
+<tr>
+<td>Opera</td> <td>3.5</td> </tr>
+</tbody></table>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom">border-bottom</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-width">border-bottom-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-color">border-bottom-color</a></code>,</p>
+<p></p>
+</div>

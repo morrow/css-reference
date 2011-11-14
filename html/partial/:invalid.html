@@ -1,0 +1,113 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> 
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2.0</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:invalid</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/input">&lt;input&gt;</a></code> element whose content fails to <a title="en/HTML/HTML5/Constraint_validation" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/Constraint_validation">validate</a> according to the input's type setting. This allows you to easily have invalid fields adopt an appearance that helps the user identify and correct errors.</p>
+<p>By default, Gecko does not apply a style to the <code>:invalid</code> pseudo-class. However it does apply a style (a red "glow" using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-shadow">box-shadow</a></code> property) to the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3A-moz-ui-invalid">:-moz-ui-invalid</a></code> pseudo-class, which applies in a subset of cases for <code>:invalid</code>.</p>
+<p>You can disable the glow using the following CSS, or completely override it to alter the appearance of invalid fields.</p>
+
+          <pre name="code" class="css">:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}</pre>
+        
+</div>
+<div id="section_2">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<div id="section_3">
+<span id="Radio_buttons"></span><h4 class="editable">Radio buttons</h4>
+<p>If any of the radio buttons in a group (that is, with the same value for their <code>name</code> attribute) is <code>required</code>, the <code>:invalid</code> pseudo-class is applied to all of them if none of the buttons in the group are selected.</p>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>This example presents a simple form that colors elements green when they validate and red when they don't.</p>
+
+          <pre name="code" class="xml">&lt;style type="text/css"&gt;
+  :invalid {
+    background-color: #ffdddd;
+  }
+  
+  :valid {
+    background-color: #ddffdd;
+  }
+  
+  :required {
+    border-color: #800000;
+    border-width: 3px;
+  }
+&lt;/style&gt;
+
+&lt;form&gt;
+  &lt;label&gt;Enter a URL:&lt;/label&gt;
+  &lt;input type="url" /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;label&gt;Enter an email address:&lt;/label&gt;
+  &lt;input type="email" required/&gt;
+&lt;/form&gt;</pre>
+        
+<p><a title="https://developer.mozilla.org/samples/cssref/input-validation.html" rel="internal" href="https://developer.mozilla.org/samples/cssref/input-validation.html" class="new ">View this sample live</a>.</p>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>4.0 (2.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>9.5</td> </tr>
+<tr>
+<td> <p>Safari | Chrome | WebKit</p> </td> <td> <p>5 | 8 | 534.10</p> </td> </tr>
+</tbody></table>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a title="http://www.w3.org/TR/css3-ui/#pseudo-validity" class=" external" rel="external" href="http://www.w3.org/TR/css3-ui/#pseudo-validity" target="_blank">CSS 3 Basic User Interface Module</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Avalid">:valid</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3A-moz-submit-invalid">:-moz-submit-invalid</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Arequired">:required</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aoptional">:optional</a></code>
+</li>
+</ul>
+</div>

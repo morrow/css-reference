@@ -1,0 +1,170 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> position </code>CSS property chooses alternative rules for positioning elements, designed to be useful for scripted animation effects.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>:<code> static</code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+<p>A <strong>positioned element</strong> is an element whose <a title="en/CSS/computed_value" rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value">computed</a> position property is <code>relative</code>, <code>absolute</code>, or <code>fixed</code>.</p>
+<p>An <strong>absolutely positioned element</strong> is an element whose <a title="en/CSS/computed_value" rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value">computed</a> position property is <code>absolute</code> or <code>fixed</code>.</p>
+<p>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/bottom">bottom</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code> properties specify the position of positioned elements.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+position:  static | relative | absolute | fixed | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>static</dt> <dd>Normal behavior.  The<code> top</code>,<code> right</code>,<code> bottom</code>, and<code> left </code>properties do not apply.</dd> <dt>relative</dt> <dd>Lay out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned).  The effect of<code> position:relative </code>on<code> table-*-group</code>,<code> table-row</code>,<code> table-column</code>,<code> table-cell</code>, and<code> table-caption </code>elements is undefined.</dd> <dt>absolute</dt> <dd>Do not leave space for the element.  Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block. Absolutely positioned boxes can have margins, they do not collapse with any other margins.</dd> <dt>fixed</dt> <dd>Do not leave space for the element.  Instead, position it at a specified position relative to the screen's viewport and doesn't move when scrolled. When printing, position it at that fixed position on <em>every page</em>.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<div id="section_5">
+<span id="Relative_positioning"></span><h4 class="editable">Relative positioning</h4>
+<p>To position an element relatively 20px from the top and left of its normal position, the following CSS is used.</p>
+<pre>
+#two { position: relative; top: 20px; left: 20px; }
+</pre>
+<p> Note how the other elements are displayed as if "Two" were in it's normal position and taking up space.</p>
+<p><img style="width: 519px; height: 136px;" alt="" class="internal" src="https://developer.mozilla.org/@api/deki/files/4922/=relative-positioning.png"></p>
+</div>
+<div id="section_6">
+<span id="Absolute_positioning"></span><h4 class="editable">Absolute positioning</h4>
+<p>Elements that are positioned relatively are still considered to be in the normal flow of elements in the document.  In contrast, an element that is positioned absolutely is taken out of the flow and thus takes up no space when placing other elements.  The absolutely positioned element is positioned relative to <em>nearest positioned ancestor</em>.  If a positioned ancestor doesn't exist, the initial container is used.</p>
+<p>In the example below, the blue ancestor div is positioned relative (so it becomes the nearest positioned ancestor) and box Two is positioned absolutely:</p>
+<pre>
+#ancestor { position: relative; background: #ddf; width: 500px; }
+#two { position: absolute; top: 20px; left: 20px; }
+</pre>
+<p><img style="width: 518px; height: 134px;" alt="" class="internal" src="https://developer.mozilla.org/@api/deki/files/4923/=absolute-positioning.png"></p>
+<p>If #ancestor had not been positioned relative, box Two would have appeared relative to the upper left corner of the page.</p>
+</div>
+<div id="section_7">
+<span id="Fixed_positioning"></span><h4 class="editable">Fixed positioning</h4>
+<p>Fixed positioning is similar to absolute positioning, with the exception that the element's containing block is the viewport.  This is often used to create a floating element that stays in the same position even after scrolling the page.  In the example below the "One" box is fixed 80px from the top of the page and 20px from the left:</p>
+<pre>
+#one { position: fixed; top: 80px; left: 20px }
+</pre>
+<p>When viewing the top of the page, the position box appears in the upper left, and after scrolling, it remains in the same place relative to the viewport:</p>
+<p><img align="left" style="width: 160px; height: 125px;" alt="fixed-1.png" class="internal lwrap" src="https://developer.mozilla.org/@api/deki/files/4924/=fixed-1.png?size=thumb"></p>
+<p><img align="left" style="width: 160px; height: 100px;" alt="fixed-2.png" class="internal lwrap" src="https://developer.mozilla.org/@api/deki/files/4925/=fixed-2.png?size=thumb"></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>  </p>
+</div>
+</div>
+<div id="section_8">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>For relatively positioned elements, the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> or 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/bottom">bottom</a></code> property specifies the vertical offset from the normal position and the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code> or 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code> property specifies the horizontal offset.</p>
+<p>For absolutely positioned elements, the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/bottom">bottom</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code> properties specify offsets from the edge of the element's containing block (what the element is positioned relative to). The margin of the element is then positioned inside these offsets.</p>
+<p>Most of the time, absolutely positioned elements have <code>auto</code> values of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/height">height</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/width">width</a></code> computed to fit the contents of the element. However, non-replaced absolutely positioned elements can be made to fill the available space by specifying (as other than <code>auto</code>) both 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/bottom">bottom</a></code> and leaving 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/height">height</a></code> unspecified (that is, <code>auto</code>). Likewise for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/width">width</a></code>.</p>
+<p>Except for the case just described of absolutely positioned elements filling the available space:</p>
+<ul>
+<li>If both 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/bottom">bottom</a></code> are specified (technically, not <code>auto</code>), 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code> wins.</li> <li>If both 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code> are specified, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code> wins when 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code> is <code>ltr</code> (English, horizontal Japanese, etc.) and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code> wins when 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/direction">direction</a></code> is <code>rtl</code> (Arabic, Hebrew, etc.).</li>
+</ul>
+</div>
+<div id="section_9">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>4.0</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>
+<code>fixed </code>value</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>7.0</td> <td>4.0</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_10">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/visuren.html#choose-position" rel="external" href="http://www.w3.org/TR/CSS21/visuren.html#choose-position" target="_blank">CSS 2.1 Visual formatting #position</a></li>
+</ul>
+</div>
+<div id="section_11">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/float">float</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/top">top</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/right">right</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/bottom">bottom</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/left">left</a></code></p>
+<p></p>
+</div>

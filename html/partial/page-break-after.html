@@ -1,0 +1,104 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>page-break-after</code> CSS property adjusts page breaks <em>after</em> the current element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/auto">auto</a></code>
+</li> <li>Applies to: block elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>, paged</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+page-break-after: auto | always | avoid | left | right | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>auto</dt> <dd>Initial value. Automatic page breaks (neither forced nor forbidden).</dd> <dt>always</dt> <dd>Always force page breaks after the element.</dd> <dt>avoid 
+<span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented</span>
+</dt> <dd>Avoid page breaks after the element.</dd> <dt>left 
+<span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented</span>
+</dt> <dd>Force page breaks after the element so that the next page is formatted as a left page.</dd> <dt>right 
+<span class="unimplementedInlineTemplate" style="border: 1px solid rgb(246, 111, 111); background-color: rgb(255, 153, 204); font-size: x-small; white-space: nowrap; padding: 2px;">Unimplemented</span>
+</dt> <dd>Force page breaks after the element so that the next page is formatted as a right page.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+/* display headlines on a new page */
+h1,h2, h3 { page-break-after:always; } 
+</pre>
+</div>
+<div id="section_5">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0) [*]</td> <td>4.0</td> <td>7.0</td> <td>1.2 (125)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+<p>[*] Gecko only supports <code>page-break-after:always</code>. See 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=132035" class="external" title="NEW - Implement missing page-break-* CSS2.1 features">
+bug 132035</a>
+</p>
+</div>
+</div>
+<div id="section_6">
+<span id="Specification"></span><h3 class="editable">Specification</h3>
+<ul>
+<li><a lang="en" class="external" rel="external" href="http://www.w3.org/TR/css3-page/#page-break-after" title="http://www.w3.org/TR/css3-page/#page-break-after" target="_blank">CSS 3 Paged Media #page-break-after</a></li> <li><a lang="en" class="external" rel="external" href="http://www.w3.org/TR/CSS2/page.html#propdef-page-break-after" title="http://www.w3.org/TR/CSS2/page.html#propdef-page-break-after" target="_blank">CSS 2.1 Paged Media #page-break-after</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<a title="en/CSS/page-break-before" rel="internal" href="https://developer.mozilla.org/en/CSS/page-break-before"><code>page-break-before</code></a>, <a title="en/CSS/page-break-inside" rel="internal" href="https://developer.mozilla.org/en/CSS/page-break-inside"><code>page-break-inside</code></a>
+</li> <li>
+<a title="de/CSS/orphans" rel="internal" href="https://developer.mozilla.org/en/CSS/orphans"><code>orphans</code></a>, <a title="en/CSS/widows" rel="internal" href="https://developer.mozilla.org/en/CSS/widows"><code>widows</code></a>
+</li>
+</ul>
+<p></p>
+</div>

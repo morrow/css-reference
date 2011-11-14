@@ -1,0 +1,112 @@
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code> property specifies the weight or boldness of the font. However, some fonts are not available in all weights; some are available only on <code>normal</code> and <code>bold</code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: N/A</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: One of the numeric values (100, etc.), or one of the numeric values plus one of the relative values (bolder or lighter)</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<p><code>font-weight:</code> <code>normal</code> | <code>bold</code> | <code>bolder</code> | <code>lighter</code> | <code>100</code> | <code>200</code> | <code>300</code> | <code>400</code> | <code>500</code> | <code>600</code> | <code>700</code> | <code>800</code> | <code>900</code> | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></p>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>normal </dt> <dd>Normal font weight. Same as <code>400</code>.</dd> <dt>bold </dt> <dd>Bold font weight. Same as <code>700</code>.</dd> <dt>lighter </dt> <dd>One font weight lighter than the parent element (among the available weights of the font).</dd> <dt>bolder </dt> <dd>One font weight darker than the parent element (among the available weights of the font).</dd> <dt>100, 200, 300, 400, 500, 600, 700, 800, 900 </dt> <dd>Numeric font weights for fonts that provide more than just normal and bold. If the exact weight given is unavailable, then <code>600</code>-<code>900</code> use the closest available darker weight (or, if there is none, the closest available lighter weight), and <code>100</code>-<code>500</code> use the closest available lighter weight (or, if there is none, the closest available darker weight). This means that for fonts that provide only <code>normal</code> and <code>bold</code>, <code>100</code>-<code>500</code> are normal, and <code>600</code>-<code>900</code> are bold.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/font-weight.html">View Live Examples</a></p>
+<pre>
+/* Set paragraph text to be bold. */
+p {font-weight: bold}
+
+/* Set h1 (level 1 heading) text to one step darker than
+   normal but less than a standard bold. */
+h1 {font-weight: 500}
+
+/* Sets text enclosed within span tag to be one step lighter
+   than the parent. */
+span {font-weight: lighter}
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS1#font-weight" title="http://www.w3.org/TR/CSS1#font-weight" target="_blank">CSS 1</a></li> <li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/fonts.html#propdef-font-weight" title="http://www.w3.org/TR/CSS21/fonts.html#propdef-font-weight" target="_blank">CSS 2.1</a></li> <li><a class="external" title="http://www.w3.org/TR/css3-fonts/#descdef-font-weight" rel="external" href="http://www.w3.org/TR/css3-fonts/#descdef-font-weight" target="_blank">CSS 3</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td>1.0 (1.7 or earlier)
+</td> <td>3.0</td> <td>3.5</td> <td>1.3</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1)
+</td> <td>6.0</td> <td>6.0</td> <td>3.1</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span></p>
+<p> </p>
+<p></p>
+</div>

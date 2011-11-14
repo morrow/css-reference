@@ -1,0 +1,40 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;"><p style="margin: 4px 0px;">This content covers features introduced in <a rel="custom" href="https://developer.mozilla.org/en/Firefox_3_for_developers">Firefox 3</a>.</p></div>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:default</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any user interface element that is the default among a group of similar elements.</p>
+<p>For example, the default button in a set of buttons could be selected using this pseudo-class.</p>
+<p>User interface elements that permit multiple selections may have multiple defaults set in order to initially appear with multiple items selected. In that case all defaults can be represented using the <code>:default</code> pseudo-class.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">:default { <em>style properties</em> }
+</pre>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+
+          <pre name="code" class="css">:default
+{
+    background-color: lime;
+}</pre>
+        
+<p>...where...</p>
+
+          <pre name="code" class="xml">&lt;form method="get"&gt;
+  &lt;p&gt;&lt;input type="submit" id="submit1"&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type="submit" id="submit2"&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type="reset"&gt;&lt;/p&gt;
+ &lt;/form&gt;</pre>
+        
+<p>This example causes the background color to be <code>lime</code> for the default submit button in the form.</p>
+</div>
+<div id="section_4">
+<span id="Specification"></span><h3 class="editable">Specification</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/css3-ui/#pseudo-default" title="http://www.w3.org/TR/css3-ui/#pseudo-default" target="_blank">CSS3 Basic User Interface Module: :default</a></li> <li><a class="external" rel="external" href="http://www.whatwg.org/specs/web-forms/current-work/#enter-submit" title="http://www.whatwg.org/specs/web-forms/current-work/#enter-submit" target="_blank">Web Forms 2.0: Relation to CSS selectors</a></li>
+</ul>
+<p></p>
+</div>

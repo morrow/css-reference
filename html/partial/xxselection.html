@@ -1,0 +1,49 @@
+
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> ::-moz-selection </code>(<code>::selection</code>) pseudo-element applies to the portion of a document that has been highlighted (e.g. selected with the mouse) by the user.</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+/* draw any selected text yellow on red background */
+::-moz-selection { color: gold;  background: red; }
+::selection      { color: gold;  background: red; }
+
+/* draw selected text in a paragraph white on black */
+p::-moz-selection { color: white;  background: black; }
+p::selection      { color: white;  background: black; }</pre>
+</div>
+<div id="section_3">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Gecko/Firefox supports<code> ::-moz-selection</code>, use also<code> ::selection </code>for some other browsers.</p>
+<p>The following properties apply to<code> ::-moz-selection</code> :<br><code>color, background </code>and<code> background-color </code>(<code>background-image </code>is ignored).</p>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><code>::selection </code>was drafted for <em>CSS3 Selectors</em> but removed from the current CSS3 draft. Anyhow, it's implemented in browsers and support will continue.</p>
+<ul>
+<li>
+<a class="external" title="http://www.w3.org/TR/2005/WD-css3-selectors-20051215//#UIfragments" target="_blank" rel="external" href="http://www.w3.org/TR/2005/WD-css3-selectors-20051215//#UIfragments">CSS 3 Selectors (Draft 2005-12-15)</a> Obsolete</li> <li>
+<a class="external" title="http://www.w3.org/TR/css3-selectors/#selection" rel="external" href="http://www.w3.org/TR/css3-selectors/#selection" target="_blank">CSS 3 Selectors #selection</a> Working draft</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>Requires two different rules with identical declarations as stated in the examples above.</p>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> <th>Support of</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td><strong>9</strong></td> <td><code>::selection</code></td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>
+<strong>1.0</strong> (1.5)</td> <td><code>::-moz-selection</code></td> </tr>
+<tr>
+<td>Opera</td> <td><strong>9.5</strong></td> <td><code>::selection</code></td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>
+<strong>1.1</strong> (100)</td> <td><code>::selection</code></td> </tr>
+</tbody></table>
+</div>

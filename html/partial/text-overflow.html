@@ -1,0 +1,184 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>text-overflow</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> property determines how overflowed content that is not displayed is signaled to the users. It can be clipped, display an ellipsis ('<code>…</code>', <code style="text-transform:uppercase">U+2026 Horizontal Ellipsis</code>) or a Web author-defined string.</p>
+<p><img alt="text-overflow.png" class="internal default" style="" src="https://developer.mozilla.org/@api/deki/files/5846/=text-overflow.png"></p>
+<p>This CSS property doesn't force an overflow to occur, to do so and make <code>text-overflow</code> to be applied, the author must apply some additional properties on the element, like setting 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code> to <code>hidden</code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>clip</code>
+</li> <li>Applies to : all block elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media : <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the specified one.</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">text-overflow: inherit                                 <em>or</em>
+text-overflow: <em>end-overflow-type              </em><code>         <em>or</em></code>
+<em><code>text-overflow: </code></em><code><em>left-overflow-type<code> </code>right-overflow-type</em></code>
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin-left: 40px;"><code>inherit</code></dt> <dd style="margin-left: 80px;">Is a keyword indicating to use the value of this CSS property that the parent element of the element uses.</dd> <dt style="margin-left: 40px;"><em>end-overflow-type</em></dt> <dd style="margin-left: 80px;">Is an <a title="en/CSS/text-overflow#.3Coverflow-type.3E" rel="internal" href="https://developer.mozilla.org/en/CSS/text-overflow#.3Coverflow-type.3E"><code>&lt;overflow-type&gt;</code></a> CSS value describing the overflow to perform at the end of the line. The end of the line is its <em>right</em> end if the text is written with <em>left-to-right</em> directionality, it is its <em>left</em> end if the text is written with <em>right-to-left</em> directionality.</dd> <dt style="margin-left: 40px;"><em>left-overflow-type</em></dt> <dd style="margin-left: 80px;">Is an <a title="en/CSS/text-overflow#.3Coverflow-type.3E" rel="internal" href="https://developer.mozilla.org/en/CSS/text-overflow#.3Coverflow-type.3E"><code>&lt;overflow-type&gt;</code></a> CSS value describing the overflow to perform at the <em>left</em> end of the line. The directionality of the text has no influence on which end of the line is affected.</dd> <dt style="margin-left: 40px;"><em>right-overflow-type</em></dt> <dd style="margin-left: 80px;">Is an <a title="en/CSS/text-overflow#.3Coverflow-type.3E" rel="internal" href="https://developer.mozilla.org/en/CSS/text-overflow#.3Coverflow-type.3E"><code>&lt;overflow-type&gt;</code></a> CSS value describing the overflow to perform at the <em>right</em> end of the line. The directionality of the text has no influence on which end of the line is affected.</dd>
+</dl>
+<div id="section_3">
+<span id=".3Coverflow-type.3E"></span><h3 class="editable"><code>&lt;overflow-type&gt;</code></h3>
+<p>The <code>&lt;overflow-type&gt;</code> CSS type describes how text overflow, when not visible, must be handled. The following values are valid:</p>
+<dl>
+<dt style="margin-left: 40px;"><code>clip</code></dt> <dd style="margin-left: 80px;">This keyword value indicates to truncate the text at the limit of the <a title="en/CSS/Box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">content area</a>. This is the default value.</dd> <dt style="margin-left: 40px;"><code>ellipsis</code></dt> <dd style="margin-left: 80px;">This keyword value indicates to display ellipses ('<code>…</code>', <code style="text-transform:uppercase">U+2026 Horizontal Ellipsis</code>) to represent clipped text. The ellipsis is displayed inside the <a title="en/CSS/Box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">content area</a>, shortening more the size of the displayed text. If there is not enough place to display ellipsis, they are clipped.</dd> <dt style="margin-left: 40px;"><em>string</em></dt> <dd style="margin-left: 80px;">The <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code> </span> to be used to represent clipped text. The string is displayed inside the <a title="en/CSS/Box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">content area</a>, shortening more the size of the displayed text. If there is not enough place to display string, they are clipped.</dd>
+</dl>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+
+          <pre name="code" class="css">p {
+  white-space: nowrap;
+  width: 100%;                   
+  overflow: hidden;              /* "overflow" value must be different from "visible" */ 
+
+  text-overflow:    ellipsis;
+}</pre>
+        
+<table class="standard-table">
+<thead>
+<tr>
+<th colspan="1" rowspan="2" scope="col">CSS value</th> <th colspan="2" rowspan="1" scope="col" style="text-align:center;"><code>direction: ltr</code></th> <th colspan="2" rowspan="1" scope="col" style="text-align:center;"><code>direction: rtl</code></th> </tr>
+<tr>
+<th scope="col">Expected Result</th> <th scope="col">Live result</th> <th scope="col">Expected Result</th> <th scope="col">Live result</th> </tr>
+</thead>
+<tbody>
+<tr>
+<td><em>visible overflow</em></td> <td style="font-family:monospace;">1234567890</td> <td style="direction:ltr;"> <div style="float:left;font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:visible;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">0987654321</td> <td> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:visible"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: clip</code></td> <td style="font-family:monospace;">123456</td> <td style="direction:ltr;"> <div style="float:left;font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">654321</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ellipsis</code></td> <td style="font-family:monospace;">1234…</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">…4321</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: '.'</code></td> <td style="font-family:monospace;">12345.</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:'.';"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">.54321</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:'.';"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: clip clip</code></td> <td style="font-family:monospace;">123456</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip clip;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">654321</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip clip;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: clip ellipsis</code></td> <td style="font-family:monospace;">12345…</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip ellipsis;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">6543…</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip ellipsis;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: clip '.'</code></td> <td style="font-family:monospace;">12345.</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip '.';"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">6543.</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:clip '.';"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ellipsis clip</code></td> <td style="font-family:monospace;">…3456</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis clip;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">…54321</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis clip;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ellipsis ellipsis</code></td> <td style="font-family:monospace;">…345…</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis ellipsis;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">…543…</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis ellipsis;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ellipsis '.'</code></td> <td style="font-family:monospace;">…345.</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis '.';"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">…543.</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:ellipsis '.';"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ',' clip</code></td> <td style="font-family:monospace;">,3456</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:',' clip;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">,54321</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:',' clip;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ',' ellipsis</code></td> <td style="font-family:monospace;">,345…</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:','ellipsis;"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">,543…</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:','ellipsis;"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+<tr>
+<td><code>text-overflow: ',' '.'</code></td> <td style="font-family:monospace;">,345.</td> <td style="direction:ltr;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:',' '.';"><span style="unicode-bidi:bidi-override;direction:ltr;margin:0 -2px">1234567890</span></div> </td> <td style="font-family:monospace;">,543.</td> <td style="direction:rtl;"> <div style="font-family:monospace;white-space:nowrap;max-width:3.6em;overflow:hidden;text-overflow:',' '.';"><span style="unicode-bidi:bidi-override;direction:rtl;margin:0 -2px">1234567890</span></div> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-ui/#text-overflow" rel="external" href="http://dev.w3.org/csswg/css3-ui/#text-overflow" target="_blank">CSS Basic User Interface Level 3</a></td> <td>Working Draft
+</td> <td> </td> </tr></tbody>
+</table>
+<p>A previous version of this interface reached the <em>Candidate Recommendation</em> status. As some not-listed-at-risk features needed to be removed, the spec was demoted to the <em>Working Draft</em> level, explaining why browsers implemented this property unprefixed, though not at the CR state.</p>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0 (312.3)</td> <td>7.0 (7.0)
+</td> <td>6.0 [*]</td> <td>11 [**]</td> <td>1.3 (312.3)</td> </tr>
+<tr>
+<td>Two-value syntax</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>9.0 (9.0)
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td>String value</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>9.0 (9.0)
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td>7.0 (7.0)
+</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> </tr>
+<tr>
+<td>Two-value syntax</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>9.0 (9.0)
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+<tr>
+<td>String value</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>9.0 (9.0)
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<p>[*] IE8 introduced<code> </code>the prefixed version, <code>-ms-text-overflow</code>, synonymous with <code>text-overflow</code>.</p>
+<p>[**] Opera supported the prefixed version, <code>-o-text-overflow</code>, from version 9.0 on.</p>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> index</li> <li>Related CSS properties: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow">overflow</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>
+</li>
+</ul>
+<p></p>
+<table style="border: 1px solid rgb(204, 204, 204); margin: 0px 0px 10px 10px; padding: 0px 10px; background: rgb(238, 238, 238) none repeat scroll 0% 50%; clear: both; width: 100%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody>
+<tr><td colspan="2"><strong>HTML5 Documentation</strong></td></tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#HTML" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#HTML">HTML</a></td>
+<td>
+<a title="en/Using audio and video in Firefox" rel="internal" href="https://developer.mozilla.org/en/Using_HTML5_audio_and_video">Audio/Video</a> <a title="en/HTML/Canvas" rel="internal" href="https://developer.mozilla.org/en/HTML/Canvas">Canvas</a> <a title="https://developer.mozilla.org/en/WebGL" rel="internal" href="https://developer.mozilla.org/en/WebGL">WebGL</a> <a title="en/SVG" rel="internal" href="https://developer.mozilla.org/en/SVG">SVG</a> <a title="en/MathML" rel="internal" href="https://developer.mozilla.org/en/MathML">MathML</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#WebForms" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#WebForms">WebForms</a> <a title="en/Using Application Cache" rel="internal" href="https://developer.mozilla.org/en/Using_Application_Cache">AppCache</a> <a title="en/Using microformats" rel="internal" href="https://developer.mozilla.org/en/Using_microformats">Microformats</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Semantic tags" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Semantic_tags">SemanticTags</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#Javascript" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Javascript">Javascript</a></td>
+<td>
+<a title="en/HTML/HTML5/HTML5 Thematic Classification#Client-Side Storage" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Client-Side_Storage">Storage</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#IndexDB" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#IndexDB">IndexDB</a> <a title="en/WebSockets" rel="internal" href="https://developer.mozilla.org/en/WebSockets">WebSockets</a> <a title="en/Using web workers" rel="internal" href="https://developer.mozilla.org/en/Using_web_workers">WebWorkers</a> <a title="en/Online and offline events" rel="internal" href="https://developer.mozilla.org/en/Online_and_offline_events">Events</a> <a title="en/DragDrop/Drag and Drop" rel="internal" href="https://developer.mozilla.org/en/DragDrop/Drag_and_Drop">Drag/Drop</a> <a title="en/Web-based protocol handlers" rel="internal" href="https://developer.mozilla.org/en/Web-based_protocol_handlers">ProtocolHandler</a> <a title="en/Using geolocation" rel="internal" href="https://developer.mozilla.org/en/Using_geolocation">Geolocation</a> <a title="en/Focus management in HTML" rel="internal" href="https://developer.mozilla.org/en/Focus_management_in_HTML">Focus</a>
+</td>
+</tr>
+<tr>
+<td style="width:100px"><a title="en/HTML/HTML5/HTML5 Thematic Classification#CSS" rel="external" href="mks://localhost/en/HTML/HTML5/HTML5_Thematic_Classification#CSS" target="_blank" class=" external">CSS</a></td>
+<td>
+<a title="en/Mozilla CSS support chart" rel="internal" href="https://developer.mozilla.org/en/Mozilla_CSS_support_chart">NewSelectors</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Typography" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Typography">Typography</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Visual" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Visual">Visual</a> <a title="en/HTML/HTML5/HTML5 Thematic Classification#Effects" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/HTML5_Thematic_Classification#Effects">Effects</a>
+</td>
+</tr>
+</tbody></table>
+<p></p>
+</div>

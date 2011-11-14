@@ -1,0 +1,113 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> font-family </code>CSS property allows for a prioritized list of font family names and/or generic family names to be specified for the selected element. Unlike most other CSS properties, values are separated by a comma to indicate that they are alternatives.</p>
+<p>It is often convenient to use the shorthand property 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code> to set<code> font-size </code>and other font related properties at one go.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: depends on user agent</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+font-family:  &lt;family-or-generic-name&gt; [, &lt;family-or-generic-name&gt;]* | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code>
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p><strong>&lt;family-or-generic-name&gt;</strong> is either a <strong>family-name</strong> or a <strong>generic-family</strong>.</p>
+<dl>
+<dt>family-name</dt> <dd>The name of a font family. For example, "Times" and "Helvetica" are font families. Font family names containing whitespace should be quoted.</dd> <dt>generic-family</dt> <dd>Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent in case when none of the specified fonts are available. Generic family names are keywords and must not be quoted. A generic font family should be the a last alternative in the list of font family names. <dl>
+<dt><code>serif</code></dt> <dd style="font-family:Palatino,'Palatino Linotype',Palladio,'URW Palladio',serif">Glyphs have finishing strokes, flared or tapering ends, or have actual serifed endings.<br> E.g.  Palatino, "Palatino Linotype", Palladio, "URW Palladio", serif</dd> <dt><code>sans-serif</code></dt> <dd style="font-family:'Trebuchet MS','Liberation Sans','Nimbus Sans L',sans-serif">Glyphs have stroke endings that are plain.<br> E.g. 'Trebuchet MS', 'Liberation Sans', 'Nimbus Sans L', sans-serif</dd> <dt><code>cursive</code></dt> <dd>Glyphs in cursive fonts generally have either joining strokes or other cursive characteristics beyond those of italic typefaces. The glyphs are partially or completely connected, and the result looks more like handwritten pen or brush writing than printed letterwork.</dd> <dt><code>fantasy</code></dt> <dd>Fantasy fonts are primarily decorative fonts that contain playful representations of characters.</dd> <dt><code>monospace</code></dt> <dd style="font-family:'DejaVu Sans Mono', Menlo, Consolas, 'Liberation Mono', Monaco, 'Lucida Console', monospace">All glyphs have the same fixed width.<br> E.g. "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace</dd> </dl>
+</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/font-family.html">View Live Examples</a></p>
+<pre>
+body     { font-family: "Gill Sans Extrabold", Helvetica, sans-serif }
+
+.receipt { font-family: Courier, "Lucida Console", monospace }
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>You should always specify a generic family name as the last value in the<code> font-family </code>property.</p>
+<p>The<code> font-family </code>property specifies a list of fonts, from highest priority to lowest. Font selection does <em>not</em> simply stop at the first font named in the list that is on the user's system. Rather, font selection is done <em>one character at a time</em>, so that if an available font does not have a glyph that can display a character needed, the later available fonts are tried. However, this doesn't work in Internet Explorer.</p>
+<p>When a font is only available in some <a title="en/CSS/font-style" rel="internal" href="https://developer.mozilla.org/en/CSS/font-style">styles</a>, <a title="en/CSS/font-variant" rel="internal" href="https://developer.mozilla.org/en/CSS/font-variant">variants</a>, or <a title="en/CSS/font-size" rel="internal" href="https://developer.mozilla.org/en/CSS/font-size">sizes</a>, those properties may also influence which font family is chosen.</p>
+</div>
+<div id="section_6">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/fonts.html#font-family-prop" title="http://www.w3.org/TR/CSS21/fonts.html#font-family-prop" target="_blank">CSS 2.1 Fonts #font-family</a></li> <li>
+<a title="http://www.w3.org/TR/css3-fonts/#font-family-the-font-family-property" class="external" rel="external" href="http://www.w3.org/TR/css3-fonts/#font-family-the-font-family-property" target="_blank">CSS 3 Fonts #font-family</a> Working draft</li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<span class="lang lang-*">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font">font</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-family">font-family</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size">font-size</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-size-adjust">font-size-adjust</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-stretch">font-stretch</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-style">font-style</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-variant">font-variant</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/font-weight">font-weight</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a></code> </span></p>
+<p></p>
+</div>

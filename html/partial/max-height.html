@@ -1,0 +1,109 @@
+
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> max-height </code>CSS property is used to set the maximum height of a given element. It prevents the used value of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/height">height</a></code> property from becoming larger than the value specified for<code> max-height</code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: block level and replaced elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages:yes, see below</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the percentage as specified or the absolute length or <code>none</code>
+</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+max-height:  &lt;length&gt; | &lt;percentage&gt; | none | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>&lt;length&gt;</dt> <dd>A fixed maximum height. See 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> for possible units.</dd> <dt>&lt;percentage&gt;</dt> <dd>The <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> is calculated with respect to the height of the containing block. If the height of the containing block is not specified explicitly, the percentage value is treated as<code> none</code>.</dd> <dt>none</dt> <dd>No limit on the height of the box.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/max-height.html">View Live Examples</a> <span class="lang lang-en">(not available, please check later)
+</span></p>
+<pre class="eval">
+table { max-height: 75%; }
+
+form { max-height: none; }
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/max-height">max-height</a></code> overrides height, but 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/min-height">min-height</a></code> overrides 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/max-height">max-height</a></code>.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/visudet.html#min-max-heights" rel="external" href="http://www.w3.org/TR/CSS21/visudet.html#min-max-heights" target="_blank">CSS 2.1 #min-max-heights</a></li>
+</ul>
+</div>
+<div id="section_7">
+<span id="Browser_Compatibility"></span><span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td> 1.0</td> <td>1.0 (1.0)</td> <td>7.0</td> <td>4.0</td> <td>2.0.2 (416)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile">
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p><a title="en/CSS/box_model" rel="internal" href="https://developer.mozilla.org/en/CSS/box_model">box model</a>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/max-width">max-width</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-sizing">box-sizing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/height">height</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/min-height">min-height</a></code></p>
+<p></p>
+</div>

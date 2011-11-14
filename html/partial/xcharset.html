@@ -1,0 +1,89 @@
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>@charset</code> CSS at-rule specifies the character encoding used in the style sheet. It must be the first element in the style sheet and not be preceded by any character. If several <code>@charset</code> at-rules are defined, only the first one is used, and it cannot be used inside a <code>style</code> attribute on an HTML element or inside the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/style">&lt;style&gt;</a></code> element where the character set of the HTML page is relevant.</p>
+<p>This at-rule is useful when using non-ASCII characters in some CSS properties, like 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/content">content</a></code>.</p>
+<p>As there are several ways to define the character encoding of a style sheet, the browser will try the following methods in the following order (and stop as soon as one yields a result) :</p>
+<ol>
+<li>The value given by the <code>charset</code> attribute of the <code>Content-Type:</code> HTTP header or the equivalent in the protocol used to serve the style sheet.</li> <li>The value of the <a class="external" title="http://en.wikipedia.org/wiki/Byte_order_mark" rel="external" href="http://en.wikipedia.org/wiki/Byte_order_mark" target="_blank">Unicode byte-order</a> character placed at the beginning of the file.</li> <li>The <code>@charset</code> CSS at-rule.</li> <li>Use the character encoding defined by the referring document: the <code>charset</code> attribute of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/link">&lt;link&gt;</a></code> element. This method is obsoleted in HTML5 and must not be used.</li> <li>Assume that the document is UTF-8.</li>
+</ol>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>@charset <em>charset</em>
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin:0 40px"><em>charset</em></dt> <dd style="margin:0 40px">Is a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code> </span> denoting the character encoding to be used. It must be the name of a web-safe character encoding defined in the <a class="external" href="http://www.iana.org/assignments/character-sets" rel="external" target="_blank" title="http://www.iana.org/assignments/character-sets">IANA-registry</a>. If several names are associated with an encoding, only the one marked with <em>preferred</em> must be used.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>@charset "UTF-8"       // Set the encoding of the style sheet to Unicode UTF-8
+@charset 'iso-8859-15' // Set the encoding of the style sheet to Latin-9 (Western European languages, with euro sign)
+ @charset "UTF-8"      // Invalid, there is a character before the at-rule
+@charset UTF-8         // Invalid, without ' or ", the charset is not a CSS <a href="mks://localhost/en/CSS/string" title="string">&lt;string&gt;</a>
+</pre>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://www.w3.org/TR/CSS2/syndata.html#x57" rel="external" href="http://www.w3.org/TR/CSS2/syndata.html#x57" target="_blank">CSS Level 2 (Revision 1)</a></td> <td>Recommendation
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td>1.5 (1.8)
+[*]</td> <td>5.5 [**] <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" target="_blank">[1]</a>
+</td> <td>9</td> <td>4</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.1</td> <td>1.0 (1.8)
+</td> <td>5.5 [**] <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx" target="_blank">[2]</a>
+</td> <td>10.0</td> <td>4</td> </tr>
+</tbody></table>
+</div>
+<p>[*] Firefox 1.0 supported only an invalid syntax where the character encoding is not set between single or double quotes.<br> [**] From IE 5.5 to IE 7 included, IE also supported the invalid syntax where the character encoding is not set between single or double quotes.</p>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a></li> <li>CSS at-rules: <strong>@charset</strong>, <a title="@font-face" rel="internal" href="https://developer.mozilla.org/en/CSS/@font-face">@font-face</a>, <a title="@import" rel="internal" href="https://developer.mozilla.org/en/CSS/@import">@import</a>, <a title="@keyframes" rel="internal" href="https://developer.mozilla.org/en/CSS/@keyframes">@keyframes</a>, <a title="@media" rel="internal" href="https://developer.mozilla.org/en/CSS/@media">@media</a>, <a title="@page" rel="internal" href="https://developer.mozilla.org/en/CSS/@page">@page</a>.</li>
+</ul>
+</div>

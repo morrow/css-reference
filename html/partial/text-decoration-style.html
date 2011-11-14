@@ -1,0 +1,159 @@
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>text-decoration-style</code> CSS property defines the style of the lines specified by 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code>. The style applies to all lines, there is no way to define different style for each of the line defined by <code>text-decoration-line</code>.</p>
+<p>If the specified decoration has a specific semantic meaning, like a line-through line meaning that some text has been deleted, authors are encouraged to denote this meaning using an HTML tag, like 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/del">&lt;del&gt;</a></code> or 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/s">&lt;s&gt;</a></code>. As browsers can disabled styling in some cases, the semantic meaning won't disappear in such a situation.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>solid</code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: the value as specified via the syntax</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">text-decoration-style: 	<a title="en/CSS/inherit" rel="internal" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a>     <em>or
+</em>text-decoration-style:  <em>style</em>
+</pre>
+<p>where :</p>
+<dl>
+<dt style="margin:0 40px;">inherit</dt> <dd style="margin:0 80px;">Is a keyword indicating to reuse the value calculated on the parent element.</dd> <dt style="margin:0 40px;"><em>style</em></dt> <dd style="margin:0 80px;">Is one of the following keywords : <table class="standard-table">
+<thead><tr>
+<th scope="col">Keyword</th> <th scope="col">Description</th> <th scope="col">Live example</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><code>solid</code></td> <td>Draws a single line</td> <td>
+<span style="-moz-text-decoration-style:solid;-moz-text-decoration-line:line-through;text-decoration-line:line-through;">Lorem</span> <span style="-moz-text-decoration-style:solid;-moz-text-decoration-line:underline;text-decoration-line:underline;">ipsum</span>
+</td> <td> </td> </tr>
+<tr>
+<td><code>double</code></td> <td>Draws a double line</td> <td>
+<span style="-moz-text-decoration-style:double;-moz-text-decoration-line:line-through;text-decoration-line:line-through;">Lorem</span> <span style="-moz-text-decoration-style:double;-moz-text-decoration-line:underline;text-decoration-line:underline;">ipsum</span>
+</td> <td> </td> </tr>
+<tr>
+<td><code>dotted</code></td> <td>Draws a dotted line</td> <td>
+<span style="-moz-text-decoration-style:dotted;-moz-text-decoration-line:line-through;text-decoration-line:line-through;">Lorem</span> <span style="-moz-text-decoration-style:dotted;-moz-text-decoration-line:underline;text-decoration-line:underline;">ipsum</span>
+</td> <td> </td> </tr>
+<tr>
+<td><code>dashed</code></td> <td>Draws a dashed line</td> <td>
+<span style="-moz-text-decoration-style:dashed;-moz-text-decoration-line:line-through;text-decoration-line:line-through;">Lorem</span> <span style="-moz-text-decoration-style:dashed;-moz-text-decoration-line:underline;text-decoration-line:underline;">ipsum</span>
+</td> <td> </td> </tr>
+<tr>
+<td><code>wavy</code></td> <td>Draws a wavy line</td> <td>
+<span style="-moz-text-decoration-style:wavy;-moz-text-decoration-line:line-through;text-decoration-line:line-through;">Lorem</span> <span style="-moz-text-decoration-style:wavy;-moz-text-decoration-line:underline;text-decoration-line:underline;">ipsum</span>
+</td> <td> </td> </tr>
+<tr>
+<td>
+<code>-moz-none</code><span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     <code> </code>
+</td> <td>Do not draw a line</td> <td>
+<span style="-moz-text-decoration-style:-moz-none;-moz-text-decoration-line:line-through;text-decoration-line:line-through;">Lorem</span> <span style="-moz-text-decoration-style:-moz-none;-moz-text-decoration-line:underline;text-decoration-line:underline;">ipsum</span>
+</td> <td>
+<strong>Do not use</strong><strong> :</strong> use 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code><code>: none</code> instead</td> </tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<pre>
+.example { 
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: red;
+}
+</pre>
+<p><span style="-moz-text-decoration-line: underline; -moz-text-decoration-style: wavy; -moz-text-decoration-color: red">This is how it looks.</span></p>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-text/#text-decoration-style" rel="external" href="http://dev.w3.org/csswg/css3-text/#text-decoration-style" target="_blank">CSS Text Level 3</a></td> <td>Working Draft
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>6.0 (6.0)
+<br><span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td> <p>6.0 (6.0)
+<br><span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span></p> </td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_6">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> index</li>
+</ul>
+<p>
+</p>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-align">text-align</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-indent">text-indent</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration">text-decoration</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-color">text-decoration-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-line">text-decoration-line</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-decoration-style">text-decoration-style</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/letter-spacing">letter-spacing</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/word-spacing">word-spacing</a></code>,
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-transform">text-transform</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-rendering">text-rendering</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>
+</li>
+</ul>
+<p></p>
+</div>
