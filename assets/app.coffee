@@ -48,7 +48,7 @@ class App
     # html5 history
     window.onpopstate = (e)-> 
       query = window.location.pathname.split('/')
-      query = query[query.length]
+      query = query[query.length-1]
       app.load(query, false)
 
   load:(path, commit=true)->
@@ -104,7 +104,10 @@ class App
     if @history.indexOf(input) < 0
       @history.push input
       @index = @history.length-1
-      window.history.pushState({query:input},input[0].toUpperCase() + input[1..], "/#{input[0].replace('/', '') + input[1..]}")
+      query = input
+      title = input[0].toUpperCase() + input[1..]
+      url = "CSS-Reference/#{input}"
+      window.history.pushState({query:input},title, url)
       $('.search .history').html(app.htmlify(app.history)) if input
     else
       app.load(input, false)

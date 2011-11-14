@@ -67,7 +67,7 @@ App = (function() {
     return window.onpopstate = function(e) {
       var query;
       query = window.location.pathname.split('/');
-      query = query[query.length];
+      query = query[query.length - 1];
       return app.load(query, false);
     };
   };
@@ -146,15 +146,19 @@ App = (function() {
     }
   };
   App.prototype.commit = function(input, mode) {
+    var query, title, url;
     if (mode == null) {
       mode = false;
     }
     if (this.history.indexOf(input) < 0) {
       this.history.push(input);
       this.index = this.history.length - 1;
+      query = input;
+      title = input[0].toUpperCase() + input.slice(1);
+      url = "CSS-Reference/" + input;
       window.history.pushState({
         query: input
-      }, input[0].toUpperCase() + input.slice(1), "/" + (input[0].replace('/', '') + input.slice(1)));
+      }, title, url);
       if (input) {
         return $('.search .history').html(app.htmlify(app.history));
       }
