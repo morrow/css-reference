@@ -12,6 +12,9 @@ App = (function() {
     window.app = this;
     if (window.location.hash) {
       query = window.location.hash.replace('#/', '');
+      if (query && query.toLowerCase() === 'css-reference') {
+        query = '';
+      }
       app.load(query);
     }
   }
@@ -130,6 +133,12 @@ App = (function() {
         type: 'GET',
         dataType: 'html',
         url: this.paths[attribute],
+        beforeSend: __bind(function(r) {
+          return $(body).addClass('loading');
+        }, this),
+        complete: __bind(function(r) {
+          return $(body).removeClass('loading');
+        }, this),
         success: __bind(function(r) {
           html = this.tagify('h1', attribute) + r;
           html = html.replace('https://developer.mozilla.org/en/CSS/', '');

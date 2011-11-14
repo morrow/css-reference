@@ -4,7 +4,7 @@ data = {
     root: {
       header: {
         h1: {
-          'a(href="/")': 'CSS Reference'
+          'a(href="https://morrow.github.com/CSS-Reference")': 'CSS Reference'
         },
         links: {
           github: "https://github.com/morrow/CSS-Reference",

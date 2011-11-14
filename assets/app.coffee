@@ -10,6 +10,7 @@ class App
     window.app = @
     if window.location.hash
       query = window.location.hash.replace('#/', '')
+      query = '' if query and query.toLowerCase() is 'css-reference'
       app.load(query)
 
   bindEvents:->
@@ -89,6 +90,8 @@ class App
         type:'GET'
         dataType:'html'
         url:@paths[attribute] 
+        beforeSend:(r)=> $(body).addClass('loading')
+        complete:(r)=> $(body).removeClass('loading')
         success:(r)=> 
           html = @tagify('h1', attribute) + r
           html = html.replace 'https://developer.mozilla.org/en/CSS/', ''
