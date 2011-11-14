@@ -11,7 +11,6 @@ class App
     if window.location.hash
       query = window.location.hash.replace('#/', '')
       query = '' if query and query.toLowerCase() is 'css-reference'
-      window.history.re
       app.load(query, true, 'replace')
 
   bindEvents:->
@@ -94,9 +93,10 @@ class App
         beforeSend:(r)=> $('body').addClass('loading')
         complete:(r)=> $('body').removeClass('loading')
         success:(r)=> 
-          html = @tagify('h1', @htmlify('a(href="/CSS-Reference/#/#{attribute}")',attribute)) + r
-          html = html.replace 'https://developer.mozilla.org/en/CSS/', ''
-          html += '<hr />'
+          html = @htmlify
+            h1:
+              'a(href="/CSS-Reference/#/#{attribute}")':attribute
+          html += r + '<hr />'
           $(".results .exact").html(html)
     else
       $(".results .exact").html('')

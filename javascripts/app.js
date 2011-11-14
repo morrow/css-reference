@@ -15,7 +15,6 @@ App = (function() {
       if (query && query.toLowerCase() === 'css-reference') {
         query = '';
       }
-      window.history.re;
       app.load(query, true, 'replace');
     }
   }
@@ -144,9 +143,12 @@ App = (function() {
           return $('body').removeClass('loading');
         }, this),
         success: __bind(function(r) {
-          html = this.tagify('h1', this.htmlify('a(href="/CSS-Reference/#/#{attribute}")', attribute)) + r;
-          html = html.replace('https://developer.mozilla.org/en/CSS/', '');
-          html += '<hr />';
+          html = this.htmlify({
+            h1: {
+              'a(href="/CSS-Reference/#/#{attribute}")': attribute
+            }
+          });
+          html += r + '<hr />';
           return $(".results .exact").html(html);
         }, this)
       });
