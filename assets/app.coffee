@@ -100,7 +100,7 @@ class App
     else
       $(".results .exact").html('')
   
-  commit:(input, mode=false, mode='push')->
+  commit:(input, mode='push')->
     if @history.indexOf(input) < 0
       @history.push input
       @index = @history.length-1

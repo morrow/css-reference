@@ -153,11 +153,8 @@ App = (function() {
       return $(".results .exact").html('');
     }
   };
-  App.prototype.commit = function(input, mode, mode) {
+  App.prototype.commit = function(input, mode) {
     var title, url;
-    if (mode == null) {
-      mode = false;
-    }
     if (mode == null) {
       mode = 'push';
     }
