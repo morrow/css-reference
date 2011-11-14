@@ -5,7 +5,7 @@ data =
         h1:
           'a(href="/")':'CSS Reference'
         links:
-          github:"https://github.com/morrow/instacss"
+          github:"http://github.com/morrow/CSS-Reference"
           mdn:"https://developer.mozilla.org/en/CSS"
           'a(href="/html/partial.html" class="source")':'Full HTML'
       sidepane:
