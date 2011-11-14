@@ -146,16 +146,15 @@ App = (function() {
     }
   };
   App.prototype.commit = function(input, mode) {
-    var query, title, url;
+    var title, url;
     if (mode == null) {
       mode = false;
     }
     if (this.history.indexOf(input) < 0) {
       this.history.push(input);
       this.index = this.history.length - 1;
-      query = input;
       title = input[0].toUpperCase() + input.slice(1);
-      url = "CSS-Reference/" + input;
+      url = "/CSS-Reference/" + input;
       window.history.pushState({
         query: input
       }, title, url);

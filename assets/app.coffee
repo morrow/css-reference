@@ -104,9 +104,8 @@ class App
     if @history.indexOf(input) < 0
       @history.push input
       @index = @history.length-1
-      query = input
       title = input[0].toUpperCase() + input[1..]
-      url = "CSS-Reference/#{input}"
+      url = "/CSS-Reference/#{input}"
       window.history.pushState({query:input},title, url)
       $('.search .history').html(app.htmlify(app.history)) if input
     else
