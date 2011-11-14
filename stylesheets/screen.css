@@ -127,6 +127,6 @@ input[type=search] {
   background:white;
 }
 
-.links .github { background-image:url(images/github.png); }
-.links .mdn { background-image:url(images/mdn.jpg); }
-.links .source { background-image:url(images/page.png); }
+.links .github { background-image:url(../images/github.png); }
+.links .mdn { background-image:url(../images/mdn.jpg); }
+.links .source { background-image:url(../images/page.png); }
