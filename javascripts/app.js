@@ -143,11 +143,8 @@ App = (function() {
           return $('body').removeClass('loading');
         }, this),
         success: __bind(function(r) {
-          html = this.htmlify({
-            h1: 'a(href="/CSS-Reference/#/' + attribute + {
-              '")': attribute
-            }
-          });
+          html = this.tagify('a(href="/CSS-Reference/#/' + attribute + '")', attribute);
+          html = this.tagify('h1', html);
           html += r + '<hr />';
           return $(".results .exact").html(html);
         }, this)

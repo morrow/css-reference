@@ -93,9 +93,8 @@ class App
         beforeSend:(r)=> $('body').addClass('loading')
         complete:(r)=> $('body').removeClass('loading')
         success:(r)=> 
-          html = @htmlify
-            h1:
-              'a(href="/CSS-Reference/#/'+attribute+'")':attribute
+          html = @tagify 'a(href="/CSS-Reference/#/'+attribute+'")', attribute
+          html = @tagify 'h1', html
           html += r + '<hr />'
           $(".results .exact").html(html)
     else
