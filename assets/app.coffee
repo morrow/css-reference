@@ -55,18 +55,14 @@ class App
       app.load(query, false)
 
   load:(path, commit=true)->
-    try
-      query = path.replace('/', '')
-      $('input[type=search]').val(query)
-      @preview query
-      @commit query if commit
-      arr = []
-      $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
-      app.index = arr.indexOf(query)
-      @display()
-    catch e
-      console.log e
-
+    query = path.replace('/', '')
+    $('input[type=search]').val(query)
+    @preview query
+    @commit query if commit
+    arr = []
+    $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
+    app.index = arr.indexOf(query)
+    @display()
       
   display:->
     $(".history li").each(-> $(@).removeClass("selected"))

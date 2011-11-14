@@ -81,22 +81,18 @@ App = (function() {
     if (commit == null) {
       commit = true;
     }
-    try {
-      query = path.replace('/', '');
-      $('input[type=search]').val(query);
-      this.preview(query);
-      if (commit) {
-        this.commit(query);
-      }
-      arr = [];
-      $.map($(".history li").toArray(), function(val, i) {
-        return arr.push($(val).text());
-      });
-      app.index = arr.indexOf(query);
-      return this.display();
-    } catch (e) {
-      return console.log(e);
+    query = path.replace('/', '');
+    $('input[type=search]').val(query);
+    this.preview(query);
+    if (commit) {
+      this.commit(query);
     }
+    arr = [];
+    $.map($(".history li").toArray(), function(val, i) {
+      return arr.push($(val).text());
+    });
+    app.index = arr.indexOf(query);
+    return this.display();
   };
   App.prototype.display = function() {
     $(".history li").each(function() {
