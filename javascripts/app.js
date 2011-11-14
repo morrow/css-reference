@@ -7,7 +7,7 @@ App = (function() {
     $.ajax({
       url: "json/paths.json",
       success: __bind(function(r) {
-        return this.paths = r;
+        return this.paths = JSON.parse(r);
       }, this)
     });
     this.document = data.document;

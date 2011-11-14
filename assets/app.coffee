@@ -5,7 +5,7 @@ class App
     @history = [] 
     $.ajax
       url:"json/paths.json"
-      success:(r)=> @paths = r
+      success:(r)=> @paths = JSON.parse(r)
     @document = data.document
     @write(@root)
     @bindEvents()
