@@ -10,7 +10,7 @@ class App
     window.app = @
     if window.location.hash
       query = window.location.hash.replace('#/', '')
-      query = '' if query and query.toLowerCase() is 'css-reference'
+      query = '' if (query and query.toLowerCase() is 'css-reference')
       app.load(query, true, 'replace')
 
   bindEvents:->
