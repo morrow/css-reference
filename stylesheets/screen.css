@@ -137,6 +137,13 @@ input[type=search] {
   padding: .2em 1em;
 }
 
+*[name="code"]{
+  border:1px solid #333;
+  padding:.2em 1em;
+  background:#222;
+  color:#aaa;
+}
+
 .geckoVersionNote div div {
   top:0px;
 }
