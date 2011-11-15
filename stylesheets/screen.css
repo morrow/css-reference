@@ -78,8 +78,12 @@ li {
   cursor:pointer;
 }
 
-.history li:hover, .approximate li:hover {
-  background:#ccc;
+.history li:hover {
+  background:#ddd;
+}
+
+.approximate li:hover {
+  background:#eee;
 }
 
 .history li.selected {
