@@ -157,3 +157,6 @@ input[type=search] {
 noscript a {
   color:blue;
 }
+noscript a:visited {
+  color:purple;
+}
