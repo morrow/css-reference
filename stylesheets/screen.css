@@ -138,10 +138,12 @@ input[type=search] {
 }
 
 *[name="code"] {
-  border:1px solid #333;
-  padding:.2em 1em;
-  background:#222;
-  color:#eee;
+  border: 1px solid #333;
+  padding: 0.5em 1em;
+  background: #333;
+  color: white;
+  font-size: 120%;
+  line-height: 1.3em;
 }
 
 .geckoVersionNote div div {
