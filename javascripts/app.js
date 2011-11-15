@@ -162,7 +162,7 @@ App = (function() {
     if (mode == null) {
       mode = 'push';
     }
-    if (this.history.indexOf(input) < 0) {
+    if (input && input.length > 0 && this.history.indexOf(input) < 0) {
       this.history.unshift(input);
       this.index = this.history.length - 1;
     }

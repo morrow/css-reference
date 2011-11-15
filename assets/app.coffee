@@ -107,7 +107,7 @@ class App
       $(".results .exact").html('')
   
   commit:(input, mode='push')->
-    if @history.indexOf(input) < 0
+    if input and input.length > 0 and @history.indexOf(input) < 0
       @history.unshift input
       @index = @history.length-1
     @index = @history.indexOf(input)
