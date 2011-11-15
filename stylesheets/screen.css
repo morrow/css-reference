@@ -131,6 +131,12 @@ input[type=search] {
   background:white;
 }
 
+#section_2 {
+  background: whiteSmoke;
+  border:1px solid #eee;
+  padding: .2em 1em;
+}
+
 .links .github { background-image:url(../images/github.png); }
 .links .mdn { background-image:url(../images/mdn.png); }
 .links .source { background-image:url(../images/page.png); }
