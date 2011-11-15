@@ -35,10 +35,10 @@ App = (function() {
             app.commit($(this).val());
             break;
           case 38:
-            $(this).val(app.history[(app.index = Math.max(app.index - 1, 0))]);
+            $(this).val(app.history[(app.index = Math.min(app.index + 1, app.history.length))]);
             break;
           case 40:
-            $(this).val(app.history[(app.index = Math.min(app.index + 1, app.history.length))]);
+            $(this).val(app.history[(app.index = Math.max(app.index - 1, 0))]);
         }
       }
       app.display();
@@ -158,7 +158,7 @@ App = (function() {
       mode = 'push';
     }
     if (input && this.history.indexOf(input) < 0) {
-      this.history.push(input);
+      this.history.unshift(input);
       this.index = this.history.length - 1;
       title = input[0].toUpperCase() + input.slice(1);
       url = "/CSS-Reference/" + input;

@@ -7,15 +7,16 @@ data = {
           'a(href="http://morrow.github.com/CSS-Reference/")': 'CSS Reference'
         },
         links: {
-          github: "https://github.com/morrow/CSS-Reference",
-          mdn: "https://developer.mozilla.org/en/CSS",
-          'a(href="http://morrow.github.com/CSS-Reference/html/partial.html" class="source")': 'Full HTML'
+          'a(class="github" href="https://github.com/morrow/CSS-Reference")': 'Github',
+          'a(class="mdn"    href="https://developer.mozilla.org/en/CSS")': 'MDN',
+          'a(class="source" href="http://morrow.github.com/CSS-Reference/html/partial.html")': 'Full Text',
+          'a(class="source" href="http://morrow.github.com/CSS-Reference/html/")': 'HTML Directory'
         }
       },
       sidepane: {
         search: {
-          history: '',
-          "input(type='search')": "search"
+          "input(type='search')": "search",
+          history: ''
         }
       },
       results: {

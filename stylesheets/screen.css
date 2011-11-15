@@ -15,17 +15,15 @@ h1 {
 }
 
 .root {
-  width:98%;
-  max-width:1200px;
   margin:0 auto;
 }
 
 .sidepane {
-  width:20%;
+  width:180px;
 }
 
 .results {
-  width:74%;
+  max-width:75%;
 }
 
 .root > * {

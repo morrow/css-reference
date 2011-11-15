@@ -26,8 +26,8 @@ class App
       if e.keyCode
         switch e.keyCode
           when 13 then app.commit($(@).val())
-          when 38 then $(@).val(app.history[(app.index = Math.max(app.index-1, 0))])
-          when 40 then $(@).val(app.history[(app.index = Math.min(app.index+1, app.history.length))])
+          when 38 then $(@).val(app.history[(app.index = Math.min(app.index+1, app.history.length))])
+          when 40 then $(@).val(app.history[(app.index = Math.max(app.index-1, 0))])
       app.display()
       app.preview($(@).val())
       app.keyCode = e.keyCode if e.keyCode
@@ -106,7 +106,7 @@ class App
   
   commit:(input, mode='push')->
     if input and @history.indexOf(input) < 0
-      @history.push input
+      @history.unshift input
       @index = @history.length-1
       title = input[0].toUpperCase() + input[1..]
       url = "/CSS-Reference/#{input}"
