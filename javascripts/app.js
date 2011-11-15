@@ -107,26 +107,15 @@ App = (function() {
     return $($(".history li")[app.index]).addClass("selected");
   };
   App.prototype.preview = function(input) {
-    var approximates, attribute, html, lenSort;
+    var approximates, attr, attribute, html, query;
     approximates = [];
+    query = input.toLowerCase();
     for (attribute in this.paths) {
-      if (attribute.match(input)) {
+      attr = attribute.toLowerCase();
+      if (attr.match(query || query.match(attr))) {
         approximates.push(attribute);
       }
     }
-    lenSort = function(a, b) {
-      a = a.toString().length;
-      b = b.toString().length;
-      if (a === b) {
-        return 0;
-      }
-      if (a < b) {
-        return -1;
-      }
-      if (a > b) {
-        return 1;
-      }
-    };
     html = this.htmlify(approximates.sort());
     if (!(html && html.length > 1)) {
       html = "No results found for " + input;

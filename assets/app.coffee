@@ -72,15 +72,11 @@ class App
   preview:(input)->
     # approximate matches
     approximates = []
+    query = input.toLowerCase()
     for attribute of @paths
-      if attribute.match input# or input.match attribute
+      attr = attribute.toLowerCase()
+      if attr.match query or query.match attr
         approximates.push attribute
-    lenSort = (a,b)->
-      a = a.toString().length
-      b = b.toString().length
-      return 0 if a == b
-      return -1 if a < b
-      return 1 if a > b
     html = @htmlify(approximates.sort())
     html = "No results found for #{input}" if not (html and html.length > 1)
     $(".results .approximate").html(html)
