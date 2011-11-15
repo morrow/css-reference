@@ -92,7 +92,9 @@ class App
         type:'GET'
         dataType:'html'
         url:@paths[attribute] 
-        beforeSend:(r)=> $('body').addClass('loading')
+        beforeSend:(r)=>
+          $('body').addClass('loading')
+          $(".results .exact").text('loading...')
         complete:(r)=> $('body').removeClass('loading')
         success:(r)=> 
           html = @tagify 'a(href="/CSS-Reference/#/'+attribute+'")', attribute

@@ -142,7 +142,8 @@ App = (function() {
         dataType: 'html',
         url: this.paths[attribute],
         beforeSend: __bind(function(r) {
-          return $('body').addClass('loading');
+          $('body').addClass('loading');
+          return $(".results .exact").text('loading...');
         }, this),
         complete: __bind(function(r) {
           return $('body').removeClass('loading');

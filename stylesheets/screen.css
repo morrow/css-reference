@@ -14,13 +14,6 @@ h1 {
   display:inline-block;
 }
 
-.loading .header h1 a:after {
-  content:" (loading)";
-  color:#aaa;
-  margin-left:1em;
-  font-size:12px;
-}
-
 .root {
   width:98%;
   max-width:1200px;
