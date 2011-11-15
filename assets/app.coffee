@@ -10,6 +10,7 @@ class App
     window.app = @
     if window.location.hash
       query = window.location.hash.replace('#/', '')
+      query = window.location.hash.replace('#', '')
       query = '' if query and query.toLowerCase().match /css\-reference/
       app.load(query, true, 'replace')
 
@@ -115,7 +116,6 @@ class App
   write:(element)->
     $(element).hide()
     $(element).append @htmlify @document
-    #$(element).append(document.createElement("pre")).find("pre").text @htmlify(@document, true)
     $(element).fadeIn("fast")
 
   tagify:(tag, content="")->
