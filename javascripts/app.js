@@ -164,25 +164,24 @@ App = (function() {
     }
     if (this.history.indexOf(input) < 0) {
       this.history.unshift(input);
-      return this.index = this.history.length - 1;
-    } else {
-      this.index = this.history.indexOf(input);
-      url = "/CSS-Reference/" + input;
-      if (mode === 'push') {
-        window.history.pushState({
-          query: input
-        }, url, url);
-      }
-      if (mode === 'replace') {
-        window.history.replaceState({
-          query: input
-        }, url, url);
-      }
-      if (input) {
-        $('.search .history').html(app.htmlify(app.history));
-      }
-      return app.load('', false);
+      this.index = this.history.length - 1;
     }
+    this.index = this.history.indexOf(input);
+    url = "/CSS-Reference/" + input;
+    if (mode === 'push') {
+      window.history.pushState({
+        query: input
+      }, url, url);
+    }
+    if (mode === 'replace') {
+      window.history.replaceState({
+        query: input
+      }, url, url);
+    }
+    if (input) {
+      $('.search .history').html(app.htmlify(app.history));
+    }
+    return app.load('', false);
   };
   App.prototype.write = function(element) {
     $(element).hide();

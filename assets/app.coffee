@@ -110,13 +110,12 @@ class App
     if @history.indexOf(input) < 0
       @history.unshift input
       @index = @history.length-1
-    else 
-      @index = @history.indexOf(input)
-      url = "/CSS-Reference/#{input}"
-      window.history.pushState({query:input},url, url) if mode is 'push'
-      window.history.replaceState({query:input},url, url) if mode is 'replace'
-      $('.search .history').html(app.htmlify(app.history)) if input
-      app.load('', false)
+    @index = @history.indexOf(input)
+    url = "/CSS-Reference/#{input}"
+    window.history.pushState({query:input},url, url) if mode is 'push'
+    window.history.replaceState({query:input},url, url) if mode is 'replace'
+    $('.search .history').html(app.htmlify(app.history)) if input
+    app.load('', false)
     
   write:(element)->
     $(element).hide()
