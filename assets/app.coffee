@@ -101,7 +101,7 @@ class App
       $(".results .exact").html('')
   
   commit:(input, mode='push')->
-    if @history.indexOf(input) < 0
+    if input and @history.indexOf(input) < 0
       @history.push input
       @index = @history.length-1
       title = input[0].toUpperCase() + input[1..]

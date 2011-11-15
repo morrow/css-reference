@@ -158,7 +158,7 @@ App = (function() {
     if (mode == null) {
       mode = 'push';
     }
-    if (this.history.indexOf(input) < 0) {
+    if (input && this.history.indexOf(input) < 0) {
       this.history.push(input);
       this.index = this.history.length - 1;
       title = input[0].toUpperCase() + input.slice(1);
