@@ -134,14 +134,14 @@ input[type=search] {
 #section_2 {
   background: whiteSmoke;
   border:1px solid #eee;
-  padding: .2em 1em;
+  padding: .5em 1em;
 }
 
-*[name="code"]{
+*[name="code"] {
   border:1px solid #333;
   padding:.2em 1em;
   background:#222;
-  color:#aaa;
+  color:#eee;
 }
 
 .geckoVersionNote div div {
