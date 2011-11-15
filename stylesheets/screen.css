@@ -66,7 +66,7 @@ li {
 
 .links a {
   text-align:right;
-  margin:1em 0em;
+  margin:1em;
   background-repeat:no-repeat;
   background-position-left:0px;
   background-position-top:0px;
@@ -102,7 +102,7 @@ li {
 
 .header .links {
   float:right;
-  margin:.5em;
+  margin:1em 0em
 }
 
 table {
