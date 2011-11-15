@@ -145,7 +145,7 @@ input[type=search] {
 }
 
 .geckoVersionNote div div {
-  top:0px;
+  top:3px !important;
 }
 
 .links .github { background-image:url(../images/github.png); }

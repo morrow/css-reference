@@ -1,8 +1,27 @@
+#!/usr/bin/env ruby
 require 'yajl'
 
-overwrite = ARGV[0] or false
+puts "overwrite files? "
+message = STDIN.gets.chomp  
+if message.match /y|Y/ then overwrite = true else overwrite = false end
+
 parser = Yajl::Parser.new
 urls = parser.parse open('json/urls.json').read
+
+if ARGV.length > 0
+  _urls = {}
+  ARGV.each do |arg|
+    urls.each do |name, url|
+      if name.match arg or arg.match name
+        _urls[name] = urls[name]
+      else
+        puts "not found: #{name} in #{arg}"
+      end
+    end
+  end
+  urls = _urls
+end
+
 
 # update js version of paths file
 json = open('json/paths.json').read
