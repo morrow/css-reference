@@ -137,6 +137,10 @@ input[type=search] {
   padding: .2em 1em;
 }
 
+.geckoVersionNote div div {
+  top:0px;
+}
+
 .links .github { background-image:url(../images/github.png); }
 .links .mdn { background-image:url(../images/mdn.png); }
 .links .source { background-image:url(../images/page.png); }
