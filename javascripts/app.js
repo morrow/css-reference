@@ -64,7 +64,7 @@ App = (function() {
       });
       app.index = arr.indexOf($(this).text());
       $("input[type=search]").val(arr[app.index]);
-      return app.load(arr[app.index], false);
+      return app.load(arr[app.index], true);
     });
     $(".approximate li").live("click", function(e) {
       $("input[type=search]").val($(this).text());
@@ -158,30 +158,30 @@ App = (function() {
     }
   };
   App.prototype.commit = function(input, mode) {
-    var title, url;
+    var url;
     if (mode == null) {
       mode = 'push';
     }
-    if (input && this.history.indexOf(input) < 0) {
+    if (this.history.indexOf(input) < 0) {
       this.history.unshift(input);
-      this.index = this.history.length - 1;
-      title = input[0].toUpperCase() + input.slice(1);
+      return this.index = this.history.length - 1;
+    } else {
+      this.index = this.history.indexOf(input);
       url = "/CSS-Reference/" + input;
       if (mode === 'push') {
         window.history.pushState({
           query: input
-        }, title, url);
+        }, url, url);
       }
       if (mode === 'replace') {
         window.history.replaceState({
           query: input
-        }, title, url);
+        }, url, url);
       }
       if (input) {
-        return $('.search .history').html(app.htmlify(app.history));
+        $('.search .history').html(app.htmlify(app.history));
       }
-    } else {
-      return app.load(input, false);
+      return app.load('', false);
     }
   };
   App.prototype.write = function(element) {

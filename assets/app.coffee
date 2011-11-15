@@ -42,7 +42,7 @@ class App
       $.map $(".history li").toArray(), (val, i)-> arr.push $(val).text()
       app.index = arr.indexOf($(@).text())
       $("input[type=search]").val(arr[app.index])
-      app.load(arr[app.index], false)
+      app.load(arr[app.index], true)
     # search result click event
     $(".approximate li").live "click", (e)->
       $("input[type=search]").val($(@).text())
@@ -107,16 +107,16 @@ class App
       $(".results .exact").html('')
   
   commit:(input, mode='push')->
-    if input and @history.indexOf(input) < 0
+    if @history.indexOf(input) < 0
       @history.unshift input
       @index = @history.length-1
-      title = input[0].toUpperCase() + input[1..]
+    else 
+      @index = @history.indexOf(input)
       url = "/CSS-Reference/#{input}"
-      window.history.pushState({query:input},title, url) if mode is 'push'
-      window.history.replaceState({query:input},title, url) if mode is 'replace'
+      window.history.pushState({query:input},url, url) if mode is 'push'
+      window.history.replaceState({query:input},url, url) if mode is 'replace'
       $('.search .history').html(app.htmlify(app.history)) if input
-    else
-      app.load(input, false)
+      app.load('', false)
     
   write:(element)->
     $(element).hide()
