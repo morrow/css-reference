@@ -28,20 +28,24 @@ App = (function() {
         return $(this).val(($('.results .approximate li:first-child').text()) || '');
       }
     });
-    $("input[type=search]").live('keyup', function(e) {
-      switch (e.keyCode) {
-        case 13:
-          app.commit($(this).val());
-          break;
-        case 38:
-          $(this).val(app.history[(app.index = Math.max(app.index - 1, 0))]);
-          break;
-        case 40:
-          $(this).val(app.history[(app.index = Math.min(app.index + 1, app.history.length))]);
+    $("input[type=search]").live('keyup click', function(e) {
+      if (e.keyCode) {
+        switch (e.keyCode) {
+          case 13:
+            app.commit($(this).val());
+            break;
+          case 38:
+            $(this).val(app.history[(app.index = Math.max(app.index - 1, 0))]);
+            break;
+          case 40:
+            $(this).val(app.history[(app.index = Math.min(app.index + 1, app.history.length))]);
+        }
       }
       app.display();
       app.preview($(this).val());
-      return app.keyCode = e.keyCode;
+      if (e.keyCode) {
+        return app.keyCode = e.keyCode;
+      }
     });
     $("body").live('click', function(e) {
       var target;

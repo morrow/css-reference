@@ -22,14 +22,15 @@ class App
         e.preventDefault()
         $(@).val(($('.results .approximate li:first-child').text()) or '')
     # search history navigation and enter-key handling
-    $("input[type=search]").live 'keyup', (e)-> 
-      switch e.keyCode
-        when 13 then app.commit($(@).val())
-        when 38 then $(@).val(app.history[(app.index = Math.max(app.index-1, 0))])
-        when 40 then $(@).val(app.history[(app.index = Math.min(app.index+1, app.history.length))])
+    $("input[type=search]").live 'keyup click', (e)-> 
+      if e.keyCode
+        switch e.keyCode
+          when 13 then app.commit($(@).val())
+          when 38 then $(@).val(app.history[(app.index = Math.max(app.index-1, 0))])
+          when 40 then $(@).val(app.history[(app.index = Math.min(app.index+1, app.history.length))])
       app.display()
       app.preview($(@).val())
-      app.keyCode = e.keyCode
+      app.keyCode = e.keyCode if e.keyCode
     # commit on blur
     $("body").live 'click', (e)->
       target = $(e.target)
