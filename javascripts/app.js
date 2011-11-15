@@ -72,6 +72,12 @@ App = (function() {
       app.preview($(this).text());
       return app.commit($(this).text());
     });
+    $(".header h1 a").live("click", function(e) {
+      if (e.keyCode === 0) {
+        app.load('', true);
+      }
+      return e.preventDefault();
+    });
     return window.onpopstate = function(e) {
       var query;
       query = window.location.pathname.split('/');

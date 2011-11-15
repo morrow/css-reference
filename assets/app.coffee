@@ -49,6 +49,9 @@ class App
       $("input[type=search]").val($(@).text())
       app.preview($(@).text())
       app.commit($(@).text())
+    $(".header h1 a").live "click", (e)->
+      app.load('', true) if e.keyCode is 0
+      e.preventDefault()
     # html5 history
     window.onpopstate = (e)-> 
       query = window.location.pathname.split('/')
