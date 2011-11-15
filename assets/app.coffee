@@ -42,8 +42,7 @@ class App
       $.map $(".history li").toArray(), (val, i)-> arr.push $(val).text()
       app.index = arr.indexOf($(@).text())
       $("input[type=search]").val(arr[app.index])
-      app.preview(arr[app.index])
-      app.display()
+      app.load(arr[app.index], false)
     # search result click event
     $(".approximate li").live "click", (e)->
       $("input[type=search]").val($(@).text())

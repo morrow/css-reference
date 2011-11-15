@@ -64,8 +64,7 @@ App = (function() {
       });
       app.index = arr.indexOf($(this).text());
       $("input[type=search]").val(arr[app.index]);
-      app.preview(arr[app.index]);
-      return app.display();
+      return app.load(arr[app.index], false);
     });
     $(".approximate li").live("click", function(e) {
       $("input[type=search]").val($(this).text());
