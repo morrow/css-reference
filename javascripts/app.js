@@ -12,7 +12,7 @@ App = (function() {
     window.app = this;
     if (window.location.hash) {
       query = window.location.hash.replace('#/', '');
-      if (query && query.toLowerCase() === 'css-reference') {
+      if (query && query.toLowerCase().match(/css\-reference/)) {
         query = '';
       }
       app.load(query, true, 'replace');
