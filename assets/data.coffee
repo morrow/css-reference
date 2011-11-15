@@ -7,7 +7,7 @@ data =
         links:
           github:"https://github.com/morrow/CSS-Reference"
           mdn:"https://developer.mozilla.org/en/CSS"
-          'a(href="/html/partial.html" class="source")':'Full HTML'
+          'a(href="http://morrow.github.com/CSS-Reference/html/partial.html" class="source")':'Full HTML'
       sidepane:
         search:
           history:''
