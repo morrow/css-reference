@@ -71,14 +71,18 @@ class App
 
   preview:(input)->
     # approximate matches
+    html = ""
     approximates = []
     query = input.toLowerCase()
     for attribute of @paths
       attr = attribute.toLowerCase()
-      if attr.match query or query.match attr
+      if attr.match(query) or query.match(attr) or not query or query == ''
         approximates.push attribute
-    html = @htmlify(approximates.sort())
-    html = "No results found for #{input}" if not (html and html.length > 1)
+    if approximates.length <= 0
+      html = "No results for: #{query}"
+      for attribute of @paths
+        approximates.push attribute
+    html += @htmlify(approximates.sort())
     $(".results .approximate").html(html)
     # exact match
     if input of @paths or approximates.length == 1

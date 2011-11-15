@@ -108,18 +108,22 @@ App = (function() {
   };
   App.prototype.preview = function(input) {
     var approximates, attr, attribute, html, query;
+    html = "";
     approximates = [];
     query = input.toLowerCase();
     for (attribute in this.paths) {
       attr = attribute.toLowerCase();
-      if (attr.match(query || query.match(attr))) {
+      if (attr.match(query) || query.match(attr) || !query || query === '') {
         approximates.push(attribute);
       }
     }
-    html = this.htmlify(approximates.sort());
-    if (!(html && html.length > 1)) {
-      html = "No results found for " + input;
+    if (approximates.length <= 0) {
+      html = "No results for: " + query;
+      for (attribute in this.paths) {
+        approximates.push(attribute);
+      }
     }
+    html += this.htmlify(approximates.sort());
     $(".results .approximate").html(html);
     if (input in this.paths || approximates.length === 1) {
       attribute = approximates[0];
