@@ -135,11 +135,16 @@ input[type=search] {
   padding: .5em 1em;
 }
 
+code {
+  background:whiteSmoke;
+  padding:.2em .25em;
+}
+
 *[name="code"] {
   border: 1px solid #333;
-  padding: 0.5em 1em;
   background: #333;
   color: white;
+  padding: 0.5em 1em;
   font-size: 120%;
   line-height: 1.3em;
 }
