@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 html = ''
-files = Dir.glob 'partial/*.html'
+files = Dir.glob 'html/partial/*.html'
 files.each do |file|
+  file = file.sub 'html/', ''
   html += "<li><a href='#{file}'>#{file}</a></li>"
 end
 html = """
@@ -26,6 +27,6 @@ html = """
   </body>
 </html>
 """
-f = File.open 'index.html', 'w+'
+f = File.open 'html/index.html', 'w+'
 f.write(html)
 f.close
