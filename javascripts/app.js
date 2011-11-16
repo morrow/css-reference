@@ -69,7 +69,8 @@ App = (function() {
     $(".approximate li").live("click", function(e) {
       $("input[type=search]").val($(this).text());
       app.preview($(this).text());
-      return app.commit($(this).text());
+      app.commit($(this).text());
+      return window.scrollTo(0, 0);
     });
     $(".header h1 a").live("click", function(e) {
       if (e.keyCode === 0) {
