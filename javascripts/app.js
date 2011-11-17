@@ -94,14 +94,12 @@ App = (function() {
     return this.display(arr[app.history_pos]);
   };
   App.prototype.display = function(query) {
-    if (query) {
-      $("input[type=search]").val(query);
-    }
     $('.search .history').html(app.htmlify.htmlify(app.history));
     $(".history li").each(function() {
       return $(this).removeClass('selected');
     });
-    return $($('.history li')[app.history_pos]).addClass('selected');
+    $($('.history li')[app.history_pos]).addClass('selected');
+    return $("input[type=search]").val(app.history[app.history_pos]);
   };
   App.prototype.preview = function(input) {
     var approximates, attr, attribute, html, query;

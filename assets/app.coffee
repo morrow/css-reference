@@ -91,14 +91,14 @@ class App
     @display(arr[app.history_pos])
       
   display:(query)->
-    # set search value to current value
-    $("input[type=search]").val(query) if query
     # update app history
     $('.search .history').html(app.htmlify.htmlify(app.history))
     # remove selected class from all history elements
     $(".history li").each(-> $(@).removeClass('selected'))
     # add selected class to history element at current index position
     $($('.history li')[app.history_pos]).addClass('selected')
+    # set search value to current value
+    $("input[type=search]").val(app.history[app.history_pos])
 
   preview:(input)->
     # setup html string
