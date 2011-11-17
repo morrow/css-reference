@@ -83,7 +83,7 @@ App = (function() {
       return arr.push($(val).text());
     });
     if (!path) {
-      path = arr[app.history_pos];
+      path = arr[app.history_pos] || '';
     }
     query = path.replace('/', '');
     this.preview(query);
