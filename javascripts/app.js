@@ -85,7 +85,6 @@ App = (function() {
     if (!(path != null)) {
       path = arr[app.history_pos] || '';
     }
-    alert(path);
     query = path.replace('/', '');
     this.preview(query);
     if (commit) {
