@@ -51,7 +51,6 @@ App = (function() {
       }
     });
     $(".history li").live("click", function(e) {
-      $("input[type=search]").val(arr[app.history_pos]);
       return app.load(arr[app.history_pos]);
     });
     $(".approximate li").live("click", function(e) {
@@ -80,7 +79,6 @@ App = (function() {
       mode = 'push';
     }
     query = path.replace('/', '');
-    $('input[type=search]').val(query);
     this.preview(query);
     if (commit) {
       this.commit(query, mode);
@@ -90,6 +88,7 @@ App = (function() {
       return arr.push($(val).text());
     });
     this.history_pos = arr.indexOf(query);
+    $("input[type=search]").val(arr[app.history_pos]);
     return this.display();
   };
   App.prototype.display = function() {

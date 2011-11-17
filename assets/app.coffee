@@ -53,8 +53,6 @@ class App
         app.commit($("input[type=search]").val()) if $("input[type=search]").val().length > 0
     # navigation of search history
     $(".history li").live "click", (e)->
-      # set search value to selected value
-      $("input[type=search]").val(arr[app.history_pos])
       # load clicked element
       app.load(arr[app.history_pos])
     # search result click event
@@ -75,9 +73,11 @@ class App
       app.load(query, false)
 
   load:(path, commit=true, mode='push')->
+    # format query
     query = path.replace('/', '')
-    $('input[type=search]').val(query)
-    @preview query
+    # update preview
+    @preview(query)
+    # commit if necessary
     @commit(query, mode) if commit
     # setup temporary array
     arr = []
@@ -85,6 +85,8 @@ class App
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     # set position to index of element in array
     @history_pos = arr.indexOf(query)
+    # set search value to selected value
+    $("input[type=search]").val(arr[app.history_pos])
     # update display
     @display()
       
