@@ -51,7 +51,7 @@ App = (function() {
       }
     });
     $(".history li").live("click", function(e) {
-      return app.load(false);
+      return app.load();
     });
     $(".approximate li").live("click", function(e) {
       app.load($(this).text());
@@ -91,10 +91,12 @@ App = (function() {
       this.commit(query, mode);
     }
     this.history_pos = arr.indexOf(query);
-    $("input[type=search]").val(arr[app.history_pos]);
-    return this.display();
+    return this.display(arr[app.history_pos]);
   };
-  App.prototype.display = function() {
+  App.prototype.display = function(query) {
+    if (query) {
+      $("input[type=search]").val(query);
+    }
     $('.search .history').html(app.htmlify.htmlify(app.history));
     $(".history li").each(function() {
       return $(this).removeClass('selected');
@@ -121,7 +123,8 @@ App = (function() {
     html += this.htmlify.htmlify(approximates.sort());
     $('.results .approximate').html(html);
     if (!(input in this.paths || approximates.length === 1)) {
-      return $('.results .exact').text('');
+      $('.results .exact').text('');
+      return this.display(query);
     } else {
       $('.results .exact').text('loading...');
       attribute = approximates[0];
@@ -136,7 +139,8 @@ App = (function() {
           html = this.htmlify.tagify('a(href="#{@dir}/#/' + attribute + '")', attribute);
           html = this.htmlify.tagify('h1', html);
           html += r + '<hr />';
-          return $(".results .exact").html(html);
+          $(".results .exact").html(html);
+          return this.display(attribute);
         }, this),
         error: __bind(function(r) {
           return $('.results .exact').html('');

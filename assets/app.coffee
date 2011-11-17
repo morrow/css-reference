@@ -54,7 +54,7 @@ class App
     # navigation of search history
     $(".history li").live "click", (e)->
       # load clicked element
-      app.load(false)
+      app.load()
     # search result click event
     $(".approximate li").live "click", (e)->
       # load clicked element
@@ -87,12 +87,12 @@ class App
     @commit(query, mode) if commit
     # set position to index of element in array
     @history_pos = arr.indexOf(query)
-    # set search value to current value
-    $("input[type=search]").val(arr[app.history_pos])
     # update display
-    @display()
+    @display(arr[app.history_pos])
       
-  display:->
+  display:(query)->
+    # set search value to current value
+    $("input[type=search]").val(query) if query
     # update app history
     $('.search .history').html(app.htmlify.htmlify(app.history))
     # remove selected class from all history elements
@@ -126,6 +126,7 @@ class App
     # exact matches / approximate matches with only one element
     if !(input of @paths or approximates.length == 1)
       $('.results .exact').text('')
+      @display(query)
     else
       # set loading text for exact result
       $('.results .exact').text('loading...')
@@ -146,6 +147,7 @@ class App
           html += r + '<hr />'
           # fill exact results element with html string
           $(".results .exact").html(html)
+          @display(attribute)
         error:(r)=> $('.results .exact').html('')
   
   commit:(input, mode='push')->
