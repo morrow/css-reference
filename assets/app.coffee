@@ -54,7 +54,7 @@ class App
     # navigation of search history
     $(".history li").live "click", (e)->
       # load clicked element
-      app.load()
+      app.load(false)
     # search result click event
     $(".approximate li").live "click", (e)->
       # load clicked element
@@ -79,6 +79,7 @@ class App
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     # set up path if not path
     path = (arr[app.history_pos] or '') if not path
+    alert path
     # format query
     query = path.replace('/', '')
     # update preview
@@ -87,7 +88,7 @@ class App
     @commit(query, mode) if commit
     # set position to index of element in array
     @history_pos = arr.indexOf(query)
-    # set search value to selected value
+    # set search value to current value
     $("input[type=search]").val(arr[app.history_pos])
     # update display
     @display()

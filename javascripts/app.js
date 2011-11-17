@@ -51,7 +51,7 @@ App = (function() {
       }
     });
     $(".history li").live("click", function(e) {
-      return app.load();
+      return app.load(false);
     });
     $(".approximate li").live("click", function(e) {
       app.load($(this).text());
@@ -85,6 +85,7 @@ App = (function() {
     if (!path) {
       path = arr[app.history_pos] || '';
     }
+    alert(path);
     query = path.replace('/', '');
     this.preview(query);
     if (commit) {
