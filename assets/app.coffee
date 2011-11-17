@@ -163,7 +163,7 @@ class App
     window.history.pushState({query:input},url, url) if mode is 'push'
     window.history.replaceState({query:input},url, url) if mode is 'replace'
     # load 
-    app.load('', false)
+    app.load(input, false)
     
   write:(element)->
     # hide element to write to

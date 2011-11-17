@@ -166,7 +166,7 @@ App = (function() {
         query: input
       }, url, url);
     }
-    return app.load('', false);
+    return app.load(input, false);
   };
   App.prototype.write = function(element) {
     $(element).hide();
