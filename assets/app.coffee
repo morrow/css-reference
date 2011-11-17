@@ -110,11 +110,6 @@ class App
       attr = attribute.toLowerCase()
       if attr.match(query) or not query or query == ''
         approximates.push attribute
-    # check query for match to paths
-    for attribute of @paths
-      attr = attribute.toLowerCase()
-      if query.match(attr) and not attr.match(query)
-        approximates.push attr
     # display message for no approximate results
     if approximates.length <= 0
       html = "No results for: #{query}"

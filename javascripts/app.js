@@ -109,12 +109,6 @@ App = (function() {
         approximates.push(attribute);
       }
     }
-    for (attribute in this.paths) {
-      attr = attribute.toLowerCase();
-      if (query.match(attr) && !attr.match(query)) {
-        approximates.push(attr);
-      }
-    }
     if (approximates.length <= 0) {
       html = "No results for: " + query;
       for (attribute in this.paths) {
