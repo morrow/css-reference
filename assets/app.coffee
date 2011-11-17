@@ -4,7 +4,7 @@ class App
     # load htmlify object
     @htmlify = new Htmlify()
     # set base directory
-    @dir = "CSS-Reference/"
+    @dir = "/CSS-Reference"
     # query history
     @history = [] 
     # current position in query history
@@ -140,7 +140,7 @@ class App
         url:@paths[attribute]
         success:(r)=>
           # add h1 link to current attribute
-          html = @htmlify.tagify 'a(href="/CSS-Reference/#/'+attribute+'")', attribute
+          html = @htmlify.tagify 'a(href="#{@dir}/#/'+attribute+'")', attribute
           html = @htmlify.tagify 'h1', html
           # add horizontal line
           html += r + '<hr />'

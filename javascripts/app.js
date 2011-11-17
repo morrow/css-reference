@@ -4,7 +4,7 @@ App = (function() {
   function App(element) {
     var query;
     this.htmlify = new Htmlify();
-    this.dir = "CSS-Reference/";
+    this.dir = "/CSS-Reference";
     this.history = [];
     this.history_pos = -1;
     this.paths = window.paths;
@@ -137,7 +137,7 @@ App = (function() {
         dataType: 'html',
         url: this.paths[attribute],
         success: __bind(function(r) {
-          html = this.htmlify.tagify('a(href="/CSS-Reference/#/' + attribute + '")', attribute);
+          html = this.htmlify.tagify('a(href="#{@dir}/#/' + attribute + '")', attribute);
           html = this.htmlify.tagify('h1', html);
           html += r + '<hr />';
           return $(".results .exact").html(html);
