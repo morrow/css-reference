@@ -3,78 +3,64 @@ var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments)
 App = (function() {
   function App(element) {
     var query;
-    this.index = -1;
+    this.htmlify = new Htmlify();
+    this.dir = "CSS-Reference/";
     this.history = [];
-    this.document = data.document;
+    this.history_pos = -1;
     this.paths = window.paths;
     this.write(this.root);
     this.bindEvents();
     window.app = this;
     if (window.location.hash) {
-      query = window.location.hash.replace('#/', '');
-      query = window.location.hash.replace('#', '');
-      if (query && query.toLowerCase().match(/css\-reference/)) {
+      query = window.location.hash.replace(/#\/|#/, '');
+      if (query && query.toLowerCase().match(/css/)) {
         query = '';
       }
       app.load(query, true, 'replace');
     }
   }
   App.prototype.bindEvents = function() {
-    var app;
-    app = this;
     $("input[type=search]").live('keydown', function(e) {
-      if (e.keyCode === 9 && app.keyCode !== 9) {
+      if (e.keyCode === 9 && app.previous_keyCode !== 9) {
         e.preventDefault();
         return $(this).val(($('.results .approximate li:first-child').text()) || '');
       }
     });
     $("input[type=search]").live('keyup click', function(e) {
-      if (e.keyCode) {
-        switch (e.keyCode) {
-          case 13:
-            app.commit($(this).val());
-            break;
-          case 38:
-            $(this).val(app.history[(app.index = Math.min(app.index + 1, app.history.length))]);
-            break;
-          case 40:
-            $(this).val(app.history[(app.index = Math.max(app.index - 1, 0))]);
-        }
+      switch (e.keyCode) {
+        case 13:
+          app.commit($(this).val());
+          break;
+        case 38:
+          $(this).val(app.history[(app.history_pos = Math.min(app.history_pos + 1, app.history.length))]);
+          break;
+        case 40:
+          $(this).val(app.history[(app.history_pos = Math.max(app.history_pos - 1, 0))]);
       }
       app.display();
       app.preview($(this).val());
       if (e.keyCode) {
-        return app.keyCode = e.keyCode;
+        return app.previous_keyCode = e.keyCode;
       }
     });
     $("body").live('click', function(e) {
-      var target;
-      target = $(e.target);
-      if (target.attr('type') === 'search' || (target.parents('.approximate').length > 0 && target.nodeName === 'li')) {
+      if ($(e.target).attr('type') === 'search' || ($(e.target).parents('.approximate').length > 0 && $(e.target).nodeName === 'li')) {
         if ($("input[type=search]").val().length > 0) {
           return app.commit($("input[type=search]").val());
         }
       }
     });
     $(".history li").live("click", function(e) {
-      var arr;
-      arr = [];
-      $.map($(".history li").toArray(), function(val, i) {
-        return arr.push($(val).text());
-      });
-      app.index = arr.indexOf($(this).text());
-      $("input[type=search]").val(arr[app.index]);
-      return app.load(arr[app.index], true);
+      $("input[type=search]").val(arr[app.history_pos]);
+      return app.load(arr[app.history_pos]);
     });
     $(".approximate li").live("click", function(e) {
-      $("input[type=search]").val($(this).text());
-      app.preview($(this).text());
-      app.commit($(this).text());
+      app.load($(this).text());
       return window.scrollTo(0, 0);
     });
     $(".header h1 a").live("click", function(e) {
       if (e.keyCode === 0) {
-        app.load('', true);
+        app.load('');
       }
       return e.preventDefault();
     });
@@ -103,14 +89,15 @@ App = (function() {
     $.map($(".history li").toArray(), function(val, i) {
       return arr.push($(val).text());
     });
-    app.index = arr.indexOf(query);
+    this.history_pos = arr.indexOf(query);
     return this.display();
   };
   App.prototype.display = function() {
+    $('.search .history').html(app.htmlify.htmlify(app.history));
     $(".history li").each(function() {
-      return $(this).removeClass("selected");
+      return $(this).removeClass('selected');
     });
-    return $($(".history li")[app.index]).addClass("selected");
+    return $($('.history li')[app.history_pos]).addClass('selected');
   };
   App.prototype.preview = function(input) {
     var approximates, attr, attribute, html, query;
@@ -119,8 +106,14 @@ App = (function() {
     query = input.toLowerCase();
     for (attribute in this.paths) {
       attr = attribute.toLowerCase();
-      if (attr.match(query) || query.match(attr) || !query || query === '') {
+      if (attr.match(query) || !query || query === '') {
         approximates.push(attribute);
+      }
+    }
+    for (attribute in this.paths) {
+      attr = attribute.toLowerCase();
+      if (query.match(attr) && !attr.match(query)) {
+        approximates.push(attr);
       }
     }
     if (approximates.length <= 0) {
@@ -129,9 +122,12 @@ App = (function() {
         approximates.push(attribute);
       }
     }
-    html += this.htmlify(approximates.sort());
-    $(".results .approximate").html(html);
-    if (input in this.paths || approximates.length === 1) {
+    html += this.htmlify.htmlify(approximates.sort());
+    $('.results .approximate').html(html);
+    if (!(input in this.paths || approximates.length === 1)) {
+      return $('.results .exact').text('');
+    } else {
+      $('.results .exact').text('loading...');
       attribute = approximates[0];
       if (input in this.paths) {
         attribute = input;
@@ -140,22 +136,16 @@ App = (function() {
         type: 'GET',
         dataType: 'html',
         url: this.paths[attribute],
-        beforeSend: __bind(function(r) {
-          $('body').addClass('loading');
-          return $(".results .exact").text('loading...');
-        }, this),
-        complete: __bind(function(r) {
-          return $('body').removeClass('loading');
-        }, this),
         success: __bind(function(r) {
-          html = this.tagify('a(href="/CSS-Reference/#/' + attribute + '")', attribute);
-          html = this.tagify('h1', html);
+          html = this.htmlify.tagify('a(href="/CSS-Reference/#/' + attribute + '")', attribute);
+          html = this.htmlify.tagify('h1', html);
           html += r + '<hr />';
           return $(".results .exact").html(html);
+        }, this),
+        error: __bind(function(r) {
+          return $('.results .exact').html('');
         }, this)
       });
-    } else {
-      return $(".results .exact").html('');
     }
   };
   App.prototype.commit = function(input, mode) {
@@ -165,10 +155,9 @@ App = (function() {
     }
     if (input && input.length > 0 && this.history.indexOf(input) < 0) {
       this.history.unshift(input);
-      this.index = this.history.length - 1;
     }
-    this.index = this.history.indexOf(input);
-    url = "/CSS-Reference/" + input;
+    this.history_pos = this.history.indexOf(input);
+    url = "" + this.dir + "/" + input;
     if (mode === 'push') {
       window.history.pushState({
         query: input
@@ -179,94 +168,12 @@ App = (function() {
         query: input
       }, url, url);
     }
-    if (input) {
-      $('.search .history').html(app.htmlify(app.history));
-    }
     return app.load('', false);
   };
   App.prototype.write = function(element) {
     $(element).hide();
-    $(element).append(this.htmlify(this.document));
-    return $(element).fadeIn("fast");
-  };
-  App.prototype.tagify = function(tag, content) {
-    var attributes, matches, node;
-    if (content == null) {
-      content = "";
-    }
-    if (tag && tag.indexOf("(") > 0 && tag.indexOf(")") > 0) {
-      attributes = tag.split("(")[1].split(")")[0];
-      tag = tag.split("(")[0];
-    } else {
-      attributes = "";
-    }
-    matches = tag.match(/a|abbr|address|area|article|aside|audio|b|base|bdi|bdo|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|device|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|h1|h2|h3|h4|h5|h6|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|map|mark|menu|meta|meter|nav|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|s|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|track|ul|var|video|wbr/);
-    if (matches && matches[0].length === tag.length && !matches[0].match(/title/)) {
-      if (parseInt(tag) > 0 && parseInt(tag).toString().length === tag.toString().length) {
-        tag = "n" + tag;
-      }
-      return "<" + tag + "  " + attributes + ">" + content + "</" + tag + ">";
-    } else {
-      if (tag.match(/input|img|link/)) {
-        switch (tag) {
-          case 'input':
-            return "<" + tag + " " + attributes + " placeholder='" + content + "'/>";
-          case 'img':
-            return "<" + tag + " " + attributes + " alt='" + content + "'/>";
-          case 'link':
-            return "<" + tag + " " + attributes + " href='" + content + "'/>";
-        }
-      }
-      node = "div";
-      if ((attributes && attributes.match(/href/)) || content.indexOf('http') === 0) {
-        node = "a";
-        attributes = "href='" + content + "'";
-        if (!attributes.match(window.location.href)) {
-          attributes += " target='_blank'";
-        }
-      }
-      if (content.match(/\.jpg$|\.png$|\.gif$/)) {
-        return "<img class='" + tag + "' src='" + content + "' />";
-      }
-      return "<" + node + " class=\"" + tag + "\"" + attributes + ">" + content + "</" + node + ">";
-    }
-  };
-  App.prototype.process = function(type, input) {
-    if (type == null) {
-      type = "value";
-    }
-    return input;
-  };
-  App.prototype.htmlify = function(object, prettify) {
-    var item, result, _i, _len;
-    if (prettify == null) {
-      prettify = false;
-    }
-    result = "";
-    if (object instanceof Array) {
-      for (_i = 0, _len = object.length; _i < _len; _i++) {
-        item = object[_i];
-        item = this.process("value", item);
-        result += this.tagify("li", item);
-      }
-      result = this.tagify("ul", result);
-    } else if (object instanceof Object) {
-      for (item in object) {
-        switch (typeof object[item]) {
-          case "string":
-            result += this.tagify(item, this.htmlify(object[item]));
-            break;
-          case "object":
-            result += this.tagify(item, this.htmlify(object[item]));
-        }
-      }
-    } else {
-      return this.process("value", object);
-    }
-    if (prettify) {
-      result = indent(result, null);
-    }
-    return result;
+    $(element).append(this.htmlify.htmlify(window.data.document));
+    return $(element).fadeIn('fast');
   };
   return App;
 })();

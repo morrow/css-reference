@@ -1,58 +1,74 @@
 class App
 
   constructor:(element)->
-    @index = -1
+    # load htmlify object
+    @htmlify = new Htmlify()
+    # set base directory
+    @dir = "CSS-Reference/"
+    # query history
     @history = [] 
-    @document = data.document
+    # current position in query history
+    @history_pos = -1
+    # paths object 
     @paths = window.paths
+    # write to root
     @write(@root)
+    # bind click events
     @bindEvents()
+    # set window.app 
     window.app = @
+    # handle window hash load
     if window.location.hash
-      query = window.location.hash.replace('#/', '')
-      query = window.location.hash.replace('#', '')
-      query = '' if query and query.toLowerCase().match /css\-reference/
+      query = window.location.hash.replace(/#\/|#/, '')
+      query = '' if query and query.toLowerCase().match /css/
       app.load(query, true, 'replace')
 
   bindEvents:->
-    app = @
     # tab-key handling
     $("input[type=search]").live 'keydown', (e)-> 
-      if e.keyCode == 9 and app.keyCode != 9
+      # tab key pressed (and wasn't just previously pressed)
+      if e.keyCode == 9 and app.previous_keyCode != 9
+        
         e.preventDefault()
         $(@).val(($('.results .approximate li:first-child').text()) or '')
     # search history navigation and enter-key handling
     $("input[type=search]").live 'keyup click', (e)-> 
-      if e.keyCode
-        switch e.keyCode
-          when 13 then app.commit($(@).val())
-          when 38 then $(@).val(app.history[(app.index = Math.min(app.index+1, app.history.length))])
-          when 40 then $(@).val(app.history[(app.index = Math.max(app.index-1, 0))])
+      switch e.keyCode
+        # enter key pressed, commit value
+        when 13 then app.commit($(@).val())
+        # up key pressed, navigate to previous element
+        when 38 then $(@).val(app.history[(app.history_pos = Math.min(app.history_pos+1, app.history.length))])
+        # up key pressed, navigate to next element
+        when 40 then $(@).val(app.history[(app.history_pos = Math.max(app.history_pos-1, 0))])
+      # update display
       app.display()
+      # preview display
       app.preview($(@).val())
-      app.keyCode = e.keyCode if e.keyCode
-    # commit on blur
+      # save previous keycode
+      app.previous_keyCode = e.keyCode if e.keyCode
+    # commit on blur of search input box
     $("body").live 'click', (e)->
-      target = $(e.target)
-      if target.attr('type') is 'search' or (target.parents('.approximate').length > 0 and target.nodeName == 'li')
+      if $(e.target).attr('type') is 'search' or ($(e.target).parents('.approximate').length > 0 and $(e.target).nodeName == 'li')
+        # commit content of search box
         app.commit($("input[type=search]").val()) if $("input[type=search]").val().length > 0
     # navigation of search history
     $(".history li").live "click", (e)->
-      arr = []
-      $.map $(".history li").toArray(), (val, i)-> arr.push $(val).text()
-      app.index = arr.indexOf($(@).text())
-      $("input[type=search]").val(arr[app.index])
-      app.load(arr[app.index], true)
+      # set search value to selected value
+      $("input[type=search]").val(arr[app.history_pos])
+      # load clicked element
+      app.load(arr[app.history_pos])
     # search result click event
     $(".approximate li").live "click", (e)->
-      $("input[type=search]").val($(@).text())
-      app.preview($(@).text())
-      app.commit($(@).text())
+      # load clicked element
+      app.load($(@).text())
+      # scroll to top
       window.scrollTo(0,0)
     $(".header h1 a").live "click", (e)->
-      app.load('', true) if e.keyCode is 0
+      # load blank query
+      app.load('') if e.keyCode is 0
+      # stop loading of page if left click 
       e.preventDefault()
-    # html5 history
+    # html5 history handling
     window.onpopstate = (e)-> 
       query = window.location.pathname.split('/')
       query = query[query.length-1]
@@ -63,114 +79,94 @@ class App
     $('input[type=search]').val(query)
     @preview query
     @commit(query, mode) if commit
+    # setup temporary array
     arr = []
+    # map text of current elements of history element to array
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
-    app.index = arr.indexOf(query)
+    # set position to index of element in array
+    @history_pos = arr.indexOf(query)
+    # update display
     @display()
       
   display:->
-    $(".history li").each(-> $(@).removeClass("selected"))
-    $($(".history li")[app.index]).addClass("selected")
+    # update app history
+    $('.search .history').html(app.htmlify.htmlify(app.history))
+    # remove selected class from all history elements
+    $(".history li").each(-> $(@).removeClass('selected'))
+    # add selected class to history element at current index position
+    $($('.history li')[app.history_pos]).addClass('selected')
 
   preview:(input)->
-    # approximate matches
+    # setup html string
     html = ""
+    # setup arrray for approximate matches
     approximates = []
+    # convert query to lower case
     query = input.toLowerCase()
+    # check paths for match to query
     for attribute of @paths
       attr = attribute.toLowerCase()
-      if attr.match(query) or query.match(attr) or not query or query == ''
+      if attr.match(query) or not query or query == ''
         approximates.push attribute
+    # check query for match to paths
+    for attribute of @paths
+      attr = attribute.toLowerCase()
+      if query.match(attr) and not attr.match(query)
+        approximates.push attr
+    # display message for no approximate results
     if approximates.length <= 0
       html = "No results for: #{query}"
+      # append full list of attributes to approximate list for easier navigation
       for attribute of @paths
         approximates.push attribute
-    html += @htmlify(approximates.sort())
-    $(".results .approximate").html(html)
-    # exact match
-    if input of @paths or approximates.length == 1
+    # added sorted list of approximate matches to html string    
+    html += @htmlify.htmlify(approximates.sort())
+    # fill approximate results element with html
+    $('.results .approximate').html(html)
+    # exact matches / approximate matches with only one element
+    if !(input of @paths or approximates.length == 1)
+      $('.results .exact').text('')
+    else
+      # set loading text for exact result
+      $('.results .exact').text('loading...')
+      # take first element of approximates
       attribute = approximates[0]
+      # overwrite with input if it's an exact match to given input
       attribute = input if (input of @paths)
+      # fetch the html of the matched item
       $.ajax
         type:'GET'
         dataType:'html'
-        url:@paths[attribute] 
-        beforeSend:(r)=>
-          $('body').addClass('loading')
-          $(".results .exact").text('loading...')
-        complete:(r)=> $('body').removeClass('loading')
-        success:(r)=> 
-          html = @tagify 'a(href="/CSS-Reference/#/'+attribute+'")', attribute
-          html = @tagify 'h1', html
+        url:@paths[attribute]
+        success:(r)=>
+          # add h1 link to current attribute
+          html = @htmlify.tagify 'a(href="/CSS-Reference/#/'+attribute+'")', attribute
+          html = @htmlify.tagify 'h1', html
+          # add horizontal line
           html += r + '<hr />'
+          # fill exact results element with html string
           $(".results .exact").html(html)
-    else
-      $(".results .exact").html('')
+        error:(r)=> $('.results .exact').html('')
   
   commit:(input, mode='push')->
+    # commit current search query to history if it's not already in it
     if input and input.length > 0 and @history.indexOf(input) < 0
+      # add query to beginning of history array (newest items will appear on top of history list)
       @history.unshift input
-      @index = @history.length-1
-    @index = @history.indexOf(input)
-    url = "/CSS-Reference/#{input}"
+    # change position of index of input in history 
+    @history_pos = @history.indexOf(input)
+    # prepend directory to url
+    url = "#{@dir}/#{input}"
+    # add to browser history
     window.history.pushState({query:input},url, url) if mode is 'push'
     window.history.replaceState({query:input},url, url) if mode is 'replace'
-    $('.search .history').html(app.htmlify(app.history)) if input
+    # load 
     app.load('', false)
     
   write:(element)->
+    # hide element to write to
     $(element).hide()
-    $(element).append @htmlify @document
-    $(element).fadeIn("fast")
-
-  tagify:(tag, content="")->
-    if tag and tag.indexOf("(") > 0 and tag.indexOf(")") > 0
-      attributes = tag.split("(")[1].split(")")[0]
-      tag = tag.split("(")[0]
-    else
-      attributes = ""
-    matches = tag.match /a|abbr|address|area|article|aside|audio|b|base|bdi|bdo|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|command|datalist|dd|del|details|device|dfn|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|h1|h2|h3|h4|h5|h6|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|keygen|label|legend|li|link|map|mark|menu|meta|meter|nav|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|rp|rt|ruby|s|samp|script|section|select|small|source|span|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|track|ul|var|video|wbr/
-    if matches and matches[0].length == tag.length and !matches[0].match /title/
-      tag = "n#{tag}" if parseInt(tag) > 0 and parseInt(tag).toString().length == tag.toString().length
-      return "<#{tag}  #{attributes}>#{content}</#{tag}>"
-    else
-      if tag.match /input|img|link/
-        switch tag
-          when 'input'
-            return "<#{tag} #{attributes} placeholder='#{content}'/>"
-          when 'img'
-            return "<#{tag} #{attributes} alt='#{content}'/>"
-          when 'link'
-            return "<#{tag} #{attributes} href='#{content}'/>"
-      node = "div"
-      if (attributes and attributes.match /href/) or content.indexOf('http') == 0
-        node = "a"
-        attributes = "href='#{content}'"
-        if not attributes.match window.location.href
-          attributes += " target='_blank'"
-      if content.match /\.jpg$|\.png$|\.gif$/
-        return "<img class='#{tag}' src='#{content}' />"
-      return "<#{node} class=\"#{tag}\"#{attributes}>#{content}</#{node}>"
-
-  process:(type="value", input)->
-    return input
-
-  htmlify:(object, prettify=false)->
-    result = ""
-    if object instanceof Array
-      for item in object
-        item = @process("value", item)
-        result += @tagify "li", item
-      result = @tagify "ul", result
-    else if object instanceof Object
-      for item of object
-        switch typeof object[item]
-          when "string"
-            result += @tagify item, @htmlify(object[item])
-          when "object"
-            result += @tagify item, @htmlify(object[item])
-    else
-      return @process("value", object)
-    if prettify
-      result = indent(result, null)
-    return result
+    # write to document
+    $(element).append(@htmlify.htmlify(window.data.document))
+    # show element
+    $(element).fadeIn('fast')
