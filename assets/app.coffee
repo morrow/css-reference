@@ -78,7 +78,7 @@ class App
     # map text of current elements of history element to array
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     # set up path if not path
-    path = (arr[app.history_pos] or '') if not path
+    path = (arr[app.history_pos] or '') if not path?
     alert path
     # format query
     query = path.replace('/', '')

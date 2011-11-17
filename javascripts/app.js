@@ -82,7 +82,7 @@ App = (function() {
     $.map($(".history li").toArray(), function(val, i) {
       return arr.push($(val).text());
     });
-    if (!path) {
+    if (!(path != null)) {
       path = arr[app.history_pos] || '';
     }
     alert(path);
