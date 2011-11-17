@@ -54,7 +54,7 @@ class App
     # navigation of search history
     $(".history li").live "click", (e)->
       # load clicked element
-      app.load(arr[app.history_pos])
+      app.load()
     # search result click event
     $(".approximate li").live "click", (e)->
       # load clicked element
@@ -73,16 +73,18 @@ class App
       app.load(query, false)
 
   load:(path, commit=true, mode='push')->
+    # setup temporary array
+    arr = []
+    # map text of current elements of history element to array
+    $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
+    # set up path if not path
+    path = arr[app.history_pos] if not path
     # format query
     query = path.replace('/', '')
     # update preview
     @preview(query)
     # commit if necessary
     @commit(query, mode) if commit
-    # setup temporary array
-    arr = []
-    # map text of current elements of history element to array
-    $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     # set position to index of element in array
     @history_pos = arr.indexOf(query)
     # set search value to selected value
@@ -112,6 +114,7 @@ class App
         approximates.push attribute
     # display message for no approximate results
     if approximates.length <= 0
+      # set html to appropriate error message 
       html = "No results for: #{query}"
       # append full list of attributes to approximate list for easier navigation
       for attribute of @paths

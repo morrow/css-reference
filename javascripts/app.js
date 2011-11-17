@@ -51,7 +51,7 @@ App = (function() {
       }
     });
     $(".history li").live("click", function(e) {
-      return app.load(arr[app.history_pos]);
+      return app.load();
     });
     $(".approximate li").live("click", function(e) {
       app.load($(this).text());
@@ -78,15 +78,18 @@ App = (function() {
     if (mode == null) {
       mode = 'push';
     }
+    arr = [];
+    $.map($(".history li").toArray(), function(val, i) {
+      return arr.push($(val).text());
+    });
+    if (!path) {
+      path = arr[app.history_pos];
+    }
     query = path.replace('/', '');
     this.preview(query);
     if (commit) {
       this.commit(query, mode);
     }
-    arr = [];
-    $.map($(".history li").toArray(), function(val, i) {
-      return arr.push($(val).text());
-    });
     this.history_pos = arr.indexOf(query);
     $("input[type=search]").val(arr[app.history_pos]);
     return this.display();
