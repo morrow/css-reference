@@ -34,12 +34,12 @@ App = (function() {
         case 38:
           app.history_pos = Math.max(app.history_pos - 1, 0);
           $(this).val(app.history[app.history_pos]);
-          this.display(app.history[app.history_pos]);
+          app.display(app.history[app.history_pos]);
           break;
         case 40:
           app.history_pos = Math.min(app.history_pos + 1, app.history.length - 1);
           $(this).val(app.history[app.history_pos]);
-          this.display(app.history[app.history_pos]);
+          app.display(app.history[app.history_pos]);
       }
       app.preview($(this).val());
       if (e.keyCode) {

@@ -39,12 +39,12 @@ class App
         when 38
           app.history_pos = Math.max(app.history_pos-1, 0)
           $(@).val(app.history[app.history_pos])
-          @display(app.history[app.history_pos])
+          app.display(app.history[app.history_pos])
         # down key pressed, navigate to next element
         when 40 
           app.history_pos = Math.min(app.history_pos+1, app.history.length-1)
           $(@).val(app.history[app.history_pos])
-          @display(app.history[app.history_pos])
+          app.display(app.history[app.history_pos])
       # preview display
       app.preview($(@).val())
       # save previous keycode
