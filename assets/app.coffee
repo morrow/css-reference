@@ -31,7 +31,7 @@ class App
         # stop from tabbing out of input box (on first tab event in-a-row only)
         e.preventDefault()
         # set search input box to first approximate result
-        $(@).val(($('.results .approximate li:first-child').text()) or '')
+        $(@).val($('.results .approximate li:first-child').text() or '')
     # search history navigation and enter-key handling
     $("input[type=search]").live 'keyup click', (e)-> 
       switch e.keyCode

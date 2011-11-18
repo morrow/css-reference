@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Redirecting you
+    link(href="stylesheets/screen.css" rel="stylesheet")
+  body
+    .root
+      .header
+        | Redirecting you in less than 1 second... 
+        a(href="http://morrow.github.com") go to morrow.github.com
+        a(href="https://github.com/morrow") go to github.com/morrow
+  javascript:
+    var query = window.location.pathname.toString().toLowerCase();
+    if(query.match(/css/)) {
+      query = window.location.pathname.replace('/CSS-Reference/', '');
+      var url = '/CSS-Reference/#'+ query;
+      if(window.history.replaceState) {
+        window.history.replaceState({},query,url);      
+        window.location.href = url;
+        window.location.reload();
+      }
+      else {
+        window.setTimeout('window.location.href = ' + url, 999)
+      }
+    }
+    else {
+      window.location.href = 'http://morrow.github.com/#/' + window.location.pathname;
+    }

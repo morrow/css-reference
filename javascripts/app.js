@@ -23,7 +23,7 @@ App = (function() {
     $("input[type=search]").live('keydown', function(e) {
       if (e.keyCode === 9 && app.previous_keyCode !== 9) {
         e.preventDefault();
-        return $(this).val(($('.results .approximate li:first-child').text()) || '');
+        return $(this).val($('.results .approximate li:first-child').text() || '');
       }
     });
     $("input[type=search]").live('keyup click', function(e) {

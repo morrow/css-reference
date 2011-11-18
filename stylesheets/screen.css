@@ -14,16 +14,17 @@ h1 {
   display:inline-block;
 }
 
-.root {
-  margin:0 auto;
-}
-
 .sidepane {
   width:180px;
 }
 
 .results {
-  max-width:75%;
+  width:74%;
+}
+
+.root {
+  padding:1em;
+  margin:0 auto;
 }
 
 .root > * {
@@ -31,6 +32,7 @@ h1 {
   padding:.5em 1em;
   margin:5px; 
   vertical-align:top;
+  display:inline-block;
 }
 
 a, a:visited {
@@ -41,14 +43,6 @@ a, a:visited {
 
 a:hover {
   opacity:10;
-}
-
-.root {
-  padding:2em;
-}
-
-.root > *{
-  display:inline-block;
 }
 
 .results .exact {
