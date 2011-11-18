@@ -28,7 +28,9 @@ class App
     $("input[type=search]").live 'keydown', (e)-> 
       # tab key pressed (and wasn't just previously pressed)
       if e.keyCode == 9 and app.previous_keyCode != 9
+        # stop from tabbing out of input box (on first tab event in-a-row only)
         e.preventDefault()
+        # set search input box to first approximate result
         $(@).val(($('.results .approximate li:first-child').text()) or '')
     # search history navigation and enter-key handling
     $("input[type=search]").live 'keyup click', (e)-> 
@@ -37,13 +39,19 @@ class App
         when 13 then app.commit($(@).val())
         # up key pressed, navigate to previous element
         when 38
+          # subtract one from app.history
           app.history_pos = Math.max(app.history_pos-1, 0)
+          # set value of search input box
           $(@).val(app.history[app.history_pos])
+          # display history list
           app.display(app.history[app.history_pos])
         # down key pressed, navigate to next element
         when 40 
+          # subtract one from app.history
           app.history_pos = Math.min(app.history_pos+1, app.history.length-1)
+          # set value of search input box
           $(@).val(app.history[app.history_pos])
+          # display history list
           app.display(app.history[app.history_pos])
       # preview display
       app.preview($(@).val())
