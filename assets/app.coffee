@@ -54,7 +54,7 @@ class App
     # navigation of search history
     $(".history li").live "click", (e)->
       # load clicked element
-      app.load()
+      app.load($(@).text())
     # search result click event
     $(".approximate li").live "click", (e)->
       # load clicked element
@@ -78,7 +78,8 @@ class App
     # map text of current elements of history element to array
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     # set up path if not path
-    path = (arr[app.history_pos] or '') if not path?
+    if not path? and app.history_pos >= 0
+      path = (arr[app.history_pos] or '') 
     # format query
     query = path.replace('/', '')
     # update preview
@@ -124,10 +125,7 @@ class App
     # fill approximate results element with html
     $('.results .approximate').html(html)
     # exact matches / approximate matches with only one element
-    if !(input of @paths or approximates.length == 1)
-      $('.results .exact').text('')
-      @display(query)
-    else
+    if input of @paths or approximates.length == 1
       # set loading text for exact result
       $('.results .exact').text('loading...')
       # take first element of approximates
@@ -149,6 +147,9 @@ class App
           $(".results .exact").html(html)
           @display(attribute)
         error:(r)=> $('.results .exact').html('')
+    else
+      $('.results .exact').text('')
+      @display(query)
   
   commit:(input, mode='push')->
     # commit current search query to history if it's not already in it
@@ -156,7 +157,7 @@ class App
       # add query to beginning of history array (newest items will appear on top of history list)
       @history.unshift input
     # change position of index of input in history 
-    @history_pos = @history.indexOf(input)
+    @history_pos = @history.indexOf(input) if input
     # prepend directory to url
     url = "#{@dir}/#{input}"
     # add to browser history

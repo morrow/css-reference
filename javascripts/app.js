@@ -51,7 +51,7 @@ App = (function() {
       }
     });
     $(".history li").live("click", function(e) {
-      return app.load();
+      return app.load($(this).text());
     });
     $(".approximate li").live("click", function(e) {
       app.load($(this).text());
@@ -82,7 +82,7 @@ App = (function() {
     $.map($(".history li").toArray(), function(val, i) {
       return arr.push($(val).text());
     });
-    if (!(path != null)) {
+    if (!(path != null) && app.history_pos >= 0) {
       path = arr[app.history_pos] || '';
     }
     query = path.replace('/', '');
@@ -120,10 +120,7 @@ App = (function() {
     }
     html += this.htmlify.htmlify(approximates.sort());
     $('.results .approximate').html(html);
-    if (!(input in this.paths || approximates.length === 1)) {
-      $('.results .exact').text('');
-      return this.display(query);
-    } else {
+    if (input in this.paths || approximates.length === 1) {
       $('.results .exact').text('loading...');
       attribute = approximates[0];
       if (input in this.paths) {
@@ -144,6 +141,9 @@ App = (function() {
           return $('.results .exact').html('');
         }, this)
       });
+    } else {
+      $('.results .exact').text('');
+      return this.display(query);
     }
   };
   App.prototype.commit = function(input, mode) {
@@ -154,7 +154,9 @@ App = (function() {
     if (input && input.length > 0 && this.history.indexOf(input) < 0) {
       this.history.unshift(input);
     }
-    this.history_pos = this.history.indexOf(input);
+    if (input) {
+      this.history_pos = this.history.indexOf(input);
+    }
     url = "" + this.dir + "/" + input;
     if (mode === 'push') {
       window.history.pushState({
