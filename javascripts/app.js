@@ -37,7 +37,6 @@ App = (function() {
         case 40:
           $(this).val(app.history[(app.history_pos = Math.max(app.history_pos - 1, 0))]);
       }
-      app.display();
       app.preview($(this).val());
       if (e.keyCode) {
         return app.previous_keyCode = e.keyCode;
@@ -71,23 +70,19 @@ App = (function() {
     };
   };
   App.prototype.load = function(path, commit, mode) {
-    var arr, query;
+    var query;
     if (commit == null) {
       commit = true;
     }
     if (mode == null) {
       mode = 'push';
     }
-    arr = [];
-    $.map($(".history li").toArray(), function(val, i) {
-      return arr.push($(val).text());
-    });
     query = path.replace('/', '');
     this.preview(query);
     if (commit) {
       this.commit(query, mode);
     }
-    this.history_pos = arr.indexOf(query);
+    this.history_pos = this.history.indexOf(query);
     return this.display(query);
   };
   App.prototype.display = function(query) {

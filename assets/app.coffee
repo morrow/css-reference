@@ -28,7 +28,6 @@ class App
     $("input[type=search]").live 'keydown', (e)-> 
       # tab key pressed (and wasn't just previously pressed)
       if e.keyCode == 9 and app.previous_keyCode != 9
-        
         e.preventDefault()
         $(@).val(($('.results .approximate li:first-child').text()) or '')
     # search history navigation and enter-key handling
@@ -40,8 +39,6 @@ class App
         when 38 then $(@).val(app.history[(app.history_pos = Math.min(app.history_pos+1, app.history.length))])
         # up key pressed, navigate to next element
         when 40 then $(@).val(app.history[(app.history_pos = Math.max(app.history_pos-1, 0))])
-      # update display
-      app.display()
       # preview display
       app.preview($(@).val())
       # save previous keycode
@@ -73,10 +70,6 @@ class App
       app.load(query, false)
 
   load:(path, commit=true, mode='push')->
-    # setup temporary array
-    arr = []
-    # map text of current elements of history element to array
-    $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
     # format query
     query = path.replace('/', '')
     # update preview
@@ -84,7 +77,7 @@ class App
     # commit if necessary
     @commit(query, mode) if commit
     # set position to index of element in array
-    @history_pos = arr.indexOf(query)
+    @history_pos = @history.indexOf(query)
     # update display
     @display(query)
       
