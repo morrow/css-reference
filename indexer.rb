@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 
 html = ''
+path = 'http://morrow.github.com'
+repo = 'https://github.com/morrow/CSS-Reference'
 files = Dir.glob 'html/partial/*.html'
 files.each do |file|
   file = file.sub 'html/', ''
@@ -11,16 +13,16 @@ html = """
 <html>
   <head>
     <title>CSS Reference - Directory</title>
-    <link rel='stylesheet' href='http://morrow.github.com/stylesheets/screen.css' />
+    <link rel='stylesheet' href='#{path}/stylesheets/screen.css' />
   </head>
   <body>
     <h1>CSS Reference - Directory</h1>
     <ul>
       <li>
-        <h2><a href='http://morrow.github.com/CSS-Reference'>Interactive Search</a></h2>
+        <h2><a href='#{path}/CSS-Reference'>Interactive Search</a></h2>
       </li>
       <li>
-        <h2><a href='https://github.com/morrow/CSS-Reference'>Github Repo</a></h2>
+        <h2><a href='#{repo}'>Github Repo</a></h2>
       </li>
       #{html}
     </ul>

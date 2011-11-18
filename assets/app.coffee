@@ -36,12 +36,14 @@ class App
         # enter key pressed, commit value
         when 13 then app.commit($(@).val())
         # up key pressed, navigate to previous element
-        # up key pressed, navigate to next element
         when 38
-          $(@).val(app.history[(app.history_pos = Math.max(app.history_pos-1, 0))])
+          app.history_pos = Math.max(app.history_pos-1, 0)
+          $(@).val(app.history[app.history_pos])
           @display(app.history[app.history_pos])
+        # down key pressed, navigate to next element
         when 40 
-          $(@).val(app.history[(app.history_pos = Math.min(app.history_pos+1, app.history.length))])
+          app.history_pos = Math.min(app.history_pos+1, app.history.length-1)
+          $(@).val(app.history[app.history_pos])
           @display(app.history[app.history_pos])
       # preview display
       app.preview($(@).val())

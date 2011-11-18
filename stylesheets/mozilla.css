@@ -1,0 +1,49 @@
+table {
+  width:100%;
+  text-align:center;
+}
+
+table th {
+  background:#ccc;
+  padding:.3em;
+}
+
+table tr td {
+  background:#eee;
+  padding:.5em;
+}
+
+input[type=search] {
+  padding:.2em;
+  border:2px solid transparent;
+  border-bottom-color:#ccc;
+  width:100%;
+}
+
+.results {
+  background:white;
+}
+
+#section_2 {
+  background: whiteSmoke;
+  border:1px solid #eee;
+  padding: .5em 1em;
+}
+
+code {
+  background:whiteSmoke;
+  padding:.2em .25em;
+}
+
+*[name="code"] {
+  border: 1px solid #333;
+  background: #333;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 120%;
+  line-height: 1.3em;
+}
+
+.geckoVersionNote div div {
+  top:3px !important;
+}

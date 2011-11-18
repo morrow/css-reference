@@ -1,13 +1,17 @@
 #!/usr/bin/env ruby
 require 'yajl'
 
+# initialize variables
+robots = 'https://developer.mozilla.org/robots.txt'
+parser = Yajl::Parser.new
+urls = parser.parse open('json/urls.json').read
+
+# prompt for file overwrite
 puts "overwrite files? "
 message = STDIN.gets.chomp  
 if message.match /y|Y/ then overwrite = true else overwrite = false end
 
-parser = Yajl::Parser.new
-urls = parser.parse open('json/urls.json').read
-
+# form urls array for scraping
 if ARGV.length > 0
   _urls = {}
   ARGV.each do |arg|
@@ -22,17 +26,15 @@ if ARGV.length > 0
   urls = _urls
 end
 
-
-# update js version of paths file
+# update js version of paths
 json = open('json/paths.json').read
 f = File.open 'javascripts/paths.js', 'w+'
 f.write "window.paths = JSON.parse('#{json}');"
 f.close
 
+# get timeout delay from robots.txt
 t = Time.now.to_i.to_s
-
-`wget https://developer.mozilla.org/robots.txt -O /tmp/#{t}.txt`
-
+`wget #{robots} -O /tmp/#{t}.txt`
 if File.exists? "/tmp/#{t}.txt"
   delay = open("/tmp/#{t}.txt").read
   if delay and delay.class.to_s == "String"
@@ -42,9 +44,9 @@ if File.exists? "/tmp/#{t}.txt"
     delay = 5
   end    
 end
-
 delay = 5 if not delay or delay and delay.class.to_s != 'Fixnum'
 
+# fetch URL contents, output to file
 urls.each do |unsafename, url|
   name = unsafename.gsub /^.*(\\|\/)/, ''
   name.gsub!(/[^0-9A-Za-z.\-]/, 'x')
