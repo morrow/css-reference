@@ -139,7 +139,6 @@ class App
         error:(r)=> $('.results .exact').html('')
     else
       $('.results .exact').text('')
-      @display(query)
   
   commit:(input, mode='push')->
     # commit current search query to history if it's not already in it

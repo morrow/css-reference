@@ -134,8 +134,7 @@ App = (function() {
         }, this)
       });
     } else {
-      $('.results .exact').text('');
-      return this.display(query);
+      return $('.results .exact').text('');
     }
   };
   App.prototype.commit = function(input, mode) {
