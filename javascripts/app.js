@@ -32,10 +32,12 @@ App = (function() {
           app.commit($(this).val());
           break;
         case 38:
-          $(this).val(app.history[(app.history_pos = Math.min(app.history_pos + 1, app.history.length))]);
+          $(this).val(app.history[(app.history_pos = Math.max(app.history_pos - 1, 0))]);
+          this.display(app.history[app.history_pos]);
           break;
         case 40:
-          $(this).val(app.history[(app.history_pos = Math.max(app.history_pos - 1, 0))]);
+          $(this).val(app.history[(app.history_pos = Math.min(app.history_pos + 1, app.history.length))]);
+          this.display(app.history[app.history_pos]);
       }
       app.preview($(this).val());
       if (e.keyCode) {
