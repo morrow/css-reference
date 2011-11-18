@@ -77,9 +77,6 @@ class App
     arr = []
     # map text of current elements of history element to array
     $.map($(".history li").toArray(), (val, i)-> arr.push $(val).text())
-    # set up path if not path
-    if not path? and app.history_pos >= 0
-      path = (arr[app.history_pos] or '') 
     # format query
     query = path.replace('/', '')
     # update preview
@@ -89,7 +86,7 @@ class App
     # set position to index of element in array
     @history_pos = arr.indexOf(query)
     # update display
-    @display(arr[app.history_pos])
+    @display(query)
       
   display:(query)->
     # update app history

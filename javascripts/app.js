@@ -82,16 +82,13 @@ App = (function() {
     $.map($(".history li").toArray(), function(val, i) {
       return arr.push($(val).text());
     });
-    if (!(path != null) && app.history_pos >= 0) {
-      path = arr[app.history_pos] || '';
-    }
     query = path.replace('/', '');
     this.preview(query);
     if (commit) {
       this.commit(query, mode);
     }
     this.history_pos = arr.indexOf(query);
-    return this.display(arr[app.history_pos]);
+    return this.display(query);
   };
   App.prototype.display = function(query) {
     $('.search .history').html(app.htmlify.htmlify(app.history));
