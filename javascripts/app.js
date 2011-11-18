@@ -126,8 +126,7 @@ App = (function() {
           html = this.htmlify.tagify('a(href="#{@dir}/#/' + attribute + '")', attribute);
           html = this.htmlify.tagify('h1', html);
           html += r + '<hr />';
-          $(".results .exact").html(html);
-          return this.display(attribute);
+          return $(".results .exact").html(html);
         }, this),
         error: __bind(function(r) {
           return $('.results .exact').html('');

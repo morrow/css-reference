@@ -135,7 +135,6 @@ class App
           html += r + '<hr />'
           # fill exact results element with html string
           $(".results .exact").html(html)
-          @display(attribute)
         error:(r)=> $('.results .exact').html('')
     else
       $('.results .exact').text('')
