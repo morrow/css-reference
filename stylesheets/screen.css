@@ -5,6 +5,11 @@ body {
   overflow-y:scroll;
 }
 
+hr {
+  opacity:.3;
+  margin:1em;
+}
+
 ul, ul li {
   margin:.05em;
   padding:.5em;
@@ -64,6 +69,10 @@ li {
   background-position-top:0px;
   background-size:14px;
   padding-left:1.7em;
+}
+
+.approximate {
+  width:200px;
 }
 
 .history li, .approximate li {
