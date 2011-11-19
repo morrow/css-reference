@@ -115,32 +115,35 @@ class App
     # check paths for match to query
     for attribute of @paths
       attr = attribute.toLowerCase()
-      if attr.match(query)
+      if attr.match(query) and query.length > 0
         approximates.push attribute
     # display message for no approximate results
     if approximates.length <= 0
       # set html to appropriate error message 
-      html = "No results for: #{query}"
-    # sort approximates if necessary
-    if approximates.length <= 0
-      vendor = []
-      special = []
-      lower = []
-      upper = []
-      for attribute in approximates
-        if attribute[0].match /[a-z]/
-          lower.push attribute
-        else if attribute[0].match /[A-Z]/
-          upper.push attribute
-        else if attribute[0].match /-/
-          vendor.push attribute
-        else
-          special.push attribute
-      # re-assemble approximate array
-      approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort())
-    else
-      approximates = approximates.sort()
-    # added sorted list of approximate matches to html string    
+      html = "No results for: #{query}" if query != ''
+      # populate attribute array
+      for attribute of @paths
+        approximates.push attribute.toLowerCase()
+    # sort approximates
+    exact = []
+    lower = []
+    upper = []
+    vendor = []
+    special = []
+    for attribute in approximates.sort()
+      if query and attribute[0].toLowerCase() == query[0].toLowerCase()
+        exact.push attribute
+      else if attribute[0].match /[a-z]/
+        lower.push attribute
+      else if attribute[0].match /[A-Z]/
+        upper.push attribute
+      else if attribute[0].match /-/
+        vendor.push attribute
+      else
+        special.push attribute
+    # re-assemble approximate array
+    approximates = exact.sort().concat(lower.sort()).concat(upper.sort()).concat(special.sort()).concat(vendor.sort())
+    # added sorted list of approximate matches to html string
     html += @htmlify.htmlify(approximates)
     # fill approximate results element with html
     $('.results .approximate').html(html)

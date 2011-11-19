@@ -98,40 +98,45 @@ App = (function() {
     return $("input[type=search]").val(app.history[app.history_pos]);
   };
   App.prototype.preview = function(input) {
-    var approximates, attr, attribute, html, lower, query, special, upper, vendor, _i, _len;
+    var approximates, attr, attribute, exact, html, lower, query, special, upper, vendor, _i, _len, _ref;
     html = "";
     approximates = [];
     query = input.toLowerCase();
     for (attribute in this.paths) {
       attr = attribute.toLowerCase();
-      if (attr.match(query)) {
+      if (attr.match(query) && query.length > 0) {
         approximates.push(attribute);
       }
     }
     if (approximates.length <= 0) {
-      html = "No results for: " + query;
-    }
-    if (approximates.length <= 0) {
-      vendor = [];
-      special = [];
-      lower = [];
-      upper = [];
-      for (_i = 0, _len = approximates.length; _i < _len; _i++) {
-        attribute = approximates[_i];
-        if (attribute[0].match(/[a-z]/)) {
-          lower.push(attribute);
-        } else if (attribute[0].match(/[A-Z]/)) {
-          upper.push(attribute);
-        } else if (attribute[0].match(/-/)) {
-          vendor.push(attribute);
-        } else {
-          special.push(attribute);
-        }
+      if (query !== '') {
+        html = "No results for: " + query;
       }
-      approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort());
-    } else {
-      approximates = approximates.sort();
+      for (attribute in this.paths) {
+        approximates.push(attribute.toLowerCase());
+      }
     }
+    exact = [];
+    lower = [];
+    upper = [];
+    vendor = [];
+    special = [];
+    _ref = approximates.sort();
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      attribute = _ref[_i];
+      if (query && attribute[0].toLowerCase() === query[0].toLowerCase()) {
+        exact.push(attribute);
+      } else if (attribute[0].match(/[a-z]/)) {
+        lower.push(attribute);
+      } else if (attribute[0].match(/[A-Z]/)) {
+        upper.push(attribute);
+      } else if (attribute[0].match(/-/)) {
+        vendor.push(attribute);
+      } else {
+        special.push(attribute);
+      }
+    }
+    approximates = exact.sort().concat(lower.sort()).concat(upper.sort()).concat(special.sort()).concat(vendor.sort());
     html += this.htmlify.htmlify(approximates);
     $('.results .approximate').html(html);
     if (input in this.paths || approximates.length === 1) {
