@@ -104,8 +104,14 @@ App = (function() {
     query = input.toLowerCase();
     for (attribute in this.paths) {
       attr = attribute.toLowerCase();
-      if (attr.match(query) && query.length > 0) {
-        approximates.push(attribute);
+      try {
+        if (attr.match(query) && query.length > 0) {
+          approximates.push(attribute);
+        }
+      } catch (e) {
+        if ((attr.indexOf(query.toString()) >= 0) || (attribute.indexOf(query.toString()) >= 0) || (query.indexOf(attribute) >= 0) || (query.indexOf(attr) >= 0) && query.length > 0) {
+          approximates.push(attribute);
+        }
       }
     }
     if (approximates.length <= 0) {
@@ -150,7 +156,7 @@ App = (function() {
         dataType: 'html',
         url: this.paths[attribute],
         success: __bind(function(r) {
-          html = this.htmlify.tagify('a(href="#{@dir}/#/' + attribute + '")', attribute);
+          html = this.htmlify.tagify("a(href='" + this.dir + "/#/" + attribute + "')", attribute);
           html = this.htmlify.tagify('h1', html);
           html += r + '<hr />';
           return $(".results .exact").html(html);

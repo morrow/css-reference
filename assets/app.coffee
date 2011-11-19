@@ -115,8 +115,12 @@ class App
     # check paths for match to query
     for attribute of @paths
       attr = attribute.toLowerCase()
-      if attr.match(query) and query.length > 0
-        approximates.push attribute
+      try
+        if attr.match(query) and query.length > 0
+          approximates.push attribute
+      catch e
+        if (attr.indexOf(query.toString()) >= 0) or (attribute.indexOf(query.toString()) >= 0)  or (query.indexOf(attribute) >= 0) or (query.indexOf(attr) >= 0) and query.length > 0
+          approximates.push attribute
     # display message for no approximate results
     if approximates.length <= 0
       # set html to appropriate error message 
@@ -162,7 +166,7 @@ class App
         url:@paths[attribute]
         success:(r)=>
           # add h1 link to current attribute
-          html = @htmlify.tagify 'a(href="#{@dir}/#/'+attribute+'")', attribute
+          html = @htmlify.tagify "a(href='#{@dir}/#/#{attribute}')", attribute
           html = @htmlify.tagify 'h1', html
           # add horizontal line
           html += r + '<hr />'
