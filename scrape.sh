@@ -9,5 +9,5 @@ ruby scripts/parser.rb
 # concatenate directories into single files for searching
 cat html/full/* > html/full.html
 cat html/partial/* > html/partial.html
-# index pages (html/partial.html and html/full.html)
+# index page (html/index.html)
 ruby scripts/indexer.rb
