@@ -11,7 +11,7 @@ data =
           'a(class="source" href="http://morrow.github.com/CSS-Reference/html/")':'HTML Directory'
       sidepane:
         search:
-          "input(type='search')":"search"
+          "input(type='search' autofocus)":"search"
           history:''
       results:
         exact: "&larr; Type your search query to begin"

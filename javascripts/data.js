@@ -15,7 +15,7 @@ data = {
       },
       sidepane: {
         search: {
-          "input(type='search')": "search",
+          "input(type='search' autofocus)": "search",
           history: ''
         }
       },
