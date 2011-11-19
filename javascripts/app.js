@@ -113,7 +113,7 @@ App = (function() {
         html = "No results for: " + query;
       }
       for (attribute in this.paths) {
-        approximates.push(attribute.toLowerCase());
+        approximates.push(attribute);
       }
     }
     exact = [];

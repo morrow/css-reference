@@ -123,7 +123,7 @@ class App
       html = "No results for: #{query}" if query != ''
       # populate attribute array
       for attribute of @paths
-        approximates.push attribute.toLowerCase()
+        approximates.push attribute
     # sort approximates
     exact = []
     lower = []
