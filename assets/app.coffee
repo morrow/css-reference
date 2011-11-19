@@ -124,8 +124,21 @@ class App
       # append full list of attributes to approximate list for easier navigation
       for attribute of @paths
         approximates.push attribute
+    vendor = []
+    special = []
+    normal = []
+    # sort attributes
+    for attribute in approximates
+      if attribute[0].match /[a-zA-z]/
+        normal.push attribute
+      else if attribute[0].match /-/
+        vendor.push attribute
+      else
+        special.push attribute
+    # re-assemble approximate array
+    approximates = normal.sort().concat(special.sort()).concat(vendor.sort())
     # added sorted list of approximate matches to html string    
-    html += @htmlify.htmlify(approximates.sort())
+    html += @htmlify.htmlify(approximates)
     # fill approximate results element with html
     $('.results .approximate').html(html)
     # exact matches / approximate matches with only one element

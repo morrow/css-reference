@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
-ruby urls.rb
-ruby scraper.rb
-ruby parser.rb
+
+# fetch and parse urls
+ruby scripts/urls.rb
+# scrape given urls
+ruby scripts/scraper.rb
+# parse html into partial html pages
+ruby scripts/parser.rb
+# concatenate directories into single files for searching
 cat html/full/* > html/full.html
 cat html/partial/* > html/partial.html
-ruby indexer.rb
+# index pages (html/partial.html and html/full.html)
+ruby scripts/indexer.rb

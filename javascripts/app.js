@@ -98,7 +98,7 @@ App = (function() {
     return $("input[type=search]").val(app.history[app.history_pos]);
   };
   App.prototype.preview = function(input) {
-    var approximates, attr, attribute, html, query;
+    var approximates, attr, attribute, html, normal, query, special, vendor, _i, _len;
     html = "";
     approximates = [];
     query = input.toLowerCase();
@@ -114,7 +114,21 @@ App = (function() {
         approximates.push(attribute);
       }
     }
-    html += this.htmlify.htmlify(approximates.sort());
+    vendor = [];
+    special = [];
+    normal = [];
+    for (_i = 0, _len = approximates.length; _i < _len; _i++) {
+      attribute = approximates[_i];
+      if (attribute[0].match(/[a-zA-z]/)) {
+        normal.push(attribute);
+      } else if (attribute[0].match(/-/)) {
+        vendor.push(attribute);
+      } else {
+        special.push(attribute);
+      }
+    }
+    approximates = normal.sort().concat(special.sort()).concat(vendor.sort());
+    html += this.htmlify.htmlify(approximates);
     $('.results .approximate').html(html);
     if (input in this.paths || approximates.length === 1) {
       $('.results .exact').text('loading...');
