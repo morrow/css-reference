@@ -17,11 +17,13 @@ class App
     @bindEvents()
     # set window.app 
     window.app = @
-    # handle window hash load
+    # initial load
     if window.location.hash
       query = window.location.hash.replace(/#\/|#/, '')
       query = '' if query and query.toLowerCase().match /css/
       app.load(query, true, 'replace')
+    else
+      app.load('')
 
   bindEvents:->
     # tab-key handling

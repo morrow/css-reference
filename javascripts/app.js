@@ -17,6 +17,8 @@ App = (function() {
         query = '';
       }
       app.load(query, true, 'replace');
+    } else {
+      app.load('');
     }
   }
   App.prototype.bindEvents = function() {
