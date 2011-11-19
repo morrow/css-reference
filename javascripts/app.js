@@ -140,7 +140,7 @@ App = (function() {
     html += this.htmlify.htmlify(approximates);
     $('.results .approximate').html(html);
     if (input in this.paths || approximates.length === 1) {
-      $('.results .exact').text('loading...');
+      $('.results .exact').text("loading: " + input + " ...");
       attribute = approximates[0];
       if (input in this.paths) {
         attribute = input;

@@ -150,7 +150,7 @@ class App
     # exact matches / approximate matches with only one element
     if input of @paths or approximates.length == 1
       # set loading text for exact result
-      $('.results .exact').text('loading...')
+      $('.results .exact').text("loading: #{input} ...")
       # take first element of approximates
       attribute = approximates[0]
       # overwrite with input if it's an exact match to given input
