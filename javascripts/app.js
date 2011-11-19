@@ -104,7 +104,7 @@ App = (function() {
     query = input.toLowerCase();
     for (attribute in this.paths) {
       attr = attribute.toLowerCase();
-      if (attr.match(query) || !query || query === '') {
+      if (attr.match(query)) {
         approximates.push(attribute);
       }
     }
@@ -114,23 +114,27 @@ App = (function() {
         approximates.push(attribute);
       }
     }
-    vendor = [];
-    special = [];
-    lower = [];
-    upper = [];
-    for (_i = 0, _len = approximates.length; _i < _len; _i++) {
-      attribute = approximates[_i];
-      if (attribute[0].match(/[a-z]/)) {
-        lower.push(attribute);
-      } else if (attribute[0].match(/[A-Z]/)) {
-        upper.push(attribute);
-      } else if (attribute[0].match(/-/)) {
-        vendor.push(attribute);
-      } else {
-        special.push(attribute);
+    if (approximates.length <= 0) {
+      vendor = [];
+      special = [];
+      lower = [];
+      upper = [];
+      for (_i = 0, _len = approximates.length; _i < _len; _i++) {
+        attribute = approximates[_i];
+        if (attribute[0].match(/[a-z]/)) {
+          lower.push(attribute);
+        } else if (attribute[0].match(/[A-Z]/)) {
+          upper.push(attribute);
+        } else if (attribute[0].match(/-/)) {
+          vendor.push(attribute);
+        } else {
+          special.push(attribute);
+        }
       }
+      approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort());
+    } else {
+      approximates = approximate.sort();
     }
-    approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort());
     html += this.htmlify.htmlify(approximates);
     $('.results .approximate').html(html);
     if (input in this.paths || approximates.length === 1) {

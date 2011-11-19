@@ -115,7 +115,7 @@ class App
     # check paths for match to query
     for attribute of @paths
       attr = attribute.toLowerCase()
-      if attr.match(query) or not query or query == ''
+      if attr.match(query)
         approximates.push attribute
     # display message for no approximate results
     if approximates.length <= 0
@@ -124,22 +124,25 @@ class App
       # append full list of attributes to approximate list for easier navigation
       for attribute of @paths
         approximates.push attribute
-    vendor = []
-    special = []
-    lower = []
-    upper = []
-    # sort attributes
-    for attribute in approximates
-      if attribute[0].match /[a-z]/
-        lower.push attribute
-      else if attribute[0].match /[A-Z]/
-        upper.push attribute
-      else if attribute[0].match /-/
-        vendor.push attribute
-      else
-        special.push attribute
-    # re-assemble approximate array
-    approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort())
+    # sort approximates if necessary
+    if approximates.length <= 0
+      vendor = []
+      special = []
+      lower = []
+      upper = []
+      for attribute in approximates
+        if attribute[0].match /[a-z]/
+          lower.push attribute
+        else if attribute[0].match /[A-Z]/
+          upper.push attribute
+        else if attribute[0].match /-/
+          vendor.push attribute
+        else
+          special.push attribute
+      # re-assemble approximate array
+      approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort())
+    else
+      approximates = approximate.sort()
     # added sorted list of approximate matches to html string    
     html += @htmlify.htmlify(approximates)
     # fill approximate results element with html
