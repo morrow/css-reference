@@ -1,0 +1,36 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<p>
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 1.9.2</p>
+(Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p><code>:-moz-locale-dir(ltr)</code> matches an element if the user interface is being displayed left-to-right. This is determined by the preference <code>intl.uidirection.</code><em><code>locale</code></em> (where <em><code>locale</code></em> is the current locale) being set to "ltr".</p>
+<p>This allows extensions (and themes) to easily adapt their user interface based on the user's locale's needs. This can vary from window to window, and even from tab to tab. This also allows extensions to work even if they don't support the user's default locale, since they can support both left-to-right and right-to-left layouts without worrying about the locale specifics.</p>
+<p>This selector does not work properly from HTML; it always matches, no matter whether the UI locale is left-to-right or right-to-left.</p>
+</div>
+<div id="section_2">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3A-moz-locale-dir(rtl)">:-moz-locale-dir(rtl)</a></code>
+</li>
+</ul>
+<p></p>
+</div>
+</div>

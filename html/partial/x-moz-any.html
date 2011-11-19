@@ -1,0 +1,124 @@
+<div class="pageText" id="pageText">
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>:-moz-any()</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> lets you quickly construct sets of similar selectors by establishing groups from which any of the included items will match. This is an alternative to having to repeat the entire selector for the one item that varies.</p>
+<div class="note">
+<strong>Note : </strong>This pseudo-class is in progress to be standardized in <a title="http://dev.w3.org/csswg/selectors4/#matches" class=" external" rel="external" href="http://dev.w3.org/csswg/selectors4/#matches" target="_blank"><em>CSS Selectors Level 4</em></a> under the name <code>:matches()</code>. It is likely that the syntax and name of <code>:-moz-any()</code> will be changed to reflect it in the near future.</div>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre class="eval">
+:-moz-any( <em>selector</em>[, <em>selector</em>]* )</pre>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>selector</dt> <dd>A selector. This may be a simple selector or a multiple selector comprised of <a class="external" title="http://www.w3.org/TR/css3-selectors/#simple-selectors" rel="external" href="http://www.w3.org/TR/css3-selectors/#simple-selectors" target="_blank">CSS 3 simple selectors</a>.</dd>
+</dl>
+<div class="note">
+<strong>Note:</strong> The selectors may <strong>not</strong> contain combinators or pseudo-elements.</div>
+</div>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>For example, the following CSS:</p>
+
+          <pre name="code" class="css">/* 3 deep (or more) unordered lists use a square */
+ol ol ul,     ol ul ul,     ol menu ul,     ol dir ul,
+ol ol menu,   ol ul menu,   ol menu menu,   ol dir menu,
+ol ol dir,    ol ul dir,    ol menu dir,    ol dir dir,
+ul ol ul,     ul ul ul,     ul menu ul,     ul dir ul,
+ul ol menu,   ul ul menu,   ul menu menu,   ul dir menu,
+ul ol dir,    ul ul dir,    ul menu dir,    ul dir dir,
+menu ol ul,   menu ul ul,   menu menu ul,   menu dir ul,
+menu ol menu, menu ul menu, menu menu menu, menu dir menu,
+menu ol dir,  menu ul dir,  menu menu dir,  menu dir dir,
+dir ol ul,    dir ul ul,    dir menu ul,    dir dir ul,
+dir ol menu,  dir ul menu,  dir menu menu,  dir dir menu,
+dir ol dir,   dir ul dir,   dir menu dir,   dir dir dir {
+  list-style-type: square;
+}</pre>
+        
+<p>Can be replaced with:</p>
+
+          <pre name="code" class="css">/* 3 deep (or more) unordered lists use a square */
+:-moz-any(ol, ul, menu, dir) :-moz-any(ol, ul, menu, dir) ul,
+:-moz-any(ol, ul, menu, dir) :-moz-any(ol, ul, menu, dir) menu,
+:-moz-any(ol, ul, menu, dir) :-moz-any(ol, ul, menu, dir) dir {
+  list-style-type: square;
+}</pre>
+        
+</div>
+<div id="section_5">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<p>This is particularly useful when dealing with HTML5 <a title="en/Sections and Outlines of an HTML5 document" rel="internal" href="https://developer.mozilla.org/en/Sections_and_Outlines_of_an_HTML5_document">sections and headings</a>. Since 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/section">&lt;section&gt;</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/article">&lt;article&gt;</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/aside">&lt;aside&gt;</a></code>, and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/nav">&lt;nav&gt;</a></code> can be nested, without <code>:-moz-any()</code>, styling these to match one another can be tricky.</p>
+<p>For example, without <code>:-moz-any()</code>, styling all the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/h1">&lt;h1&gt;</a></code> elements at different depths could be very complicated:</p>
+
+          <pre name="code" class="css">/* Level 0 */
+h1 {
+  font-size: 30px;
+}
+/* Level 1 */
+section h1, article h1, aside h1, nav h1 {
+  font-size: 25px;
+}
+/* Level 2 */
+section section h1, section article h1, section aside h1, section nav h1,
+article section h1, article article h1, article aside h1, article nav h1,
+aside section h1, aside article h1, aside aside h1, aside nav h1,
+nav section h1, nav article h1, nav aside h1, nav nav h1, {
+  font-size: 20px;
+}
+/* Level 3 */
+/* ... don't even think about it*/</pre>
+        
+<p>Using <code>:-moz-any()</code>, though, it's much easier:</p>
+
+          <pre name="code" class="css">/* Level 0 */
+h1 {
+  font-size: 30px;
+}
+/* Level 1 */
+:-moz-any(section, article, aside, nav) h1 {
+  font-size: 25px;
+}
+/* Level 2 */
+:-moz-any(section, article, aside, nav)
+:-moz-any(section, article, aside, nav) h1 {
+  font-size: 20px;
+}
+/* Level 3 */
+:-moz-any(section, article, aside, nav)
+:-moz-any(section, article, aside, nav)
+:-moz-any(section, article, aside, nav) h1 {
+  font-size: 15px;
+}</pre>
+        
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0 (2)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>12.0 (534.30)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td> </td> <td> </td> <td>
+<em><a rel="custom" href="http://nightly.webkit.org/">Nightly build</a></em> 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+</div>

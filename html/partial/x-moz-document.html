@@ -1,0 +1,61 @@
+<div class="pageText" id="pageText">
+<span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>@-moz-document</code> rule is a Gecko-specific at-rule that restricts the style rules contained within it based on the URL of the document. It is designed primarily for user style sheets. A <code>@-moz-document</code> rule can specify one or more matching functions. If any of the functions apply to a URL, the rule will take effect on that URL.</p>
+<p>The functions available are:</p>
+<ul>
+<li>
+<code>url()</code>, which matches an exact URL</li> <li>
+<code>url-prefix()</code>, which matches if the document URL starts with the value provided</li> <li>
+<code>domain()</code>, which matches if the document URL is on the domain provided (or a subdomain of it)</li> <li>
+<code>regexp()</code>, which matches if the document URL is matched by the <a title="https://developer.mozilla.org/en/JavaScript/Guide/Regular_Expressions" rel="internal" href="https://developer.mozilla.org/en/JavaScript/Guide/Regular_Expressions">regular expression</a> provided. The expression must match the entire URL.</li>
+</ul>
+<div class="geckoVersionNote"> <p>
+</p>
+<div class="geckoVersionHeading">Gecko 6.0 note<div style="font-size:9px; position:relative; top:-5px; font-style:italic;">(Firefox 6.0 / Thunderbird 6.0 / SeaMonkey 2.3)
+</div>
+</div>
+ <p>Support for the <code>regexp()</code>function was added in Gecko 6.0 (Firefox 6.0 / Thunderbird 6.0 / SeaMonkey 2.3)
+.</p>
+</div>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<p>The values provided to the <code>url()</code>, <code>url-prefix()</code>, and <code>domain()</code> functions can optionally be enclosed by single or double quotes. The values provided to the <code>regexp()</code> function <strong>must</strong> be enclosed in quotes.</p>
+<p>Escaped values provided to the <code>regexp()</code> function must additionally escaped from the CSS. For example, a <code>.</code> (period) matches any character in regular expressions. To match a literal period, you would first need to escape it using regular expression rules (to <code>\.</code>), then escape that string using CSS rules (to <code>\\.</code>).</p>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>You can put this into your <code><a class="external" rel="external" href="http://www.mozilla.org/support/firefox/edit#content" title="http://www.mozilla.org/support/firefox/edit#content" target="_blank">userContent.css</a></code> file:</p>
+
+          <pre name="code" class="css">@-moz-document url(http://www.w3.org/),
+               url-prefix(http://www.w3.org/Style/),
+               domain(mozilla.org),
+               regexp("^https:.*")
+{
+  /* CSS rules here apply to:
+     + The page "http://www.w3.org/".
+     + Any page whose URL begins with "http://www.w3.org/Style/"
+     + Any page whose URL's host is "mozilla.org" or ends with
+       ".mozilla.org"
+     + Any page whose URL starts with "https:" */
+
+  /* make the above-mentioned pages really ugly */
+  body { color: purple; background: yellow; }
+}</pre>
+        
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a class="external" rel="external" href="http://lists.w3.org/Archives/Public/www-style/2004Aug/0135" title="http://lists.w3.org/Archives/Public/www-style/2004Aug/0135" target="_blank">Per-site user style sheet rules</a>. Not part of any W3C specification.</li> <li><a title="http://www.w3.org/TR/css3-conditional/#at-document" class=" external" rel="external" href="http://www.w3.org/TR/css3-conditional/#at-document" target="_blank">CSS Conditional Rules Module Level 3</a></li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>Available since Mozilla 1.8 / <a title="en/Firefox_1.5_for_developers" rel="internal" href="https://developer.mozilla.org/en/Firefox_1.5_for_developers">Firefox 1.5</a>.</p>
+<p></p>
+</div>
+</div>

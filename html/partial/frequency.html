@@ -1,0 +1,90 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;frequency&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data types denotes a frequency dimension, like the pitch of a speaking voice. They consists of a <span class="lang lang-en"><span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span></span> immediately followed by the unit. Like for any CSS dimension, there is no space between the unit literal and the number.</p>
+<p>The following units may be used :</p>
+<ul>
+<li>
+<code>Hz</code> which represents a frequency in Hertz. E.g. <code>0Hz</code>, <code>1500Hz</code>, <code>10000Hz</code>.</li> <li>
+<code>kHz</code> which represents a time in kilohertz. E.g. <code>0kHz</code>, <code>1.5kHz</code>, <code>10kHz</code>.</li>
+</ul>
+<p>As all units represents the same time for the value 0, the unit may be omitted in that case: <code>0</code> represents <code>0Hz</code>, <code>0kHz</code>. Though the units are case-insensitive in CSS, it is good practice to use a capital H for <code>Hz</code> and <code>kHz</code>, as in the <a class="external" title="http://en.wikipedia.org/wiki/International_System_of_Units" rel="external" href="http://en.wikipedia.org/wiki/International_System_of_Units" target="_blank">SI</a>, <a class="external" title="http://en.wikipedia.org/wiki/Heinrich_Hertz" rel="external" href="http://en.wikipedia.org/wiki/Heinrich_Hertz" target="_blank">Hertz</a> being a family noun.</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h2 class="editable"><span>Examples</span></h2>
+<p>These are valid time values:</p>
+<pre>12Hz        Positive integer
+-456kHz     Negative integer
+4.3Hz       Non-integer
+14KhZ       The unit is case-insensitive, though non-SI capitalization is not recommended.
+0           Zero (without the unit)
++0s         Zero, with a leading + and the unit
+-0ms        Zero, with a leading - and the unt(Though strange, this is an allowed value)
+</pre>
+<p>These are invalid time values:</p>
+<pre>12.0        This is a <a href="mks://localhost/en/CSS/number" title="en/CSS/number">&lt;number&gt;</a>, not an &lt;frequency&gt;, it must have a unit
+7 Hz        No space is allowed between the <a href="mks://localhost/en/CSS/number" title="en/CSS/number">&lt;number&gt;</a> and the unit
+</pre>
+</div>
+<div id="section_3">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#frequencies-the-ltfrequencygt-type-and-h" rel="external" href="http://www.w3.org/TR/css3-values/#frequencies-the-ltfrequencygt-type-and-h" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td> </td> </tr></tbody>
+</table>
+<p>This data type was initially introduced in <a class="external" title="http://www.w3.org/TR/CSS2/" rel="external" href="http://www.w3.org/TR/CSS2/" target="_blank">CSS Level 2</a> for the now obsoleted <a title="aural" rel="internal" href="https://developer.mozilla.org/en/CSS/Aural">aural</a> <a title="https://developer.mozilla.org/en/CSS/@media#Media_groups" rel="internal" href="https://developer.mozilla.org/en/CSS/@media#Media_groups">media group</a>, where it was used to define the pitch of the voice. This has been deprecated since then, but the &lt;frequency&gt; data type has been reintroduced in CSS3, though no CSS property is using it at the moment.</p>
+</div>
+<div id="section_4">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>no</td> <td>no</td> <td>no <a class="external" title="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx#values" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024%28v=vs.85%29.aspx#values" target="_blank">[1]</a>
+</td> <td>no [*]</td> <td>no</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>no</td> <td>no</td> <td>no</td> <td>no</td> <td>no</td> </tr>
+</tbody></table>
+</div>
+<p>[*] Some versions of Opera may have (partial) support for the obsolete aural media group, and through the pitch property support for the <code>&lt;frequency&gt;</code> data type.</p>
+</div>
+<div id="section_5">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,95 @@
+<div class="pageText" id="pageText">
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;identifier&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data value denotes an arbitrary user-defined string used as an identifier.</p>
+<p>Its syntax is similar to the CSS identifier one, except that it is case-sensitive: an <code>&lt;identifier&gt;</code> is a sequence of characters where characters can be :</p>
+<ul>
+<li>any alphanumeric character (A to Z, or a to z),</li> <li>any decimal digit (0 to 9),</li> <li>a dash ('<code>-</code>')</li> <li>an underscore ('<code>_</code>'),</li> <li>a escaped character (with a backslash, '<code>\</code>'),</li> <li>or a <a class="external" title="http://en.wikipedia.org/wiki/Unicode" rel="external" href="http://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode</a> character (in the format of a backslash followed by one to six hexadecimal digits, its Unicode code point).</li>
+</ul>
+<p>The first character must not be a decimal digit nor a dash ('<code>-</code>') followed by a decimal digit or another dash. An <code>&lt;identifier&gt;</code> must not be placed between single or double quotes as it would be identical to a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code> </span>.</p>
+<p>Note that <code>id1</code>, <code>Id1</code>, <code>iD1</code> and <code>ID1</code> are all different identifiers as they are <a class="external" title="http://en.wikipedia.org/wiki/Case_sensitivity" rel="external" href="http://en.wikipedia.org/wiki/Case_sensitivity" target="_blank">case-sensitive</a>. In the opposite, as they are several way to escape a character, <code>toto\?</code> and <code>toto\3F</code> are the same identifiers.</p>
+<p>These are valid identifiers:</p>
+<pre>nono79            A mix of alphanumeric characters and numbers
+ground-level      A mix of alphanumeric characters and a dash
+-test             A dash followed by an alphabetic character
+_internal         An underscore followed by alphanumeric characters
+\22 toto          A Unicode character followed by a sequence of alphanumeric character
+bili\.bob         The period is correctly escaped
+</pre>
+<p>These are invalid identifiers:</p>
+<pre>34rem             It must not start with a decimal digit.
+-12rad            It must not start with a dash followed by a decimal digit.
+bili.bob          Only alphanumeric characters, _ and - need not being escaped.
+--toto            It must not start with two dashes.
+'bilibob'         It isn't an &lt;identifier&gt;, it is a <a href="mks://localhost/en/CSS/string" title="string">&lt;string&gt;</a>.
+"bilibob"         It isn't an &lt;identifier&gt;, it is a <a href="mks://localhost/en/CSS/string" title="string">&lt;string&gt;</a>.
+</pre>
+<p>The <code>&lt;identifier&gt;</code> data type is mainly used in conjunction with <a title="CSS Counters" rel="internal" href="https://developer.mozilla.org/en/CSS_Counters">CSS Counters</a>, the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/counter">counter</a></code> functional notation and the two related CSS properties, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/counter-reset">counter-reset</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/counter-increment">counter-increment</a></code>.</p>
+</div>
+<div id="section_2">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#identifier-value" rel="external" href="http://www.w3.org/TR/css3-values/#identifier-value" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#counter" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#counter" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_3">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>2.0</td> <td>1.0 (?)</td> <td>8.0 <a title="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" class=" external" rel="external" href="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx" target="_blank">[1]</a>
+</td> <td>9.2</td> <td>3.1 (?)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_4">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>
+</div>

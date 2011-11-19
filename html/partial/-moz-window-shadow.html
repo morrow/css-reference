@@ -1,0 +1,69 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<p>
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 1.9.1</p>
+(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>-moz-window-shadow</code> specifies whether a window will have a shadow. Currently it only works on Mac OS X.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/default">default</a></code>
+</li> <li>Applies to: all elements that create native windows, e.g. window, panel</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>:</li>
+</ul>
+<p>Firefox 3 added support for transparent windows on Mac OS X. However, for these windows shadows were turned off and there was no way of turning them on.</p>
+<p>In Firefox 3.5 we changed the default; all windows now have a shadow. We introduced the <code>-moz-window-shadow</code> CSS property to provide a way to turn off unwanted shadows.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-window-shadow: default | menu | tooltip | sheet | none
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>default</dt> <dd>The window will have a shadow with the default window shadow style.</dd> <dt>menu 
+<span title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 2.0</span>
+</dt> <dd>The window will have the shadow style that's appropriate for menus.</dd> <dt>tooltip 
+<span title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 2.0</span>
+</dt> <dd>The window will have the shadow style that's appropriate for tooltips.</dd> <dt>sheet 
+<span title="(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 2.0</span>
+</dt> <dd>The window will have the shadow style that's appropriate for sheet windows.</dd> <dt>none</dt> <dd>The window won't have a shadow.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+.KUI-panel {
+  -moz-window-shadow: none;
+}
+</pre>
+</div>
+</div>

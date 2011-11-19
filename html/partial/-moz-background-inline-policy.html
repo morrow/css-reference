@@ -1,0 +1,44 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>In <a title="en/Gecko" rel="internal" href="https://developer.mozilla.org/en/Gecko">Gecko</a>-based applications like Firefox, the<code> -moz-background-inline-policy </code>CSS property specifies how the background image of an inline element is determined when the content of the inline element wraps onto multiple lines. The choice of position has significant effects on repetition.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: <code>continuous</code>
+</li> <li>Applies to: inline elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+-moz-background-inline-policy:  bounding-box | continuous | each-box
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>bounding-box </dt> <dd>The background image is positioned (and repeated) in the smallest rectangle that contains all of the inline boxes for the element. It is then clipped to be visible only within those boxes, according to the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-background-clip">-moz-background-clip</a></code> property.</dd> <dt>continuous</dt> <dd>The background image is positioned (and repeated) as if the inline box were not broken across lines, and then this long rectangle is sliced into pieces for each line.</dd> <dt>each-box</dt> <dd>The background image is positioned (and repeated) separately for each box of the inline element. This means that an image with 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-repeat">background-repeat</a></code>: <code>no-repeat</code> may be repeated multiple times.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<ul>
+<li><a rel="internal" href="https://developer.mozilla.org/samples/cssref/moz-background-inline-policy-example.html" title="samples/cssref/moz-background-inline-policy-example.html" class="external new">Example showing the values of <code>-moz-background-inline-policy</code></a></li> <li><a title="http://hixie.ch/tests/adhoc/css/background/inline/policy/" class="external" rel="external" href="http://hixie.ch/tests/adhoc/css/background/inline/policy/" target="_blank">hixie.ch/tests/adhoc/css/background/inline/policy/</a></li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p><code>-moz-background-inline-policy </code>is supported since Gecko 1.3 (Firefox 1.0).</p>
+<p></p>
+</div>
+</div>

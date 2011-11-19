@@ -1,0 +1,143 @@
+<div class="pageText" id="pageText">
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<p>Gradients are smooth transitions between two or more specified colors. Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming. Mozilla (Firefox) supports two kinds of CSS gradients: linear and radial.</p>
+<p>Mozilla currently only supports CSS gradients as values of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> property, as well as within the shorthand 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>. You specify a gradient value instead of an image URL.</p>
+<p>The <code>linear-gradient</code> value does not allow repeating gradients. For this functionality, see 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/repeating-linear-gradient">repeating-linear-gradient</a></code>.</p>
+<div id="section_1">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>linear-gradient( [&lt;point&gt; || &lt;angle&gt;,]? &lt;stop&gt;, &lt;stop&gt; [, &lt;stop&gt;]* )
+</pre>
+<p><strong>Vendor prefixes: </strong>See the compatibility table below for detail on the vendor prefixes you'll need to use for gradients.</p>
+<p>Where:</p>
+<dl>
+<dt>&lt;stop&gt;</dt> <dd> <p><span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> [ <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> | 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> ]</p> </dd>
+</dl>
+</div>
+<div id="section_2">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>&lt;point&gt;</dt> <dd>A position, interpreted in the same way as 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-position">background-position</a></code> or 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-transform-origin">-moz-transform-origin</a></code>. This is used to define the starting point of the gradient. It can be specified as a percentage, in pixels, or using "left", "center", or "right" for horizontal and "top", "center", or "bottom" for vertical positioning. Positions start from the top left corner of the affected element. If only one of the horizontal or vertical positioning is specified, the other direction defaults to "center".</dd> <dt>&lt;angle&gt;</dt> <dd>An angle of direction for the gradient. See <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code></span>.</dd> <dt>&lt;stop&gt;</dt> <dd>This value is comprised of a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> value, followed by an optional stop position (either a percentage between 0% and 100% or a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> along the gradient axis).</dd> <dd>Rendering of color-stops in CSS gradients follows the same rules as color-stops in SVG gradients.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>Linear gradients run along an axis. The axis is defined in the following ways:</p>
+<ul>
+<li>If the first parameter to the gradient function is only a &lt;point&gt;, the gradient axis starts from the specified point, and ends at the point you would get if you rotated the starting point by 180 degrees about the center of the box that the gradient is to be applied to.</li> <li>If the first parameter is only an &lt;angle&gt;, the gradient axis starts from the box's corner that would ensure the axis goes through the box. The axis runs along the specified angle. The end point of the axis is defined such that the farthest corner of the box from the starting point is perpendicular to the gradient axis at that point.</li> <li>If the first parameter has both a &lt;point&gt; and &lt;angle&gt;, the gradient axis starts from the point and runs along the angle. The end point is defined as before.</li> <li>If neither a &lt;point&gt; or &lt;angle&gt; is specified, i.e. the entire function consists of only &lt;stop&gt; values, the gradient axis starts from the top of the box and runs vertically downwards, ending at the bottom of the box.</li>
+</ul>
+<p>Positions can be specified along the gradient axis with a color for each of them, called "color-stops", and the areas between every color-stop smoothly transition between each other. Any one color in the gradient forms a straight line that is perpendicular to the gradient axis. In the below image, the gradient's axis starts from the top-left corner of the div, and is directed at a 45 degree angle. Two color-stops are specified, red and blue.</p>
+<p><img alt="lingradexample.png" class="internal default" style="" src="https://developer.mozilla.org/@api/deki/files/3849/=lingradexample.png"></p>
+<div id="section_4">
+<span id="Example:_Multiple_color_stops"></span><h3 class="editable">Example: Multiple color stops</h3>
+<p>If the first color-stop does not have a <code>&lt;length&gt;</code> or <code>&lt;percentage&gt;</code>, it defaults to 0%. If the last color-stop does not have a <code>&lt;length&gt;</code> or <code>&lt;percentage&gt;</code>, it defaults to 100%. If a color-stop doesn't have a specified position and it isn't the first or last stop, then it is assigned the position that is half way between the previous stop and next stop.</p>
+<p>Color-stops must be specified in order. After assigning default values to the first and last stops if necessary, if a color-stop has a specified position that is less than the specified position of any color-stop before it in the list, its position is changed to be equal to the largest specified position of any color-stop before it.</p>
+<div style="background-image: -moz-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet); 
+background-image: -webkit-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet);
+background-image: -ms-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet);
+background-image: -o-linear-gradient(left,red,orange,yellow, green, blue,indigo,violet); border: 1px solid black;">A rainbow made from a gradient</div>
+<pre>background-image: linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);</pre>
+</div>
+<div id="section_5">
+<span id="Examples:_Repeating"></span><h3 class="editable">Examples: Repeating</h3>
+<p>The <code>linear-gradient</code> does not allow repeating gradients. By default, the gradient will stretch to fill the element it is defined on. For this functionality, see 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/repeating-linear-gradient">repeating-linear-gradient</a></code>.</p>
+</div>
+<div id="section_6">
+<span id="Example:_Using_transparency"></span><h3 class="editable">Example: Using transparency</h3>
+<div style="background-image: -moz-linear-gradient(top left, red, rgba(255, 0, 0, 0)); background-image: -webkit-linear-gradient(top left, red, rgba(255, 0, 0, 0)); background-image: -o-linear-gradient(top left, red, rgba(255, 0, 0, 0)); background-image: linear-gradient(top left, red, rgba(255, 0, 0, 0)); background-repeat: repeat; background-attachment: scroll; background-position: 0% 0%; background-color: transparent; text-shadow: 1px 1px 0pt black; color: white; border: 1px solid black;">Linear with transparency</div>
+<pre>background-image: linear-gradient(top left, red, rgba(255,0,0,0));</pre>
+<p>Gradient backgrounds are not affected by 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-size">background-size</a></code> if all points and lengths are specified using fixed units (as opposed to percentages or keywords, which are relative to the value of <code>background-size</code>).</p>
+</div>
+</div>
+<div id="section_7">
+<span id="Notes"></span><h2 class="editable">Notes</h2>
+<p>If you set the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> property of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/body">&lt;body&gt;</a></code> tag to a <code>linear-gradient</code>, the gradient <a class="external" title="http://richard.milewski.org/archives/1014" rel="external" href="http://richard.milewski.org/archives/1014" target="_blank">won't fill the browser screen unless </a>you also set the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/min-height">min-height</a></code> property of the document root (e.g. the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/html">&lt;html&gt;</a></code> tag) to 100%.</p>
+</div>
+<div id="section_8">
+<span id="Browser_compatibility"></span><h2 class="editable">
+<a name="AutoCompatibilityTable"></a>Browser compatibility</h2>
+<table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.6 (1.9.2)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span> 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=479220" class="external" title="RESOLVED FIXED - Implement the CSS gradients proposal">
+bug 479220</a>
+</td> <td>10.0 (534.16)
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>10.0 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-ms</span>
+</td> <td>11.10
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-o</span>
+</td> <td>5.1
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>
+<a class="external" rel="external" href="http://www.webkit.org/blog/175/introducing-css-gradients/" title="http://www.webkit.org/blog/175/introducing-css-gradients/" target="_blank">Legacy syntax</a><span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     </td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>3
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>4.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+<ul>
+<li>Internet Explorer 5.5 through 8.0 supports proprietary <a class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms532997(VS.85,loband).aspx" title="http://msdn.microsoft.com/en-us/library/ms532997(VS.85,loband).aspx" target="_blank"><code>filter: progid:DXImageTransform.Microsoft.Gradient()</code> filter</a>.</li> <li>WebKit since 528 supports the legacy<a class="external" rel="external" href="http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html" title="http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html" target="_blank"><code>-webkit-gradient(linear,…)</code> function</a>. As of WebKit 534.16, it also supports the standard gradient syntax.</li> <li>Unlike in Gecko, in legacy WebKit you cannot specify both a position and angle in <code>-webkit-linear-gradient()</code>. You can achieve the same effect by offsetting the color stops.</li>
+</ul>
+</div>
+<div id="section_9">
+<span id="Cross-browser_gradients"></span><h2 class="editable">Cross-browser gradients</h2>
+<p>Considering all prefixes above, here is a gradient from pink to green, top to bottom. (Code taken from <a class="external" rel="external" href="http://css3please.com/" title="http://css3please.com/" target="_blank">css3please.com</a>)</p>
+<pre>.grad { 
+
+  background-color: #F07575; /* fallback color if gradients are not supported */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsl(0, 80%, 70%)), to(#BADA55)); 
+  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), #BADA55); 
+  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), #BADA55); 
+  background-image:     -ms-linear-gradient(top, hsl(0, 80%, 70%), #BADA55); 
+  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #BADA55); 
+  background-image:         linear-gradient(to bottom, hsl(0, 80%, 70%), #BADA55); /* current standard, but unimplemented and subject to change */
+
+}
+</pre>
+</div>
+<div id="section_10">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="en/Using gradients" rel="internal" href="https://developer.mozilla.org/en/CSS/Using_CSS_gradients">Using gradients</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/radial-gradient">radial-gradient</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/repeating-linear-gradient">repeating-linear-gradient</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>
+</li> <li><a class="external" title="http://webkit.org/blog/175/introducing-css-gradients/" rel="external" href="http://webkit.org/blog/175/introducing-css-gradients/" target="_blank">WebKit's original proposal</a></li> <li>W3C Proposals for <a class="external" title="http://dev.w3.org/csswg/css3-images/#linear-gradients" rel="external" href="http://dev.w3.org/csswg/css3-images/#linear-gradients" target="_blank">Linear Gradients</a> and <code><a class="external" title="http://www.w3.org/TR/css3-background/#the-background-position" rel="external" href="http://www.w3.org/TR/css3-background/#the-background-position" target="_blank">background-position</a></code>
+</li> <li><a class="external" title="http://leaverou.me/css3patterns/" rel="external" href="http://leaverou.me/css3patterns/" target="_blank">CSS Gradients Patterns Gallery, by Lea Verou</a></li> <li><a class="external" title="http://standardista.com/cssgradients" rel="external" href="http://standardista.com/cssgradients" target="_blank">CSS3 Gradients Library, by Estelle Weyl</a></li>
+</ul>
+<p></p>
+</div>
+</div>

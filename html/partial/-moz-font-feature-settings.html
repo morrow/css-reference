@@ -1,0 +1,103 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span>
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2.0</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> -moz-font-feature-settings </code>CSS property allows control over advanced typographic features in OpenType fonts.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/normal">normal</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+-moz-font-feature-settings : normal | &lt;string&gt;</pre>
+<p>where &lt;string&gt; is defined as quoted list of OpenType feature tag-value pairs</p>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>normal</dt> <dd>Text is laid out using default settings.</dd> <dt>&lt;string&gt;</dt> <dd>When rendering text, the list of OpenType feature tags is passed to the text layout engine to enable or disable font features.  For example, "tagx=1" implies that the OpenType feature 'tagx' is enabled.  Using a value of 0 disables a given feature.  For non-boolean OpenType features (e.g. <a title="http://www.microsoft.com/typography/otspec/features_pt.htm#salt" class=" external" rel="external" href="http://www.microsoft.com/typography/otspec/features_pt.htm#salt" target="_blank">stylistic alternates</a>), the value implies a particular glyph to be selected.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+/* use small-cap alternate glyphs */
+.smallcaps { -moz-font-feature-settings: "smcp=1"; }
+
+/* convert both upper and lowercase to small caps (affects punctuation also) */
+.allsmallcaps { -moz-font-feature-settings: "c2sc=1, smcp=1"; }
+
+/* enable historical forms */
+.hist { -moz-font-feature-settings: "hist=1"; }
+
+/* disable common ligatures, usually on by default */
+.noligs { -moz-font-feature-settings: "liga=0"; }
+
+/* enable tabular (monospaced) figures */
+td.tabular { -moz-font-feature-settings: "tnum=1"; }
+
+/* enable automatic fractions */
+.fractions { -moz-font-feature-settings: "frac=1"; }
+
+/* use the second available swash character */
+.swash { -moz-font-feature-settings: "swsh=2"; }
+
+/* enable stylistic set 7 */
+.fancystyle {
+  font-family: Gabriola; /* available on Windows 7 */
+  -moz-font-feature-settings: "ss07=1";
+}
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>This syntax for this property is still under development and will likely change as the <a class=" external" rel="external" href="http://dev.w3.org/csswg/css3-fonts" title="http://dev.w3.org/csswg/css3-fonts" target="_blank">CSS3 Fonts specification</a> evolves. Authors should not rely on the current syntax being supported in future versions of Firefox.</p>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>Supported in Gecko 2.0 (Firefox 4.0), no support in other major browsers.</p>
+</div>
+<div id="section_7">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li>
+<a class=" external" title="http://dev.w3.org/csswg/css3-fonts/#font-feature-settings-prop" rel="external" href="http://dev.w3.org/csswg/css3-fonts/#font-feature-settings-prop" target="_blank">CSS3 Fonts</a> Editor's Draft</li> <li>
+<a class=" external" title="http://www.microsoft.com/typography/otspec/featurelist.htm" rel="external" href="http://www.microsoft.com/typography/otspec/featurelist.htm" target="_blank">OpenType Feature Tags</a> list</li> <li>
+<a class=" external" title="http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/" rel="external" href="http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/" target="_blank">OpenType Font Feature support in Firefox 4</a> blog article</li>
+</ul>
+</div>
+<div id="section_8">
+<span id="See_Also"></span><h3 class="editable">See Also</h3>
+<ul>
+<li><a class=" external" title="http://www.fontfont.com/opentype/FF_OT_UserGuide_v2.pdf" rel="external" href="http://www.fontfont.com/opentype/FF_OT_UserGuide_v2.pdf" target="_blank">FontFont OpenType User Guide</a></li>
+</ul>
+</div>
+</div>

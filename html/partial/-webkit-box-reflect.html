@@ -1,0 +1,45 @@
+<article><h1>CSS property: <code>-webkit-box-reflect</code>
+</h1>
+
+    <section><h1>Description</h1>
+        <p>Defines a reflection of a border box.</p>
+<p>Reflections will update automatically as the source changes. Specifying a reflection has the effect of creating a stacking context (like opacity, masks, and transforms). The reflection is non-interactive, and as such, it has no effect on hit testing. The reflection has no effect on layout, other than being part of a container’s overflow; it is similar to <a href="/property/-webkit-box-shadow" class="property" data-description="Applies a drop shadow effect to the border box of an object.">-webkit-box-shadow</a> in this respect.</p>
+    </section><section class="syntax"><h1>Syntax</h1>
+        <p><code>-webkit-box-reflect: &lt;direction&gt; &lt;offset&gt; &lt;mask-box-image&gt;;</code></p>    </section><section class="values"><h1>Values</h1>
+        <dl>
+<dt>&lt;direction&gt;</dt>
+<dd>
+<p>The position of the reflection relative to the border box.</p>
+<table>
+<tr>
+<td class="value">above</td>
+<td class="description">The reflection appears above the border box.</td>
+</tr>
+<tr>
+<td class="value">below</td>
+<td class="description">The reflection appears below the border box.</td>
+</tr>
+<tr>
+<td class="value">left</td>
+<td class="description">The reflection appears to the left of the border box.</td>
+</tr>
+<tr>
+<td class="value">right</td>
+<td class="description">The reflection appears to the right of the border box.</td>
+</tr>
+</table>
+</dd>
+<dt>&lt;offset&gt;</dt>
+<dd>
+<p>The distance of the reflection from the edge of the border box, in length units or as a percentage.</p>
+<table><tr>
+<td class="value default">0 (by default)</td>
+<td class="description">The default value is <code>0</code>
+</td>
+</tr></table>
+</dd>
+<dt>&lt;mask-box-image&gt;</dt>
+<dd><p>Used to overlay the reflection. If omitted, the reflection has no mask.</p></dd>
+</dl></section><section class="versions"><h1>Versions</h1>
+        <ul>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-box-reflect">iOS 2.0</a></li>        </ul></section></article>

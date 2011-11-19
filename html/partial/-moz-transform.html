@@ -1,0 +1,255 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>transform</code> CSS property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated, scaled, and skewed as this text.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: none</li> <li>Applies to: all block level and inline level elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>:</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>
+transform:  &lt;transform-function&gt; [&lt;transform-function&gt;]* | none</pre>
+<p><strong>Vendor prefixes:</strong> See the compatibility table below for detail on the vendor prefixes you'll need to use for this feature.</p>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>transform-function</dt> <dd>One or more of the <a rel="custom" href="https://developer.mozilla.org/en/CSS/transform#CSS_transform_functions">CSS transform functions</a> to be applied, see below.</dd> <dt>none</dt> <dd>Specifies that no transform should be applied.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>See <a title="En/CSS/Using_CSS_transforms" rel="internal" href="https://developer.mozilla.org/En/CSS/Using_CSS_transforms">Using CSS transforms</a>.</p>
+<div id="section_5">
+<span id="Live_Example"></span><h4 class="editable">Live Example</h4>
+<pre style="width:33em; border:solid red; -moz-transform:translate(100px) rotate(20deg); -moz-transform-origin:60% 100%; -webkit-transform:translate(100px) rotate(20deg); -webkit-transform-origin:60% 100%; -o-transform:translate(100px) rotate(20deg); -o-transform-origin:60% 100%; -ms-transform:translate(100px) rotate(20deg); -ms-transform-origin:60% 100%; transform:translate(100px) rotate(20deg); transform-origin:60% 100%;">
+pre {
+     width: 33em;
+     border: solid red;
+
+    -moz-transform: translate(100px) rotate(20deg);
+    -moz-transform-origin: 60% 100%;
+
+    -webkit-transform: translate(100px) rotate(20deg);
+    -webkit-transform-origin: 60% 100%;
+
+    -o-transform:translate(100px) rotate(20deg); 
+    -o-transform-origin:60% 100%;
+
+    -ms-transform: translate(100px) rotate(20deg);
+    -ms-transform-origin: 60% 100%;
+
+    transform: translate(100px) rotate(20deg);
+    transform-origin: 60% 100%;
+}
+</pre>
+</div>
+</div>
+<div id="section_6">
+<span id="CSS_transform_functions"></span><h2 class="editable">CSS transform functions</h2>
+<p>The <code>transform</code> CSS property allows the coordinate system used by an element to be manipulated using <strong>transform functions</strong>. These functions are described below.</p>
+<div id="section_7">
+<span id="matrix"></span><h3 class="editable">matrix</h3>
+<pre>
+transform:  matrix(a, c, b, d, tx, ty)
+
+/* Where a, b, c, d build the transformation matrix 
+   ┌     ┐ 
+   │ a b │
+   │ c d │
+   └     ┘
+   and tx, ty are the translate values.  */
+</pre>
+<p>Specifies a 2D transformation matrix comprised of the specified six values. This is the equivalent to applying the transformation <strong>matrix [a b c d tx ty]</strong>.</p>
+<div class="note">
+<strong>Note:</strong> Gecko (Firefox) accepts a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> value for <strong>tx</strong> and <strong>ty</strong>.<br> Webkit (Safari, Chrome) and Opera currently support a unitless <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> for <strong>tx</strong> and <strong>ty</strong>.</div>
+<div id="section_8">
+<span id="Live_Examples"></span><h4 class="editable">Live Examples</h4>
+<pre style="background:gold; width:400px; -moz-transform:matrix(1, -0.2, 0, 1, 0, 0); -webkit-transform:matrix(1, -0.2, 0, 1, 0, 0); -o-transform:matrix(1, -0.2, 0, 1, 0, 0); -ms-transform:matrix(1, -0.2, 0, 1, 0, 0); transform:matrix(1, -0.2, 0, 1, 0, 0); ">
+ background: gold;  width: 30em;
+
+    -moz-transform: matrix(1, -0.2, 0, 1, 0, 0);
+ -webkit-transform: matrix(1, -0.2, 0, 1, 0, 0);
+      -o-transform: matrix(1, -0.2, 0, 1, 0, 0);
+     -ms-transform: matrix(1, -0.2, 0, 1, 0, 0);
+         transform: matrix(1, -0.2, 0, 1, 0, 0);
+</pre>
+<pre style="background:wheat; max-width:intrinsic; max-width:-moz-fit-content; -moz-transform: matrix(1, 0, 0.6, 1, 15em, 0); -webkit-transform: matrix(1, 0, 0.6, 1, 250, 0); -o-transform: matrix(1, 0, 0.6, 1, 250, 0); -ms-transform: matrix(1, 0, 0.6, 1, 250, 0); transform: matrix(1, 0, 0.6, 1, 250, 0);">
+ background: wheat;
+ max-width: intrinsic;
+
+    -moz-transform: matrix(1, 0, 0.6, 1, 15em, 0);
+ -webkit-transform: matrix(1, 0, 0.6, 1,  250, 0);
+      -o-transform: matrix(1, 0, 0.6, 1,  250, 0);
+     -ms-transform: matrix(1, 0, 0.6, 1,  250, 0);
+         transform: matrix(1, 0, 0.6, 1,  250, 0);
+</pre>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h4 class="editable">See also</h4>
+<ul>
+<li>
+<a class="external" rel="external" href="http://en.wikipedia.org/wiki/Linear_transformation#Examples_of_linear_transformation_matrices" title="http://en.wikipedia.org/wiki/Linear_transformation#Examples_of_linear_transformation_matrices" target="_blank">Examples of linear transformation matrices</a> Wikipedia</li> <li>
+<a class="external" rel="external" href="http://www.mathamazement.com/Lessons/Pre-Calculus/08_Matrices-and-Determinants/coordinate-transformation-matrices.html" title="http://www.mathamazement.com/Lessons/Pre-Calculus/08_Matrices-and-Determinants/coordinate-transformation-matrices.html" target="_blank">Coordinate transformation matrices</a> mathamazement.com</li> <li>
+<a class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx" title="http://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx" target="_blank">Microsoft's matrix filter</a> MSDN</li>
+</ul>
+</div>
+</div>
+<div id="section_10">
+<span id="rotate"></span><h3 class="editable">rotate</h3>
+<pre class="eval">
+transform:  rotate(angle);       /* an &lt;angle&gt;, e.g.  rotate(30deg) */</pre>
+<p>Rotates the element clockwise around its origin (as specified by the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transform-origin">transform-origin</a></code> property) by the specified <code>angle</code>. The operation corresponds to the matrix <strong>[cos(angle) sin(angle) -sin(angle) cos(angle) 0 0]</strong>.</p>
+</div>
+<div id="section_11">
+<span id="scale"></span><h3 class="editable">scale</h3>
+<pre class="eval">
+transform:  scale(sx[, sy]);     /* one or two unitless &lt;number&gt;s, e.g.  scale(2.1,4) */</pre>
+<p>Specifies a 2D scaling operation described by <strong>[sx, sy]</strong>. If <code>sy</code> isn't specified, it is assumed to be equal to <code>sx</code>.</p>
+</div>
+<div id="section_12">
+<span id="scaleX"></span><h3 class="editable">scaleX</h3>
+<pre class="eval">
+transform:  scaleX(sx);          /* a unitless &lt;number&gt;, e.g.  scaleX(2.7) */</pre>
+<p>Specifies a scale operation using the vector <strong>[sx, 1]</strong>.</p>
+</div>
+<div id="section_13">
+<span id="scaleY"></span><h3 class="editable">scaleY</h3>
+<pre class="eval">
+transform:  scaleY(sy)           /* a unitless &lt;number&gt;, e.g.  scaleY(0.3) */</pre>
+<p>Specifies a scale operation using the vector <strong>[1, sy]</strong>.</p>
+</div>
+<div id="section_14">
+<span id="skew"></span><h3 class="editable">skew</h3>
+<pre class="eval">
+transform:  skew(ax[, ay])       /* one or two &lt;angle&gt;s, e.g.  skew(30deg,-10deg) */</pre>
+<p>Skews the element around the X and Y axes by the specified angles. If <code>ay</code> isn't provided, no skew is performed on the Y axis.</p>
+</div>
+<div id="section_15">
+<span id="skewX"></span><h3 class="editable">skewX</h3>
+<pre class="eval">
+transform:  skewX(angle)         /* an &lt;angle&gt;, e.g.  skewX(-30deg) */</pre>
+<p>Skews the element around the X axis by the given <code>angle</code>.</p>
+</div>
+<div id="section_16">
+<span id="skewY"></span><h3 class="editable">skewY</h3>
+<pre class="eval">
+transform:  skewY(angle)         /* an &lt;angle&gt;, e.g.  skewY(4deg) */</pre>
+<p>Skews the element around the Y axis by the given <code>angle</code>.</p>
+</div>
+<div id="section_17">
+<span id="translate"></span><h3 class="editable">translate</h3>
+<pre class="eval">
+transform:  translate(tx[, ty])  /* one or two &lt;length&gt; values */</pre>
+<p>Specifies a 2D translation by the vector <strong>[tx, ty]</strong>. If <code>ty</code> isn't specified, its value is assumed to be zero.</p>
+</div>
+<div id="section_18">
+<span id="translateX"></span><h3 class="editable">translateX</h3>
+<pre class="eval">
+transform:  translateX(tx)       /* see &lt;length&gt; for possible values */</pre>
+<p>Translates the element by the given amount along the X axis.</p>
+</div>
+<div id="section_19">
+<span id="translateY"></span><h3 class="editable">translateY</h3>
+<pre class="eval">
+transform:  translateY(ty)       /* see &lt;length&gt; for possible values */</pre>
+<p>Translates the element by the given amount along the Y axis.</p>
+</div>
+</div>
+<div id="section_20">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>3.5 (1.9.1)
+
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>yes 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>9.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-ms</span>
+</td> <td>10.5
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-o</span>
+</td> <td>3.1
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+<tr>
+<td>3D Support</td> <td>10.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td>12.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> <td>10.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-ms</span>
+</td> <td>no</td> <td>4.0
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-webkit</span>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>iOS Safari</th> <th>Opera Mini</th> <th>Opera Mobile</th> <th>Android Browser</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<div id="section_21">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Internet Explorer 5.5 or later supports a proprietary <a class="external" rel="external" href="http://msdn.microsoft.com/en-us/library/ms533014%28VS.85,loband%29.aspx" title="http://msdn.microsoft.com/en-us/library/ms533014%28VS.85,loband%29.aspx" target="_blank">Matrix Filter</a> which can be used to achieve the similar effect.</p>
+</div>
+</div>
+<div id="section_22">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<ul>
+<li>
+<a rel="custom" href="http://www.w3.org/TR/css3-2d-transforms/#transform-property">CSS 2D Transforms Module Level 3: transform</a><span title="Working Draft" style="color:#fff; background-color:#e66e33; display: inline-block; font-size: x-small; margin-left: 6px; white-space: nowrap; padding: 2px 5px;">WD</span>
+</li>
+</ul>
+</div>
+<div id="section_23">
+<span id="See_also_2"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transform-origin">transform-origin</a></code>
+</li> <li><a title="En/CSS/Using_CSS_transforms" rel="internal" href="https://developer.mozilla.org/En/CSS/Using_CSS_transforms">Using CSS transforms</a></li> <li>
+<a class="external" rel="external" href="http://paulirish.com/2010/introducing-css3please/#comment-36380" title="http://paulirish.com/2010/introducing-css3please/#comment-36380" target="_blank">More info</a> on CSS3 Rotation / Matrix Filter issues in the comments on Paul Irish's blog.</li> <li>A cross-browser 2D <a class="external" rel="external" href="http://plugins.jquery.com/project/jquery-transform" title="http://plugins.jquery.com/project/jquery-transform" target="_blank">transform plugin for jQuery</a>
+</li>
+</ul>
+<p></p>
+</div>
+</div>

@@ -1,0 +1,69 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>:after </code>creates a pseudo-element that is the last child of the element matched. Typically used to add cosmetic content to an element, by using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/content">content</a></code> CSS property. This element is inline by default.</p>
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 2px 10px; background-color: rgb(254, 244, 156); text-align: center;">
+<p style="margin: 4px 0px; font-weight: bold;"><a rel="custom" href="https://developer.mozilla.org/en/Firefox_3.5_for_developers">Firefox 3.5 note</a></p>
+<p style="margin: 4px 0px;">Firefox prior to version 3.5 only implemented the CSS 2.0 version of<code> :after</code>. Not allowed were<code> position, float, list-style-* </code>and some display properties. Firefox 3.5 removed those restrictions. Note this is independent from the colon notation issue mentioned below.</p>
+</div>
+
+
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+element:after  { <em>style properties</em> }  /* CSS2 syntax */
+
+element::after { <em>style properties</em> }  /* CSS3 syntax */</pre>
+<p>The<code> ::after </code>notation was introduced in CSS 3 in order to establish a discrimination between pseudo-classes and pseudo-elements. Browsers also accept the notation<code> :after </code>introduced in CSS 2.</p>
+<div class="note">
+<strong>Note:</strong>  Microsoft Internet Explorer 8 supports the <code>:after</code> notation only.</div>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+.boringtext:after {
+   content:    " Thank you for reading all this!"; 
+   font-size:  small; 
+   color:      red;
+   background: gray; 
+}</pre>
+</div>
+<div id="section_4">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a title="http://www.w3.org/TR/CSS21/generate.html" class="external" rel="external" href="http://www.w3.org/TR/CSS21/generate.html" target="_blank">CSS 2.1 Generated Content</a></li> <li><a class="external" title="http://www.w3.org/TR/CSS21/selector.html#before-and-after" rel="external" href="http://www.w3.org/TR/CSS21/selector.html#before-and-after" target="_blank">CSS 2.1 Selectors</a></li> <li>
+<a title="http://www.w3.org/TR/css3-selectors/#gen-content" class="external" rel="external nofollow" target="_blank" href="http://www.w3.org/TR/css3-selectors/#gen-content">CSS 3 Selectors</a> Working draft</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> <th>Support of</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>8.0</td> <td><code>:after</code></td> </tr>
+<tr>
+<td rowspan="2">Firefox (Gecko)</td> <td>1.0 (1.0)</td> <td><code>:after</code></td> </tr>
+<tr>
+<td>1.0 (1.5)</td> <td><code>:after | ::after</code></td> </tr>
+<tr>
+<td rowspan="2">Opera</td> <td>4.0</td> <td><code>:after</code></td> </tr>
+<tr>
+<td>7.0</td> <td><code>:after | ::after</code></td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>1.0 (85)</td> <td><code>:after | ::after</code></td> </tr>
+</tbody></table>
+</div>
+<div id="section_6">
+<span id="See_Also"></span><h3 class="editable">See Also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Abefore">:before</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/content">content</a></code></p>
+<p></p>
+</div>
+</div>

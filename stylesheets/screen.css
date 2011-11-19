@@ -71,10 +71,6 @@ li {
   padding-left:1.7em;
 }
 
-.approximate {
-  width:200px;
-}
-
 .history li, .approximate li {
   cursor:pointer;
 }

@@ -1,0 +1,106 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The CSS <code>box-orient</code> property specifies whether an element lays out its contents horizontally or vertically.</p>
+<p>For example, XUL 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/box">box</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/hbox">hbox</a></code> elements lay out their contents horizontally by default, but XUL 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/vbox">vbox</a></code> elements lay out their contents vertically by default.</p>
+<p>HTML DOM elements lay out their contents along the inline-axis by default. This CSS property will only apply to HTML elements with a CSS 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code> value of 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/box" class="new">box</a></code> or 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/inline-box" class="new">inline-box</a></code>.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/horizontal" class="new">horizontal</a></code> (XUL)</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/inline-axis" class="new">inline-axis</a></code> (HTML)</li> <li>Applies to: elements with a CSS 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code> value of 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/box" class="new">box</a></code> or 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/inline-box" class="new">inline-box</a></code>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+box-orient:         horizontal | vertical | inline-axis | block-axis | inherit      /* As specified */
+-moz-box-orient:    horizontal | vertical | inline-axis | block-axis | inherit      /* Mozilla */
+-webkit-box-orient: horizontal | vertical | inline-axis | block-axis | inherit      /* WebKit */
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><code>horizontal</code></dt> <dd>The box lays out its contents horizontally.</dd> <dt><code>vertical</code></dt> <dd>The box lays out its contents vertically.</dd> <dt>
+<code>inline-axis</code> (HTML)</dt> <dd>The box displays its children along the inline axis.</dd> <dt>
+<code>block-axis</code> (HTML)</dt> <dd>The box displays its children along the block axis.</dd>
+</dl>
+<p>The inline and block axes are the writing-mode dependent keywords which, in English, map to horizontal and vertical respectively.</p>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+
+          <pre name="code" class="xml">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;CSS box-orient example&lt;/title&gt;
+    &lt;style&gt;
+      div.example {
+        display: box;                     /* As specified */
+        display: -moz-box;                /* Mozilla */
+        display: -webkit-box;             /* WebKit */
+
+        /* Children should be oriented vertically */
+        box-orient: horizontal;           /* As specified */
+        -moz-box-orient: horizontal;      /* Mozilla */
+        -webkit-box-orient: horizontal;   /* WebKit */
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="example"&gt;
+      &lt;p&gt;I will be to the left of my sibling.&lt;/p&gt;
+      &lt;p&gt;I will be to the right of my sibling.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+        
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>For XUL elements, if the orientation is set using the element's 
+<code><span id="a-orient"><a rel="custom" href="https://developer.mozilla.org/en/XUL/Attribute/orient">orient</a></span></code> attribute, then the style is ignored.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><a class="external" rel="external" href="http://www.w3.org/TR/css3-flexbox/" title="http://www.w3.org/TR/css3-flexbox/" target="_blank">Flexible Box Layout Module (W3C Working Draft)</a></p>
+<p></p>
+<div class="note">
+<strong>Note:</strong> The current state of this specification does not reflect Mozilla's or WebKit's implementation.</div>
+
+<p><a class="external" rel="external" href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/" title="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/" target="_blank">Old Flexible Box Layout Module</a></p>
+<p></p>
+<div class="note">
+<strong>Note:</strong> WebKit and Mozilla's implementations reflect this version of the specification</div>
+
+</div>
+<div id="section_7">
+<span id="See_Also"></span><span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-direction">box-direction</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-pack">box-pack</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-align">box-align</a></code></p>
+<p></p>
+</div>
+</div>

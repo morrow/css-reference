@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'fileutils'
 require 'yajl'
 
 # initialize variables
@@ -10,6 +11,12 @@ urls = parser.parse open('json/urls.json').read
 puts "overwrite files? "
 message = STDIN.gets.chomp  
 if message.match /y|Y/ then overwrite = true else overwrite = false end
+
+# make directories for html files
+FileUtils.mkdir_p 'json'
+FileUtils.mkdir_p 'javascripts'
+FileUtils.mkdir_p 'html/full'
+FileUtils.mkdir_p 'html/partial'
 
 # form urls array for scraping
 if ARGV.length > 0
@@ -28,9 +35,6 @@ end
 
 # update js version of paths
 json = open('json/paths.json').read
-f = File.open 'javascripts/paths.js', 'w+'
-f.write "window.paths = JSON.parse('#{json}');"
-f.close
 
 # get timeout delay from robots.txt
 t = Time.now.to_i.to_s
@@ -52,7 +56,7 @@ urls.each do |unsafename, url|
   name.gsub!(/[^0-9A-Za-z.\-]/, 'x')
   puts "Checking for #{name} in \"html/full/#{name}.html\""
   if not File.exists? "html/full/#{name}.html" or overwrite
-    `wget #{url} -O html/full/#{name}.html`
+    `wget "#{url}" -O "html/full/#{name}.html"`
     begin
       sleep delay
     rescue

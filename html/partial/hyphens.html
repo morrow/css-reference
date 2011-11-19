@@ -24,8 +24,7 @@
 </div>
 <div id="section_2">
 <span id="Syntax"></span><h3 class="editable">Syntax</h3>
-<pre class="eval">
-hyphens:  none | manual | auto
+<pre class="eval">hyphens:  none | manual | auto
 </pre>
 </div>
 <div id="section_3">
@@ -34,7 +33,7 @@ hyphens:  none | manual | auto
 <dt><code>none</code></dt> <dd>Words are not broken at line breaks, even if characters inside the words suggest line break points. Lines will only wrap at whitespace.</dd> <dt><code>manual</code></dt> <dd>Words are broken for line-wrapping only where characters inside the word suggest line break opportunities. See <a rel="custom" href="https://developer.mozilla.org/en/CSS/hyphens#Suggesting_line_break_opportunities">Suggesting line break opportunities</a> for details.</dd> <dt><code>auto</code></dt> <dd>The browser is free to automatically break words at appropriate hyphenation points, following whatever rules it chooses to use. Suggested line break opportunities, as covered in <a rel="custom" href="https://developer.mozilla.org/en/CSS/hyphens#Suggesting_line_break_opportunities">Suggesting line break opportunities</a>, should be preferred over automatically selecting break points whenever possible.</dd>
 </dl>
 <div class="note">
-<strong>Note:</strong> The <code>auto</code> setting's behavior depends on the language being properly tagged so that the appropriate hyphenation rules can be selected. You must specify a language using the <code>lang</code> HTML attribute in order to have automatic hyphenation applied.</div>
+<strong>Note:</strong> The <code>auto</code> setting's behavior depends on the language being properly tagged so that the appropriate hyphenation rules can be selected. You must specify a language using the <code>lang</code> HTML attribute in order to guarantee that automatic hyphenation is applied in the language of your choice.</div>
 <dl></dl>
 </div>
 <div id="section_4">
@@ -61,7 +60,7 @@ p.auto {
   hyphens: auto;
 }</pre>
         
-<p>Take a look at the live example to see these configurations in action; resize the window while looking at them to see them in action.</p>
+<p>Take a look at the live example to see these configurations in action; resize the window while looking at them to see how hyphenation is handled in your browser.</p>
 <p>
 <a rel="internal" href="https://developer.mozilla.org/samples/cssref/hyphens.html" title="samples/cssref/hyphens.html" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a>
 </p>

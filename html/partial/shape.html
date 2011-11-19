@@ -1,0 +1,111 @@
+<div class="pageText" id="pageText">
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;shape&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes the specific form of a region. This region is used to define on which part of an element some properties like 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/clip">clip</a></code> do apply.</p>
+<p>In the current specification, a <code>&lt;shape&gt;</code>, though designed to denote any kind of form, can only represents a rectangular region, defined using the <code>rect()</code> functional notation.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><span id="The_rect()_function"></span><h2 class="editable">The rect() function</h2>
+<p>The rect() functional notation produces a region in the form of a rectangle.</p>
+<div id="section_3">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">rect(<em>top</em>, <em>right</em>, <em>bottom</em>, <em>left</em>)
+</pre>
+<p>where:<img align="right" alt="rect.png" class="internal rwrap" src="https://developer.mozilla.org/@api/deki/files/5730/=rect.png"></p>
+<dl>
+<dt style="margin-left: 40px;"><em>top</em></dt> <dd style="margin-left: 40px;">Is a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> representing the offset for the top of the rectangle relative to the top border of the element's box.</dd>
+</dl>
+<dl>
+<dt style="margin-left: 40px;"><em>right</em></dt> <dd style="margin-left: 40px;">Is a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> representing the offset for the right of the rectangle relative to the left border of the element's box.</dd>
+</dl>
+<dl>
+<dt style="margin-left: 40px;"><em>bottom</em></dt> <dd style="margin-left: 40px;">Is a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> representing the offset for the bottom of the rectangle relative to the top border of the element's box.</dd>
+</dl>
+<dl>
+<dt style="margin-left: 40px;"><em>left</em></dt> <dd style="margin-left: 40px;">Is a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> representing the offset for the left of the rectangle relative to the left border of the element's box.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Interpolation"></span><h3 class="editable">Interpolation</h3>
+<p>Values of the <code>&lt;shape&gt;</code> CSS data type which are rectangles can be interpolated in order to allow animations. In that case they are interpolated over their <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code> component, each treated as a real, floating-point, number. <a class="external" title="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" target="_blank">[1]</a> The speed of the interpolation is determined by the <a title="timing-function" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function">timing function</a> associated with the animation.</p>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre class="eval">
+ img.clip04 { 
+   clip: rect(10px, 20px, 20px, 10px);
+ }
+</pre>
+</div>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visufx.html#value-def-shapes" title="http://www.w3.org/TR/CSS21/visufx.html#value-def-shapes" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Defined with the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/clip">clip</a></code> property</td> </tr></tbody>
+</table>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>1.0</td> <td>1.0 (1.7 or earlier)
+</td> <td>5.5[*]</td> <td>9.5</td> <td>1.3</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Mobile</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p>[*] From IE 5.5 to IE 7 included, the IE supported syntax of the rect() didn't allow the comma as the parameter separator, but a space. From IE 8, the standard syntax (only commas) is supported.</p>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>Related CSS properties: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/clip">clip</a></code>
+</li> <li>The <a title="en/CSS/-moz-image-rect" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-image-rect">-moz-image-rect()</a> function with similar coordinate than <code>rect()</code>.</li> <li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,576 @@
+<div class="pageText" id="pageText">
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;color&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes a color in the <a class="external" title="http://en.wikipedia.org/wiki/SRGB" rel="external" href="http://en.wikipedia.org/wiki/SRGB" target="_blank">sRGB color space</a>. A color can be described using a <em>keyword</em>, using the <a class="external" title="http://en.wikipedia.org/wiki/RGB_color_model#Geometric_representation" rel="external" href="http://en.wikipedia.org/wiki/RGB_color_model#Geometric_representation" target="_blank">RGB cubic-coordinate</a> system (via the #-hexadecimal or the <code>rgb()</code> and <code>rgba()</code> functional notations) or using the <a class="external" title="http://en.wikipedia.org/wiki/HSL_and_HSV" rel="external" href="http://en.wikipedia.org/wiki/HSL_and_HSV" target="_blank">HSL cylindrical-coordinate</a> system (via the <code>hsl()</code> and <code>hsla()</code> functional notations).</p>
+<p>Associated with the color in the sRGB space, a <code>&lt;color&gt;</code> value also consists of an <a class="external" title="http://en.wikipedia.org/wiki/Alpha_compositing" rel="external" href="http://en.wikipedia.org/wiki/Alpha_compositing" target="_blank">alpha-channel</a> coordinate, <em>transparency</em> value, indicating how the color should <a class="external" title="http://www.w3.org/TR/2003/REC-SVG11-20030114/masking.html#SimpleAlphaBlending" rel="external" href="http://www.w3.org/TR/2003/REC-SVG11-20030114/masking.html#SimpleAlphaBlending" target="_blank">composite</a> with its background color.</p>
+<p>Though CSS color values are precisely defined, they may appear differently on an output device. Most of them are not calibrated, and some browsers do not support output devices' <a class="external" title="http://en.wikipedia.org/wiki/ICC_profile" rel="external" href="http://en.wikipedia.org/wiki/ICC_profile" target="_blank">color profile</a>. Without these, color rendering may vary a lot.</p>
+<div class="note">
+<strong>Note: </strong> The <a class="external" title="http://www.w3.org/TR/WCAG/#visual-audio-contrast" rel="external" href="http://www.w3.org/TR/WCAG/#visual-audio-contrast" target="_blank">WCAG 2.0</a> recommendation from the W3C strongly advises web authors not to use <em>color</em> as the only mean to convey a specific information, action or result. Some users have problem to distinguish colors and the conveyed information may not be grasped. Of course, this doesn't prevent the usage of color, only its usage as the only mean to describe some information.</div>
+</div>
+<div id="section_2">
+<span id="Interpolation"></span><h2 class="editable">Interpolation</h2>
+<p>Values of the <code>&lt;color&gt;</code> CSS data type can be interpolated in order to perform animations or for creating <code>&lt;gradient&gt;</code> values. In that case they are interpolated on each of their red, green, blue components, each handled as a real, floating-point, numbers. <a class="external" title="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" target="_blank">[1]</a> Note that interpolation of colors happens in the <a class="external" title="http://www.gimp.org/docs/plug-in/appendix-alpha.html" rel="external" href="http://www.gimp.org/docs/plug-in/appendix-alpha.html" target="_blank">alpha-premultiplied sRGBA color space</a> to prevent unexpected grey colors to appear. In animations, the speed of the interpolation is determined by the <a title="timing-function" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function">timing function</a> associated with the animation.</p>
+</div>
+<div id="section_3">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<p>There are several ways to describe a <code>&lt;color&gt;</code> value.</p>
+<div id="section_4">
+<span id="Color_Keywords"></span><h3 class="editable">Color Keywords</h3>
+<p>Color keywords are case-insensitive identifiers which represent a specific color, e.g.<code> red, blue, brown, lightseagreen</code>. The name describes the color, though it is mostly artificial. The list of accepted values varied a lot through the different specification:</p>
+<ul>
+<li>CSS Level 1 only accepted 16 basic colors, named the <em>VGA colors</em> as they were taken from the set of displayable colors on <a class="external" title="http://en.wikipedia.org/wiki/VGA" rel="external" href="http://en.wikipedia.org/wiki/VGA" target="_blank">VGA</a> graphic cards.</li> <li>CSS Level 2 added the <code>orange</code> keyword.</li> <li>From the beginning, browsers accepted other colors, mostly the X11 named colors list as some early browsers where X11 applications, though with a few differences. SVG 1.0 was the first standard to formally defined these keywords; CSS Colors Level 3 also formally defined these keywords. They are often referred as the <em>extended color keywords</em>, the <em>X11 colors</em>, the <em>SVG colors</em>.</li>
+</ul>
+<p>There are a few caveats to consider when using keywords:</p>
+<ul>
+<li>Except the 16 basic colors which are common with HTML, the others cannot be used in HTML. HTML will convert these unknown values with a specific algorithm which will lead to completely different colors. These keywords should only be used in SVG &amp; CSS.</li> <li>Unknown keywords make the CSS property invalid. Invalid properties being ignored, the color will have no effect. This is a different behavior than the one of HTML.</li> <li>No keyword-defined colors in CSS have any transparency, they are plain, solid colors.</li> <li>Several keywords denote the same colors: <ul>
+<li>
+<code>darkgray </code>/<code> </code><code>darkgrey</code>
+</li> <li>
+<code>darkslategray </code>/<code> </code><code>darkslategrey</code>
+</li> <li>
+<code>dimgray </code>/<code> </code><code>dimgrey</code>
+</li> <li>
+<code>lightgray </code>/<code> lightgrey</code>
+</li> <li>
+<code>lightslategray </code>/<code> lightslategrey</code>
+</li> <li>
+<code>gray </code>/<code> grey</code>
+</li> <li>
+<code>slategray </code>/<code> </code><code>slategray</code>
+</li> </ul>
+</li> <li>Though the names of the keywords have been taken by the usual X11 color names, the color may diverge from the corresponding system color on X11 system as these are tailored for the specific hardware by the manufacturer <a class="external" title="http://lists.w3.org/Archives/Public/www-svg/2002Apr/0052.html" rel="external" href="http://lists.w3.org/Archives/Public/www-svg/2002Apr/0052.html" target="_blank">[2]</a>.</li>
+</ul>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead><tr>
+<th colspan="3" rowspan="1" scope="col" style="width:3em;">Specifications</th> <th scope="col" style="width:6em;">Color</th> <th scope="col">Keyword</th> <th scope="col">RGB cubic coordinates</th> <th scope="col" style="width:6em;">Live Example</th> </tr></thead>
+<tbody>
+<tr style="position:relative;">
+<td rowspan="145" style="border-right:none;width:3em;-moz-transform: rotate(-90deg);-o-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);transform: rotate(-90deg);">CSS3</td> <td rowspan="17" style="border-right:none;width:3em;-moz-transform: rotate(-90deg);-o-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);transform: rotate(-90deg);">CSS2</td> <td rowspan="16" style="border-right:none;width:3em;-moz-transform: rotate(-90deg);-o-transform: rotate(-90deg);-webkit-transform: rotate(-90deg);transform: rotate(-90deg);">CSS1</td> <td style="background:#000"> </td> <td style="text-align: center;"><code>black</code></td> <td><code>=rgb(  0,   0,   0)</code></td> <td style="background:black"> </td> </tr>
+<tr>
+<td style="background:#C0C0C0"> </td> <td style="text-align: center;"><code>silver</code></td> <td><code>=rgb(192, 192, 192)</code></td> <td style="background:silver"> </td> </tr>
+<tr>
+<td style="background:#808080"> </td> <td style="text-align: center;">
+<code>gray</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(128, 128, 128)</code></td> <td style="background:gray"> </td> </tr>
+<tr>
+<td style="background:#FFF"> </td> <td style="text-align: center;"><code>white</code></td> <td><code>=rgb(255, 255, 255)</code></td> <td style="background:white"> </td> </tr>
+<tr>
+<td style="background:#800000"> </td> <td style="text-align: center;"><code>maroon</code></td> <td><code>=rgb(128,   0,   0)</code></td> <td style="background:maroon"> </td> </tr>
+<tr>
+<td style="background:#F00"> </td> <td style="text-align: center;"><code>red</code></td> <td><code>=rgb(255,   0,   0)</code></td> <td style="background:red"> </td> </tr>
+<tr>
+<td style="background:#800080"> </td> <td style="text-align: center;"><code>purple</code></td> <td><code>=rgb(128,   0, 128)</code></td> <td style="background:purple"> </td> </tr>
+<tr>
+<td style="background:#F0F"> </td> <td style="text-align: center;"><code>fuchsia</code></td> <td><code>=rgb(255,   0, 255)</code></td> <td style="background:fuchsia"> </td> </tr>
+<tr>
+<td style="background:#008000"> </td> <td style="text-align: center;"><code>green</code></td> <td><code>=rgb(  0, 128,   0)</code></td> <td style="background:green"> </td> </tr>
+<tr>
+<td style="background:#0F0"> </td> <td style="text-align: center;"><code>lime</code></td> <td><code>=rgb(  0, 255,   0)</code></td> <td style="background:lime"> </td> </tr>
+<tr>
+<td style="background:#808000"> </td> <td style="text-align: center;"><code>olive</code></td> <td><code>=rgb(128, 128,   0)</code></td> <td style="background:olive"> </td> </tr>
+<tr>
+<td style="background:#FF0"> </td> <td style="text-align: center;"><code>yellow</code></td> <td><code>=rgb(255, 255,   0)</code></td> <td style="background:yellow"> </td> </tr>
+<tr>
+<td style="background:#000080"> </td> <td style="text-align: center;"><code>navy</code></td> <td><code>=rgb(  0,   0, 128)</code></td> <td style="background:navy"> </td> </tr>
+<tr>
+<td style="background:#00F"> </td> <td style="text-align: center;"><code>blue</code></td> <td><code>=rgb(  0,   0, 255)</code></td> <td style="background:blue"> </td> </tr>
+<tr>
+<td style="background:#008080"> </td> <td style="text-align: center;"><code>teal</code></td> <td><code>=rgb(  0, 128, 128)</code></td> <td style="background:teal"> </td> </tr>
+<tr>
+<td style="background:#0FF"> </td> <td style="text-align: center;"><code>aqua</code></td> <td><code>=rgb(  0, 255, 255)</code></td> <td style="background:aqua"> </td> </tr>
+<tr>
+<td style="border-left:none;"> </td> <td style="background:#FFA500"> </td> <td style="text-align: center;"><code>orange</code></td> <td><code>=rgb(255, 165,   0)</code></td> <td style="background:orange"> </td> </tr>
+<tr>
+<td rowspan="128" style="border-left:none; border-right:none;"> </td> <td rowspan="128" style="border-left:none;"> </td> <td style="background:#f0f8ff"> </td> <td style="text-align: center;"><code>aliceblue</code></td> <td><code>=rgb(240, 248, 245)</code></td> <td style="background:aliceblue"> </td> </tr>
+<tr>
+<td style="background:#faebd7"> </td> <td style="text-align: center;"><code>antiquewhite</code></td> <td><code>=rgb(250, 235, 215)</code></td> <td style="background:antiquewhite"> </td> </tr>
+<tr>
+<td style="background:#7fffd4"> </td> <td style="text-align: center;"><code>aquamarine</code></td> <td><code>=rgb(127, 255, 212)</code></td> <td style="background:aquamarine"> </td> </tr>
+<tr>
+<td style="background:#f0ffff"> </td> <td style="text-align: center;"><code>azure</code></td> <td><code>=rgb(240, 255, 255)</code></td> <td style="background:azure"> </td> </tr>
+<tr>
+<td style="background:#f5f5dc"> </td> <td style="text-align: center;"><code>beige</code></td> <td><code>=rgb(245, 245, 220)</code></td> <td style="background:beige"> </td> </tr>
+<tr>
+<td style="background:#ffe4c4"> </td> <td style="text-align: center;"><code>bisque</code></td> <td><code>=rgb(255, 228, 196)</code></td> <td style="background:bisque"> </td> </tr>
+<tr>
+<td style="background:#ffebcd"> </td> <td style="text-align: center;"><code>blanchedalmond</code></td> <td><code>=rgb(255, 235, 205)</code></td> <td style="background:blanchedalmond"> </td> </tr>
+<tr>
+<td style="background:#8a2be2"> </td> <td style="text-align: center;"><code>blueviolet</code></td> <td><code>=rgb(138,  43, 226)</code></td> <td style="background:blueviolet"> </td> </tr>
+<tr>
+<td style="background:#a52a2a"> </td> <td style="text-align: center;"><code>brown</code></td> <td><code>=rgb(165,  42,  42)</code></td> <td style="background:brown"> </td> </tr>
+<tr>
+<td style="background:#deb887"> </td> <td style="text-align: center;"><code>burlywood</code></td> <td><code>=rgb(222, 184,  35)</code></td> <td style="background:burlywood"> </td> </tr>
+<tr>
+<td style="background:#5f9ea0"> </td> <td style="text-align: center;"><code>cadetblue</code></td> <td><code>=rgb( 95, 158, 160)</code></td> <td style="background:cadetblue"> </td> </tr>
+<tr>
+<td style="background:#7fff00"> </td> <td style="text-align: center;"><code>chartreuse</code></td> <td><code>=rgb(127, 255,   0)</code></td> <td style="background:chartreuse"> </td> </tr>
+<tr>
+<td style="background:#d2691e"> </td> <td style="text-align: center;"><code>chocolate</code></td> <td><code>=rgb(210, 105,  30)</code></td> <td style="background:chocolate"> </td> </tr>
+<tr>
+<td style="background:#ff7f50"> </td> <td style="text-align: center;"><code>coral</code></td> <td><code>=rgb(255, 127,  80)</code></td> <td style="background:coral"> </td> </tr>
+<tr>
+<td style="background:#6495ed"> </td> <td style="text-align: center;"><code>cornflowerblue</code></td> <td><code>=rgb(100, 149, 237)</code></td> <td style="background:cornflowerblue"> </td> </tr>
+<tr>
+<td style="background:#fff8dc"> </td> <td style="text-align: center;"><code>cornsilk</code></td> <td><code>=rgb(255, 248, 220)</code></td> <td style="background:cornsilk"> </td> </tr>
+<tr>
+<td style="background:#dc143c"> </td> <td style="text-align: center;"><code>crimson</code></td> <td><code>=rgb(220,  20,  60)</code></td> <td style="background:crimson"> </td> </tr>
+<tr>
+<td style="background:#00008b"> </td> <td style="text-align: center;"><code>darkblue</code></td> <td><code>=rgb(  0,   0, 139)</code></td> <td style="background:darkblue"> </td> </tr>
+<tr>
+<td style="background:#008b8b"> </td> <td style="text-align: center;"><code>darkcyan</code></td> <td><code>=rgb(  0, 139, 139)</code></td> <td style="background:darkcyan"> </td> </tr>
+<tr>
+<td style="background:#b8860b"> </td> <td style="text-align: center;"><code>darkgoldenrod</code></td> <td><code>=rgb(184, 134,  11)</code></td> <td style="background:darkgoldenrod"> </td> </tr>
+<tr>
+<td style="background:#a9a9a9"> </td> <td style="text-align: center;">
+<code>darkgray</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(169, 169, 169)</code></td> <td style="background:darkgray"> </td> </tr>
+<tr>
+<td style="background:#006400"> </td> <td style="text-align: center;"><code>darkgreen</code></td> <td><code>=rgb(  0, 100,   0)</code></td> <td style="background:darkgreen"> </td> </tr>
+<tr>
+<td style="background:#a9a9a9"> </td> <td style="text-align: center;">
+<code>darkgrey</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(169, 169, 169)</code></td> <td style="background:darkgrey"> </td> </tr>
+<tr>
+<td style="background:#bdb76b"> </td> <td style="text-align: center;"><code>darkkhaki</code></td> <td><code>=rgb(189, 183, 107)</code></td> <td style="background:darkkhaki"> </td> </tr>
+<tr>
+<td style="background:#8b008b"> </td> <td style="text-align: center;"><code>darkmagenta</code></td> <td><code>=rgb(139,   0, 139)</code></td> <td style="background:darkmagenta"> </td> </tr>
+<tr>
+<td style="background:#556b2f"> </td> <td style="text-align: center;"><code>darkolivegreen</code></td> <td><code>=rgb( 85, 107,  47)</code></td> <td style="background:darkolivegreen"> </td> </tr>
+<tr>
+<td style="background:#ff8c00"> </td> <td style="text-align: center;"><code>darkorange</code></td> <td><code>=rgb(255, 140,   0)</code></td> <td style="background:darkorange"> </td> </tr>
+<tr>
+<td style="background:#9932cc"> </td> <td style="text-align: center;"><code>darkorchid</code></td> <td><code>=rgb(153,  50, 204)</code></td> <td style="background:darkorchid"> </td> </tr>
+<tr>
+<td style="background:#8b0000"> </td> <td style="text-align: center;"><code>darkred</code></td> <td><code>=rgb(139,   0,   0)</code></td> <td style="background:darkred"> </td> </tr>
+<tr>
+<td style="background:#e9967a"> </td> <td style="text-align: center;"><code>darksalmon</code></td> <td><code>=rgb(233, 150, 122)</code></td> <td style="background:darksalmon"> </td> </tr>
+<tr>
+<td style="background:#8fbc8f"> </td> <td style="text-align: center;"><code>darkseagreen</code></td> <td><code>=rgb(143, 188, 143)</code></td> <td style="background:darkseagreen"> </td> </tr>
+<tr>
+<td style="background:#483d8b"> </td> <td style="text-align: center;"><code>darkslateblue</code></td> <td><code>=rgb( 72,  61, 139)</code></td> <td style="background:darkslateblue"> </td> </tr>
+<tr>
+<td style="background:#2f4f4f"> </td> <td style="text-align: center;">
+<code>darkslategray</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb( 47,  79,  79)</code></td> <td style="background:darkslategray"> </td> </tr>
+<tr>
+<td style="background:#2f4f4f"> </td> <td style="text-align: center;">
+<code>darkslategrey</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb( 47,  79,  79)</code></td> <td style="background:darkslategrey"> </td> </tr>
+<tr>
+<td style="background:#00ced1"> </td> <td style="text-align: center;"><code>darkturquoise</code></td> <td><code>=rgb(  0, 206, 209)</code></td> <td style="background:darkturquoise"> </td> </tr>
+<tr>
+<td style="background:#9400d3"> </td> <td style="text-align: center;"><code>darkviolet</code></td> <td><code>=rgb(148,   0, 211)</code></td> <td style="background:darkviolet"> </td> </tr>
+<tr>
+<td style="background:#ff1493"> </td> <td style="text-align: center;"><code>deeppink</code></td> <td><code>=rgb(255,  20, 147)</code></td> <td style="background:deeppink"> </td> </tr>
+<tr>
+<td style="background:#00bfff"> </td> <td style="text-align: center;"><code>deepskyblue</code></td> <td><code>=rgb(  0, 191, 255)</code></td> <td style="background:deepskyblue"> </td> </tr>
+<tr>
+<td style="background:#696969"> </td> <td style="text-align: center;">
+<code>dimgray</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(105, 105, 105)</code></td> <td style="background:dimgray"> </td> </tr>
+<tr>
+<td style="background:#696969"> </td> <td style="text-align: center;">
+<code>dimgrey</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(105, 105, 105)</code></td> <td style="background:dimgrey"> </td> </tr>
+<tr>
+<td style="background:#1e90ff"> </td> <td style="text-align: center;"><code>dodgerblue</code></td> <td><code>=rgb( 30, 144, 255)</code></td> <td style="background:dodgerblue"> </td> </tr>
+<tr>
+<td style="background:#b22222"> </td> <td style="text-align: center;"><code>firebrick</code></td> <td><code>=rgb(178,  34,  34)</code></td> <td style="background:firebrick"> </td> </tr>
+<tr>
+<td style="background:#fffaf0"> </td> <td style="text-align: center;"><code>floralwhite</code></td> <td><code>=rgb(255, 250, 240)</code></td> <td style="background:floralwhite"> </td> </tr>
+<tr>
+<td style="background:#228b22"> </td> <td style="text-align: center;"><code>forestgreen</code></td> <td><code>=rgb( 34, 139,  34)</code></td> <td style="background:forestgreen"> </td> </tr>
+<tr>
+<td style="background:#dcdcdc"> </td> <td style="text-align: center;"><code>gainsboro</code></td> <td><code>=rgb(220, 220, 220)</code></td> <td style="background:gainsboro"> </td> </tr>
+<tr>
+<td style="background:#f8f8ff"> </td> <td style="text-align: center;"><code>ghostwhite</code></td> <td><code>=rgb(248, 248, 255)</code></td> <td style="background:ghostwhite"> </td> </tr>
+<tr>
+<td style="background:#ffd700"> </td> <td style="text-align: center;"><code>gold</code></td> <td><code>=rgb(255, 215,   0)</code></td> <td style="background:gold"> </td> </tr>
+<tr>
+<td style="background:#daa520"> </td> <td style="text-align: center;"><code>goldenrod</code></td> <td><code>=rgb(218, 165,  32)</code></td> <td style="background:goldenrod"> </td> </tr>
+<tr>
+<td style="background:#adff2f"> </td> <td style="text-align: center;"><code>greenyellow</code></td> <td><code>=rgb(173, 255,  47)</code></td> <td style="background:greenyellow "> </td> </tr>
+<tr>
+<td style="background:#808080"> </td> <td style="text-align: center;"><code>grey</code></td> <td><code>=rgb(128, 128, 128)</code></td> <td style="background:grey"> </td> </tr>
+<tr>
+<td style="background:#f0fff0"> </td> <td style="text-align: center;"><code>honeydew</code></td> <td><code>=rgb(240, 255, 240)</code></td> <td style="background:honeydew"> </td> </tr>
+<tr>
+<td style="background:#ff69b4"> </td> <td style="text-align: center;"><code>hotpink</code></td> <td><code>=rgb(255, 105, 180)</code></td> <td style="background:hotpink"> </td> </tr>
+<tr>
+<td style="background:#cd5c5c"> </td> <td style="text-align: center;"><code>indianred</code></td> <td><code>=rgb(205,  92,  92)</code></td> <td style="background:indianred"> </td> </tr>
+<tr>
+<td style="background:#fffff0"> </td> <td style="text-align: center;"><code>indigo</code></td> <td><code>=rgb( 75,  0, 130)</code></td> <td style="background:indigo"> </td> </tr>
+<tr>
+<td style="background:#ff69b4"> </td> <td style="text-align: center;"><code>ivory</code></td> <td><code>=rgb(255, 255, 240)</code></td> <td style="background:ivory"> </td> </tr>
+<tr>
+<td style="background:#f0e68c"> </td> <td style="text-align: center;"><code>khaki</code></td> <td><code>=rgb(240, 230, 140)</code></td> <td style="background:khaki"> </td> </tr>
+<tr>
+<td style="background:#e6e6fa"> </td> <td style="text-align: center;"><code>lavender</code></td> <td><code>=rgb(230, 230, 250)</code></td> <td style="background:lavender"> </td> </tr>
+<tr>
+<td style="background:#fff0f5"> </td> <td style="text-align: center;"><code>lavenderblush</code></td> <td><code>=rgb(255, 240, 245)</code></td> <td style="background:lavenderblush "> </td> </tr>
+<tr>
+<td style="background:#7cfc00"> </td> <td style="text-align: center;"><code>lawngreen</code></td> <td><code>=rgb(124, 252, 0)</code></td> <td style="background:lawngreen"> </td> </tr>
+<tr>
+<td style="background:#fffacd"> </td> <td style="text-align: center;"><code>lemonchiffon</code></td> <td><code>=rgb(255, 250, 205)</code></td> <td style="background:lemonchiffon"> </td> </tr>
+<tr>
+<td style="background:#add8e6"> </td> <td style="text-align: center;"><code>lightblue</code></td> <td><code>=rgb(173, 216, 230)</code></td> <td style="background:lightblue"> </td> </tr>
+<tr>
+<td style="background:#f08080"> </td> <td style="text-align: center;"><code>lightcoral</code></td> <td><code>=rgb(240, 128, 128)</code></td> <td style="background:lightcoral"> </td> </tr>
+<tr>
+<td style="background:#e0ffff"> </td> <td style="text-align: center;"><code>lightcyan</code></td> <td><code>=rgb(224, 255, 255)</code></td> <td style="background:lightcyan"> </td> </tr>
+<tr>
+<td style="background:#fafad2"> </td> <td style="text-align: center;"><code>lightgoldenrodyellow</code></td> <td><code>=rgb(250, 250, 210)</code></td> <td style="background:lightgoldenrodyellow "> </td> </tr>
+<tr>
+<td style="background:#d3d3d3"> </td> <td style="text-align: center;">
+<code>lightgray</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(211, 211, 211)</code></td> <td style="background:lightgray"> </td> </tr>
+<tr>
+<td style="background:#7cfc00"> </td> <td style="text-align: center;"><code>lightgreen</code></td> <td><code>=rgb(144, 238, 144)</code></td> <td style="background:lightgreen"> </td> </tr>
+<tr>
+<td style="background:#d3d3d3"> </td> <td style="text-align: center;">
+<code>lightgrey</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(211, 211, 211)</code></td> <td style="background:lightgrey"> </td> </tr>
+<tr>
+<td style="background:#ffb6c1"> </td> <td style="text-align: center;"><code>lightpink</code></td> <td><code>=rgb(255, 182, 193)</code></td> <td style="background:lightpink"> </td> </tr>
+<tr>
+<td style="background:#ffa07a"> </td> <td style="text-align: center;"><code>lightsalmon</code></td> <td><code>=rgb(255, 160, 122)</code></td> <td style="background:lightsalmon"> </td> </tr>
+<tr>
+<td style="background:#20b2aa"> </td> <td style="text-align: center;"><code>lightseagreen</code></td> <td><code>=rgb( 32, 178, 170)</code></td> <td style="background:lightseagreen"> </td> </tr>
+<tr>
+<td style="background:#87cefa"> </td> <td style="text-align: center;"><code>lightskyblue</code></td> <td><code>=rgb(135, 206, 250)</code></td> <td style="background:lightskyblue"> </td> </tr>
+<tr>
+<td style="background:#778899"> </td> <td style="text-align: center;">
+<code>lightslategray</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(119, 136, 153)</code></td> <td style="background:lightslategray"> </td> </tr>
+<tr>
+<td style="background:#778899"> </td> <td style="text-align: center;">
+<code>lightslategrey</code><sup><a href="#1" title="color_value#1">[*]</a></sup>
+</td> <td><code>=rgb(119, 136, 153)</code></td> <td style="background:lightslategrey"> </td> </tr>
+<tr>
+<td style="background:#b0c4de"> </td> <td style="text-align: center;"><code>lightsteelblue</code></td> <td><code>=rgb(176, 196, 222)</code></td> <td style="background:lightsteelblue"> </td> </tr>
+<tr>
+<td style="background:#ffffe0"> </td> <td style="text-align: center;"><code>lightyellow</code></td> <td><code>=rgb(255, 255, 224)</code></td> <td style="background:lightyellow"> </td> </tr>
+<tr>
+<td style="background:#32cd32"> </td> <td style="text-align: center;"><code>limegreen</code></td> <td><code>=rgb( 50, 205,  50)</code></td> <td style="background:limegreen"> </td> </tr>
+<tr>
+<td style="background:#faf0e6"> </td> <td style="text-align: center;"><code>linen</code></td> <td><code>=rgb(250, 240, 230)</code></td> <td style="background:linen"> </td> </tr>
+<tr>
+<td style="background:#66cdaa"> </td> <td style="text-align: center;"><code>mediumaquamarine</code></td> <td><code>=rgb(102, 205, 170)</code></td> <td style="background:mediumaquamarine"> </td> </tr>
+<tr>
+<td style="background:#0000cd"> </td> <td style="text-align: center;"><code>mediumblue</code></td> <td><code>=rgb(  0,   0, 205)</code></td> <td style="background:mediumblue"> </td> </tr>
+<tr>
+<td style="background:#ba55d3"> </td> <td style="text-align: center;"><code>mediumorchid</code></td> <td><code>=rgb(186,  85, 211)</code></td> <td style="background:mediumorchid"> </td> </tr>
+<tr>
+<td style="background:#9370db"> </td> <td style="text-align: center;"><code>mediumpurple</code></td> <td><code>=rgb(147, 112, 219)</code></td> <td style="background:mediumpurple"> </td> </tr>
+<tr>
+<td style="background:#3cb371"> </td> <td style="text-align: center;"><code>mediumseagreen</code></td> <td><code>=rgb( 60, 179, 113)</code></td> <td style="background:mediumseagreen"> </td> </tr>
+<tr>
+<td style="background:#7b68ee"> </td> <td style="text-align: center;"><code>mediumslateblue</code></td> <td><code>=rgb(123, 104, 238)</code></td> <td style="background:mediumslateblue"> </td> </tr>
+<tr>
+<td style="background:#00fa9a"> </td> <td style="text-align: center;"><code>mediumspringgreen</code></td> <td><code>=rgb(  0, 250, 154)</code></td> <td style="background:mediumspringgreen"> </td> </tr>
+<tr>
+<td style="background:#48d1cc"> </td> <td style="text-align: center;"><code>mediumturquoise</code></td> <td><code>=rgb( 72, 209, 204)</code></td> <td style="background:mediumturquoise"> </td> </tr>
+<tr>
+<td style="background:#c71585"> </td> <td style="text-align: center;"><code>mediumvioletred</code></td> <td><code>=rgb(199,  21, 133)</code></td> <td style="background:mediumvioletred"> </td> </tr>
+<tr>
+<td style="background:#191970"> </td> <td style="text-align: center;"><code>midnightblue</code></td> <td><code>=rgb( 25,  25, 112)</code></td> <td style="background:midnightblue"> </td> </tr>
+<tr>
+<td style="background:#f5fffa"> </td> <td style="text-align: center;"><code>mintcream</code></td> <td><code>=rgb(245, 255, 250)</code></td> <td style="background:mintcream"> </td> </tr>
+<tr>
+<td style="background:#ffe4e1"> </td> <td style="text-align: center;"><code>mistyrose</code></td> <td><code>=rgb(255, 228, 225)</code></td> <td style="background:mistyrose"> </td> </tr>
+<tr>
+<td style="background:#ffe4b5"> </td> <td style="text-align: center;"><code>moccasin</code></td> <td><code>=rgb(255, 228, 181)</code></td> <td style="background:moccasin"> </td> </tr>
+<tr>
+<td style="background:#ffdead"> </td> <td style="text-align: center;"><code>navajowhite</code></td> <td><code>=rgb(255, 222, 173)</code></td> <td style="background:navajowhite"> </td> </tr>
+<tr>
+<td style="background:#fdf5e6"> </td> <td style="text-align: center;"><code>oldlace</code></td> <td><code>=rgb(253, 245, 230)</code></td> <td style="background:oldlace"> </td> </tr>
+<tr>
+<td style="background:#6b8e23"> </td> <td style="text-align: center;"><code>olivedrab</code></td> <td><code>=rgb(107, 142,  35)</code></td> <td style="back&lt;/body"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_5">
+<span id="transparent_Keyword"></span><h3 class="editable">
+<code>transparent </code>Keyword</h3>
+<p>The <code>transparent</code> keyword represents a fully transparent color, i.e. the color seen will be the background color. Technically, it is a black with alpha channel at its maximum and is a shortcut for <code>rgba(0,0,0,0)</code>.</p>
+<div class="note">
+<strong>Historical Note</strong><br> The<code> transparent</code> keyword wasn't a true color in CSS Level 2 (Revision 1). It was a specific keyword that could be used in place of a regular <code>&lt;color&gt;</code> value on two CSS properties: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>. It was essentially added to allow to override an inherited solid colors.<br><br> With the support of opacity through <a class="external" title="http://en.wikipedia.org/wiki/Alpha_compositing" rel="external" href="http://en.wikipedia.org/wiki/Alpha_compositing" target="_blank">alpha channels</a>, <code>transparent</code> was redefined as a true color in CSS Level 3 allowing its use in any place where a <code>&lt;color&gt;</code> value is required, like the
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property.<sup><a href="#2">[**]</a></sup>
+</div>
+</div>
+<div id="section_6">
+<span id="currentColor_Keyword"></span><h3 class="editable">
+<code>currentColor </code>Keyword</h3>
+<p>The <code>currentColor</code> keyword represents the calculated value of the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property. It allows to make the color properties inherited by properties or child's element properties that do not inherit it by default.</p>
+<p>It can also be used on properties that inherit the calculated value of the element's 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property and will be equivalent to the <code>inherit</code> keyword on these elements, if any.</p>
+<div id="section_7">
+<span id="Live_Example"></span><h4 class="editable">Live Example</h4>
+<p>The color of the line (a color-filled div) adapts to the color of its 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code> property, inherited from its parent</p>
+<div style="width:50%"> <pre>&lt;div style="color:darkred"&gt;
+ The color of this text is the same as the one of the line:
+  &lt;div style="background:currentcolor; height:1px"&gt;&lt;/div&gt;
+ Some more text.
+&lt;/div&gt; 
+</pre> <div style="color:darkred">The color of this text is the same as the one of the line:<br><div style="background:currentcolor;height:1px"><span style="width:50%">.</span></div> <span style="width:50%">Some more text.</span>
+</div>
+</div>
+<div style="width:50%"> <pre>
+&lt;div style="color:blue"&gt;
+ The color of this text is the same as the one of the line:
+  &lt;div style="background:currentcolor; height:1px"&gt;&lt;/div&gt;
+ Some more text.
+&lt;/div&gt; 
+</pre> <div style="color:blue">The color of this text is the same as the one of the line:<br><div style="background:currentcolor;height:1px"><span style="width:50%">.</span></div> <span style="width:50%">Some more text.</span>
+</div>
+</div>
+</div>
+</div>
+<div id="section_8">
+<span id="RGB_(red-green-blue)"></span><h3 class="editable">RGB (red-green-blue)</h3>
+<dl>
+<dt>Hexadecimal notation<code> #RRGGBB </code>and<code> #RGB</code>
+</dt> <dd> <ul style="margin-bottom:0">
+<li>"<code>#</code>", followed by six hexadecimal characters (0-9, A-F).</li> <li>"<code>#</code>", followed by three hexadecimal characters (0-9, A-F).</li> </ul> The three-digit RGB notation (<code>#RGB</code>) and the six-digit form (<code>#RRGGBB</code>) are equal.<br> For example,<code> #f03 </code>and<code> #ff0033 </code>represent the same color.</dd> <dt>Functional Notation<code> rgb(R,G,B)</code>
+</dt> <dd>"<code>rgb</code>", followed by three <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> or three <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code></span> values.<br> The integer number 255 corresponds to 100%, and to F or FF in the hexadecimal notation.</dd>
+</dl>
+<pre>
+/* These examples all specify the same RGB color: */
+ 
+ #f03
+ #F03
+ #ff0033
+ #FF0033
+ rgb(255,0,51)
+ rgb(255, 0, 51)
+ <strike>rgb(255, 0, 51.2)</strike> /* ERROR! Don't use fractions, use integers */ 
+ rgb(100%,0%,20%)
+ rgb(100%, 0%, 20%)
+ <strike>rgb(100%, 0, 20%)</strike> /* ERROR! Don't mix up integer and percentage notation */
+</pre>
+</div>
+<div id="section_9">
+<span id="HSL_(hue-saturation-lightness)_hsl(H.2CS.2CL)"></span><h3 class="editable">HSL (hue-saturation-lightness)<code> hsl(H,S,L)</code>
+</h3>
+<p>The advantage of HSL over RGB is that it is far more intuitive: you can guess at the colors you want, and then tweak. It is also easier to create sets of matching colors (by keeping the hue the same and varying the lightness/darkness, and saturation).</p>
+<p><strong>Hue </strong>is represented as an angle of the color circle (i.e. the rainbow represented in a circle). This angle is given as a unitless <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span>. By definition <strong>red=0=360</strong>, and the other colors are spread around the circle, so <strong>green=120</strong>, <strong>blue=240</strong>, etc. As an angle, it implicitly wraps around such that -120=240 and 480=120.</p>
+<p>Saturation and lightness are represented as percentages.<br><code>100% </code>is full <strong>saturation</strong>, and<code> 0% </code>is a shade of grey.<br><code>100% </code><strong>lightness</strong> is white,<code> 0% </code>lightness is black, and<code> 50% </code>lightness is "normal".</p>
+<pre style="text-shadow:rgba(255,255,255,0.4) -1px -1px">
+hsl(0,  100%,50%)   <span style="background:hsl(0,100%,50%)"> /* red */   </span>
+hsl(30, 100%,50%)   <span style="background:hsl(30,100%,50%)">             </span> 
+hsl(60, 100%,50%)   <span style="background:hsl(60,100%,50%)">             </span>
+hsl(90, 100%,50%)   <span style="background:hsl(90,100%,50%)">             </span>
+hsl(120,100%,50%)   <span style="background:hsl(120,100%,50%)"> /* green */ </span>
+hsl(150,100%,50%)   <span style="background:hsl(150,100%,50%)">             </span>
+hsl(180,100%,50%)   <span style="background:hsl(180,100%,50%)">             </span>
+hsl(210,100%,50%)   <span style="background:hsl(210,100%,50%)">             </span>
+hsl(240,100%,50%)   <span style="background:hsl(240,100%,50%)"> /* blue */  </span>
+hsl(270,100%,50%)   <span style="background:hsl(270,100%,50%)">             </span>
+hsl(300,100%,50%)   <span style="background:hsl(300,100%,50%)">             </span>
+hsl(330,100%,50%)   <span style="background:hsl(330,100%,50%)">             </span>
+hsl(360,100%,50%)   <span style="background:hsl(360,100%,50%)"> /* red */   </span>
+
+hsl(120,100%,25%)   <span style="background:hsl(120,100%,25%)"> /* dark green */  </span>
+hsl(120,100%,50%)   <span style="background:hsl(120,100%,50%)"> /* green */       </span>
+hsl(120,100%,75%)   <span style="background:hsl(120,100%,75%)"> /* light green */ </span>
+
+hsl(120,100%,50%)   <span style="background:hsl(120,100%,50%)"> /* green */  </span>
+hsl(120, 67%,50%)   <span style="background:hsl(120,67%,50%)">              </span>
+hsl(120, 33%,50%)   <span style="background:hsl(120,33%,50%)">              </span>
+hsl(120,  0%,50%)   <span style="background:hsl(120,0%,50%)">              </span>
+
+hsl(120, 60%,70%)   <span style="background:hsl(120,60%,70%)"> /* pastel green */ </span>
+</pre>
+</div>
+<div id="section_10">
+<span id="RGBa_(red-green-blue-alpha)_rgba(R.2CG.2CB.2Ca)"></span><h3 class="editable">RGBa (red-green-blue-alpha)<code> rgba(R,G,B,a) </code>
+</h3>
+<p>Extends the RGB color model to include "alpha" to allow specification of the opacity of a color.<br><strong>a</strong> means opacity: 0=transparent; 1=opaque;</p>
+<pre>
+rgba(255,0,0,0.1)   <span style="background:rgba(255,0,0,0.1)"> /* 10% opaque red */  </span>
+rgba(255,0,0,0.4)   <span style="background:rgba(255,0,0,0.4)"> /* 40% opaque red */  </span>
+rgba(255,0,0,0.7)   <span style="background:rgba(255,0,0,0.7)"> /* 70% opaque red */  </span>
+rgba(255,0,0,  1)   <span style="background:rgba(255,0,0,1)"> /* full opaque red */ </span>
+</pre>
+</div>
+<div id="section_11">
+<span id="HSLa_(hue-saturation-lightness-alpha)_hsla(H.2CS.2CL.2Ca)"></span><h3 class="editable">HSLa (hue-saturation-lightness-alpha)<code> hsla(H,S,L,a) </code>
+</h3>
+<p>Extends the HSL color model to include "alpha" to allow specification of the opacity of a color.<br><strong>a</strong> means opacity: 0=transparent; 1=opaque;</p>
+<pre style="text-shadow:rgba(255,255,255,0.4) -1px -1px">
+hsla(240,100%,50%,0.05)  <span style="background:hsla(240,100%,50%,0.05)"> /* 5% opaque blue */   </span>
+hsla(240,100%,50%, 0.4)  <span style="background:hsla(240,100%,50%,0.4)"> /* 40% opaque blue */  </span>
+hsla(240,100%,50%, 0.7)  <span style="background:hsla(240,100%,50%,0.7)"> /* 70% opaque blue */  </span>
+hsla(240,100%,50%,   1)  <span style="background:hsla(240,100%,50%,1)"> /* full opaque blue */ </span>
+</pre>
+</div>
+<div id="section_12">
+<span id="System_Colors"></span><h3 class="editable">System Colors</h3>
+<p>Not all system colors are supported on all systems. 
+
+<span class="deprecatedInlineTemplate" style="border: 1px solid #5151FF; background-color: #B9B9FF; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Deprecated</span>
+
+ for use on public web pages.</p>
+<dl style="font:small Tahoma,'Liberation Sans','Nimbus Sans L',sans-serif; border:1px solid powderblue; padding:0.5em 0pt 0.5em 0.5em; -moz-column-rule:1px solid powderblue; -moz-column-width:15em; background:#eee; -webkit-columns:15em; -webkit-column-rule:1px solid powderblue; columns:17em; column-rule:1px solid powderblue">
+<dt>ActiveBorder</dt> <dd>Active window border.</dd> <dt>ActiveCaption</dt> <dd>Active window caption.  Should be used with CaptionText foreground color.</dd> <dt>AppWorkspace</dt> <dd>Background color of multiple document interface.</dd> <dt>Background</dt> <dd>Desktop background.</dd> <dt>ButtonFace</dt> <dd>Face background color for 3-D elements that appear 3-D due to one layer of surrounding border.  Should be used with ButtonText foreground color.</dd> <dt>ButtonHighlight</dt> <dd>The color of the border facing the light source for 3-D elements that appear 3-D due to one layer of surrounding border.</dd> <dt>ButtonShadow</dt> <dd>The color of the border away from the light source for 3-D elements that appear 3-D due to one layer of surrounding border.</dd> <dt>ButtonText</dt> <dd>Text on push buttons.  Should be used with ButtonFace or ThreeDFace background color.</dd> <dt>CaptionText</dt> <dd>Text in caption, size box, and scrollbar arrow box.  Should be used with ActiveCaption background color.</dd> <dt>GrayText</dt> <dd>Grayed (disabled) text.</dd> <dt>Highlight</dt> <dd>Item(s) selected in a control.  Should be used with HighlightText foreground color.</dd> <dt>HighlightText</dt> <dd>Text of item(s) selected in a control.  Should be used with Highlight background color.</dd> <dt>InactiveBorder</dt> <dd>Inactive window border.</dd> <dt>InactiveCaption</dt> <dd>Inactive window caption.  Should be used with InactiveCaptionText foreground color.</dd> <dt>InactiveCaptionText</dt> <dd>Color of text in an inactive caption.  Should be used with InactiveCaption background color.</dd> <dt>InfoBackground</dt> <dd>Background color for tooltip controls.  Should be used with InfoText foreground color.</dd> <dt>InfoText</dt> <dd>Text color for tooltip controls.  Should be used with InfoBackground background color.</dd> <dt>Menu</dt> <dd>Menu background.  Should be used with MenuText or -moz-MenuBarText foreground color.</dd> <dt>MenuText</dt> <dd>Text in menus.  Should be used with Menu background color.</dd> <dt>Scrollbar</dt> <dd>Scroll bar gray area.</dd> <dt>ThreeDDarkShadow</dt> <dd>The color of the darker (generally outer) of the two borders away from the light source for 3-D elements that appear 3-D due to two<br> concentric layers of surrounding border.</dd> <dt>ThreeDFace</dt> <dd>The face background color for 3-D elements that appear 3-D due to two concentric layers of surrounding border.  Should be used with ButtonText foreground color.</dd> <dt>ThreeDHighlight</dt> <dd>The color of the lighter (generally outer) of the two borders facing the light source for 3-D elements that appear 3-D due to two<br> concentric layers of surrounding border.</dd> <dt>ThreeDLightShadow</dt> <dd>The color of the darker (generally inner) of the two borders facing the light source for 3-D elements that appear 3-D due to two<br> concentric layers of surrounding border.</dd> <dt>ThreeDShadow</dt> <dd>The color of the lighter (generally inner) of the two borders away from the light source for 3-D elements that appear 3-D due to two<br> concentric layers of surrounding border.</dd> <dt>Window</dt> <dd>Window background.  Should be used with WindowText foreground color.</dd> <dt>WindowFrame</dt> <dd>Window frame.</dd> <dt>WindowText</dt> <dd>Text in windows.  Should be used with Window background color.</dd>
+</dl>
+</div>
+<div id="section_13">
+<span id="Mozilla_System_Color_Extensions"></span><h3 class="editable">Mozilla System Color Extensions</h3>
+<dl style="font:small Tahoma,'Liberation Sans','Nimbus Sans L',sans-serif; border:1px solid powderblue; padding:0.5em 0 0.5em 0.5em; -moz-column-rule:1px solid powderblue; -moz-column-width:17em; background:#eee; -webkit-columns:17em; -webkit-column-rule:1px solid powderblue; columns:17em; column-rule:1px solid powderblue">
+<dt>-moz-ButtonDefault</dt> <dd>The border color that goes around buttons that represent the default action for a dialog box.</dd> <dt>-moz-ButtonHoverFace</dt> <dd>The background color of a button that the mouse pointer is over (which would be ThreeDFace or ButtonFace when the mouse pointer is not over it).  Should be used with the -moz-ButtonHoverText foreground color.</dd> <dt>-moz-ButtonHoverText</dt> <dd>The text color of a button that the mouse pointer is over (which would be ButtonText when the mouse pointer is not over it).  Should be used with the -moz-ButtonHoverFace background color.</dd> <dt>-moz-CellHighlight</dt> <dd>Background color for selected item in a tree widget.  Should be used with -moz-CellHighlightText foreground color.  See also -moz-html-CellHighlight.</dd> <dt>-moz-CellHighlightText</dt> <dd>Text color for a selected item in a tree.  Should be used with -moz-CellHighlight background color.  See also -moz-html-CellHighlightText.</dd> <dt>-moz-Combobox</dt> <dd>
+<span title="(Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.2</span>
+ Background color for comboboxes.  Should be used with -moz-ComboboxText foreground color.  In versions prior to 1.9.2, use -moz-Field instead.</dd> <dt>-moz-ComboboxText</dt> <dd>
+<span title="(Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.2</span>
+ Background Text color for comboboxes.  Should be used with -moz-ComboboxText foreground color.  In versions prior to 1.9.2, use -moz-FieldText instead.</dd> <dt>-moz-Dialog</dt> <dd>Background color for dialog boxes.  Should be used with -moz-DialogText foreground color.</dd> <dt>-moz-DialogText</dt> <dd>Text color for dialog boxes.  Should be used with -moz-Dialog background color.</dd> <dt>-moz-dragtargetzone</dt> <dt>-moz-EvenTreeRow</dt> <dd>
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+ Background color for even-numbered rows in a tree.  Should be used with -moz-FieldText foreground color.  In Gecko versions prior to 1.9, use -moz-Field.  See also -moz-OddTreeRow.</dd> <dt>-moz-Field</dt> <dd>textfield background color.  Should be used with -moz-FieldText foreground color.</dd> <dt>-moz-FieldText</dt> <dd>textfield foreground color.  Should be used with -moz-Field, -moz-EvenTreeRow, or -moz-OddTreeRow background colors.</dd> <dt>-moz-html-CellHighlight</dt> <dd>
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+ Background color for highlighted item in HTML select.  Should be used with -moz-html-CellHighlightText foreground color.  Prior to Gecko 1.9, use -moz-CellHighlight.</dd> <dt>-moz-html-CellHighlightText</dt> <dd>
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+ Background color for highlighted item in HTML select.  Should be used with -moz-html-CellHighlight background color.  Prior to Gecko 1.9, use -moz-CellHighlightText.</dd> <dt>-moz-mac-accentdarkestshadow</dt> <dt>-moz-mac-accentdarkshadow</dt> <dt>-moz-mac-accentface</dt> <dt>-moz-mac-accentlightesthighlight</dt> <dt>-moz-mac-accentlightshadow</dt> <dt>-moz-mac-accentregularhighlight</dt> <dt>-moz-mac-accentregularshadow</dt> <dt>-moz-mac-chrome-active</dt> <dd>
+<span title="(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.1</span>
+</dd> <dt>-moz-mac-chrome-inactive</dt> <dd>
+<span title="(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.1</span>
+</dd> <dt>-moz-mac-focusring</dt> <dt>-moz-mac-menuselect</dt> <dt>-moz-mac-menushadow</dt> <dt>-moz-mac-menutextselect</dt> <dt>-moz-MenuHover</dt> <dd>Background color for hovered menu item.  Often similar to Highlight.  Should be used with -moz-MenuHoverText or -moz-MenuBarHoverText foreground color.</dd> <dt>-moz-MenuHoverText</dt> <dd>Foreground color for hovered menu item.  Often similar to HighlightText.  Should be used with -moz-MenuHover background color.</dd> <dt>-moz-MenuBarText</dt> <dd>
+<span title="(Firefox 3.6 / Thunderbird 3.1 / Fennec 1.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.2</span>
+ Foreground color for text in menu bars.  Often similar to MenuText.  Should be used on top of Menu background.</dd> <dt>-moz-MenuBarHoverText</dt> <dd>Foreground color for hovered text in menu bars.  Often similar to -moz-MenuHoverText.  Should be used on top of -moz-MenuHover background.</dd> <dt>-moz-nativehyperlinktext</dt> <dd>
+<span title="(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9.1</span>
+ default platform hyperlink color</dd> <dt>-moz-OddTreeRow</dt> <dd>
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+ Background color for odd-numbered rows in a tree.  Should be used with -moz-FieldText foreground color.  In Gecko versions prior to 1.9, use -moz-Field.  See also -moz-EvenTreeRow.</dd> <dt>-moz-win-communicationstext</dt> <dd>
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+ Should be used for text in objects with appearance:-moz-win-communications-toolbox.</dd> <dt>-moz-win-mediatext</dt> <dd>
+<span title="(Firefox 3)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 1.9</span>
+ Should be used for text in objects with appearance:-moz-win-media-toolbox.</dd>
+</dl>
+</div>
+<div id="section_14">
+<span id="Mozilla_Color_Preference_Extensions"></span><h3 class="editable">Mozilla Color Preference Extensions</h3>
+<dl style="font:small Tahoma,'Liberation Sans','Nimbus Sans L',sans-serif; border:1px solid powderblue; padding:0.5em 0 0.5em 0.5em; background:#eee;">
+<dt>-moz-activehyperlinktext</dt> <dd>User's preference for text color of active links.  Should be used against default document background.</dd> <dt></dt> <dt>-moz-default-background-color</dt> <dd>
+<span title="(Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 5.0</span>
+ User's preference for document background-color.</dd> <dt></dt> <dt>-moz-default-color</dt> <dd>
+<span title="(Firefox 5.0 / Thunderbird 5.0 / SeaMonkey 2.2)
+" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 2px;">Requires Gecko 5.0</span>
+ User's preference for text color.</dd> <dt>-moz-hyperlinktext</dt> <dd>User's preference for text color of unvisited links.  Should be used against default document background.</dd> <dt>-moz-visitedhyperlinktext</dt> <dd>User's preference for text color of visited links.  Should be used against default document background.</dd>
+</dl>
+</div>
+</div>
+<div id="section_15">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/2011/REC-css3-color-20110607/#colorunits" rel="external" href="http://www.w3.org/TR/2011/REC-css3-color-20110607/#colorunits" target="_blank">CSS Colors Level 3</a></td> <td>Recommendation
+</td> <td>Deprecated system-colors; added SVG colors; added rgba(), hsl(), hsla() functional notation.</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#value-def-color" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#value-def-color" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Added the orange color and the system-colors<a class="external" title="http://www.w3.org/TR/CSS21/ui.html#system-colors" rel="external" href="http://www.w3.org/TR/CSS21/ui.html#system-colors" target="_blank">[3]</a>.</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/#color-units" rel="external" href="http://www.w3.org/TR/CSS1/#color-units" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;"> </td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_16">
+<span id="Browser_Compatibility"></span><h2 class="editable">Browser Compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>keywords colors</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0 <sup><a href="#1">[*]</a></sup>
+</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>#RRGGBB | #RGB</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>3.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>rgb (R,G,B)</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>4.0</td> <td>3.5</td> <td>1.0 (85)</td> </tr>
+<tr>
+<td>hsl (H,S,L)</td> <td>1.0</td> <td>1.0 (1.5)</td> <td>9.0 <a title="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" class=" external" rel="external" href="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" target="_blank">[4]</a>
+</td> <td>9.5</td> <td>3.1 (525)</td> </tr>
+<tr>
+<td>rgba (R,G,B,a)</td> <td>1.0</td> <td>3.0 (1.9)</td> <td>9.0<a title="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" class=" external" rel="external" href="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" target="_blank"> #</a>
+</td> <td>10.0</td> <td>3.1 (525)</td> </tr>
+<tr>
+<td>hsla (H,S,L,a)</td> <td>1.0</td> <td>3.0 (1.9)</td> <td>9.0<a title="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" class=" external" rel="external" href="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" target="_blank"> #</a>
+</td> <td>10.0</td> <td>3.1 (525)</td> </tr>
+<tr>
+<td>currentColor</td> <td>1.0</td> <td>1.5 (1.8)</td> <td>9.0 <a title="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" class=" external" rel="external" href="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" target="_blank">[5]</a>
+</td> <td>9.5</td> <td>4.0 (528)</td> </tr>
+<tr>
+<td>transparent</td> <td>1.0</td> <td>3.0 (1.9)</td> <td>9.0 <a title="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" class=" external" rel="external" href="http://msdn.microsoft.com/en-us/ie/hh393506#_CSS3_Colors" target="_blank">[6]</a><sup><a href="#2">[**]</a></sup>
+</td> <td>10.0</td> <td>3.1 (525)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td> </tr>
+</tbody></table>
+</div>
+<p><a name="1"></a>[*] The 'e'-grey colors (with an e) (<code>grey</code>, <code>darkgrey</code>, <code>darkslategrey</code>, <code>dimgrey</code>, <code>lightgrey</code>, <code>lightslategrey</code>) are only supported since IE 8.0. IE 3 to IE 6 only support the 'a' variants: <code>gray</code>, <code>darkgray</code>, <code>darkslategray</code>, <code>dimgray</code>, <code>lightgray</code>, <code>lightslategray</code>.</p>
+<p><a name="2"></a>[**]  IE 7-8 supports transparent only for 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border">border</a></code>.<code> color:transparent</code> is drawn black in IE.</p>
+</div>
+<div id="section_17">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/opacity">opacity</a></code> property, allowing to define the transparency of color at the element level.</li> <li>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color">color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-color">background-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/outline-color">outline-color</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-shadow">text-shadow</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-shadow">box-shadow</a></code> properties.</li> <li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+<p></p>
+</div>
+</div>

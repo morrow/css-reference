@@ -1,0 +1,123 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<p>The <code>element()</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> function defines an <code>&lt;image&gt;</code> value generated from an arbitrary HTML element. This image is live, meaning that if the HTML element is changed, the CSS properties using the resulting value are automatically updated.</p>
+<p>A particularly useful scenario for using this would be to render an image in an HTML 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/canvas">&lt;canvas&gt;</a></code> element, then use that as a background.</p>
+<p>On Gecko browsers, you can use the non-standard 
+<code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozSetImageElement">document.mozSetImageElement()</a></code> method to change the element being used as the background for a given CSS background element.</p>
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<div id="section_1">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>element( <em>id</em> )
+</pre>
+<p>where:</p>
+<dl>
+<dt style="margin-left: 40px;"><strong><code>id</code></strong></dt> <dd style="margin-left: 40px;">The ID of an element to use as the background, specified using the HTML attribute #<em>id</em> on the element.</dd>
+</dl>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>These examples can be <a title="https://developer.mozilla.org/samples/cssref/moz-element.html" rel="internal" href="https://developer.mozilla.org/samples/cssref/moz-element.html">viewed live</a> in builds of Firefox that support <code>-moz-element()</code>.</p>
+<div id="section_3">
+<span id="A_somewhat_realistic_example"></span><h3 class="editable">A somewhat realistic example</h3>
+<p>This example uses a hidden 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/div">&lt;div&gt;</a></code> as a background. The background element uses a gradient, but also includes text that is rendered as part of the background.</p>
+
+          <pre name="code" class="xml">&lt;div style="width:400px; height:400px; background:-moz-element(#myBackground1) no-repeat;"&gt;
+    &lt;p&gt;This box uses the element with the #myBackground1 ID as its background!&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div style="overflow:hidden; height:0;"&gt;
+    &lt;div id="myBackground1" style="width:1024px; height:1024px; background-image: -moz-linear-gradient(left, red, orange, yellow, white);"&gt;
+    &lt;p style="-moz-transform-origin:0 0; -moz-transform: rotate(45deg); color:white;"&gt;This text is part of the background. Cool, huh?&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</pre>
+        
+<p>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/div">&lt;div&gt;</a></code> element with the ID "myBackground1" is used as the background for the content including the paragraph "This box uses the element with the #myBackground1 ID as its background!".</p>
+<p><img alt="example1.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/4624/=example1.png"></p>
+</div>
+<div id="section_4">
+<span id="A_somewhat_more_bizarre_example"></span><h3 class="editable">A somewhat more bizarre example</h3>
+<p>This example uses a hidden 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/button">&lt;button&gt;</a></code> element in a repeating pattern as its background. This demonstrates that you can use arbitrary elements as background, but doesn't necessarily demonstrate good design practices.</p>
+
+          <pre name="code" class="xml">&lt;div style="width:400px; height:100px; background:-moz-element(#myBackground2);"&gt;
+  &lt;/div&gt;
+
+  &lt;div style="overflow:hidden; height:0;"&gt;
+    &lt;button id="myBackground2" type="button"&gt;Evil button!&lt;/button&gt;
+  &lt;/div&gt;</pre>
+        
+<p><img alt="example2.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/4625/=example2.png"></p>
+</div>
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://dev.w3.org/csswg/css3-images/#element-reference" rel="external" href="http://dev.w3.org/csswg/css3-images/#element-reference" target="_blank">CSS Image Values and Replaced Content Level 3</a></td> <td>Unknown
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0 (2.0) <a class="link-https" title="https://bugzilla.mozilla.org/show_bug.cgi?id=506826" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=506826" target="_blank">[1]</a> [*] 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>
+<span style="color: rgb(255, 0, 0);" title="Not supported.">--</span> <a class="link-https" title="https://bugs.webkit.org/show_bug.cgi?id=44650" rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=44650" target="_blank">[2]</a>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>4.0 (2.0) <a class="link-https" title="https://bugzilla.mozilla.org/show_bug.cgi?id=506826" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=506826" target="_blank">[3]</a> [*] 
+<span title="prefix" style="border: 1px solid rgb(129, 129, 81); background-color: rgb(255, 255, 225); font-size: x-small; white-space: nowrap; padding: 0px 2px;">-moz</span>
+</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr>
+</tbody></table>
+</div>
+<p>[*] Usage limited to the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> CSS properties.</p>
+</div>
+<div id="section_7">
+<span id="SeeAlso"></span><span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/DOM/document.mozSetImageElement">document.mozSetImageElement()</a></code>
+</li>
+</ul>
+</div>
+</div>

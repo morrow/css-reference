@@ -1,0 +1,80 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>In Mozilla applications like Firefox, the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-top-colors">-moz-border-top-colors</a></code> CSS property sets a list of colors for the top border.</p>
+<p>When an element has a border that is larger than a single CSS pixel, each line of pixels uses the next color specified in this property, from the outside in. This eliminates the need for nested boxes. If the border is wider than the number of specified colors, the remaining part of the border is the innermost color specified.</p>
+<ul>
+<li>Initial value:<code> none</code>
+</li> <li>Applies to: all elements</li> <li>Inherited: no</li>
+</ul>
+<p>It does not apply</p>
+<ol>
+<li>if 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-style">border-style</a></code> is<code> dashed </code>or<code> dotted</code>.</li> <li>to tables with<code> <code>border-collapse: collapse.</code></code>
+</li>
+</ol>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>-moz-border-top-colors:  [&lt;color&gt;]* &lt;color&gt; | none
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<p>Accepts a white-space separated list of color values.</p>
+<dl>
+<dt>&lt;color&gt;</dt>
+<dd>Specifies the color of a line of pixels in the bottom border.<code> transparent </code>is valid. See <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> values for possible units.</dd>
+<dt>none</dt>
+<dd>Default, no colors are drawn or 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code> is used, if specified.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Related_properties"></span><h3 class="editable">Related properties</h3>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-right-colors">-moz-border-right-colors</a></code> sets colors for the right border</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-bottom-colors">-moz-border-bottom-colors</a></code> sets colors for the bottom border</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-border-left-colors">-moz-border-left-colors</a></code> sets colors for the left border</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre style="border: 10px inset gold; color: gold; background: none repeat scroll 0% 0% gray; padding: 1em; -moz-border-top-colors: rgb(238, 0, 0) rgb(204, 51, 0) rgb(204, 85, 0) rgb(204, 102, 0) rgb(204, 119, 0) rgb(204, 136, 0) rgb(204, 153, 0) rgb(204, 170, 0) rgb(204, 187, 0) rgb(204, 204, 0); -moz-border-right-colors: red rgb(255, 102, 0) rgb(255, 136, 0) rgb(255, 153, 0) rgb(255, 170, 0) rgb(255, 187, 0) rgb(255, 204, 0) rgb(255, 221, 0) rgb(255, 238, 0) rgb(255, 255, 0); -moz-border-bottom-colors: red rgb(255, 102, 0) rgb(255, 136, 0) rgb(255, 153, 0) rgb(255, 170, 0) rgb(255, 187, 0) rgb(255, 204, 0) rgb(255, 221, 0) rgb(255, 238, 0) rgb(255, 255, 0); -moz-border-left-colors: rgb(238, 0, 0) rgb(204, 51, 0) rgb(204, 85, 0) rgb(204, 102, 0) rgb(204, 119, 0) rgb(204, 136, 0) rgb(204, 153, 0) rgb(204, 170, 0) rgb(204, 187, 0) rgb(204, 204, 0);">
+/*  Other browsers use a "inset gold 10px" border  */
+
+border: inset gold 10px;  color:gold;  background:gray;  padding:1em;
+-moz-border-top-colors:    #e00 #c30 #c50 #c60 #c70 #c80 #c90 #ca0 #cb0 #cc0;
+-moz-border-right-colors:   red #f60 #f80 #f90 #fa0 #fb0 #fc0 #fd0 #fe0 #ff0;
+-moz-border-bottom-colors:  red #f60 #f80 #f90 #fa0 #fb0 #fc0 #fd0 #fe0 #ff0;
+-moz-border-left-colors:   #e00 #c30 #c50 #c60 #c70 #c80 #c90 #ca0 #cb0 #cc0;
+</pre>
+<pre style="padding: 0; border: 1.5em solid; -moz-border-radius: 1.5em; border-radius:1em; -moz-border-top-colors: maroon maroon khaki maroon khaki maroon maroon transparent; -moz-border-right-colors: maroon maroon khaki maroon khaki maroon maroon magenta; -moz-border-bottom-colors: maroon maroon khaki maroon khaki maroon maroon transparent; -moz-border-left-colors: maroon maroon khaki maroon khaki maroon maroon transparent;">
+/*  Other browsers use a "solid 1.5em" border  */
+
+border: solid 1.5em;  -moz-border-radius:1.5em;  border-radius:1.5em;
+-moz-border-top-colors:    maroon maroon khaki maroon khaki maroon maroon transparent;
+-moz-border-right-colors:  maroon maroon khaki maroon khaki maroon maroon magenta;
+-moz-border-bottom-colors: maroon maroon khaki maroon khaki maroon maroon transparent;
+-moz-border-left-colors:   maroon maroon khaki maroon khaki maroon maroon transparent;
+</pre>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><span class="lang lang-en"><span class="nonStandardInlineTemplate" style="border: 1px solid rgb(255, 213, 153); background-color: rgb(255, 239, 217); font-size: x-small; white-space: nowrap; padding: 2px;">Non-standard</span></span>     </p>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<p>Supported since Gecko 1.0 (Firefox 1.0), no support in other major browsers.</p>
+</div>
+<div id="section_8">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-color">border-color</a></code></p>
+<p></p>
+</div>
+</div>

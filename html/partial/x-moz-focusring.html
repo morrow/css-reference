@@ -1,0 +1,50 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<p>
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>:-moz-focusring</code> is specified on an element if and only if it's currently focused and should have a focus ring drawn about it. The precise behavior may vary from platform to platform, depending on that platform's particular focus best practices.</p>
+<div class="note">
+<strong>Note:</strong> Keep in mind that not all focused elements will have this pseudo-selector specified; it's only applied when the element is both focused <strong>and</strong> should render a focus indicator.</div>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+:-moz-focusring</pre>
+</div>
+<div id="section_3">
+<span id="Example"></span><h3 class="editable">Example</h3>
+<p>To specify the appearance of an element when it's focused, you can use this pseudo-selector like this:</p>
+
+          <pre name="code" class="css">mybutton:-moz-focusring {
+  outline: 2px dotted;
+}</pre>
+        
+</div>
+<div id="section_4">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=418521" class="external" title="RESOLVED FIXED - Focus ring appears on mouse interactions (as opposed to only when tabbing through items)">
+bug 418521</a>
+</li>
+</ul>
+</div>
+</div>

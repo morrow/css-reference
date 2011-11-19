@@ -1,0 +1,18 @@
+<article><h1>CSS property: <code>-webkit-transform-style</code>
+</h1>
+
+    <section><h1>Description</h1>
+        <p>Defines how nested, transformed elements are rendered in 3D space.</p>
+<p>If <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a> is <code>flat</code>, all children of this element are rendered flattened into the 2D plane of the element. Therefore, rotating the element about the x or y axes causes children positioned at positive or negative z positions to appear on the element’s plane, rather than in front of or behind it. If <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a> is <code>preserve-3d</code>, this flattening is not performed, so children maintain their position in 3D space.</p>
+<p>This flattening takes place at each element, so preserving a hierarchy of elements in 3D space requires that each ancestor in the hierarchy have the value <code>preserve-3d</code> for <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a>. But <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a> affects only an element’s children; the leaf nodes in a hierarchy do not require the <code>preserve-3d</code> style.</p>
+
+    </section><section class="syntax"><h1>Syntax</h1>
+        <p><code>-webkit-transform-style: flat | preserve-3d;</code></p>    </section><section class="values"><h1>Values</h1>
+        <dl>
+<dt class="default">flat (by default)</dt>
+<dd><p>Flatten all children of this element into the 2D plane.</p></dd>
+<dt>preserve-3d</dt>
+<dd><p>Preserve the 3D perspective.</p></dd>
+</dl></section><section class="versions"><h1>Versions</h1>
+        <ul>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-transform-style">iOS 2.0</a></li>        </ul></section></article>

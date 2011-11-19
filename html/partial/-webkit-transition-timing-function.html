@@ -1,0 +1,46 @@
+<article><h1>CSS property: <code>-webkit-transition-timing-function</code>
+</h1>
+
+    <section><h1>Description</h1>
+        <p>Specifies how the intermediate values used during a transition are calculated.</p>
+<p>This property allows for a transition to change speed over its duration. These effects, commonly called easing functions, are mathematical functions that produce a smooth curve.</p>
+<p>The timing function is specified using a cubic Bezier curve. Use the constants to specify preset points of the curve or the <code>cubic-bezier</code> function to specify your own points. See <a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariCSSRef/Articles/Functions.html#//apple_ref/css/func/cubic-bezier">cubic-bezier</a> for a description of the parameters for this function.</p>
+<p>The timing function takes as its input the current elapsed percentage of the transition duration and outputs a percentage that determines how close the transition is to its goal state.</p>
+    </section><section class="syntax"><h1>Syntax</h1>
+        <p><code>-webkit-transition-timing-function: &lt;timing_function&gt; [, ...];</code></p>    </section><section class="values"><h1>Values</h1>
+        <dl>
+<dt>&lt;timing_function&gt;</dt>
+<dd>
+<p>The timing function.</p>
+<table>
+<tr>
+<td class="value default">ease (by default)</td>
+<td class="description">Equivalent to <code>cubic-bezier(0.25, 0.1, 0.25, 1.0)</code>
+</td>
+</tr>
+<tr>
+<td class="value">linear</td>
+<td class="description">Equivalent to <code>cubic-bezier(0.0, 0.0, 1.0, 1.0)</code>
+</td>
+</tr>
+<tr>
+<td class="value">ease-in</td>
+<td class="description">Equivalent to <code>cubic-bezier(0.42, 0, 1.0, 1.0)</code>
+</td>
+</tr>
+<tr>
+<td class="value">ease-out</td>
+<td class="description">Equivalent to <code>cubic-bezier(0, 0, 0.58, 1.0)</code>
+</td>
+</tr>
+<tr>
+<td class="value">ease-in-out</td>
+<td class="description">Equivalent to <code>cubic-bezier(0.42, 0, 0.58, 1.0)</code>
+</td>
+</tr>
+</table>
+</dd>
+</dl></section><section class="versions"><h1>Versions</h1>
+        <ul>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-transition-timing-function">Safari 3.1</a></li>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-transition-timing-function">iOS 2.0</a></li>        </ul></section></article>

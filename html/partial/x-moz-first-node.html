@@ -1,0 +1,39 @@
+<div class="pageText" id="pageText">
+<p> <span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span>
+</p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:-moz-first-node</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any element that is the first child node of some other element. It differs from 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Afirst-child">:first-child</a></code> because it does not match a first child element with (non-whitespace) text before it.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable"> Syntax </h3>
+<pre class="eval">span:-moz-first-node { <i>style properties</i> }
+</pre>
+<p><br></p>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable"> Examples </h3>
+<pre>
+span:-moz-first-node
+{
+    background-color: lime;
+}
+</pre>
+<p>...where...
+</p>
+<pre>
+&lt;div&gt;
+  &lt;span&gt;:-moz-first-node&lt;/span&gt;
+  &lt;span&gt;:-moz-last-node&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<div id="section_4">
+<span id="Notes"></span><h3 class="editable"> Notes </h3>
+<p>Any white space at the start of an element is ignored for the determination of <code>:-moz-first-node</code>.
+</p>
+
+
+</div>
+</div>

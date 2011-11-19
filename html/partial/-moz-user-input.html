@@ -1,0 +1,56 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>In Mozilla applications, <code>-moz-user-input</code> determines if an element will accept user input.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/none">none</a></code>
+</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified </li>
+</ul>
+<p><code>-moz-user-input</code> was one of the proposals leading to the proposed CSS 3 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/user-input" class="new">user-input</a></code> property, which has not yet reached Candidate Recommendation (call for implementations).</p>
+<p>For elements that normally take user input, such as a textarea, the initial value of <code>-moz-user-input</code> is enabled.</p>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-user-input: none | enabled | disabled | inherit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>none</dt> <dd>The element does not respond to user input, and it does not become 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aactive">:active</a></code>.</dd> <dt>enabled</dt> <dd>The element accepts user input. For textboxes, this is the default behavior.</dd> <dt>disabled</dt> <dd>The element does not accept user input. However, this is not the same as setting 
+<code><span id="a-disabled"><a rel="custom" href="https://developer.mozilla.org/en/XUL/Attribute/disabled">disabled</a></span></code> to true, in that the element is drawn normally.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Related_properties"></span><h3 class="editable">Related properties</h3>
+<ul>
+<li>
+<a title="en/CSS/-moz-user-focus" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-user-focus">-moz-user-focus</a> controls what happens when an element is given focus.</li> <li>
+<a title="en/CSS/-moz-user-modify" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-user-modify">-moz-user-modify</a> controls if a user can read or write in an element.</li> <li>
+<a title="en/CSS/-moz-user-select" rel="internal" href="https://developer.mozilla.org/en/CSS/-moz-user-select">-moz-user-select</a> controls how an element is selected.</li>
+</ul>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+input.example {
+  /* the user will be able to select the text, but not change it. */
+  -moz-user-input: disabled;
+}
+</pre>
+<p></p>
+</div>
+</div>

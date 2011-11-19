@@ -1,0 +1,71 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span> 
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 1.9.1</p>
+(Firefox 3.5 / Thunderbird 3.0 / SeaMonkey 2.0)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>-moz-stack-sizing</code> is an extended CSS property. Normally, a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XUL/stack">stack</a></code> will change its size so that all of its child elements are completely visible. For example, moving a child of the stack far to the right will widen the stack so the child remains visible.</p>
+<p>If you wish to prevent the stack from resizing automatically to accommodate its children, you can set <code>-moz-stack-sizing</code> to <code>ignore</code> on the child element. The property is set not on the stack itself, but on the stack's children. This lets you ignore certain children, but not others.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: stretch-to-fit</li> <li>Applies to: all elements</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: yes</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-stack-sizing: ignore | stretch-to-fit
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>stretch-to-fit</dt> <dd>The child will influence the stack's size.</dd> <dt>ignore</dt> <dd>The stack won't consider this child when calculating the its size.</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/-moz-stack-sizing.html">View Live Examples</a> <span class="lang lang-en">(not available, please check later)
+</span></p>
+<pre>
+.mainsheet{
+	-moz-stack-sizing: ignore;
+}
+</pre>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>In previous versions of Gecko it was possible to work around the problem by setting very large negative bottom and right margins on the stack element and equally large positive bottom and right margins on the children whose size you didn't want to ignore. (The problem does not affect children moved above or to the left of the stack.)</p>
+</div>
+<div id="section_6">
+<span id="Bugzilla"></span><h3 class="editable">Bugzilla</h3>
+<p>
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=346189" class="external" title="RESOLVED FIXED - Overlayed children affect computed size of flexible stack">
+bug 346189</a>
+</p>
+</div>
+</div>

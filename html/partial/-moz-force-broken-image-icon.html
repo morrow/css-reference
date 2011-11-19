@@ -1,0 +1,62 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>-moz-force-broken-image-icon</code> is an extended CSS property. The value <code>1</code> forces a broken image icon even if the image has an <code> alt</code> attribute. When the value <code>0</code> is used the image will act as usual and only display the <code>alt</code> attribute.</p>
+<div class="note">
+<strong>Note:</strong> Even if the value is set to <code>1</code> the <code>alt</code> attribute will still be displayed. More information is available below.</div>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 0</li> <li>Applies to: <a title="en/HTML/Element/img" rel="internal" href="https://developer.mozilla.org/en/HTML/Element/img">images</a>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-force-broken-image-icon: &lt;integer&gt;;
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span></dt> <dd></dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<p>
+<a rel="custom" href="http://developer.mozilla.org/samples/cssref/-moz-force-broken-image-icon.html">View Live Examples</a> <span class="lang lang-en">(not available, please check later)
+</span></p>
+<pre>
+img {
+    -moz-force-broken-image-icon: 1;
+    height:100px;
+    width:100px;
+}
+</pre>
+<div class="note">
+<strong>Note:</strong> Unless the image has a specified height and width the broken image icon will not be displayed but the alt attribute will also be hidden if <code>-moz-force-broken-image-icon</code> is set to <code>1</code>.</div>
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<ul>
+<li>This property will only work in Gecko-based browsers.</li> <li>The use of this property is not recommended. A proper alt attribute should be used instead.</li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Bugzilla"></span><span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=58646" class="external" title="VERIFIED FIXED - [PATCH] broken images don't get inserted">
+bug 58646</a>
+</p>
+</div>
+</div>

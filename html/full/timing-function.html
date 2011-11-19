@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="developer-mozilla-org">
+<head>
+  <title>timing-function - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=82185" />
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=82185" />
+<meta name="generator" content="MindTouch" />
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
+<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 82185;
+Deki.PageTitle = 'en/CSS/timing-function';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '18 Nov 2011';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '32dea070';
+Deki.EditorStylesToken = '1f225732';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Ftiming-function">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
+ 
+</head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCSStimingfunction" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+    </div>
+
+    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
+      <p>
+        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+      <div id="site-search-gg"></div>
+    </form>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="/web">Web</a></li>
+            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML">HTML</a></li>
+                  <li><a href="/en/DOM">DOM</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="/en/SVG">SVG</a></li>
+                  <li><a href="/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="/en/WebSockets">WebSockets</a></li>
+                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/CSS">CSS</a></li>
+                  <li><a href="/en/Using_gradients">Gradients</a></li>
+                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/JavaScript">JavaScript</a></li>
+                  <li><a href="/en/Ajax">Ajax</a></li>
+                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="/docs">More docs&hellip;</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="/events">Events</a></li>
+            <li><a href="/discussions">Discussions</a></li>
+            <li><a href="/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+      <ul class="user-state">
+              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+</li>
+        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Ftiming-function" class="user-login">Log in</a></li>
+            </ul>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="/index.php?title=en/CSS/timing-function&action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="/Talk:en/CSS/timing-function" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=82185">Pages that link here</a></li>      </ul>
+    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="/">MDN</a></li>
+      <li class="crumb-two"><a href="/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
+<li class="last"><a href="https://developer.mozilla.org/en/CSS/timing-function" class="deki-ns current">timing-function</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-enCSStimingfunction" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">timing-function</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Ftiming-function" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Ftiming-function" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Values" rel="internal">Values</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.</span> <a href="#The_cubic-bezier()_class_of_timing-functions" rel="internal">The cubic-bezier() class of timing-functions</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.1.</span> <a href="#Syntax" rel="internal">Syntax</a></li><li><span>2.1.2.</span> <a href="#Examples" rel="internal">Examples</a></li></ol></li><li><span>2.2.</span> <a href="#The_steps()_class_of_timing-functions" rel="internal">The steps() class of timing-functions</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.2.1.</span> <a href="#Syntax_2" rel="internal">Syntax</a></li><li><span>2.2.2.</span> <a href="#Examples_2" rel="internal">Examples</a></li></ol></li><li><span>2.3.</span> <a href="#Keywords_for_common_timing-functions" rel="internal">Keywords for common timing-functions</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.3.1.</span> <a href="#linear" rel="internal">linear</a></li><li><span>2.3.2.</span> <a href="#ease" rel="internal">ease</a></li><li><span>2.3.3.</span> <a href="#ease-in" rel="internal">ease-in</a></li><li><span>2.3.4.</span> <a href="#ease-in-out" rel="internal">ease-in-out</a></li><li><span>2.3.5.</span> <a href="#ease-out" rel="internal">ease-out</a></li><li><span>2.3.6.</span> <a href="#step-start" rel="internal">step-start</a></li><li><span>2.3.7.</span> <a href="#step-end" rel="internal">step-end</a></li></ol></li></ol></li><li><span>3.</span> <a href="#Specifications" rel="internal">Specifications</a></li><li><span>4.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><span>5.</span> <a href="#See_also" rel="internal">See also</a></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Values" rel="internal">Values</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.</span> <a href="#The_cubic-bezier()_class_of_timing-functions" rel="internal">The cubic-bezier() class of timing-functions</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.1.</span> <a href="#Syntax" rel="internal">Syntax</a></li><li><span>2.1.2.</span> <a href="#Examples" rel="internal">Examples</a></li></ol></li><li><span>2.2.</span> <a href="#The_steps()_class_of_timing-functions" rel="internal">The steps() class of timing-functions</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.2.1.</span> <a href="#Syntax_2" rel="internal">Syntax</a></li><li><span>2.2.2.</span> <a href="#Examples_2" rel="internal">Examples</a></li></ol></li><li><span>2.3.</span> <a href="#Keywords_for_common_timing-functions" rel="internal">Keywords for common timing-functions</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.3.1.</span> <a href="#linear" rel="internal">linear</a></li><li><span>2.3.2.</span> <a href="#ease" rel="internal">ease</a></li><li><span>2.3.3.</span> <a href="#ease-in" rel="internal">ease-in</a></li><li><span>2.3.4.</span> <a href="#ease-in-out" rel="internal">ease-in-out</a></li><li><span>2.3.5.</span> <a href="#ease-out" rel="internal">ease-out</a></li><li><span>2.3.6.</span> <a href="#step-start" rel="internal">step-start</a></li><li><span>2.3.7.</span> <a href="#step-end" rel="internal">step-end</a></li></ol></li></ol></li><li><span>3.</span> <a href="#Specifications" rel="internal">Specifications</a></li><li><span>4.</span> <a href="#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><span>5.</span> <a href="#See_also" rel="internal">See also</a></li></ol></div></div><div class="pageText" id="pageText"><div id="section_1"><span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>&lt;timing-function&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type denotes a mathematical function that describes how fast one-dimensional values change during transitions or animations. This in essence lets you establish an acceleration curve, so that the speed of the animation can vary over its duration.</p>
+<p>It is a function linking the time with a ratio of the output value (expressed as a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span>, with <code>0.0</code> representing the initial state, <code>1.0</code> the final state.</p>
+<p><a title="TF_with_output_gt_than_1.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png"><img align="left" alt="TF_with_output_gt_than_1.png" class="internal lwrap" style="width: 120px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png?size=thumb" /></a><a title="TF_with_output_gt_than_1_clipped.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png"><img align="left" alt="TF_with_output_gt_than_1_clipped.png" class="internal lwrap" style="width: 120px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png?size=thumb" /></a>The output ratio can be greater than 1.0 (or smaller than 0.0). This causes the animation to go farther than the final state, then come back, in a kind of <em>bouncing</em> effect.</p>
+<p>Nevertheless, if the output value goes outside of its possible range, such as a component of a color going greater than <code>255</code> or smaller than <code>0</code>, the value is clipped to its closest allowed value (in the case of a color-component <code>255</code> and <code>0</code> respectively. Some <code>cubic-bezier()</code> curves exhibit this property.</p></div><div id="section_2"><span id="Values"></span><h2 class="editable">Values</h2>
+<div style="width:100%"> <p>CSS supports two kinds of timing functions: the subset of the cubic B&eacute;zier curves that are functions and staircase functions. The most useful of these functions are given a <em>keyword</em> that allows to easily describe them.</p> <div id="section_3"><span id="The_cubic-bezier()_class_of_timing-functions"></span><h3 class="editable">The <code>cubic-bezier()</code> class of timing-functions</h3>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr> <td> <p><img align="left" alt="cubic-bezier, example.png" class="internal lwrap" style="" src="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%25252C_example.png" /></p> </td> <td> <p>The <code>cubic-bezier()</code> functional notation defines a <a class="external" title="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" rel="external" href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves" target="_blank">cubic B&eacute;zier curve</a>. As these curves are continuous, they are often used to smooth down the start and end of the animation and are therefore sometimes called <em>easing functions</em>.</p> <p>A cubic B&eacute;zier curve is defined by four points P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, and P<sub>3</sub>. P<sub>0</sub> and P<sub>3</sub> are the start and the end of the curve and, in CSS these points are fixed as the coordinates are ratios (the abscissa the ratio of time, the ordinate the ratio of the output range). P<sub>0</sub> is <code>(0,&nbsp;0)</code> and represents the initial time and the initial state, P<sub>3</sub> is <code>(1,&nbsp;1)</code> and represents the final time and the final state.</p> <p>Not all cubic B&eacute;zier curves are suitable as timing functions as not all are <a class="external" title="http://en.wikipedia.org/wiki/Function_%28mathematics%29" rel="external" href="http://en.wikipedia.org/wiki/Function_%28mathematics%29" target="_blank">mathematical functions</a>, i.e. curves that for a given abscissa have zero or one value. With P<sub>0</sub> and P<sub>3</sub> fixed as defined by CSS, a cubic B&eacute;zier curve is a function, and is therefore valid, if and only if the abscissas of P<sub>1</sub> and P<sub>2</sub> are both in the <code>[0,&nbsp;1]</code> range.</p> <p>Cubic B&eacute;zier curves with the P<sub>1</sub> or P<sub>2</sub> ordinate outside the <code>[0,&nbsp;1]</code> range may generate <em>bouncing</em> effects.</p> <p>When you specify an invalid <code>cubic-bezier</code> curve, CSS ignores the whole property.</p> </td> </tr> </tbody>
+</table>
+</div></div>
+<div id="section_4"><span id="Syntax"></span><h4 class="editable">Syntax</h4>
+<pre><code>cubic-bezier(<em>x<sub>1</sub></em>, <em>y<sub>1</sub></em>, <em>x<sub>2</sub></em>, <em>y<sub>2</sub></em>)</code>
+</pre>
+<p>where :</p>
+<dl> <dt style="margin-left: 40px;"><strong><em>x<sub>1</sub></em>, <em>y<sub>1</sub></em>, <em>x<sub>2</sub></em>, <em>y<sub>2</sub></em></strong></dt> <dd style="margin-left: 40px;">Are <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> values representing the abscissas and ordinates of the P<sub>1</sub> and P<sub>2</sub> points defining the cubic B&eacute;zier curve. x<sub>1</sub> and x<sub>2</sub> must be in the range [0,&nbsp;1] or the value is invalid.</dd>
+</dl>
+</div><div id="section_5"><span id="Examples"></span><h4 class="editable">Examples</h4>
+<p>These cubic B&eacute;zier curves are valid for use in CSS :</p>
+<pre><code>cubic-bezier(0.1, 0.7, 1.0, 0.1)&nbsp;&nbsp; </code>The canonical B&eacute;zier curve with four &lt;number&gt; in the [0,1] range.
+cubic-bezier(0, 0, 1, 1)           Using &lt;integer&gt; is valid as any &lt;integer&gt; is also a &lt;number&gt;.
+cubic-bezier(-0.2, 0.6, -0.1, 0) &nbsp;&nbsp;Negative values for abscissas are valid, leading to bouncing effects.
+cubic-bezier(1.1, 0, 4, 0)       &nbsp;&nbsp;Values &gt; 1.0 for abscissas are also valid.
+</pre>
+<p>These cubic B&eacute;zier curves definitions are invalid :</p>
+<pre>cubic-bezier(0.1, red, 1.0, green) Though the animated output type may be a color, B&eacute;zier curves work w/ numerical ratios.
+cubic-bezier(0.1, 4,   0.6, 2.45)  Ordinates must be in the [0, 1] range or the curve is not a function of time.
+cubic-bezier(0.3, 2.1)             The two points must be defined, there is no default value.
+cubic-bezier(0.3, -1.9, 2.1, -0.2) Ordinates must be in the [0, 1] range or the curve is not a function of time.
+</pre>
+<div id="section_6"><span id="The_steps()_class_of_timing-functions"></span><h3 class="editable">The <code>steps()</code> class of timing-functions</h3>
+<br />
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr> <td><a title="steps(2,start).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5786/=steps%2525282%25252Cstart%252529.png"><img alt="steps(2,start).png" class="internal default" style="width: 119px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5786/=steps%2525282%25252Cstart%252529.png?size=thumb" /></a></td> <td><a title="steps(4,end).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5787/=steps%2525284%25252Cend%252529.png"><img alt="steps(4,end).png" class="internal default" style="width: 119px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5787/=steps%2525284%25252Cend%252529.png?size=thumb" /></a></td> <td rowspan="2">The <code>steps()</code> functional notation defines a <a class="external" title="http://en.wikipedia.org/wiki/Step_function" rel="external" href="http://en.wikipedia.org/wiki/Step_function" target="_blank">step function</a> dividing the domain of output values in equidistant steps. This subclass of step functions are sometimes also called staircase functions.</td> </tr> <tr style="text-align: center;"> <td style="white-space: nowrap;"><code>steps(2, start)</code></td> <td><code>steps(4, end)</code></td> </tr> </tbody>
+</table>
+<p>&nbsp;</p>
+<div id="section_7"><span id="Syntax_2"></span><h4 class="editable">Syntax</h4>
+<pre><code>steps(<em>number_of_steps</em>, <em>direction</em>)</code>
+</pre>
+<p>where :</p>
+<dl> <dt style="margin-left: 40px;"><strong><em>number_of_steps</em></strong></dt> <dd style="margin-left: 40px;">Is a strictly positive <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> representing the amount of equidistant treads composing the stepping function.</dd> <dt style="margin-left: 40px;"><strong><em>direction</em></strong></dt> <dd style="margin-left: 40px;">Is a keyword indicating if it the function is <a class="external" title="http://en.wikipedia.org/wiki/Left-continuous#Directional_and_semi-continuity" rel="external" href="http://en.wikipedia.org/wiki/Left-continuous#Directional_and_semi-continuity" target="_blank">left- or right-continuous</a>: <ul> <li style="margin-left: 40px;"><code>start</code> denotes a left-continuous function, so that the first step happens when the animation begins;</li> <li style="margin-left: 40px;"><code>end</code> denotes a right-continuous function, so that the last step happens when the animation ends.</li> </ul> </dd>
+</dl>
+</div><div id="section_8"><span id="Examples_2"></span><h4 class="editable">Examples</h4>
+<p>These timing functions are valid :</p>
+<pre>steps(5, end)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  There is 5 treads, the last one happens right before the end of the animation.
+steps(2, start)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A two-step staircase, the first one happening at the start of the animation.
+</pre>
+<p>These timing function are invalid :</p>
+<pre>steps(2.0, end)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The first parameter must be an <a href="mks://localhost/en/CSS/integer" title="integer">&lt;integer&gt;</a> and cannot be a real value, even if it is equal to one.
+steps(-3, start)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The amount of steps must be non-negative.
+steps(0, end)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; There must be at least one step.
+steps(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The second parameter is not optional.
+steps(start, 3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Though of different types, the order of parameter is important.
+step(1, end)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Even if there is one step, the function name is steps, with the plural 's'
+steps(3 end)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The two parameters must be separated with a comma; one or several spaces is not enough.
+</pre>
+</div></div><div id="section_9"><span id="Keywords_for_common_timing-functions"></span><h3 class="editable">Keywords for common timing-functions</h3>
+<div id="section_10"><span id="linear"></span><h4 class="editable"><code>linear</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr style="vertical-align: top;"> <td><a title="cubic-bezier,linear.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%25252Clinear.png"><img alt="cubic-bezier,linear.png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%25252Clinear.png?size=thumb" /></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.0, 0.0, 1.0, 1.0</code><code>)</code>. Using this timing function, the animation goes from its initial state to its final one regularly, with a constant speed.</p> </td> </tr> </tbody>
+</table>
+</div><div id="section_11"><span id="ease"></span><h4 class="editable"><code>ease</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr style="vertical-align: top;"> <td><a title="cubic-bezier,ease.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%25252Cease.png"><img alt="cubic-bezier,ease.png" class="internal default" style="width: 117px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%25252Cease.png?size=thumb" /></a></td> <td>This keyword represents the timing function <code>cubic-bezier(0.25, 0.1, 0.25, 1.0)</code>. This function is similar to <a title="https://developer.mozilla.org/en/CSS/timing-function#ease-in-out" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease-in-out"><code>ease-in-out</code></a>, though it accelerates more sharply at the beginning and the acceleration and already starts to slow down near the medium of it.</td> </tr> </tbody>
+</table>
+</div><div id="section_12"><span id="ease-in"></span><h4 class="editable"><code>ease-in</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr style="vertical-align: top;"> <td><a title="cubic-bezier,ease-in.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%25252Cease-in.png"><img alt="cubic-bezier,ease-in.png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%25252Cease-in.png?size=thumb" /></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.42, 0.0, 1.0, 1.0</code><code>)</code>. The animation begins slowly, then progressively accelerates until the final state is reached and the animation stops abruptly.</p> </td> </tr> </tbody>
+</table>
+</div><div id="section_13"><span id="ease-in-out"></span><h4 class="editable"><code>ease-in-out</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr style="vertical-align: top;"> <td><a title="cubic-bezier,ease-in-out.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%25252Cease-in-out.png"><img alt="cubic-bezier,ease-in-out.png" class="internal default" style="width: 121px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%25252Cease-in-out.png?size=thumb" /></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.42, 0.0, 0.58, 1.0</code><code>)</code>. With this timing function, the animation starts slowly, accelerates than slows down when approaching to its final state. At the begin, it behaves similarly to the <a title="https://developer.mozilla.org/en/CSS/timing-function#ease-in" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease-in"><code>ease-in</code></a> function, at the end, it is similar to the <a title="https://developer.mozilla.org/en/CSS/timing-function#ease-out" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function#ease-out"><code>ease-out</code></a> function.</p> </td> </tr> </tbody>
+</table>
+</div><div id="section_14"><span id="ease-out"></span><h4 class="editable"><code>ease-out</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr style="vertical-align: top;"> <td><a title="cubic-bezer,ease-out.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%25252Cease-out.png"><img alt="cubic-bezer,ease-out.png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%25252Cease-out.png?size=thumb" /></a></td> <td> <p>This keyword represents the timing function <code>cubic-bezier(</code><code>0.0, 0.0, 0.58, 1.0</code><code>)</code>. The animation starts quickly then slow progressively down when approaching to its final state.</p> </td> </tr> </tbody>
+</table>
+</div><div id="section_15"><span id="step-start"></span><h4 class="editable"><code>step-start</code></h4>
+<br />
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr> <td><a title="steps(1,start).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5763/=steps%2525281%25252Cstart%252529.png"><img align="left" alt="steps(1,start).png" class="internal lwrap" style="width: 119px; height: 159px;" src="https://developer.mozilla.org/@api/deki/files/5763/=steps%2525281%25252Cstart%252529.png?size=webview" /></a>This keyword represents the timing function <code>steps(1, start)</code>. Using this timing function, the animation jumps immediately to the end state and stay in that position until the end of the animation.</td> <td>&nbsp;</td> </tr> </tbody>
+</table>
+</div><div id="section_16"><span id="step-end"></span><h4 class="editable"><code>step-end</code></h4>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"> <tbody> <tr style="vertical-align: top;"> <td><a title="steps(1,end).png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/5764/=steps%2525281%25252Cend%252529.png"><img alt="steps(1,end).png" class="internal default" style="width: 111px; height: 160px;" src="https://developer.mozilla.org/@api/deki/files/5764/=steps%2525281%25252Cend%252529.png?size=thumb" /></a></td> <td> <p>This keyword represents the timing function <code>steps(1, end)</code>. Using this timing function, the animation stays in its initial state until the end, where it directly jumps to its final position.</p> </td> </tr> </tbody>
+</table>
+</div></div></div></div><div id="section_17"><span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table"> <thead> <tr style="background-color: rgb(255, 204, 255);"> <th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr> </thead> <tbody> <tr> <td><a class="external" title="http://dev.w3.org/csswg/css3-transitions/#transition-timing-function" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#transition-timing-function" target="_blank">CSS Transitions Level 3</a></td> <td>Working Draft
+</td> <td>Defined anonymously</td> </tr> <tr> <td><a class="external" title="http://dev.w3.org/csswg/css3-animations/#animation-timing-function_tag" rel="external" href="http://dev.w3.org/csswg/css3-animations/#animation-timing-function_tag" target="_blank">CSS Animations Level 3</a></td> <td>Working Draft
+</td> <td>Defined anonymously, says to see definition in the CSS Transitions Module</td> </tr> </tbody>
+</table>
+</div><div id="section_18"><span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script>
+<div class="htab"><a name="AutoCompatibilityTable"></a>
+<ul> <li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div></p>
+<div id="compat-desktop"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox (Gecko)</th> <th>Chrome</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari</th> </tr> <tr> <td>Basic support</td> <td>4.0 (2.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10.5 <a class="external" title="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" rel="external" href="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" target="_blank">[1]</a></td> <td>3.1</td> </tr> <tr> <td><code>cubic-bezier()</code> w/ ordinate &notin;&nbsp;[0,1]</td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>Nightly <a class="link-https" title="https://bugs.webkit.org/show_bug.cgi?id=45761" rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=45761" target="_blank">[2]</a></td> </tr> <tr> <td><code>steps()</code></td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr> </tbody> </table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"> <tbody> <tr> <th>Feature</th> <th>Firefox Mobile (Gecko)</th> <th>Android</th> <th>IE&nbsp;Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr> <tr> <td>Basic support</td> <td>4.0 (2.0)</td> <td><span title="Please update this with the earliest version of support." style="color: #888">(Supported)</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>10 <a class="external" title="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" rel="external" href="http://dev.opera.com/articles/view/css3-transitions-and-2d-transforms/" target="_blank">[3]</a></td> <td>2.0 <a title="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" class=" external" rel="external" href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" target="_blank">[4]</a></td> </tr> <tr> <td><code>cubic-bezier()</code> w/ ordinate &notin;&nbsp;[0,1]</td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> </tr> <tr> <td><code>steps()</code></td> <td>4.0 (2.0)</td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td><span style="color: rgb(255, 0, 0);" title="Not supported.">--</span></td> <td>5.0 <a title="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" class=" external" rel="external" href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/SafariCSSRef/Articles/Functions.html" target="_blank">[5]</a></td> </tr> </tbody> </table>
+</div>
+</div><div id="section_19"><span id="See_also"></span><h2 class="editable">See also</h2>
+<ul> <li>The 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition-timing-function">transition-timing-function</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/animation-timing-function">animation-timing-function</a></code> needing a <code>&lt;timing-function&gt;</code> value.</li> <li><a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(4)</span></h2>
+              <a href="/index.php?title=Special:Tags&pageId=82185" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=animation" title="animation" tagid="1585" class="text">animation</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=transitions" title="transitions" tagid="3202" class="text">transitions</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(12)</span></h2>
+            <div id="pageFiles"><div class="filescontent" id="attachFiles"><div class="table" id="attachTable"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="16"></col><col width="16"></col><col width=""></col><col width="80"></col><col width="145"></col><col width="115"></col><col width="75"></col></colgroup><tbody><tr><th class="col1" colspan="3">File</th><th class="col4">Size</th><th class="col5">Date</th><th class="col6">Attached by</th><th class="col7">&nbsp;</th></tr><tr class="bg1 groupparent" id="deki-file-row-5767"><td class="col1"><a href="#" id="deki-file-revisions-5767" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%252Cease-out.png" class="filelink" title="cubic-bezer,ease-out.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%252Cease-out.png" class="filelink" title="cubic-bezer,ease-out.png">cubic-bezer,ease-out.png</a><div><span id="" class="deki-file-description desctext">The ease-out timing-function</span></div></td><td class="col4">242.92 kB</td><td class="col5">12:19, 8 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5767" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5767" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2" id="deki-file-row-5780"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%252C_example.png" class="filelink" title="cubic-bezier, example.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%252C_example.png" class="filelink" title="cubic-bezier, example.png">cubic-bezier, example.png</a><div><span id="" class="deki-file-description desctext">An example of a valid cubic Bézier curve</span></div></td><td class="col4">281.83 kB</td><td class="col5">06:25, 10 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5780" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5780" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1 groupparent" id="deki-file-row-5768"><td class="col1"><a href="#" id="deki-file-revisions-5768" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%252Cease-in-out.png" class="filelink" title="cubic-bezier,ease-in-out.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%252Cease-in-out.png" class="filelink" title="cubic-bezier,ease-in-out.png">cubic-bezier,ease-in-out.png</a><div><span id="" class="deki-file-description desctext">The ease-in-out timing-function</span></div></td><td class="col4">238.06 kB</td><td class="col5">11:00, 8 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5768" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5768" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2 groupparent" id="deki-file-row-5766"><td class="col1"><a href="#" id="deki-file-revisions-5766" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%252Cease-in.png" class="filelink" title="cubic-bezier,ease-in.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%252Cease-in.png" class="filelink" title="cubic-bezier,ease-in.png">cubic-bezier,ease-in.png</a><div><span id="" class="deki-file-description desctext">The ease-in timing-function</span></div></td><td class="col4">242.92 kB</td><td class="col5">12:08, 8 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5766" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5766" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1" id="deki-file-row-5769"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%252Cease.png" class="filelink" title="cubic-bezier,ease.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%252Cease.png" class="filelink" title="cubic-bezier,ease.png">cubic-bezier,ease.png</a><div><span id="" class="deki-file-description desctext">The ease timing-function</span></div></td><td class="col4">238.06 kB</td><td class="col5">11:21, 8 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5769" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5769" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2 groupparent" id="deki-file-row-5765"><td class="col1"><a href="#" id="deki-file-revisions-5765" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%252Clinear.png" class="filelink" title="cubic-bezier,linear.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%252Clinear.png" class="filelink" title="cubic-bezier,linear.png">cubic-bezier,linear.png</a><div><span id="" class="deki-file-description desctext">The linear timing-function</span></div></td><td class="col4">242.92 kB</td><td class="col5">10:16, 9 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5765" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5765" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1 groupparent" id="deki-file-row-5764"><td class="col1"><a href="#" id="deki-file-revisions-5764" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5764/=steps(1%252Cend).png" class="filelink" title="steps(1,end).png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5764/=steps(1%252Cend).png" class="filelink" title="steps(1,end).png">steps(1,end).png</a><div><span id="" class="deki-file-description desctext">The step-end timing-function</span></div></td><td class="col4">241.95 kB</td><td class="col5">12:20, 8 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5764" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5764" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2 groupparent" id="deki-file-row-5763"><td class="col1"><a href="#" id="deki-file-revisions-5763" class="internal deki-file-revisions"><span class="hide" style="display: none;"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="expand" alt="" /></span></span><span class="show"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="contract" alt="" /></span></span></a></td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5763/=steps(1%252Cstart).png" class="filelink" title="steps(1,start).png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5763/=steps(1%252Cstart).png" class="filelink" title="steps(1,start).png">steps(1,start).png</a><div><span id="" class="deki-file-description desctext">The step-start timing-function</span></div></td><td class="col4">241.95 kB</td><td class="col5">10:18, 9 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5763" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5763" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1" id="deki-file-row-5786"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5786/=steps(2%252Cstart).png" class="filelink" title="steps(2,start).png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5786/=steps(2%252Cstart).png" class="filelink" title="steps(2,start).png">steps(2,start).png</a><div><span id="" class="deki-file-description desctext">A stepping function with 2 steps</span></div></td><td class="col4">241.95 kB</td><td class="col5">11:57, 10 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5786" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5786" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2" id="deki-file-row-5787"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5787/=steps(4%252Cend).png" class="filelink" title="steps(4,end).png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5787/=steps(4%252Cend).png" class="filelink" title="steps(4,end).png">steps(4,end).png</a><div><span id="" class="deki-file-description desctext">A stepping function with 4 steps</span></div></td><td class="col4">241.95 kB</td><td class="col5">11:57, 10 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5787" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5787" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1" id="deki-file-row-5781"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png" class="filelink" title="TF_with_output_gt_than_1.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png" class="filelink" title="TF_with_output_gt_than_1.png">TF_with_output_gt_than_1.png</a><div><span id="" class="deki-file-description desctext">A timing function with output greater than 100%</span></div></td><td class="col4">242.92 kB</td><td class="col5">09:22, 10 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5781" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5781" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2" id="deki-file-row-5782"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png" class="filelink" title="TF_with_output_gt_than_1_clipped.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png" class="filelink" title="TF_with_output_gt_than_1_clipped.png">TF_with_output_gt_than_1_clipped.png</a><div><span id="" class="deki-file-description desctext">A timing function with output clipped to 100%</span></div></td><td class="col4">242.92 kB</td><td class="col5">09:22, 10 Oct 2011</td><td class="col6"><a href="/User:teoli" class="link-user" rel="internal">teoli</a></td><td class="col7"><a href="#" id="deki-file-actions-5782" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5782" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr></tbody></table></div></div></div>            <div id="deki-image-gallery-lite"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 12</th></tr><tr class="bg2"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%252Cease-out.png?size=webview" title="cubic-bezer,ease-out.png"><img src="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%252Cease-out.png?size=thumb" title="cubic-bezer,ease-out.png" alt="The ease-out timing-function" /></a><div class="information"><span class="description">The ease-out timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5767/=cubic-bezer%252Cease-out.png" title="View fullsize version">cubic-bezer,ease-out.png</a></div></td><td class="col2 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%252C_example.png?size=webview" title="cubic-bezier, example.png"><img src="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%252C_example.png?size=thumb" title="cubic-bezier, example.png" alt="An example of a valid cubic Bézier curve" /></a><div class="information"><span class="description">An example of a valid cubic Bézier curve</span><a href="https://developer.mozilla.org/@api/deki/files/5780/=cubic-bezier%252C_example.png" title="View fullsize version">cubic-bezier, example.png</a></div></td><td class="col3 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%252Cease-in-out.png?size=webview" title="cubic-bezier,ease-in-out.png"><img src="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%252Cease-in-out.png?size=thumb" title="cubic-bezier,ease-in-out.png" alt="The ease-in-out timing-function" /></a><div class="information"><span class="description">The ease-in-out timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5768/=cubic-bezier%252Cease-in-out.png" title="View fullsize version">cubic-bezier,ease-in-out.png</a></div></td></tr><tr class="bg1"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%252Cease-in.png?size=webview" title="cubic-bezier,ease-in.png"><img src="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%252Cease-in.png?size=thumb" title="cubic-bezier,ease-in.png" alt="The ease-in timing-function" /></a><div class="information"><span class="description">The ease-in timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5766/=cubic-bezier%252Cease-in.png" title="View fullsize version">cubic-bezier,ease-in.png</a></div></td><td class="col2 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%252Cease.png?size=webview" title="cubic-bezier,ease.png"><img src="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%252Cease.png?size=thumb" title="cubic-bezier,ease.png" alt="The ease timing-function" /></a><div class="information"><span class="description">The ease timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5769/=cubic-bezier%252Cease.png" title="View fullsize version">cubic-bezier,ease.png</a></div></td><td class="col3 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%252Clinear.png?size=webview" title="cubic-bezier,linear.png"><img src="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%252Clinear.png?size=thumb" title="cubic-bezier,linear.png" alt="The linear timing-function" /></a><div class="information"><span class="description">The linear timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5765/=cubic-bezier%252Clinear.png" title="View fullsize version">cubic-bezier,linear.png</a></div></td></tr><tr class="bg2"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5764/=steps(1%252Cend).png?size=webview" title="steps(1,end).png"><img src="https://developer.mozilla.org/@api/deki/files/5764/=steps(1%252Cend).png?size=thumb" title="steps(1,end).png" alt="The step-end timing-function" /></a><div class="information"><span class="description">The step-end timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5764/=steps(1%252Cend).png" title="View fullsize version">steps(1,end).png</a></div></td><td class="col2 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5763/=steps(1%252Cstart).png?size=webview" title="steps(1,start).png"><img src="https://developer.mozilla.org/@api/deki/files/5763/=steps(1%252Cstart).png?size=thumb" title="steps(1,start).png" alt="The step-start timing-function" /></a><div class="information"><span class="description">The step-start timing-function</span><a href="https://developer.mozilla.org/@api/deki/files/5763/=steps(1%252Cstart).png" title="View fullsize version">steps(1,start).png</a></div></td><td class="col3 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5786/=steps(2%252Cstart).png?size=webview" title="steps(2,start).png"><img src="https://developer.mozilla.org/@api/deki/files/5786/=steps(2%252Cstart).png?size=thumb" title="steps(2,start).png" alt="A stepping function with 2 steps" /></a><div class="information"><span class="description">A stepping function with 2 steps</span><a href="https://developer.mozilla.org/@api/deki/files/5786/=steps(2%252Cstart).png" title="View fullsize version">steps(2,start).png</a></div></td></tr><tr class="bg1"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5787/=steps(4%252Cend).png?size=webview" title="steps(4,end).png"><img src="https://developer.mozilla.org/@api/deki/files/5787/=steps(4%252Cend).png?size=thumb" title="steps(4,end).png" alt="A stepping function with 4 steps" /></a><div class="information"><span class="description">A stepping function with 4 steps</span><a href="https://developer.mozilla.org/@api/deki/files/5787/=steps(4%252Cend).png" title="View fullsize version">steps(4,end).png</a></div></td><td class="col2 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png?size=webview" title="TF_with_output_gt_than_1.png"><img src="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png?size=thumb" title="TF_with_output_gt_than_1.png" alt="A timing function with output greater than 100%" /></a><div class="information"><span class="description">A timing function with output greater than 100%</span><a href="https://developer.mozilla.org/@api/deki/files/5781/=TF_with_output_gt_than_1.png" title="View fullsize version">TF_with_output_gt_than_1.png</a></div></td><td class="col3 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png?size=webview" title="TF_with_output_gt_than_1_clipped.png"><img src="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png?size=thumb" title="TF_with_output_gt_than_1_clipped.png" alt="A timing function with output clipped to 100%" /></a><div class="information"><span class="description">A timing function with output clipped to 100%</span><a href="https://developer.mozilla.org/@api/deki/files/5782/=TF_with_output_gt_than_1_clipped.png" title="View fullsize version">TF_with_output_gt_than_1_clipped.png</a></div></td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="/index.php?title=en/CSS/timing-function&action=history" title="11:54, 31 Oct 2011">11:54, 31 Oct 2011</a> by <a href="/User:teoli" class="link-user" rel="internal">teoli</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
+    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <p class="user-state">
+          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Ftiming-function" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+      
+  </p>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki02.mozilla.org in 0.61 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   6.06       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                5.91       request-time-ms=4; mysql-queries=4; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         6.37       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/82185/contents                          145.38       request-time-ms=143; mysql-queries=56; mysql-time-ms=46; cache-ratio=1.20; cache-hit=337; cache-miss=-55; cache-del=0; cache-ins=55;
+	GET       /deki/pages/82185                                    63.32       request-time-ms=53; mysql-queries=33; mysql-time-ms=30; cache-ratio=1.36; cache-hit=87; cache-miss=-23; cache-del=0; cache-ins=23;
+	GET       /deki/pages/82185/info                                4.94       request-time-ms=3; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/82185/tags                                6.55       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                 7.77       request-time-ms=6; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/nav/=en%252FCSS%252Ftiming-function/full   267.13       request-time-ms=264; mysql-queries=6; mysql-time-ms=229; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/82185/tags                                6.53       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total:   519.97      
+	                                                     Ideal:   513.44      
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+ 
+</body>
+</html>

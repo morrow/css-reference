@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS property: -webkit-transform-style</title>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="description" content="Defines how nested, transformed elements are rendered in 3D space." /><meta name="keywords" content="css, property, -webkit-transform-style, webkit, transform, style" />        <meta name="verify-v1" content="6l7Io9U5aVQgJCotoJqVU1dP/L9cnZMDK6cQ4Fmn0DE=" />
+        <meta name="viewport" content="width=device-width"/>
+
+        <link rel="stylesheet" type="text/css" href="/styles/default/minified.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="/styles/default/print.css" media="print"/>
+        <link rel="icon" type="image/png" href="/styles/default/images/css.png" />
+
+        <!--[if IE]><script src="/js/html5-ie.js"></script><![endif]-->
+        <script type="text/javascript" src="/js/yepnope/yepnope.1.0.2-min.js"></script>
+        <script type="text/javascript">
+        yepnope({
+            load: [
+                "/js/jquery/jquery-1.6.4.min.js",
+                "/js/jquery/jquery.qtip.min.js"
+            ],
+            complete: "/js/general.js"
+        });
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">CSS Infos</a>
+                 / <a href="/properties/webkit">Webkit properties</a>            </nav>
+            <form id="search" method="get" action="/search">
+                <p>
+                    <input type="text" name="query" value=""/>
+                    <input type="submit" value="Search"/>
+                </p>
+            </form>
+            <div id="share">
+                <g:plusone size="medium" count="false"></g:plusone>
+                <script type="text/javascript">
+                (function() {
+                    var share = document.getElementById("share");
+                    var plus = document.createElement("script");
+                    plus.type = "text/javascript";
+                    plus.async = true;
+                    plus.src = "http://apis.google.com/js/plusone.js";
+                    share.appendChild(plus);
+                })();
+                </script>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+                <script type="text/javascript">
+                (function() {
+                    var share = document.getElementById("share");
+                    var twitter = document.createElement("script");
+                    twitter.type = "text/javascript";
+                    twitter.async = true;
+                    twitter.src = "http://platform.twitter.com/widgets.js";
+                    share.appendChild(twitter);
+                })();
+                </script>
+            </div>
+        </header>
+        <div id="ads">
+            <script type="text/javascript">
+            google_ad_client = "ca-pub-3286570802435209";
+            /* css-infos.net */
+            google_ad_slot = "0234548466";
+            google_ad_width = 120;
+            google_ad_height = 600;
+
+            /*
+            (function() {
+                var node = document.createElement("script");
+                node.type = "text/javascript";
+                node.async = true;
+                node.src = "http://pagead2.googlesyndication.com/pagead/show_ads.js";
+                var ads = document.getElementById("ads");
+                ads.appendChild(node);
+            })();
+            */
+            </script>
+            <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+        </div><article>
+    <h1>CSS property: <code>-webkit-transform-style</code></h1>
+
+    <section>
+        <h1>Description</h1>
+        <p>Defines how nested, transformed elements are rendered in 3D space.</p><p>If <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a> is <code>flat</code>, all children of this element are rendered flattened into the 2D plane of the element. Therefore, rotating the element about the x or y axes causes children positioned at positive or negative z positions to appear on the element’s plane, rather than in front of or behind it. If <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a> is <code>preserve-3d</code>, this flattening is not performed, so children maintain their position in 3D space.</p>
+<p>This flattening takes place at each element, so preserving a hierarchy of elements in 3D space requires that each ancestor in the hierarchy have the value <code>preserve-3d</code> for <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a>. But <a href="/property/-webkit-transform-style" class="property" data-description="Defines how nested, transformed elements are rendered in 3D space.">-webkit-transform-style</a> affects only an element’s children; the leaf nodes in a hierarchy do not require the <code>preserve-3d</code> style.</p>
+
+    </section>
+
+    <section class="syntax">
+        <h1>Syntax</h1>
+        <p><code>-webkit-transform-style: flat | preserve-3d;</code></p>    </section>
+
+        <section class="values">
+        <h1>Values</h1>
+        <dl>
+    <dt class="default">flat (by default)</dt><dd><p>Flatten all children of this element into the 2D plane.</p></dd><dt>preserve-3d</dt><dd><p>Preserve the 3D perspective.</p></dd></dl>    </section>
+    
+    <section class="versions">
+        <h1>Versions</h1>
+        <ul>
+        <li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-transform-style">iOS 2.0</a></li>        </ul>
+    </section>
+
+    </article>
+        <footer>
+            <p><a href="mailto:contact@css-infos.net">contact@css-infos.net</a></p>
+        </footer>
+        <script type="text/javascript"> 
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-2258619-17']);
+        _gaq.push(['_setDomainName', '.css-infos.net']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </body>
+</html>

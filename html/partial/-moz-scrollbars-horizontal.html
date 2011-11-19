@@ -1,0 +1,116 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The<code> overflow </code>CSS property specifies whether to clip content, render scroll bars or display overflow content of a block-level element.</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/visible">visible</a></code>
+</li> <li>Applies to: block and inline-block elements, table cells</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+overflow:  visible | hidden | scroll | auto | 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/inherit">inherit</a></code></pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt>visible</dt> <dd>Default value. Content is not clipped, it may be rendered outside the content box.</dd> <dt>hidden</dt> <dd>The content is clipped and no scrollbars are provided.</dd> <dt>scroll</dt> <dd>The content is clipped and desktop browsers use scrollbars, whether or not any content is clipped. This avoids any problem with scrollbars appearing and disappearing in a dynamic environment. Printers may print overflowing content.</dd> <dt>auto</dt> <dd>Depends on the user agent. Desktop browsers like Firefox provide scrollbars if content overflows.</dd>
+</dl>
+<div id="section_4">
+<span id="Mozilla_Extensions"></span><h4 class="editable">Mozilla Extensions</h4>
+<dl>
+<dt>-moz-scrollbars-none</dt> <dd>
+
+<span style="border: 1px solid #FF0000; background-color: #FEBCBC; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Obsolete</span> Use<code> overflow:hidden </code>instead.</dd> <dt>-moz-scrollbars-horizontal</dt> <dd>
+
+<span class="deprecatedInlineTemplate" style="border: 1px solid #5151FF; background-color: #B9B9FF; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Deprecated</span>
+
+ Use of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow-x">overflow-x</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow-y">overflow-y</a></code> is preferred.</dd> <dt>-moz-scrollbars-vertical</dt> <dd>
+
+<span class="deprecatedInlineTemplate" style="border: 1px solid #5151FF; background-color: #B9B9FF; font-size: x-small; white-space: nowrap; padding: 2px;" title="">Deprecated</span>
+
+ Use of 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow-x">overflow-x</a></code> and 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow-y">overflow-y</a></code> is preferred.</dd> <dt>-moz-hidden-unscrollable</dt> <dd>Is intended mainly for internal use and by themes. Disables scrolling of XML root elements<span style="font-family: monospace;"> and</span><code> &lt;html&gt;</code>,<code> &lt;body&gt; </code>by arrow keys and mouse wheel.</dd>
+</dl>
+</div>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+p {  
+     width: 12em;
+     border: dotted;
+     overflow: auto;   /* append scrollbars if necessary */ 
+}</pre>
+<p style="overflow:hidden;display:inline-block;width:12em;height:6em;border:dotted"><code>overflow: hidden</code><br>
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<p style="overflow:scroll;display:inline-block;width:12em;height:6em;border:dotted"><code>overflow: scroll</code><br>
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<p style="overflow:auto;display:inline-block;width:12em;height:6em;border:dotted"><code>overflow: auto</code><br>
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<p style="overflow:auto;display:inline-block;width:12em;height:6em;border:dotted"><code>overflow: auto</code><br>
+short text</p>
+<p style="overflow:visible;display:inline-block;width:12em;height:6em;border:dotted"><code>visible</code> (default)<br>
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+</div>
+<div id="section_6">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Through Gecko 1.9.2 (Firefox 3.6), the<code> overflow </code>property is incorrectly applied to table-group elements (<code>&lt;thead&gt;</code> , <code>&lt;tbody&gt;</code> , <code>&lt;tfoot&gt;</code>). This behavior is corrected in later versions.</p>
+</div>
+<div id="section_7">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>
+<strong>4.0</strong> [*]<strong><br></strong>
+</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>
+<strong>1.0</strong> (1.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>4.0-<strong>7.0</strong>
+</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>
+<strong>1.0</strong> (85)</td> </tr>
+</tbody></table>
+<p>[*] IE 4-6 enlarges an element with<code> overflow:visible </code>(default value) to fit the content in it.<code> height/width </code>behaves like<code> min-height/min-width</code>.</p>
+</div>
+<div id="section_8">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" rel="external" href="http://www.w3.org/TR/CSS21/visufx.html#overflow" title="http://www.w3.org/TR/CSS21/visufx.html#overflow" target="_blank">CSS 2.1 Visual effects #overflow</a></li>
+</ul>
+</div>
+<div id="section_9">
+<span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li>Related CSS properties: 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/text-overflow">text-overflow</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/white-space">white-space</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow-x">overflow-x</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/overflow-y">overflow-y</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/clip">clip</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code>
+</li>
+</ul>
+<p></p>
+</div>
+</div>

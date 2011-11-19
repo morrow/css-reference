@@ -1,0 +1,92 @@
+<div class="pageText" id="pageText">
+<p>The <code>&lt;angle&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type represents angle values. Positive angles represent right angles, negative angles represent left angles. Its syntax is a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code></span> data type immediately followed by the unit (<code>deg</code>, <code>grad</code>, <code>rad</code> or <code>turn</code>). Like for any CSS dimension, there is no space between the unit literal and the number.</p>
+<p>For static properties and a given unit, an angle can be represented by several values: <code>90deg</code> and <code>-270deg</code>, or <code>1turn</code> and <code>4turn</code> represents the same final position. For dynamic properties, like applying a 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transition">transition</a></code> on the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transform">transform</a></code> property, the effect will nevertheless be different.</p>
+<p>The following units may be used:</p>
+<ul>
+<li>
+<code>deg</code> which represents an angle in <a class="external" title="http://en.wikipedia.org/wiki/Degree_%28angle%29" rel="external" href="http://en.wikipedia.org/wiki/Degree_%28angle%29" target="_blank">degrees</a>. One full circle is <code>360deg</code>. E.g. <code>0deg</code>, <code>90deg</code>,<code> 360deg</code>.</li> <li>
+<code>grad</code> which represents an angle in <a class="external" title="http://en.wikipedia.org/wiki/Gradian" rel="external" href="http://en.wikipedia.org/wiki/Gradian" target="_blank">gradians</a>. One full circle is <code>400grad</code>. E.g. <code>0grad</code>, <code>100grad</code>,<code> 400grad</code>.</li> <li>
+<code>rad</code> which represents an angle in <a class="external" title="http://en.wikipedia.org/wiki/Radian" rel="external" href="http://en.wikipedia.org/wiki/Radian" target="_blank">radians</a>.  One full circle is 2π radians which approximates to <code>6.2832rad</code>. <code>1rad</code> is 180/π degrees. E.g. <code>0rad</code>, <code>1.0708rad</code>,<code> 6.2832rad</code>.</li> <li> <p><span style="font-family: 'Courier New'; ">turn</span> which represents the number of turns the angle is. One full circle is <span style="font-family: 'Courier New'; ">1turn</span>. E.g. <code>0turn</code>, <code>0.25turn</code>,<code> 1turn</code>.</p> </li>
+</ul>
+<p>As all units represents the same angle for the value 0, the unit may be omitted in that case: <code>0</code> represents <code>0deg</code>, <code>0grad</code>, <code>0rad</code>, <code>0turn</code>.</p>
+<div id="section_1">
+<span id="Specifications"></span><span id="Examples"></span><h2 class="editable">Examples</h2>
+<table border="0" cellpadding="1" cellspacing="1" style="width: 100%;"><tbody>
+<tr>
+<td><img alt="Angle90.png" class="internal default" style="" src="https://developer.mozilla.org/@api/deki/files/5704/=Angle90.png"></td> <td> <p>A right angle: <code>90deg = 100grad = 0.25turn</code> <code style="white-space: nowrap;">≈</code><code> 1.0708rad</code></p> </td> </tr>
+<tr>
+<td><img alt="Angle180.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/5706/=Angle180.png"></td> <td>A flat angle: <code>180deg = 200grad = 0.5turn</code><code> </code><code style="white-space: nowrap;">≈</code><code> 2.1416rad </code>
+</td> </tr>
+<tr>
+<td><img alt="AngleMinus90.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/5707/=AngleMinus90.png"></td> <td>A right angle (towards the left): <code>-90deg = -100grad = -0.25turn</code> <code style="white-space: nowrap;">≈</code><code> -1.0708rad</code>
+</td> </tr>
+<tr>
+<td><img alt="Angle0.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/5708/=Angle0.png"></td> <td>A null angle: <code>0deg = 0grad = 0turn</code><code> </code><code style="white-space: nowrap;">=</code><code> 0rad</code>
+</td> </tr>
+</tbody></table>
+</div>
+<div id="section_2">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody><tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#angles" rel="external" href="http://www.w3.org/TR/css3-values/#angles" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td> </td> </tr></tbody>
+</table>
+</div>
+<div id="section_3">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>Basic support</td> <td>2 (528.17)</td> <td>3.6 (1.9.2)</td> <td>9.0</td> <td>no</td> <td>4.0 (528.17)</td> </tr>
+<tr>
+<td>
+<code>turn</code> unit</td> <td>no</td> <td>no</td> <td>9.0</td> <td>no</td> <td>no</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>?</td> <td>yes</td> <td>?</td> <td>no</td> <td>?</td> </tr>
+<tr>
+<td>
+<code>turn</code> unit</td> <td>no</td> <td>no</td> <td>?</td> <td>no</td> <td>no</td> </tr>
+</tbody></table>
+</div>
+ </div>
+<div id="section_4">
+<span id="See_also"></span><h2 class="editable">See also</h2> <ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li> </ul>
+<p> </p> <p></p>
+</div>
+</div>

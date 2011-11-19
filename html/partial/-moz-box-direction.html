@@ -1,0 +1,80 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The CSS <code>box-direction</code> property specifies whether a box lays out its contents normally (from the top or left edge), or in reverse (from the bottom or right edge).</p>
+<ul>
+<li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/initial_value" title="en/CSS/initial_value">Initial value</a>
+</span>: normal</li> <li>Applies to: elements with a CSS 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/display">display</a></code> value of 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/box" class="new">box</a></code> or 
+<code><a rel="internal" href="https://developer.mozilla.org/en/CSS/inline-box" class="new">inline-box</a></code>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/inheritance" title="en/CSS/inheritance">Inherited</a>
+</span>: no</li> <li>Percentages: n/a</li> <li>Media: <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/Media/Visual">visual</a></code> </span>
+</li> <li>
+<span class="lang lang-en"><a rel="internal" href="https://developer.mozilla.org/en/CSS/computed_value" title="en/CSS/computed_value">Computed value</a>
+</span>: as specified</li>
+</ul>
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+box-direction:         normal | reverse | inherit      /* As specified */
+-moz-box-direction:    normal | reverse | inherit      /* Mozilla */
+-webkit-box-direction: normal | reverse | inherit      /* WebKit */
+</pre>
+</div>
+<div id="section_3">
+<span id="Values"></span><h3 class="editable">Values</h3>
+<dl>
+<dt><code>normal</code></dt> <dd>The box lays out its contents from the start (the left or top edge).</dd> <dt><code>reverse</code></dt> <dd>The box lays out its contents from the end (the right or bottom edge).</dd>
+</dl>
+</div>
+<div id="section_4">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+
+          <pre name="code" class="css">.example {
+  /* bottom-to-top layout */
+  box-direction: reverse;           /* As specified */
+  -moz-box-direction: reverse;      /* Mozilla */
+  -webkit-box-direction: reverse;   /* WebKit */
+}</pre>
+        
+</div>
+<div id="section_5">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>The edge of the box designated the <em>start</em> for layout purposes depends on the box's orientation:</p>
+<table cellspacing="8" style="text-align:center;" class="standard-table"><tbody>
+<tr>
+<th style="text-align:right;"><strong>Horizontal</strong></th> <td>left</td> </tr>
+<tr>
+<th style="text-align:right;"><strong>Vertical</strong></th> <td>top</td> </tr>
+</tbody></table>
+<p>The edge opposite to the start is designated the <em>end</em>.</p>
+<p>If the direction is set using the element's <code>dir</code> attribute, then the style is ignored.</p>
+</div>
+<div id="section_6">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<p><a class="external" rel="external" href="http://www.w3.org/TR/css3-flexbox/" title="http://www.w3.org/TR/css3-flexbox/" target="_blank">Flexible Box Layout Module (W3C Working Draft)</a></p>
+<p></p>
+<div class="note">
+<strong>Note:</strong> The current state of this specification does not reflect Mozilla's or WebKit's implementation.</div>
+
+<p><a class="external" rel="external" href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/" title="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/" target="_blank">Old Flexible Box Layout Module</a></p>
+<p></p>
+<div class="note">
+<strong>Note:</strong> WebKit and Mozilla's implementations reflect this version of the specification</div>
+
+</div>
+<div id="section_7">
+<span id="See_Also"></span><span id="See_also"></span><h3 class="editable">See also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-orient">box-orient</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-pack">box-pack</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-align">box-align</a></code></p>
+<p></p>
+</div>
+</div>

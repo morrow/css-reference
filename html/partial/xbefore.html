@@ -1,0 +1,106 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p><code>:before </code>creates a pseudo-element that is the first child of the element matched. Often used to add cosmetic content to an element, by using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/content">content</a></code> property. This element is inline by default.</p>
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 2px 10px; background-color: rgb(254, 244, 156); text-align: center;">
+<p style="margin: 4px 0px; font-weight: bold;"><a rel="custom" href="https://developer.mozilla.org/en/Firefox_3.5_for_developers">Firefox 3.5 note</a></p>
+<p style="margin: 4px 0px;">Firefox prior to version 3.5 only implemented the CSS 2.0 version of :before. Not allowed were position, float, list-style-* and some display properties. Firefox 3.5 removed those restrictions. (Note this is independent from the :: notation issue mentioned below.)</p>
+</div>
+
+
+</div>
+<div id="section_2">
+<span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre>
+element:before  { <em>style properties</em> }  /* CSS2 syntax */
+
+element::before { <em>style properties</em> }  /* CSS3 syntax */
+</pre>
+<p>The<code> ::before </code>notation was introduced in CSS 3 in order to establish a discrimination between pseudo-classes and pseudo-elements. Browsers also accept the notation<code> :before </code>introduced in CSS 2.</p>
+<div class="note">
+<strong>Note:</strong>  Microsoft Internet Explorer 8 only supports the<code> :before </code>notation.</div>
+</div>
+<div id="section_3">
+<span id="Examples"></span><h3 class="editable">Examples</h3>
+<pre>
+q:before { content: "»" }
+q:after { content: '«' }
+
+&lt;q&gt;Some quotes&lt;/q&gt;, he said, &lt;q&gt;are better than none&lt;/q&gt;.
+</pre>
+<p>Result:    »Some quotes«, he said, »are better than none«.</p>
+</div>
+<div id="section_4">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<p>Although the positioning fixes in Firefox 3.5 do not allow content to be generated as a separate previous sibling (as per the <a class="external" rel="external" href="http://www.w3.org/TR/CSS21/generate.html#before-after-content" title="http://www.w3.org/TR/CSS21/generate.html#before-after-content" target="_blank">CSS spec</a> stating "The :before and :after pseudo-elements elements interact with other boxes... as if they were real elements inserted just inside their associated element."), they can be used to provide a slight improvement on tableless layouts (e.g., to achieve centering) in that, as long as the content to be centered is wrapped in a further child, a column before and after the content can be introduced without adding a previous or following sibling (i.e., it is perhaps more semantically correct to add an additional span as below, than it would to add an empty &lt;div/&gt; before and after). (And always remember to add a width to a float, since, otherwise, it will not float!)</p>
+
+          <pre name="code" class="xml">&lt;style type="text/css"&gt;
+
+#floatme {float:left; width:50%;}
+
+.example:before {
+  content: "Floated Before"; /* To get an empty column, just indicate a hex code for a non-breaking space: \a0 as the content (use \0000a0 when following such a space with other characters) */
+  float: left;
+  width:25%
+}
+.example:after {
+  content: "Floated After";
+  float: right;
+  width:25%
+}
+
+/* For styling */
+.example:before, .example:after, .first {
+  background: yellow;
+  color: red;
+}
+
+
+&lt;/style&gt;
+&lt;div class="example"&gt;
+&lt;span id="floatme"&gt;"Floated Before" should be generated on the left of the 
+viewport and not allow overflow in this line to flow under it. Likewise 
+should "Floated After" appear on the right of the viewport and not allow this 
+line to flow under it.&lt;/span&gt;
+&lt;/div&gt;</pre>
+        
+</div>
+<div id="section_5">
+<span id="Specifications"></span><h3 class="editable">Specifications</h3>
+<ul>
+<li><a class="external" title="http://www.w3.org/TR/CSS21/generate.html" rel="external" href="http://www.w3.org/TR/CSS21/generate.html" target="_blank">CSS 2.1 Generated Content</a></li> <li><a title="http://www.w3.org/TR/CSS21/selector.html#before-and-after" class="external" rel="external" href="http://www.w3.org/TR/CSS21/selector.html#before-and-after" target="_blank">CSS 2.1 Selectors</a></li> <li><a class="external" title="http://www.w3.org/TR/css3-selectors/#gen-content" rel="external" href="http://www.w3.org/TR/css3-selectors/#gen-content" target="_blank">CSS 3 Selectors </a></li>
+</ul>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h3 class="editable">Browser compatibility</h3>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest Version</th> <th>Support of</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>8.0</td> <td><code>:before</code></td> </tr>
+<tr>
+<td rowspan="2">Firefox (Gecko)</td> <td>1.0 (1.0)</td> <td><code>:before</code></td> </tr>
+<tr>
+<td>
+<strong>1.0</strong> (1.5)</td> <td><code>:before | ::before</code></td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>
+<strong>1.0</strong> (85)</td> <td><code>:before | ::before</code></td> </tr>
+<tr>
+<td rowspan="2">Opera</td> <td>4.0</td> <td><code>:before</code></td> </tr>
+<tr>
+<td><strong>7.0</strong></td> <td><code>:before | ::before</code></td> </tr>
+</tbody></table>
+</div>
+<div id="section_7">
+<span id="See_Also"></span><h3 class="editable">See Also</h3>
+<p>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aafter">:after</a></code>, 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/content">content</a></code></p>
+<p></p>
+</div>
+</div>

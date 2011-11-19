@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="developer-mozilla-org">
+<head>
+  <title>-moz-image-rect - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=62195" />
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=62195" />
+<meta name="generator" content="MindTouch" />
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
+<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<link type="text/css" rel="stylesheet" href="https://developer.mozilla.org/deki/scripts/res/syntax/SyntaxHighlighter.css" /><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shCore.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushCss.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushXml.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushJScript.js"></script><script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 62195;
+Deki.PageTitle = 'en/CSS/-moz-image-rect';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '18 Nov 2011';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '84ba355c';
+Deki.EditorStylesToken = 'ec33447a';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F-moz-image-rect">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
+ 
+</head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCSSmozimagerect" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+    </div>
+
+    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
+      <p>
+        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+      <div id="site-search-gg"></div>
+    </form>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="/web">Web</a></li>
+            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML">HTML</a></li>
+                  <li><a href="/en/DOM">DOM</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="/en/SVG">SVG</a></li>
+                  <li><a href="/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="/en/WebSockets">WebSockets</a></li>
+                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/CSS">CSS</a></li>
+                  <li><a href="/en/Using_gradients">Gradients</a></li>
+                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/JavaScript">JavaScript</a></li>
+                  <li><a href="/en/Ajax">Ajax</a></li>
+                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="/docs">More docs&hellip;</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="/events">Events</a></li>
+            <li><a href="/discussions">Discussions</a></li>
+            <li><a href="/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+      <ul class="user-state">
+              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+</li>
+        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F-moz-image-rect" class="user-login">Log in</a></li>
+            </ul>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="/index.php?title=en/CSS/-moz-image-rect&action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="/Talk:en/CSS/-moz-image-rect" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=62195">Pages that link here</a></li>      </ul>
+    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="/">MDN</a></li>
+      <li class="crumb-two"><a href="/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
+<li class="last"><a href="https://developer.mozilla.org/en/CSS/-moz-image-rect" class="deki-ns current">-moz-image-rect</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-enCSSmozimagerect" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">-moz-image-rect</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F-moz-image-rect" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F-moz-image-rect" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Syntax" rel="internal">Syntax</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.</span> <a href="#Values" rel="internal">Values</a></li></ol></li><li><span>3.</span> <a href="#Example" rel="internal">Example</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>3.1.</span> <a href="#CSS" rel="internal">CSS</a></li><li><span>3.2.</span> <a href="#HTML" rel="internal">HTML</a></li><li><span>3.3.</span> <a href="#The_JavaScript_code" rel="internal">The JavaScript code</a></li><li><span>3.4.</span> <a href="#What_it_looks_like" rel="internal">What it looks like</a></li></ol></li><li><span>4.</span> <a href="#Bugs" rel="internal">Bugs</a></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>2.</span> <a href="#Syntax" rel="internal">Syntax</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.</span> <a href="#Values" rel="internal">Values</a></li></ol></li><li><span>3.</span> <a href="#Example" rel="internal">Example</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>3.1.</span> <a href="#CSS" rel="internal">CSS</a></li><li><span>3.2.</span> <a href="#HTML" rel="internal">HTML</a></li><li><span>3.3.</span> <a href="#The_JavaScript_code" rel="internal">The JavaScript code</a></li><li><span>3.4.</span> <a href="#What_it_looks_like" rel="internal">What it looks like</a></li></ol></li><li><span>4.</span> <a href="#Bugs" rel="internal">Bugs</a></li></ol></div></div><div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">&laquo; <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> &laquo; <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  &laquo; <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span>
+
+
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2.0</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+</p>
+<div id="section_1"><span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>This value for <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a>&nbsp;
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> lets you use a portion of a larger image as a background. This allows you to, for example, use different parts of one larger image as backgrounds in different parts of your content.</p>
+<p>This works very similarly to the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-image-region">-moz-image-region</a></code> property, which is used with the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/list-style-image">list-style-image</a></code> property to use parts of an image as the bullets in lists. However, this can be used for any CSS&nbsp;background.</p>
+<p>The syntax for the rectangle is similar to the <a title="https://developer.mozilla.org/en/CSS/shape#Syntax" rel="internal" href="https://developer.mozilla.org/en/CSS/shape#Syntax"><code>rect()</code></a> function generating a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code></span> CSS type. All four values are relative to the upper left corner of the image.</p></div><div id="section_2"><span id="Syntax"></span><h3 class="editable">Syntax</h3>
+<pre class="eval">
+-moz-image-rect(<span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span>, <em>top</em>, <em>right</em>, <em>bottom</em>, <em>left</em>);</pre>
+<div id="section_3"><span id="Values"></span><h4 class="editable">Values</h4>
+<dl> <dt><span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code></span></dt> <dd>The URI&nbsp;of the image from which to take the sub-image.</dd> <dt>top</dt> <dd>The top edge, specified as a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, of the sub-image within the specified image.</dd> <dt>right</dt> <dd>The right edge, specified as a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, of the sub-image within the specified image.</dd> <dt>bottom</dt> <dd>The bottom edge, specified as a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, of the sub-image within the specified image.</dd> <dt>left</dt> <dd>The left edge, specified as a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, of the sub-image within the specified image.</dd>
+</dl>
+</div></div><div id="section_4"><span id="Examples"></span><span id="Example"></span><h3 class="editable">Example</h3>
+<p>This example loads an image and uses it in four segments to draw the Firefox logo in four 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/div">&lt;div&gt;</a></code>&nbsp;blocks. Clicking on their container causes the four segments to rotate around by swapping the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> property values among the four 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/div">&lt;div&gt;</a></code>&nbsp;blocks.</p>
+<div id="section_5"><span id="CSS"></span><h4 class="editable">CSS</h4>
+<p>The CSS&nbsp;defines one container style, then the styles for the four boxes that comprise the complete image.</p>
+<p>The container looks like this:</p>
+
+          <pre name="code" class="css">#container {
+  width:400px;
+  height:400px;
+  top:100px;
+  left:100px;
+  position:absolute;
+  font-size:16px;
+  text-shadow:white 0px 0px 6px;
+  text-align:center;
+}</pre>
+        
+<p>Then the four boxes defining the segments of the image are defined. Let's look at them one at a time.</p>
+
+          <pre name="code" class="css">#box1 {
+  background-image: -moz-image-rect(url(firefox.jpg), 0%, 50%, 50%, 0%);
+  width:200px;
+  height:200px;
+  position:absolute;
+}</pre>
+        
+<p>This is the top-left corner of the image. It defines a rectangle containing the top-left quarter of the image in the file <code>firefox.jpg</code>.</p>
+
+          <pre name="code" class="css">#box2 {
+  background-image: -moz-image-rect(url(firefox.jpg), 0%, 100%, 50%, 50%);
+  width:200px;
+  height:200px;
+  position:absolute;
+}</pre>
+        
+<p>This defines the top-right corner of the image.</p>
+<p>The other corners follow a similar pattern:</p>
+
+          <pre name="code" class="css">#box3 {
+  background-image: -moz-image-rect(url(firefox.jpg), 50%, 50%, 100%, 0%);
+  width:200px;
+  height:200px;
+  position:absolute;
+}
+#box4 {
+  background-image: -moz-image-rect(url(firefox.jpg), 50%, 100%, 100%, 50%);
+  width:200px;
+  height:200px;
+  position:absolute;
+}</pre>
+        
+</div><div id="section_6"><span id="HTML"></span><h4 class="editable">HTML</h4>
+<p>The HTML&nbsp;is quite simple:</p>
+
+          <pre name="code" class="xml">&lt;div id=&quot;container&quot; onclick=&quot;rotate()&quot;&gt;
+  &lt;div id=&quot;box1&quot; style=&quot;left:0px;top:0px;&quot;&gt;Top left&lt;/div&gt;
+  &lt;div id=&quot;box2&quot; style=&quot;left:200px;top:0px;&quot;&gt;Top right&lt;/div&gt;
+  &lt;div id=&quot;box3&quot; style=&quot;left:0px;top:200px;&quot;&gt;Bottom left&lt;/div&gt;
+  &lt;div id=&quot;box4&quot; style=&quot;left:200px;top:200px;&quot;&gt;Bottom right&lt;/div&gt;
+&lt;/div&gt;</pre>
+        
+<p>This places the four segments of our image in a two-by-two box grid. These four segments are all contained within a larger 
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/div">&lt;div&gt;</a></code>&nbsp;block whose primary purpose is to receive click events and dispatch them to our JavaScript code.</p>
+</div><div id="section_7"><span id="The_JavaScript_code"></span><h4 class="editable">The JavaScript code</h4>
+<p>This code handles the click event when the container receives a mouse click.</p>
+
+          <pre name="code" class="js">function rotate() {
+  var prevStyle = window.getComputedStyle(document.getElementById(&quot;box4&quot;), null).getPropertyValue(&quot;background-image&quot;);
+  
+  // Now that we've saved the last one, start rotating
+  
+  for (var i=1; i&lt;=4; i++) {
+    var curId = &quot;box&quot; + i;
+    
+    // Shift the background iamges
+    
+    var curStyle = window.getComputedStyle(document.getElementById(curId), null).getPropertyValue(&quot;background-image&quot;);
+    document.getElementById(curId).style.backgroundImage = prevStyle;
+    prevStyle = curStyle;
+  }    
+}</pre>
+        
+<p>This uses 
+<code><a rel="custom" href="https://developer.mozilla.org/en/DOM/window.getComputedStyle">window.getComputedStyle()</a></code> to fetch the style of each element, shifting it to the following element. Notice that before it begins doing so it saves a copy of the last box's style since it will be overwritten by the third element's style. By simply copying the values of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> property from one element to the next with each mouse click, we achieve the desired effect.</p>
+</div><div id="section_8"><span id="What_it_looks_like"></span><h4 class="editable">What it looks like</h4>
+<p>Here's what the display looks like when first loaded:</p>
+<p><a title="shot1.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png"><img class="internal default" alt="shot1.png" style="width: 332px; height: 350px;" src="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png?size=webview" /></a></p>
+<p>After clicking it once:</p>
+<p><a title="shot2.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png"><img class="internal default" alt="shot2.png" style="width: 332px; height: 350px;" src="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png?size=webview" /></a></p>
+<p>After the second click:</p>
+<p><a title="shot3.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png"><img class="internal default" alt="shot3.png" style="width: 332px; height: 350px;" src="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png?size=webview" /></a></p>
+<p>And after the third click:</p>
+<p><a title="shot4.png" rel="internal" href="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png"><img class="internal default" alt="shot4.png" style="width: 332px; height: 350px;" src="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png?size=webview" /></a></p>
+<p>Another click rotates it back around to what it originally looked like.</p>
+<p>
+<a rel="internal" href="https://developer.mozilla.org/samples/cssref/moz-image-rect" title="samples/cssref/moz-image-rect" class=" new"><span style="cursor:pointer; padding: 2px; border: solid 2px #333333; color: black; -moz-box-shadow:2px 2px 2px #191919; -webkit-box-shadow:2px 2px 2px #191919; -o-box-shadow:2px 2px 2px #191919; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; background:-moz-linear-gradient(76% 26% 142deg, #DCE3FF, #FFFFFF 47%);">View the live example</span></a>
+</p>
+</div></div><div id="section_9"><span id="Bugs"></span><h3 class="editable">Bugs</h3>
+<ul> <li>
+<a rel="external" href="https://bugs.webkit.org/show_bug.cgi?id=32177" class="external" title="NEW - Add support for image-rect CSS function">
+WebKit bug 32177</a></li>
+</ul></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(3)</span></h2>
+              <a href="/index.php?title=Special:Tags&pageId=62195" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS:Mozilla+Extensions" title="CSS:Mozilla Extensions" tagid="1488" class="text">CSS:Mozilla Extensions</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(4)</span></h2>
+            <div id="pageFiles"><div class="filescontent" id="attachFiles"><div class="table" id="attachTable"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="16"></col><col width="16"></col><col width=""></col><col width="80"></col><col width="145"></col><col width="115"></col><col width="75"></col></colgroup><tbody><tr><th class="col1" colspan="3">File</th><th class="col4">Size</th><th class="col5">Date</th><th class="col6">Attached by</th><th class="col7">&nbsp;</th></tr><tr class="bg1" id="deki-file-row-4726"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png" class="filelink" title="shot1.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png" class="filelink" title="shot1.png">shot1.png</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">257.17 kB</td><td class="col5">13:05, 11 Oct 2010</td><td class="col6"><a href="/User:Sheppy" class="link-user" rel="internal">Sheppy</a></td><td class="col7"><a href="#" id="deki-file-actions-4726" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=4726" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2" id="deki-file-row-4727"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png" class="filelink" title="shot2.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png" class="filelink" title="shot2.png">shot2.png</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">261.66 kB</td><td class="col5">13:05, 11 Oct 2010</td><td class="col6"><a href="/User:Sheppy" class="link-user" rel="internal">Sheppy</a></td><td class="col7"><a href="#" id="deki-file-actions-4727" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=4727" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg1" id="deki-file-row-4728"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png" class="filelink" title="shot3.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png" class="filelink" title="shot3.png">shot3.png</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">256.24 kB</td><td class="col5">13:05, 11 Oct 2010</td><td class="col6"><a href="/User:Sheppy" class="link-user" rel="internal">Sheppy</a></td><td class="col7"><a href="#" id="deki-file-actions-4728" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=4728" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr><tr class="bg2" id="deki-file-row-4729"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png" class="filelink" title="shot4.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png" class="filelink" title="shot4.png">shot4.png</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">261.37 kB</td><td class="col5">13:05, 11 Oct 2010</td><td class="col6"><a href="/User:Sheppy" class="link-user" rel="internal">Sheppy</a></td><td class="col7"><a href="#" id="deki-file-actions-4729" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=4729" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr></tbody></table></div></div></div>            <div id="deki-image-gallery-lite"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 4</th></tr><tr class="bg2"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png?size=webview" title="shot1.png"><img src="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png?size=thumb" title="shot1.png" alt="shot1.png" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/4726/=shot1.png" title="View fullsize version">shot1.png</a></div></td><td class="col2 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png?size=webview" title="shot2.png"><img src="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png?size=thumb" title="shot2.png" alt="shot2.png" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/4727/=shot2.png" title="View fullsize version">shot2.png</a></div></td><td class="col3 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png?size=webview" title="shot3.png"><img src="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png?size=thumb" title="shot3.png" alt="shot3.png" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/4728/=shot3.png" title="View fullsize version">shot3.png</a></div></td></tr><tr class="bg1"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png?size=webview" title="shot4.png"><img src="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png?size=thumb" title="shot4.png" alt="shot4.png" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/4729/=shot4.png" title="View fullsize version">shot4.png</a></div></td><td class="col2">&nbsp;</td><td class="col3">&nbsp;</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="/index.php?title=en/CSS/-moz-image-rect&action=history" title="14:24, 6 Oct 2011">14:24, 6 Oct 2011</a> by <a href="/User:teoli" class="link-user" rel="internal">teoli</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
+    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <p class="user-state">
+          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F-moz-image-rect" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+      
+  </p>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki02.mozilla.org in 1.27 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   5.50       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                6.14       request-time-ms=4; mysql-queries=4; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         6.19       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/62195/contents                          818.73       request-time-ms=816; mysql-queries=94; mysql-time-ms=84; cache-ratio=1.25; cache-hit=455; cache-miss=-92; cache-del=0; cache-ins=91;
+	GET       /deki/pages/62195                                    44.48       request-time-ms=40; mysql-queries=26; mysql-time-ms=27; cache-ratio=3.40; cache-hit=34; cache-miss=-24; cache-del=0; cache-ins=24;
+	GET       /deki/pages/62195/info                                5.85       request-time-ms=3; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/62195/tags                                7.47       request-time-ms=5; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                 9.08       request-time-ms=6; mysql-queries=4; mysql-time-ms=4; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/nav/=en%252FCSS%252F-moz-image-rect/full   290.76       request-time-ms=288; mysql-queries=6; mysql-time-ms=252; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/62195/tags                                8.64       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total: 1,202.84      
+	                                                     Ideal: 1,194.19      
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+<script type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</script> 
+</body>
+</html>

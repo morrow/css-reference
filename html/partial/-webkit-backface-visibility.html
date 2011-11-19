@@ -1,0 +1,28 @@
+<article><h1>CSS property: <code>-webkit-backface-visibility</code>
+</h1>
+
+    <section><h1>Description</h1>
+        <p>Determines whether or not a transformed element is visible when it is not facing the screen.</p>
+<p>Use this property to specify whether or not an element is visible when it is not facing the screen. For example, if the identity transform is set, an element faces the screen; otherwise, it may face away from the screen. For example, applying a rotation about y of 180 degrees in the absence of any other transforms causes an element to face away from the screen.</p>
+<p>This property is useful when you place two elements back to back, as you would do to create a playing card. Without this property, the front and back elements could at times switch places during an animation to flip the card. Another example is creating a box out of six elements whose outside and inside faces can be viewed. This is useful when creating the backdrop for a three-dimensional stage.</p>
+
+    </section><section class="syntax"><h1>Syntax</h1>
+        <p><code>-webkit-backface-visibility: &lt;visibility&gt;;</code></p>    </section><section class="values"><h1>Values</h1>
+        <dl>
+<dt>&lt;visibility&gt;</dt>
+<dd>
+<p>Determines whether or not the back face of a transformed element is visible.</p>
+<table>
+<tr>
+<td class="value default">visible (by default)</td>
+<td class="description">The element is always visible even when it is not facing the screen.</td>
+</tr>
+<tr>
+<td class="value">hidden</td>
+<td class="description">The element is invisible if it is not facing the screen.</td>
+</tr>
+</table>
+</dd>
+</dl></section><section class="versions"><h1>Versions</h1>
+        <ul>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-backface-visibility">iOS 2.0</a></li>        </ul></section></article>

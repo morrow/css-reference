@@ -1,0 +1,139 @@
+<div class="pageText" id="pageText">
+<p>
+</p>
+<div style="overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(156, 244, 156); text-align: center;"><p style="margin: 4px 0px;"><strong>This is an experimental feature</strong><br>Because this feature is still in development in some browsers, check the <a href="#AutoCompatibilityTable">compatibility table</a> for the proper prefixes to use in various browsers.</p></div>
+
+<p>Gradients are smooth transitions between two or more specified colors. Use of CSS gradients can replace images and reduce download time, create a more flexible layout, and look better while zooming. There are two major kinds of CSS gradients: linear and radial.</p>
+<p>Modern browsers currently  support CSS gradients as values of the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code> property, as well as within the shorthand 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>. You specify a gradient value instead of an image URL.</p>
+<p>The <code>radial-gradient</code> property does not allow repeating gradients. For this functionality, see 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/repeating-radial-gradient">repeating-radial-gradient</a></code>.</p>
+<div id="section_1">
+<span id="Syntax"></span><h2 class="editable">Syntax</h2>
+<pre>radial-gradient( [&lt;position&gt; || &lt;angle&gt;,]? [&lt;shape&gt; || &lt;size&gt;,]? &lt;stop&gt;, &lt;stop&gt;[, &lt;stop&gt;]* )
+</pre>
+</div>
+<div id="section_2">
+<span id="Values"></span><h2 class="editable">Values</h2>
+<dl>
+<dt>&lt;position&gt;</dt> <dd>A position, interpreted in the same way as 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-position">background-position</a></code> or 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/transform-origin">transform-origin</a></code>. If omitted, the default is <code>center</code>.</dd> <dt>&lt;angle&gt;</dt> <dd>An angle establishing the gradient line, which extends from the starting point at this angle; this is <code>0deg</code> by default.</dd> <dt>&lt;shape&gt;</dt> <dd>The gradient's shape. This is one of <code>circle</code> (meaning that the gradient's shape is a circle with constant radius) or <code>ellipse</code> (meaning that the shape is an axis-aligned ellipse). The default value is <code>ellipse</code>.</dd> <dt>&lt;size&gt;</dt> <dd>The size of the gradient. This is one of the <a rel="custom" href="https://developer.mozilla.org/en/CSS/radial-gradient#Size_constants">Size constants</a> listed below.</dd> <dt>&lt;stop&gt;</dt> <dd>This value is comprised of a <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code></span> value, followed by an optional stop position (either a percentage between 0% and 100% or a 
+
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code> along the gradient axis).</dd> <dd>Rendering of color-stops in CSS gradients follows the same rules as color-stops in SVG gradients.</dd>
+</dl>
+</div>
+<div id="section_3">
+<span id="Size_constants"></span><h2 class="editable">Size constants</h2>
+<table class="standard-table"><tbody>
+<tr>
+<th>Constant</th> <th>Description</th> </tr>
+<tr>
+<td><code>closest-side<br></code></td> <td>The gradient's shape meets the side of the box closest to its center (for circles) or meets both the vertical and horizontal sides closest to the center (for ellipses).</td> </tr>
+<tr>
+<td><code>closest-corner</code></td> <td>The gradient's shape is sized so it exactly meets the closest corner of the box from its center.</td> </tr>
+<tr>
+<td><code>farthest-side</code></td> <td>Similar to closest-side, except the shape is sized to meet the side of the box farthest from its center (or vertical and horizontal sides).</td> </tr>
+<tr>
+<td><code>farthest-corner<br></code></td> <td>The gradient's shape is sized so it exactly meets the farthest corner of the box from its center.</td> </tr>
+<tr>
+<td><code>contain<br></code></td> <td>A synonym for <code>closest-side</code>.</td> </tr>
+<tr>
+<td><code>cover<br></code></td> <td>A synonym for <code>farthest-corner</code>.</td> </tr>
+</tbody></table>
+</div>
+<div id="section_4">
+<span id="Usage"></span><h2 class="editable">Usage</h2>
+<p>Radial gradients also run along an axis. At each end point of the axis, a radius is specified. This can be imagined as creating two "circles", where for each circle the center is specified by the point and the radius is specified by the radius length. The gradient runs outwards from the circumference of the inner circle to the circumference of the outer circle.</p>
+<pre>background-image:    -moz-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);
+background-image: -webkit-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);
+background-image: -ms-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);
+background-image: -o-radial-gradient(center 45deg, circle closest-side, orange 0%, red 100%);
+</pre>
+</div>
+<div id="section_5">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>For a more general introduction to how CSS gradients in Gecko/Firefox work, see 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-linear-gradient">-moz-linear-gradient</a></code>.</p>
+<pre>background:    -moz-radial-gradient(45px 45px 45deg, circle cover,
+				 aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+background: -webkit-radial-gradient(45px 45px 45deg, circle cover,
+     aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+background: -ms-radial-gradient(45px 45px 45deg, circle cover,
+     aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+background: -o-radial-gradient(45px 45px 45deg, circle cover,
+     aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+</pre>
+<pre>background-image: -webkit-radial-gradient(45px 45px, ellipse farthest-corner,
+				 aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+background-image: -moz-radial-gradient(45px 45px, ellipse farthest-corner,
+				 aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+background-image:    -ms-radial-gradient(45px 45px, ellipse farthest-corner,
+				 aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+background-image:    -o-radial-gradient(45px 45px, ellipse farthest-corner,
+				 aqua 0%, rgba(0, 0, 255, 0) 100%, blue 95%);
+</pre>
+<div style="
+background: -webkit-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%) repeat scroll 0% 0% transparent;
+background: -moz-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%) repeat scroll 0% 0% transparent;
+background: -ms-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%) repeat scroll 0% 0% transparent;
+background: -o-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%) repeat scroll 0% 0% transparent; text-shadow: 1px 1px 0pt black; color: white; border: 1px solid black;">Radial</div>
+<pre>background: -webkit-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%);
+background:    -moz-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%);
+background:    -ms-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%);
+background:    -o-radial-gradient(45px 45px, cover, rgb(255, 0, 0) 0%, rgb(0, 0, 255) 100%);
+</pre>
+</div>
+<div id="section_6">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> <th>Support of</th> </tr>
+<tr>
+<td rowspan="2">Internet Explorer</td> <td> <p>5.5 (including 8.0)</p> </td> <td> <p><code>filter: progid:DXImageTransform.Microsoft.Gradient()</code><br><a class="external" title="http://msdn.microsoft.com/en-us/library/ms532997(VS.85,loband).aspx" rel="external" href="http://msdn.microsoft.com/en-us/library/ms532997(VS.85,loband).aspx" target="_blank">MSDN library, gradient filter</a></p> </td> </tr>
+<tr>
+<td> <p>10</p> </td> <td> <p>-ms-radial-gradient()</p> </td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>3.6 (1.9.2)</td> <td><code>-moz-radial-gradient()</code></td> </tr>
+<tr>
+<td>Opera</td> <td>12 <a class="external" title="http://my.opera.com/desktopteam/blog/2011/10/07/ragnarok-css3-radial-gradients" rel="external" href="http://my.opera.com/desktopteam/blog/2011/10/07/ragnarok-css3-radial-gradients" target="_blank">[1]</a>
+</td> <td><code>-o-radial-gradient()</code></td> </tr>
+<tr>
+<td>Safari / WebKit / Chrome</td> <td>4.0 / 528 / 3</td> <td>
+<code>-webkit-gradient(radial,</code><code>…</code><code>)</code><br><a class="external" title="http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html" rel="external" href="http://developer.apple.com/safari/library/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradients.html" target="_blank">Safari Reference Library, gradients</a>
+</td> </tr>
+<tr>
+<td> </td> <td>6 / r75891 / 10</td> <td>
+<code>-webkit-radial-gradient()</code><br><a class="external" rel="external" href="http://webkit.org/blog/1424/css3-gradients/" title="http://webkit.org/blog/1424/css3-gradients/" target="_blank">Safari: CSS3 Gradients</a><br> Note: unlike Gecko, WebKit supports explicitly sized gradients. See 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=627885" class="external" title="ASSIGNED - -moz-radial-gradient doesn't support explicitly defined size">
+bug 627885</a>
+</td> </tr>
+</tbody></table>
+<p>Note that the Mozilla syntax proposal for CSS gradients differs significantly from WebKit's original proposal:</p>
+<ul>
+<li>Gecko (Firefox) uses separate kinds of property values to distinguish radial and linear gradients, whereas WebKit previously lumped them into a single kind of property value and needs a leading parameter to identify the type of gradient.</li> <li>The actual syntax for how a radial gradient is specified is significantly different.</li> <li>Webkit, Mozilla, Opera and Microsoft now implement the previous version of the W3C standard syntax. The syntax has been changed as of October 2011. The new proposed syntax is not supported in any browser.</li>
+</ul>
+</div>
+<div id="section_7">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li><a title="en/Using gradients" rel="internal" href="https://developer.mozilla.org/en/Using_gradients">Using gradients</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/-moz-linear-gradient">-moz-linear-gradient</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background-image">background-image</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/background">background</a></code>
+</li> <li>WebKit's original proposal: <a class="external" title="http://webkit.org/blog/175/introducing-css-gradients/" rel="external" href="http://webkit.org/blog/175/introducing-css-gradients/" target="_blank">http://webkit.org/blog/175/introducing-css-gradients/</a>
+</li> <li>WebKit's new implementation: <a class="external" title="http://webkit.org/blog/1424/css3-gradients/" rel="external" href="http://webkit.org/blog/1424/css3-gradients/" target="_blank">http://webkit.org/blog/1424/css3-gradients/</a>
+</li> <li>Mozilla Bug: 
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=479220" class="external" title="RESOLVED FIXED - Implement the CSS gradients proposal">
+bug 479220</a>
+</li> <li>W3C Proposal for Radial Gradients: <a class="external" title="http://dev.w3.org/csswg/css3-images/#radial-gradients" rel="external" href="http://dev.w3.org/csswg/css3-images/#radial-gradients" target="_blank">http://dev.w3.org/csswg/css3-images/#radial-gradients</a>
+</li> <li>W3C Proposal for Background Position: <a class="external" title="http://www.w3.org/TR/css3-background/#the-background-position" rel="external" href="http://www.w3.org/TR/css3-background/#the-background-position" target="_blank">http://www.w3.org/TR/css3-background/#the-background-position</a>
+</li>
+</ul>
+<p></p>
+</div>
+</div>

@@ -1,0 +1,84 @@
+<article><h1>CSS property: <code>-webkit-border-image</code>
+</h1>
+
+    <section><h1>Description</h1>
+        <p>Specifies an image as the border for a box.</p>
+<p>The specified image is cut into nine pieces according to the length values given. This property applies to any box, including inline elements, but does not apply to table cells if the <a href="/property/border-collapse" class="property" data-description="Table border model">border-collapse</a> property is set to <code>collapse</code>.</p>
+<p>The first five fields are required. The <code>&lt;uri&gt;</code> field contains the URI for the image. The four inset values that follow represent distances from the top, right, bottom, and left edges of the image. If no unit is specified, they represent actual pixels in the original image (assuming a raster image). If a unit (such as px) is specified, they represent CSS units (which may or may not be the same thing). The values may also be specified as a percentage of the size of the image.</p>
+<p>After the required fields, you can optionally include a slash (<code>/</code>) followed by a border width field or fields. You can specify all four border widths individually or specify a single value that applies to all four fields. If these values are not the same size as the inset values, the slices of the original image are scaled to fit.</p>
+<p>Finally, you can specify a repeat style in each direction. These values affect how the top, bottom, left, right, and center portions are altered to fit the required dimensions, and can be any of the following: <code>repeat</code> (tiled), <code>stretch</code>, or <code>round</code> (the round style is like tiling, except that it stretches all nine pieces slightly so that there is no partial tile at the end).</p>    </section><section class="syntax"><h1>Syntax</h1>
+        <p><code>-webkit-border-image: &lt;uri&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt; &lt;x_repeat&gt; &lt;y_repeat&gt;;</code></p>
+<p><code>-webkit-border-image: &lt;uri&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt; / &lt;border&gt; &lt;x_repeat&gt; &lt;y_repeat&gt;;</code></p>
+<p><code>-webkit-border-image: &lt;uri&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt; / &lt;top_border&gt; &lt;right_border&gt; &lt;bottom_border&gt; &lt;left_border&gt; &lt;x_repeat&gt; &lt;y_repeat&gt;;</code></p>
+<p><code>-webkit-border-image: &lt;function&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt; / &lt;top_border&gt; &lt;right_border&gt; &lt;bottom_border&gt; &lt;left_border&gt; &lt;x_repeat&gt; &lt;y_repeat&gt;;</code></p>    </section><section class="values"><h1>Values</h1>
+        <dl>
+<dt>&lt;uri&gt;</dt>
+<dd><p>The file path of the image.</p></dd>
+<dt>&lt;top&gt;</dt>
+<dd><p>The distance from the top edge of the image.</p></dd>
+<dt>&lt;right&gt;</dt>
+<dd><p>The distance from the right edge of the image.</p></dd>
+<dt>&lt;bottom&gt;</dt>
+<dd><p>The distance from the bottom edge of the image.</p></dd>
+<dt>&lt;left&gt;</dt>
+<dd><p>The distance from the left edge of the image.</p></dd>
+<dt>&lt;x_repeat&gt;</dt>
+<dd>
+<p>The horizontal repeat style.</p>
+<table>
+<tr>
+<td class="value default">repeat (by default)</td>
+<td class="description">The image is tiled.</td>
+</tr>
+<tr>
+<td class="value">round</td>
+<td class="description">The image is stretched before it is tiled to prevent partial tiles.</td>
+</tr>
+<tr>
+<td class="value">stretch</td>
+<td class="description">The image is stretched to the size of the border.</td>
+</tr>
+</table>
+</dd>
+<dt>&lt;y_repeat&gt;</dt>
+<dd>
+<p>The vertical repeat style.</p>
+<table>
+<tr>
+<td class="value default">repeat (by default)</td>
+<td class="description">The image is tiled.</td>
+</tr>
+<tr>
+<td class="value">round</td>
+<td class="description">The image is stretched before it is tiled to prevent partial tiles.</td>
+</tr>
+<tr>
+<td class="value">stretch</td>
+<td class="description">The image is stretched to the size of the border.</td>
+</tr>
+</table>
+</dd>
+<dt>&lt;border&gt;</dt>
+<dd><p>The width of the border on all sides.</p></dd>
+<dt>&lt;top_border&gt;</dt>
+<dd><p>The width of the top border.</p></dd>
+<dt>&lt;right_border&gt;</dt>
+<dd><p>The width of the right border.</p></dd>
+<dt>&lt;bottom_border&gt;</dt>
+<dd><p>The width of the bottom border.</p></dd>
+<dt>&lt;left_border&gt;</dt>
+<dd><p>The width of the left border.</p></dd>
+<dt>&lt;function&gt;</dt>
+<dd><p>A function that procedurally generates an image, such as <code>gradient</code>.</p></dd>
+</dl></section><section class="versions"><h1>Versions</h1>
+        <ul>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-border-image">Safari 3.0</a></li>
+<li><a href="http://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/css/property/-webkit-border-image">iOS 1.0</a></li>        </ul></section><section class="examples"><h1>Examples</h1>
+        <pre class="code">h1 {
+    -webkit-border-image: url("border.png") 25;
+    border: solid 25px #f00;
+}</pre>
+<pre class="code">p {
+    -webkit-border-image: url("border.png") 5 10 5 10 repeat;
+    border: solid 10px #f00;
+}</pre>    </section></article>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="developer-mozilla-org">
+<head>
+  <title>Firefox 3 for developers - MDN</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
+<meta name="Rating" content="General">
+
+<link rel="home" href="/">
+<link rel="copyright" href="#copyright">
+<meta name="robots" content="index,follow" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
+<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=17970" />
+<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=17970" />
+<meta name="generator" content="MindTouch" />
+<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
+<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
+<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
+<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+
+<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
+<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+
+<!--[if IE]>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="/skins/mdn/Transitional/js/html5.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+
+		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
+	//hook in menu clicking events to the document's body
+	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
+	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+
+		
+
+			YAHOO.util.Event.onDOMReady(function() {
+			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
+		});
+	
+			YAHOO.util.Event.onDOMReady(function() {
+			MTComments.HookBehavior();
+		});
+		</script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
+<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
+
+<script type="text/javascript">
+
+Deki.BaseHref = 'https://developer.mozilla.org';
+Deki.PageId = 17970;
+Deki.PageTitle = 'en/Firefox 3 for developers';
+Deki.PageLanguageCode = 'en';
+Deki.FollowRedirects = 1;
+Deki.PathTpl = '/skins/mdn';
+Deki.PathSkin = '/skins/mdn/Transitional';
+Deki.PathCommon = '/skins/common';
+Deki.UserName = 'Anonymous';
+Deki.Today = '18 Nov 2011';
+Deki.UserIsAnonymous = true;
+Deki.EditorConfigToken = '7ef1c151';
+Deki.EditorStylesToken = '530d3613';
+Deki.PageEditable = false;
+</script>
+<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FFirefox+3+for+developers">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
+ 
+</head>
+
+<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enFirefox3fordevelopers" role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
+</div></noscript>
+<![endif]-->
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<header id="masthead" role="banner">
+  <div class="wrap">
+  
+    <div id="branding">
+      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+    </div>
+
+    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
+      <p>
+        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
+        <noscript><button type="submit">Search</button></noscript>
+      </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+      <div id="site-search-gg"></div>
+    </form>
+
+    <nav id="nav" role="menubar">
+      <ul id="nav-main">
+        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
+          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
+            <li id="nav-sub-web"><a href="/web">Web</a></li>
+            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
+            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
+            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
+          </ul>
+        </li>
+        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
+          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+            <ul>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML">HTML</a></li>
+                  <li><a href="/en/DOM">DOM</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
+                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
+                  <li><a href="/en/SVG">SVG</a></li>
+                  <li><a href="/en/WebGL">WebGL</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
+                  <li><a href="/en/WebSockets">WebSockets</a></li>
+                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
+                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
+                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
+                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/CSS">CSS</a></li>
+                  <li><a href="/en/Using_gradients">Gradients</a></li>
+                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
+                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
+                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
+                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="/en/JavaScript">JavaScript</a></li>
+                  <li><a href="/en/Ajax">Ajax</a></li>
+                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
+                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
+                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
+                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p><a href="/docs">More docs&hellip;</a></p>
+          </div>
+        </li>
+        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
+        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
+        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
+          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
+            <li><a href="/events">Events</a></li>
+            <li><a href="/discussions">Discussions</a></li>
+            <li><a href="/promote">Promote</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    
+      <ul class="user-state">
+              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+</li>
+        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FFirefox+3+for+developers" class="user-login">Log in</a></li>
+            </ul>
+
+  </div>
+</header>
+
+
+<section id="nav-toolbar">
+<div class="wrap">
+
+<nav id="tool-menus">
+  <ul id="tools">
+    <li class="menu">
+      <a href="#site-tools" class="toggle">Site tools</a>
+      <ul id="site-tools" class="sub-menu" role="navigation">
+         
+        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
+</li>
+        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
+</li>
+      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
+              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
+</li>
+              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
+</li>
+        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
+</li>
+      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
+      </ul>
+    </li>
+    <li class="menu">
+      <a href="#page-tools" class="toggle">This page</a>
+      <ul id="page-tools" class="sub-menu" role="navigation">
+                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
+                    <li class="page-history"><a href="/index.php?title=en/Firefox_3_for_developers&action=history" title="Page history">History</a></li>
+                    <li class="page-talk">	<a href="/Talk:en/Firefox_3_for_developers" title="Talk page">Talk page</a>
+</li>
+                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
+</li>
+            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=17970">Pages that link here</a></li>      </ul>
+    </li>
+      <li class="menu">
+      <a href="#" class="toggle">Languages</a>
+      <ul><li><a rel="internal" href="https://developer.mozilla.org/de/Firefox_3_f%C3%BCr_Entwickler" title="de/Firefox_3_f&uuml;r_Entwickler">Deutsch</a></li><li><a rel="internal" href="https://developer.mozilla.org/es/Firefox_3_para_desarrolladores" title="es/Firefox_3_para_desarrolladores">Espa&ntilde;ol</a></li><li><a rel="internal" href="https://developer.mozilla.org/fr/Firefox_3_pour_les_d%C3%A9veloppeurs" title="fr/Firefox_3_pour_les_d&eacute;veloppeurs">Fran&ccedil;ais</a></li><li><a rel="internal" href="https://developer.mozilla.org/pl/Firefox_3_dla_programist%C3%B3w" title="pl/Firefox_3_dla_programist&oacute;w">Polski</a></li><li><a rel="internal" href="https://developer.mozilla.org/pt/Firefox_3_para_desenvolvedores" title="pt/Firefox_3_para_desenvolvedores">Portugu&ecirc;s</a></li><li><a rel="internal" href="https://developer.mozilla.org/ko/Firefox_3_for_developers" title="ko/Firefox_3_for_developers">&#54620;&#44397;&#50612;</a></li><li><a rel="internal" href="https://developer.mozilla.org/zh_tw/Firefox_3_for_developers" title="zh_tw/Firefox_3_for_developers">&#20013;&#25991; (&#21488;&#28286;)</a></li><li><a rel="internal" href="https://developer.mozilla.org/ja/Firefox_3_for_developers" title="ja/Firefox_3_for_developers">&#26085;&#26412;&#35486;</a></li></ul>    </li>
+    </ul>
+</nav>
+
+  <nav class="crumbs" role="navigation">
+    <ol>
+      <li class="crumb-one"><a href="/">MDN</a></li>
+      <li class="crumb-two"><a href="/docs">Docs</a></li>
+    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
+<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
+<li class="last"><a href="https://developer.mozilla.org/en/Firefox_3_for_developers" class="deki-ns current">Firefox 3 for developers</a></li> 
+    </ol>
+  </nav>
+
+</div>
+</section>
+
+<section id="content">
+<div class="wrap">
+  <div id="content-main" class="full">
+
+    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
+        
+    <article class="article PageDW-enFirefox3fordevelopers" role="main">
+            
+            <div class="page-title hideforedit">
+              <h1 class="first" id="title">Firefox 3 for developers</h1>            
+      
+              <ul id="page-buttons">
+          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FFirefox+3+for+developers" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
+          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FFirefox+3+for+developers" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
+        </ul> 
+            </div>
+      
+    <div class="page-content boxed">
+
+     
+      <div id="article-nav" class="hideforedit">      
+              <div class="page-toc">
+          <h2>Table of contents</h2>
+          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#New_developer_features_in_Firefox_3" rel="internal">New developer features in Firefox 3</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>1.1.</span> <a href="#For_web_site_and_application_developers" rel="internal">For web site and application developers</a></li><li><span>1.2.</span> <a href="#For_XUL_and_extension_developers" rel="internal">For XUL and extension developers</a></li></ol></li><li><span>2.</span> <a href="#New_features_for_end_users" rel="internal">New features for end users</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.</span> <a href="#User_experience" rel="internal">User experience</a></li><li><span>2.2.</span> <a href="#Security_and_privacy" rel="internal">Security and privacy</a></li><li><span>2.3.</span> <a href="#Performance" rel="internal">Performance</a></li></ol></li><li><span>3.</span> <a href="#See_also" rel="internal">See also</a></li></ol>        </div>
+      
+        <ul class="page-anchors">
+          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
+          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
+        </ul>
+
+              <div id="deki-page-alerts" class="disabled">
+				<div class="toggle">
+					<a href="javascript:void(0);" class="off">
+						<span>Page Notifications</span>
+						<span class="status">Off</span>
+					</a>
+				</div></div>      
+      
+      </div> 
+    
+            
+      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#New_developer_features_in_Firefox_3" rel="internal">New developer features in Firefox 3</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>1.1.</span> <a href="#For_web_site_and_application_developers" rel="internal">For web site and application developers</a></li><li><span>1.2.</span> <a href="#For_XUL_and_extension_developers" rel="internal">For XUL and extension developers</a></li></ol></li><li><span>2.</span> <a href="#New_features_for_end_users" rel="internal">New features for end users</a><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>2.1.</span> <a href="#User_experience" rel="internal">User experience</a></li><li><span>2.2.</span> <a href="#Security_and_privacy" rel="internal">Security and privacy</a></li><li><span>2.3.</span> <a href="#Performance" rel="internal">Performance</a></li></ol></li><li><span>3.</span> <a href="#See_also" rel="internal">See also</a></li></ol></div></div><div class="pageText" id="pageText">
+<p>If you're a developer trying to get a handle on all the new features in Firefox 3, this is the perfect place to start. This article provides a list of the new articles covering features added to Firefox 3. While it doesn't necessarily cover every little change, it will help you learn about the major improvements.</p>
+<div id="section_1"><span id="New_developer_features_in_Firefox_3"></span><h3 class="editable">New developer features in Firefox 3</h3>
+<div id="section_2"><span id="For_web_site_and_application_developers"></span><h4 class="editable">For web site and application developers</h4>
+<dl> <dt><a title="en/Updating_web_applications_for_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Updating_web_applications_for_Firefox_3">Updating web applications for Firefox 3</a></dt> <dd>Provides information about changes you may need to make to your web site or web application to take advantage of new features in Firefox 3.</dd>
+</dl>
+<dl> <dt><a title="en/Online_and_offline_events" rel="internal" href="https://developer.mozilla.org/en/Online_and_offline_events">Online and offline events</a></dt> <dd>Firefox 3 supports WHATWG online and offline events, which let applications and extensions detect whether or not there's an active Internet connection, as well as to detect when the connection goes up and down.</dd>
+</dl>
+<dl> <dt><a title="en/Web-based_protocol_handlers" rel="internal" href="https://developer.mozilla.org/en/Web-based_protocol_handlers">Web-based protocol handlers</a></dt> <dd>You can now register web applications as protocol handlers using the <code>navigator.registerProtocolHandler()</code> method.</dd>
+</dl>
+<dl> <dt><a title="en/Drawing_text_using_a_canvas" rel="internal" href="https://developer.mozilla.org/en/Drawing_text_using_a_canvas">Drawing text using a canvas</a></dt> <dd>You can now draw text in a canvas using a non-standardized API supported by Firefox 3.</dd>
+</dl>
+<dl> <dt><a title="en/Canvas_tutorial/Transformations#Transforms" rel="internal" href="https://developer.mozilla.org/en/Canvas_tutorial/Transformations#Transforms">Transform support for canvas</a></dt> <dd>Firefox now supports the <code>transform()</code> and <code>setTransform()</code> methods on canvases.</dd>
+</dl>
+<dl> <dt><a title="en/Using_microformats" rel="internal" href="https://developer.mozilla.org/en/Using_microformats">Using microformats</a></dt> <dd>Firefox now has APIs for working with microformats.</dd>
+</dl>
+<dl> <dt><a title="en/Drag_and_drop_events" rel="internal" href="https://developer.mozilla.org/en/Drag_and_drop_events">Drag and drop events</a></dt> <dd>Firefox 3 supports new events that are sent to the source node for a drag operation when the drag begins and ends.</dd>
+</dl>
+<dl> <dt><a title="en/Focus_management_in_HTML" rel="internal" href="https://developer.mozilla.org/en/Focus_management_in_HTML">Focus management in HTML</a></dt> <dd>The new HTML 5 <code>activeElement</code> and <code>hasFocus</code> attributes are supported.</dd>
+</dl>
+<dl> <dt><a title="en/Offline_resources_in_Firefox" rel="internal" href="https://developer.mozilla.org/en/Offline_resources_in_Firefox">Offline resources in Firefox</a></dt> <dd>Firefox now lets web applications request that resources be cached to allow the application to be used while offline.</dd>
+</dl>
+<dl> <dt><a title="en/CSS_improvements_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/CSS_improvements_in_Firefox_3">CSS improvements in Firefox 3</a></dt> <dd>Firefox 3 features a number of improvements in its CSS support.</dd>
+</dl>
+<dl> <dt><a title="en/DOM_improvements_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/DOM_improvements_in_Firefox_3">DOM improvements in Firefox 3</a></dt> <dd>Firefox 3 offers a number of new features in Firefox 3's DOM implementation, including support for several Internet Explorer extensions to the DOM.</dd>
+</dl>
+<dl> <dt><a title="en/New_in_JavaScript_1.8" rel="internal" href="https://developer.mozilla.org/en/New_in_JavaScript_1.8">JavaScript 1.8 support</a></dt> <dd>Firefox 3 offers JavaScript 1.8.</dd>
+</dl>
+<dl> <dt><a title="en/EXSLT" rel="internal" href="https://developer.mozilla.org/en/EXSLT">EXSLT support</a></dt> <dd>Firefox 3 provides support for a substantial subset of the <a title="en/EXSLT" rel="internal" href="https://developer.mozilla.org/en/EXSLT">EXSLT</a> extensions to <a title="en/XSLT" rel="internal" href="https://developer.mozilla.org/en/XSLT">XSLT</a>.</dd>
+</dl>
+<dl> <dt><a title="en/SVG_improvements_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/SVG_improvements_in_Firefox_3">SVG improvements in Firefox 3</a></dt> <dd>SVG support in Firefox 3 has been upgraded significantly, with support for over two dozen new filters, several new elements and attributes, and other improvements.</dd>
+</dl>
+<dl> <dt><a title="en/Animated_PNG_graphics" rel="internal" href="https://developer.mozilla.org/en/Animated_PNG_graphics">Animated PNG graphics</a></dt> <dd>Firefox 3 supports the animated PNG (APNG) image format.</dd>
+</dl>
+</div><div id="section_3"><span id="For_XUL_and_extension_developers"></span><h4 class="editable">For XUL and extension developers</h4>
+<div id="section_4"><span id="Notable_changes_and_improvements"></span><h5 class="editable">Notable changes and improvements</h5>
+<dl> <dt><a title="en/Updating_extensions_for_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Updating_extensions_for_Firefox_3">Updating extensions for Firefox 3</a></dt> <dd>Provides a guide to the things you'll need to do to update your extension to work with Firefox 3.</dd>
+</dl>
+<dl> <dt><a title="en/XUL_improvements_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/XUL_improvements_in_Firefox_3">XUL improvements in Firefox 3</a></dt> <dd>Firefox 3 offers a number of new XUL elements, including new sliding scales, the date and time pickers, and spin buttons.</dd>
+</dl>
+<dl> <dt><a title="en/Templates_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Templates_in_Firefox_3">Templates in Firefox 3</a></dt> <dd>Templates have been significantly improved in Firefox 3. The key improvement allows the use of custom query processors to allow data sources other than RDF to be used.</dd>
+</dl>
+<dl> <dt><a title="en/Extension_Versioning,_Update_and_Compatibility#Securing_Updates" rel="internal" href="https://developer.mozilla.org/en/Extension_Versioning%2C_Update_and_Compatibility#Securing_Updates">Securing updates</a></dt> <dd>In order to provide a more secure add-on upgrade path for users, add-ons are now required to provide a secure method for obtaining updates before they can be installed. Add-ons hosted at <a class="external" rel="external" href="http://addons.mozilla.org" title="http://addons.mozilla.org" target="_blank">AMO</a> automatically provide this. Any add-ons installed that do not provide a secure update method when the user upgrades to Firefox 3 will be automatically disabled. Firefox will however continue to check for updates to the extension over the insecure path and attempt to install any update offered (installation will fail if the update also fails to provide a secure update method).</dd>
+</dl>
+<dl> <dt><a title="en/Places_migration_guide" rel="internal" href="https://developer.mozilla.org/En/Places_Developer_Guide">Places migration guide</a></dt> <dd>An article about how to update an existing extension to use the Places API.</dd>
+</dl>
+<dl> <dt><a title="en/Download_Manager_improvements_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Download_Manager_improvements_in_Firefox_3">Download Manager improvements in Firefox 3</a></dt> <dd>The Firefox 3 Download Manager features new and improved APIs, including support for multiple progress listeners.</dd>
+</dl>
+<dl> <dt><a title="en/Using_nsILoginManager" rel="internal" href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/Using_nsILoginManager">Using nsILoginManager</a></dt> <dd>The Password Manager has been replaced by the new Login Manager.</dd>
+</dl>
+<dl> <dt><a title="en/XBL/XBL_1.0_Reference/Elements#binding" rel="internal" href="https://developer.mozilla.org/en/XBL/XBL_1.0_Reference/Elements#binding">Embedding XBL bindings</a></dt> <dd>You can now use the <code>data:</code> URL scheme from chrome code to embed XBL bindings directly instead of having them in separate XML files.</dd>
+</dl>
+<dl> <dt><a title="en/Localizing_extension_descriptions" rel="internal" href="https://developer.mozilla.org/en/Localizing_extension_descriptions">Localizing extension descriptions</a></dt> <dd>Firefox 3 offers a new method for localizing add-on metadata. This lets the localized details be available as soon as the add-on has been downloaded, as well as when the add-on is disabled.</dd>
+</dl>
+<dl> <dt><a title="en/Localization_and_Plurals" rel="internal" href="https://developer.mozilla.org/en/Localization_and_Plurals">Localization and Plurals</a></dt> <dd>Firefox 3 adds the new PluralForm module, which provides tools to aid in correctly pluralizing words in multiple localizations.</dd>
+</dl>
+<dl> <dt><a title="en/Theme_changes_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Theme_changes_in_Firefox_3">Theme changes in Firefox 3</a></dt> <dd>Notes and information of use to people who want to create themes for Firefox 3.</dd>
+</dl>
+</div><div id="section_5"><span id="New_components_and_functionality"></span><h5 class="editable">New components and functionality</h5>
+<dl> <dt><a title="en/FUEL" rel="internal" href="https://developer.mozilla.org/en/Toolkit_API/FUEL">FUEL Library</a></dt> <dd>FUEL is about making it easier for extension developers to be productive, by minimizing some of the XPCOM formality and adding some &quot;modern&quot; JavaScript ideas.</dd>
+</dl>
+<dl> <dt><a title="en/Places" rel="internal" href="https://developer.mozilla.org/en/Places">Places</a></dt> <dd>The history and bookmarks APIs have been completely replaced by the new <a title="en/Places" rel="internal" href="https://developer.mozilla.org/en/Places">Places</a> API.</dd>
+</dl>
+<dl> <dt><a title="en/nsIIdleService" rel="internal" href="https://developer.mozilla.org/en/nsIIdleService">Idle service</a></dt> <dd>Firefox 3 offers the new 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIIdleService">nsIIdleService</a></code>
+ interface, which lets extensions determine how long it's been since the user last pressed a key or moved their mouse.</dd>
+</dl>
+<dl> <dt><a title="en/nsIZipWriter" rel="internal" href="https://developer.mozilla.org/en/nsIZipWriter">ZIP writer</a></dt> <dd>The new 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIZipWriter">nsIZipWriter</a></code>
+ interface lets extensions create ZIP archives.</dd>
+</dl>
+<dl> <dt><a title="en/Full_page_zoom" rel="internal" href="https://developer.mozilla.org/en/Full_page_zoom">Full page zoom</a></dt> <dd>Firefox 3 improves the user experience by offering full page zoom in addition to text-only zoom.</dd>
+</dl>
+<dl> <dt><a title="en/Interfacing_with_the_XPCOM_cycle_collector" rel="internal" href="https://developer.mozilla.org/en/Interfacing_with_the_XPCOM_cycle_collector">Interfacing with the XPCOM cycle collector</a></dt> <dd>XPCOM code can now take advantage of the cycle collector, which helps ensure that unused memory gets released instead of leaking.</dd>
+</dl>
+<dl> <dt><a title="en/The_Thread_Manager" rel="internal" href="https://developer.mozilla.org/en/The_Thread_Manager">The Thread Manager</a></dt> <dd>Firefox 3 provides the new 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIThreadManager">nsIThreadManager</a></code>
+ interface, along with new interfaces for threads and thread events, which provides a convenient way to create and manage threads in your code.</dd>
+</dl>
+<dl> <dt><a title="en/JavaScript_modules" rel="internal" href="https://developer.mozilla.org/en/JavaScript_code_modules">JavaScript modules</a></dt> <dd>Firefox 3 now offers a new shared code module mechanism that lets you easily create modules in JavaScript that can be loaded by extensions and applications for use, much like shared libraries.</dd>
+</dl>
+<dl> <dt><a title="en/nsIJSON" rel="internal" href="https://developer.mozilla.org/en/nsIJSON">The <code>nsIJSON</code> interface</a></dt> <dd>Firefox 3 offers the new 
+<code><a rel="custom" href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIJSON">nsIJSON</a></code>
+ interface, which offers high-performance encoding and decoding of <a title="en/JSON" rel="internal" href="https://developer.mozilla.org/en/JSON">JSON</a> strings.</dd>
+</dl>
+<dl> <dt><a title="en/nsIParentalControlsService" rel="internal" href="https://developer.mozilla.org/en/XPCOM_Interface_Reference/nsIParentalControlsService">The nsIParentalControlsService interface</a></dt> <dd>Firefox 3 now supports the Microsoft Windows Vista parental controls feature, and allows code to interact with it.</dd>
+</dl>
+<dl> <dt><a title="en/Using_content_preferences" rel="internal" href="https://developer.mozilla.org/en/Using_content_preferences">Using content preferences</a></dt> <dd>Firefox 3 includes a new service for getting and setting arbitrary site-specific preferences that extensions as well as core code can use to keep track of their users' preferences for individual sites.</dd>
+</dl>
+<dl> <dt><a title="en/Monitoring_plugins" rel="internal" href="https://developer.mozilla.org/en/Monitoring_plugins"> Plug-in Monitoring</a></dt> <dd>A new component of the plugin system is now available to measure how long it takes plugins (e.g., Macromedia Flash) to execute their calls.</dd>
+</dl>
+</div><div id="section_6"><span id="Fixed_bugs"></span><h5 class="editable">Fixed bugs</h5>
+<dl> <dt><a title="en/Notable_bugs_fixed_in_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Notable_bugs_fixed_in_Firefox_3">Notable bugs fixed in Firefox 3</a></dt> <dd>This article provides information about bugs that have been fixed in Firefox 3.</dd>
+</dl>
+</div></div></div><div id="section_7"><span id="New_features_for_end_users"></span><h3 class="editable">New features for end users</h3>
+<div id="section_8"><span id="User_experience"></span><h4 class="editable">User experience</h4>
+<ul> <li><strong>Easier password management.</strong> An information bar at the top of the browser window now appears to allow you to save passwords after a successful login.</li> <li><strong>Simplified add-on installation.</strong> You can now install extensions from third-party download sites in fewer clicks, thanks to the removal of the add-on download site whitelist.</li> <li><strong>New Download Manager.</strong> The download manager makes it easier to locate your downloaded files.</li> <li><strong>Resumable downloads.</strong> You can now resume downloads after restarting the browser or resetting your network connection.</li> <li><strong>Full page zoom.</strong> From the View menu and using keyboard shortcuts, you can now zoom in and out on the content of entire pages -- this scales not just the text but the layout and images as well.</li> <li><strong>Tab scrolling and quickmenu.</strong> Tabs are easier to locate with the new tab scrolling and tab quickmenu features.</li> <li><strong>Save what you were doing.</strong> Firefox 3 prompts you to see if you'd like to save your current tabs when you exit Firefox.</li> <li><strong>Optimized Open in Tabs behavior.</strong> Opening a folder of bookmarks in tabs now appends the new tabs instead of replacing the existing ones.</li> <li><strong>Easier to resize location and search bars.</strong> You can now easily resize the location and search bars using a simple resize handle between them.</li> <li><strong>Text selection improvements.</strong> You can now select multiple ranges of text using the Control (Command on Macintosh) key. Double-clicking and dragging now selects in &quot;word-by-word&quot; mode. Triple-clicking selects an entire paragraph.</li> <li><strong>Find toolbar.</strong> The Find toolbar now opens with the current selection.</li> <li><strong>Plugin management.</strong> Users can now disable individual plugins in the Add-on Manager.</li> <li><strong>Integration with Windows Vista.</strong> Firefox's menus now display using Vista's native theme.</li> <li><strong>Integration with Mac OS X.</strong> Firefox now supports <a class="external" rel="external" href="http://growl.info/" title="http://growl.info/" target="_blank">Growl</a> for notifications of completed downloads and available updates.</li> <li><strong>Star button.</strong> The new star button in the location bar lets you quickly add a new bookmark with a single click. A second click lets you file and tag your new bookmark.</li> <li><strong>Tags.</strong> You can now associate keywords with your bookmarks to easily sort them by topic.</li> <li><strong>Location bar and auto-complete.</strong> Type the title or tag of a page in the location bar to quickly find the site you were looking for in your history and bookmarks. Favicons, bookmark, and tag indicators help you see where the results are coming from.</li> <li><strong>Smart Bookmarks folder.</strong> Firefox's new Smart Bookmarks folder offers quick access to your recently bookmarked and tagged places, as well as pages you visit frequently.</li> <li><strong>Bookmarks and History Organizer.</strong> The new unified bookmarks and history organizer lets you easily search your history and bookmarks with multiple views and smart folders for saving your frequent searches.</li> <li><strong>Web-based protocol handlers.</strong> Web applications, such as your favorite web mail provider, can now be used instead of desktop applications for handling <code>mailto:</code> links from other sites. Similar support is provided for other protocols as well. (Note that web applications do have to register themselves with Firefox before this will work.)</li> <li><strong>Easy to use Download Actions.</strong> A new Applications preferences pane provides an improved user interface for configuring handlers for various file types and protocol schemes.</li> <li><strong>Improved look and feel.</strong> Graphics and font handling have been improved to make web sites look better on your screen, including sharper text rendering and better support for fonts with ligatures and complex scripts. In addition, Mac and Linux (Gnome) users will find that Firefox feels more like a native application for their platform than ever, with a new, native, look and feel.</li> <li><strong>Color management support.</strong> By setting the <code>gfx.color_management.enabled</code> preference in <code>[about:config]</code>, you can ask Firefox to use the color profiles embedded in images to adjust the colors to match your computer's display.</li> <li><strong>Offline support.</strong> Web applications can take advantage of new features to support being used even when you don't have an Internet connection.</li>
+</ul>
+</div><div id="section_9"><span id="Security_and_privacy"></span><h4 class="editable">Security and privacy</h4>
+<ul> <li><strong>One-click site information.</strong> Want to know more about the site you're visiting? Click the site's icon in the location bar to see who owns it. Identify information is prominently displayed and easier than ever to understand.</li> <li><strong>Malware protection.</strong> Firefox 3 warns you if you arrive at a web site that is known to install viruses, spyware, trojans, or other dangerous software (known as malware). You can see what the warning looks like by <a class="link-https" rel="external" href="https://www.mozilla.com/firefox/its-an-attack.html" title="https://www.mozilla.com/firefox/its-an-attack.html" target="_blank">clicking here</a>.</li> <li><strong>Web forgery protection enhanced.</strong> Now when you visit a page that's suspected of being a forgery, you're shown a special page instead of the contents of the page with a warning. <a class="link-https" rel="external" href="https://www.mozilla.com/firefox/its-a-trap.html" title="https://www.mozilla.com/firefox/its-a-trap.html" target="_blank">Click here</a> to see what it looks like.</li> <li><strong>Easier to understand SSL errors.</strong> The errors presented when an invalid SSL certificate is encountered have been clarified to make it easier to understand what the problem is.</li> <li><strong>Out-of-date add-on protection.</strong> Firefox 3 now automatically checks add-on and plugin versions and disables older, insecure versions.</li> <li><strong>Secure add-on updates.</strong> Add-on update security has been improved by disallowing add-ons that use an insecure update mechanism.</li> <li><strong>Anti-virus integration.</strong> Firefox 3 now informs anti-virus software when executable files are downloaded.</li> <li><strong>Windows Vista parental controls support.</strong> Firefox 3 supports the Vista system-wide parental control setting for disabling file downloads.</li>
+</ul>
+</div><div id="section_10"><span id="Performance"></span><h4 class="editable">Performance</h4>
+<ul> <li><strong>Reliability.</strong> Firefox 3 now stores bookmarks, history, cookies, and preferences in a transactionally secure database format. This means your data is protected against loss even if your system crashes.</li> <li><strong>Speed.</strong> Firefox 3 has gotten a performance boost by completely replacing the part of the software that handles drawing to your screen, as well as to how page layout work is handled.</li> <li><strong>Memory use reduced.</strong> Firefox 3 is more memory efficient than ever, with over 300 memory &quot;leak&quot; bugs fixed and new features to help automatically locate and dispose of leaked memory blocks.</li>
+</ul>
+</div></div><div id="section_11"><span id="See_also"></span><h3 class="editable">See also</h3>
+<ul> <li><a title="en/Updating_extensions_for_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Updating_extensions_for_Firefox_3">Updating extensions for Firefox 3</a></li> <li><a title="en/Updating_web_applications_for_Firefox_3" rel="internal" href="https://developer.mozilla.org/en/Updating_web_applications_for_Firefox_3">Updating web applications for Firefox 3</a></li> <li><a title="en/Firefox_2_for_developers" rel="internal" href="https://developer.mozilla.org/en/Firefox_2_for_developers">Firefox 2 for developers</a></li> <li><a title="en/Firefox_1.5_for_developers" rel="internal" href="https://developer.mozilla.org/en/Firefox_1.5_for_developers">Firefox 1.5 for developers</a></li>
+</ul>
+<p></p></div></div></div>
+            <section class="page-meta">
+                  <section id="page-tags">
+            <h2>Tags <span class="sub">(1)</span></h2>
+              <a href="/index.php?title=Special:Tags&pageId=17970" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=Firefox+3" title="Firefox 3" tagid="1298" class="text">Firefox 3</a></li></ul></div>          </section>
+        
+                  <section id="page-files">
+            <h2>Attachments <span class="sub">(0)</span></h2>
+            <div id="pageFiles"><div class="nofiles">&nbsp;</div></div>            <div id="deki-image-gallery-lite"><table class="table empty" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 0</th></tr><tr class="bg2"><td class="col1 empty" colspan="3">No images to display in the gallery.</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
+          </section>
+        
+                        
+        </section>
+        </div>
+
+    </article>
+
+    <p class="last-mod hideforedit">
+      Page last modified <a href="/index.php?title=en/Firefox_3_for_developers&action=history" title="16:57, 26 Jun 2010">16:57, 26 Jun 2010</a> by <a href="/User:Elchi3" class="link-user" rel="internal">Elchi3</a>    </p>
+
+  </div><!-- /#content-main -->
+
+</div><!-- /.wrap -->
+</section><!-- /#content -->
+
+
+
+<footer id="site-info" role="contentinfo">
+<div class="wrap">
+  <div id="legal">
+    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
+    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
+  </div>
+  <p class="user-state">
+          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FFirefox+3+for+developers" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+      
+  </p>
+</div>
+</footer>
+
+
+			
+<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
+	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
+		<div class="ui-msg-opt">
+			<ul>
+				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
+				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
+			</ul>
+			<div class="ui-msg-autoclose">
+				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
+				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
+			</div>
+		</div>
+		<div class="ui-msg-header" id="MTMessageHeader"></div>
+		<div class="ui-msg-desc" id="MTMessageDesc"></div>
+		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
+			<p>Viewing Details:</p>
+		</div>
+	</div>
+</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
+<!-- Served by pm-dekiwiki01.mozilla.org in 0.91 secs. -->
+<!--
+	Verb      Path                                              Time(ms)       API Stats
+	GET       /deki/site/settings                                   5.71       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
+	GET       /deki/users/=Anonymous                                6.52       request-time-ms=4; mysql-queries=4; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/license                                         6.82       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
+	GET       /deki/pages/17970/contents                          102.17       request-time-ms=100; mysql-queries=23; mysql-time-ms=35; cache-ratio=1.84; cache-hit=83; cache-miss=-38; cache-del=0; cache-ins=38;
+	GET       /deki/pages/17970                                    56.37       request-time-ms=46; mysql-queries=21; mysql-time-ms=23; cache-ratio=12.50; cache-hit=25; cache-miss=-23; cache-del=0; cache-ins=23;
+	GET       /deki/pages/17970/info                                5.21       request-time-ms=3; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/pages/17970/tags                                6.52       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/site/properties                                 8.25       request-time-ms=6; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
+	GET       /deki/site/nav/=en%252FFirefox%2B3%2Bfor%2Bdevelopers/full   574.85       request-time-ms=566; mysql-queries=6; mysql-time-ms=272; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
+	GET       /deki/pages/17970/tags                                6.95       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
+	                                                             =======
+	                                                     Total:   779.39      
+	                                                     Ideal:   772.44      
+-->
+ 
+<div id="popupMessage"></div> <div id="popupMask"></div>
+<div id="menuFiller"></div>
+<div id="bodyHeight"></div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+
+ 
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+
+ 
+</body>
+</html>

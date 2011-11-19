@@ -1,0 +1,70 @@
+<div class="pageText" id="pageText">
+<p><span class="lang lang-en"><span class="lang lang-en">« <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> « <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  « <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
+<p>
+
+
+</p>
+<div class="lang lang-en" style="border:solid 1px maroon; overflow:hidden; margin: 10px 0px; padding: 0px 10px; background-color: rgb(254, 244, 156); font-weight: bold; text-align: center;">
+<p style="margin: 4px 0px;">Introduced in Gecko 2.0</p>
+(Firefox 4 / Thunderbird 3.3 / SeaMonkey 2.1)
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="section_1">
+<span id="Summary"></span><h3 class="editable">Summary</h3>
+<p>The <code>:-moz-placeholder</code> <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any form element displaying <a title="en/HTML/HTML5/Forms in HTML5#The placeholder attribute" rel="internal" href="https://developer.mozilla.org/en/HTML/Forms_in_HTML#The_placeholder_attribute">placeholder text</a>. This allows web developers and theme designers to customize the appearance of placeholder text, which is a light grey color by default. This may not work well if you've changed the background color of your form fields to be a similar color, for example, so you can use this pseudo-class to change the placeholder text color.</p>
+</div>
+<div id="section_2">
+<span id="Example"></span><h3 class="editable">Example</h3>
+<p>This example styles the placeholder text by making it green.</p>
+
+          <pre name="code" class="xml">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Placeholder demo&lt;/title&gt;
+  &lt;style type="text/css"&gt;
+    input:-moz-placeholder {
+      color: green;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;input id="test" placeholder="Placeholder text!"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        
+<p><a title="https://developer.mozilla.org/samples/cssref/moz-placeholder.html" rel="internal" href="https://developer.mozilla.org/samples/cssref/moz-placeholder.html" class="new ">View this example live</a>.</p>
+</div>
+<div id="section_3">
+<span id="Bugzilla"></span><h3 class="editable">Bugzilla</h3>
+<p>
+<a rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=457801" class="external" title="RESOLVED FIXED - Implement -moz-placeholder pseudo-class">
+bug 457801</a>
+</p>
+</div>
+<div id="section_4">
+<span id="Notes"></span><h3 class="editable">Notes</h3>
+<div class="note">
+<strong>Note:</strong> This was previously incorrectly documented as having been created for Gecko 1.9 (Firefox 3)
+, for an <a class=" link-https" title="https://bugzilla.mozilla.org/show_bug.cgi?id=11011" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=11011" target="_blank">entirely different purpose</a>.</div>
+<p></p>
+</div>
+<div id="section_5">
+<span id="SeeAlso"></span><span id="See_also"></span><h3 class="editable">See also</h3>
+<ul>
+<li><a title="en/HTML/HTML5/Forms in HTML5" rel="internal" href="https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5">Forms in HTML5</a></li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/input">&lt;input&gt;</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/textarea">&lt;textarea&gt;</a></code>
+</li>
+</ul>
+</div>
+</div>

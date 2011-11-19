@@ -1,0 +1,44 @@
+<div class="pageText" id="pageText">
+<div id="section_1">
+<span id="Summary"></span><h2 class="editable">Summary</h2>
+<p>The <code>:-moz-ui-invalid</code> CSS <a title="Pseudo-classes" rel="internal" href="https://developer.mozilla.org/en/CSS/Pseudo-classes">pseudo-class</a> represents any <a title="https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5#Constraint_Validation" rel="internal" href="https://developer.mozilla.org/en/HTML/Forms_in_HTML#Constraint_Validation">validated form element</a> whose value isn't valid based on their <a title="en/HTML/HTML5/Forms in HTML5#Constraint Validation" rel="internal" href="https://developer.mozilla.org/en/HTML/Forms_in_HTML#Constraint_Validation">validation constraints</a>, in certain circumstances. This pseudo-class is applied according to the following rules:</p>
+<ul>
+<li>If the control does not have focus, and the value is invalid, apply this pseudo-class.</li> <li>If the control has focus, and the value was valid (including empty) when it gained focus, do not apply the pseudo-class.</li> <li>If the control has focus, and the value was invalid when it gained focus, re-validate on every keystroke.</li> <li>If the element is required, the preceding rules apply only if the user has changed the value or attempted to submit the form.</li>
+</ul>
+<p>The result is that if the control was valid when the user started interacting with it, the validity styling is changed only when the user shifts focus to another control. However, if the user is trying to correct a previously-flagged value, the control shows immediately when the value becomes valid. Required items have the pseudo-class applied only if the user changes them or attempts to submit an unchanged valid value.</p>
+<p>By default, Gecko applies a style that creates a red "glow" (using the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/box-shadow">box-shadow</a></code> property) around items with that have this pseudo-class applied. See the 
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Ainvalid">:invalid</a></code> pseudo-class for an example that shows how to override the default style.</p>
+</div>
+<div id="section_2">
+<span id="Browser_compatibility"></span><h2 class="editable">Browser compatibility</h2>
+<table class="standard-table"><tbody>
+<tr>
+<th>Browser</th> <th>Lowest version</th> </tr>
+<tr>
+<td>Internet Explorer</td> <td>---</td> </tr>
+<tr>
+<td>Firefox (Gecko)</td> <td>4.0 (2.0)</td> </tr>
+<tr>
+<td>Opera</td> <td>?</td> </tr>
+<tr>
+<td>Safari (WebKit)</td> <td>?</td> </tr>
+</tbody></table>
+</div>
+<div id="section_3">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Avalid">:valid</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Ainvalid">:invalid</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Arequired">:required</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aoptional">:optional</a></code>
+</li> <li>
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3A-moz-ui-valid">:-moz-ui-valid</a></code>
+</li>
+</ul>
+</div>
+</div>

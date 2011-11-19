@@ -1,0 +1,92 @@
+<div class="pageText" id="pageText">
+<p>The <code>&lt;number&gt;</code> <a title="CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> data type represents a number, either integer or fractional. Its syntax extends the one of the <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> data value. To represent a fractional value, add the fractional part — a '.' followed by one or several decimal digits — to any <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> data value. Like for <span class="lang lang-en">
+<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code> </span> data type, there isn't any unit associated to a <code>&lt;number&gt;</code>, which is not a CSS dimension.</p>
+<div id="section_1">
+<span id="Interpolation"></span><h2 class="editable">Interpolation</h2>
+<p>Values of the <code>&lt;number&gt;</code> CSS data type can be interpolated in order to allow animations. In that case they are interpolated as real, floating-point, numbers. <a class="external" title="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" rel="external" href="http://dev.w3.org/csswg/css3-transitions/#animation-of-property-types-" target="_blank">[1]</a> The speed of the interpolation is determined by the <a title="timing-function" rel="internal" href="https://developer.mozilla.org/en/CSS/timing-function">timing function</a> associated with the animation.</p>
+</div>
+<div id="section_2">
+<span id="Examples"></span><h2 class="editable">Examples</h2>
+<p>These are valid number values:</p>
+<pre>12          A raw <a href="mks://localhost/en/CSS/integer" title="integer">&lt;integer&gt;</a> is also a &lt;number&gt;
+4.01        A positive non-integer &lt;number&gt;
+-456.8      Negative non-integer &lt;number&gt;
+0.0         Zero
++0.0        Zero, with a leading +
+-0.0        Zero, with a leading - (Though strange, this is an allowed value)
+</pre>
+<p>These are invalid number values:</p>
+<pre>12.         The dot should be followed by a number
++---12.2    Only one leading +/- is allowed
+12.1.1      Only one dot is allowed
+10e3        The e notation is not allowed
+</pre>
+</div>
+<div id="section_3">
+<span id="Specifications"></span><h2 class="editable">Specifications</h2>
+<table class="standard-table">
+<thead><tr style="background-color: rgb(255, 204, 255);">
+<th scope="col">Specification</th> <th scope="col">Status</th> <th scope="col">Comment</th> </tr></thead>
+<tbody>
+<tr>
+<td><a class="external" title="http://www.w3.org/TR/css3-values/#numbers" rel="external" href="http://www.w3.org/TR/css3-values/#numbers" target="_blank">CSS Values and Units Level 3</a></td> <td>Working Draft
+</td> <td>No significant change from CSS Level 2 (Revision 1)</td> </tr>
+<tr style="vertical-align: top;">
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS21/syndata.html#numbers" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">CSS Level 2 (Revision 1)</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Explicitly defined</td> </tr>
+<tr>
+<td style="vertical-align: top;"><a class="external" title="http://www.w3.org/TR/CSS1/" rel="external" href="http://www.w3.org/TR/CSS1/" target="_blank">CSS Level 1</a></td> <td style="vertical-align: top;">Recommendation
+</td> <td style="vertical-align: top;">Implicitly defined</td> </tr>
+</tbody>
+</table>
+</div>
+<div id="section_4">
+<span id="Browser_Compatibility"></span><h2 class="editable">Browser Compatibility</h2>
+<p>
+<script type="text/javascript">/*<![CDATA[*/
+        $(function() {
+            $('.htab').append($('#compat-desktop'));
+            $('.htab').append($('#compat-mobile'));
+            var $items = $('.htab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('.htab>div').hide().eq(index).show();
+            }).eq(0).click();
+        });
+    /*]]>*/</script></p>
+<div class="htab">
+<a name="AutoCompatibilityTable"></a>
+<ul>
+<li class="selected">Desktop</li> <li>Mobile</li>
+</ul>
+</div>
+<div id="compat-desktop"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Chrome</th> <th>Firefox (Gecko)</th> <th>Internet Explorer</th> <th>Opera</th> <th>Safari (WebKit)</th> </tr>
+<tr>
+<td>basic</td> <td>1.0</td> <td>1.0 (1.0)</td> <td>&lt;=5.0</td> <td>yes</td> <td>1.0 (85)</td> </tr>
+</tbody></table>
+</div>
+<div id="compat-mobile"> <table class="compat-table"><tbody>
+<tr>
+<th>Feature</th> <th>Android</th> <th>Firefox Mobile (Gecko)</th> <th>IE Phone</th> <th>Opera Mobile</th> <th>Safari Mobile</th> </tr>
+<tr>
+<td>Basic support</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> <td>yes</td> </tr>
+</tbody></table>
+</div>
+</div>
+<div id="section_5">
+<span id="See_also"></span><h2 class="editable">See also</h2>
+<ul>
+<li>
+<a title="CSS Reference" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference">CSS Reference</a> index</li> <li>CSS Data Types : <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/angle">&lt;angle&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/color_value">&lt;color&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/frequency">&lt;frequency&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/identifier">&lt;identifier&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/integer">&lt;integer&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/length">&lt;length&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/number">&lt;number&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/percentage">&lt;percentage&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/ratio">&lt;ratio&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/resolution">&lt;resolution&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/shape">&lt;shape&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/string">&lt;string&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/time">&lt;time&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/timing-function">&lt;timing-function&gt;</a></code>, <code><a rel="custom" href="https://developer.mozilla.org/en/CSS/uri">&lt;uri&gt;</a></code>
+</li>
+</ul>
+<p></p>
+</div>
+</div>
