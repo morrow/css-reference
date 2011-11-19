@@ -166,8 +166,8 @@ class App
         url:@paths[attribute]
         success:(r)=>
           # add h1 link to current attribute
-          html = @htmlify.tagify "a(href='#{@dir}/#/#{attribute}')", attribute
-          html = @htmlify.tagify 'h1', html
+          html = @htmlify.tagify "a(href='#{@dir}/#/#{attribute}')", attribute if attribute
+          html = @htmlify.tagify 'h1', html if attribute
           # add horizontal line
           html += r + '<hr />'
           # fill exact results element with html string

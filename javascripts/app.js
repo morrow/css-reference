@@ -156,8 +156,12 @@ App = (function() {
         dataType: 'html',
         url: this.paths[attribute],
         success: __bind(function(r) {
-          html = this.htmlify.tagify("a(href='" + this.dir + "/#/" + attribute + "')", attribute);
-          html = this.htmlify.tagify('h1', html);
+          if (attribute) {
+            html = this.htmlify.tagify("a(href='" + this.dir + "/#/" + attribute + "')", attribute);
+          }
+          if (attribute) {
+            html = this.htmlify.tagify('h1', html);
+          }
           html += r + '<hr />';
           return $(".results .exact").html(html);
         }, this),
