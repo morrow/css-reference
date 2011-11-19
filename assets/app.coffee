@@ -7,7 +7,7 @@ class App
     @dir = "/CSS-Reference"
     # query history
     @history = [] 
-    # current position in query history
+    # initialize current position in query history
     @history_pos = -1
     # paths object 
     @paths = window.paths
@@ -17,13 +17,14 @@ class App
     @bindEvents()
     # set window.app 
     window.app = @
-    # initial load
+    # initial query
+    query = ''
+    # get query from hash if exists
     if window.location.hash
       query = window.location.hash.replace(/#\/|#/, '')
       query = '' if query and query.toLowerCase().match /css/
-      app.load(query, true, 'replace')
-    else
-      app.load('')
+    # initial load
+    app.load(query, true, 'replace')
 
   bindEvents:->
     # tab-key handling
@@ -85,7 +86,7 @@ class App
       query = query[query.length-1]
       app.load(query, false)
 
-  load:(path, commit=true, mode='push')->
+  load:(path='', commit=true, mode='push')->
     # format query
     query = path.replace('/', '')
     # update preview

@@ -21,10 +21,14 @@ h1 {
 
 .sidepane {
   width:20%;
+  position:relative;
+  top:-4px;
 }
 
 .results {
   width:73%;
+  position:relative;
+  top:3px;
 }
 
 .root {

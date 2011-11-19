@@ -11,15 +11,14 @@ App = (function() {
     this.write(this.root);
     this.bindEvents();
     window.app = this;
+    query = '';
     if (window.location.hash) {
       query = window.location.hash.replace(/#\/|#/, '');
       if (query && query.toLowerCase().match(/css/)) {
         query = '';
       }
-      app.load(query, true, 'replace');
-    } else {
-      app.load('');
     }
+    app.load(query, true, 'replace');
   }
   App.prototype.bindEvents = function() {
     $("input[type=search]").live('keydown', function(e) {
@@ -77,6 +76,9 @@ App = (function() {
   };
   App.prototype.load = function(path, commit, mode) {
     var query;
+    if (path == null) {
+      path = '';
+    }
     if (commit == null) {
       commit = true;
     }
