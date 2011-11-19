@@ -126,17 +126,20 @@ class App
         approximates.push attribute
     vendor = []
     special = []
-    normal = []
+    lower = []
+    upper = []
     # sort attributes
     for attribute in approximates
-      if attribute[0].match /[a-zA-z]/
-        normal.push attribute
+      if attribute[0].match /[a-z]/
+        lower.push attribute
+      else if attribute[0].match /[A-Z]/
+        upper.push attribute
       else if attribute[0].match /-/
         vendor.push attribute
       else
         special.push attribute
     # re-assemble approximate array
-    approximates = normal.sort().concat(special.sort()).concat(vendor.sort())
+    approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort())
     # added sorted list of approximate matches to html string    
     html += @htmlify.htmlify(approximates)
     # fill approximate results element with html

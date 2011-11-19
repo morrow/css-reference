@@ -98,7 +98,7 @@ App = (function() {
     return $("input[type=search]").val(app.history[app.history_pos]);
   };
   App.prototype.preview = function(input) {
-    var approximates, attr, attribute, html, normal, query, special, vendor, _i, _len;
+    var approximates, attr, attribute, html, lower, query, special, upper, vendor, _i, _len;
     html = "";
     approximates = [];
     query = input.toLowerCase();
@@ -116,18 +116,21 @@ App = (function() {
     }
     vendor = [];
     special = [];
-    normal = [];
+    lower = [];
+    upper = [];
     for (_i = 0, _len = approximates.length; _i < _len; _i++) {
       attribute = approximates[_i];
-      if (attribute[0].match(/[a-zA-z]/)) {
-        normal.push(attribute);
+      if (attribute[0].match(/[a-z]/)) {
+        lower.push(attribute);
+      } else if (attribute[0].match(/[A-Z]/)) {
+        upper.push(attribute);
       } else if (attribute[0].match(/-/)) {
         vendor.push(attribute);
       } else {
         special.push(attribute);
       }
     }
-    approximates = normal.sort().concat(special.sort()).concat(vendor.sort());
+    approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort());
     html += this.htmlify.htmlify(approximates);
     $('.results .approximate').html(html);
     if (input in this.paths || approximates.length === 1) {
