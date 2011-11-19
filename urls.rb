@@ -4,6 +4,7 @@ require 'nokogiri'
 require 'cgi'
 
 urls = {}
+paths = {}
 
 sources = {
   'https://developer.mozilla.org/en/CSS/CSS_Reference' => 'a[rel=custom]',
@@ -32,15 +33,28 @@ sources.each do |url, selector|
     end
     href = href.gsub('://', ':$$').gsub('//', '/').gsub(':$$', '://')
     urls[name] = href
+    filename = name.gsub /^.*(\\|\/)/, ''
+    filename.gsub!(/[^0-9A-Za-z.\-]/, 'x')
+    paths[name] = "html/partial/#{filename}.html"
+    puts "paths[#{name}] = \"html/partial/#{filename}.html\""
   end
 end
 
-json = urls.to_json
-js = "window.paths = JSON.parse('#{json}');"
+urls = urls.to_json
+paths = paths.to_json
 
 f = File.open 'json/urls.json', 'w+'
-f.write json
+f.write urls
 f.close
+
+f = File.open 'json/paths.json', 'w+'
+f.write paths
+f.close
+
+f = File.open 'javascripts/urls.js', 'w+'
+f.write "window.urls = JSON.parse('#{urls}');"
+f.close
+
 f = File.open 'javascripts/paths.js', 'w+'
-f.write js
+f.write "window.paths = JSON.parse('#{paths}');"
 f.close
