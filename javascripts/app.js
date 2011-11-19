@@ -61,7 +61,7 @@ App = (function() {
       return window.scrollTo(0, 0);
     });
     $(".header h1 a").live("click", function(e) {
-      if (e.keyCode === 0) {
+      if (e.keyCode === 0 || e.button === 0) {
         app.load('');
       }
       return e.preventDefault();

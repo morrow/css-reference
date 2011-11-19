@@ -15,8 +15,7 @@ table tr td {
 
 input[type=search] {
   padding:.2em;
-  border:2px solid transparent;
-  border-bottom-color:#ccc;
+  border:2px solid #ccc;
   width:100%;
 }
 

@@ -74,7 +74,7 @@ class App
       window.scrollTo(0,0)
     $(".header h1 a").live "click", (e)->
       # load blank query
-      app.load('') if e.keyCode is 0
+      app.load('') if e.keyCode is 0 or e.button is 0
       # stop loading of page if left click 
       e.preventDefault()
     # html5 history handling
