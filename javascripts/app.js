@@ -110,9 +110,6 @@ App = (function() {
     }
     if (approximates.length <= 0) {
       html = "No results for: " + query;
-      for (attribute in this.paths) {
-        approximates.push(attribute);
-      }
     }
     if (approximates.length <= 0) {
       vendor = [];

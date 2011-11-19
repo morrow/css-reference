@@ -121,9 +121,6 @@ class App
     if approximates.length <= 0
       # set html to appropriate error message 
       html = "No results for: #{query}"
-      # append full list of attributes to approximate list for easier navigation
-      for attribute of @paths
-        approximates.push attribute
     # sort approximates if necessary
     if approximates.length <= 0
       vendor = []
