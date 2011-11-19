@@ -142,7 +142,7 @@ class App
       # re-assemble approximate array
       approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort())
     else
-      approximates = approximate.sort()
+      approximates = approximates.sort()
     # added sorted list of approximate matches to html string    
     html += @htmlify.htmlify(approximates)
     # fill approximate results element with html

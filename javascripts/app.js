@@ -133,7 +133,7 @@ App = (function() {
       }
       approximates = lower.sort().concat(upper.sort()).concat(special.sort()).concat(vendor.sort());
     } else {
-      approximates = approximate.sort();
+      approximates = approximates.sort();
     }
     html += this.htmlify.htmlify(approximates);
     $('.results .approximate').html(html);
