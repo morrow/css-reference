@@ -6,7 +6,8 @@ repo = 'https://github.com/morrow/CSS-Reference'
 files = Dir.glob 'html/partial/*.html'
 files.each do |file|
   file = file.sub 'html/', ''
-  html += "<li><a href='#{file}'>#{file}</a></li>"
+  name = file.gsub /partial\/|\.html/, ''
+  html += "<li><a href='#{file}'>#{name}</a></li>"
 end
 html = """
 <!DOCTYPE html>
