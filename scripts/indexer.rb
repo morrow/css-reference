@@ -19,15 +19,12 @@ html = """
   </head>
   <body>
     <h1>CSS Reference - Directory</h1>
-    <ul>
-      <li>
-        <h2><a href='#{path}/CSS-Reference'>Interactive Search</a></h2>
-      </li>
-      <li>
-        <h2><a href='#{repo}'>Github Repo</a></h2>
-      </li>
-      #{html}
-    </ul>
+    <p> Some item links listed below may not display the exact attribute name correctly, due to file-name limitations. </p>
+    <p>The page text will display the correct formatting for the attribute, however.</p>
+    <p><a href='#{path}/CSS-Reference'>Interactive Search</a></p>
+    <p><a href='#{repo}'>Github Repo</a></p>
+    <hr />
+    <ul> #{html} </ul>
   </body>
 </html>
 """
