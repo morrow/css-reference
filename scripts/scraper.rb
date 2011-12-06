@@ -33,9 +33,6 @@ if ARGV.length > 0
   urls = _urls
 end
 
-# update js version of paths
-json = open('json/paths.json').read
-
 # get timeout delay from robots.txt
 t = Time.now.to_i.to_s
 `wget #{robots} -O /tmp/#{t}.txt`
