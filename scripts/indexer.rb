@@ -4,9 +4,10 @@ html = ''
 path = 'http://morrow.github.com'
 repo = 'https://github.com/morrow/CSS-Reference'
 files = Dir.glob 'html/partial/*.html'
-files.each do |file|
+files.sort.each do |file|
   file = file.sub 'html/', ''
-  name = file.gsub /partial\/|\.html/, ''
+  name = file.gsub(/partial\/|\.html/, '')
+  name = ":#{name[1..-1]}" if name[0] == 'x' 
   html += "<li><a href='#{file}'>#{name}</a></li>"
 end
 html = """
