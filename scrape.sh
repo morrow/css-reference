@@ -6,8 +6,9 @@ ruby scripts/urls.rb
 ruby scripts/scraper.rb
 # parse html into partial html pages
 ruby scripts/parser.rb
-# concatenate directories into single files for searching
+# concatenate full html files into single file
 cat html/full/* > html/full.html
+# concatenate partial html files into single file
 cat html/partial/* > html/partial.html
-# index page (html/index.html)
+# generate index page (html/index.html)
 ruby scripts/indexer.rb
