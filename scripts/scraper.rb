@@ -54,11 +54,7 @@ urls.each do |unsafename, url|
   puts "Checking for #{name} in \"html/full/#{name}.html\""
   if not File.exists? "html/full/#{name}.html" or overwrite
     `wget "#{url}" -O "html/full/#{name}.html"`
-    begin
-      sleep delay
-    rescue
-      sleep 5
-    end
+    sleep delay
   else
     puts "File exists for #{name}"
   end
