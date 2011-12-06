@@ -71,6 +71,7 @@ App = (function() {
       var query;
       query = window.location.pathname.split('/');
       query = query[query.length - 1];
+      console.log("query pop: " + query);
       return app.load(query, false);
     };
   };

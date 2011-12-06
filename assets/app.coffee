@@ -84,6 +84,7 @@ class App
     window.onpopstate = (e)-> 
       query = window.location.pathname.split('/')
       query = query[query.length-1]
+      console.log "query pop: #{query}"
       app.load(query, false)
 
   load:(path='', commit=true, mode='push')->
