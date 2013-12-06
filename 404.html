@@ -13,11 +13,11 @@
   <script type="text/javascript">var query = window.location.pathname.toString().toLowerCase();
     if(query.match(/css/)) {
       query = window.location.pathname.replace('/CSS-Reference/', '');
-      var url = '/CSS-Reference/#'+ query;
+      var url = '/css-reference/#'+ query;
       if(window.history.replaceState) {
         window.history.replaceState({},query,url);      
         window.location.href = url;
-        //window.location.reload();
+        window.location.reload();
       }
       else {
         window.setTimeout('window.location.href = ' + url, 999)
