@@ -17,7 +17,7 @@
       if(window.history.replaceState) {
         window.history.replaceState({},query,url);      
         window.location.href = url;
-        window.location.reload();
+        //window.location.reload();
       }
       else {
         window.setTimeout('window.location.href = ' + url, 999)
