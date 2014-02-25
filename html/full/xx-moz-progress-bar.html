@@ -1,394 +1,518 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="developer-mozilla-org">
+<html lang="en-US" dir="ltr" id="developer-mozilla-org" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
-  <title>::-moz-progress-bar - MDN</title>
+          <script src="//cdn.optimizely.com/js/237572123.js"></script>
+  
+    <title>::-moz-progress-bar - CSS | MDN</title>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="MSSmartTagsPreventParsing" content="true">
-<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
-<meta name="Rating" content="General">
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="/en-US/">
+  <link rel="copyright" href="#copyright">
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon.ico">
 
-<link rel="home" href="/">
-<link rel="copyright" href="#copyright">
-<meta name="robots" content="index,follow" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
-<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=74892" />
-<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=74892" />
-<meta name="generator" content="MindTouch" />
-<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
-<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
-<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
-<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
-<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
-<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+                  <!--[if !IE 6]><!-->
+      <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=394ff4e" />
+              <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=394ff4e" />
+            <!--<![endif]-->
+      <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie.css" /><![endif]-->
+      <!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie7.css" /><![endif]-->
+      <!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie6.css" /><![endif]-->
+      <link rel="stylesheet" type="text/css" href="https://developer.cdn.mozilla.net/media/css/libs/font-awesome/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" media="print" href="https://developer.cdn.mozilla.net/media/css/mdn-print.css" />
+      <link rel="stylesheet" href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" />
 
-<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
-<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+      <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network" />
 
-<!--[if IE]>
-<meta http-equiv="imagetoolbar" content="no">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<script src="/skins/mdn/Transitional/js/html5.js"></script>
-<![endif]-->
 
-	<script type="text/javascript">
+      
+  
+    <link rel="stylesheet" media="print" href="https://developer.cdn.mozilla.net/media/css/wiki-print-min.css?build=394ff4e" />
+              <link rel="stylesheet" type="text/css"
+            href="/en-US/docs/Template:CustomCSS?raw=1" />
+    
+        
 
-		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
-	//hook in menu clicking events to the document's body
-	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
-	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script src="https://developer.mozilla.org/https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
 
-		
-
-			YAHOO.util.Event.onDOMReady(function() {
-			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
-		});
-	
-			YAHOO.util.Event.onDOMReady(function() {
-			MTComments.HookBehavior();
-		});
-		</script>
-<link type="text/css" rel="stylesheet" href="https://developer.mozilla.org/deki/scripts/res/syntax/SyntaxHighlighter.css" /><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shCore.js"></script><script type="text/javascript" src="https://developer.mozilla.org/deki/scripts/res/syntax/shBrushCss.js"></script><script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
-<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
-
-<script type="text/javascript">
-
-Deki.BaseHref = 'https://developer.mozilla.org';
-Deki.PageId = 74892;
-Deki.PageTitle = 'en/CSS/::-moz-progress-bar';
-Deki.PageLanguageCode = 'en';
-Deki.FollowRedirects = 1;
-Deki.PathTpl = '/skins/mdn';
-Deki.PathSkin = '/skins/mdn/Transitional';
-Deki.PathCommon = '/skins/common';
-Deki.UserName = 'Anonymous';
-Deki.Today = '18 Nov 2011';
-Deki.UserIsAnonymous = true;
-Deki.EditorConfigToken = '6d4cfa39';
-Deki.EditorStylesToken = '40b00d7b';
-Deki.PageEditable = false;
+  <script type="text/javascript">
+  // This represents the site configuration
+  window.mdn = {
+    build: '394ff4e',
+    ckeditor: {},
+    mediaPath: 'https://developer.cdn.mozilla.net/media/',
+    wiki: {
+      autosuggestTitleUrl: '/en-US/docs/get-documents'
+    }
+  };
+  // Ensures gettext always returns something, is always set
+  window.gettext = function(x) { return x; }
 </script>
-<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F%3A%3A-moz-progress-bar">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
- 
-</head>
+    <link rel="alternate" type="application/json" href="/en-US/docs/Web/CSS/::-moz-progress-bar$json" />
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-progress-bar" />
 
-<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCSSmozprogressbar" role="document">
+  <meta property="og:title" content="::-moz-progress-bar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://developer.mozilla.org/media/img/mdn-logo-sm.png" />
+  <meta property="og:site_name" content="Mozilla Developer Network" />
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-progress-bar" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/::-moz-progress-bar" />
+  <meta name="twitter:title" content="::-moz-progress-bar" />
+  <meta name="twitter:image" content="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" />
+  <meta name="twitter:site" content="@mozhacks" />
+  <meta name="twitter:creator" content="@mozhacks" />
+
+    <meta property="og:description" content="The ::-moz-progress-bar pseudo-element applies to the area of an HTML progress element that represents the amount of progress that has happened so far. This lets you, for example, change the color of progress bars."/>
+  <meta name="description" content="The ::-moz-progress-bar pseudo-element applies to the area of an HTML progress element that represents the amount of progress that has happened so far. This lets you, for example, change the color of progress bars." />
+  <meta name="twitter:description" content="The ::-moz-progress-bar pseudo-element applies to the area of an HTML progress element that represents the amount of progress that has happened so far. This lets you, for example, change the color of progress bars." />
+  
+
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  </head>
+
+<body id="" class="html-ltr document  " role="document">
 <!--[if lte IE 8]>
 <noscript><div class="global-notice">
-<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
-</div></noscript>
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of Microsoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p></div></noscript>
 <![endif]-->
-<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
-<header id="masthead" role="banner">
-  <div class="wrap">
-  
-    <div id="branding">
-      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+
+<!-- temporary beta notice -->
+
+
+  <header id="masthead" class="minor new-menu">
+    <div class="wrap">
+      <ul id="nav-access">
+        <li><a href="#language">Select language</a></li>
+                  <li><a href="#q">Skip to search</a></li>
+                <li><a href="#content">Skip to main content</a></li>
+      </ul>
+
+      <div id="branding">
+                <div id="logo"><a href="/en-US/"><img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71"> Mozilla Developer Network</a></div>
+              </div>
+
+              <nav id="nav">
+          <ul id="nav-main" role="menubar">
+            <li id="nav-main-docs" class="menu" rel="menuitem"><a href="#nav-sub-docs" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-docs" title="Read Documentation">Read<br /><em>Docs</em></a>
+              <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+                <ul>
+                  <li>
+                    <ul>
+
+                      <li><a href="/en-US/docs/Web/HTML?menu">HTML</a></li>
+                      <li><a href="/en-US/docs/Web/CSS?menu">CSS</a></li>
+                      <li><a href="/en-US/docs/Web/JavaScript?menu">JavaScript</a></li>
+                      <li><a href="/en-US/docs/Web/Guide/Graphics?menu">Graphics</a></li>
+                      <li><a href="/en-US/docs/Web/API?menu">APIs / DOM</a></li>
+                      <li><a href="/en-US/Apps?menu">Apps</a></li>
+                      <li><a href="/en-US/docs/tools?menu">Dev Tools</a></li>
+                      <li><a href="/en-US/docs/Web/MathML?menu">MathML</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><a href="/en-US/docs/Web/Tutorials?menu">Tutorials</a></li>
+                      <li><a href="/en-US/docs/Web/Reference?menu">References</a></li>
+                      <li><a href="/en-US/docs/Web/Guide?menu">Developer Guides</a></li>
+                      <li><a href="/en-US/docs/Accessibility?menu">Accessibility</a></li>
+                      <li><a href="/en-US/demos/?menu">Demos</a></li>
+                      <li><br /><br /><a href="/en-US/docs?menu">...more docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="nav-main-apps"><a href="https://marketplace.firefox.com/developers/?menu">Make<br /><em>Apps</em></a>
+            </li>
+            <li id="nav-main-firefox" class="menu" role="menuitem"><a href="#nav-sub-firefox" class="firefox toggle" aria-haspopup="true" aria-labelledby="nav-main-firefox">Build & Use<br /><em>Firefox</em></a>
+              <ul id="nav-sub-firefox" class="sub-menu">
+                <li><a href="/en-US/docs/Mozilla/Firefox_OS?menu">Firefox OS</a></li>
+                <li><a href="/en-US/docs/Mozilla/Firefox?menu">Firefox Desktop</a></li>
+                <li><a href="/en-US/docs/Mozilla/Mobile?menu">Mobile</a></li>
+                <li><a href="/en-US/docs/Mozilla/Add-ons?menu">Add-ons</a></li>
+              </ul>
+            </li>
+            <li id="nav-main-demos" role="menuitem"><a href="/en-US/demos/?menu" class="demos">See & Submit<br /><em>Demos</em></a></li>
+            <li id="nav-main-community" class="menu" role="menuitem"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Get<br /><em>Involved</em></a>
+              <ul id="nav-sub-community" class="sub-menu">
+                <li><a href="/en-US/docs/Project:MDN/Contributing/Join_the_community?menu">Join the Community</a></li>
+                <li><a href="/en-US/docs/Project:MDN/Contributing?menu">Contribute to MDN</a></li>
+                <li><a href="/en-US/events?menu">Events</a></li>
+                <li><a href="/en-US/docs/Project:MDN/Contributing/Follow_what_s_happening?menu">Tweets, Blogs, and More</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      
+            <ul class="user-state signed-out">
+    <li class="user-signin menu">
+    <form class="browserid" action="/en-US/users/browserid_verify" method="POST">
+        <input id="next" name="next" type="hidden" value="/en-US/docs/Web/CSS/::-moz-progress-bar?redirectlocale=en-US&amp;redirectslug=CSS%2F%3A%3A-moz-progress-bar"/>
+        <input required="required" type="hidden" name="assertion" id="id_assertion" />
+                
+                  <a href="#" target="_blank" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with Persona">Sign in</a>
+                      <div class="browserid-info sub-menu" aria-hidden="true">
+                    <h3>What's this?</h3> <p>MDN has switched to <a href="https://persona.org/" target="_blank" rel="external">Persona</a>, a safe and simple way to sign in with just your e-mail address. <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using Persona</a>.</p> <p><strong>Returning members:</strong> sign in with Persona and you'll be connected to your MDN profile (all your information is still here).</p> <p><strong>New members:</strong> sign in with Persona first, then you'll be able to set up your new MDN profile.</p>              <p><a href="#" target="_blank" class="browserid-signin" title="Sign in with Persona">Sign in</a></p>
+            </div>
+                  
+      </form>
+    </li>
+  </ul>
+
+      <form id="site-search" method="get" action="http://www.google.com/search"
+              data-url="/en-US/search">
+        <p>
+          <input type="search" role="search" placeholder="Search MDN" id="q" name="q" value="">
+          <noscript><button type="submit">Search</button></noscript>
+        </p>
+        <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+                <div id="site-search-gg"></div>
+              </form>
+      
+      <a href="//www.mozilla.org/" id="tabzilla">mozilla</a>
     </div>
+  </header>
 
-    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
-      <p>
-        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
-        <noscript><button type="submit">Search</button></noscript>
-      </p>
-      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
-      <div id="site-search-gg"></div>
-    </form>
-
-    <nav id="nav" role="menubar">
-      <ul id="nav-main">
-        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
-          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
-            <li id="nav-sub-web"><a href="/web">Web</a></li>
-            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
-            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
-            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
-          </ul>
-        </li>
-        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
-          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
-            <ul>
-              <li>
-                <ul>
-                  <li><a href="/en/HTML">HTML</a></li>
-                  <li><a href="/en/DOM">DOM</a></li>
-                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
-                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
-                  <li><a href="/en/SVG">SVG</a></li>
-                  <li><a href="/en/WebGL">WebGL</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
-                  <li><a href="/en/WebSockets">WebSockets</a></li>
-                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
-                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
-                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
-                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/CSS">CSS</a></li>
-                  <li><a href="/en/Using_gradients">Gradients</a></li>
-                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
-                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
-                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
-                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/JavaScript">JavaScript</a></li>
-                  <li><a href="/en/Ajax">Ajax</a></li>
-                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
-                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
-                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
-                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
-                </ul>
-              </li>
-            </ul>
-            <p><a href="/docs">More docs&hellip;</a></p>
-          </div>
-        </li>
-        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
-        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
-        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
-          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
-            <li><a href="/events">Events</a></li>
-            <li><a href="/discussions">Discussions</a></li>
-            <li><a href="/promote">Promote</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
     
-      <ul class="user-state">
-              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
-</li>
-        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F%3A%3A-moz-progress-bar" class="user-login">Log in</a></li>
-            </ul>
-
-  </div>
-</header>
-
-
-<section id="nav-toolbar">
-<div class="wrap">
-
-<nav id="tool-menus">
-  <ul id="tools">
-    <li class="menu">
-      <a href="#site-tools" class="toggle">Site tools</a>
-      <ul id="site-tools" class="sub-menu" role="navigation">
-         
-        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
-</li>
-        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
-</li>
-      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
-              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
-</li>
-              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
-</li>
-        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
-</li>
-      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
-      </ul>
-    </li>
-    <li class="menu">
-      <a href="#page-tools" class="toggle">This page</a>
-      <ul id="page-tools" class="sub-menu" role="navigation">
-                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
-                    <li class="page-history"><a href="/index.php?title=en/CSS/::-moz-progress-bar&action=history" title="Page history">History</a></li>
-                    <li class="page-talk">	<a href="/Talk:en/CSS/::-moz-progress-bar" title="Talk page">Talk page</a>
-</li>
-                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
-</li>
-            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=74892">Pages that link here</a></li>      </ul>
-    </li>
-    </ul>
-</nav>
-
+      
+  
+<!-- top toolbar -->
+<section id="nav-toolbar"><div><div class="wrap">
+  <!-- right floated navigation -->
+  <nav id="tool-menus" role="navigation">
+    <ul id="tools">
+      <li class="menu">
+        <a href="#page-tools" class="toggle">This page</a>
+        <ul id="page-tools" class="sub-menu">
+          <li class="page-print"> <a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+                      <li><a href="/en-US/docs/new?parent=6239">New sub-page</a></li>
+            <li><a href="/en-US/docs/new?clone=6239">Clone this page</a></li>
+                              
+                    
+                                      </ul>
+      </li>
+            <li class="menu">
+        <a href="#" class="toggle">Languages</a>
+        <ul id="translations">
+                      <li><a rel="internal" href="/fr/docs/CSS/::-moz-progress-bar" title="::-moz-progress-bar">Français</a></li>
+                    
+                      <li><a href="/en-US/docs/Web/CSS/::-moz-progress-bar$locales">Add translation</a></li>
+                  </ul>
+      </li>
+          </ul>
+  </nav>
+  
+  <!-- left crumb navigation -->
   <nav class="crumbs" role="navigation">
     <ol>
-      <li class="crumb-one"><a href="/">MDN</a></li>
-      <li class="crumb-two"><a href="/docs">Docs</a></li>
-    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
-<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
-<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
-<li class="last"><a href="https://developer.mozilla.org/en/CSS/::-moz-progress-bar" class="deki-ns current">::-moz-progress-bar</a></li> 
+              <li class="crumb"><a href="/en-US/docs/Web">Web technology for developers</a></li>
+              <li class="crumb"><a href="/en-US/docs/Web/CSS">CSS</a></li>
+            <li class="crumb">::-moz-progress-bar</li>
     </ol>
   </nav>
+  
+</div></div></section>
 
-</div>
-</section>
+
 
 <section id="content">
-<div class="wrap">
-  <div id="content-main" class="full">
-
-    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
-        
-    <article class="article PageDW-enCSSmozprogressbar" role="main">
-            
-            <div class="page-title hideforedit">
-              <h1 class="first" id="title">::-moz-progress-bar</h1>            
-      
-              <ul id="page-buttons">
-          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F%3A%3A-moz-progress-bar" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
-          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F%3A%3A-moz-progress-bar" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
-        </ul> 
+  <div class="wrap">
+    <div id="content-main" class="full">
+      <article class="article" role="main" 
+          data-current-revision="395581"
+          data-refresh-message="Your changes were merged. However, something else has been edited, so this page will be refreshed to reflect the changes."
+          data-cancel-edit-message="Abort editing in progress? Your unsaved changes will be discarded.">
+      <header id="article-head">
+        <div class="title">
+            <h1 class="page-title">::-moz-progress-bar</h1>
+                        <div class="offline-notice">
+              <a href="javascript:;" id="offline-notice-link"><i class="icon-book"></i>Read content offline</a>
             </div>
-      
-    <div class="page-content boxed">
 
-     
-      <div id="article-nav" class="hideforedit">      
-              <div class="page-toc">
-          <h2>Table of contents</h2>
-          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>1.1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>1.2.</span> <a href="#Examples" rel="internal">Examples</a></li></ol></li><li><span>2.</span> <a href="#See_also" rel="internal">See also</a></li></ol>        </div>
-      
-        <ul class="page-anchors">
-          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
-          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
-        </ul>
-
-              <div id="deki-page-alerts" class="disabled">
-				<div class="toggle">
-					<a href="javascript:void(0);" class="off">
-						<span>Page Notifications</span>
-						<span class="status">Off</span>
-					</a>
-				</div></div>      
-      
-      </div> 
-    
+            <div id="offline-dialog-content" title="Read MDN Offline">
+              <p>Did you know that you can read content offline by using one of these tools? If you would like to read offline MDN content in another format, let us know by commenting on <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665750" data-title="Bug 665750">Bug 665750</a>.</p>
+              <a href="http://kapeli.com/dash?ref=mdn" class="offline-dialog-mac" data-title="Dash App">
+                <img src="https://developer.mozilla.org/media/img/dash-app.png" alt="Dash App" />
+              </a>
+              <a href="http://zealdocs.org" target="_blank" class="offline-dialog-others" data-title="Zeal">
+                <i class="icon-book" style="font-size: 160px;"></i>
+              </a>
+            </div>
             
-      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><ol style="list-style-type:none; margin-left:0px; padding-left:15px;"><li><span>1.1.</span> <a href="#Summary" rel="internal">Summary</a></li><li><span>1.2.</span> <a href="#Examples" rel="internal">Examples</a></li></ol></li><li><span>2.</span> <a href="#See_also" rel="internal">See also</a></li></ol></div></div><div class="pageText" id="pageText">
-<p><span class="lang lang-en"><span class="lang lang-en">&laquo; <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> &laquo; <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span>  &laquo; <a title="en/CSS_Reference/Mozilla_Extensions" rel="internal" href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">CSS Reference:Mozilla Extensions</a></span></p>
-<div id="section_1"><span id="Summary"></span><h3 class="editable">Summary</h3>
-<p>The<code> ::-moz-progress-bar</code> pseudo-element applies to the area of an HTML&nbsp;
-<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/progress">&lt;progress&gt;</a></code>&nbsp;element that represents the amount of progress that has happened so far. This lets you, for example, change the color of progress bars.</p>
-<p>You have pretty broad capabilities to style the bar. This can be especially useful with indeterminate bars (via the 
-<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/%3Aindeterminate">:indeterminate</a></code> pseudo-class), where you may wish to substantially change the default appearance; you can change the width and positioning of the bar, for example. (By which we probably mean the whole element's dimensions and position, not just the painted part of the element, as featured in the screen shot below.)</p>
-</div><div id="section_2"><span id="Examples"></span><h3 class="editable">Examples</h3>
-<p>This example styles the progress meter portion of the progress bar with ID&nbsp;<code>redbar</code> with the color red.</p>
+                                    <div class="redirected-from" id="redirected-from">
+              <p>Redirected from <a href="/en-US/docs/CSS/::-moz-progress-bar?redirect=no">::-moz-progress-bar Redirect 1</a></p>
+            </div>
+                  </div>
+        <ul id="page-buttons">
+            <li class="page-history"><a href="/en-US/docs/Web/CSS/::-moz-progress-bar$history"><i class="icon-book"></i>History</a></li>
+            
+                                                                      <li class="page-edit"><a href="/en-US/docs/Web/CSS/::-moz-progress-bar$edit"><i class="icon-pencil"></i>Edit</a></li>
+                    </ul>
 
-          <pre name="code" class="css">#redbar::-moz-progress-bar {
+        
+               </header>
+
+           
+                                  
+            
+      <div id="wikiArticle" class="page-content boxed">
+                <div id="article-nav">
+          <div class="page-toc">
+            <h2>Table of Contents</h2>
+            <ol>
+              <li><ol><li><a href="#Summary" rel="internal">Summary</a><code></code><code></code><code></code><li><a href="#Examples" rel="internal">Examples</a><code></code></ol></li><li><a href="#See_also" rel="internal">See also</a><code></code>
+            </ol>
+          </div>
+          <ul class="page-anchors">
+            <li class="anchor-tags">
+                              <i class="icon-tags"></i><a href="#document-tags">Tags</a>
+                          </li>
+            <li class="anchor-files">
+                              <i class="icon-paper-clip"></i><a href="#page-attachments">Files</a>
+                          </li>
+          </ul>
+        </div>
+                                <p><span class="breadcrumbs cssRef_breadcrumbs">« <a href="/en-US/docs/CSS">CSS</a> 
+« <a href="/en-US/docs/CSS/css_reference">CSS Reference</a>  « <a href="/en-US/docs/CSS/css_reference/Mozilla_Extensions">Mozilla Extensions</a></span></p>
+<h3 id="Summary">Summary</h3>
+<p>The<code> ::-moz-progress-bar</code> pseudo-element applies to the area of an HTML <a href="/en-US/docs/Web/HTML/Element/progress" title="The HTML &lt;progress> Element is used to view the completion progress of a task. While the specifics of how it's displayed is left up to the browser developer, it's typically displayed as a progress bar. Javascript can be used to manipulate the value of progress bar."><code>&lt;progress&gt;</code></a> element that represents the amount of progress that has happened so far. This lets you, for example, change the color of progress bars.</p>
+<p>You have pretty broad capabilities to style the bar. This can be especially useful with indeterminate bars (via the <a href="/en-US/docs/Web/CSS/:indeterminate" title=""><code>:indeterminate</code></a> pseudo-class), where you may wish to substantially change the default appearance; you can change the width and positioning of the bar, for example. (By which we probably mean the whole element's dimensions and position, not just the painted part of the element, as featured in the screen shot below.)</p>
+<h3 id="Examples">Examples</h3>
+<p>This example styles the progress meter portion of the progress bar with ID <code>redbar</code> with the color red.</p>
+<pre class="brush: css">#redbar::-moz-progress-bar {
   background-color: red;
 }</pre>
-        
 <p>A bar using this style might look something like this:</p>
-<p><img alt="redbar.png" class="internal default" src="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png" /></p>
-<div id="section_3"><span id="See_also"></span><h2 class="editable">See also</h2>
-<ul> <li>
-<code><a rel="custom" href="https://developer.mozilla.org/en/HTML/Element/progress">&lt;progress&gt;</a></code></li>
-</ul></div></div></div></div>
-            <section class="page-meta">
-                  <section id="page-tags">
-            <h2>Tags <span class="sub">(3)</span></h2>
-              <a href="/index.php?title=Special:Tags&pageId=74892" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=NeedsTechnicalReview" title="NeedsTechnicalReview" tagid="17" class="text">NeedsTechnicalReview</a></li></ul></div>          </section>
-        
-                  <section id="page-files">
-            <h2>Attachments <span class="sub">(1)</span></h2>
-            <div id="pageFiles"><div class="filescontent" id="attachFiles"><div class="table" id="attachTable"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="16"></col><col width="16"></col><col width=""></col><col width="80"></col><col width="145"></col><col width="115"></col><col width="75"></col></colgroup><tbody><tr><th class="col1" colspan="3">File</th><th class="col4">Size</th><th class="col5">Date</th><th class="col6">Attached by</th><th class="col7">&nbsp;</th></tr><tr class="bg1" id="deki-file-row-5387"><td class="col1">&nbsp;</td><td class="col2"><a href="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png" class="filelink" title="redbar.png"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="mt-ext-png" alt="" /></span></a></td><td class="col3"><a href="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png" class="filelink" title="redbar.png">redbar.png</a><div><span id="" class="deki-file-description desctext nodescription">No description</span></div></td><td class="col4">2.96 kB</td><td class="col5">20:51, 16 Jun 2011</td><td class="col6"><a href="/User:Sheppy" class="link-user" rel="internal">Sheppy</a></td><td class="col7"><a href="#" id="deki-file-actions-5387" class="deki-file-actions downarrow actionmenu disabled">Actions</a><ul class="deki-file-menu dmenu disabled"><li class="menu-item new quickpopup disabled"><a href="https://developer.mozilla.org/index.php?title=Special:AttachNewVersion&file_id=5387" title="Attach new version"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Attach new version</span></a></li><li class="menu-item description disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachedit" alt="" /></span><span class="label">Edit description</span></a></li><li class="menu-item move disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachmove" alt="" /></span><span class="label">Move/rename</span></a></li><li class="menu-item delete disabled"><a href="#"><span class="icon"><img src="/skins/common/icons/icon-trans.gif" class="attachdel" alt="" /></span><span class="label">Delete</span></a></li></ul></td></tr></tbody></table></div></div></div>            <div id="deki-image-gallery-lite"><table class="table" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 1</th></tr><tr class="bg2"><td class="col1 image"><a rel="image-gallery-lite" class="lightbox" href="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png?size=webview" title="redbar.png"><img src="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png?size=thumb" title="redbar.png" alt="redbar.png" /></a><div class="information"><a href="https://developer.mozilla.org/@api/deki/files/5387/=redbar.png" title="View fullsize version">redbar.png</a></div></td><td class="col2">&nbsp;</td><td class="col3">&nbsp;</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
-          </section>
-        
-                        
-        </section>
+<p><img alt="redbar.png" class="internal default" src="/@api/deki/files/5387/=redbar.png"></p>
+<h2 id="See_also">See also</h2>
+<ul> <li><a href="/en-US/docs/Web/HTML/Element/progress" title="The HTML &lt;progress> Element is used to view the completion progress of a task. While the specifics of how it's displayed is left up to the browser developer, it's typically displayed as a progress bar. Javascript can be used to manipulate the value of progress bar."><code>&lt;progress&gt;</code></a></li>
+</ul>
+                  </div>
+    
+    <section class="page-meta">
+            <section class="page-tags" id="document-tags">
+        <h2><i class="icon-tags"></i>Tags (4)</h2>
+        <div id="deki-page-tags">
+          <ul class="tags tagit ui-widget ui-widget-content">
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS">CSS</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/NeedsTechnicalReview">NeedsTechnicalReview</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS%20Reference">CSS Reference</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS%20R%C3%A9f%C3%A9rence">CSS Référence</a>
+            </li>
+                      </ul>
         </div>
-
-    </article>
-
-    <p class="last-mod hideforedit">
-      Page last modified <a href="/index.php?title=en/CSS/::-moz-progress-bar&action=history" title="12:21, 18 Aug 2011">12:21, 18 Aug 2011</a> by <a href="/User:Sheppy" class="link-user" rel="internal">Sheppy</a>    </p>
-
-  </div><!-- /#content-main -->
-
-</div><!-- /.wrap -->
-</section><!-- /#content -->
-
-
-
-<footer id="site-info" role="contentinfo">
-<div class="wrap">
-  <div id="legal">
-    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
-    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
-    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
-  </div>
-  <p class="user-state">
-          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2F%3A%3A-moz-progress-bar" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+      </section>
       
+            <section class="page-meta">
+<section id="page-attachments">
+
+      <h2><i class="icon-paper-clip"></i>Attachments <bdi>(<span id="page-attachments-count">2</span>)</bdi></h2>
+  
+  
+  <p id="page-attachments-no-message" class="hidden">
+    This document has no attachments.
   </p>
+
+  <script>
+    mdn.wiki.attachments = [{"creatorUrl": "/en-US/profiles/Sheppy", "description": "", "creator": "Sheppy", "mime": "image/png", "date": "2011-06-16 20:51:11", "id": 3343, "size": 3031, "title": "redbar.png", "url": "https://mdn.mozillademos.org/files/3343/redbar.png", "html": "<tr data-revision-id=\"3616\" data-attachment-id=\"3343\">\n  <td class=\"attachment-name-cell\">\n    <a href=\"https://mdn.mozillademos.org/files/3343/redbar.png\" target=\"_blank\">redbar.png</a>\n      <div class=\"attachment-description\"></div>\n  </td>\n  <td>3031 bytes</td>\n  <td>2011-06-16 20:51:11</td>\n  <td><a href=\"/en-US/profiles/Sheppy\">Sheppy</a></td>\n</tr>", "revision": 3616}, {"creatorUrl": "/en-US/profiles/Sheppy", "description": "", "creator": "Sheppy", "mime": "image/png", "date": "2013-06-05 16:06:44", "id": 5387, "size": 33711, "title": "Insert live sample dialog", "url": "https://mdn.mozillademos.org/files/5387/insert-live-sample-template.png", "html": "<tr data-revision-id=\"5697\" data-attachment-id=\"5387\">\n  <td class=\"attachment-name-cell\">\n    <a href=\"https://mdn.mozillademos.org/files/5387/insert-live-sample-template.png\" target=\"_blank\">Insert live sample dialog</a>\n      <div class=\"attachment-description\"></div>\n  </td>\n  <td>33711 bytes</td>\n  <td>2013-06-05 16:06:44</td>\n  <td><a href=\"/en-US/profiles/Sheppy\">Sheppy</a></td>\n</tr>", "revision": 5697}];
+  </script>
+
+
+    <table cellpadding="0" cellspacing="0" id="page-attachments-table" class="">
+      <thead>
+        <th>File</th>
+        <th>Size</th>
+        <th>Date</th>
+        <th>Attached by</th>
+      </thead>
+      <tbody>
+                  <tr data-revision-id="3616" data-attachment-id="3343">
+  <td class="attachment-name-cell">
+    <a href="https://mdn.mozillademos.org/files/3343/redbar.png" target="_blank">redbar.png</a>
+      <div class="attachment-description"></div>
+  </td>
+  <td>3031 bytes</td>
+  <td>2011-06-16 20:51:11</td>
+  <td><a href="/en-US/profiles/Sheppy">Sheppy</a></td>
+</tr>
+                  <tr data-revision-id="5697" data-attachment-id="5387">
+  <td class="attachment-name-cell">
+    <a href="https://mdn.mozillademos.org/files/5387/insert-live-sample-template.png" target="_blank">Insert live sample dialog</a>
+      <div class="attachment-description"></div>
+  </td>
+  <td>33711 bytes</td>
+  <td>2013-06-05 16:06:44</td>
+  <td><a href="/en-US/profiles/Sheppy">Sheppy</a></td>
+</tr>
+              </tbody>
+    </table>
+
+
+  </section>
+</section>      
+      
+      <section id="doc-contributors" role="contentinfo">
+        Contributors to this page: <a href="/en-US/profiles/Sheppy">Sheppy</a>, <a href="/en-US/profiles/Ecmanaut">Ecmanaut</a>
+                          <br />
+          Last updated by:  
+          <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+          <time datetime="2013-05-10T13:13:59-07:00">May 10, 2013 1:13:59 PM</time>
+                        </section>
+    </section>
+  </article>
+  <form id="wiki-page-edit" class="editing" method="post" action="/en-US/docs/Web/CSS/::-moz-progress-bar$edit">
+      <input type="hidden" name="form" id="form" value="rev" />
+      <input type="hidden" name="content" id="content" value="" />
+  </form>
+      </div>
+   </div>
+    </section>  
+
+<section id="footbar">
+<div class="wrap">
+  <p>
+  Is MDN helpful to you? Please <a href="/en-US/docs/Project:Feedback">share your feedback</a> with us. Or join our <a id="dev-mdc-link" href="//lists.mozilla.org/listinfo/dev-mdc">mailing list about improving MDN content</a>.  </p>
 </div>
+</section>
+<footer id="site-info" class="footer" role="contentinfo">
+<div class="wrap">
+    <div id="legal">
+      <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+      <p id="copyright">&copy; 2005 - 2013 Mozilla Developer Network and individual contributors</p>
+      <p>
+      Content is available under <a href="/en-US/docs/Project:Copyrights">these licenses</a>      &bull; <a href="/en-US/docs/Project:About">About MDN</a>
+      &bull; <a href="//github.com/mozilla/kuma">Contribute to the code</a>
+      &bull; <a href="//www.mozilla.org/en-US/privacy">Privacy Policy</a>
+    </div>
+                <form class="languages go" method="get" action="/en-US/docs">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/docs/Web/CSS/::-moz-progress-bar" selected>
+          English (US)
+        </option>
+                  <option value="/fr/docs/CSS/::-moz-progress-bar">
+            Français
+          </option>      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+      </div>
 </footer>
 
+<script src="/en-US/jsi18n/build:394ff4e"></script>
 
-			
-<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
-	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
-		<div class="ui-msg-opt">
-			<ul>
-				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
-				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
-			</ul>
-			<div class="ui-msg-autoclose">
-				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
-				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
-			</div>
-		</div>
-		<div class="ui-msg-header" id="MTMessageHeader"></div>
-		<div class="ui-msg-desc" id="MTMessageDesc"></div>
-		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
-			<p>Viewing Details:</p>
-		</div>
-	</div>
-</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
-<!-- Served by pm-dekiwiki01.mozilla.org in 0.56 secs. -->
-<!--
-	Verb      Path                                              Time(ms)       API Stats
-	GET       /deki/site/settings                                   5.84       request-time-ms=2; mysql-queries=1; mysql-time-ms=0; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
-	GET       /deki/users/=Anonymous                                6.58       request-time-ms=4; mysql-queries=4; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/license                                         6.91       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
-	GET       /deki/pages/74892/contents                           60.52       request-time-ms=58; mysql-queries=36; mysql-time-ms=34; cache-ratio=1.79; cache-hit=84; cache-miss=-37; cache-del=0; cache-ins=37;
-	GET       /deki/pages/74892                                    76.41       request-time-ms=73; mysql-queries=22; mysql-time-ms=64; cache-ratio=4.83; cache-hit=29; cache-miss=-23; cache-del=0; cache-ins=23;
-	GET       /deki/pages/74892/info                                6.15       request-time-ms=4; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/pages/74892/tags                                8.88       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
-	GET       /deki/site/properties                                 8.78       request-time-ms=6; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/site/nav/=en%252FCSS%252F%253A%253A-moz-progress-bar/full   307.54       request-time-ms=304; mysql-queries=6; mysql-time-ms=267; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
-	GET       /deki/pages/74892/tags                                7.83       request-time-ms=6; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
-	                                                             =======
-	                                                     Total:   495.44      
-	                                                     Ideal:   487.61      
--->
- 
-<div id="popupMessage"></div> <div id="popupMask"></div>
-<div id="menuFiller"></div>
-<div id="bodyHeight"></div>
+          <script src="//mozorg.cdn.mozilla.net/en-US/tabzilla/tabzilla.js" async></script>
+      <script src="//www.google.com/jsapi" type="text/javascript"></script>
+      <script src="https://login.persona.org/include.js" type="text/javascript"></script>
 
-<script src="https://www.google.com/jsapi"></script>
-<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+      
+      <script src="https://developer.cdn.mozilla.net/media/js/mdn-min.js?build=394ff4e"></script>
+              <script src="https://developer.cdn.mozilla.net/media/js/wiki-min.js?build=394ff4e"></script>
+                  <script type="text/javascript">
+        // Event tracking for the new menu
+        $(function() {
+          $('#nav-main').on('click', 'a', function(e) {
+            window._gaq && _gaq.push(['_trackEvent', 'Menu', 'Click', e.target.innerHTML, e.target.href]);
+          });
+        });
+      </script>
+  
+  
+      <script src="https://developer.cdn.mozilla.net/media/js/libs/ckeditor/ckeditor.js?build=394ff4e"></script>
+<script src="https://developer.cdn.mozilla.net/media/js/libs/ckeditor/adapters/jquery.js?build=394ff4e"></script>
 
- 
-<script type="text/javascript">
-//<![CDATA[
-var _tag=new WebTrends();
-_tag.dcsGetId();
-// Add custom parameters here.
-//_tag.DCSext.param_name=param_value;
-_tag.dcsCollect();
-//]]>>
-</script>
-<noscript>
-<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
-</noscript>
-<!-- END OF SmartSource Data Collector TAG -->
+ <script src="https://developer.cdn.mozilla.net/media/redesign/js/wiki-editor.js?build=394ff4e"></script> 
+    <!-- include syntax highlighting scripts -->
+<link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/syntax-prism-min.css?build=394ff4e" />
+<script type="text/javascript" src="https://developer.cdn.mozilla.net/media/js/libs/prism/prism.js" data-manual></script>
+<script src="https://developer.cdn.mozilla.net/media/js/syntax-prism-min.js?build=394ff4e"></script>
+        <script type="text/javascript">
+      (function($, ga) {
+        $('#offline-notice-link').on('click', function() {
+          // Open the dialog first
+          $('#offline-dialog-content').dialog({ 
+            width: 540, 
+            modal: true, 
+            buttons: { 
+              Ok: function() { 
+                $(this).dialog('close'); 
+              } 
+            } 
+          });
+          // Record opening of the menu
+          ga.push(['_trackEvent', 'Offline Content Dialog - Open', 'Click', 'Offline content link', '1']);
+        });
 
-<script type="text/javascript">/*<![CDATA[*/$(function(){dp.SyntaxHighlighter.HighlightAll('code');});/*]]>*/</script> 
+        $('#offline-dialog-content').on('click', 'a', function(e, c) {
+          // Record if they go to any of the links (bug link or either option)
+          var title = $(e.currentTarget).attr('data-title');
+          ga.push(['_trackEvent', 'Offline Content Dialog - ' + title, 'Click', title, '1']);
+        });
+      })(jQuery, window._gaq || []);
+    </script>
+    
+
+<script src="/en-US/waffles.js" type="text/javascript" async></script>
 </body>
 </html>
+
+
+
+ 

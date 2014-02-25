@@ -1,381 +1,551 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="developer-mozilla-org">
+<html lang="en-US" dir="ltr" id="developer-mozilla-org" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
-  <title>counter - MDN</title>
+          <script src="//cdn.optimizely.com/js/237572123.js"></script>
+  
+    <title>Using CSS counters - Web developer guide | MDN</title>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="MSSmartTagsPreventParsing" content="true">
-<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
-<meta name="Rating" content="General">
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="/en-US/">
+  <link rel="copyright" href="#copyright">
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon.ico">
 
-<link rel="home" href="/">
-<link rel="copyright" href="#copyright">
-<meta name="robots" content="index,follow" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
-<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=4134" />
-<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=4134" />
-<meta name="generator" content="MindTouch" />
-<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
-<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
-<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
-<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
-<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
-<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+                  <!--[if !IE 6]><!-->
+      <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=394ff4e" />
+              <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=394ff4e" />
+            <!--<![endif]-->
+      <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie.css" /><![endif]-->
+      <!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie7.css" /><![endif]-->
+      <!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie6.css" /><![endif]-->
+      <link rel="stylesheet" type="text/css" href="https://developer.cdn.mozilla.net/media/css/libs/font-awesome/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" media="print" href="https://developer.cdn.mozilla.net/media/css/mdn-print.css" />
+      <link rel="stylesheet" href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" />
 
-<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
-<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+      <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network" />
 
-<!--[if IE]>
-<meta http-equiv="imagetoolbar" content="no">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<script src="/skins/mdn/Transitional/js/html5.js"></script>
-<![endif]-->
 
-	<script type="text/javascript">
+      
+  
+    <link rel="stylesheet" media="print" href="https://developer.cdn.mozilla.net/media/css/wiki-print-min.css?build=394ff4e" />
+              <link rel="stylesheet" type="text/css"
+            href="/en-US/docs/Template:CustomCSS?raw=1" />
+    
+        
 
-		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
-	//hook in menu clicking events to the document's body
-	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
-	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script src="https://developer.mozilla.org/https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
 
-		
-
-			YAHOO.util.Event.onDOMReady(function() {
-			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
-		});
-	
-			YAHOO.util.Event.onDOMReady(function() {
-			MTComments.HookBehavior();
-		});
-		</script>
-<script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
-<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
-
-<script type="text/javascript">
-
-Deki.BaseHref = 'https://developer.mozilla.org';
-Deki.PageId = 4134;
-Deki.PageTitle = 'en/CSS/counter';
-Deki.PageLanguageCode = 'en';
-Deki.FollowRedirects = 1;
-Deki.PathTpl = '/skins/mdn';
-Deki.PathSkin = '/skins/mdn/Transitional';
-Deki.PathCommon = '/skins/common';
-Deki.UserName = 'Anonymous';
-Deki.Today = '18 Nov 2011';
-Deki.UserIsAnonymous = true;
-Deki.EditorConfigToken = 'ed61d16f';
-Deki.EditorStylesToken = 'c09d262d';
-Deki.PageEditable = false;
+  <script type="text/javascript">
+  // This represents the site configuration
+  window.mdn = {
+    build: '394ff4e',
+    ckeditor: {},
+    mediaPath: 'https://developer.cdn.mozilla.net/media/',
+    wiki: {
+      autosuggestTitleUrl: '/en-US/docs/get-documents'
+    }
+  };
+  // Ensures gettext always returns something, is always set
+  window.gettext = function(x) { return x; }
 </script>
-<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fcounter">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
- 
-</head>
+    <link rel="alternate" type="application/json" href="/en-US/docs/Web/Guide/CSS/Counters$json" />
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters" />
 
-<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCSScounter" role="document">
+  <meta property="og:title" content="Using CSS counters" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://developer.mozilla.org/media/img/mdn-logo-sm.png" />
+  <meta property="og:site_name" content="Mozilla Developer Network" />
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters" />
+  <meta name="twitter:title" content="Using CSS counters" />
+  <meta name="twitter:image" content="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" />
+  <meta name="twitter:site" content="@mozhacks" />
+  <meta name="twitter:creator" content="@mozhacks" />
+
+    <meta property="og:description" content="CSS counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they&#39;re used. This lets you adjust the appearance of content based on its placement in the document."/>
+  <meta name="description" content="CSS counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they&#39;re used. This lets you adjust the appearance of content based on its placement in the document." />
+  <meta name="twitter:description" content="CSS counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they&#39;re used. This lets you adjust the appearance of content based on its placement in the document." />
+  
+
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  </head>
+
+<body id="" class="html-ltr document  " role="document">
 <!--[if lte IE 8]>
 <noscript><div class="global-notice">
-<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
-</div></noscript>
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of Microsoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p></div></noscript>
 <![endif]-->
-<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
-<header id="masthead" role="banner">
-  <div class="wrap">
-  
-    <div id="branding">
-      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+
+<!-- temporary beta notice -->
+
+
+  <header id="masthead" class="minor new-menu">
+    <div class="wrap">
+      <ul id="nav-access">
+        <li><a href="#language">Select language</a></li>
+                  <li><a href="#q">Skip to search</a></li>
+                <li><a href="#content">Skip to main content</a></li>
+      </ul>
+
+      <div id="branding">
+                <div id="logo"><a href="/en-US/"><img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71"> Mozilla Developer Network</a></div>
+              </div>
+
+              <nav id="nav">
+          <ul id="nav-main" role="menubar">
+            <li id="nav-main-docs" class="menu" rel="menuitem"><a href="#nav-sub-docs" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-docs" title="Read Documentation">Read<br /><em>Docs</em></a>
+              <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+                <ul>
+                  <li>
+                    <ul>
+
+                      <li><a href="/en-US/docs/Web/HTML?menu">HTML</a></li>
+                      <li><a href="/en-US/docs/Web/CSS?menu">CSS</a></li>
+                      <li><a href="/en-US/docs/Web/JavaScript?menu">JavaScript</a></li>
+                      <li><a href="/en-US/docs/Web/Guide/Graphics?menu">Graphics</a></li>
+                      <li><a href="/en-US/docs/Web/API?menu">APIs / DOM</a></li>
+                      <li><a href="/en-US/Apps?menu">Apps</a></li>
+                      <li><a href="/en-US/docs/tools?menu">Dev Tools</a></li>
+                      <li><a href="/en-US/docs/Web/MathML?menu">MathML</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><a href="/en-US/docs/Web/Tutorials?menu">Tutorials</a></li>
+                      <li><a href="/en-US/docs/Web/Reference?menu">References</a></li>
+                      <li><a href="/en-US/docs/Web/Guide?menu">Developer Guides</a></li>
+                      <li><a href="/en-US/docs/Accessibility?menu">Accessibility</a></li>
+                      <li><a href="/en-US/demos/?menu">Demos</a></li>
+                      <li><br /><br /><a href="/en-US/docs?menu">...more docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="nav-main-apps"><a href="https://marketplace.firefox.com/developers/?menu">Make<br /><em>Apps</em></a>
+            </li>
+            <li id="nav-main-firefox" class="menu" role="menuitem"><a href="#nav-sub-firefox" class="firefox toggle" aria-haspopup="true" aria-labelledby="nav-main-firefox">Build & Use<br /><em>Firefox</em></a>
+              <ul id="nav-sub-firefox" class="sub-menu">
+                <li><a href="/en-US/docs/Mozilla/Firefox_OS?menu">Firefox OS</a></li>
+                <li><a href="/en-US/docs/Mozilla/Firefox?menu">Firefox Desktop</a></li>
+                <li><a href="/en-US/docs/Mozilla/Mobile?menu">Mobile</a></li>
+                <li><a href="/en-US/docs/Mozilla/Add-ons?menu">Add-ons</a></li>
+              </ul>
+            </li>
+            <li id="nav-main-demos" role="menuitem"><a href="/en-US/demos/?menu" class="demos">See & Submit<br /><em>Demos</em></a></li>
+            <li id="nav-main-community" class="menu" role="menuitem"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Get<br /><em>Involved</em></a>
+              <ul id="nav-sub-community" class="sub-menu">
+                <li><a href="/en-US/docs/Project:MDN/Contributing/Join_the_community?menu">Join the Community</a></li>
+                <li><a href="/en-US/docs/Project:MDN/Contributing?menu">Contribute to MDN</a></li>
+                <li><a href="/en-US/events?menu">Events</a></li>
+                <li><a href="/en-US/docs/Project:MDN/Contributing/Follow_what_s_happening?menu">Tweets, Blogs, and More</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      
+            <ul class="user-state signed-out">
+    <li class="user-signin menu">
+    <form class="browserid" action="/en-US/users/browserid_verify" method="POST">
+        <input id="next" name="next" type="hidden" value="/en-US/docs/Web/Guide/CSS/Counters?redirectlocale=en-US&amp;redirectslug=CSS%2FCounters"/>
+        <input required="required" type="hidden" name="assertion" id="id_assertion" />
+                
+                  <a href="#" target="_blank" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with Persona">Sign in</a>
+                      <div class="browserid-info sub-menu" aria-hidden="true">
+                    <h3>What's this?</h3> <p>MDN has switched to <a href="https://persona.org/" target="_blank" rel="external">Persona</a>, a safe and simple way to sign in with just your e-mail address. <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using Persona</a>.</p> <p><strong>Returning members:</strong> sign in with Persona and you'll be connected to your MDN profile (all your information is still here).</p> <p><strong>New members:</strong> sign in with Persona first, then you'll be able to set up your new MDN profile.</p>              <p><a href="#" target="_blank" class="browserid-signin" title="Sign in with Persona">Sign in</a></p>
+            </div>
+                  
+      </form>
+    </li>
+  </ul>
+
+      <form id="site-search" method="get" action="http://www.google.com/search"
+              data-url="/en-US/search">
+        <p>
+          <input type="search" role="search" placeholder="Search MDN" id="q" name="q" value="">
+          <noscript><button type="submit">Search</button></noscript>
+        </p>
+        <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+                <div id="site-search-gg"></div>
+              </form>
+      
+      <a href="//www.mozilla.org/" id="tabzilla">mozilla</a>
     </div>
+  </header>
 
-    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
-      <p>
-        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
-        <noscript><button type="submit">Search</button></noscript>
-      </p>
-      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
-      <div id="site-search-gg"></div>
-    </form>
-
-    <nav id="nav" role="menubar">
-      <ul id="nav-main">
-        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
-          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
-            <li id="nav-sub-web"><a href="/web">Web</a></li>
-            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
-            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
-            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
-          </ul>
-        </li>
-        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
-          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
-            <ul>
-              <li>
-                <ul>
-                  <li><a href="/en/HTML">HTML</a></li>
-                  <li><a href="/en/DOM">DOM</a></li>
-                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
-                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
-                  <li><a href="/en/SVG">SVG</a></li>
-                  <li><a href="/en/WebGL">WebGL</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
-                  <li><a href="/en/WebSockets">WebSockets</a></li>
-                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
-                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
-                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
-                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/CSS">CSS</a></li>
-                  <li><a href="/en/Using_gradients">Gradients</a></li>
-                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
-                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
-                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
-                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/JavaScript">JavaScript</a></li>
-                  <li><a href="/en/Ajax">Ajax</a></li>
-                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
-                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
-                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
-                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
-                </ul>
-              </li>
-            </ul>
-            <p><a href="/docs">More docs&hellip;</a></p>
-          </div>
-        </li>
-        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
-        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
-        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
-          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
-            <li><a href="/events">Events</a></li>
-            <li><a href="/discussions">Discussions</a></li>
-            <li><a href="/promote">Promote</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
     
-      <ul class="user-state">
-              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
-</li>
-        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fcounter" class="user-login">Log in</a></li>
-            </ul>
-
-  </div>
-</header>
-
-
-<section id="nav-toolbar">
-<div class="wrap">
-
-<nav id="tool-menus">
-  <ul id="tools">
-    <li class="menu">
-      <a href="#site-tools" class="toggle">Site tools</a>
-      <ul id="site-tools" class="sub-menu" role="navigation">
-         
-        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
-</li>
-        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
-</li>
-      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
-              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
-</li>
-              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
-</li>
-        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
-</li>
-      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
-      </ul>
-    </li>
-    <li class="menu">
-      <a href="#page-tools" class="toggle">This page</a>
-      <ul id="page-tools" class="sub-menu" role="navigation">
-                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
-                    <li class="page-history"><a href="/index.php?title=en/CSS/counter&action=history" title="Page history">History</a></li>
-                    <li class="page-talk">	<a href="/Talk:en/CSS/counter" title="Talk page">Talk page</a>
-</li>
-                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
-</li>
-            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=4134">Pages that link here</a></li>      </ul>
-    </li>
-    </ul>
-</nav>
-
+      
+  
+<!-- top toolbar -->
+<section id="nav-toolbar"><div><div class="wrap">
+  <!-- right floated navigation -->
+  <nav id="tool-menus" role="navigation">
+    <ul id="tools">
+      <li class="menu">
+        <a href="#page-tools" class="toggle">This page</a>
+        <ul id="page-tools" class="sub-menu">
+          <li class="page-print"> <a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+                      <li><a href="/en-US/docs/new?parent=6311">New sub-page</a></li>
+            <li><a href="/en-US/docs/new?clone=6311">Clone this page</a></li>
+                              
+                    
+                                      </ul>
+      </li>
+            <li class="menu">
+        <a href="#" class="toggle">Languages</a>
+        <ul id="translations">
+                      <li><a rel="internal" href="/fr/docs/CSS/Compteurs_CSS" title="Compteurs CSS">Français</a></li>
+                      <li><a rel="internal" href="/ja/docs/Web/Guide/CSS/Counters" title="CSS カウンタの利用">日本語</a></li>
+                      <li><a rel="internal" href="/pl/docs/Liczniki_CSS" title="Liczniki CSS">Polski</a></li>
+                      <li><a rel="internal" href="/zh-CN/docs/Web/Guide/CSS/Counters" title="使用CSS计数器">中文 (简体)</a></li>
+                    
+                      <li><a href="/en-US/docs/Web/Guide/CSS/Counters$locales">Add translation</a></li>
+                  </ul>
+      </li>
+          </ul>
+  </nav>
+  
+  <!-- left crumb navigation -->
   <nav class="crumbs" role="navigation">
     <ol>
-      <li class="crumb-one"><a href="/">MDN</a></li>
-      <li class="crumb-two"><a href="/docs">Docs</a></li>
-    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
-<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
-<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
-<li class="last"><a href="https://developer.mozilla.org/en/CSS/counter" class="deki-ns current">counter</a></li> 
+              <li class="crumb"><a href="/en-US/docs/Web">Web technology for developers</a></li>
+              <li class="crumb"><a href="/en-US/docs/Web/Guide">Web developer guide</a></li>
+              <li class="crumb"><a href="/en-US/docs/Web/Guide/CSS">CSS developer guide</a></li>
+            <li class="crumb">Using CSS counters</li>
     </ol>
   </nav>
+  
+</div></div></section>
 
-</div>
-</section>
+
 
 <section id="content">
-<div class="wrap">
-  <div id="content-main" class="full">
-
-    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
-        
-    <article class="article PageDW-enCSScounter" role="main">
-            
-            <div class="page-title hideforedit">
-              <h1 class="first" id="title">counter</h1>            
-      
-              <ul id="page-buttons">
-          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fcounter" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
-          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fcounter" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
-        </ul> 
+  <div class="wrap">
+    <div id="content-main" class="full">
+      <article class="article" role="main" 
+          data-current-revision="391785"
+          data-refresh-message="Your changes were merged. However, something else has been edited, so this page will be refreshed to reflect the changes."
+          data-cancel-edit-message="Abort editing in progress? Your unsaved changes will be discarded.">
+      <header id="article-head">
+        <div class="title">
+            <h1 class="page-title">Using CSS counters</h1>
+                        <div class="offline-notice">
+              <a href="javascript:;" id="offline-notice-link"><i class="icon-book"></i>Read content offline</a>
             </div>
-      
-    <div class="page-content boxed">
 
-     
-      <div id="article-nav" class="hideforedit">      
-              <div class="page-toc">
-          <h2>Table of contents</h2>
-          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Specifications" rel="internal">Specifications</a></li></ol>        </div>
-      
-        <ul class="page-anchors">
-          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
-          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
-        </ul>
-
-              <div id="deki-page-alerts" class="disabled">
-				<div class="toggle">
-					<a href="javascript:void(0);" class="off">
-						<span>Page Notifications</span>
-						<span class="status">Off</span>
-					</a>
-				</div></div>      
-      
-      </div> 
-    
+            <div id="offline-dialog-content" title="Read MDN Offline">
+              <p>Did you know that you can read content offline by using one of these tools? If you would like to read offline MDN content in another format, let us know by commenting on <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665750" data-title="Bug 665750">Bug 665750</a>.</p>
+              <a href="http://kapeli.com/dash?ref=mdn" class="offline-dialog-mac" data-title="Dash App">
+                <img src="https://developer.mozilla.org/media/img/dash-app.png" alt="Dash App" />
+              </a>
+              <a href="http://zealdocs.org" target="_blank" class="offline-dialog-others" data-title="Zeal">
+                <i class="icon-book" style="font-size: 160px;"></i>
+              </a>
+            </div>
             
-      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Specifications" rel="internal">Specifications</a></li></ol></div></div><div class="pageText" id="pageText">
-<p><span class="lang lang-en">&laquo; <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> &laquo; <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
-<p><br />
-<a rel="internal" href="https://developer.mozilla.org/Template:Fixall" title="Template:Fixall" class=" new">Template:Fixall</a></p>
-<p>also see:&nbsp;<a title="En/CSS Counters" class="internal" rel="internal" href="https://developer.mozilla.org/En/CSS_Counters">CSS Counters</a></p>
-<div id="section_1"><span id="Specifications"></span><h3 class="editable">Specifications</h3>
-<p><a class=" external" rel="external" href="http://www.w3.org/TR/CSS21/syndata.html#counter" title="http://www.w3.org/TR/CSS21/syndata.html#counter" target="_blank">http://www.w3.org/TR/CSS21/syndata.html#counter</a></p></div></div></div>
-            <section class="page-meta">
-                  <section id="page-tags">
-            <h2>Tags <span class="sub">(3)</span></h2>
-              <a href="/index.php?title=Special:Tags&pageId=4134" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=NeedsHelp" title="NeedsHelp" tagid="18" class="text">NeedsHelp</a></li></ul></div>          </section>
+                                    <div class="redirected-from" id="redirected-from">
+              <p>Redirected from <a href="/en-US/docs/CSS/Counters?redirect=no">Using CSS counters Redirect 2</a></p>
+            </div>
+                  </div>
+        <ul id="page-buttons">
+            <li class="page-history"><a href="/en-US/docs/Web/Guide/CSS/Counters$history"><i class="icon-book"></i>History</a></li>
+            
+                                                                      <li class="page-edit"><a href="/en-US/docs/Web/Guide/CSS/Counters$edit"><i class="icon-pencil"></i>Edit</a></li>
+                    </ul>
+
         
-                  <section id="page-files">
-            <h2>Attachments <span class="sub">(0)</span></h2>
-            <div id="pageFiles"><div class="nofiles">&nbsp;</div></div>            <div id="deki-image-gallery-lite"><table class="table empty" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 0</th></tr><tr class="bg2"><td class="col1 empty" colspan="3">No images to display in the gallery.</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
-          </section>
-        
-                        
-        </section>
+               </header>
+
+           
+                                  
+            
+      <div id="wikiArticle" class="page-content boxed">
+                <div id="article-nav">
+          <div class="page-toc">
+            <h2>Table of Contents</h2>
+            <ol>
+              <code></code><code></code><code></code><code></code><code></code><li><a href="#Using_counters" rel="internal">Using counters</a><code></code><code></code><li><a href="#Nesting_counters" rel="internal">Nesting counters</a><code></code><li><a href="#Specifications" rel="internal">Specifications</a><li><a href="#See_also" rel="internal">See also</a>
+            </ol>
+          </div>
+          <ul class="page-anchors">
+            <li class="anchor-tags">
+                              <i class="icon-tags"></i><a href="#document-tags">Tags</a>
+                          </li>
+            <li class="anchor-files">
+                              <i class="icon-paper-clip off"></i><span title="This document has no attachments">Files</span>
+                          </li>
+          </ul>
         </div>
-
-    </article>
-
-    <p class="last-mod hideforedit">
-      Page last modified <a href="/index.php?title=en/CSS/counter&action=history" title="17:24, 9 Mar 2009">17:24, 9 Mar 2009</a> by <a href="/User:Clarkbw" class="link-user" rel="internal">Clarkbw</a>    </p>
-
-  </div><!-- /#content-main -->
-
-</div><!-- /.wrap -->
-</section><!-- /#content -->
-
-
-
-<footer id="site-info" role="contentinfo">
-<div class="wrap">
-  <div id="legal">
-    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
-    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
-    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
-  </div>
-  <p class="user-state">
-          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fcounter" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
+                                <p><span class="seoSummary">CSS counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used. This lets you adjust the appearance of content based on its placement in the document.</span> CSS counters are an implementation of <a class="external" href="http://www.w3.org/TR/CSS21/generate.html#counters">Automatic counters and numbering</a> in CSS 2.1.</p>
+<p>The value of a counter is manipulated through the use of <a href="/en-US/docs/Web/CSS/counter-reset" title=""><code>counter-reset</code></a> and <a href="/en-US/docs/Web/CSS/counter-increment" title=""><code>counter-increment</code></a> can be displayed on a page using the <code>counter()</code> or <code>counters()</code> function of the <code><a href="/en-US/docs/CSS/content" title="CSS/content">content</a></code> property.</p>
+<h2 id="Using_counters" name="Using_counters">Using counters</h2>
+<p>To use a CSS counter, it must first be <a href="/en-US/docs/CSS/counter-reset" title="CSS/counter-reset">reset</a> to a value, 0 by default. To add the value of a counter to an element, use the <code>counter()</code> function. The following CSS adds to the beginning of each <code>h3</code> element "Section <em>&lt;the value of the counter&gt;</em>:".</p>
+<pre class="brush: css">body {
+  counter-reset: section;           /* Set the section counter to 0 */
+}
+h3:before {
+  counter-increment: section;      /* Increment the section counter */
+  content: "Section " counter(section) ": "; /* Display the counter */
+}
+</pre>
+<p>For example:</p>
+<pre class="brush: html">&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;h3&gt;Body&lt;/h3&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;</pre>
+<p><iframe frameborder="0" height="200" src="https://mdn.mozillademos.org/en-US/docs/Web/Guide/CSS/Counters$samples/Using_counters?revision=391785" width="300"></iframe></p>
+<h2 id="Nesting_counters" name="Nesting_counters">Nesting counters</h2>
+<p>A CSS counter can be especially useful to make outlined lists because a new instance of a CSS counter is automatically created in child elements. Using the <code>counters()</code> function, a string can be inserted between different levels of nested counters. For example this CSS:</p>
+<pre class="brush: css">ol {
+  counter-reset: section;                /* Creates a new instance of the
+                                            section counter with each ol
+                                            element */
+  list-style-type: none;
+}
+li:before {
+  counter-increment: section;            /* Increments only this instance
+                                            of the section counter */
+  content: counters(section, ".") " ";   /* Adds the value of all instances
+                                            of the section counter separated
+                                            by a ".". */
+}
+</pre>
+<p>Combined with the following HTML:</p>
+<pre class="brush: html">&lt;ol&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 1     --&gt;
+  &lt;li&gt;item               &lt;!-- 2     --&gt;
+    &lt;ol&gt;
+      &lt;li&gt;item&lt;/li&gt;      &lt;!-- 2.1   --&gt;
+      &lt;li&gt;item&lt;/li&gt;      &lt;!-- 2.2   --&gt;
+      &lt;li&gt;item           &lt;!-- 2.3   --&gt;
+        &lt;ol&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.1 --&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.2 --&gt;
+        &lt;/ol&gt;
+        &lt;ol&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.1 --&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.2 --&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.3 --&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;item&lt;/li&gt;      &lt;!-- 2.4   --&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 3     --&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 4     --&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 1     --&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 2     --&gt;
+&lt;/ol&gt;</pre>
+<p>Yields this result:</p>
+<p><iframe frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/Guide/CSS/Counters$samples/Nesting_counters?revision=391785"></iframe></p>
+<h2 id="Specifications" name="Specifications">Specifications</h2>
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="external" href="http://www.w3.org/TR/CSS2/generate.html#generate.html#counters" lang="en" title="The definition of 'counter-reset' in that specification.">CSS Level 2 (Revision 1)</a></td>
+      <td><span class="spec-REC">Recommendation</span></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="See_also" name="See_also">See also</h2>
+<ul>
+  <li><a href="/en-US/docs/CSS/counter-reset" title="CSS/counter-reset">counter-reset</a></li>
+  <li><a href="/en-US/docs/CSS/counter-increment" title="CSS/counter-increment">counter-increment</a></li>
+</ul>
+<p><em>There is an additional example available at <a class="external" href="http://www.mezzoblue.com/archives/2006/11/01/counter_intu/" rel="freelink">http://www.mezzoblue.com/archives/20.../counter_intu/</a>. This blog entry was posted on November 01, 2006, but appears to be accurate.</em></p>
+                  </div>
+    
+    <section class="page-meta">
+            <section class="page-tags" id="document-tags">
+        <h2><i class="icon-tags"></i>Tags (2)</h2>
+        <div id="deki-page-tags">
+          <ul class="tags tagit ui-widget ui-widget-content">
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS">CSS</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS%20Reference">CSS Reference</a>
+            </li>
+                      </ul>
+        </div>
+      </section>
       
-  </p>
+      
+      
+      <section id="doc-contributors" role="contentinfo">
+        Contributors to this page: <a href="/en-US/profiles/PablO">PablO</a>, <a href="/en-US/profiles/Sheppy">Sheppy</a>, <a href="/en-US/profiles/Fredchat">Fredchat</a>, <a href="/en-US/profiles/Spanglerco">Spanglerco</a>, <a href="/en-US/profiles/Miken32">Miken32</a>, <a href="/en-US/profiles/ethertank">ethertank</a>, <a href="/en-US/profiles/Nickolay">Nickolay</a>, <a href="/en-US/profiles/wlach">wlach</a>, <a href="/en-US/profiles/Mbear">Mbear</a>, <a href="/en-US/profiles/Ssmedberg">Ssmedberg</a>, <a href="/en-US/profiles/Pointy">Pointy</a>, <a href="/en-US/profiles/teoli">teoli</a>, <a href="/en-US/profiles/Ptak82">Ptak82</a>, <a href="/en-US/profiles/mmclark">mmclark</a>, <a href="/en-US/profiles/DBaron">DBaron</a>
+                          <br />
+          Last updated by:  
+          <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+          <time datetime="2013-05-09T12:35:41-07:00">May 9, 2013 12:35:41 PM</time>
+                      <br />
+            Last reviewed by:  
+            <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+            <time datetime="2013-05-09T12:35:41-07:00">May 9, 2013 12:35:41 PM</time>
+                        </section>
+    </section>
+  </article>
+  <form id="wiki-page-edit" class="editing" method="post" action="/en-US/docs/Web/Guide/CSS/Counters$edit">
+      <input type="hidden" name="form" id="form" value="rev" />
+      <input type="hidden" name="content" id="content" value="" />
+  </form>
+      </div>
+   </div>
+    </section>  
+
+<section id="footbar">
+<div class="wrap">
+  <p>
+  Is MDN helpful to you? Please <a href="/en-US/docs/Project:Feedback">share your feedback</a> with us. Or join our <a id="dev-mdc-link" href="//lists.mozilla.org/listinfo/dev-mdc">mailing list about improving MDN content</a>.  </p>
 </div>
+</section>
+<footer id="site-info" class="footer" role="contentinfo">
+<div class="wrap">
+    <div id="legal">
+      <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+      <p id="copyright">&copy; 2005 - 2013 Mozilla Developer Network and individual contributors</p>
+      <p>
+      Content is available under <a href="/en-US/docs/Project:Copyrights">these licenses</a>      &bull; <a href="/en-US/docs/Project:About">About MDN</a>
+      &bull; <a href="//github.com/mozilla/kuma">Contribute to the code</a>
+      &bull; <a href="//www.mozilla.org/en-US/privacy">Privacy Policy</a>
+    </div>
+                <form class="languages go" method="get" action="/en-US/docs">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/docs/Web/Guide/CSS/Counters" selected>
+          English (US)
+        </option>
+                  <option value="/fr/docs/CSS/Compteurs_CSS">
+            Français
+          </option>          <option value="/ja/docs/Web/Guide/CSS/Counters">
+            日本語
+          </option>          <option value="/pl/docs/Liczniki_CSS">
+            Polski
+          </option>          <option value="/zh-CN/docs/Web/Guide/CSS/Counters">
+            中文 (简体)
+          </option>      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+      </div>
 </footer>
 
+<script src="/en-US/jsi18n/build:394ff4e"></script>
 
-			
-<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
-	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
-		<div class="ui-msg-opt">
-			<ul>
-				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
-				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
-			</ul>
-			<div class="ui-msg-autoclose">
-				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
-				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
-			</div>
-		</div>
-		<div class="ui-msg-header" id="MTMessageHeader"></div>
-		<div class="ui-msg-desc" id="MTMessageDesc"></div>
-		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
-			<p>Viewing Details:</p>
-		</div>
-	</div>
-</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
-<!-- Served by pm-dekiwiki02.mozilla.org in 0.46 secs. -->
-<!--
-	Verb      Path                                              Time(ms)       API Stats
-	GET       /deki/site/settings                                   5.53       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
-	GET       /deki/users/=Anonymous                                5.79       request-time-ms=4; mysql-queries=4; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/license                                         6.23       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
-	GET       /deki/pages/4134/contents                            28.26       request-time-ms=26; mysql-queries=19; mysql-time-ms=18; cache-ratio=5.00; cache-hit=25; cache-miss=-20; cache-del=0; cache-ins=18;
-	GET       /deki/pages/4134                                     31.90       request-time-ms=29; mysql-queries=21; mysql-time-ms=21; cache-ratio=25.00; cache-hit=25; cache-miss=-24; cache-del=0; cache-ins=24;
-	GET       /deki/pages/4134/info                                 6.28       request-time-ms=5; mysql-queries=3; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/pages/4134/tags                                 8.98       request-time-ms=7; mysql-queries=5; mysql-time-ms=5; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
-	GET       /deki/site/properties                                11.63       request-time-ms=9; mysql-queries=4; mysql-time-ms=7; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/site/nav/=en%252FCSS%252Fcounter/full         299.13       request-time-ms=295; mysql-queries=6; mysql-time-ms=260; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
-	GET       /deki/pages/4134/tags                                 9.45       request-time-ms=7; mysql-queries=5; mysql-time-ms=6; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
-	                                                             =======
-	                                                     Total:   413.21      
-	                                                     Ideal:   403.76      
--->
- 
-<div id="popupMessage"></div> <div id="popupMask"></div>
-<div id="menuFiller"></div>
-<div id="bodyHeight"></div>
+          <script src="//mozorg.cdn.mozilla.net/en-US/tabzilla/tabzilla.js" async></script>
+      <script src="//www.google.com/jsapi" type="text/javascript"></script>
+      <script src="https://login.persona.org/include.js" type="text/javascript"></script>
 
-<script src="https://www.google.com/jsapi"></script>
-<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+      
+      <script src="https://developer.cdn.mozilla.net/media/js/mdn-min.js?build=394ff4e"></script>
+              <script src="https://developer.cdn.mozilla.net/media/js/wiki-min.js?build=394ff4e"></script>
+                  <script type="text/javascript">
+        // Event tracking for the new menu
+        $(function() {
+          $('#nav-main').on('click', 'a', function(e) {
+            window._gaq && _gaq.push(['_trackEvent', 'Menu', 'Click', e.target.innerHTML, e.target.href]);
+          });
+        });
+      </script>
+  
+  
+      <script src="https://developer.cdn.mozilla.net/media/js/libs/ckeditor/ckeditor.js?build=394ff4e"></script>
+<script src="https://developer.cdn.mozilla.net/media/js/libs/ckeditor/adapters/jquery.js?build=394ff4e"></script>
 
- 
-<script type="text/javascript">
-//<![CDATA[
-var _tag=new WebTrends();
-_tag.dcsGetId();
-// Add custom parameters here.
-//_tag.DCSext.param_name=param_value;
-_tag.dcsCollect();
-//]]>>
-</script>
-<noscript>
-<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
-</noscript>
-<!-- END OF SmartSource Data Collector TAG -->
+ <script src="https://developer.cdn.mozilla.net/media/redesign/js/wiki-editor.js?build=394ff4e"></script> 
+    <!-- include syntax highlighting scripts -->
+<link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/syntax-prism-min.css?build=394ff4e" />
+<script type="text/javascript" src="https://developer.cdn.mozilla.net/media/js/libs/prism/prism.js" data-manual></script>
+<script src="https://developer.cdn.mozilla.net/media/js/syntax-prism-min.js?build=394ff4e"></script>
+        <script type="text/javascript">
+      (function($, ga) {
+        $('#offline-notice-link').on('click', function() {
+          // Open the dialog first
+          $('#offline-dialog-content').dialog({ 
+            width: 540, 
+            modal: true, 
+            buttons: { 
+              Ok: function() { 
+                $(this).dialog('close'); 
+              } 
+            } 
+          });
+          // Record opening of the menu
+          ga.push(['_trackEvent', 'Offline Content Dialog - Open', 'Click', 'Offline content link', '1']);
+        });
 
- 
+        $('#offline-dialog-content').on('click', 'a', function(e, c) {
+          // Record if they go to any of the links (bug link or either option)
+          var title = $(e.currentTarget).attr('data-title');
+          ga.push(['_trackEvent', 'Offline Content Dialog - ' + title, 'Click', title, '1']);
+        });
+      })(jQuery, window._gaq || []);
+    </script>
+    
+
+<script src="/en-US/waffles.js" type="text/javascript" async></script>
 </body>
 </html>
+
+
+
+ 

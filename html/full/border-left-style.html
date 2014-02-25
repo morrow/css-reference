@@ -1,384 +1,1193 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="developer-mozilla-org">
+<html lang="en-US" dir="ltr" id="developer-mozilla-org" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
-  <title>border-left-style - MDN</title>
+          <script src="//cdn.optimizely.com/js/237572123.js"></script>
+  
+    <title>border-left-style - CSS | MDN</title>
 
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="MSSmartTagsPreventParsing" content="true">
-<meta name="Copyright" content="Copyright (c) 2005-2011 Mozilla.">
-<meta name="Rating" content="General">
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="/en-US/">
+  <link rel="copyright" href="#copyright">
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon.ico">
 
-<link rel="home" href="/">
-<link rel="copyright" href="#copyright">
-<meta name="robots" content="index,follow" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="alternate" type="application/rss+xml" title="What's new feed" href="/index.php?title=Special:Recentchanges&amp;feed=rss" />
-<link rel="alternate" type="application/rss+xml" title="Page and subpages changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;feedtype=subpagechanges&amp;pageid=14327" />
-<link rel="alternate" type="application/rss+xml" title="Page changes feed" href="/index.php?title=Special:Article&amp;type=feed&amp;pageid=14327" />
-<meta name="generator" content="MindTouch" />
-<link rel="search" type="application/opensearchdescription+xml" title="MDN Search" href="/deki/gui/opensearch.php?type=description" />
-<link rel="stylesheet" type="text/css" media="screen" href="/skins/common/css.php" /> <!--[if IE 7]><style type="text/css">@import "/skins/common/_ie7.css";</style><![endif]--><!--[if IE 6]><style type="text/css">@import "/skins/common/_ie.css";</style><![endif]--><link rel="stylesheet" type="text/css" media="print" href="/skins/common/print.css" />
-<link rel="stylesheet" type="text/css" media="screen,projection" href="/skins/mdn/Transitional/css.php">
-<!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie7.css"><![endif]-->
-<!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="/skins/mdn/Transitional/ie6.css"><![endif]-->
-<link rel="stylesheet" type="text/css" media="print" href="/skins/mdn/Transitional/print.css">
+                  <!--[if !IE 6]><!-->
+      <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=394ff4e" />
+              <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=394ff4e" />
+            <!--<![endif]-->
+      <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie.css" /><![endif]-->
+      <!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie7.css" /><![endif]-->
+      <!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie6.css" /><![endif]-->
+      <link rel="stylesheet" type="text/css" href="https://developer.cdn.mozilla.net/media/css/libs/font-awesome/css/font-awesome.min.css" />
+      <link rel="stylesheet" type="text/css" media="print" href="https://developer.cdn.mozilla.net/media/css/mdn-print.css" />
+      <link rel="stylesheet" href="//mozorg.cdn.mozilla.net/media/css/tabzilla-min.css" />
 
-<script type="text/javascript">CKEDITOR_BASEPATH = "/deki/plugins/page_editor_ckeditor/ckeditor/";</script>
-<script type="text/javascript" src="/skins/common/js.php?perms=LOGIN,BROWSE,READ,SUBSCRIBE"></script><script type="text/javascript">var _starttime = new Date().getTime();</script>
+      <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network" />
 
-<!--[if IE]>
-<meta http-equiv="imagetoolbar" content="no">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<script src="/skins/mdn/Transitional/js/html5.js"></script>
-<![endif]-->
 
-	<script type="text/javascript">
+      
+  
+    <link rel="stylesheet" media="print" href="https://developer.cdn.mozilla.net/media/css/wiki-print-min.css?build=394ff4e" />
+              <link rel="stylesheet" type="text/css"
+            href="/en-US/docs/Template:CustomCSS?raw=1" />
+    
+        
 
-		var aLt = aLt || [];aLt["attach-no-description"] = 'No description'; aLt["cancel"] = 'Cancel'; aLt["close"] = 'Close'; aLt["comment-delete"] = 'Are you sure you want to delete this comment?'; aLt["contentrating-title-popup"] = 'Thanks for your feedback'; aLt["error"] = 'Error'; aLt["error-permission-denied"] = 'Permission denied'; aLt["error-permission-details"] = 'Your account does not have sufficient permissions to perform that action.'; aLt["gallery-close"] = 'close'; aLt["gallery-next"] = 'next'; aLt["gallery-prev"] = 'prev'; aLt["internal-error"] = 'Sorry, but there was an internal problem - please try again soon.'; aLt["js-label_cancel"] = 'Cancel'; aLt["js-label_save"] = 'Save'; aLt["js-tooltip_cancel"] = 'Exit Without Saving Changes'; aLt["js-tooltip_save"] = 'Save and Exit (Alt+S)'; aLt["ldap-provide-credentials"] = 'Please provide external service login credentials.'; aLt["loading"] = 'Loading...'; aLt["menu-confirm-delete"] = 'Are you sure you want to delete this file?'; aLt["menu-delete-file"] = 'Delete'; aLt["menu-edit-description"] = 'Edit description'; aLt["menu-move-file"] = 'Move'; aLt["menu-previous-versions"] = 'Previous versions'; aLt["menu-view-original"] = 'View original'; aLt["ready"] = 'Ready'; aLt["remove-tag"] = 'Remove tag'; aLt["restore-tag"] = 'Restore tag'; aLt["adding-tags"] = 'Adding Tags...'; aLt["save"] = 'Save'; aLt["submit"] = 'Submit'; aLt["wikibits-attach-another"] = 'Attach another file'; aLt["wikibits-attach-file"] = 'Attach File'; aLt["wikibits-cant-attach-editing"] = 'Sorry, you can\'t attach files while editing a page. Please close the editor first.'; aLt["wikibits-edit-section"] = 'Edit section'; aLt["wikibits-remove-file"] = 'Remove file'; aLt["advanced-search"] = 'Advanced Search'; aLt["standard-search"] = 'Standard Search';  var wfMsg = wfMsg || function (key) { return aLt[key] ? aLt[key] : 'MISSING: ' + key; };
-	//hook in menu clicking events to the document's body
-	YAHOO.util.Event.addListener(document, "click", function () { DWMenu.BodyClick(); });
-	YAHOO.util.Event.onDOMReady(function () { new clientWindow });
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script src="https://developer.mozilla.org/https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
 
-		
-
-			YAHOO.util.Event.onDOMReady(function() {
-			tb_init("a.lightbox, area.lightbox, input.lightbox, a[rel='awesomebox']");//pass where to apply thickbox
-		});
-	
-			YAHOO.util.Event.onDOMReady(function() {
-			MTComments.HookBehavior();
-		});
-		</script>
-<script type="text/javascript" src="/deki/plugins/nav_pane/rgbcolor.js"></script>
-<script type="text/javascript" src="/deki/plugins/nav_pane/nav.js"></script>
-
-<script type="text/javascript">
-
-Deki.BaseHref = 'https://developer.mozilla.org';
-Deki.PageId = 14327;
-Deki.PageTitle = 'en/CSS/border-left-style';
-Deki.PageLanguageCode = 'en';
-Deki.FollowRedirects = 1;
-Deki.PathTpl = '/skins/mdn';
-Deki.PathSkin = '/skins/mdn/Transitional';
-Deki.PathCommon = '/skins/common';
-Deki.UserName = 'Anonymous';
-Deki.Today = '18 Nov 2011';
-Deki.UserIsAnonymous = true;
-Deki.EditorConfigToken = 'eb2e2214';
-Deki.EditorStylesToken = '50a140b0';
-Deki.PageEditable = false;
+  <script type="text/javascript">
+  // This represents the site configuration
+  window.mdn = {
+    build: '394ff4e',
+    ckeditor: {},
+    mediaPath: 'https://developer.cdn.mozilla.net/media/',
+    wiki: {
+      autosuggestTitleUrl: '/en-US/docs/get-documents'
+    }
+  };
+  // Ensures gettext always returns something, is always set
+  window.gettext = function(x) { return x; }
 </script>
-<script type="text/javascript">aLt["commercial-required"] = 'Gather feedback on your content with <strong>community scoring</strong> - these ratings weight results in adaptive search. Through curation analytics, ratings are used to highlight pages in need of attention. <a href="http://www.mindtouch.com/redir/mindtouch-tcs/">Learn more on enabling these capabilities with MindTouch 2010.</a>';aLt["login-required"] = 'You must be <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fborder-left-style">logged in</a> to perform that action';</script><link href="/skins/common/custom_css.php" rel="stylesheet" type="text/css" /> 
- 
-</head>
+    <link rel="alternate" type="application/json" href="/en-US/docs/Web/CSS/border-left-style$json" />
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style" />
 
-<body id="docs" class="section-docs en ltr yui-skin-sam PageDW-enCSSborderleftstyle" role="document">
+  <meta property="og:title" content="border-left-style" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://developer.mozilla.org/media/img/mdn-logo-sm.png" />
+  <meta property="og:site_name" content="Mozilla Developer Network" />
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style" />
+  <meta name="twitter:title" content="border-left-style" />
+  <meta name="twitter:image" content="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" />
+  <meta name="twitter:site" content="@mozhacks" />
+  <meta name="twitter:creator" content="@mozhacks" />
+
+    <meta property="og:description" content="The border-left-style CSS property sets the line style of the left border of a box."/>
+  <meta name="description" content="The border-left-style CSS property sets the line style of the left border of a box." />
+  <meta name="twitter:description" content="The border-left-style CSS property sets the line style of the left border of a box." />
+  
+
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  </head>
+
+<body id="" class="html-ltr document  " role="document">
 <!--[if lte IE 8]>
 <noscript><div class="global-notice">
-<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of MicroSoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p>
-</div></noscript>
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of Microsoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p></div></noscript>
 <![endif]-->
-<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
-<header id="masthead" role="banner">
-  <div class="wrap">
-  
-    <div id="branding">
-      <h1 id="logo"><a href="/"><img src="/skins/mdn/Transitional/img/mdn-logo-compact.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="148" height="46"></a></h1>
+
+<!-- temporary beta notice -->
+
+
+  <header id="masthead" class="minor new-menu">
+    <div class="wrap">
+      <ul id="nav-access">
+        <li><a href="#language">Select language</a></li>
+                  <li><a href="#q">Skip to search</a></li>
+                <li><a href="#content">Skip to main content</a></li>
+      </ul>
+
+      <div id="branding">
+                <div id="logo"><a href="/en-US/"><img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71"> Mozilla Developer Network</a></div>
+              </div>
+
+              <nav id="nav">
+          <ul id="nav-main" role="menubar">
+            <li id="nav-main-docs" class="menu" rel="menuitem"><a href="#nav-sub-docs" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-docs" title="Read Documentation">Read<br /><em>Docs</em></a>
+              <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+                <ul>
+                  <li>
+                    <ul>
+
+                      <li><a href="/en-US/docs/Web/HTML?menu">HTML</a></li>
+                      <li><a href="/en-US/docs/Web/CSS?menu">CSS</a></li>
+                      <li><a href="/en-US/docs/Web/JavaScript?menu">JavaScript</a></li>
+                      <li><a href="/en-US/docs/Web/Guide/Graphics?menu">Graphics</a></li>
+                      <li><a href="/en-US/docs/Web/API?menu">APIs / DOM</a></li>
+                      <li><a href="/en-US/Apps?menu">Apps</a></li>
+                      <li><a href="/en-US/docs/tools?menu">Dev Tools</a></li>
+                      <li><a href="/en-US/docs/Web/MathML?menu">MathML</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><a href="/en-US/docs/Web/Tutorials?menu">Tutorials</a></li>
+                      <li><a href="/en-US/docs/Web/Reference?menu">References</a></li>
+                      <li><a href="/en-US/docs/Web/Guide?menu">Developer Guides</a></li>
+                      <li><a href="/en-US/docs/Accessibility?menu">Accessibility</a></li>
+                      <li><a href="/en-US/demos/?menu">Demos</a></li>
+                      <li><br /><br /><a href="/en-US/docs?menu">...more docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="nav-main-apps"><a href="https://marketplace.firefox.com/developers/?menu">Make<br /><em>Apps</em></a>
+            </li>
+            <li id="nav-main-firefox" class="menu" role="menuitem"><a href="#nav-sub-firefox" class="firefox toggle" aria-haspopup="true" aria-labelledby="nav-main-firefox">Build & Use<br /><em>Firefox</em></a>
+              <ul id="nav-sub-firefox" class="sub-menu">
+                <li><a href="/en-US/docs/Mozilla/Firefox_OS?menu">Firefox OS</a></li>
+                <li><a href="/en-US/docs/Mozilla/Firefox?menu">Firefox Desktop</a></li>
+                <li><a href="/en-US/docs/Mozilla/Mobile?menu">Mobile</a></li>
+                <li><a href="/en-US/docs/Mozilla/Add-ons?menu">Add-ons</a></li>
+              </ul>
+            </li>
+            <li id="nav-main-demos" role="menuitem"><a href="/en-US/demos/?menu" class="demos">See & Submit<br /><em>Demos</em></a></li>
+            <li id="nav-main-community" class="menu" role="menuitem"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Get<br /><em>Involved</em></a>
+              <ul id="nav-sub-community" class="sub-menu">
+                <li><a href="/en-US/docs/Project:MDN/Contributing/Join_the_community?menu">Join the Community</a></li>
+                <li><a href="/en-US/docs/Project:MDN/Contributing?menu">Contribute to MDN</a></li>
+                <li><a href="/en-US/events?menu">Events</a></li>
+                <li><a href="/en-US/docs/Project:MDN/Contributing/Follow_what_s_happening?menu">Tweets, Blogs, and More</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+      
+            <ul class="user-state signed-out">
+    <li class="user-signin menu">
+    <form class="browserid" action="/en-US/users/browserid_verify" method="POST">
+        <input id="next" name="next" type="hidden" value="/en-US/docs/Web/CSS/border-left-style?redirectlocale=en-US&amp;redirectslug=CSS%2Fborder-left-style"/>
+        <input required="required" type="hidden" name="assertion" id="id_assertion" />
+                
+                  <a href="#" target="_blank" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with Persona">Sign in</a>
+                      <div class="browserid-info sub-menu" aria-hidden="true">
+                    <h3>What's this?</h3> <p>MDN has switched to <a href="https://persona.org/" target="_blank" rel="external">Persona</a>, a safe and simple way to sign in with just your e-mail address. <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using Persona</a>.</p> <p><strong>Returning members:</strong> sign in with Persona and you'll be connected to your MDN profile (all your information is still here).</p> <p><strong>New members:</strong> sign in with Persona first, then you'll be able to set up your new MDN profile.</p>              <p><a href="#" target="_blank" class="browserid-signin" title="Sign in with Persona">Sign in</a></p>
+            </div>
+                  
+      </form>
+    </li>
+  </ul>
+
+      <form id="site-search" method="get" action="http://www.google.com/search"
+              data-url="/en-US/search">
+        <p>
+          <input type="search" role="search" placeholder="Search MDN" id="q" name="q" value="">
+          <noscript><button type="submit">Search</button></noscript>
+        </p>
+        <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+                <div id="site-search-gg"></div>
+              </form>
+      
+      <a href="//www.mozilla.org/" id="tabzilla">mozilla</a>
     </div>
+  </header>
 
-    <form id="site-search" method="get" action="https://www.google.com/search" data-url="/search">
-      <p>
-        <input type="text" role="search" placeholder="Search MDN" id="q" name="q">
-        <noscript><button type="submit">Search</button></noscript>
-      </p>
-      <input type="hidden" name="sitesearch" value="developer.mozilla.org">
-      <div id="site-search-gg"></div>
-    </form>
-
-    <nav id="nav" role="menubar">
-      <ul id="nav-main">
-        <li id="nav-main-topics" class="menu"><a href="#nav-sub-topics" aria-haspopup="true" class="toggle" title="Explore other parts of MDN">Topics</a>
-          <ul id="nav-sub-topics" class="sub-menu" aria-hidden="true">
-            <li id="nav-sub-web"><a href="/web">Web</a></li>
-            <li id="nav-sub-mobile"><a href="/mobile">Mobile</a></li>
-            <li id="nav-sub-addons"><a href="/addons">Add-ons</a></li>
-            <li id="nav-sub-mozilla"><a href="/mozilla">Mozilla</a></li>
-          </ul>
-        </li>
-        <li id="nav-main-docs" class="menu"><a href="/docs" class="docs toggle" aria-haspopup="true" aria-labelledby="nav-main-docs">Docs</a>
-          <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
-            <ul>
-              <li>
-                <ul>
-                  <li><a href="/en/HTML">HTML</a></li>
-                  <li><a href="/en/DOM">DOM</a></li>
-                  <li><a href="/en/Using_audio_and_video_in_Firefox">Video</a></li>
-                  <li><a href="/en/Using_audio_and_video_in_Firefox">Audio</a></li>
-                  <li><a href="/en/SVG">SVG</a></li>
-                  <li><a href="/en/WebGL">WebGL</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/HTML/HTML5">HTML5</a></li>
-                  <li><a href="/en/WebSockets">WebSockets</a></li>
-                  <li><a href="/en/Offline_resources_in_Firefox">Offline Cache</a></li>
-                  <li><a href="/en/DOM/Storage">Local Storage</a></li>
-                  <li><a href="/en/IndexedDB">IndexedDB</a></li>
-                  <li><a href="/en/Using_files_from_web_applications">File API</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/CSS">CSS</a></li>
-                  <li><a href="/en/Using_gradients">Gradients</a></li>
-                  <li><a href="/en/CSS/Using_CSS_transforms">Transforms</a></li>
-                  <li><a href="/en/CSS/CSS_transitions">Transitions</a></li>
-                  <li><a href="/en/CSS/CSS_animations">Animations</a></li>
-                  <li><a href="/en/CSS/Media_queries">Media Queries</a></li>
-                </ul>
-              </li>
-              <li>
-                <ul>
-                  <li><a href="/en/JavaScript">JavaScript</a></li>
-                  <li><a href="/en/Ajax">Ajax</a></li>
-                  <li><a href="/en/HTML/Canvas">Canvas</a></li>
-                  <li><a href="/en/Using_geolocation">Geolocation</a></li>
-                  <li><a href="/en/DragDrop/Drag_and_Drop">Drag &amp; Drop</a></li>
-                  <li><a href="/en/Using_web_workers">Web Workers</a></li>
-                </ul>
-              </li>
-            </ul>
-            <p><a href="/docs">More docs&hellip;</a></p>
-          </div>
-        </li>
-        <li id="nav-main-demos"><a href="/demos" class="demos">Demos</a></li>
-        <li id="nav-main-learning"><a href="/learn" class="learning">Learning</a></li>
-        <li id="nav-main-community" class="menu"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Community</a>
-          <ul id="nav-sub-community" class="sub-menu" aria-hidden="true">
-            <li><a href="/events">Events</a></li>
-            <li><a href="/discussions">Discussions</a></li>
-            <li><a href="/promote">Promote</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
     
-      <ul class="user-state">
-              <li>	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
-</li>
-        <li><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fborder-left-style" class="user-login">Log in</a></li>
-            </ul>
-
-  </div>
-</header>
-
-
-<section id="nav-toolbar">
-<div class="wrap">
-
-<nav id="tool-menus">
-  <ul id="tools">
-    <li class="menu">
-      <a href="#site-tools" class="toggle">Site tools</a>
-      <ul id="site-tools" class="sub-menu" role="navigation">
-         
-        <li class="site-recent">	<a href="/Special:Recentchanges" title="Recent changes">Recent changes</a>
-</li>
-        <li class="site-rss">	<a href="/Special:ListRss" title="RSS feeds">RSS feeds</a>
-</li>
-      	<li class="siteListusers"><a href="/User:" title="Users">Users</a></li>
-              <li class="site-templates">	<a href="/Template:" title="Templates">Templates</a>
-</li>
-              <li class="site-map">	<a href="/Special:Sitemap" title="Sitemap">Sitemap</a>
-</li>
-        <li class="site-popular">	<a href="/Special:Popularpages" title="Popular pages">Popular pages</a>
-</li>
-      	<li class="siteAbout"><a href="/Special:About" title="About MDN">About MDN</a></li>
-      </ul>
-    </li>
-    <li class="menu">
-      <a href="#page-tools" class="toggle">This page</a>
-      <ul id="page-tools" class="sub-menu" role="navigation">
-                                <li class="page-new"><a href="#" title="New page" class="disabled ">New sub-page</a></li>
-                    <li class="page-history"><a href="/index.php?title=en/CSS/border-left-style&action=history" title="Page history">History</a></li>
-                    <li class="page-talk">	<a href="/Talk:en/CSS/border-left-style" title="Talk page">Talk page</a>
-</li>
-                                                        <li class="page-print">	<a href="#" onclick="return window.print();"  title="Print page">Print page</a>
-</li>
-            <li class="page-backlinks"><a href="/index.php?title=Special:Article&type=backlinks&pageid=14327">Pages that link here</a></li>      </ul>
-    </li>
+      
+  
+<!-- top toolbar -->
+<section id="nav-toolbar"><div><div class="wrap">
+  <!-- right floated navigation -->
+  <nav id="tool-menus" role="navigation">
+    <ul id="tools">
       <li class="menu">
-      <a href="#" class="toggle">Languages</a>
-      <ul><li><a rel="internal" href="https://developer.mozilla.org/de/CSS/border-left-style" title="de/CSS/border-left-style">Deutsch</a></li><li><a rel="internal" href="https://developer.mozilla.org/fr/CSS/border-left-style" title="fr/CSS/border-left-style">Fran&ccedil;ais</a></li><li><a rel="internal" href="https://developer.mozilla.org/pl/CSS/border-left-style" title="pl/CSS/border-left-style">Polski</a></li><li><a rel="internal" href="https://developer.mozilla.org/ja/CSS/border-left-style" title="ja/CSS/border-left-style">&#26085;&#26412;&#35486;</a></li></ul>    </li>
-    </ul>
-</nav>
-
+        <a href="#page-tools" class="toggle">This page</a>
+        <ul id="page-tools" class="sub-menu">
+          <li class="page-print"> <a href="#" onclick="return window.print();"  title="Print page">Print this page</a></li>
+                      <li><a href="/en-US/docs/new?parent=1166">New sub-page</a></li>
+            <li><a href="/en-US/docs/new?clone=1166">Clone this page</a></li>
+                              
+                    
+                                      </ul>
+      </li>
+            <li class="menu">
+        <a href="#" class="toggle">Languages</a>
+        <ul id="translations">
+                      <li><a rel="internal" href="/de/docs/CSS/border-left-style" title="border-left-style">Deutsch</a></li>
+                      <li><a rel="internal" href="/fr/docs/CSS/border-left-style" title="border-left-style">Français</a></li>
+                      <li><a rel="internal" href="/ja/docs/Web/CSS/border-left-style" title="border-left-style">日本語</a></li>
+                      <li><a rel="internal" href="/pl/docs/CSS/border-left-style" title="border-left-style">Polski</a></li>
+                      <li><a rel="internal" href="/pt-PT/docs/CSS/border-left-style" title="border-left-style">Português (Europeu)</a></li>
+                    
+                      <li><a href="/en-US/docs/Web/CSS/border-left-style$locales">Add translation</a></li>
+                  </ul>
+      </li>
+          </ul>
+  </nav>
+  
+  <!-- left crumb navigation -->
   <nav class="crumbs" role="navigation">
     <ol>
-      <li class="crumb-one"><a href="/">MDN</a></li>
-      <li class="crumb-two"><a href="/docs">Docs</a></li>
-    <li class="first"><a href="https://developer.mozilla.org/" class="deki-ns">MDN</a></li>
-<li class="second"><a href="https://developer.mozilla.org/en" class="deki-ns">MDN</a></li>
-<li><a href="https://developer.mozilla.org/en/CSS" class="deki-ns">CSS</a></li>
-<li class="last"><a href="https://developer.mozilla.org/en/CSS/border-left-style" class="deki-ns current">border-left-style</a></li> 
+              <li class="crumb"><a href="/en-US/docs/Web">Web technology for developers</a></li>
+              <li class="crumb"><a href="/en-US/docs/Web/CSS">CSS</a></li>
+            <li class="crumb">border-left-style</li>
     </ol>
   </nav>
+  
+</div></div></section>
 
-</div>
-</section>
+
 
 <section id="content">
-<div class="wrap">
-  <div id="content-main" class="full">
-
-    <div id="sessionMsg"><div class="inner"><ul></ul></div></div>
-        
-    <article class="article PageDW-enCSSborderleftstyle" role="main">
-            
-            <div class="page-title hideforedit">
-              <h1 class="first" id="title">border-left-style</h1>            
-      
-              <ul id="page-buttons">
-          <li class="page-edit"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fborder-left-style" class="disabled" title="Log in or sign up to edit this page">Edit</a></li>
-          <li class="page-watch"><a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fborder-left-style" class="disabled" title="Log in or sign up to add this page to your watch list">Watch</a></li>
-        </ul> 
+  <div class="wrap">
+    <div id="content-main" class="full">
+      <article class="article" role="main" 
+          data-current-revision="474723"
+          data-refresh-message="Your changes were merged. However, something else has been edited, so this page will be refreshed to reflect the changes."
+          data-cancel-edit-message="Abort editing in progress? Your unsaved changes will be discarded.">
+      <header id="article-head">
+        <div class="title">
+            <h1 class="page-title">border-left-style</h1>
+                        <div class="offline-notice">
+              <a href="javascript:;" id="offline-notice-link"><i class="icon-book"></i>Read content offline</a>
             </div>
-      
-    <div class="page-content boxed">
 
-     
-      <div id="article-nav" class="hideforedit">      
-              <div class="page-toc">
-          <h2>Table of contents</h2>
-          <ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li></ol>        </div>
-      
-        <ul class="page-anchors">
-          <li class="anchor-tags"><a href="#page-tags" title="Jump to tags for this article">Tags</a></li>
-          <li class="anchor-files"><a href="#page-files" title="Jump to files for this article">Files</a></li>
-        </ul>
-
-              <div id="deki-page-alerts" class="disabled">
-				<div class="toggle">
-					<a href="javascript:void(0);" class="off">
-						<span>Page Notifications</span>
-						<span class="status">Off</span>
-					</a>
-				</div></div>      
-      
-      </div> 
-    
+            <div id="offline-dialog-content" title="Read MDN Offline">
+              <p>Did you know that you can read content offline by using one of these tools? If you would like to read offline MDN content in another format, let us know by commenting on <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665750" data-title="Bug 665750">Bug 665750</a>.</p>
+              <a href="http://kapeli.com/dash?ref=mdn" class="offline-dialog-mac" data-title="Dash App">
+                <img src="https://developer.mozilla.org/media/img/dash-app.png" alt="Dash App" />
+              </a>
+              <a href="http://zealdocs.org" target="_blank" class="offline-dialog-others" data-title="Zeal">
+                <i class="icon-book" style="font-size: 160px;"></i>
+              </a>
+            </div>
             
-      <div id="page-top"><div id="pageToc"><div class="pageToc"><h5>Table of contents</h5><ol style="list-style-type:none; margin-left:0px; padding-left:0px;"><li><span>1.</span> <a href="#Summary" rel="internal">Summary</a></li></ol></div></div><div class="pageText" id="pageText">
-<p><span class="lang lang-en">&laquo; <a title="en/CSS" rel="internal" href="https://developer.mozilla.org/en/CSS">CSS</a> &laquo; <a title="en/CSS_Reference" rel="internal" href="https://developer.mozilla.org/en/CSS/CSS_Reference">CSS Reference</a> </span> </p>
-<div id="section_1"><span id="Summary"></span><h3 class="editable">Summary</h3>
-<p><code>border-left-style</code> sets the line style of the left border of a box.</p>
-<p>See the 
-<code><a rel="custom" href="https://developer.mozilla.org/en/CSS/border-bottom-style">border-bottom-style</a></code> property for more information.</p>
-<p></p></div></div></div>
-            <section class="page-meta">
-                  <section id="page-tags">
-            <h2>Tags <span class="sub">(2)</span></h2>
-              <a href="/index.php?title=Special:Tags&pageId=14327" class="disabled" onclick="return false;"  id="deki-page-tags-toggleview">Edit tags</a></span>              <div id="deki-page-tags"><ul class="tags"><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS" title="CSS" tagid="8" class="text">CSS</a></li><li><a href="https://developer.mozilla.org/Special:Tags?tag=CSS+Reference" title="CSS Reference" tagid="1487" class="text">CSS Reference</a></li></ul></div>          </section>
+                                    <div class="redirected-from" id="redirected-from">
+              <p>Redirected from <a href="/en-US/docs/CSS/border-left-style?redirect=no">border-left-style Redirect 1</a></p>
+            </div>
+                  </div>
+        <ul id="page-buttons">
+            <li class="page-history"><a href="/en-US/docs/Web/CSS/border-left-style$history"><i class="icon-book"></i>History</a></li>
+            
+                                                                      <li class="page-edit"><a href="/en-US/docs/Web/CSS/border-left-style$edit"><i class="icon-pencil"></i>Edit</a></li>
+                    </ul>
+
         
-                  <section id="page-files">
-            <h2>Attachments <span class="sub">(0)</span></h2>
-            <div id="pageFiles"><div class="nofiles">&nbsp;</div></div>            <div id="deki-image-gallery-lite"><table class="table empty" width="100%" cellspacing="0" cellpadding="0" border="0"><colgroup><col width="33%"></col><col width="33%"></col><col width="33%"></col></colgroup><tbody><tr class="bg1"><th class="col1" colspan="3">Images 0</th></tr><tr class="bg2"><td class="col1 empty" colspan="3">No images to display in the gallery.</td></tr></tbody></table></div>            <p class="add"><a title="Attach file" class="disabled ">Attach file</a></p>
-          </section>
-        
-                        
-        </section>
+               </header>
+
+           
+                                  
+            
+      <div id="wikiArticle" class="page-content boxed">
+                <div id="article-nav">
+          <div class="page-toc">
+            <h2>Table of Contents</h2>
+            <ol>
+              <code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><li><a href="#Summary" rel="internal">Summary</a><code></code><code></code><code></code><li><a href="#Syntax" rel="internal">Syntax</a><code></code><ol><li><a href="#Values" rel="internal">Values</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code></ol></li><li><a href="#Examples" rel="internal">Examples</a><li><a href="#Specifications" rel="internal"> </a><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><li><a href="#See_also" rel="internal">See also</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code>
+            </ol>
+          </div>
+          <ul class="page-anchors">
+            <li class="anchor-tags">
+                              <i class="icon-tags"></i><a href="#document-tags">Tags</a>
+                          </li>
+            <li class="anchor-files">
+                              <i class="icon-paper-clip off"></i><span title="This document has no attachments">Files</span>
+                          </li>
+          </ul>
         </div>
-
-    </article>
-
-    <p class="last-mod hideforedit">
-      Page last modified <a href="/index.php?title=en/CSS/border-left-style&action=history" title="06:04, 13 Apr 2011">06:04, 13 Apr 2011</a> by <a href="/User:Yuichiro" class="link-user" rel="internal">Yuichiro</a>    </p>
-
-  </div><!-- /#content-main -->
-
-</div><!-- /.wrap -->
-</section><!-- /#content -->
-
-
-
-<footer id="site-info" role="contentinfo">
-<div class="wrap">
-  <div id="legal">
-    <img src="/skins/mdn/Transitional/img/mdn-logo-tiny.png" alt="" width="42" height="48">
-    <p id="copyright">&copy; 2011 Mozilla Developer Network</p>
-    <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull; <a href="/Project:en/About">About MDN</a> &bull; <a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a> &bull; <a href="/Project:en/Using_the_Mozilla_Developer_Center">Help</a></p>
-  </div>
-  <p class="user-state">
-          <a href="/index.php?title=Special:Userlogin&returntotitle=en%2FCSS%2Fborder-left-style" class="user-login">Log in</a> | 	<a href="/index.php?title=Special:Userlogin&amp;register=true" title="Join MDN">Join MDN</a>
-      
-  </p>
+                                <div>
+  <span class="breadcrumbs cssRef_breadcrumbs themeUpdated">« <a href="/en-US/docs/Web/CSS">CSS</a> « <a href="/en-US/docs/Web/CSS/Reference">CSS Reference</a></span> 
+ 
+   
+  <section class="Quick_links" id="Quick_Links"> 
+   <ol> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border" title=""><code>border</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-bottom" title=""><code>border-bottom</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-bottom-color" title=""><code>border-bottom-color</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-bottom-left-radius" title=""><code>border-bottom-left-radius</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-bottom-right-radius" title=""><code>border-bottom-right-radius</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-bottom-style" title=""><code>border-bottom-style</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-bottom-width" title=""><code>border-bottom-width</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-color" title=""><code>border-color</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-image" title=""><code>border-image</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-image-outset" title=""><code>border-image-outset</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-image-repeat" title=""><code>border-image-repeat</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-image-slice" title=""><code>border-image-slice</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-image-source" title=""><code>border-image-source</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-image-width" title=""><code>border-image-width</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-left" title=""><code>border-left</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-left-color" title=""><code>border-left-color</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-left-style" title=""><code>border-left-style</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-radius" title=""><code>border-radius</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-right" title=""><code>border-right</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-right-color" title=""><code>border-right-color</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-right-style" title=""><code>border-right-style</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-right-width" title=""><code>border-right-width</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-style" title=""><code>border-style</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-top" title=""><code>border-top</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-top-color" title=""><code>border-top-color</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-top-left-radius" title=""><code>border-top-left-radius</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-top-right-radius" title=""><code>border-top-right-radius</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-top-style" title=""><code>border-top-style</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-top-width" title=""><code>border-top-width</code></a></li> 
+   
+            <li><a href="/en-US/docs/Web/CSS/border-width" title=""><code>border-width</code></a></li> 
+   
+    <li><a href="/en-US/docs/Web/CSS/Reference">CSS Reference</a> 
+<ol> 
+<li>A  
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/:active" title=""><code>:active</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/::after" title=""><code>::after (:after)</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/align-content" title=""><code>align-content</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/align-items" title=""><code>align-items</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/align-self" title=""><code>align-self</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/angle" title=""><code>&lt;angle&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation" title=""><code>animation</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-delay" title=""><code>animation-delay</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-direction" title=""><code>animation-direction</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-duration" title=""><code>animation-duration</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-fill-mode" title=""><code>animation-fill-mode</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-iteration-count" title=""><code>animation-iteration-count</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-name" title=""><code>animation-name</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-play-state" title=""><code>animation-play-state</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/animation-timing-function" title=""><code>animation-timing-function</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/attr" title=""><code>attr()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/auto" title=""><code>auto</code></a></li>  
+</ol></li> 
+<li>B 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/backface-visibility" title=""><code>backface-visibility</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background" title=""><code>background</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-attachment" title=""><code>background-attachment</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-clip" title=""><code>background-clip</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-color" title=""><code>background-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-image" title=""><code>background-image</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-origin" title=""><code>background-origin</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-position" title=""><code>background-position</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-repeat" title=""><code>background-repeat</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/background-size" title=""><code>background-size</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/::before" title=""><code>::before (:before)</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#blur()" title=""><code>blur()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/border" title=""><code>border</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-bottom" title=""><code>border-bottom</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-bottom-color" title=""><code>border-bottom-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-bottom-left-radius" title=""><code>border-bottom-left-radius</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-bottom-right-radius" title=""><code>border-bottom-right-radius</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-bottom-style" title=""><code>border-bottom-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-bottom-width" title=""><code>border-bottom-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-collapse" title=""><code>border-collapse</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-color" title=""><code>border-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-image" title=""><code>border-image</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-image-outset" title=""><code>border-image-outset</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-image-repeat" title=""><code>border-image-repeat</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-image-slice" title=""><code>border-image-slice</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-image-source" title=""><code>border-image-source</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-image-width" title=""><code>border-image-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-left" title=""><code>border-left</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-left-color" title=""><code>border-left-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-left-style" title=""><code>border-left-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-radius" title=""><code>border-radius</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-right" title=""><code>border-right</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-right-color" title=""><code>border-right-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-right-style" title=""><code>border-right-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-right-width" title=""><code>border-right-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-spacing" title=""><code>border-spacing</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-style" title=""><code>border-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-top" title=""><code>border-top</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-top-color" title=""><code>border-top-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-top-left-radius" title=""><code>border-top-left-radius</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-top-right-radius" title=""><code>border-top-right-radius</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-top-style" title=""><code>border-top-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-top-width" title=""><code>border-top-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/border-width" title=""><code>border-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/bottom" title=""><code>bottom</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/box-decoration-break" title=""><code>box-decoration-break</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/box-shadow" title=""><code>box-shadow</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/box-sizing" title=""><code>box-sizing</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/break-after" title=""><code>break-after</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/break-before" title=""><code>break-before</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/break-inside" title=""><code>break-inside</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#brightness()" title=""><code>brightness()</code></a></li> 
+</ol></li> 
+<li>C 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/calc" title=""><code>calc()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/caption-side" title=""><code>caption-side</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#ch" title=""><code>ch</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/@charset" title=""><code>@charset</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:checked" title=""><code>:checked</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/::choices" title=""><code>::choices</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/clear" title=""><code>clear</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/clip" title=""><code>clip</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/clip-path" title=""><code>clip-path</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#cm" title=""><code>cm</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/color" title=""><code>color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/color_value" title=""><code>&lt;color&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/columns" title=""><code>columns</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-count" title=""><code>column-count</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-fill" title=""><code>column-fill</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-gap" title=""><code>column-gap</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-rule" title=""><code>column-rule</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-rule-color" title=""><code>column-rule-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-rule-style" title=""><code>column-rule-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-rule-width" title=""><code>column-rule-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-span" title=""><code>column-span</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/column-width" title=""><code>column-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/content" title=""><code>content</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#contrast()" title=""><code>contrast()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/counter" title=""><code>&lt;counter&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/counter-increment" title=""><code>counter-increment</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/counter-reset" title=""><code>counter-reset</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/cross-fade" title=""><code>cross-fade()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/timing-function#The_cubic-bezier()_class_of_timing-functions" title=""><code>cubic-bezier()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/cursor" title=""><code>cursor</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/cycle" title=""><code>cycle()</code></a></li>  
+</ol></li> 
+<li>D 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/:default" title=""><code>:default</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/angle#deg" title=""><code>deg</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/:dir" title=""><code>:dir()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/direction" title=""><code>direction</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:disabled" title=""><code>:disabled</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/display" title=""><code>display</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/@document" title=""><code>@document</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/resolution#dpcm" title=""><code>dpcm</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/resolution#dpi" title=""><code>dpi</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/resolution#dppx" title=""><code>dppx</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#drop-shadow()" title=""><code>drop-shadow()</code></a></li> 
+</ol></li> 
+<li>E 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/element" title=""><code>element()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#em" title=""><code>em</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/:empty" title=""><code>:empty</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/empty-cells" title=""><code>empty-cells</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:enabled" title=""><code>:enabled</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#ex" title=""><code>ex</code></a></li>  
+</ol></li> 
+<li>F 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/filter" title=""><code>filter</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:first" title=""><code>:first</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:first-child" title=""><code>:first-child</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/::first-letter" title=""><code>::first-letter (:first-letter)</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/::first-line" title=""><code>::first-line (:first-line)</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:first-of-type" title=""><code>:first-of-type</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex" title=""><code>flex</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex-basis" title=""><code>flex-basis</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex-direction" title=""><code>flex-direction</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex-flow" title=""><code>flex-flow</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex-grow" title=""><code>flex-grow</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex-shrink  " title=""><code>flex-shrink  </code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/flex-wrap" title=""><code>flex-wrap</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/float" title=""><code>float</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:focus" title=""><code>:focus</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font" title=""><code>font</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/@font-face" title=""><code>@font-face</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-family" title=""><code>font-family</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-feature-settings" title=""><code>font-feature-settings</code></a></li> 
+<li><a class="new" href="/en-US/docs/Web/CSS/@font-feature-values" title=""><code>@font-feature-values</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-kerning" title=""><code>font-kerning</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-language-override" title=""><code>font-language-override</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-size" title=""><code>font-size</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-size-adjust" title=""><code>font-size-adjust</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-stretch" title=""><code>font-stretch</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-style" title=""><code>font-style</code></a></li> 
+<li><a class="new" href="/en-US/docs/Web/CSS/font-synthesis" title=""><code>font-synthesis</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/font-variant" title=""><code>font-variant</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-variant-alternates" title=""><code>font-variant-alternates</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-variant-caps" title=""><code>font-variant-caps</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-variant-east-asian" title=""><code>font-variant-east-asian</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-variant-ligatures" title=""><code>font-variant-ligatures</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-variant-numeric" title=""><code>font-variant-numeric</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/font-variant-position" title=""><code>font-variant-position</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/font-weight" title=""><code>font-weight</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/frequency" title=""><code>&lt;frequency&gt;</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/:fullscreen" title=""><code>:fullscreen</code></a></li>  
+</ol></li> 
+<li>G 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/angle#grad" title=""><code>grad</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/gradient" title=""><code>&lt;gradient&gt;</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/filter#grayscale()" title=""><code>grayscale()</code></a></li> 
+</ol></li> 
+<li>H 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/height" title=""><code>height</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:hover" title=""><code>:hover</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/color_value#hsl()" title=""><code>hsl()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/color_value#hsla()" title=""><code>hsla()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#hue-rotate()" title=""><code>hue-rotate()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/hyphens" title=""><code>hyphens</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/frequency#Hz" title=""><code>hz</code></a></li> 
+</ol></li> 
+<li>I 
+<ol>  
+<li><a class="new" href="/en-US/docs/Web/CSS/icon" title=""><code>icon</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/image" title=""><code>&lt;image&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/image()" title=""><code>image()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/image-rendering" title=""><code>image-rendering</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/image-resolution" title=""><code>image-resolution</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/image-orientation" title=""><code>image-orientation</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/ime-mode" title=""><code>ime-mode</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/@import" title=""><code>@import</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#in" title=""><code>in</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/:indeterminate" title=""><code>:indeterminate</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/:in-range" title=""><code>:in-range</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/inherit" title=""><code>inherit</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/initial" title=""><code>initial</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/integer" title=""><code>&lt;integer&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:invalid" title=""><code>:invalid</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#invert()" title=""><code>invert()</code></a></li> 
+</ol></li> 
+<li>J 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/justify-content" title=""><code>justify-content</code></a></li> 
+</ol></li> 
+<li>K 
+<ol style="margin-left: 0; padding-left: 0; list-style-type: none;">  
+<li><a href="/en-US/docs/Web/CSS/@keyframes" title=""><code>@keyframes</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/frequency#kHz" title=""><code>khz</code></a></li> 
+</ol></li> 
+<li>L 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/:lang" title=""><code>:lang()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:last-child" title=""><code>:last-child</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:last-of-type" title=""><code>:last-of-type</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/left" title=""><code>left</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:left" title=""><code>:left</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length" title=""><code>&lt;length&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/letter-spacing" title=""><code>letter-spacing</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/linear-gradient" title=""><code>linear-gradient()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:link" title=""><code>:link</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/line-height" title=""><code>line-height</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/list-style" title=""><code>list-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/list-style-image" title=""><code>list-style-image</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/list-style-position" title=""><code>list-style-position</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/list-style-type" title=""><code>list-style-type</code></a></li> 
+</ol></li> 
+<li>M 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/margin" title=""><code>margin</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/margin-bottom" title=""><code>margin-bottom</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/margin-left" title=""><code>margin-left</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/margin-right" title=""><code>margin-right</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/margin-top" title=""><code>margin-top</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/marks" title=""><code>marks</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/mask" title=""><code>mask</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/mask-type" title=""><code>mask-type</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/transform-function#matrix()" title=""><code>matrix()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#matrix3d()" title=""><code>matrix3d()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/max-height" title=""><code>max-height</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/max-width" title=""><code>max-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/@media" title=""><code>@media</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/min-height" title=""><code>min-height</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/min-width" title=""><code>min-width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#mm" title=""><code>mm</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/time#ms" title=""><code>ms</code></a></li> 
+</ol></li> 
+<li>N 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/@namespace" title=""><code>@namespace</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/nav-down" title=""><code>nav-down</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/nav-index" title=""><code>nav-index</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/nav-left" title=""><code>nav-left</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/nav-right" title=""><code>nav-right</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/nav-up" title=""><code>nav-up</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/none" title=""><code>none</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/normal" title=""><code>normal</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:not" title=""><code>:not()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:nth-child" title=""><code>:nth-child()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:nth-last-child" title=""><code>:nth-last-child()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:nth-last-of-type" title=""><code>:nth-last-of-type()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:nth-of-type" title=""><code>:nth-of-type()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/number" title=""><code>&lt;number&gt;</code></a></li> 
+</ol></li> 
+<li>O 
+<ol>  
+<li><a class="new" href="/en-US/docs/Web/CSS/object-fit" title=""><code>object-fit</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/object-position" title=""><code>object-position</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:only-child" title=""><code>:only-child</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:only-of-type" title=""><code>:only-of-type</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/opacity" title=""><code>opacity</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#opacity()" title=""><code>opacity()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/:optional" title=""><code>:optional</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/order" title=""><code>order</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/orphans" title=""><code>orphans</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/outline" title=""><code>outline</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/outline-color" title=""><code>outline-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/outline-offset" title=""><code>outline-offset</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/outline-style" title=""><code>outline-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/outline-width" title=""><code>outline-width</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/:out-of-range" title=""><code>:out-of-range</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/overflow" title=""><code>overflow</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/overflow-wrap" title=""><code>overflow-wrap</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/overflow-x" title=""><code>overflow-x</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/overflow-y" title=""><code>overflow-y</code></a></li> 
+</ol></li> 
+<li>P 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/padding" title=""><code>padding</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/padding-bottom" title=""><code>padding-bottom</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/padding-left" title=""><code>padding-left</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/padding-right" title=""><code>padding-right</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/padding-top" title=""><code>padding-top</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/@page" title=""><code>@page</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/page-break-after" title=""><code>page-break-after</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/page-break-before" title=""><code>page-break-before</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/page-break-inside" title=""><code>page-break-inside</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#pc" title=""><code>pc</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/percentage" title=""><code>&lt;percentage&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/perspective" title=""><code>perspective</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#perspective()" title=""><code>perspective()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/perspective-origin" title=""><code>perspective-origin</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/pointer-events" title=""><code>pointer-events</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/position" title=""><code>position</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/position_value" title=""><code>&lt;position&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#pt" title=""><code>pt</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#px" title=""><code>px</code></a></li> 
+</ol></li> 
+<li>Q 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/quotes" title=""><code>quotes</code></a></li> 
+</ol></li> 
+<li>R 
+<ol> 
+<li><a href="/en-US/docs/Web/CSS/angle#rad" title=""><code>rad</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/radial-gradient" title=""><code>radial-gradient()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/ratio" title=""><code>&lt;ratio&gt;</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/:read-only" title=""><code>:read-only</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:read-write" title=""><code>:read-write</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/shape#Syntax" title=""><code>rect()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#rem" title=""><code>rem</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/::repeat-index" title=""><code>::repeat-index</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/::repeat-item" title=""><code>::repeat-item</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/repeating-linear-gradient" title=""><code>repeating-linear-gradient()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/repeating-radial-gradient" title=""><code>repeating-radial-gradient()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:required" title=""><code>:required</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/resize" title=""><code>resize</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/resolution" title=""><code>&lt;resolution&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/color_value#rgb()" title=""><code>rgb()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/color_value#rgba()" title=""><code>rgba()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/right" title=""><code>right</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:right" title=""><code>:right</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:root" title=""><code>:root</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#rotate()" title=""><code>rotate()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#rotateX()" title=""><code>rotatex()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#rotateY()" title=""><code>rotatey()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#rotateZ()" title=""><code>rotatez()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#rotate3d()" title=""><code>rotate3d()</code></a></li> 
+</ol></li> 
+<li>S 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/time#s" title=""><code>s</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/filter#saturate()" title=""><code>saturate()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/transform-function#scale()" title=""><code>scale()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#scaleX()" title=""><code>scalex()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#scaleY()" title=""><code>scaley()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#scaleZ()" title=""><code>scalez()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#scale3d()" title=""><code>scale3d()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:scope" title=""><code>:scope</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/::selection" title=""><code>::selection</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/filter#sepia()" title=""><code>sepia()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/shape" title=""><code>&lt;shape&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#skew()" title=""><code>skew()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#skewX()" title=""><code>skewx()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#skewY()" title=""><code>skewy()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/timing-function#The_steps()_class_of_timing-functions" title=""><code>steps()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/string" title=""><code>&lt;string&gt;</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/@supports" title=""><code>@supports</code></a></li> 
+</ol>T 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/table-layout" title=""><code>table-layout</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/tab-size" title=""><code>tab-size</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/:target" title=""><code>:target</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/text-align" title=""><code>text-align</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/text-align-last" title=""><code>text-align-last</code></a></li> 
+<li><a class="new" href="/en-US/docs/Web/CSS/text-combine-horizontal" title=""><code>text-combine-horizontal</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/text-decoration" title=""><code>text-decoration</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/text-decoration-color" title=""><code>text-decoration-color</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/text-decoration-line" title=""><code>text-decoration-line</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/text-decoration-style" title=""><code>text-decoration-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/text-indent" title=""><code>text-indent</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/text-orientation" title=""><code>text-orientation</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/text-overflow" title=""><code>text-overflow</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/text-rendering" title=""><code>text-rendering</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/text-shadow" title=""><code>text-shadow</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/text-transform" title=""><code>text-transform</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/text-underline-position" title=""><code>text-underline-position</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/time" title=""><code>&lt;time&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/timing-function" title=""><code>&lt;timing-function&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/top" title=""><code>top</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/touch-action" title=""><code>touch-action</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform" title=""><code>transform</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-origin" title=""><code>transform-origin</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-style" title=""><code>transform-style</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transition" title=""><code>transition</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transition-delay" title=""><code>transition-delay</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transition-duration" title=""><code>transition-duration</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transition-property" title=""><code>transition-property</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transition-timing-function" title=""><code>transition-timing-function</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#translate()" title=""><code>translate()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#translateX()" title=""><code>translatex()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#translateY()" title=""><code>translatey()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#translateZ()" title=""><code>translatez()</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/transform-function#translate3d()" title=""><code>translate3d()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/angle#turn" title=""><code>turn</code></a></li> 
+</ol></li> 
+<li>U 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/unicode-bidi" title=""><code>unicode-bidi</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/unicode-range" title=""><code>unicode-range</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/uri" title=""><code>&lt;uri&gt;</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/uri#The_url()_functional_notation" title=""><code>url()</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/user-ident" title=""><code>&lt;user-ident&gt;</code></a></li>  
+</ol></li> 
+<li>V 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/:valid" title=""><code>:valid</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/::value" title=""><code>::value</code></a></li>  
+<li><a class="new" href="/en-US/docs/Web/CSS/var" title=""><code>var()</code></a></li> 
+<li><a class="new" href="/en-US/docs/Web/CSS/var-*" title=""><code>var-*</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/vertical-align" title=""><code>vertical-align</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#vh" title=""><code>vh</code></a></li> 
+<li><a class="new" href="/en-US/docs/Web/CSS/@viewport" title=""><code>@viewport</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/visibility" title=""><code>visibility</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/:visited" title=""><code>:visited</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#vmax" title=""><code>vmax</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#vmin" title=""><code>vmin</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/length#vw" title=""><code>vw</code></a></li> 
+</ol></li> 
+<li>W 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/white-space" title=""><code>white-space</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/widows" title=""><code>widows</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/width" title=""><code>width</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/word-break" title=""><code>word-break</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/word-spacing" title=""><code>word-spacing</code></a></li>  
+<li><a href="/en-US/docs/Web/CSS/word-wrap" title=""><code>word-wrap</code></a></li> 
+<li><a href="/en-US/docs/Web/CSS/writing-mode" title=""><code>writing-mode</code></a></li> 
+</ol></li> 
+<li>X Y Z 
+<ol>  
+<li><a href="/en-US/docs/Web/CSS/z-index" title=""><code>z-index</code></a></li> 
+</ol></li></ol></li>   
+   </ol> 
+  </section></div>
+<h2 id="Summary" name="Summary">Summary</h2>
+<p>The <code>border-left-style</code> <a href="/en-US/docs/CSS" title="CSS">CSS</a> property sets the line style of the left border of a box.</p>
+<div class="note">
+  <strong>Note:</strong> The specification doesn't define how borders of different styles connect in the corners.</div>
+<p></p><ul class="cssprop"> 
+  <li><dfn><a href="/en-US/docs/CSS/initial_value">Initial value</a></dfn> <code>none</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a href="/en-US/docs/CSS/inheritance">Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a href="/en-US/docs/CSS/@media#Media_groups"><code>visual</code></a></li>  <li><dfn><a href="/en-US/docs/CSS/computed_value">Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h2 id="Syntax" name="Syntax">Syntax</h2>
+<pre class="twopartsyntaxbox"><a href="/en-US/docs/CSS/Value_definition_syntax" title="CSS/Value_definition_syntax">Formal syntax</a>: <code><a href="/en-US/docs/CSS/CSS_values_syntax#syntax-br-style" title="none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset">&lt;br-style&gt;</a></code>
+</pre>
+<pre>border-left-style: none
+border-left-style: hidden
+border-left-style: dotted
+border-left-style: dashed
+border-left-style: solid
+border-left-style: double
+border-left-style: groove
+border-left-style: ridge
+border-left-style: inset
+border-left-style: outset
+<em>
+</em>border-left-style: inherit
+</pre>
+<h3 id="Values">Values</h3>
+<dl>
+  <dt>
+    <code>&lt;br-style&gt;</code></dt>
+  <dd>
+    Is a keyword describing the style of the left border. It can have the following values:
+    <table>
+      <tbody>
+        <tr>
+          <td><code>none</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: none; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Like for the <code>hidden</code> keyword, displays no border. In that case, except if a background image is set, the calculated values of <a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a> will be <code>0</code>, even if specified otherwise through the property. In case of table cell and border collapsing, the <code>none</code> value has the lowest priority: it means that if any other conflicting border is set, it will be displayed.</td>
+        </tr>
+        <tr>
+          <td><code>hidden</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: hidden; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Like for the <code>none</code> keyword, displays no border. In that case, except if a background image is set, the calculated values of <a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a> will be <code>0</code>, even if specified otherwise through the property. In case of table cell and border collapsing, the <code>hidden</code> value has the highest priority: it means that if any other conflicting border is set, it won't be displayed.</td>
+        </tr>
+        <tr>
+          <td><code>dotted</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: dotted; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays a series of rounded dots. The spacing of the dots are not defined by the specification and are implementation-specific. The radius of the dots is half the calculated <a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a>.</td>
+        </tr>
+        <tr>
+          <td><code>dashed</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: dashed; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays a series of short square-ended dashes or line segments. The exact size and length of the segments are not defined by the specification and are implementation-specific.</td>
+        </tr>
+        <tr>
+          <td><code>solid</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: solid; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays a single, straight, solid line.</td>
+        </tr>
+        <tr>
+          <td><code>double</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: double; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays two straight lines that add up to the pixel amount defined as <a href="/en-US/docs/Web/CSS/border-width" title=""><code>border-width</code></a> or <a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a>.</td>
+        </tr>
+        <tr>
+          <td><code>groove</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: groove; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays a border leading to a carved effect. It is the opposite of <code>ridge</code>.</td>
+        </tr>
+        <tr>
+          <td><code>ridge</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: ridge; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays a border with a 3D effect, like if it is coming out of the page. It is the opposite of <code>groove</code>.</td>
+        </tr>
+        <tr>
+          <td><code>inset</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: inset; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>Displays a border that makes the box appear embedded. It is the opposite of <code>outset</code>. When applied to a table cell with <a href="/en-US/docs/Web/CSS/border-collapse" title=""><code>border-collapse</code></a> set to <code>collapsed</code>, this value behaves like <code>groove</code>.</td>
+        </tr>
+        <tr>
+          <td><code>outset</code></td>
+          <td>
+            <div style="margin: 0.5em; width: 3em; height: 3em; border-left-style: outset; background-color: palegreen;">
+              <span style="display: none;">fake</span></div>
+          </td>
+          <td>
+            <p>Displays a border that makes the box appear in 3D, embossed. It is the opposite of <code>inset</code>. When applied to a table cell with <a href="/en-US/docs/Web/CSS/border-collapse" title=""><code>border-collapse</code></a> set to <code>collapsed</code>, this value behaves like <code>ridge</code>.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </dd>
+  <dt>
+    inherit</dt>
+  <dd>
+    Represents the border style used by the parent of the current element.</dd>
+</dl>
+<h2 id="Examples">Examples</h2>
+<p>Here is the example :<br>
+  <a class="external" href="http://jsfiddle.net/pLhsc/">http://jsfiddle.net/pLhsc/</a></p>
+<h2 id="Specifications" name="Specifications"> </h2>
+<table class="standard-table" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', Lucida, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 1.572;">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="external" href="http://dev.w3.org/csswg/css3-background/#the-border-style" lang="en" title="The definition of 'border-left-style' in that specification.">CSS Backgrounds and Borders Module Level 3</a></td>
+      <td><span class="spec-CR">Candidate Recommendation</span></td>
+      <td>No significant change.</td>
+    </tr>
+    <tr>
+      <td><a class="external" href="http://www.w3.org/TR/CSS2/box.html#border-style-properties" lang="en" title="The definition of 'border-left-style' in that specification.">CSS Level 2 (Revision 1)</a></td>
+      <td><span class="spec-REC">Recommendation</span></td>
+      <td>Initial definition.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Specifications</p>
+<h2 id="Browser_compatibility" name="Browser_compatibility">Browser compatibility</h2>
+<div>
+  <div class="htab"> 
+    <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li class="selected"><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div id="compat-desktop">
+  <table class="compat-table">
+    <tbody>
+      <tr>
+        <th>Feature</th>
+        <th>Chrome</th>
+        <th>Firefox (Gecko)</th>
+        <th>Internet Explorer</th>
+        <th>Opera</th>
+        <th>Safari</th>
+      </tr>
+      <tr>
+        <td>Basic support</td>
+        <td>1.0</td>
+        <td>1.0</td>
+        <td>5.5</td>
+        <td>9.2</td>
+        <td>1.0</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+<div id="compat-mobile">
+  <table class="compat-table">
+    <tbody>
+      <tr>
+        <th>Feature</th>
+        <th>Android</th>
+        <th>Chrome for Android</th>
+        <th>Firefox Mobile (Gecko)</th>
+        <th>IE Mobile</th>
+        <th>Opera Mobile</th>
+        <th>Safari Mobile</th>
+      </tr>
+      <tr>
+        <td>Basic support</td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="See_also" name="See_also">See also</h2>
+<ul>
+  <li>The other style-related border properties: <a href="/en-US/docs/Web/CSS/border-bottom-style" title=""><code>border-bottom-style</code></a>, <a href="/en-US/docs/Web/CSS/border-right-style" title=""><code>border-right-style</code></a>, <a href="/en-US/docs/Web/CSS/border-top-style" title=""><code>border-top-style</code></a>, and <a href="/en-US/docs/Web/CSS/border-style" title=""><code>border-style</code></a>.</li>
+  <li>The other left-border-related properties: <a href="/en-US/docs/Web/CSS/border-left" title=""><code>border-left</code></a>, <a href="/en-US/docs/Web/CSS/border-left-color" title=""><code>border-left-color</code></a>, and <a href="/en-US/docs/Web/CSS/border-left-width" title=""><code>border-left-width</code></a>.</li>
+</ul>
+                  </div>
+    
+    <section class="page-meta">
+            <section class="page-tags" id="document-tags">
+        <h2><i class="icon-tags"></i>Tags (4)</h2>
+        <div id="deki-page-tags">
+          <ul class="tags tagit ui-widget ui-widget-content">
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS">CSS</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS%20Borders">CSS Borders</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS%20Reference">CSS Reference</a>
+            </li>
+                        <li class="tagit-choice ui-widget-content ui-state-default">
+                <a class="text tagit-label" href="/en-US/docs/tag/CSS%20R%C3%A9f%C3%A9rence">CSS Référence</a>
+            </li>
+                      </ul>
+        </div>
+      </section>
+      
+      
+      
+      <section id="doc-contributors" role="contentinfo">
+        Contributors to this page: <a href="/en-US/profiles/Sheppy">Sheppy</a>, <a href="/en-US/profiles/FredB">FredB</a>, <a href="/en-US/profiles/Elchi3">Elchi3</a>, <a href="/en-US/profiles/Yuichiro">Yuichiro</a>, <a href="/en-US/profiles/Mgjbot">Mgjbot</a>, <a href="/en-US/profiles/ethertank">ethertank</a>, <a href="/en-US/profiles/BijuGC">BijuGC</a>, <a href="/en-US/profiles/Killerowski">Killerowski</a>, <a href="/en-US/profiles/teoli">teoli</a>, <a href="/en-US/profiles/SiddharthBhatt">SiddharthBhatt</a>
+                          <br />
+          Last updated by:  
+          <a href="/en-US/profiles/teoli">teoli</a>, 
+          <time datetime="2013-09-27T06:01:48-07:00">Sep 27, 2013 6:01:48 AM</time>
+                      <br />
+            Last reviewed by:  
+            <a href="/en-US/profiles/teoli">teoli</a>, 
+            <time datetime="2013-09-27T06:01:48-07:00">Sep 27, 2013 6:01:48 AM</time>
+                        </section>
+    </section>
+  </article>
+  <form id="wiki-page-edit" class="editing" method="post" action="/en-US/docs/Web/CSS/border-left-style$edit">
+      <input type="hidden" name="form" id="form" value="rev" />
+      <input type="hidden" name="content" id="content" value="" />
+  </form>
+      </div>
+   </div>
+    </section>  
+
+<section id="footbar">
+<div class="wrap">
+  <p>
+  Is MDN helpful to you? Please <a href="/en-US/docs/Project:Feedback">share your feedback</a> with us. Or join our <a id="dev-mdc-link" href="//lists.mozilla.org/listinfo/dev-mdc">mailing list about improving MDN content</a>.  </p>
+</div>
+</section>
+<footer id="site-info" class="footer" role="contentinfo">
+<div class="wrap">
+    <div id="legal">
+      <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+      <p id="copyright">&copy; 2005 - 2013 Mozilla Developer Network and individual contributors</p>
+      <p>
+      Content is available under <a href="/en-US/docs/Project:Copyrights">these licenses</a>      &bull; <a href="/en-US/docs/Project:About">About MDN</a>
+      &bull; <a href="//github.com/mozilla/kuma">Contribute to the code</a>
+      &bull; <a href="//www.mozilla.org/en-US/privacy">Privacy Policy</a>
+    </div>
+                <form class="languages go" method="get" action="/en-US/docs">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/docs/Web/CSS/border-left-style" selected>
+          English (US)
+        </option>
+                  <option value="/de/docs/CSS/border-left-style">
+            Deutsch
+          </option>          <option value="/fr/docs/CSS/border-left-style">
+            Français
+          </option>          <option value="/ja/docs/Web/CSS/border-left-style">
+            日本語
+          </option>          <option value="/pl/docs/CSS/border-left-style">
+            Polski
+          </option>          <option value="/pt-PT/docs/CSS/border-left-style">
+            Português (Europeu)
+          </option>      </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+      </div>
 </footer>
 
+<script src="/en-US/jsi18n/build:394ff4e"></script>
 
-			
-<div class="ui-msg-wrap" id="MTMessage" style="display: none;">
-	<div class="ui-msg ui-errormsg" id="MTMessageStyle">
-		<div class="ui-msg-opt">
-			<ul>
-				<li><a href="#" class="dismiss" onclick="return MTMessage.Hide();">dismiss message</a></li>
-				<li><a href="#" class="details" id="MTMessageDetailsLink" onclick="return MTMessage.ShowDetails(this);">view details</a></li>
-			</ul>
-			<div class="ui-msg-autoclose">
-				<span id="MTMessageUnpaused" style="display: inline;">Message will close by itself in <span id="MTMessageTimer"></span> seconds</span>
-				<span id="MTMessagePaused" style="display: none;">Message timer has been stopped</span>
-			</div>
-		</div>
-		<div class="ui-msg-header" id="MTMessageHeader"></div>
-		<div class="ui-msg-desc" id="MTMessageDesc"></div>
-		<div class="ui-msg-desc" id="MTMessageDetails" style="display: none;">
-			<p>Viewing Details:</p>
-		</div>
-	</div>
-</div><script type="text/javascript">$(function() {var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");$.getScript(gaJsHost + "google-analytics.com/ga.js", function() {try {var pageTracker = _gat._getTracker("UA-68075-16");pageTracker._setDomainName(".mindtouch.com");pageTracker._trackPageview();} catch(e) {}});});</script>
-<!-- Served by pm-dekiwiki03.mozilla.org in 0.56 secs. -->
-<!--
-	Verb      Path                                              Time(ms)       API Stats
-	GET       /deki/site/settings                                   7.07       request-time-ms=3; mysql-queries=2; mysql-time-ms=1; cache-ratio=0.00; cache-hit=0; cache-miss=-1; cache-del=0; cache-ins=1;
-	GET       /deki/users/=Anonymous                                6.88       request-time-ms=5; mysql-queries=4; mysql-time-ms=3; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/license                                         8.53       request-time-ms=2; mysql-queries=2; mysql-time-ms=1; cache-ratio=-0.50; cache-hit=1; cache-miss=-3; cache-del=0; cache-ins=3;
-	GET       /deki/pages/14327/contents                           44.43       request-time-ms=43; mysql-queries=26; mysql-time-ms=28; cache-ratio=3.42; cache-hit=41; cache-miss=-29; cache-del=0; cache-ins=29;
-	GET       /deki/pages/14327                                   129.94       request-time-ms=126; mysql-queries=21; mysql-time-ms=19; cache-ratio=25.00; cache-hit=25; cache-miss=-24; cache-del=0; cache-ins=24;
-	GET       /deki/pages/14327/info                                5.89       request-time-ms=4; mysql-queries=3; mysql-time-ms=2; cache-ratio=-0.67; cache-hit=2; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/pages/14327/tags                                6.87       request-time-ms=5; mysql-queries=5; mysql-time-ms=3; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
-	GET       /deki/site/properties                                11.31       request-time-ms=8; mysql-queries=4; mysql-time-ms=5; cache-ratio=-0.25; cache-hit=1; cache-miss=-5; cache-del=0; cache-ins=5;
-	GET       /deki/site/nav/=en%252FCSS%252Fborder-left-style/full   282.66       request-time-ms=280; mysql-queries=6; mysql-time-ms=252; cache-ratio=-6.00; cache-hit=6; cache-miss=-7; cache-del=0; cache-ins=7;
-	GET       /deki/pages/14327/tags                                8.11       request-time-ms=6; mysql-queries=5; mysql-time-ms=4; cache-ratio=-0.75; cache-hit=3; cache-miss=-7; cache-del=0; cache-ins=7;
-	                                                             =======
-	                                                     Total:   511.69      
-	                                                     Ideal:   503.57      
--->
- 
-<div id="popupMessage"></div> <div id="popupMask"></div>
-<div id="menuFiller"></div>
-<div id="bodyHeight"></div>
+          <script src="//mozorg.cdn.mozilla.net/en-US/tabzilla/tabzilla.js" async></script>
+      <script src="//www.google.com/jsapi" type="text/javascript"></script>
+      <script src="https://login.persona.org/include.js" type="text/javascript"></script>
 
-<script src="https://www.google.com/jsapi"></script>
-<script src="/skins/mdn/Transitional/js/javascript.min.js"></script>
+      
+      <script src="https://developer.cdn.mozilla.net/media/js/mdn-min.js?build=394ff4e"></script>
+              <script src="https://developer.cdn.mozilla.net/media/js/wiki-min.js?build=394ff4e"></script>
+                  <script type="text/javascript">
+        // Event tracking for the new menu
+        $(function() {
+          $('#nav-main').on('click', 'a', function(e) {
+            window._gaq && _gaq.push(['_trackEvent', 'Menu', 'Click', e.target.innerHTML, e.target.href]);
+          });
+        });
+      </script>
+  
+  
+      <script src="https://developer.cdn.mozilla.net/media/js/libs/ckeditor/ckeditor.js?build=394ff4e"></script>
+<script src="https://developer.cdn.mozilla.net/media/js/libs/ckeditor/adapters/jquery.js?build=394ff4e"></script>
 
- 
-<script type="text/javascript">
-//<![CDATA[
-var _tag=new WebTrends();
-_tag.dcsGetId();
-// Add custom parameters here.
-//_tag.DCSext.param_name=param_value;
-_tag.dcsCollect();
-//]]>>
-</script>
-<noscript>
-<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://statse.webtrendslive.com/dcs8yrjuavz5bdaun34r2o8bi_8o8x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
-</noscript>
-<!-- END OF SmartSource Data Collector TAG -->
+ <script src="https://developer.cdn.mozilla.net/media/redesign/js/wiki-editor.js?build=394ff4e"></script> 
+    <!-- include syntax highlighting scripts -->
+<link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/syntax-prism-min.css?build=394ff4e" />
+<script type="text/javascript" src="https://developer.cdn.mozilla.net/media/js/libs/prism/prism.js" data-manual></script>
+<script src="https://developer.cdn.mozilla.net/media/js/syntax-prism-min.js?build=394ff4e"></script>
+        <script type="text/javascript">
+      (function($, ga) {
+        $('#offline-notice-link').on('click', function() {
+          // Open the dialog first
+          $('#offline-dialog-content').dialog({ 
+            width: 540, 
+            modal: true, 
+            buttons: { 
+              Ok: function() { 
+                $(this).dialog('close'); 
+              } 
+            } 
+          });
+          // Record opening of the menu
+          ga.push(['_trackEvent', 'Offline Content Dialog - Open', 'Click', 'Offline content link', '1']);
+        });
 
- 
+        $('#offline-dialog-content').on('click', 'a', function(e, c) {
+          // Record if they go to any of the links (bug link or either option)
+          var title = $(e.currentTarget).attr('data-title');
+          ga.push(['_trackEvent', 'Offline Content Dialog - ' + title, 'Click', title, '1']);
+        });
+      })(jQuery, window._gaq || []);
+    </script>
+    
+
+<script src="/en-US/waffles.js" type="text/javascript" async></script>
 </body>
 </html>
+
+
+
+ 

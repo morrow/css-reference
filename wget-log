@@ -1,0 +1,36 @@
+--2013-10-08 22:25:20--  https://developer.mozilla.org/en/CSS/-moz-background-clip
+Resolving developer.mozilla.org (developer.mozilla.org)... 63.245.215.53
+Connecting to developer.mozilla.org (developer.mozilla.org)|63.245.215.53|:443... connected.
+HTTP request sent, awaiting response... 301 MOVED PERMANENTLY
+Location: https://developer.mozilla.org/en-US/docs/CSS/-moz-background-clip [following]
+--2013-10-08 22:25:21--  https://developer.mozilla.org/en-US/docs/CSS/-moz-background-clip
+Reusing existing connection to developer.mozilla.org:443.
+HTTP request sent, awaiting response... 301 MOVED PERMANENTLY
+Location: https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-background-clip?redirectlocale=en-US&redirectslug=CSS%2F-moz-background-clip [following]
+--2013-10-08 22:25:21--  https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-background-clip?redirectlocale=en-US&redirectslug=CSS%2F-moz-background-clip
+Reusing existing connection to developer.mozilla.org:443.
+HTTP request sent, awaiting response... 301 MOVED PERMANENTLY
+Location: https://developer.mozilla.org/docs/en/CSS/background-clip?redirectlocale=en-US&redirectslug=Web%2FCSS%2F-moz-background-clip [following]
+--2013-10-08 22:25:21--  https://developer.mozilla.org/docs/en/CSS/background-clip?redirectlocale=en-US&redirectslug=Web%2FCSS%2F-moz-background-clip
+Reusing existing connection to developer.mozilla.org:443.
+HTTP request sent, awaiting response... 301 MOVED PERMANENTLY
+Location: https://developer.mozilla.org/en-US/docs/en/CSS/background-clip?redirectlocale=en-US&redirectslug=Web%2FCSS%2F-moz-background-clip [following]
+--2013-10-08 22:25:21--  https://developer.mozilla.org/en-US/docs/en/CSS/background-clip?redirectlocale=en-US&redirectslug=Web%2FCSS%2F-moz-background-clip
+Connecting to developer.mozilla.org (developer.mozilla.org)|63.245.215.53|:443... connected.
+HTTP request sent, awaiting response... 301 MOVED PERMANENTLY
+Location: https://developer.mozilla.org/en-US/docs/CSS/background-clip?redirectlocale=en-US&redirectslug=Web%2FCSS%2F-moz-background-clip [following]
+--2013-10-08 22:38:13--  https://developer.mozilla.org/en-US/docs/CSS/background-clip?redirectlocale=en-US&redirectslug=Web%2FCSS%2F-moz-background-clip
+Reusing existing connection to developer.mozilla.org:443.
+HTTP request sent, awaiting response... 301 MOVED PERMANENTLY
+Location: https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip?redirectlocale=en-US&redirectslug=CSS%2Fbackground-clip [following]
+--2013-10-08 22:38:14--  https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip?redirectlocale=en-US&redirectslug=CSS%2Fbackground-clip
+Reusing existing connection to developer.mozilla.org:443.
+HTTP request sent, awaiting response... 200 OK
+Length: 72549 (71K) [text/html]
+Saving to: `html/full/-moz-background-clip.html'
+
+     0K .......... .......... .......... .......... .......... 70%  336K 0s
+    50K .......... ..........                                 100%  290K=0.2s
+
+2013-10-08 22:38:16 (321 KB/s) - `html/full/-moz-background-clip.html' saved [72549/72549]
+
