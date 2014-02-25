@@ -4,7 +4,7 @@ App = (function() {
   function App(element) {
     var query;
     this.htmlify = new Htmlify();
-    this.dir = "/CSS-Reference";
+    this.dir = "/css-reference";
     this.history = [];
     this.history_pos = -1;
     this.paths = window.paths;
