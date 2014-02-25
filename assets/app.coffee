@@ -4,7 +4,7 @@ class App
     # load htmlify object
     @htmlify = new Htmlify()
     # set base directory
-    @dir = "/CSS-Reference"
+    @dir = "/css-reference"
     # query history
     @history = [] 
     # initialize current position in query history
